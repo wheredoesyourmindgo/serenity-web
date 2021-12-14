@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'Sudo';
+  src: url('/static/fonts/sudo/SudoVariable.woff2') format('woff2');
+  font-display: swap;
+}
