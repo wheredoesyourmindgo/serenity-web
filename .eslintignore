@@ -1,0 +1,8 @@
+skycons.js
+next.config.js
+src/client/polyfills.js
+.next
+.eslintrc.js
+node_modules
+sitemap-build.js
+scripts/generate-sitemap/index.js
