@@ -99,13 +99,13 @@ export default function Index() {
           </Type>
           <ColumnBox>
             <RowBox flexSpacing={3}>
-              <KeyLegend color="solarized.base1">Z</KeyLegend>
+              <KeyLegend color="solarized.base00">F</KeyLegend>
               <KeyLegend color="solarized.base01">L</KeyLegend>
               <KeyLegend color="solarized.base02">H</KeyLegend>
               <KeyLegend color="solarized.base0">K</KeyLegend>
               <KeyLegend color="solarized.base1">Q</KeyLegend>
+              <KeyLegend color="solarized.base1">Z</KeyLegend>
               <KeyLegend color="solarized.base00">P</KeyLegend>
-              <KeyLegend color="solarized.base00">F</KeyLegend>
               <KeyLegend color="solarized.base03" fontWeight={425}>
                 O
               </KeyLegend>
