@@ -95,7 +95,7 @@ export default function Index() {
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Type variant="h1" gutterBottom color="primary">
-            Parsed
+          Serenity
           </Type>
           <ColumnBox>
             <RowBox flexSpacing={3}>
