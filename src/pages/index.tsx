@@ -10,7 +10,6 @@ import {
   PaletteMode,
   Tooltip
 } from '@mui/material'
-import ProTip from '@components/ProTip'
 import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
@@ -150,7 +149,6 @@ export default function Index() {
               <KeyLegend>.</KeyLegend>
             </RowBox>
           </ColumnBox>
-          <ProTip />
           <Copyright />
         </ColumnBox>
       </Container>
