@@ -32,7 +32,7 @@ export default function Index() {
   )
   const KeyLegend = useCallback(
     ({children, ...rest}: TypographyProps) => (
-      <ChildBox>
+      <ChildBox width={25} overflow="none">
         <T3 color="solarized.base00" {...rest}>
           {children}
         </T3>
@@ -95,22 +95,22 @@ export default function Index() {
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Type variant="h1" gutterBottom color="primary">
-            Miscreant-y
+            Parsed
           </Type>
           <ColumnBox>
             <RowBox flexSpacing={3}>
               <KeyLegend color="solarized.base1">X</KeyLegend>
-              <KeyLegend color="solarized.base01">L</KeyLegend>
+              <KeyLegend color="solarized.base1">J</KeyLegend>
               <KeyLegend color="solarized.base02">H</KeyLegend>
-              <KeyLegend color="solarized.base0">K</KeyLegend>
-              <KeyLegend color="solarized.base1">Q</KeyLegend>
+              <KeyLegend color="solarized.base0">V</KeyLegend>
               <KeyLegend color="solarized.base1">Z</KeyLegend>
-              <KeyLegend color="solarized.base00">P</KeyLegend>
+              <KeyLegend color="solarized.base1">Q</KeyLegend>
+              <KeyLegend color="solarized.base00">W</KeyLegend>
               <KeyLegend color="solarized.base03" fontWeight={425}>
                 O
               </KeyLegend>
               <KeyLegend color="solarized.base01">U</KeyLegend>
-              <KeyLegend>;</KeyLegend>
+              <KeyLegend>-</KeyLegend>
             </RowBox>
             <RowBox flexSpacing={3}>
               <KeyLegend color="solarized.base03" fontWeight={425}>
@@ -123,9 +123,9 @@ export default function Index() {
               <KeyLegend color="solarized.base03" fontWeight={425}>
                 T
               </KeyLegend>
-              <KeyLegend color="solarized.base01">M</KeyLegend>
-              <KeyLegend color="solarized.base00">Y</KeyLegend>
-              <KeyLegend color="solarized.base01">C</KeyLegend>
+              <KeyLegend color="solarized.base00">F</KeyLegend>
+              <KeyLegend color="solarized.base00">P</KeyLegend>
+              <KeyLegend color="solarized.base02">D</KeyLegend>
               <KeyLegend color="solarized.base03" fontWeight={425}>
                 E
               </KeyLegend>
@@ -135,16 +135,16 @@ export default function Index() {
               <KeyLegend color="solarized.base03" fontWeight={425}>
                 A
               </KeyLegend>
-              <KeyLegend>-</KeyLegend>
+              <KeyLegend>=</KeyLegend>
             </RowBox>
             <RowBox flexSpacing={3}>
-              <KeyLegend color="solarized.base00">F</KeyLegend>
-              <KeyLegend color="solarized.base1">J</KeyLegend>
+              <KeyLegend color="solarized.base00">Y</KeyLegend>
+              <KeyLegend color="solarized.base01">L</KeyLegend>
               <KeyLegend color="solarized.base0">B</KeyLegend>
-              <KeyLegend color="solarized.base02">D</KeyLegend>
-              <KeyLegend color="solarized.base0">V</KeyLegend>
+              <KeyLegend color="solarized.base01">M</KeyLegend>
+              <KeyLegend color="solarized.base0">K</KeyLegend>
               <KeyLegend color="solarized.base00">G</KeyLegend>
-              <KeyLegend color="solarized.base00">W</KeyLegend>
+              <KeyLegend color="solarized.base01">C</KeyLegend>
               <KeyLegend>'</KeyLegend>
               <KeyLegend>,</KeyLegend>
               <KeyLegend>.</KeyLegend>
