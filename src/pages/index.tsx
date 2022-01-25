@@ -15,8 +15,9 @@ import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import {UiContext, setColorMode} from '@components/UiStore'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/pro-duotone-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCoffee} from '@fortawesome/pro-duotone-svg-icons'
+import MuiFaIcon from '@components/MuiFaIcon'
 
 export default function Index() {
   const uiContext = useContext(UiContext)
@@ -47,7 +48,6 @@ export default function Index() {
       dispatch(setColorMode(value))
     }
   }
-
   const theme = useTheme()
 
   return (
@@ -96,9 +96,10 @@ export default function Index() {
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Type variant="h1" gutterBottom color="primary">
-          Serenity
+            Serenity
           </Type>
-          <FontAwesomeIcon icon={faCoffee} color='#fff6e1' />
+
+          <MuiFaIcon sx={{color: 'primary.main'}} icon={faCoffee} />
           <ColumnBox>
             <RowBox flexSpacing={3}>
               <KeyLegend color="solarized.base1">X</KeyLegend>

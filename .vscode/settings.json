@@ -4,5 +4,6 @@
     "fortawesome",
     "sleazebox",
     "smoothscroll"
-  ]
+  ],
+  "editor.formatOnSave": true
 }
