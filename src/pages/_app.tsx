@@ -10,6 +10,10 @@ import smoothscroll from 'smoothscroll-polyfill'
 import '@lib/css/styles.css'
 import UiProvider from '@components/UiStore'
 import ToggleColorMode from '@components/ToggleColorMode'
+// Font Awesome config
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
