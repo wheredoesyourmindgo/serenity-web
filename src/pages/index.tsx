@@ -15,9 +15,10 @@ import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import {UiContext, setColorMode} from '@components/UiStore'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCoffee} from '@fortawesome/pro-duotone-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
+import {faUpLong} from '@fortawesome/pro-light-svg-icons'
+import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
+import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 
 export default function Index() {
   const uiContext = useContext(UiContext)
@@ -95,62 +96,125 @@ export default function Index() {
         <ColumnBox sx={{my: 4}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Type variant="h1" gutterBottom color="primary">
+          <Type
+            variant="h1"
+            gutterBottom
+            color="primary"
+            sx={{fontStyle: 'italic'}}
+          >
             Serenity
           </Type>
 
-          <MuiFaIcon sx={{color: 'primary.main'}} icon={faCoffee} />
           <ColumnBox>
             <RowBox flexSpacing={3}>
-              <KeyLegend color="solarized.base1">X</KeyLegend>
-              <KeyLegend color="solarized.base1">J</KeyLegend>
-              <KeyLegend color="solarized.base02">H</KeyLegend>
+              <ColumnBox
+                child
+                width={25}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <ChildBox>
+                  <MuiFaIcon
+                    sx={{color: 'solarized.base00', fontSize: 24}}
+                    icon={faDeleteRight}
+                  />
+                </ChildBox>
+              </ColumnBox>
               <KeyLegend color="solarized.base0">V</KeyLegend>
+              <KeyLegend color="solarized.base01">L</KeyLegend>
+              <KeyLegend color="solarized.base02" sx={{opacity: 0.85}}>
+                D
+              </KeyLegend>
+              <KeyLegend color="solarized.base00">W</KeyLegend>
               <KeyLegend color="solarized.base1">Z</KeyLegend>
               <KeyLegend color="solarized.base1">Q</KeyLegend>
-              <KeyLegend color="solarized.base00">W</KeyLegend>
-              <KeyLegend color="solarized.base03" fontWeight={425}>
+              <KeyLegend color="solarized.base00">F</KeyLegend>
+              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
                 O
               </KeyLegend>
               <KeyLegend color="solarized.base01">U</KeyLegend>
               <KeyLegend>-</KeyLegend>
+              <ColumnBox
+                child
+                width={25}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <ChildBox>
+                  <MuiFaIcon
+                    sx={{color: 'solarized.base00', fontSize: 24}}
+                    icon={faDeleteLeft}
+                  />
+                </ChildBox>
+              </ColumnBox>
             </RowBox>
             <RowBox flexSpacing={3}>
-              <KeyLegend color="solarized.base03" fontWeight={425}>
+              <KeyLegend>`</KeyLegend>
+              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
                 S
               </KeyLegend>
-              <KeyLegend color="solarized.base02">R</KeyLegend>
-              <KeyLegend color="solarized.base03" fontWeight={425}>
+              <KeyLegend color="solarized.base02" sx={{opacity: 0.85}}>
+                R
+              </KeyLegend>
+              <KeyLegend color="solarized.base02" sx={{opacity: 0.85}}>
+                H
+              </KeyLegend>
+              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
                 N
               </KeyLegend>
-              <KeyLegend color="solarized.base03" fontWeight={425}>
+              <KeyLegend color="solarized.base00">Y</KeyLegend>
+              <KeyLegend color="solarized.base00">G</KeyLegend>
+              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
                 T
               </KeyLegend>
-              <KeyLegend color="solarized.base00">F</KeyLegend>
-              <KeyLegend color="solarized.base00">P</KeyLegend>
-              <KeyLegend color="solarized.base02">D</KeyLegend>
-              <KeyLegend color="solarized.base03" fontWeight={425}>
+              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
                 E
               </KeyLegend>
-              <KeyLegend color="solarized.base03" fontWeight={425}>
+              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
                 I
               </KeyLegend>
-              <KeyLegend color="solarized.base03" fontWeight={425}>
+              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
                 A
               </KeyLegend>
               <KeyLegend>=</KeyLegend>
             </RowBox>
             <RowBox flexSpacing={3}>
-              <KeyLegend color="solarized.base00">Y</KeyLegend>
-              <KeyLegend color="solarized.base01">L</KeyLegend>
-              <KeyLegend color="solarized.base0">B</KeyLegend>
+              <ColumnBox
+                child
+                width={25}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <ChildBox>
+                  <MuiFaIcon
+                    sx={{color: 'solarized.base00', fontSize: 24}}
+                    icon={faUpLong}
+                  />
+                </ChildBox>
+              </ColumnBox>
+              <KeyLegend color="solarized.base1">X</KeyLegend>
+              <KeyLegend color="solarized.base1">J</KeyLegend>
               <KeyLegend color="solarized.base01">M</KeyLegend>
-              <KeyLegend color="solarized.base0">K</KeyLegend>
-              <KeyLegend color="solarized.base00">G</KeyLegend>
               <KeyLegend color="solarized.base01">C</KeyLegend>
+              <KeyLegend color="solarized.base0">B</KeyLegend>
+              <KeyLegend color="solarized.base0">K</KeyLegend>
+              <KeyLegend color="solarized.base00">P</KeyLegend>
               <KeyLegend>'</KeyLegend>
               <KeyLegend>,</KeyLegend>
               <KeyLegend>.</KeyLegend>
+              <ColumnBox
+                child
+                width={25}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <ChildBox>
+                  <MuiFaIcon
+                    sx={{color: 'solarized.base00', fontSize: 24}}
+                    icon={faUpLong}
+                  />
+                </ChildBox>
+              </ColumnBox>
             </RowBox>
           </ColumnBox>
           <Copyright />

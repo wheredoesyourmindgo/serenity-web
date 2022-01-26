@@ -55,7 +55,7 @@ const basePalette = {
 // Create a theme instance.
 const theme = createTheme({
   typography: {
-    fontFamily: ['Sudo', ...systemFonts].join(',')
+    fontFamily: ['MonoLisa', ...systemFonts].join(',')
   },
   palette: {...basePalette}
 })
