@@ -1,97 +1,30 @@
-import React, {useCallback, useContext} from 'react'
+import React from 'react'
 import {
   Container,
-  ToggleButton,
-  ToggleButtonGroup,
   Box,
   Typography as Type,
-  TypographyProps,
-  useTheme,
-  PaletteMode,
-  Tooltip
+  alpha,
+  useTheme
 } from '@mui/material'
 import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
-import {UiContext, setColorMode} from '@components/UiStore'
 import MuiFaIcon from '@components/MuiFaIcon'
 import {faUpLong} from '@fortawesome/pro-light-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
+import {KeyLegend} from '@components/key'
+import ToggleDarkModeBtn from '@components/ToggleDarkModeBtn'
+import {AppTheme} from '@lib/theme'
+import KeyIcon from '@components/key/KeyIcon'
 
 export default function Index() {
-  const uiContext = useContext(UiContext)
-  const {dispatch, state} = uiContext
-  const {mode} = state
-
-  const T3 = useCallback(
-    ({children, ...rest}: TypographyProps) => (
-      <Type variant="h3" {...rest}>
-        {children}
-      </Type>
-    ),
-    []
-  )
-  const KeyLegend = useCallback(
-    ({children, ...rest}: TypographyProps) => (
-      <ChildBox width={25} overflow="none">
-        <T3 color="solarized.base00" {...rest}>
-          {children}
-        </T3>
-      </ChildBox>
-    ),
-    [T3]
-  )
-
-  const handleMode = (_event: React.MouseEvent, value: PaletteMode) => {
-    if (value !== null && mode !== value) {
-      dispatch(setColorMode(value))
-    }
-  }
-  const theme = useTheme()
+  const theme = useTheme<AppTheme>()
+  const base02 = alpha(theme.palette.solarized.base02, 0.85)
+  const base03 = alpha(theme.palette.solarized.base03, 0.95)
 
   return (
     <Box>
-      <Box sx={{float: 'right', marginRight: 4}}>
-        <ToggleButtonGroup
-          value={mode}
-          exclusive
-          onChange={handleMode}
-          aria-label="text alignment"
-        >
-          <Tooltip title="Light's on!" enterDelay={1000}>
-            <ToggleButton value="light" aria-label="Light Mode">
-              <LightModeIcon
-                sx={{
-                  ...(theme.palette.mode === 'dark' && {
-                    color: 'solarized.base1'
-                  }),
-                  ...(theme.palette.mode === 'light' && {
-                    color: 'solarized.yellow'
-                  })
-                }}
-              />
-            </ToggleButton>
-          </Tooltip>
-
-          <Tooltip title="Light's out!" enterDelay={1000}>
-            <ToggleButton value="dark" aria-label="Dark Mode">
-              <DarkModeIcon
-                sx={{
-                  ...(theme.palette.mode === 'light' && {
-                    color: 'solarized.base1'
-                  }),
-                  ...(theme.palette.mode === 'dark' && {
-                    color: 'solarized.yellow'
-                  })
-                }}
-              />
-            </ToggleButton>
-          </Tooltip>
-        </ToggleButtonGroup>
-      </Box>
-
+      <ToggleDarkModeBtn />
       <Container sx={{m: 'auto'}}>
         <ColumnBox sx={{my: 4}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
@@ -107,91 +40,35 @@ export default function Index() {
 
           <ColumnBox>
             <RowBox flexSpacing={3}>
-              <ColumnBox
-                child
-                width={25}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <ChildBox>
-                  <MuiFaIcon
-                    sx={{color: 'solarized.base00', fontSize: 24}}
-                    icon={faDeleteRight}
-                  />
-                </ChildBox>
-              </ColumnBox>
+              <KeyIcon icon={faDeleteRight} />
               <KeyLegend color="solarized.base0">V</KeyLegend>
               <KeyLegend color="solarized.base01">L</KeyLegend>
-              <KeyLegend color="solarized.base02" sx={{opacity: 0.85}}>
-                D
-              </KeyLegend>
+              <KeyLegend color={base02}>D</KeyLegend>
               <KeyLegend color="solarized.base00">W</KeyLegend>
               <KeyLegend color="solarized.base1">Z</KeyLegend>
               <KeyLegend color="solarized.base1">Q</KeyLegend>
               <KeyLegend color="solarized.base00">F</KeyLegend>
-              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
-                O
-              </KeyLegend>
+              <KeyLegend color={base03}>O</KeyLegend>
               <KeyLegend color="solarized.base01">U</KeyLegend>
               <KeyLegend>-</KeyLegend>
-              <ColumnBox
-                child
-                width={25}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <ChildBox>
-                  <MuiFaIcon
-                    sx={{color: 'solarized.base00', fontSize: 24}}
-                    icon={faDeleteLeft}
-                  />
-                </ChildBox>
-              </ColumnBox>
+              <KeyIcon icon={faDeleteLeft} />
             </RowBox>
             <RowBox flexSpacing={3}>
               <KeyLegend>`</KeyLegend>
-              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
-                S
-              </KeyLegend>
-              <KeyLegend color="solarized.base02" sx={{opacity: 0.85}}>
-                R
-              </KeyLegend>
-              <KeyLegend color="solarized.base02" sx={{opacity: 0.85}}>
-                H
-              </KeyLegend>
-              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
-                N
-              </KeyLegend>
+              <KeyLegend color={base03}>S</KeyLegend>
+              <KeyLegend color={base02}>R</KeyLegend>
+              <KeyLegend color={base02}>H</KeyLegend>
+              <KeyLegend color={base03}>N</KeyLegend>
               <KeyLegend color="solarized.base00">Y</KeyLegend>
               <KeyLegend color="solarized.base00">G</KeyLegend>
-              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
-                T
-              </KeyLegend>
-              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
-                E
-              </KeyLegend>
-              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
-                I
-              </KeyLegend>
-              <KeyLegend color="solarized.base03" sx={{opacity: 0.95}}>
-                A
-              </KeyLegend>
+              <KeyLegend color={base03}>T</KeyLegend>
+              <KeyLegend color={base03}>E</KeyLegend>
+              <KeyLegend color={base03}>I</KeyLegend>
+              <KeyLegend color={base03}>A</KeyLegend>
               <KeyLegend>=</KeyLegend>
             </RowBox>
             <RowBox flexSpacing={3}>
-              <ColumnBox
-                child
-                width={25}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <ChildBox>
-                  <MuiFaIcon
-                    sx={{color: 'solarized.base00', fontSize: 24}}
-                    icon={faUpLong}
-                  />
-                </ChildBox>
-              </ColumnBox>
+              <KeyIcon icon={faUpLong} />
               <KeyLegend color="solarized.base1">X</KeyLegend>
               <KeyLegend color="solarized.base1">J</KeyLegend>
               <KeyLegend color="solarized.base01">M</KeyLegend>
@@ -202,19 +79,7 @@ export default function Index() {
               <KeyLegend>'</KeyLegend>
               <KeyLegend>,</KeyLegend>
               <KeyLegend>.</KeyLegend>
-              <ColumnBox
-                child
-                width={25}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <ChildBox>
-                  <MuiFaIcon
-                    sx={{color: 'solarized.base00', fontSize: 24}}
-                    icon={faUpLong}
-                  />
-                </ChildBox>
-              </ColumnBox>
+              <KeyIcon icon={faUpLong} />
             </RowBox>
           </ColumnBox>
           <Copyright />

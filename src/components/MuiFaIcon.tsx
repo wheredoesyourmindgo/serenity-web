@@ -4,9 +4,9 @@ import {
 } from '@fortawesome/react-fontawesome'
 import {Box, BoxProps} from '@mui/system'
 
-export default function MuiFaIcon({
-  ...props
-}: Pick<BoxProps, 'sx'> & FontAwesomeIconProps) {
+type Props = Pick<BoxProps, 'sx'> & FontAwesomeIconProps
+
+export default function MuiFaIcon({...props}: Props) {
   const {sx, ...rest} = props
 
   return (
@@ -15,3 +15,5 @@ export default function MuiFaIcon({
     </Box>
   )
 }
+
+export type {Props as MuiFaIconProps}
