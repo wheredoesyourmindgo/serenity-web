@@ -1,5 +1,5 @@
 import {createTheme} from '@mui/material/styles'
-import {PaletteMode} from '@mui/material'
+import {Palette, PaletteMode, Theme} from '@mui/material'
 
 export const lightSolarizedPalette = {
   base3: '#fdf6e3',
@@ -53,12 +53,14 @@ const basePalette = {
 } as const
 
 // Create a theme instance.
-const theme = createTheme({
+const appTheme = {
   typography: {
     fontFamily: ['MonoLisa', ...systemFonts].join(',')
   },
   palette: {...basePalette}
-})
+}
+
+const theme = createTheme(appTheme)
 
 export const getPalette = (mode: PaletteMode) => ({
   mode,
@@ -87,4 +89,9 @@ export const getPalette = (mode: PaletteMode) => ({
         }
       })
 })
+
+interface AppTheme extends Theme {
+  palette: Palette & ReturnType<typeof getPalette>
+}
+export type {AppTheme}
 export default theme
