@@ -12,7 +12,7 @@ export default function AlphaKeyboard() {
   const base02 = alpha(theme.palette.solarized.base02, 0.85)
   const base03 = alpha(theme.palette.solarized.base03, 0.95)
   return (
-    <ColumnBox>
+    <ColumnBox flexSpacing={2}>
       <RowBox child flexSpacing={3}>
         <KeyIcon icon={faDeleteRight} />
         <KeyLegend color="solarized.base0">V</KeyLegend>

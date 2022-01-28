@@ -1,13 +1,14 @@
 import React from 'react'
-import {Container, Box, Typography as Type} from '@mui/material'
+import {Container, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
 import ToggleDarkModeBtn from '@components/ToggleDarkModeBtn'
-import AlphaKeyboard from '@components/keyboard/alpha'
+import AlphaKeyboard from '@components/keyboard/alphas'
+import PageLayout from '../components/PageLayout'
 
-export default function Index() {
+export default function IndexPag() {
   return (
-    <Box>
+    <PageLayout>
       <ToggleDarkModeBtn />
       <Container sx={{m: 'auto'}}>
         <ColumnBox sx={{my: 4}} alignItems="center">
@@ -25,6 +26,6 @@ export default function Index() {
           {/* <Copyright /> */}
         </ColumnBox>
       </Container>
-    </Box>
+    </PageLayout>
   )
 }

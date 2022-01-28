@@ -1,20 +1,21 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {ChildBox, ColumnBox} from 'mui-sleazebox'
+import {ChildBox} from 'mui-sleazebox'
 import React from 'react'
+import KeyContainer from './KeyContainer'
 
 type Props = MuiFaIconProps
 
 export default function KeyIcon({icon, ...rest}: Props) {
   const {sx, ...r} = rest
   return (
-    <ColumnBox child width={25} justifyContent="center" alignItems="center">
+    <KeyContainer>
       <ChildBox>
         <MuiFaIcon
           icon={icon}
-          sx={{color: 'solarized.base00', fontSize: 24, ...sx}}
+          sx={{color: 'solarized.base00', fontSize: 20, ...sx}}
           {...r}
         />
       </ChildBox>
-    </ColumnBox>
+    </KeyContainer>
   )
 }
