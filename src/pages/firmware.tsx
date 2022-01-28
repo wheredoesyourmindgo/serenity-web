@@ -3,10 +3,10 @@ import {Container, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
 import ToggleDarkModeBtn from '@components/ToggleDarkModeBtn'
-import AlphaKeyboard from '@components/keyboard/alphas'
 import PageLayout from '../components/PageLayout'
+import FirmwareKeyboard from '@components/keyboard/firmware'
 
-export default function IndexPag() {
+export default function FirmwarePage() {
   return (
     <PageLayout>
       <ToggleDarkModeBtn />
@@ -15,14 +15,14 @@ export default function IndexPag() {
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Type
-            variant="h1"
+            variant="h2"
             gutterBottom
             color="primary"
             sx={{fontStyle: 'italic'}}
           >
-            Serenity
+            Firmware
           </Type>
-          <AlphaKeyboard />
+          <FirmwareKeyboard />
           {/* <Copyright /> */}
         </ColumnBox>
       </Container>

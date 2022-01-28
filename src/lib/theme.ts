@@ -26,8 +26,13 @@ export const darkSolarizedPalette = {
 
 export const neutralSolarizedPalette = {
   yellow: '#b58900',
-  green: '#859900',
-  purple: '#6c71c4'
+  orange: '#Cb4b16',
+  red: '#dc322f',
+  $magenta: '#d33682',
+  violet: '#6c71c4',
+  blue: '#268bd2',
+  cyan: '#2aa198',
+  green: '#859900'
 } as const
 
 const systemFonts = [
@@ -48,7 +53,7 @@ const basePalette = {
     main: neutralSolarizedPalette.green
   },
   secondary: {
-    main: neutralSolarizedPalette.purple
+    main: neutralSolarizedPalette.violet
   }
 } as const
 

@@ -6,7 +6,7 @@ import ToggleDarkModeBtn from '@components/ToggleDarkModeBtn'
 import AlphaKeyboard from '@components/keyboard/alphas'
 import PageLayout from '../components/PageLayout'
 
-export default function IndexPag() {
+export default function AlphasPage() {
   return (
     <PageLayout>
       <ToggleDarkModeBtn />

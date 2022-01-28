@@ -1,2 +1,3 @@
 import KeyLegend from './KeyLegend'
-export {KeyLegend}
+import KeyContainer from './KeyContainer'
+export {KeyLegend, KeyContainer}

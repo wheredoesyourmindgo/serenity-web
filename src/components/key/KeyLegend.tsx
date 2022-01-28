@@ -1,26 +1,29 @@
-import {Typography as Type, TypographyProps} from '@mui/material'
+import {Box, Typography as Type, TypographyProps} from '@mui/material'
 import {ChildBox} from 'mui-sleazebox'
-import React, {useCallback} from 'react'
+import React from 'react'
+import {KeyContainer} from '.'
 
 type Props = Partial<TypographyProps> & {
+  shiftSym?: String
   children?: React.ReactNode
 }
 
-export default function KeyLegend({children, ...rest}: Props) {
-  const T3 = useCallback(
-    ({children: c, ...r}) => (
-      <Type variant="h3" {...r}>
-        {c}
-      </Type>
-    ),
-    []
-  )
-
+export default function KeyLegend({children, shiftSym, ...rest}: Props) {
+  const {sx, color = 'solarized.base00', ...r} = rest
   return (
-    <ChildBox width={25} overflow="none">
-      <T3 color="solarized.base00" {...rest}>
-        {children}
-      </T3>
-    </ChildBox>
+    <KeyContainer>
+      <ChildBox sx={{position: 'relative'}}>
+        <Box sx={{position: 'absolute', right: -14, top: -10}}>
+          <Type variant="subtitle2" sx={{color: 'solarized.violet'}}>
+            {shiftSym}
+          </Type>
+        </Box>
+        <Type variant="h3" sx={{color, ...sx}} {...r}>
+          {children}
+        </Type>
+      </ChildBox>
+    </KeyContainer>
   )
 }
+
+export type {Props as KeyLegendProps}
