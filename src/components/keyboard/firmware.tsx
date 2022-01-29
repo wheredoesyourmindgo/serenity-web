@@ -35,8 +35,8 @@ export default function FirmwareKeyboard() {
         <KeyLegend {...sharedProps} shiftSym="W">
           w
         </KeyLegend>
-        <KeyLegend {...sharedProps} shiftSym="Z">
-          z
+        <KeyLegend {...sharedProps} shiftSym="X">
+          x
         </KeyLegend>
         <KeyLegend {...sharedProps} shiftSym="Q">
           q
@@ -71,7 +71,9 @@ export default function FirmwareKeyboard() {
       </RowBox>
       <RowBox child flexSpacing={1}>
         <KeyIcon icon={faUpLong} />
-        <KeyLegend {...sharedProps}>x</KeyLegend>
+        <KeyLegend {...sharedProps} shiftSym="Z">
+          z
+        </KeyLegend>
         <KeyLegend {...sharedProps}>j</KeyLegend>
         <KeyLegend {...sharedProps}>m</KeyLegend>
         <KeyLegend {...sharedProps}>c</KeyLegend>

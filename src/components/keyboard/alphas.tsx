@@ -19,7 +19,7 @@ export default function AlphaKeyboard() {
         <KeyLegend color="solarized.base01">L</KeyLegend>
         <KeyLegend color={base02}>D</KeyLegend>
         <KeyLegend color="solarized.base00">W</KeyLegend>
-        <KeyLegend color="solarized.base1">Z</KeyLegend>
+        <KeyLegend color="solarized.base1">X</KeyLegend>
         <KeyLegend color="solarized.base1">Q</KeyLegend>
         <KeyLegend color="solarized.base00">F</KeyLegend>
         <KeyLegend color={base03}>O</KeyLegend>
@@ -43,7 +43,7 @@ export default function AlphaKeyboard() {
       </RowBox>
       <RowBox child flexSpacing={3}>
         <KeyIcon icon={faUpLong} />
-        <KeyLegend color="solarized.base1">X</KeyLegend>
+        <KeyLegend color="solarized.base1">Z</KeyLegend>
         <KeyLegend color="solarized.base1">J</KeyLegend>
         <KeyLegend color="solarized.base01">M</KeyLegend>
         <KeyLegend color="solarized.base01">C</KeyLegend>
