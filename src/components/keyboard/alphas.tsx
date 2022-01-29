@@ -19,8 +19,8 @@ export default function AlphaKeyboard() {
         <KeyLegend color="solarized.base01">L</KeyLegend>
         <KeyLegend color={base02}>D</KeyLegend>
         <KeyLegend color="solarized.base00">W</KeyLegend>
-        <KeyLegend color="solarized.base1">Q</KeyLegend>
         <KeyLegend color="solarized.base1">Z</KeyLegend>
+        <KeyLegend color="solarized.base1">Q</KeyLegend>
         <KeyLegend color="solarized.base00">F</KeyLegend>
         <KeyLegend color={base03}>O</KeyLegend>
         <KeyLegend color="solarized.base01">U</KeyLegend>

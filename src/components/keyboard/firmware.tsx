@@ -35,11 +35,11 @@ export default function FirmwareKeyboard() {
         <KeyLegend {...sharedProps} shiftSym="W">
           w
         </KeyLegend>
-        <KeyLegend {...sharedProps} shiftSym="Q">
-          q
-        </KeyLegend>
         <KeyLegend {...sharedProps} shiftSym="Z">
           z
+        </KeyLegend>
+        <KeyLegend {...sharedProps} shiftSym="Q">
+          q
         </KeyLegend>
         <KeyLegend {...sharedProps} shiftSym="F">
           f
