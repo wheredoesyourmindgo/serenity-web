@@ -3,7 +3,9 @@ import {alpha, useTheme} from '@mui/material'
 import {FlexBox, FlexBoxProps} from 'mui-sleazebox'
 import React from 'react'
 
-export default function Key({children, ...rest}: FlexBoxProps) {
+type Props = FlexBoxProps
+
+export default function KeyContainer({children, ...rest}: Props) {
   const {sx, ...r} = rest
   const theme = useTheme<AppTheme>()
   return (
@@ -28,3 +30,5 @@ export default function Key({children, ...rest}: FlexBoxProps) {
     </FlexBox>
   )
 }
+
+export type {Props as KeyContainerProps}

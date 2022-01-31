@@ -1,14 +1,14 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
 import {ChildBox} from 'mui-sleazebox'
 import React from 'react'
-import KeyContainer from './KeyContainer'
+import KeyContainer, {KeyContainerProps} from './KeyContainer'
 
-type Props = MuiFaIconProps
+type Props = MuiFaIconProps & {keyContainerProps?: KeyContainerProps}
 
-export default function KeyIcon({icon, ...rest}: Props) {
+export default function KeyIcon({keyContainerProps, icon, ...rest}: Props) {
   const {sx, ...r} = rest
   return (
-    <KeyContainer>
+    <KeyContainer {...keyContainerProps}>
       <ChildBox>
         <MuiFaIcon
           icon={icon}
@@ -19,3 +19,5 @@ export default function KeyIcon({icon, ...rest}: Props) {
     </KeyContainer>
   )
 }
+
+export type {Props as KeyIconProps}
