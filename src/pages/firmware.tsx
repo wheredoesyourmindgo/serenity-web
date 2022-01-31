@@ -2,14 +2,12 @@ import React from 'react'
 import {Container, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
-import ToggleDarkModeBtn from '@components/ToggleDarkModeBtn'
 import PageLayout from '../components/PageLayout'
 import FirmwareKeyboard from '@components/keyboard/firmware'
 
 export default function FirmwarePage() {
   return (
     <PageLayout>
-      <ToggleDarkModeBtn />
       <Container sx={{m: 'auto'}}>
         <ColumnBox sx={{my: 4}} alignItems="center">
           {/* <Type>mode: {mode}</Type>

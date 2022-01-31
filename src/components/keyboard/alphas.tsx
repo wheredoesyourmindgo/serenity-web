@@ -1,4 +1,5 @@
-import KeyIcon from '@components/key/KeyIcon'
+// cspell:ignore Lgnd
+import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {faUpLong} from '@fortawesome/pro-light-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
@@ -6,54 +7,71 @@ import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
 import {alpha, useTheme} from '@mui/material'
 import {AppTheme} from '@lib/theme'
+import {useCallback} from 'react'
+import {KeyLegendProps} from '@components/key/KeyLegend'
 
 export default function AlphaKeyboard() {
   const theme = useTheme<AppTheme>()
   const base02 = alpha(theme.palette.solarized.base02, 0.85)
   const base03 = alpha(theme.palette.solarized.base03, 0.95)
+  const AlphaKeyLgnd = useCallback(
+    ({children, ...props}: KeyLegendProps) => (
+      <KeyLegend keyContainerProps={{sx: {borderWidth: 0}}} {...props}>
+        {children}
+      </KeyLegend>
+    ),
+    []
+  )
+  const AlphaKeyIcn = useCallback(
+    ({...props}: KeyIconProps) => (
+      <KeyIcon keyContainerProps={{sx: {borderWidth: 0}}} {...props} />
+    ),
+    []
+  )
+
   return (
     <ColumnBox flexSpacing={2}>
-      <RowBox child flexSpacing={3}>
-        <KeyIcon icon={faDeleteRight} />
-        <KeyLegend color="solarized.base0">V</KeyLegend>
-        <KeyLegend color="solarized.base01">L</KeyLegend>
-        <KeyLegend color={base02}>D</KeyLegend>
-        <KeyLegend color="solarized.base00">W</KeyLegend>
-        <KeyLegend color="solarized.base1">X</KeyLegend>
-        <KeyLegend color="solarized.base1">Q</KeyLegend>
-        <KeyLegend color="solarized.base00">F</KeyLegend>
-        <KeyLegend color={base03}>O</KeyLegend>
-        <KeyLegend color="solarized.base01">U</KeyLegend>
-        <KeyLegend>-</KeyLegend>
-        <KeyIcon icon={faDeleteLeft} />
+      <RowBox child flexSpacing={1}>
+        <AlphaKeyIcn icon={faDeleteRight} />
+        <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base02}>D</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base00">W</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base00">F</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base03}>O</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base01">U</AlphaKeyLgnd>
+        <AlphaKeyLgnd>-</AlphaKeyLgnd>
+        <AlphaKeyIcn icon={faDeleteLeft} />
       </RowBox>
-      <RowBox child flexSpacing={3}>
-        <KeyLegend>`</KeyLegend>
-        <KeyLegend color={base03}>S</KeyLegend>
-        <KeyLegend color={base02}>R</KeyLegend>
-        <KeyLegend color={base02}>H</KeyLegend>
-        <KeyLegend color={base03}>N</KeyLegend>
-        <KeyLegend color="solarized.base00">Y</KeyLegend>
-        <KeyLegend color="solarized.base00">G</KeyLegend>
-        <KeyLegend color={base03}>T</KeyLegend>
-        <KeyLegend color={base03}>E</KeyLegend>
-        <KeyLegend color={base03}>I</KeyLegend>
-        <KeyLegend color={base03}>A</KeyLegend>
-        <KeyLegend>=</KeyLegend>
+      <RowBox child flexSpacing={1}>
+        <AlphaKeyLgnd>`</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base03}>S</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base02}>H</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base03}>N</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base00">Y</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base00">G</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base03}>T</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base03}>E</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base03}>I</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base03}>A</AlphaKeyLgnd>
+        <AlphaKeyLgnd>=</AlphaKeyLgnd>
       </RowBox>
-      <RowBox child flexSpacing={3}>
-        <KeyIcon icon={faUpLong} />
-        <KeyLegend color="solarized.base1">Z</KeyLegend>
-        <KeyLegend color="solarized.base1">J</KeyLegend>
-        <KeyLegend color="solarized.base01">M</KeyLegend>
-        <KeyLegend color="solarized.base01">C</KeyLegend>
-        <KeyLegend color="solarized.base0">B</KeyLegend>
-        <KeyLegend color="solarized.base0">K</KeyLegend>
-        <KeyLegend color="solarized.base00">P</KeyLegend>
-        <KeyLegend>'</KeyLegend>
-        <KeyLegend>,</KeyLegend>
-        <KeyLegend>.</KeyLegend>
-        <KeyIcon icon={faUpLong} />
+      <RowBox child flexSpacing={1}>
+        <AlphaKeyIcn icon={faUpLong} />
+        <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base1">J</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base01">C</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base0">B</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base0">K</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base00">P</AlphaKeyLgnd>
+        <AlphaKeyLgnd>'</AlphaKeyLgnd>
+        <AlphaKeyLgnd>,</AlphaKeyLgnd>
+        <AlphaKeyLgnd>.</AlphaKeyLgnd>
+        <AlphaKeyIcn icon={faUpLong} />
       </RowBox>
     </ColumnBox>
   )

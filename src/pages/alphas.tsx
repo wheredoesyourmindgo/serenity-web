@@ -1,19 +1,18 @@
 import React from 'react'
-import {Container, Typography as Type} from '@mui/material'
+import {Box, Container, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
-import ToggleDarkModeBtn from '@components/ToggleDarkModeBtn'
 import AlphaKeyboard from '@components/keyboard/alphas'
 import PageLayout from '../components/PageLayout'
 
 export default function AlphasPage() {
   return (
     <PageLayout>
-      <ToggleDarkModeBtn />
       <Container sx={{m: 'auto'}}>
         <ColumnBox sx={{my: 4}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
+          <Box pt={4} />
           <Type
             variant="h1"
             gutterBottom
@@ -22,6 +21,7 @@ export default function AlphasPage() {
           >
             Serenity
           </Type>
+          <Box pt={2} />
           <AlphaKeyboard />
           {/* <Copyright /> */}
         </ColumnBox>

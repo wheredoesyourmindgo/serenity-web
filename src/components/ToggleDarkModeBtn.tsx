@@ -10,6 +10,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import {setColorMode, UiContext} from '@components/UiStore'
 import {useContext} from 'react'
+import {AppTheme} from '@lib/theme'
 
 export default function ToggleDarkModeBtn() {
   const uiContext = useContext(UiContext)
@@ -20,11 +21,12 @@ export default function ToggleDarkModeBtn() {
       dispatch(setColorMode(value))
     }
   }
-  const theme = useTheme()
+  const theme = useTheme<AppTheme>()
 
   return (
     <Box sx={{float: 'right', marginRight: 4}}>
       <ToggleButtonGroup
+        size="small"
         value={mode}
         exclusive
         onChange={handleMode}
@@ -38,7 +40,7 @@ export default function ToggleDarkModeBtn() {
                   color: 'solarized.base1'
                 }),
                 ...(theme.palette.mode === 'light' && {
-                  color: 'solarized.yellow'
+                  color: 'solarized.base2'
                 })
               }}
             />
@@ -53,7 +55,7 @@ export default function ToggleDarkModeBtn() {
                   color: 'solarized.base1'
                 }),
                 ...(theme.palette.mode === 'dark' && {
-                  color: 'solarized.yellow'
+                  color: 'solarized.base02'
                 })
               }}
             />
