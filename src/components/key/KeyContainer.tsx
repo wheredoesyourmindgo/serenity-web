@@ -3,10 +3,14 @@ import {alpha, Popover, useTheme} from '@mui/material'
 import {FlexBox, FlexBoxProps} from 'mui-sleazebox'
 import React from 'react'
 
-type Props = FlexBoxProps & {popOverContent?: React.ReactNode | String}
+type Props = FlexBoxProps & {
+  keyId?: string
+  popOverContent?: React.ReactNode | String
+}
 
 export default function KeyContainer({
   children,
+  keyId,
   popOverContent,
   ...rest
 }: Props) {
@@ -23,6 +27,7 @@ export default function KeyContainer({
   }
 
   const open = Boolean(anchorEl) && popOverContent ? true : false
+  const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
 
   return (
     <FlexBox
@@ -41,7 +46,7 @@ export default function KeyContainer({
         ...(popOverContent && {cursor: 'pointer'}),
         ...sx
       }}
-      aria-owns={open && popOverContent ? 'mouse-over-popover' : undefined}
+      aria-owns={open && popOverContent ? popOverId : undefined}
       aria-haspopup="true"
       onMouseEnter={handlePopoverOpen}
       onMouseLeave={handlePopoverClose}
@@ -49,7 +54,7 @@ export default function KeyContainer({
     >
       <div>
         <Popover
-          id="mouse-over-popover"
+          id={popOverId}
           sx={{
             pointerEvents: 'none'
           }}

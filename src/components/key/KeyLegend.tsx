@@ -1,53 +1,47 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box, Typography as Type, TypographyProps} from '@mui/material'
+import {Typography as Type, TypographyProps} from '@mui/material'
 import {ChildBox} from 'mui-sleazebox'
 import React from 'react'
 import {KeyContainer} from '.'
 import {KeyContainerProps} from './KeyContainer'
+import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
+import ShiftSubLgnd from './ShiftSubLgnd'
+import SpecialSubLgnd from './SpecialSubLgnd'
 
 type Props = Partial<TypographyProps> & {
-  shiftLgnd?: String
-  shiftIcn?: MuiFaIconProps['icon']
-  shiftIcnProps?: Omit<MuiFaIconProps, 'icon'>
+  shiftLgnd?: String | React.ReactNode
+  shiftSubIcn?: ShiftSubIcnProps['icon']
+  ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
   children?: React.ReactNode
-  keyContainerProps?: KeyContainerProps
+  KeyContainerProps?: KeyContainerProps
+  customShiftCode?: boolean
+  special?: boolean
 }
 
 export default function KeyLegend({
-  keyContainerProps,
+  KeyContainerProps,
   children,
   shiftLgnd,
-  shiftIcn,
-  shiftIcnProps,
+  shiftSubIcn,
+  ShiftSubIcnProps,
+  customShiftCode = false,
+  special = false,
   ...rest
 }: Props) {
   const {sx, color = 'solarized.base00', ...r} = rest
+  const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
 
   return (
-    <KeyContainer {...keyContainerProps}>
+    <KeyContainer {...KeyContainerProps}>
       <ChildBox sx={{position: 'relative'}}>
-        {shiftLgnd ? (
-          <Box sx={{position: 'absolute', right: -14, top: -10}}>
-            <Type variant="subtitle2" sx={{color: 'solarized.violet'}}>
-              {shiftLgnd}
-            </Type>
-          </Box>
+        {shiftLgnd ? <ShiftSubLgnd>{shiftLgnd}</ShiftSubLgnd> : null}
+        {shiftSubIcn ? (
+          <ShiftSubIcn
+            icon={shiftSubIcn}
+            sx={{color: shiftColor}}
+            {...ShiftSubIcnProps}
+          />
         ) : null}
-        {shiftIcn ? (
-          <Box
-            sx={{
-              position: 'absolute',
-              right: -10,
-              top: -12
-            }}
-          >
-            <MuiFaIcon
-              icon={shiftIcn}
-              sx={{color: 'solarized.violet', fontSize: 14}}
-              {...shiftIcnProps}
-            />
-          </Box>
-        ) : null}
+        {special ? <SpecialSubLgnd /> : null}
         <Type variant="h3" sx={{color, ...sx}} {...r}>
           {children}
         </Type>
