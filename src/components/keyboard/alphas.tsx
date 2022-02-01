@@ -16,7 +16,7 @@ export default function AlphaKeyboard() {
   const base03 = alpha(theme.palette.solarized.base03, 0.95)
   const AlphaKeyLgnd = useCallback(
     ({children, ...props}: KeyLegendProps) => (
-      <KeyLegend keyContainerProps={{sx: {borderWidth: 0}}} {...props}>
+      <KeyLegend KeyContainerProps={{sx: {borderWidth: 0}}} {...props}>
         {children}
       </KeyLegend>
     ),
@@ -24,7 +24,7 @@ export default function AlphaKeyboard() {
   )
   // const AlphaKeyIcn = useCallback(
   //   ({...props}: KeyIconProps) => (
-  //     <KeyIcon keyContainerProps={{sx: {borderWidth: 0}}} {...props} />
+  //     <KeyIcon KeyContainerProps={{sx: {borderWidth: 0}}} {...props} />
   //   ),
   //   []
   // )

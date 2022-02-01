@@ -25,14 +25,16 @@ export default function KeyIcon({
   special = false,
   ...rest
 }: Props) {
-  const {sx, ...r} = rest
+  const {sx, color, ...r} = rest
 
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
 
   return (
     <KeyContainer {...KeyContainerProps}>
       <ChildBox position="relative">
-        {shiftLgnd ? <ShiftSubLgnd>{shiftLgnd}</ShiftSubLgnd> : null}
+        {shiftLgnd ? (
+          <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
+        ) : null}
         {shiftSubIcn ? (
           <ShiftSubIcn
             icon={shiftSubIcn}
@@ -48,7 +50,7 @@ export default function KeyIcon({
         >
           <MuiFaIcon
             icon={icon}
-            sx={{color: 'solarized.base00', fontSize: 20, ...sx}}
+            sx={{color: color || 'solarized.base00', fontSize: 20, ...sx}}
             {...r}
           />
         </Box>

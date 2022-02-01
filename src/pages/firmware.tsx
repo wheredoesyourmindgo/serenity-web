@@ -1,11 +1,47 @@
-import React from 'react'
-import {Box, Container, Typography as Type} from '@mui/material'
+import React, {useState} from 'react'
+import {Box, Container, Tab, Tabs, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
-import FirmwareKeyboard from '@components/keyboard/firmware'
+import BaseLyr from '@components/keyboard/firmware/baseLyr'
+import NumNavLyr from '@components/keyboard/firmware/numNavLyr'
+import SymLyr from '@components/keyboard/firmware/symLyr'
+
+interface TabPanelProps {
+  children?: React.ReactNode
+  index: number
+  value: number
+}
+
+function TabPanel(props: TabPanelProps) {
+  const {children, value, index, ...other} = props
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`keyboard-layer-tabpanel-${index}`}
+      aria-labelledby={`keyboard-layer-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box>{children}</Box>}
+    </div>
+  )
+}
+
+function a11yProps(index: number) {
+  return {
+    id: `keyboard-layer-tab-${index}`,
+    'aria-controls': `keyboard-layer-tabpanel-${index}`
+  }
+}
 
 export default function FirmwarePage() {
+  const [value, setValue] = useState(0)
+
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue)
+  }
   return (
     <PageLayout>
       <Container sx={{m: 'auto'}}>
@@ -21,8 +57,35 @@ export default function FirmwarePage() {
           >
             Firmware
           </Type>
-          <Box pt={4} />
-          <FirmwareKeyboard />
+          <Box pt={4}>
+            <TabPanel value={value} index={0}>
+              <BaseLyr />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <NumNavLyr />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <SymLyr />
+            </TabPanel>
+          </Box>
+          <Box
+            sx={{
+              marginTop: 6,
+              bgcolor: 'background.paper'
+              // borderBottom: 1,
+              // borderColor: 'divider'
+            }}
+          >
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="keyboard layer tabs example"
+            >
+              <Tab label="Base" {...a11yProps(0)} />
+              <Tab label="Number/Navigation" {...a11yProps(1)} />
+              <Tab label="Symbol" {...a11yProps(2)} />
+            </Tabs>
+          </Box>
           {/* <Copyright /> */}
         </ColumnBox>
       </Container>

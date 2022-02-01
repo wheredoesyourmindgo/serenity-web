@@ -43,6 +43,20 @@ export default function KeyContainer({
         borderRadius: 1,
         borderStyle: 'solid',
         padding: 1,
+        // https://getcssscan.com/css-box-shadow-examples #14 edit
+        boxShadow: `${
+          theme.palette.mode === 'light'
+            ? 'rgba(50, 50, 93, 0.2)'
+            : 'rgba(205, 205, 51, 0.2)'
+        } 0px 50px 100px -20px, ${
+          theme.palette.mode === 'light'
+            ? 'rgba(0, 0, 0, 0.3)'
+            : 'rgba(255, 255, 255, 0.3)'
+        } 0px 30px 60px -30px, ${
+          theme.palette.mode === 'light'
+            ? 'rgba(10, 37, 64, 0.1)'
+            : 'rgba(245, 218, 162, 0.1)'
+        } 0px -2px 6px 0px inset`,
         ...(popOverContent && {cursor: 'pointer'}),
         ...sx
       }}
