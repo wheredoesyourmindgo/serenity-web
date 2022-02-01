@@ -33,7 +33,9 @@ export default function KeyLegend({
   return (
     <KeyContainer {...KeyContainerProps}>
       <ChildBox sx={{position: 'relative'}}>
-        {shiftLgnd ? <ShiftSubLgnd>{shiftLgnd}</ShiftSubLgnd> : null}
+        {shiftLgnd ? (
+          <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
+        ) : null}
         {shiftSubIcn ? (
           <ShiftSubIcn
             icon={shiftSubIcn}
