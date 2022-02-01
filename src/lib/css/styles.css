@@ -6,7 +6,7 @@
 @font-face {
   font-family: 'MonoLisa';
   font-weight: 300;
-  font-feature-settings: 'ss03';
+  font-feature-settings: 'ss03' on;
   src: url('/static/fonts/MonoLisa/MonoLisa-Light.woff2') format('woff2'),
     url('/static/fonts/MonoLisa/MonoLisa-Light.woff') format('woff');
   font-display: swap;
@@ -14,7 +14,7 @@
 @font-face {
   font-family: 'MonoLisa';
   font-weight: 400;
-  font-feature-settings: 'ss03';
+  font-feature-settings: 'ss03' on;
   src: url('/static/fonts/MonoLisa/MonoLisa-Regular.woff2') format('woff2'),
     url('/static/fonts/MonoLisa/MonoLisa-Regular.woff') format('woff');
   font-display: swap;
@@ -22,7 +22,7 @@
 @font-face {
   font-family: 'MonoLisa';
   font-weight: 500;
-  font-feature-settings: 'ss03';
+  font-feature-settings: 'ss03' on;
   src: url('/static/fonts/MonoLisa/MonoLisa-Medium.woff2') format('woff2'),
     url('/static/fonts/MonoLisa/MonoLisa-Medium.woff') format('woff');
   font-display: swap;
@@ -32,7 +32,7 @@
   font-family: 'MonoLisa';
   font-weight: 300;
   font-style: italic;
-  font-feature-settings: 'ss02';
+  /* font-feature-settings: 'ss02' on; */
   src: url('/static/fonts/MonoLisa/MonoLisa-LightItalic.woff2') format('woff2'),
     url('/static/fonts/MonoLisa/MonoLisa-LightItalic.woff') format('woff');
   font-display: swap;
@@ -41,7 +41,7 @@
   font-family: 'MonoLisa';
   font-weight: 400;
   font-style: italic;
-  font-feature-settings: 'ss02';
+  /* font-feature-settings: 'ss02' on; */
   src: url('/static/fonts/MonoLisa/MonoLisa-RegularItalic.woff2')
       format('woff2'),
     url('/static/fonts/MonoLisa/MonoLisa-RegularItalic.woff') format('woff');

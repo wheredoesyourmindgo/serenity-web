@@ -14,14 +14,14 @@ export default function AlphasPage() {
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
           <Type
-            variant="h1"
+            variant="h2"
             gutterBottom
             color="primary"
-            sx={{fontStyle: 'italic'}}
+            // sx={{fontStyle: 'italic'}}
           >
-            Serenity
+            Alphas
           </Type>
-          <Box pt={2} />
+          <Box pt={4} />
           <AlphaKeyboard />
           {/* <Copyright /> */}
         </ColumnBox>

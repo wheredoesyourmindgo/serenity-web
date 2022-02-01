@@ -75,7 +75,12 @@ export const getPalette = (mode: PaletteMode) => ({
         // palette values for light mode
         background: {
           default: lightSolarizedPalette.base3,
-          paper: lightSolarizedPalette.base3
+          paper: lightSolarizedPalette.base2
+        },
+        text: {
+          primary: lightSolarizedPalette.base00,
+          secondary: lightSolarizedPalette.base01,
+          disabled: lightSolarizedPalette.base1
         },
         solarized: {
           ...neutralSolarizedPalette,
@@ -86,7 +91,12 @@ export const getPalette = (mode: PaletteMode) => ({
         // palette values for dark mode
         background: {
           default: darkSolarizedPalette.base3,
-          paper: darkSolarizedPalette.base3
+          paper: darkSolarizedPalette.base2
+        },
+        text: {
+          primary: darkSolarizedPalette.base00,
+          secondary: darkSolarizedPalette.base01,
+          disabled: darkSolarizedPalette.base1
         },
         solarized: {
           ...neutralSolarizedPalette,

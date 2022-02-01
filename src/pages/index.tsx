@@ -17,11 +17,11 @@ export default function IndexPag() {
             variant="h1"
             gutterBottom
             color="primary"
-            sx={{fontStyle: 'italic'}}
+            sx={{fontStyle: 'italic', fontFeatureSettings: "'ss02' on"}}
           >
             Serenity
           </Type>
-          <Box pt={2} />
+          <Box pt={4} />
           <AlphaKeyboard />
           {/* <Copyright /> */}
         </ColumnBox>
