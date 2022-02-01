@@ -26,8 +26,10 @@ export default function FirmwareKeyboard() {
     <ColumnBox flexSpacing={1}>
       <RowBox child flexSpacing={1}>
         <KeyIcon
+          customShiftCode
           icon={faDeleteRight}
-          keyContainerProps={{
+          KeyContainerProps={{
+            keyId: 'delete-key',
             popOverContent: (
               <Box p={1}>
                 <Typography
@@ -54,7 +56,7 @@ export default function FirmwareKeyboard() {
               </Box>
             )
           }}
-          shiftIcn={faRightToBracket}
+          shiftSubIcn={faRightToBracket}
           sx={{
             transform: 'translateX(2px)'
           }}
@@ -90,8 +92,10 @@ export default function FirmwareKeyboard() {
           -
         </KeyLegend>
         <KeyIcon
+          customShiftCode
           icon={faDeleteLeft}
-          keyContainerProps={{
+          KeyContainerProps={{
+            keyId: 'backspace-key',
             popOverContent: (
               <Box p={1}>
                 <Typography
@@ -118,8 +122,8 @@ export default function FirmwareKeyboard() {
               </Box>
             )
           }}
-          shiftIcn={faRightToBracket}
-          shiftIcnProps={{flip: 'horizontal'}}
+          shiftSubIcn={faRightToBracket}
+          ShiftSubIcnProps={{flip: 'horizontal'}}
         />
       </RowBox>
       <RowBox child flexSpacing={1}>
@@ -162,8 +166,10 @@ export default function FirmwareKeyboard() {
       </RowBox>
       <RowBox child flexSpacing={1}>
         <KeyIcon
+          special
           icon={faUpLong}
-          keyContainerProps={{
+          KeyContainerProps={{
+            keyId: 'left-shift-key',
             popOverContent: (
               <Box p={1}>
                 <Typography
@@ -204,15 +210,81 @@ export default function FirmwareKeyboard() {
         <KeyLegend {...sharedProps} shiftLgnd='"'>
           '
         </KeyLegend>
-        <KeyLegend {...sharedProps} shiftLgnd=";">
+        <KeyLegend
+          {...sharedProps}
+          shiftLgnd=";"
+          customShiftCode
+          KeyContainerProps={{
+            keyId: 'comma-key',
+            popOverContent: (
+              <Box p={1}>
+                <Typography
+                  component="span"
+                  color="text.primary"
+                  sx={{paddingRight: 1.5}}
+                >
+                  <em>tap/hold</em>
+                </Typography>
+                <Typography component="span" color="text.secondary">
+                  Comma
+                </Typography>
+                <br />
+                <Typography
+                  component="span"
+                  color="text.primary"
+                  sx={{paddingRight: 1.5}}
+                >
+                  <em>shifted</em>
+                </Typography>
+                <Typography component="span" color="text.secondary">
+                  Semicolon
+                </Typography>
+              </Box>
+            )
+          }}
+        >
           ,
         </KeyLegend>
-        <KeyLegend {...sharedProps} shiftLgnd=":">
+        <KeyLegend
+          {...sharedProps}
+          shiftLgnd=":"
+          customShiftCode
+          KeyContainerProps={{
+            keyId: 'period-key',
+            popOverContent: (
+              <Box p={1}>
+                <Typography
+                  component="span"
+                  color="text.primary"
+                  sx={{paddingRight: 1.5}}
+                >
+                  <em>tap/hold</em>
+                </Typography>
+                <Typography component="span" color="text.secondary">
+                  Period/Dot
+                </Typography>
+                <br />
+                <Typography
+                  component="span"
+                  color="text.primary"
+                  sx={{paddingRight: 1.5}}
+                >
+                  <em>shifted</em>
+                </Typography>
+                <Typography component="span" color="text.secondary">
+                  Colon
+                </Typography>
+              </Box>
+            )
+          }}
+        >
           .
         </KeyLegend>
         <KeyIcon
+          special
           icon={faUpLong}
-          keyContainerProps={{
+          KeyContainerProps={{
+            keyId: 'right-shift-key',
             popOverContent: (
               <Box p={1}>
                 <Typography
