@@ -22,6 +22,10 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
         <AppBar
           position="static"
           sx={{
+            color:
+              theme.palette.mode === 'light'
+                ? 'solarized.base3'
+                : 'solarized.base03',
             bgcolor:
               theme.palette.mode === 'light'
                 ? 'solarized.blue'
