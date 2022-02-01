@@ -1,13 +1,29 @@
 import {AppTheme} from '@lib/theme'
-import {alpha, useTheme} from '@mui/material'
+import {alpha, Popover, useTheme} from '@mui/material'
 import {FlexBox, FlexBoxProps} from 'mui-sleazebox'
 import React from 'react'
 
-type Props = FlexBoxProps
+type Props = FlexBoxProps & {popOverContent?: React.ReactNode | String}
 
-export default function KeyContainer({children, ...rest}: Props) {
+export default function KeyContainer({
+  children,
+  popOverContent,
+  ...rest
+}: Props) {
   const {sx, ...r} = rest
   const theme = useTheme<AppTheme>()
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
+
+  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null)
+  }
+
+  const open = Boolean(anchorEl) && popOverContent ? true : false
+
   return (
     <FlexBox
       child
@@ -22,10 +38,38 @@ export default function KeyContainer({children, ...rest}: Props) {
         borderRadius: 1,
         borderStyle: 'solid',
         padding: 1,
+        ...(popOverContent && {cursor: 'pointer'}),
         ...sx
       }}
+      aria-owns={open && popOverContent ? 'mouse-over-popover' : undefined}
+      aria-haspopup="true"
+      onMouseEnter={handlePopoverOpen}
+      onMouseLeave={handlePopoverClose}
       {...r}
     >
+      <div>
+        <Popover
+          id="mouse-over-popover"
+          sx={{
+            pointerEvents: 'none'
+          }}
+          open={open}
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'left'
+          }}
+          transformOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left'
+          }}
+          onClose={handlePopoverClose}
+          disableRestoreFocus
+          PaperProps={{elevation: 4}}
+        >
+          {popOverContent}
+        </Popover>
+      </div>
       {children}
     </FlexBox>
   )

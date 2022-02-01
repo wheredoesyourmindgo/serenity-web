@@ -1,9 +1,9 @@
 // cspell:ignore Lgnd
-import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {faUpLong} from '@fortawesome/pro-light-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
+// import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
+// import {faUpLong} from '@fortawesome/pro-light-svg-icons'
+// import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
+// import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
 import {alpha, useTheme} from '@mui/material'
 import {AppTheme} from '@lib/theme'
@@ -22,17 +22,18 @@ export default function AlphaKeyboard() {
     ),
     []
   )
-  const AlphaKeyIcn = useCallback(
-    ({...props}: KeyIconProps) => (
-      <KeyIcon keyContainerProps={{sx: {borderWidth: 0}}} {...props} />
-    ),
-    []
-  )
+  // const AlphaKeyIcn = useCallback(
+  //   ({...props}: KeyIconProps) => (
+  //     <KeyIcon keyContainerProps={{sx: {borderWidth: 0}}} {...props} />
+  //   ),
+  //   []
+  // )
 
   return (
     <ColumnBox flexSpacing={2}>
       <RowBox child flexSpacing={1}>
-        <AlphaKeyIcn icon={faDeleteRight} />
+        {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
+        <AlphaKeyLgnd />
         <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>D</AlphaKeyLgnd>
@@ -43,7 +44,8 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd color={base03}>O</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">U</AlphaKeyLgnd>
         <AlphaKeyLgnd>-</AlphaKeyLgnd>
-        <AlphaKeyIcn icon={faDeleteLeft} />
+        {/* <AlphaKeyIcn icon={faDeleteLeft} /> */}
+        <AlphaKeyLgnd />
       </RowBox>
       <RowBox child flexSpacing={1}>
         <AlphaKeyLgnd>`</AlphaKeyLgnd>
@@ -60,7 +62,8 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>=</AlphaKeyLgnd>
       </RowBox>
       <RowBox child flexSpacing={1}>
-        <AlphaKeyIcn icon={faUpLong} />
+        {/* <AlphaKeyIcn icon={faUpLong} /> */}
+        <AlphaKeyLgnd />
         <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">J</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
@@ -71,7 +74,8 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
-        <AlphaKeyIcn icon={faUpLong} />
+        {/* <AlphaKeyIcn icon={faUpLong} /> */}
+        <AlphaKeyLgnd />
       </RowBox>
     </ColumnBox>
   )

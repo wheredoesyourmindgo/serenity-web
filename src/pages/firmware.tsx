@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Typography as Type} from '@mui/material'
+import {Box, Container, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
@@ -12,14 +12,16 @@ export default function FirmwarePage() {
         <ColumnBox sx={{my: 4}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
+          <Box pt={4} />
           <Type
             variant="h2"
             gutterBottom
             color="primary"
-            sx={{fontStyle: 'italic'}}
+            // sx={{fontStyle: 'italic'}}
           >
             Firmware
           </Type>
+          <Box pt={4} />
           <FirmwareKeyboard />
           {/* <Copyright /> */}
         </ColumnBox>
