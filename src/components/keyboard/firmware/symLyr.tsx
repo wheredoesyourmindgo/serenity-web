@@ -1,14 +1,8 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
-  faArrowDown,
-  faArrowLeft,
-  faArrowRight,
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
-  faArrowUp,
-  faBorderBottomRight,
-  faBorderTopLeft,
   faBracketSquare,
   faComputerMouse,
   faCopy,
@@ -17,8 +11,6 @@ import {
   faLockA,
   faLockOpen,
   faOption,
-  faPageCaretDown,
-  faPageCaretUp,
   faPaste,
   faRedo,
   faRightToBracket,
@@ -97,17 +89,15 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="~">
             `
           </KeyLegend>
-          <KeyIcon icon={faChevronUp} color="solarized.orange" />
-          <KeyIcon
-            icon={faOption}
-            color="solarized.orange"
-            sx={{fontSize: 19}}
-          />
-          <KeyIcon icon={faCommand} color="solarized.orange" />
-          <KeyIcon icon={faUpLong} color="solarized.orange" />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faUpLong} color="solarized.cyan" homing />
           <KeyIcon icon={faLock} />
           <KeyLegend {...sharedProps}>|</KeyLegend>
-          <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
+          <KeyLegend {...sharedProps} homing>
+            {'{'}
+          </KeyLegend>
           <KeyLegend {...sharedProps}>&lt;</KeyLegend>
           <KeyLegend {...sharedProps}>&gt;</KeyLegend>
           <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
@@ -130,11 +120,11 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUndo} />
-          <KeyIcon icon={faScissors} />
-          <KeyIcon icon={faCopy} />
-          <KeyIcon icon={faPaste} />
-          <KeyIcon icon={faRedo} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>\</KeyLegend>
           <KeyLegend {...sharedProps}>/</KeyLegend>
           <KeyLegend {...sharedProps}>[</KeyLegend>
@@ -153,18 +143,34 @@ export default function SymLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon icon={faComputerMouse} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon icon={faChevronUp} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
           <KeyIcon icon={faLockOpen} />
           <KeyIcon icon={faArrowTurnDownLeft} />
           <KeyIcon icon={faArrowRightLongToLine} />
-          <KeyIcon icon={faBracketSquare} rotation={270} />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(6px)'}}
+          />
           <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon
+            icon={faOption}
+            sx={{fontSize: 19}}
+            color="solarized.cyan"
+            KeyContainerProps={{
+              keyId: 'right-option-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Right Option" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faFunction} />
+          <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>
     </Box>

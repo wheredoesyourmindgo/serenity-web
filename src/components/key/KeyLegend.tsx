@@ -6,6 +6,7 @@ import {KeyContainerProps} from './KeyContainer'
 import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
+import TapDanceSubIcn from './TapDanceSubIcn'
 
 type Props = Partial<TypographyProps> & {
   shiftLgnd?: String | React.ReactNode
@@ -15,6 +16,8 @@ type Props = Partial<TypographyProps> & {
   KeyContainerProps?: KeyContainerProps
   customShiftCode?: boolean
   special?: boolean
+  tapDance?: boolean
+  homing?: boolean
 }
 
 export default function KeyLegend({
@@ -25,14 +28,17 @@ export default function KeyLegend({
   ShiftSubIcnProps,
   customShiftCode = false,
   special = false,
+  tapDance = false,
+  homing = false,
+  color = 'solarized.base00',
+  sx,
   ...rest
 }: Props) {
-  const {sx, color = 'solarized.base00', ...r} = rest
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
 
   return (
-    <KeyContainer {...KeyContainerProps}>
-      <ChildBox sx={{position: 'relative'}}>
+    <KeyContainer {...KeyContainerProps} homing={homing}>
+      <ChildBox sx={{overflow: 'visible'}}>
         {shiftLgnd ? (
           <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
         ) : null}
@@ -44,7 +50,8 @@ export default function KeyLegend({
           />
         ) : null}
         {special ? <SpecialSubLgnd /> : null}
-        <Type variant="h3" sx={{color, ...sx}} {...r}>
+        {tapDance ? <TapDanceSubIcn /> : null}
+        <Type variant="h3" sx={{color, ...sx}} {...rest}>
           {children}
         </Type>
       </ChildBox>

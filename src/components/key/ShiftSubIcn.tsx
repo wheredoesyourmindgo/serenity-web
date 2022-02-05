@@ -12,8 +12,8 @@ export default function ShiftSubIcn({customShiftCode, ...props}: Props) {
     <Box
       sx={{
         position: 'absolute',
-        right: -10,
-        top: -12
+        right: 4,
+        top: 0
       }}
     >
       <MuiFaIcon sx={{fontSize: 14, ...sx}} {...rest} />

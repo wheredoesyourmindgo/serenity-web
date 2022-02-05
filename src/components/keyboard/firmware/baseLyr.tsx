@@ -7,6 +7,7 @@ import {
   faBracketSquare,
   faComputerMouse,
   faFunction,
+  faLayerGroup,
   faOption,
   faRightToBracket,
   faUpLong
@@ -105,7 +106,7 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="H">
             h
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="N">
+          <KeyLegend {...sharedProps} shiftLgnd="N" homing>
             n
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="Y">
@@ -114,7 +115,7 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="G">
             g
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="T">
+          <KeyLegend {...sharedProps} shiftLgnd="T" homing>
             t
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="E">
@@ -225,18 +226,104 @@ export default function BaseLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon icon={faComputerMouse} />
+          <KeyIcon
+            icon={faComputerMouse}
+            lyrSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'mouse-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="hold" output="Mouse Layer" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faArrowUpLeftFromCircle} sx={{fontSize: 19}} />
-          <KeyIcon icon={faArrowTurnDownLeft} />
-          <KeyIcon icon={faArrowRightLongToLine} />
-          <KeyIcon icon={faBracketSquare} rotation={270} />
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            special
+            lyrSubIcn={faLayerGroup}
+            KeyContainerProps={{
+              keyId: 'lower-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Escape" />
+                  <br />
+                  <PopoverDesc
+                    action="hold"
+                    output="Num/Nav Layer (or Left Shift)"
+                  />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faArrowTurnDownLeft}
+            lyrSubIcn={faLayerGroup}
+            KeyContainerProps={{
+              keyId: 'low-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Enter" />
+                  <br />
+                  <PopoverDesc action="hold" output="Symbol Layer" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faArrowRightLongToLine}
+            lyrSubIcn={faLayerGroup}
+            KeyContainerProps={{
+              keyId: 'high-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Tab" />
+                  <br />
+                  <PopoverDesc action="hold" output="Media Layer" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            special
+            sx={{transform: 'translateY(6px)'}}
+            lyrSubIcn={faLayerGroup}
+            KeyContainerProps={{
+              keyId: 'higher-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Space" />
+                  <br />
+                  <PopoverDesc
+                    action="hold"
+                    output="Action Layer (or Right Shift)"
+                  />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faCommand} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faFunction} />
+          <KeyIcon
+            icon={faFunction}
+            lyrSubIcn={faLayerGroup}
+            KeyContainerProps={{
+              keyId: 'function-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="hold" output="Function Layer" />
+                </Box>
+              )
+            }}
+          />
         </RowBox>
       </ColumnBox>
     </Box>

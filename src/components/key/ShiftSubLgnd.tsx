@@ -6,7 +6,7 @@ export default function ShiftSubLgnd({children, ...props}: Props) {
   const {...rest} = props
 
   return (
-    <Box sx={{position: 'absolute', right: -14, top: -10}}>
+    <Box sx={{position: 'absolute', right: 6, top: -2}}>
       <Type variant="subtitle2" component="span" {...rest}>
         <>{children}</>
       </Type>
