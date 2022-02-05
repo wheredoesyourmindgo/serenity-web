@@ -9,8 +9,8 @@ export default function SpecialSubLgnd(props: Partial<MuiFaIconProps>) {
     <Box
       sx={{
         position: 'absolute',
-        left: -14,
-        top: -16
+        left: 6,
+        top: -4
       }}
     >
       <MuiFaIcon

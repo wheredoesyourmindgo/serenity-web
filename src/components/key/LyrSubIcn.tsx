@@ -5,7 +5,7 @@ type Props = MuiFaIconProps & {
   customShiftCode?: boolean
 }
 
-export default function ShiftSubIcn({customShiftCode, ...props}: Props) {
+export default function LyrSubIcn({customShiftCode, ...props}: Props) {
   const {sx, ...rest} = props
 
   return (
@@ -13,12 +13,12 @@ export default function ShiftSubIcn({customShiftCode, ...props}: Props) {
       sx={{
         position: 'absolute',
         right: 4,
-        top: 0
+        bottom: 0
       }}
     >
-      <MuiFaIcon sx={{fontSize: 14, ...sx}} {...rest} />
+      <MuiFaIcon sx={{fontSize: 12, ...sx}} {...rest} />
     </Box>
   )
 }
 
-export type {Props as ShiftSubIcnProps}
+export type {Props as LyrSubIcnProps}

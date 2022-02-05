@@ -2,9 +2,11 @@ import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
 import {Box} from '@mui/material'
 import {ChildBox} from 'mui-sleazebox'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
+import LyrSubIcn, {LyrSubIcnProps} from './LyrSubIcn'
 import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
+import TapDanceSubIcn from './TapDanceSubIcn'
 
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps
@@ -13,6 +15,10 @@ type Props = MuiFaIconProps & {
   ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
   customShiftCode?: boolean
   special?: boolean
+  tapDance?: boolean
+  homing?: boolean
+  lyrSubIcn?: LyrSubIcnProps['icon']
+  LyrSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
 }
 
 export default function KeyIcon({
@@ -23,15 +29,20 @@ export default function KeyIcon({
   icon,
   customShiftCode = false,
   special = false,
+  tapDance = false,
+  homing = false,
+  lyrSubIcn,
+  LyrSubIcnProps,
   ...rest
 }: Props) {
   const {sx, color, ...r} = rest
 
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
+  const lyrColor = 'solarized.green'
 
   return (
-    <KeyContainer {...KeyContainerProps}>
-      <ChildBox position="relative">
+    <KeyContainer {...KeyContainerProps} homing={homing}>
+      <ChildBox sx={{overflow: 'visible'}}>
         {shiftLgnd ? (
           <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
         ) : null}
@@ -43,16 +54,27 @@ export default function KeyIcon({
           />
         ) : null}
         {special ? <SpecialSubLgnd /> : null}
+        {tapDance ? <TapDanceSubIcn /> : null}
+        {lyrSubIcn ? (
+          <LyrSubIcn
+            icon={lyrSubIcn}
+            sx={{color: lyrColor}}
+            {...LyrSubIcnProps}
+          />
+        ) : null}
         <Box
           sx={{
-            ...(shiftSubIcn && {transform: 'translateY(8px)'})
+            ...(shiftSubIcn && {transform: 'translateY(4px)'}),
+            ...(lyrSubIcn && {transform: 'translateY(-4px)'})
           }}
         >
-          <MuiFaIcon
-            icon={icon}
-            sx={{color: color || 'solarized.base00', fontSize: 20, ...sx}}
-            {...r}
-          />
+          <Box sx={{transform: 'translateY(2px)'}}>
+            <MuiFaIcon
+              icon={icon}
+              sx={{color: color || 'solarized.base00', fontSize: 20, ...sx}}
+              {...r}
+            />
+          </Box>
         </Box>
       </ChildBox>
     </KeyContainer>

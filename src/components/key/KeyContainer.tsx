@@ -6,12 +6,14 @@ import React from 'react'
 type Props = FlexBoxProps & {
   keyId?: string
   popOverContent?: React.ReactNode | String
+  homing?: boolean
 }
 
 export default function KeyContainer({
   children,
   keyId,
   popOverContent,
+  homing,
   ...rest
 }: Props) {
   const {sx, ...r} = rest
@@ -33,6 +35,7 @@ export default function KeyContainer({
     <FlexBox
       child
       sx={{
+        position: 'relative',
         justifyContent: 'center',
         alignItems: 'center',
         overflow: 'none',
@@ -57,6 +60,13 @@ export default function KeyContainer({
             ? 'rgba(10, 37, 64, 0.1)'
             : 'rgba(245, 218, 162, 0.1)'
         } 0px -2px 6px 0px inset`,
+        ...(homing && {
+          background: `radial-gradient(circle farthest-side, ${alpha(
+            theme.palette.solarized.base0,
+            0.15
+          )}, ${theme.palette.background.default})`,
+          backgroundRepeat: 'no-repeat'
+        }),
         ...(popOverContent && {cursor: 'pointer'}),
         ...sx
       }}

@@ -6,6 +6,8 @@ import PageLayout from '../components/PageLayout'
 import BaseLyr from '@components/keyboard/firmware/baseLyr'
 import NumNavLyr from '@components/keyboard/firmware/numNavLyr'
 import SymLyr from '@components/keyboard/firmware/symLyr'
+import FuncLyr from '@components/keyboard/firmware/functionLyr'
+import ActionLyr from '@components/keyboard/firmware/actionLyr'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -67,6 +69,12 @@ export default function FirmwarePage() {
             <TabPanel value={value} index={2}>
               <SymLyr />
             </TabPanel>
+            <TabPanel value={value} index={3}>
+              <FuncLyr />
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+              <ActionLyr />
+            </TabPanel>
           </Box>
           <Box
             sx={{
@@ -84,6 +92,8 @@ export default function FirmwarePage() {
               <Tab label="Base" {...a11yProps(0)} />
               <Tab label="Number/Navigation" {...a11yProps(1)} />
               <Tab label="Symbol" {...a11yProps(2)} />
+              <Tab label="Function" {...a11yProps(3)} />
+              <Tab label="Action" {...a11yProps(4)} />
             </Tabs>
           </Box>
           {/* <Copyright /> */}
