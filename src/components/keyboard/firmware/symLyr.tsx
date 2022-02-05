@@ -4,18 +4,11 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faBracketSquare,
-  faComputerMouse,
-  faCopy,
-  faFunction,
   faLock,
   faLockA,
   faLockOpen,
   faOption,
-  faPaste,
-  faRedo,
   faRightToBracket,
-  faScissors,
-  faUndo,
   faUpLong
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
