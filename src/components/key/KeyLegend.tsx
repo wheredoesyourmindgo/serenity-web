@@ -3,6 +3,7 @@ import {ChildBox} from 'mui-sleazebox'
 import React from 'react'
 import {KeyContainer} from '.'
 import {KeyContainerProps} from './KeyContainer'
+import LyrSubIcn, {LyrSubIcnProps} from './LyrSubIcn'
 import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
@@ -18,6 +19,8 @@ type Props = Partial<TypographyProps> & {
   special?: boolean
   tapDance?: boolean
   homing?: boolean
+  lyrSubIcn?: LyrSubIcnProps['icon']
+  LyrSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
 }
 
 export default function KeyLegend({
@@ -30,11 +33,14 @@ export default function KeyLegend({
   special = false,
   tapDance = false,
   homing = false,
+  lyrSubIcn,
+  LyrSubIcnProps,
   color = 'solarized.base00',
   sx,
   ...rest
 }: Props) {
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
+  const lyrColor = 'solarized.green'
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
@@ -51,6 +57,13 @@ export default function KeyLegend({
         ) : null}
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
+        {lyrSubIcn ? (
+          <LyrSubIcn
+            icon={lyrSubIcn}
+            sx={{color: lyrColor}}
+            {...LyrSubIcnProps}
+          />
+        ) : null}
         <Type variant="h3" sx={{color, ...sx}} {...rest}>
           {children}
         </Type>

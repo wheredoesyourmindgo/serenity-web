@@ -3,6 +3,7 @@ import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
+  faArrowUpLeftFromCircle,
   faBracketSquare,
   faLock,
   faLockA,
@@ -140,8 +141,19 @@ export default function SymLyr() {
           <KeyIcon icon={faChevronUp} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 19}}
+            KeyContainerProps={{
+              keyId: 'escape-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Escape" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faLockOpen} />
-          <KeyIcon icon={faArrowTurnDownLeft} />
           <KeyIcon icon={faArrowRightLongToLine} />
           <KeyIcon
             icon={faBracketSquare}

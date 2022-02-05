@@ -5,6 +5,8 @@ import {
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
   faCopy,
+  faHandPointLeft,
+  faHandPointRight,
   faLayerGroup,
   faLock,
   faLockOpen,
@@ -58,7 +60,21 @@ export default function ActionLyr() {
               transform: 'translateX(2px)'
             }}
           />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faHandPointLeft}
+            shiftSubIcn={faHandPointRight}
+            KeyContainerProps={{
+              keyId: 'go-back-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Go Back (browser)" />
+                  <br />
+                  <PopoverDesc action="shifted" output="Go Forward" />
+                </Box>
+              )
+            }}
+          />
+
           <KeyIcon
             icon={faSquareUpLeft}
             KeyContainerProps={{
