@@ -2,7 +2,6 @@ import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
   faArrowRightLongToLine,
-  faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
   faBracketSquare,
   faLock,
