@@ -139,10 +139,39 @@ export default function FuncLyr() {
           >
             F8
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} tapDance homing>
+          <KeyLegend
+            {...sharedProps}
+            sx={fxSx}
+            tapDance
+            homing
+            KeyContainerProps={{
+              keyId: 'f9-f19-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="F9" />
+                  <br />
+                  <PopoverDesc action="double tap" output="F19" />
+                </Box>
+              )
+            }}
+          >
             F9
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} tapDance>
+          <KeyLegend
+            {...sharedProps}
+            sx={fxSx}
+            tapDance
+            KeyContainerProps={{
+              keyId: 'f10-f20-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="F10" />
+                  <br />
+                  <PopoverDesc action="double tap" output="F20" />
+                </Box>
+              )
+            }}
+          >
             F10
           </KeyLegend>
           <KeyIcon
@@ -174,16 +203,72 @@ export default function FuncLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} sx={fxSx} tapDance>
+          <KeyLegend
+            {...sharedProps}
+            sx={fxSx}
+            tapDance
+            KeyContainerProps={{
+              keyId: 'f11-f21-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="F11" />
+                  <br />
+                  <PopoverDesc action="double tap" output="F21" />
+                </Box>
+              )
+            }}
+          >
             F11
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} tapDance>
+          <KeyLegend
+            {...sharedProps}
+            sx={fxSx}
+            tapDance
+            KeyContainerProps={{
+              keyId: 'f12-f22-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="F12" />
+                  <br />
+                  <PopoverDesc action="double tap" output="F22" />
+                </Box>
+              )
+            }}
+          >
             F12
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} tapDance>
+          <KeyLegend
+            {...sharedProps}
+            sx={fxSx}
+            tapDance
+            KeyContainerProps={{
+              keyId: 'f13-f23-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="F13" />
+                  <br />
+                  <PopoverDesc action="double tap" output="F23" />
+                </Box>
+              )
+            }}
+          >
             F13
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} tapDance>
+          <KeyLegend
+            {...sharedProps}
+            sx={fxSx}
+            tapDance
+            KeyContainerProps={{
+              keyId: 'f14-f24-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="F14" />
+                  <br />
+                  <PopoverDesc action="double tap" output="F24" />
+                </Box>
+              )
+            }}
+          >
             F14
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>

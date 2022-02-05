@@ -264,6 +264,7 @@ export default function BaseLyr() {
           <KeyIcon
             icon={faArrowTurnDownLeft}
             lyrSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'low-layer-key',
               popOverContent: (
@@ -278,6 +279,7 @@ export default function BaseLyr() {
           <KeyIcon
             icon={faArrowRightLongToLine}
             lyrSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'high-layer-key',
               popOverContent: (
