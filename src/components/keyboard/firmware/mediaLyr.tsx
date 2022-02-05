@@ -4,29 +4,21 @@ import {
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
   faBackward,
-  faBackwardFast,
   faBracketSquare,
   faBrightness,
   faBrightnessLow,
   faCircleHalfStroke,
-  faCopy,
   faForward,
   faLock,
   faLockA,
   faLockOpen,
   faOption,
-  faPaste,
   faPlayPause,
-  faRedo,
-  faScissors,
-  faTableLayout,
   faTypewriter,
-  faUndo,
   faUpLong,
   faVolumeDown,
   faVolumeSlash,
-  faVolumeUp,
-  faWindowRestore
+  faVolumeUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
 import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
