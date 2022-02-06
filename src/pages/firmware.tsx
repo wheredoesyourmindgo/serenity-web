@@ -16,10 +16,12 @@ import {
   faBracketSquare,
   faFunction,
   faHouseUser,
+  faMouse,
   faTypewriter
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/qwertyLyr'
+import MouseLyr from '@components/keyboard/firmware/mouseLyr'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -93,6 +95,9 @@ export default function FirmwarePage() {
             <TabPanel value={value} index={6}>
               <QwertyLyr />
             </TabPanel>
+            <TabPanel value={value} index={7}>
+              <MouseLyr />
+            </TabPanel>
           </Box>
           <Box
             sx={{
@@ -141,6 +146,11 @@ export default function FirmwarePage() {
                 label="Qwerty"
                 icon={<MuiFaIcon icon={faTypewriter} />}
                 {...a11yProps(6)}
+              />
+              <Tab
+                label="Mouse"
+                icon={<MuiFaIcon icon={faMouse} />}
+                {...a11yProps(7)}
               />
             </Tabs>
           </Box>
