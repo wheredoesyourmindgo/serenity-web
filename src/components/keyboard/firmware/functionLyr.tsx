@@ -7,7 +7,6 @@ import {
   faLock,
   faLockOpen,
   faOption,
-  faRightToBracket,
   faUpLong
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
@@ -30,21 +29,14 @@ export default function FuncLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            customShiftCode
             icon={faDeleteRight}
             KeyContainerProps={{
               keyId: 'delete-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Delete" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Delete word right" />
                 </Box>
               )
-            }}
-            shiftSubIcn={faRightToBracket}
-            sx={{
-              transform: 'translateX(2px)'
             }}
           />
           <KeyLegend {...sharedProps} sx={fxSx}>
@@ -68,26 +60,19 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            customShiftCode
             icon={faDeleteLeft}
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Backspace word left" />
                 </Box>
               )
             }}
-            shiftSubIcn={faRightToBracket}
-            ShiftSubIcnProps={{flip: 'horizontal'}}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="~">
-            `
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
