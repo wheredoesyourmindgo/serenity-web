@@ -17,11 +17,13 @@ import {
   faFunction,
   faHouseUser,
   faMouse,
+  faPlus,
   faTypewriter
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/qwertyLyr'
 import MouseLyr from '@components/keyboard/firmware/mouseLyr'
+import OsLyr from '@components/keyboard/firmware/osLyr'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -73,30 +75,34 @@ export default function FirmwarePage() {
           >
             Firmware
           </Type>
+
           <Box pt={4}>
             <TabPanel value={value} index={0}>
               <BaseLyr />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <NumNavLyr />
+              <MouseLyr />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <SymLyr />
+              <NumNavLyr />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              <FuncLyr />
+              <SymLyr />
             </TabPanel>
             <TabPanel value={value} index={4}>
-              <ActionLyr />
-            </TabPanel>
-            <TabPanel value={value} index={5}>
               <MediaLyr />
             </TabPanel>
+            <TabPanel value={value} index={5}>
+              <ActionLyr />
+            </TabPanel>
             <TabPanel value={value} index={6}>
-              <QwertyLyr />
+              <FuncLyr />
             </TabPanel>
             <TabPanel value={value} index={7}>
-              <MouseLyr />
+              <OsLyr />
+            </TabPanel>
+            <TabPanel value={value} index={8}>
+              <QwertyLyr />
             </TabPanel>
           </Box>
           <Box
@@ -114,43 +120,92 @@ export default function FirmwarePage() {
             >
               <Tab
                 label="Base"
-                icon={<MuiFaIcon icon={faHouseUser} />}
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faHouseUser} />
+                  </Box>
+                }
                 {...a11yProps(0)}
               />
               <Tab
-                label="Num/Nav"
-                icon={<MuiFaIcon icon={faArrowUpLeftFromCircle} />}
+                label="Mouse"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faMouse} />
+                  </Box>
+                }
                 {...a11yProps(1)}
               />
               <Tab
-                label="Symbol"
-                icon={<MuiFaIcon icon={faArrowTurnDownLeft} />}
+                label="Num/Nav"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faArrowUpLeftFromCircle} />
+                  </Box>
+                }
                 {...a11yProps(2)}
               />
               <Tab
-                label="Function"
-                icon={<MuiFaIcon icon={faFunction} />}
+                label="Symbol"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faArrowTurnDownLeft} />
+                  </Box>
+                }
                 {...a11yProps(3)}
               />
               <Tab
-                label="Action"
-                icon={<MuiFaIcon icon={faBracketSquare} rotation={270} />}
+                label="Media"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faArrowRightLongToLine} />
+                  </Box>
+                }
                 {...a11yProps(4)}
               />
               <Tab
-                label="Media"
-                icon={<MuiFaIcon icon={faArrowRightLongToLine} />}
+                label="Action"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faBracketSquare} rotation={270} />
+                  </Box>
+                }
                 {...a11yProps(5)}
               />
               <Tab
-                label="Qwerty"
-                icon={<MuiFaIcon icon={faTypewriter} />}
+                label="Function"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faFunction} />
+                  </Box>
+                }
                 {...a11yProps(6)}
               />
               <Tab
-                label="Mouse"
-                icon={<MuiFaIcon icon={faMouse} />}
+                label="OS"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon
+                      icon={faArrowUpLeftFromCircle}
+                      sx={{paddingRight: 0.5}}
+                    />
+                    <MuiFaIcon
+                      icon={faPlus}
+                      sx={{paddingRight: 1, color: 'solarized.base0'}}
+                    />
+                    <MuiFaIcon icon={faBracketSquare} rotation={270} />
+                  </Box>
+                }
                 {...a11yProps(7)}
+              />
+              <Tab
+                label="Qwerty"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faTypewriter} />
+                  </Box>
+                }
+                {...a11yProps(8)}
               />
             </Tabs>
           </Box>

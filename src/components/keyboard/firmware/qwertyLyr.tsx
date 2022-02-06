@@ -84,8 +84,8 @@ export default function QwertyLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd='"'>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd="_">
+            -
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="A">
             a
@@ -117,8 +117,8 @@ export default function QwertyLyr() {
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
+          <KeyLegend {...sharedProps} shiftLgnd='"'>
+            '
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>

@@ -19,6 +19,7 @@ type Props = MuiFaIconProps & {
   homing?: boolean
   lyrSubIcn?: LyrSubIcnProps['icon']
   LyrSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
+  children?: React.ReactNode
 }
 
 export default function KeyIcon({
@@ -33,6 +34,7 @@ export default function KeyIcon({
   homing = false,
   lyrSubIcn,
   LyrSubIcnProps,
+  children,
   ...rest
 }: Props) {
   const {sx, color, ...r} = rest
@@ -68,12 +70,27 @@ export default function KeyIcon({
             ...(lyrSubIcn && {transform: 'translateY(-4px)'})
           }}
         >
-          <Box sx={{transform: 'translateY(2px)'}}>
-            <MuiFaIcon
-              icon={icon}
-              sx={{color: color || 'solarized.base00', fontSize: 20, ...sx}}
-              {...r}
-            />
+          <Box sx={{transform: 'translateY(2px)'}} position="relative">
+            <Box overflow="visible">
+              <Box>
+                <MuiFaIcon
+                  icon={icon}
+                  sx={{color: color || 'solarized.base00', fontSize: 20, ...sx}}
+                  {...r}
+                />
+              </Box>
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0
+                }}
+              >
+                {children}
+              </Box>
+            </Box>
           </Box>
         </Box>
       </ChildBox>
