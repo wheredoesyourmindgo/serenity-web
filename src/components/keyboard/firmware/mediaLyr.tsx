@@ -9,6 +9,7 @@ import {
   faBrightnessLow,
   faCircleHalfStroke,
   faForward,
+  faLayerGroup,
   faLock,
   faLockA,
   faLockOpen,
@@ -36,6 +37,8 @@ export default function MediaLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faTypewriter}
+            lyrSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'qwerty-key',
               popOverContent: (

@@ -52,10 +52,10 @@ export default function MouseLyr() {
             Btn1
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Btn3
+            Btn2
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Btn2
+            Btn3
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             Btn4
@@ -100,7 +100,19 @@ export default function MouseLyr() {
               )
             }}
           />
-          <KeyLegend homing {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            homing
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-move-left-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Move Left" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon
               icon={faArrowPointer}
               sx={{paddingRight: 0.5}}
@@ -108,7 +120,18 @@ export default function MouseLyr() {
             />
             L
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-move-down-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Move Down" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon
               icon={faArrowPointer}
               sx={{paddingRight: 0.5}}
@@ -116,7 +139,18 @@ export default function MouseLyr() {
             />
             D
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-move-up-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Move Up" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon
               icon={faArrowPointer}
               sx={{paddingRight: 0.5}}
@@ -124,7 +158,18 @@ export default function MouseLyr() {
             />
             U
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-move-right-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Move Right" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon
               icon={faArrowPointer}
               sx={{paddingRight: 0.5}}
@@ -153,7 +198,18 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-wheel-left-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Wheel Left" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon
               icon={faSort}
               sx={{paddingRight: 0.5}}
@@ -162,13 +218,46 @@ export default function MouseLyr() {
             />
             L
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-wheel-down-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Wheel Down" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon icon={faSort} sx={{paddingRight: 0.5}} fontSize={14} />D
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-wheel-up-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Wheel Up" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon icon={faSort} sx={{paddingRight: 0.5}} fontSize={14} />U
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 16}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 16}}
+            KeyContainerProps={{
+              keyId: 'mouse-wheel-right-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Wheel Right" />
+                </Box>
+              )
+            }}
+          >
             <MuiFaIcon
               icon={faSort}
               sx={{paddingRight: 0.5}}
