@@ -1,7 +1,19 @@
 import React, {useState} from 'react'
-import {Box, Container, Tab, Tabs, Typography as Type} from '@mui/material'
+import {
+  Box,
+  Container,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  Paper,
+  Tab,
+  Tabs,
+  Typography as Type
+} from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ColumnBox} from 'mui-sleazebox'
+import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
 import BaseLyr from '@components/keyboard/firmware/baseLyr'
 import NumNavLyr from '@components/keyboard/firmware/numNavLyr'
@@ -13,9 +25,11 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
+  faAsterisk,
   faBracketSquare,
   faFunction,
   faHouseUser,
+  faLayerGroup,
   faMouse,
   faPlus,
   faTypewriter
@@ -24,6 +38,7 @@ import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/qwertyLyr'
 import MouseLyr from '@components/keyboard/firmware/mouseLyr'
 import OsLyr from '@components/keyboard/firmware/osLyr'
+import {faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -109,6 +124,7 @@ export default function FirmwarePage() {
             sx={{
               marginTop: 6,
               bgcolor: 'background.paper'
+              // borderRadius: 1
               // borderBottom: 1,
               // borderColor: 'divider'
             }}
@@ -211,6 +227,43 @@ export default function FirmwarePage() {
           </Box>
           {/* <Copyright /> */}
         </ColumnBox>
+        <RowBox justifyContent="space-around">
+          <ChildBox />
+          <ChildBox>
+            <Paper elevation={2} sx={{borderRadius: 1}}>
+              <Box sx={{padding: 2, bgcolor: 'inherit', borderRadius: 1}}>
+                {/* <Type variant="subtitle1">Legend</Type> */}
+                <List dense>
+                  <ListSubheader>Legend</ListSubheader>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon icon={faSwatchbook} color="solarized.violet" />
+                    </ListItemIcon>
+                    <ListItemText primary="Custom Shift Key" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon icon={faSwatchbook} color="solarized.cyan" />
+                    </ListItemIcon>
+                    <ListItemText primary="Stackable One-shot Mod" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon icon={faAsterisk} color="solarized.yellow" />
+                    </ListItemIcon>
+                    <ListItemText primary="Special (see notes)" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon icon={faLayerGroup} color="solarized.green" />
+                    </ListItemIcon>
+                    <ListItemText primary="Layer" />
+                  </ListItem>
+                </List>
+              </Box>
+            </Paper>
+          </ChildBox>
+        </RowBox>
       </Container>
     </PageLayout>
   )

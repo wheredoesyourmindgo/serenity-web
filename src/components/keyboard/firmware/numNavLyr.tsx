@@ -127,10 +127,12 @@ export default function NumNavLyr() {
             }}
           />
           <KeyLegend {...sharedProps}>.</KeyLegend>
+
           <KeyIcon icon={faArrowLeft} homing />
           <KeyIcon icon={faArrowDown} />
           <KeyIcon icon={faArrowUp} />
           <KeyIcon icon={faArrowRight} />
+
           <KeyLegend {...sharedProps}>=</KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -229,6 +231,7 @@ export default function NumNavLyr() {
               )
             }}
           />
+
           <KeyIcon
             icon={faPageCaretDown}
             KeyContainerProps={{
@@ -262,6 +265,7 @@ export default function NumNavLyr() {
               )
             }}
           />
+
           <KeyIcon
             icon={faSignatureLock}
             KeyContainerProps={{

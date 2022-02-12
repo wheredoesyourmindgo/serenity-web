@@ -87,7 +87,7 @@ export default function SymLyr() {
           <KeyIcon icon={faCommand} color="solarized.cyan" />
           <KeyIcon icon={faUpLong} color="solarized.cyan" homing />
           <KeyIcon icon={faLock} />
-          <KeyLegend {...sharedProps}>|</KeyLegend>
+          <KeyLegend {...sharedProps}>?</KeyLegend>
           <KeyLegend {...sharedProps} homing>
             {'{'}
           </KeyLegend>
@@ -118,11 +118,11 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>\</KeyLegend>
+          <KeyLegend {...sharedProps}>|</KeyLegend>
           <KeyLegend {...sharedProps}>/</KeyLegend>
           <KeyLegend {...sharedProps}>[</KeyLegend>
           <KeyLegend {...sharedProps}>]</KeyLegend>
-          <KeyLegend {...sharedProps}>?</KeyLegend>
+          <KeyLegend {...sharedProps}>\</KeyLegend>
           <KeyIcon
             icon={faLockA}
             KeyContainerProps={{
