@@ -7,10 +7,13 @@ import {Box, BoxProps} from '@mui/system'
 type Props = Pick<BoxProps, 'sx'> & FontAwesomeIconProps
 
 export default function MuiFaIcon({...props}: Props) {
-  const {sx, ...rest} = props
+  const {sx, color, ...rest} = props
 
   return (
-    <Box sx={{display: 'inline-flex', ...sx}} component="span">
+    <Box
+      sx={{display: 'inline-flex', ...(color && {color}), ...sx}}
+      component="span"
+    >
       <FontAwesomeIcon {...rest} />
     </Box>
   )

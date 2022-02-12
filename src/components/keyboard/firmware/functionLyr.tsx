@@ -72,11 +72,22 @@ export default function FuncLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock Function Layer" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f16"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f6-f16-key',
               popOverContent: (
@@ -93,7 +104,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f17"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f7-f17-key',
               popOverContent: (
@@ -110,7 +122,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f18"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f8-f18-key',
               popOverContent: (
@@ -127,7 +140,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f19"
+            customShiftCode
             homing
             KeyContainerProps={{
               keyId: 'f9-f19-key',
@@ -145,7 +159,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f20"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f10-f20-key',
               popOverContent: (
@@ -159,17 +174,7 @@ export default function FuncLyr() {
           >
             F10
           </KeyLegend>
-          <KeyIcon
-            icon={faLock}
-            KeyContainerProps={{
-              keyId: 'lock-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock Function Layer" />
-                </Box>
-              )
-            }}
-          />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -191,7 +196,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f21"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f11-f21-key',
               popOverContent: (
@@ -208,7 +214,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f22"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f12-f22-key',
               popOverContent: (
@@ -225,7 +232,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f23"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f13-f23-key',
               popOverContent: (
@@ -242,7 +250,8 @@ export default function FuncLyr() {
           <KeyLegend
             {...sharedProps}
             sx={fxSx}
-            tapDance
+            shiftLgnd="f24"
+            customShiftCode
             KeyContainerProps={{
               keyId: 'f14-f24-key',
               popOverContent: (

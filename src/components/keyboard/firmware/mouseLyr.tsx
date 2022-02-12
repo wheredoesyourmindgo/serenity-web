@@ -78,17 +78,8 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon
-            icon={faLock}
-            KeyContainerProps={{
-              keyId: 'lock-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock Mouse Layer" />
-                </Box>
-              )
-            }}
-          />
+
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faLockA}
             KeyContainerProps={{
@@ -120,6 +111,7 @@ export default function MouseLyr() {
             />
             L
           </KeyLegend>
+
           <KeyLegend
             {...sharedProps}
             sx={{fontSize: 16}}
@@ -177,7 +169,18 @@ export default function MouseLyr() {
             />
             R
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock Mouse Layer" />
+                </Box>
+              )
+            }}
+          />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
@@ -198,6 +201,7 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
+
           <KeyLegend
             {...sharedProps}
             sx={{fontSize: 16}}
