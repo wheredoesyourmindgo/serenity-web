@@ -33,8 +33,8 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>SET MARK</Type>
-            <Divider />
+            {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
+            {/* <Divider /> */}
             <Type {...sharedTypeProps}>
               register
               <br />
@@ -68,7 +68,7 @@ export default function AlphaKeys() {
               char
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} special>
             <Type {...sharedTypeProps}>UN-EXP.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -76,10 +76,15 @@ export default function AlphaKeys() {
               <br /> expansion
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          {/* <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>SCROLL TOP</Type>
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
+          </KeyLegend> */}
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>TILL REV.</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>till</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
@@ -128,13 +133,7 @@ export default function AlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              GOTO mark
-              <br />
-              bol.
-            </Type>
-            <Divider />
-            <Type {...sharedTypeProps}>g cmds.</Type>
+            <Type {...sharedTypeProps}>set mark</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>SUBST LINE</Type>
@@ -177,12 +176,25 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              FIND
+              <br />
+              CHAR REV.
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>find char</Type>
+          </KeyLegend>
+          {/* <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>SCROLL MID</Type>
             <Divider />
             <Type {...sharedTypeProps}>screen mid</Type>
-          </KeyLegend>
+          </KeyLegend> */}
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>HARD BOL. </Type>
+            <Type {...sharedTypeProps}>
+              TILL/FIND
+              <br />
+              CHAR PREV.
+            </Type>
             <Divider />
             <Type {...sharedTypeProps}>
               soft bol.
@@ -192,29 +204,38 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              SCRL. DOWN
+              NEXT
               <br />
-              (1 ln.)
+              PARAGRAPH
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              SCRL. UP
+              PREV.
               <br />
-              (1 ln.)
+              PARAGRAPH
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              TILL/FIND
+              <br />
+              CHAR NEXT
+            </Type>
+            <Divider />
             <Type {...sharedTypeProps}>eol.</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>GOTO MARK</Type>
+            <Type {...sharedTypeProps}>
+              GOTO MARK
+              <br /> BOL.
+            </Type>
             <Divider />
-            <Type {...sharedTypeProps}>goto line</Type>
+            <Type {...sharedTypeProps}>goto mark</Type>
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -234,12 +255,96 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              DELTE
+              YANK
               <br /> EOL.
             </Type>
             <Divider />
-            <Type {...sharedTypeProps}>delete</Type>
+            <Type {...sharedTypeProps}>yank</Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              PASTE
+              <br /> BEFORE
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              paste
+              <br />
+              after
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              REPEAT
+              <br /> SUB.
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>redo</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>FIND REV.</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>find</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>FIND PREV.</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              prev. word
+              <br />
+              instance
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              HALF <br />
+              PG. DOWN
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>pg. down</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              HALF <br />
+              PG. UP
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>pg. up</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>FIND NEXT</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              next word
+              <br />
+              instance
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              command
+              <br />
+              mode
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>redo</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>{`<leader>`}</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>
     </Box>

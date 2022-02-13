@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useState} from 'react'
 import {Box, Container, Tab, Tabs, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
@@ -11,6 +11,10 @@ import {
   faMouse
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
+import AlphaKeys from '@components/keyboard/vim/alphaKeys'
+import TextObjKeys from '@components/keyboard/vim/textObjKeys'
+import SymbolKeys from '@components/keyboard/vim/symbolKeys'
+import LeaderKeys from '@components/keyboard/vim/leaderKeys'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -48,15 +52,6 @@ export default function VimPage() {
     setValue(newValue)
   }
 
-  const Woi = useCallback(
-    () => (
-      <Type variant="h4">
-        <em>Working on it...</em>
-      </Type>
-    ),
-    []
-  )
-
   return (
     <PageLayout>
       <Container sx={{m: 'auto'}}>
@@ -75,20 +70,16 @@ export default function VimPage() {
 
           <Box pt={4}>
             <TabPanel value={value} index={0}>
-              {/* <AlphaKeys /> */}
-              <Woi />
+              <AlphaKeys />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              {/* <MouseLyr /> */}
-              <Woi />
+              <TextObjKeys />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              {/* <NumNavLyr /> */}
-              <Woi />
+              <SymbolKeys />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              {/* <SymLyr /> */}
-              <Woi />
+              <LeaderKeys />
             </TabPanel>
           </Box>
           <Box
@@ -115,7 +106,7 @@ export default function VimPage() {
                 {...a11yProps(0)}
               />
               <Tab
-                label="Numbers"
+                label="Object Select"
                 icon={
                   <Box component="span">
                     <MuiFaIcon icon={faMouse} />
