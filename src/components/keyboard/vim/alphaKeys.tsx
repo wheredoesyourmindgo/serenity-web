@@ -42,13 +42,9 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>JOIN LINES</Type>
+            <Type {...sharedTypeProps}>Z CMDS</Type>
             <Divider />
-            <Type {...sharedTypeProps}>
-              toggle
-              <br />
-              case
-            </Type>
+            <Type {...sharedTypeProps}>g cmds</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
@@ -197,25 +193,25 @@ export default function AlphaKeys() {
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              soft bol.
+              prev.
               <br />
-              down
+              sentence
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              NEXT
+              SCROLL
               <br />
-              PARAGRAPH
+              DOWN
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              PREV.
+              SCROLL
               <br />
-              PARAGRAPH
+              UP
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
@@ -227,7 +223,11 @@ export default function AlphaKeys() {
               CHAR NEXT
             </Type>
             <Divider />
-            <Type {...sharedTypeProps}>eol.</Type>
+            <Type {...sharedTypeProps}>
+              next
+              <br />
+              sentence
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
@@ -297,19 +297,17 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              HALF <br />
-              PG. DOWN
+              next
+              <br />
+              paragraph
             </Type>
-            <Divider />
-            <Type {...sharedTypeProps}>pg. down</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              HALF <br />
-              PG. UP
+              prev.
+              <br />
+              paragraph
             </Type>
-            <Divider />
-            <Type {...sharedTypeProps}>pg. up</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>FIND NEXT</Type>

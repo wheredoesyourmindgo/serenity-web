@@ -14,7 +14,9 @@ import MuiFaIcon from '@components/MuiFaIcon'
 import AlphaKeys from '@components/keyboard/vim/alphaKeys'
 import TextObjKeys from '@components/keyboard/vim/textObjKeys'
 import SymbolKeys from '@components/keyboard/vim/symbolKeys'
-import LeaderKeys from '@components/keyboard/vim/leaderKeys'
+import LeaderAlphaKeys from '@components/keyboard/vim/leaderAlphaKeys'
+import LeaderNumNavKeys from '@components/keyboard/vim/leaderNumNavKeys'
+import NumNavKeys from '@components/keyboard/vim/numNavKeys'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -73,13 +75,19 @@ export default function VimPage() {
               <AlphaKeys />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <TextObjKeys />
+              <NumNavKeys />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <SymbolKeys />
+              <TextObjKeys />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              <LeaderKeys />
+              <SymbolKeys />
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+              <LeaderAlphaKeys />
+            </TabPanel>
+            <TabPanel value={value} index={5}>
+              <LeaderNumNavKeys />
             </TabPanel>
           </Box>
           <Box
@@ -106,13 +114,22 @@ export default function VimPage() {
                 {...a11yProps(0)}
               />
               <Tab
+                label="Num/Nav"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faHouseUser} />
+                  </Box>
+                }
+                {...a11yProps(1)}
+              />
+              <Tab
                 label="Object Select"
                 icon={
                   <Box component="span">
                     <MuiFaIcon icon={faMouse} />
                   </Box>
                 }
-                {...a11yProps(1)}
+                {...a11yProps(2)}
               />
               <Tab
                 label="Symbols"
@@ -121,7 +138,7 @@ export default function VimPage() {
                     <MuiFaIcon icon={faArrowUpLeftFromCircle} />
                   </Box>
                 }
-                {...a11yProps(2)}
+                {...a11yProps(3)}
               />
               <Tab
                 label="Leaders"
@@ -130,7 +147,16 @@ export default function VimPage() {
                     <MuiFaIcon icon={faArrowTurnDownLeft} />
                   </Box>
                 }
-                {...a11yProps(3)}
+                {...a11yProps(4)}
+              />
+              <Tab
+                label="Leaders num/nav"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faArrowTurnDownLeft} />
+                  </Box>
+                }
+                {...a11yProps(5)}
               />
             </Tabs>
           </Box>

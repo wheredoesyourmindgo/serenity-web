@@ -31,40 +31,11 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              expert
-              <br /> mode
-            </Type>
-          </KeyLegend>
-
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              jump
-              <br />
-              to top
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              prev. <br />
-              sentence
-            </Type>
-          </KeyLegend>
-
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              next <br />
-              sentence
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              scroll
-              <br />
-              bottom
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -76,15 +47,16 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              g <br />
-              command
+              goto
+              <br />
+              match
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              jump to
+              bracket
               <br />
-              middle
+              cmd. left
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
@@ -103,9 +75,9 @@ export default function SymbolKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              scroll to
+              bracket
               <br />
-              middle
+              cmd. right
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
@@ -117,33 +89,24 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} special>
             <Type {...sharedTypeProps}>
-              z<br /> command
+              add sel.
+              <br />
+              prev.
+              <br /> match
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} special>
             <Type {...sharedTypeProps}>
-              jump to
-              <br /> bottom
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              scroll
-              <br /> down
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              scroll
-              <br /> up
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              scroll
-              <br /> top
+              add sel.
+              <br />
+              next
+              <br />
+              match
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
