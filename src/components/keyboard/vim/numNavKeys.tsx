@@ -1,9 +1,9 @@
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box, Typography as Type} from '@mui/material'
+import {Box, Divider, Typography as Type} from '@mui/material'
 
-export default function SymbolKeys() {
+export default function NumNavKeys() {
   const sharedProps: KeyLegendProps = {
     variant: 'h5',
     fontSize: 10,
@@ -45,40 +45,18 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              goto
-              <br />
-              match
-            </Type>
+            <Type {...sharedTypeProps}>left</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              bracket
-              <br />
-              cmd. left
-            </Type>
+            <Type {...sharedTypeProps}>down</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              jump to
-              <br />
-              last ln.
-            </Type>
+            <Type {...sharedTypeProps}>up</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              jump to
-              <br />
-              first ln.
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              bracket
-              <br />
-              cmd. right
-            </Type>
+            <Type {...sharedTypeProps}>right</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
         </RowBox>
@@ -90,24 +68,33 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} special>
+          <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              add sel.
+              HARD BOL.
+              <Divider />
+              soft bol.
               <br />
-              prev.
-              <br /> match
+              down
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} special>
+          <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              add sel.
-              <br />
-              next
-              <br />
-              match
+              HALF <br />
+              PG. DOWN
             </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>pg. down</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              HALF <br />
+              PG. UP
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>pg. up</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>eol.</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
         </RowBox>
