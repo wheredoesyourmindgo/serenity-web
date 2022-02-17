@@ -27,9 +27,27 @@ export default function SymbolKeys() {
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              expert
+              <br />
+              mode
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              join
+              <br />
+              lines
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              toggle
+              <br />
+              case
+            </Type>{' '}
+          </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -59,20 +77,8 @@ export default function SymbolKeys() {
               cmd. left
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              jump to
-              <br />
-              last ln.
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              jump to
-              <br />
-              first ln.
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
               bracket

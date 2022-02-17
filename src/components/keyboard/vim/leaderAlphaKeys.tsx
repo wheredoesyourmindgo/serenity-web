@@ -27,27 +27,9 @@ export default function LeaderAlphaKeys() {
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              expert
-              <br />
-              mode
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              join
-              <br />
-              lines
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              toggle
-              <br />
-              case
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
 
@@ -96,26 +78,6 @@ export default function LeaderAlphaKeys() {
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              BLOCK
-              <br />
-              COMMENT
-            </Type>
-            <Divider />
-            <Type {...sharedTypeProps}>
-              line
-              <br />
-              comment
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-
-          <KeyLegend {...sharedProps} />
-
-          <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>unindent</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
@@ -135,6 +97,24 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>indent</Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              BLOCK
+              <br />
+              COMMENT
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              line
+              <br />
+              comment
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
         </RowBox>
         <RowBox child flexSpacing={1}>
