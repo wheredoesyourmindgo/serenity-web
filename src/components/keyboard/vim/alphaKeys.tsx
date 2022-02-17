@@ -187,15 +187,15 @@ export default function AlphaKeys() {
           </KeyLegend> */}
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              TILL/FIND
+              PREV.
               <br />
-              CHAR PREV.
+              SENTENCE
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              prev.
+              till/find
               <br />
-              sentence
+              char prev.
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
@@ -287,15 +287,21 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>find</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>FIND PREV.</Type>
-            <Divider />
             <Type {...sharedTypeProps}>
-              prev. word
+              PREV. WORD
               <br />
-              instance
+              INSTANCE
             </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>find prev.</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              JUMP TO
+              <br />
+              LAST LN.
+            </Type>
+            <Divider />
             <Type {...sharedTypeProps}>
               next
               <br />
@@ -304,19 +310,25 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
+              JUMP TO
+              <br />
+              FIRST LN.
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
               prev.
               <br />
               paragraph
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>FIND NEXT</Type>
-            <Divider />
             <Type {...sharedTypeProps}>
-              next word
+              NEXT WORD
               <br />
-              instance
+              INSTANCE
             </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>find next</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
         </RowBox>
