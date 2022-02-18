@@ -200,33 +200,33 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              SCROLL
+              JUMP TO
               <br />
-              DOWN
+              LAST LN.
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              SCROLL
+              JUMP TO
               <br />
-              UP
+              FIRST LN.
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              TILL/FIND
+              NEXT
               <br />
-              CHAR NEXT
+              SENTENCE
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              next
+              till/find
               <br />
-              sentence
+              char next
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
@@ -297,28 +297,28 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              JUMP TO
+              NEXT
               <br />
-              LAST LN.
+              PARAGRAPH
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              next
+              scroll
               <br />
-              paragraph
+              down
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              JUMP TO
+              PREV.
               <br />
-              FIRST LN.
+              PARAGRAPH
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              prev.
+              scroll
               <br />
-              paragraph
+              up
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
