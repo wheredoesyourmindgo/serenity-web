@@ -5,7 +5,7 @@ import {ColumnBox} from 'mui-sleazebox'
 import AlphaKeyboard from '@components/keyboard/alphas'
 import PageLayout from '../components/PageLayout'
 
-export default function IndexPag() {
+export default function IndexPage() {
   return (
     <PageLayout>
       <Container sx={{m: 'auto'}}>

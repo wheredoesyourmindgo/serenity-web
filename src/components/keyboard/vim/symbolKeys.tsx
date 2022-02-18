@@ -46,9 +46,15 @@ export default function SymbolKeys() {
               toggle
               <br />
               case
-            </Type>{' '}
+            </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} special>
+            <Type {...sharedTypeProps}>
+              hover
+              <br />
+              popup
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -72,18 +78,30 @@ export default function SymbolKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              bracket
+              previous
               <br />
-              cmd. left
+              bracket
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
-              bracket
+              next
               <br />
-              cmd. right
+              bracket
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              previous
+              <br />
+              bracket
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              next
+              <br />
+              bracket
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
@@ -95,7 +113,15 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} special>
+            <Type {...sharedTypeProps}>
+              goto
+              <br />
+              defi-
+              <br />
+              nition
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} special>
             <Type {...sharedTypeProps}>
               add sel.
