@@ -43,14 +43,14 @@ export default function TextObjKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>AROUND</Type>
             <Divider />
             <Type {...sharedTypeProps}>inner</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

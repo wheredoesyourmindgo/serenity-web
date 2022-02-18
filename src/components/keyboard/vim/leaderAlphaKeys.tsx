@@ -30,9 +30,22 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-
+          <KeyLegend {...sharedProps} special>
+            <Type {...sharedTypeProps}>
+              hover
+              <br />
+              popup
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} special>
+            <Type {...sharedTypeProps}>
+              goto
+              <br />
+              defi-
+              <br />
+              nition
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
               end prev.
@@ -94,7 +107,7 @@ export default function LeaderAlphaKeys() {
               up
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} homing>
             <Type {...sharedTypeProps}>indent</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>
@@ -111,7 +124,7 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -119,11 +132,23 @@ export default function LeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              toggle
+              <br />
+              fold
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} special>
+            <Type {...sharedTypeProps}>
+              reflow
+              <br />
+              text
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
