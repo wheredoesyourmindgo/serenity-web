@@ -77,7 +77,7 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} homing />
 
           <KeyLegend {...sharedProps} />
           <KeyIcon

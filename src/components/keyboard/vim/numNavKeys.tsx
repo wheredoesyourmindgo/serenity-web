@@ -43,10 +43,10 @@ export default function NumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} homing>
             <Type {...sharedTypeProps}>left</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps}>

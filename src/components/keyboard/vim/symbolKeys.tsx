@@ -48,13 +48,8 @@ export default function SymbolKeys() {
               case
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} special>
-            <Type {...sharedTypeProps}>
-              hover
-              <br />
-              popup
-            </Type>
-          </KeyLegend>
+
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -67,7 +62,7 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>
@@ -76,7 +71,7 @@ export default function SymbolKeys() {
               match
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} homing>
             <Type {...sharedTypeProps}>
               previous
               <br />
@@ -113,15 +108,7 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} special>
-            <Type {...sharedTypeProps}>
-              goto
-              <br />
-              defi-
-              <br />
-              nition
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} special>
             <Type {...sharedTypeProps}>
               add sel.

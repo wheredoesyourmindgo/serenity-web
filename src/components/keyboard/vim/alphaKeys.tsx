@@ -149,7 +149,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>append</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} homing>
             <Type {...sharedTypeProps}>
               OPEN
               <br /> ABOVE
@@ -185,7 +185,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen mid</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} homing>
             <Type {...sharedTypeProps}>
               PREV.
               <br />
