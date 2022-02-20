@@ -52,6 +52,7 @@ export default function KeyIcon({
   // const {sx: VimRefIcnSx, ...VimRefIcnRest} = VimRefIcnProps || {}
   const {sx: ShiftSubIcnSx, ...ShiftSubIcnRest} = ShiftSubIcnProps || {}
   const {sx: modHoldSubIcnSx, ...ModHoldSubIcnRest} = ModHoldSubIcnProps || {}
+  const {sx: lyrHoldSubIcnSx, ...LyrHoldSubIcnRest} = LyrHoldSubIcnProps || {}
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
@@ -72,8 +73,8 @@ export default function KeyIcon({
         {lyrHoldSubIcn ? (
           <HoldSubIcn
             icon={lyrHoldSubIcn}
-            sx={{color: lyrColor}}
-            {...LyrHoldSubIcnProps}
+            sx={{color: lyrColor, ...lyrHoldSubIcnSx}}
+            {...LyrHoldSubIcnRest}
           />
         ) : null}
         {modHoldSubIcn ? (
