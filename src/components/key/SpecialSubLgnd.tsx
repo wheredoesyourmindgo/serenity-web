@@ -4,7 +4,7 @@ import {Box} from '@mui/material'
 
 export default function SpecialSubLgnd(props: Partial<MuiFaIconProps>) {
   const {sx, ...rest} = props
-  const specialColor = 'solarized.yellow'
+  const specialColor = 'solarized.red'
   return (
     <Box
       sx={{

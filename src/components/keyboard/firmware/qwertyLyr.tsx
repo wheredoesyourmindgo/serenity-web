@@ -12,7 +12,7 @@ import {
   faComputerMouse,
   faLayerGroup,
   faOption,
-  faUpLong
+  faUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -123,7 +123,7 @@ export default function QwertyLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -162,7 +162,7 @@ export default function QwertyLyr() {
           </KeyLegend>
           <KeyIcon icon={faArrowUp} />
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (

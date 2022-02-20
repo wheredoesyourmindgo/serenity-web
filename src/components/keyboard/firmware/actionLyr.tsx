@@ -21,7 +21,7 @@ import {
   faSquareUpRight,
   faTableLayout,
   faUndo,
-  faUpLong,
+  faUp,
   faUpRightAndDownLeftFromCenter,
   faWindowRestore
 } from '@fortawesome/pro-regular-svg-icons'
@@ -261,7 +261,7 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUpLong} color="solarized.cyan" homing />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
@@ -342,7 +342,7 @@ export default function ActionLyr() {
           <KeyLegend {...sharedProps} />
 
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (

@@ -1,8 +1,12 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
+  faArrowDown,
+  faArrowLeft,
+  faArrowRight,
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
+  faArrowUp,
   faArrowUpLeftFromCircle,
   faBracketSquare,
   faComputerMouse,
@@ -10,7 +14,8 @@ import {
   faLayerGroup,
   faOption,
   faRightToBracket,
-  faUpLong
+  faUp,
+  faVolumeXmark
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -134,7 +139,7 @@ export default function BaseLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -209,7 +214,7 @@ export default function BaseLyr() {
           </KeyLegend>
           <KeyIcon
             special
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
@@ -227,13 +232,18 @@ export default function BaseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faComputerMouse}
-            lyrSubIcn={faLayerGroup}
+            icon={faVolumeXmark}
+            lyrSubIcn={faComputerMouse}
+            tapDance
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'mouse-layer-key',
               popOverContent: (
                 <Box p={1}>
+                  <PopoverDesc action="single tap" output="Mute" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Hide Window" />
+                  <br />
                   <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
@@ -311,12 +321,18 @@ export default function BaseLyr() {
               )
             }}
           />
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faArrowLeft} tapForceHold modHoldSubIcn={faCommand} />
           <KeyIcon
-            icon={faFunction}
-            lyrSubIcn={faLayerGroup}
+            icon={faArrowDown}
+            tapForceHold
+            modHoldSubIcn={faOption}
+            ModHoldSubIcnProps={{sx: {fontSize: 11}}}
+          />
+          <KeyIcon icon={faArrowUp} tapForceHold modHoldSubIcn={faChevronUp} />
+          <KeyIcon
+            icon={faArrowRight}
+            tapForceHold
+            lyrSubIcn={faFunction}
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (
