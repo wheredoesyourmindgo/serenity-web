@@ -21,4 +21,4 @@ export default function LyrSubIcn({customShiftCode, ...props}: Props) {
   )
 }
 
-export type {Props as LyrSubIcnProps}
+export type {Props as HoldSubIcnProps}

@@ -300,7 +300,7 @@ export default function NumNavLyr() {
             icon={faBracketSquare}
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (

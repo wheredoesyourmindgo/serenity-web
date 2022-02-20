@@ -176,7 +176,7 @@ export default function QwertyLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faComputerMouse}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'mouse-layer-key',
@@ -194,7 +194,7 @@ export default function QwertyLyr() {
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             special
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -211,7 +211,7 @@ export default function QwertyLyr() {
           />
           <KeyIcon
             icon={faArrowTurnDownLeft}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'low-layer-key',
@@ -226,7 +226,7 @@ export default function QwertyLyr() {
           />
           <KeyIcon
             icon={faArrowRightLongToLine}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'high-layer-key',
@@ -244,7 +244,7 @@ export default function QwertyLyr() {
             rotation={270}
             special
             sx={{transform: 'translateY(6px)'}}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
@@ -262,7 +262,7 @@ export default function QwertyLyr() {
           <KeyLegend
             {...sharedProps}
             shiftLgnd="?"
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (

@@ -3,7 +3,7 @@ import {ChildBox} from 'mui-sleazebox'
 import React from 'react'
 import {KeyContainer} from '.'
 import {KeyContainerProps} from './KeyContainer'
-import LyrSubIcn, {LyrSubIcnProps} from './LyrSubIcn'
+import HoldSubIcn, {HoldSubIcnProps} from './HoldSubIcn'
 import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
@@ -25,8 +25,10 @@ type Props = Partial<TypographyProps> & {
   vimRef?: String | React.ReactNode
   vimRefIcn?: VimRefIcnProps['icon']
   VimRefIcnProps?: Omit<VimRefIcnProps, 'icon'>
-  lyrSubIcn?: LyrSubIcnProps['icon']
-  LyrSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
+  lyrHoldSubIcn?: HoldSubIcnProps['icon']
+  LyrHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
+  modHoldSubIcn?: HoldSubIcnProps['icon']
+  ModHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
   tapForceHold?: boolean
 }
 
@@ -43,8 +45,10 @@ export default function KeyLegend({
   vimRef,
   vimRefIcn,
   VimRefIcnProps,
-  lyrSubIcn,
-  LyrSubIcnProps,
+  lyrHoldSubIcn,
+  LyrHoldSubIcnProps,
+  modHoldSubIcn,
+  ModHoldSubIcnProps,
   color = 'solarized.base00',
   tapForceHold,
   sx,
@@ -52,9 +56,11 @@ export default function KeyLegend({
 }: Props) {
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
   const lyrColor = 'solarized.green'
+  const modColor = 'solarized.yellow'
 
   const {sx: VimRefIcnSx, ...VimRefIcnRest} = VimRefIcnProps || {}
   const {sx: ShiftSubIcnSx, ...ShiftSubIcnRest} = ShiftSubIcnProps || {}
+  const {sx: modHoldSubIcnSx, ...ModHoldSubIcnRest} = ModHoldSubIcnProps || {}
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
@@ -72,18 +78,18 @@ export default function KeyLegend({
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
-        {lyrSubIcn ? (
-          <LyrSubIcn
-            icon={lyrSubIcn}
+        {lyrHoldSubIcn ? (
+          <HoldSubIcn
+            icon={lyrHoldSubIcn}
             sx={{color: lyrColor}}
-            {...LyrSubIcnProps}
+            {...LyrHoldSubIcnProps}
           />
         ) : null}
-        {lyrSubIcn ? (
-          <LyrSubIcn
-            icon={lyrSubIcn}
-            sx={{color: lyrColor}}
-            {...LyrSubIcnProps}
+        {modHoldSubIcn ? (
+          <HoldSubIcn
+            icon={modHoldSubIcn}
+            sx={{color: modColor, ...modHoldSubIcnSx}}
+            {...ModHoldSubIcnRest}
           />
         ) : null}
         {vimRef ? <VimRefLgnd>{vimRef}</VimRefLgnd> : null}
