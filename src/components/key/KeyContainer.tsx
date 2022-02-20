@@ -49,12 +49,12 @@ export default function KeyContainer({
         // https://getcssscan.com/css-box-shadow-examples #14 edit
         boxShadow: `${
           theme.palette.mode === 'light'
-            ? 'rgba(50, 50, 93, 0.2)'
-            : 'rgba(205, 205, 51, 0.2)'
+            ? 'rgba(50, 50, 93, 0.1)'
+            : 'rgba(205, 205, 51, 0.1)'
         } 0px 50px 100px -20px, ${
           theme.palette.mode === 'light'
-            ? 'rgba(0, 0, 0, 0.3)'
-            : 'rgba(255, 255, 255, 0.3)'
+            ? 'rgba(0, 0, 0, 0.1)'
+            : 'rgba(255, 255, 255, 0.1)'
         } 0px 30px 60px -30px, ${
           theme.palette.mode === 'light'
             ? 'rgba(10, 37, 64, 0.1)'

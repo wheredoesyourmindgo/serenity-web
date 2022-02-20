@@ -23,7 +23,7 @@ import {
   faRightToBracket,
   faScissors,
   faUndo,
-  faUpLong
+  faUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -114,7 +114,7 @@ export default function NumNavLyr() {
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faUpLong} color="solarized.cyan" homing />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
           <KeyIcon
             icon={faLock}
             KeyContainerProps={{
@@ -137,7 +137,7 @@ export default function NumNavLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (

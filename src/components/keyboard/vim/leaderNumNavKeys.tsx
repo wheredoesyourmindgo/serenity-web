@@ -26,22 +26,22 @@ export default function LeaderNumNavKeys() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="1" />
+          <KeyLegend {...sharedProps} vimRef="2" />
+          <KeyLegend {...sharedProps} vimRef="3" />
+          <KeyLegend {...sharedProps} vimRef="4" />
+          <KeyLegend {...sharedProps} vimRef="5" />
+          <KeyLegend {...sharedProps} vimRef="6" />
+          <KeyLegend {...sharedProps} vimRef="7">
             <Type {...sharedTypeProps}>
               jump
               <br />
               to top
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="8" />
+          <KeyLegend {...sharedProps} vimRef="9" />
+          <KeyLegend {...sharedProps} vimRef="0">
             <Type {...sharedTypeProps}>
               scroll
               <br />

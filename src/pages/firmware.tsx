@@ -22,11 +22,14 @@ import FuncLyr from '@components/keyboard/firmware/functionLyr'
 import ActionLyr from '@components/keyboard/firmware/actionLyr'
 import MediaLyr from '@components/keyboard/firmware/mediaLyr'
 import {
+  faAnglesDown,
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
   faAsterisk,
   faBracketSquare,
+  faCommand,
+  faEllipsis,
   faFunction,
   faHouseUser,
   faLayerGroup,
@@ -249,7 +252,7 @@ export default function FirmwarePage() {
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faAsterisk} color="solarized.yellow" />
+                      <MuiFaIcon icon={faAsterisk} color="solarized.red" />
                     </ListItemIcon>
                     <ListItemText primary="Special (see notes)" />
                   </ListItem>
@@ -257,7 +260,25 @@ export default function FirmwarePage() {
                     <ListItemIcon>
                       <MuiFaIcon icon={faLayerGroup} color="solarized.green" />
                     </ListItemIcon>
-                    <ListItemText primary="Layer" />
+                    <ListItemText primary="Layer Tap" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon icon={faCommand} color="solarized.yellow" />
+                    </ListItemIcon>
+                    <ListItemText primary="Mod Tap" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon icon={faEllipsis} color="solarized.blue" />
+                    </ListItemIcon>
+                    <ListItemText primary="Tap Dance" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon icon={faAnglesDown} color="solarized.orange" />
+                    </ListItemIcon>
+                    <ListItemText primary="Tap Force Hold" />
                   </ListItem>
                 </List>
               </Box>

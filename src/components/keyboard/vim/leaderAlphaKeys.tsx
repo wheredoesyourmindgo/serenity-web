@@ -2,6 +2,11 @@ import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, Divider, Typography as Type} from '@mui/material'
+import {
+  faDeleteLeft,
+  faDeleteRight,
+  faUp
+} from '@fortawesome/pro-regular-svg-icons'
 
 export default function LeaderAlphaKeys() {
   const sharedProps: KeyLegendProps = {
@@ -25,19 +30,19 @@ export default function LeaderAlphaKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} special>
+          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
+          <KeyLegend {...sharedProps} vimRef="v" />
+          <KeyLegend {...sharedProps} vimRef="l" />
+          <KeyLegend {...sharedProps} vimRef="d" />
+          <KeyLegend {...sharedProps} vimRef="w" />
+          <KeyLegend {...sharedProps} vimRef="x" special>
             <Type {...sharedTypeProps}>
               hover
               <br />
               popup
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} special>
+          <KeyLegend {...sharedProps} vimRef="q" special>
             <Type {...sharedTypeProps}>
               goto
               <br />
@@ -46,14 +51,14 @@ export default function LeaderAlphaKeys() {
               nition
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps}>
               end prev.
               <br />
               camelCase
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="o">
             {/* <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (INC-
               <br />
@@ -66,7 +71,7 @@ export default function LeaderAlphaKeys() {
               camelCase
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="u">
             {/* <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (INC-
               <br />
@@ -79,38 +84,38 @@ export default function LeaderAlphaKeys() {
               camelCase
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="-">
             <Type {...sharedTypeProps}>
               beg. next
               <br />
               camelCase
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="`" />
+          <KeyLegend {...sharedProps} vimRef="s">
             <Type {...sharedTypeProps}>unindent</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="r">
             <Type {...sharedTypeProps}>
               move ln.
               <br />
               down
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="h">
             <Type {...sharedTypeProps}>
               move ln.
               <br />
               up
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} homing>
+          <KeyLegend {...sharedProps} vimRef="n" homing>
             <Type {...sharedTypeProps}>indent</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>
               BLOCK
               <br />
@@ -123,38 +128,38 @@ export default function LeaderAlphaKeys() {
               comment
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRef="g" />
+          <KeyLegend {...sharedProps} vimRef="t" homing />
+          <KeyLegend {...sharedProps} vimRef="e" />
+          <KeyLegend {...sharedProps} vimRef="i" />
+          <KeyLegend {...sharedProps} vimRef="a" />
+          <KeyLegend {...sharedProps} vimRef="=" />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
+          <KeyLegend {...sharedProps} vimRef="z">
             <Type {...sharedTypeProps}>
               toggle
               <br />
               fold
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} special>
+          <KeyLegend {...sharedProps} vimRef="j" />
+          <KeyLegend {...sharedProps} vimRef="m" />
+          <KeyLegend {...sharedProps} vimRef="c" />
+          <KeyLegend {...sharedProps} vimRef="b" special>
             <Type {...sharedTypeProps}>
               reflow
               <br />
               text
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRef="k" />
+          <KeyLegend {...sharedProps} vimRef="p" />
+          <KeyLegend {...sharedProps} vimRef="'" />
+          <KeyLegend {...sharedProps} vimRef="," />
+          <KeyLegend {...sharedProps} vimRef="." />
+          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />

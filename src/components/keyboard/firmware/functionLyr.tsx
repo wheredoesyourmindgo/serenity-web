@@ -7,7 +7,7 @@ import {
   faLock,
   faLockOpen,
   faOption,
-  faUpLong
+  faUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -92,9 +92,9 @@ export default function FuncLyr() {
               keyId: 'f6-f16-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F6" />
+                  <PopoverDesc action="tap" output="F6" />
                   <br />
-                  <PopoverDesc action="double tap" output="F16" />
+                  <PopoverDesc action="shifted" output="F16" />
                 </Box>
               )
             }}
@@ -110,9 +110,9 @@ export default function FuncLyr() {
               keyId: 'f7-f17-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F7" />
+                  <PopoverDesc action="tap" output="F7" />
                   <br />
-                  <PopoverDesc action="double tap" output="F17" />
+                  <PopoverDesc action="shifted" output="F17" />
                 </Box>
               )
             }}
@@ -128,9 +128,9 @@ export default function FuncLyr() {
               keyId: 'f8-f18-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F8" />
+                  <PopoverDesc action="tap" output="F8" />
                   <br />
-                  <PopoverDesc action="double tap" output="F18" />
+                  <PopoverDesc action="shifted" output="F18" />
                 </Box>
               )
             }}
@@ -147,9 +147,9 @@ export default function FuncLyr() {
               keyId: 'f9-f19-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F9" />
+                  <PopoverDesc action="tap" output="F9" />
                   <br />
-                  <PopoverDesc action="double tap" output="F19" />
+                  <PopoverDesc action="shifted" output="F19" />
                 </Box>
               )
             }}
@@ -165,9 +165,9 @@ export default function FuncLyr() {
               keyId: 'f10-f20-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F10" />
+                  <PopoverDesc action="tap" output="F10" />
                   <br />
-                  <PopoverDesc action="double tap" output="F20" />
+                  <PopoverDesc action="shifted" output="F20" />
                 </Box>
               )
             }}
@@ -183,7 +183,7 @@ export default function FuncLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
@@ -202,9 +202,9 @@ export default function FuncLyr() {
               keyId: 'f11-f21-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F11" />
+                  <PopoverDesc action="tap" output="F11" />
                   <br />
-                  <PopoverDesc action="double tap" output="F21" />
+                  <PopoverDesc action="shifted" output="F21" />
                 </Box>
               )
             }}
@@ -220,9 +220,9 @@ export default function FuncLyr() {
               keyId: 'f12-f22-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F12" />
+                  <PopoverDesc action="tap" output="F12" />
                   <br />
-                  <PopoverDesc action="double tap" output="F22" />
+                  <PopoverDesc action="shifted" output="F22" />
                 </Box>
               )
             }}
@@ -238,9 +238,9 @@ export default function FuncLyr() {
               keyId: 'f13-f23-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F13" />
+                  <PopoverDesc action="tap" output="F13" />
                   <br />
-                  <PopoverDesc action="double tap" output="F23" />
+                  <PopoverDesc action="shifted" output="F23" />
                 </Box>
               )
             }}
@@ -256,9 +256,9 @@ export default function FuncLyr() {
               keyId: 'f14-f24-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="F14" />
+                  <PopoverDesc action="tap" output="F14" />
                   <br />
-                  <PopoverDesc action="double tap" output="F24" />
+                  <PopoverDesc action="shifted" output="F24" />
                 </Box>
               )
             }}
@@ -307,7 +307,7 @@ export default function FuncLyr() {
           <KeyIcon icon={faArrowTurnDownLeft} />
           <KeyIcon icon={faArrowRightLongToLine} />
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'left-shift-key',

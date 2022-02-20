@@ -39,22 +39,22 @@ export default function TextObjKeys() {
           <KeyLegend {...sharedProps} />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="`" />
+          <KeyLegend {...sharedProps} vimRef="s" />
+          <KeyLegend {...sharedProps} vimRef="r" />
+          <KeyLegend {...sharedProps} vimRef="h" />
+          <KeyLegend {...sharedProps} vimRef="n" homing />
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>AROUND</Type>
             <Divider />
             <Type {...sharedTypeProps}>inner</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRef="g" />
+          <KeyLegend {...sharedProps} vimRef="t" homing />
+          <KeyLegend {...sharedProps} vimRef="e" />
+          <KeyLegend {...sharedProps} vimRef="i" />
+          <KeyLegend {...sharedProps} vimRef="a" />
+          <KeyLegend {...sharedProps} vimRef="=" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />

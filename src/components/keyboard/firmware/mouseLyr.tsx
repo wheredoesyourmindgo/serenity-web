@@ -10,7 +10,7 @@ import {
   faLockOpen,
   faOption,
   faSort,
-  faUpLong
+  faUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -184,7 +184,7 @@ export default function MouseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
@@ -271,7 +271,7 @@ export default function MouseLyr() {
             R
           </KeyLegend>
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
@@ -298,7 +298,7 @@ export default function MouseLyr() {
           <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'left-shift-key',

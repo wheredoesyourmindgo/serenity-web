@@ -1,7 +1,6 @@
 // cspell:ignore Lgnd
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 // import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
-// import {faUpLong} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
@@ -65,7 +64,6 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>=</AlphaKeyLgnd>
       </RowBox>
       <RowBox child flexSpacing={1}>
-        {/* <AlphaKeyIcn icon={faUpLong} /> */}
         <AlphaKeyLgnd />
         <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">J</AlphaKeyLgnd>
@@ -77,7 +75,6 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
-        {/* <AlphaKeyIcn icon={faUpLong} /> */}
         <AlphaKeyLgnd />
       </RowBox>
     </ColumnBox>

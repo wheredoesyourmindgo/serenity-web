@@ -16,7 +16,7 @@ import {
   faOption,
   faPlayPause,
   faTypewriter,
-  faUpLong,
+  faUp,
   faVolumeDown,
   faVolumeSlash,
   faVolumeUp
@@ -160,7 +160,7 @@ export default function MediaLyr() {
               keyId: 'mute-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Volume Mute" />
+                  <PopoverDesc action="tap" output="Toggle Mute" />
                 </Box>
               )
             }}
@@ -178,7 +178,7 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUpLong} color="solarized.cyan" homing />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
@@ -243,7 +243,7 @@ export default function MediaLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faUpLong}
+            icon={faUp}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (

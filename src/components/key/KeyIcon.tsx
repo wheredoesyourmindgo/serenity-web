@@ -7,6 +7,7 @@ import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
 import TapDanceSubIcn from './TapDanceSubIcn'
+import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps
@@ -19,7 +20,10 @@ type Props = MuiFaIconProps & {
   homing?: boolean
   lyrSubIcn?: LyrSubIcnProps['icon']
   LyrSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
+  modHoldSubIcn?: LyrSubIcnProps['icon']
+  ModHoldSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
   children?: React.ReactNode
+  tapForceHold?: boolean
 }
 
 export default function KeyIcon({
@@ -34,13 +38,20 @@ export default function KeyIcon({
   homing = false,
   lyrSubIcn,
   LyrSubIcnProps,
+  modHoldSubIcn,
+  ModHoldSubIcnProps,
   children,
+  tapForceHold,
   ...rest
 }: Props) {
-  const {sx, color, ...r} = rest
-
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
   const lyrColor = 'solarized.green'
+  const modColor = 'solarized.yellow'
+
+  const {sx, color, ...r} = rest
+  // const {sx: VimRefIcnSx, ...VimRefIcnRest} = VimRefIcnProps || {}
+  const {sx: ShiftSubIcnSx, ...ShiftSubIcnRest} = ShiftSubIcnProps || {}
+  const {sx: modHoldSubIcnSx, ...ModHoldSubIcnRest} = ModHoldSubIcnProps || {}
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
@@ -51,17 +62,25 @@ export default function KeyIcon({
         {shiftSubIcn ? (
           <ShiftSubIcn
             icon={shiftSubIcn}
-            sx={{color: shiftColor}}
-            {...ShiftSubIcnProps}
+            sx={{color: shiftColor, ...ShiftSubIcnSx}}
+            {...ShiftSubIcnRest}
           />
         ) : null}
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
+        {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {lyrSubIcn ? (
           <LyrSubIcn
             icon={lyrSubIcn}
             sx={{color: lyrColor}}
             {...LyrSubIcnProps}
+          />
+        ) : null}
+        {modHoldSubIcn ? (
+          <LyrSubIcn
+            icon={modHoldSubIcn}
+            sx={{color: modColor, ...modHoldSubIcnSx}}
+            {...ModHoldSubIcnRest}
           />
         ) : null}
         <Box

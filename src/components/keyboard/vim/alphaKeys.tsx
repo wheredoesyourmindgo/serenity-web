@@ -2,6 +2,15 @@ import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, Divider, Typography as Type} from '@mui/material'
+import {
+  faArrowRightLongToLine,
+  faArrowTurnDownLeft,
+  faArrowUpLeftFromCircle,
+  faBracketSquare,
+  faDeleteLeft,
+  faDeleteRight,
+  faUp
+} from '@fortawesome/pro-regular-svg-icons'
 
 export default function AlphaKeys() {
   const sharedProps: KeyLegendProps = {
@@ -25,14 +34,14 @@ export default function AlphaKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight}>
             <Type {...sharedTypeProps}>
               delete
               <br />
               char
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="v">
             {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
             {/* <Divider /> */}
             <Type {...sharedTypeProps}>
@@ -41,12 +50,12 @@ export default function AlphaKeys() {
               spc.
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="l">
             <Type {...sharedTypeProps}>Z CMDS</Type>
             <Divider />
             <Type {...sharedTypeProps}>g cmds</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="d">
             <Type {...sharedTypeProps}>
               CHANGE
               <br />
@@ -55,7 +64,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>change</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="w">
             <Type {...sharedTypeProps}>RPLC. LN.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -64,7 +73,7 @@ export default function AlphaKeys() {
               char
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} special>
+          <KeyLegend {...sharedProps} vimRef="x" special>
             <Type {...sharedTypeProps}>UN-EXP.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -77,12 +86,12 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="q">
             <Type {...sharedTypeProps}>TILL REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>till</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (non-whtspc)
             </Type>
@@ -92,7 +101,7 @@ export default function AlphaKeys() {
               <br /> word
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="o">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (non-whtspc)
             </Type>
@@ -102,7 +111,7 @@ export default function AlphaKeys() {
               <br /> word
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="u">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (non-whtspc)
             </Type>
@@ -113,7 +122,7 @@ export default function AlphaKeys() {
               word
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="-">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (non-whtspc)
             </Type>
@@ -123,20 +132,20 @@ export default function AlphaKeys() {
               <br /> word
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft}>
             <Type {...sharedTypeProps}>backspace</Type>
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="`">
             <Type {...sharedTypeProps}>set mark</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="s">
             <Type {...sharedTypeProps}>SUBST LINE</Type>
             <Divider />
             <Type {...sharedTypeProps}>subst char</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="r">
             <Type {...sharedTypeProps}>INS. BOL.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -144,12 +153,12 @@ export default function AlphaKeys() {
               <br /> mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="h">
             <Type {...sharedTypeProps}>APND. EOL.</Type>
             <Divider />
             <Type {...sharedTypeProps}>append</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} homing>
+          <KeyLegend {...sharedProps} vimRef="n" homing>
             <Type {...sharedTypeProps}>
               OPEN
               <br /> ABOVE
@@ -160,7 +169,7 @@ export default function AlphaKeys() {
               <br /> below
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>
               VISUAL
               <br /> LINE
@@ -171,7 +180,7 @@ export default function AlphaKeys() {
               <br /> mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>
               FIND
               <br />
@@ -185,7 +194,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen mid</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} homing>
+          <KeyLegend {...sharedProps} vimRef="t" homing>
             <Type {...sharedTypeProps}>
               PREV.
               <br />
@@ -198,7 +207,7 @@ export default function AlphaKeys() {
               char prev.
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="e">
             <Type {...sharedTypeProps}>
               JUMP TO
               <br />
@@ -207,7 +216,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="i">
             <Type {...sharedTypeProps}>
               JUMP TO
               <br />
@@ -216,7 +225,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="a">
             <Type {...sharedTypeProps}>
               NEXT
               <br />
@@ -229,7 +238,7 @@ export default function AlphaKeys() {
               char next
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="=">
             <Type {...sharedTypeProps}>
               GOTO MARK
               <br /> BOL.
@@ -239,13 +248,13 @@ export default function AlphaKeys() {
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
+          <KeyLegend {...sharedProps} vimRef="z">
             <Type {...sharedTypeProps}>UNDO LINE</Type>
             <Divider />
             <Type {...sharedTypeProps}>undo</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="j">
             <Type {...sharedTypeProps}>
               DELETE
               <br /> EOL.
@@ -253,7 +262,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>delete</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>
               YANK
               <br /> EOL.
@@ -261,7 +270,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>yank</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="c">
             <Type {...sharedTypeProps}>
               PASTE
               <br /> BEFORE
@@ -273,7 +282,7 @@ export default function AlphaKeys() {
               after
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>
               REPEAT
               <br /> SUB.
@@ -281,21 +290,23 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>redo</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="k">
             <Type {...sharedTypeProps}>FIND REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>find</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>
-              PREV. WORD
+              PREV.
+              <br />
+              WORD
               <br />
               INSTANCE
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>find prev.</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef="'">
             <Type {...sharedTypeProps}>
               NEXT
               <br />
@@ -308,7 +319,7 @@ export default function AlphaKeys() {
               down
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef=",">
             <Type {...sharedTypeProps}>
               PREV.
               <br />
@@ -321,34 +332,59 @@ export default function AlphaKeys() {
               up
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRef=".">
             <Type {...sharedTypeProps}>
-              NEXT WORD
+              NEXT
+              <br />
+              WORD
               <br />
               INSTANCE
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>find next</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowUpLeftFromCircle}
+            VimRefIcnProps={{
+              sx: {
+                fontSize: 12
+              }
+            }}
+          />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
             <Type {...sharedTypeProps}>
               command
               <br />
               mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          >
             <Type {...sharedTypeProps}>redo</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faBracketSquare}
+            VimRefIcnProps={{
+              rotation: 270,
+              sx: {
+                transform: 'translateX(-3px)'
+              }
+            }}
+          >
             <Type {...sharedTypeProps}>{`<leader>`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
