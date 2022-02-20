@@ -2,7 +2,7 @@ import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
 import {Box} from '@mui/material'
 import {ChildBox} from 'mui-sleazebox'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
-import LyrSubIcn, {LyrSubIcnProps} from './LyrSubIcn'
+import HoldSubIcn, {HoldSubIcnProps} from './HoldSubIcn'
 import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
@@ -18,10 +18,10 @@ type Props = MuiFaIconProps & {
   special?: boolean
   tapDance?: boolean
   homing?: boolean
-  lyrSubIcn?: LyrSubIcnProps['icon']
-  LyrSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
-  modHoldSubIcn?: LyrSubIcnProps['icon']
-  ModHoldSubIcnProps?: Omit<LyrSubIcnProps, 'icon'>
+  lyrHoldSubIcn?: HoldSubIcnProps['icon']
+  LyrHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
+  modHoldSubIcn?: HoldSubIcnProps['icon']
+  ModHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
   children?: React.ReactNode
   tapForceHold?: boolean
 }
@@ -36,8 +36,8 @@ export default function KeyIcon({
   special = false,
   tapDance = false,
   homing = false,
-  lyrSubIcn,
-  LyrSubIcnProps,
+  lyrHoldSubIcn,
+  LyrHoldSubIcnProps,
   modHoldSubIcn,
   ModHoldSubIcnProps,
   children,
@@ -69,15 +69,15 @@ export default function KeyIcon({
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
-        {lyrSubIcn ? (
-          <LyrSubIcn
-            icon={lyrSubIcn}
+        {lyrHoldSubIcn ? (
+          <HoldSubIcn
+            icon={lyrHoldSubIcn}
             sx={{color: lyrColor}}
-            {...LyrSubIcnProps}
+            {...LyrHoldSubIcnProps}
           />
         ) : null}
         {modHoldSubIcn ? (
-          <LyrSubIcn
+          <HoldSubIcn
             icon={modHoldSubIcn}
             sx={{color: modColor, ...modHoldSubIcnSx}}
             {...ModHoldSubIcnRest}
@@ -86,7 +86,9 @@ export default function KeyIcon({
         <Box
           sx={{
             ...(shiftSubIcn && {transform: 'translateY(4px)'}),
-            ...(lyrSubIcn && {transform: 'translateY(-4px)'})
+            ...((lyrHoldSubIcn || modHoldSubIcn) && {
+              transform: 'translateY(-4px)'
+            })
           }}
         >
           <Box sx={{transform: 'translateY(2px)'}} position="relative">

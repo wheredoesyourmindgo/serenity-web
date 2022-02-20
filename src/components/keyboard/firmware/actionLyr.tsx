@@ -374,7 +374,7 @@ export default function ActionLyr() {
           <KeyIcon
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (

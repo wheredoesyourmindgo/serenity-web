@@ -233,7 +233,7 @@ export default function BaseLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faVolumeXmark}
-            lyrSubIcn={faComputerMouse}
+            lyrHoldSubIcn={faComputerMouse}
             tapDance
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
@@ -256,7 +256,7 @@ export default function BaseLyr() {
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             special
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -273,7 +273,7 @@ export default function BaseLyr() {
           />
           <KeyIcon
             icon={faArrowTurnDownLeft}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'low-layer-key',
@@ -288,7 +288,7 @@ export default function BaseLyr() {
           />
           <KeyIcon
             icon={faArrowRightLongToLine}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'high-layer-key',
@@ -306,7 +306,7 @@ export default function BaseLyr() {
             rotation={270}
             special
             sx={{transform: 'translateY(6px)'}}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
@@ -332,7 +332,7 @@ export default function BaseLyr() {
           <KeyIcon
             icon={faArrowRight}
             tapForceHold
-            lyrSubIcn={faFunction}
+            lyrHoldSubIcn={faFunction}
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (

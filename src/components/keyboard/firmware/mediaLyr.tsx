@@ -37,7 +37,7 @@ export default function MediaLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faTypewriter}
-            lyrSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faLayerGroup}
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'qwerty-key',
