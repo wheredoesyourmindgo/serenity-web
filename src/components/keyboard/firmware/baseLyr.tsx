@@ -8,12 +8,15 @@ import {
   faArrowTurnDownLeft,
   faArrowUp,
   faArrowUpLeftFromCircle,
+  faAt,
   faBracketSquare,
   faComputerMouse,
   faFunction,
-  faLayerGroup,
+  faGear,
+  faHashtag,
   faOption,
   faRightToBracket,
+  faScissors,
   faUp,
   faVolumeXmark
 } from '@fortawesome/pro-regular-svg-icons'
@@ -256,7 +259,7 @@ export default function BaseLyr() {
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             special
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faHashtag}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -273,7 +276,7 @@ export default function BaseLyr() {
           />
           <KeyIcon
             icon={faArrowTurnDownLeft}
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faAt}
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'low-layer-key',
@@ -288,7 +291,7 @@ export default function BaseLyr() {
           />
           <KeyIcon
             icon={faArrowRightLongToLine}
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faGear}
             sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'high-layer-key',
@@ -305,8 +308,8 @@ export default function BaseLyr() {
             icon={faBracketSquare}
             rotation={270}
             special
-            sx={{transform: 'translateY(6px)'}}
-            lyrHoldSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(6px)', fontSize: 11}}
+            lyrHoldSubIcn={faScissors}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
@@ -333,6 +336,7 @@ export default function BaseLyr() {
             icon={faArrowRight}
             tapForceHold
             lyrHoldSubIcn={faFunction}
+            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (

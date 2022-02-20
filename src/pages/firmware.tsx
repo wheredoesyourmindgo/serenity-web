@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {faApple} from '@fortawesome/free-brands-svg-icons'
 import {
   Box,
   Container,
@@ -23,18 +24,17 @@ import ActionLyr from '@components/keyboard/firmware/actionLyr'
 import MediaLyr from '@components/keyboard/firmware/mediaLyr'
 import {
   faAnglesDown,
-  faArrowRightLongToLine,
-  faArrowTurnDownLeft,
-  faArrowUpLeftFromCircle,
   faAsterisk,
-  faBracketSquare,
+  faAt,
+  faCog,
   faCommand,
   faEllipsis,
   faFunction,
+  faHashtag,
   faHouseUser,
   faLayerGroup,
   faMouse,
-  faPlus,
+  faScissors,
   faTypewriter
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
@@ -159,7 +159,7 @@ export default function FirmwarePage() {
                 label="Num/Nav"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faArrowUpLeftFromCircle} />
+                    <MuiFaIcon icon={faHashtag} />
                   </Box>
                 }
                 {...a11yProps(2)}
@@ -168,7 +168,7 @@ export default function FirmwarePage() {
                 label="Symbol"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faArrowTurnDownLeft} />
+                    <MuiFaIcon icon={faAt} />
                   </Box>
                 }
                 {...a11yProps(3)}
@@ -177,7 +177,7 @@ export default function FirmwarePage() {
                 label="Media"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faArrowRightLongToLine} />
+                    <MuiFaIcon icon={faCog} />
                   </Box>
                 }
                 {...a11yProps(4)}
@@ -186,7 +186,7 @@ export default function FirmwarePage() {
                 label="Action"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faBracketSquare} rotation={270} />
+                    <MuiFaIcon icon={faScissors} />
                   </Box>
                 }
                 {...a11yProps(5)}
@@ -204,16 +204,19 @@ export default function FirmwarePage() {
                 label="OS"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon
-                      icon={faArrowUpLeftFromCircle}
-                      sx={{paddingRight: 0.5}}
-                    />
-                    <MuiFaIcon
-                      icon={faPlus}
-                      sx={{paddingRight: 1, color: 'solarized.base0'}}
-                    />
-                    <MuiFaIcon icon={faBracketSquare} rotation={270} />
+                    <MuiFaIcon icon={faApple} sx={{fontSize: 16}} />
                   </Box>
+                  // <Box component="span">
+                  //   <MuiFaIcon
+                  //     icon={faArrowUpLeftFromCircle}
+                  //     sx={{paddingRight: 0.5}}
+                  //   />
+                  //   <MuiFaIcon
+                  //     icon={faPlus}
+                  //     sx={{paddingRight: 1, color: 'solarized.base0'}}
+                  //   />
+                  //   <MuiFaIcon icon={faBracketSquare} rotation={270} />
+                  // </Box>
                 }
                 {...a11yProps(7)}
               />

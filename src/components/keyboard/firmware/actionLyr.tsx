@@ -1,5 +1,6 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
+import {faApple} from '@fortawesome/free-brands-svg-icons'
 import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
@@ -7,7 +8,6 @@ import {
   faCopy,
   faHandPointLeft,
   faHandPointRight,
-  faLayerGroup,
   faLock,
   faLockOpen,
   faMagicWandSparkles,
@@ -374,7 +374,8 @@ export default function ActionLyr() {
           <KeyIcon
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faApple}
+            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (

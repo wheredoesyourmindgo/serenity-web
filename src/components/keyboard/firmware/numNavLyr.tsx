@@ -12,7 +12,6 @@ import {
   faBracketSquare,
   faCalculatorSimple,
   faCopy,
-  faLayerGroup,
   faLock,
   faLockOpen,
   faOption,
@@ -29,6 +28,7 @@ import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
 import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
+import {faApple} from '@fortawesome/free-brands-svg-icons'
 import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
@@ -300,7 +300,8 @@ export default function NumNavLyr() {
             icon={faBracketSquare}
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faApple}
+            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
