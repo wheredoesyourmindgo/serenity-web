@@ -18,13 +18,16 @@ import {
   faMouse
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
-import AlphaKeys from '@components/keyboard/vim/alphaKeys'
-import TextObjKeys from '@components/keyboard/vim/textObjKeys'
-import SymbolKeys from '@components/keyboard/vim/symbolKeys'
-import LeaderAlphaKeys from '@components/keyboard/vim/leaderAlphaKeys'
-import LeaderNumNavKeys from '@components/keyboard/vim/leaderNumNavKeys'
-import NumNavKeys from '@components/keyboard/vim/numNavKeys'
+import AlphaKeys from '@components/keyboard/vim/AlphaKeys'
+import TextObjKeys from '@components/keyboard/vim/TextObjKeys'
+import SymbolKeys from '@components/keyboard/vim/SymbolKeys'
+import LeaderAlphaKeys from '@components/keyboard/vim/LeaderAlphaKeys'
+import LeaderNumNavKeys from '@components/keyboard/vim/LeaderNumNavKeys'
+import NumNavKeys from '@components/keyboard/vim/NumNavKeys'
 import LegacyAlphaKeys from '@components/keyboard/vim/LegacyAlphaKeys'
+import LegacyNumNavKeys from '@components/keyboard/vim/LegacyNumNavKeys'
+import LegacySymbolKeys from '@components/keyboard/vim/LegacySymbolKeys'
+import LegacyTextObjKeys from '@components/keyboard/vim/LegacyTextObjKeys'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -118,13 +121,19 @@ export default function VimPage() {
               )}
             </TabPanel>
             <TabPanel value={value} index={1}>
-              {leaderChecked ? <LeaderNumNavKeys /> : <NumNavKeys />}
+              {leaderChecked ? (
+                <LeaderNumNavKeys />
+              ) : legacyChecked ? (
+                <LegacyNumNavKeys />
+              ) : (
+                <NumNavKeys />
+              )}
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <SymbolKeys />
+              {legacyChecked ? <LegacySymbolKeys /> : <SymbolKeys />}
             </TabPanel>
             <TabPanel value={value} index={3}>
-              <TextObjKeys />
+              {legacyChecked ? <LegacyTextObjKeys /> : <TextObjKeys />}
             </TabPanel>
           </Box>
 
