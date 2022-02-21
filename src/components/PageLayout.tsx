@@ -70,7 +70,7 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
           {isSm ? (
             <FlexBox justifyContent="center" alignItems="center" height="100vh">
               <ChildBox flex="0 0 80%">
-                <Type variant="subtitle1">
+                <Type variant="subtitle1" sx={{color: 'solarized.base01'}}>
                   This site doesn't work with mobile devices, not yet at least
                   :(
                 </Type>
