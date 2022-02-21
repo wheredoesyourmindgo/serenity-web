@@ -324,14 +324,52 @@ export default function BaseLyr() {
               )
             }}
           />
-          <KeyIcon icon={faArrowLeft} tapForceHold modHoldSubIcn={faCommand} />
+          <KeyIcon
+            icon={faArrowLeft}
+            tapForceHold
+            modHoldSubIcn={faCommand}
+            KeyContainerProps={{
+              keyId: 'right-command-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Left Arrow" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Command" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             icon={faArrowDown}
             tapForceHold
             modHoldSubIcn={faOption}
             ModHoldSubIcnProps={{sx: {fontSize: 11}}}
+            KeyContainerProps={{
+              keyId: 'right-alt-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Down Arrow" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Alt/Option" />
+                </Box>
+              )
+            }}
           />
-          <KeyIcon icon={faArrowUp} tapForceHold modHoldSubIcn={faChevronUp} />
+          <KeyIcon
+            icon={faArrowUp}
+            tapForceHold
+            modHoldSubIcn={faChevronUp}
+            KeyContainerProps={{
+              keyId: 'right-ctrl-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Up Arrow" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Control" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             icon={faArrowRight}
             tapForceHold
@@ -341,6 +379,8 @@ export default function BaseLyr() {
               keyId: 'function-layer-key',
               popOverContent: (
                 <Box p={1}>
+                  <PopoverDesc action="tap" output="Right Arrow" />
+                  <br />
                   <PopoverDesc action="hold" output="Function Layer" />
                 </Box>
               )

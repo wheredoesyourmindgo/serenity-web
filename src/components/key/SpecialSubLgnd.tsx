@@ -15,7 +15,7 @@ export default function SpecialSubLgnd(props: Partial<MuiFaIconProps>) {
     >
       <MuiFaIcon
         icon={faAsterisk}
-        sx={{color: specialColor, fontSize: 10}}
+        sx={{color: specialColor, fontSize: 9}}
         {...rest}
       />
     </Box>

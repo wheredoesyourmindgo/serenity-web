@@ -1,11 +1,19 @@
-import React, {useState} from 'react'
-import {Box, Container, Tab, Tabs, Typography as Type} from '@mui/material'
+import React, {useEffect, useState} from 'react'
+import {
+  Box,
+  Container,
+  FormControlLabel,
+  FormGroup,
+  Switch,
+  Tab,
+  Tabs,
+  ThemeProvider,
+  Typography as Type
+} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ColumnBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
-
 import {
-  faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
   faHouseUser,
   faMouse
@@ -54,6 +62,21 @@ export default function VimPage() {
     setValue(newValue)
   }
 
+  const [checked, setChecked] = useState(false)
+
+  const handleLeaderChange = (
+    _event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => {
+    setChecked(checked)
+  }
+
+  useEffect(() => {
+    if (checked && (value === 2 || value === 3)) {
+      setValue(0)
+    }
+  }, [checked, value])
+
   return (
     <PageLayout>
       <Container sx={{m: 'auto'}}>
@@ -72,24 +95,40 @@ export default function VimPage() {
 
           <Box pt={4}>
             <TabPanel value={value} index={0}>
-              <AlphaKeys />
+              {checked ? <LeaderAlphaKeys /> : <AlphaKeys />}
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <NumNavKeys />
+              {checked ? <LeaderNumNavKeys /> : <NumNavKeys />}
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <TextObjKeys />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
               <SymbolKeys />
             </TabPanel>
-            <TabPanel value={value} index={4}>
-              <LeaderAlphaKeys />
-            </TabPanel>
-            <TabPanel value={value} index={5}>
-              <LeaderNumNavKeys />
+            <TabPanel value={value} index={3}>
+              <TextObjKeys />
             </TabPanel>
           </Box>
+
+          <FormGroup>
+            <FormControlLabel
+              color="primary"
+              control={
+                <Switch
+                  sx={{
+                    '& .MuiSwitch-switchBase': {
+                      '&:not(.Mui-checked)': {
+                        color: 'solarized.base01'
+                      }
+                    }
+                  }}
+                  checked={checked}
+                  onChange={handleLeaderChange}
+                  inputProps={{'aria-label': 'Show Leaders'}}
+                />
+              }
+              label={<Type color="text.primary">Show Leaders</Type>}
+            />
+          </FormGroup>
+
           <Box
             sx={{
               marginTop: 6,
@@ -123,40 +162,24 @@ export default function VimPage() {
                 {...a11yProps(1)}
               />
               <Tab
-                label="Object Select"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon icon={faMouse} />
-                  </Box>
-                }
-                {...a11yProps(2)}
-              />
-              <Tab
+                disabled={checked}
                 label="Symbols"
                 icon={
                   <Box component="span">
                     <MuiFaIcon icon={faArrowUpLeftFromCircle} />
                   </Box>
                 }
+                {...a11yProps(2)}
+              />
+              <Tab
+                disabled={checked}
+                label="Object Select"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faMouse} />
+                  </Box>
+                }
                 {...a11yProps(3)}
-              />
-              <Tab
-                label="Leaders"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon icon={faArrowTurnDownLeft} />
-                  </Box>
-                }
-                {...a11yProps(4)}
-              />
-              <Tab
-                label="Leaders num/nav"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon icon={faArrowTurnDownLeft} />
-                  </Box>
-                }
-                {...a11yProps(5)}
               />
             </Tabs>
           </Box>
