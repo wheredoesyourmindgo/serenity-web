@@ -63,6 +63,15 @@ const appTheme = {
     fontFamily: ['MonoLisa', ...systemFonts].join(',')
   },
   palette: {...basePalette}
+  // components: {
+  //   MuiSwitch: {
+  //     styleOverrides: {
+  //       switchBase: {
+  //         color: lightSolarizedPalette.base1
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 const theme = createTheme(appTheme)
