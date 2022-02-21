@@ -7,7 +7,6 @@ import {
   Switch,
   Tab,
   Tabs,
-  ThemeProvider,
   Typography as Type
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
@@ -25,6 +24,7 @@ import SymbolKeys from '@components/keyboard/vim/symbolKeys'
 import LeaderAlphaKeys from '@components/keyboard/vim/leaderAlphaKeys'
 import LeaderNumNavKeys from '@components/keyboard/vim/leaderNumNavKeys'
 import NumNavKeys from '@components/keyboard/vim/numNavKeys'
+import LegacyAlphaKeys from '@components/keyboard/vim/LegacyAlphaKeys'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -62,20 +62,34 @@ export default function VimPage() {
     setValue(newValue)
   }
 
-  const [checked, setChecked] = useState(false)
+  const [leaderChecked, setLeaderChecked] = useState(false)
+  const [legacyChecked, setLegacyChecked] = useState(false)
 
   const handleLeaderChange = (
     _event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean
   ) => {
-    setChecked(checked)
+    if (checked && legacyChecked) {
+      setLegacyChecked(false)
+    }
+    setLeaderChecked(checked)
+  }
+
+  const handleLegacyChange = (
+    _event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => {
+    if (checked && leaderChecked) {
+      setLeaderChecked(false)
+    }
+    setLegacyChecked(checked)
   }
 
   useEffect(() => {
-    if (checked && (value === 2 || value === 3)) {
+    if (leaderChecked && (value === 2 || value === 3)) {
       setValue(0)
     }
-  }, [checked, value])
+  }, [leaderChecked, value])
 
   return (
     <PageLayout>
@@ -95,10 +109,16 @@ export default function VimPage() {
 
           <Box pt={4}>
             <TabPanel value={value} index={0}>
-              {checked ? <LeaderAlphaKeys /> : <AlphaKeys />}
+              {leaderChecked ? (
+                <LeaderAlphaKeys />
+              ) : legacyChecked ? (
+                <LegacyAlphaKeys />
+              ) : (
+                <AlphaKeys />
+              )}
             </TabPanel>
             <TabPanel value={value} index={1}>
-              {checked ? <LeaderNumNavKeys /> : <NumNavKeys />}
+              {leaderChecked ? <LeaderNumNavKeys /> : <NumNavKeys />}
             </TabPanel>
             <TabPanel value={value} index={2}>
               <SymbolKeys />
@@ -108,11 +128,13 @@ export default function VimPage() {
             </TabPanel>
           </Box>
 
-          <FormGroup>
+          <FormGroup sx={{flexDirection: 'row', marginTop: 4}}>
             <FormControlLabel
+              sx={{marginRight: 4}}
               color="primary"
               control={
                 <Switch
+                  size="small"
                   sx={{
                     '& .MuiSwitch-switchBase': {
                       '&:not(.Mui-checked)': {
@@ -120,12 +142,33 @@ export default function VimPage() {
                       }
                     }
                   }}
-                  checked={checked}
+                  checked={leaderChecked}
                   onChange={handleLeaderChange}
-                  inputProps={{'aria-label': 'Show Leaders'}}
+                  inputProps={{'aria-label': 'Show Leaders Switch'}}
                 />
               }
               label={<Type color="text.primary">Show Leaders</Type>}
+            />
+
+            <FormControlLabel
+              sx={{marginRight: 4}}
+              color="primary"
+              control={
+                <Switch
+                  size="small"
+                  sx={{
+                    '& .MuiSwitch-switchBase': {
+                      '&:not(.Mui-checked)': {
+                        color: 'solarized.base01'
+                      }
+                    }
+                  }}
+                  checked={legacyChecked}
+                  onChange={handleLegacyChange}
+                  inputProps={{'aria-label': 'Show Mappings Switch'}}
+                />
+              }
+              label={<Type color="text.primary">Show Mappings</Type>}
             />
           </FormGroup>
 
@@ -162,7 +205,7 @@ export default function VimPage() {
                 {...a11yProps(1)}
               />
               <Tab
-                disabled={checked}
+                disabled={leaderChecked}
                 label="Symbols"
                 icon={
                   <Box component="span">
@@ -172,7 +215,7 @@ export default function VimPage() {
                 {...a11yProps(2)}
               />
               <Tab
-                disabled={checked}
+                disabled={leaderChecked}
                 label="Object Select"
                 icon={
                   <Box component="span">
