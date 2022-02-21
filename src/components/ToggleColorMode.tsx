@@ -46,11 +46,13 @@ export default function ToggleColorMode({children}: Props) {
     <ThemeProvider theme={sysTheme}>
       <Box
         bgcolor="background.default"
-        position="absolute"
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
+        overflow="auto"
+        height="100vh"
+        // position="absolute"
+        // top={0}
+        // left={0}
+        // right={0}
+        // bottom={0}
       >
         {children}
       </Box>

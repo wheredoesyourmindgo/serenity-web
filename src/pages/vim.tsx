@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {
   Box,
   Container,
@@ -7,15 +7,18 @@ import {
   Switch,
   Tab,
   Tabs,
+  ToggleButton,
+  ToggleButtonGroup,
   Typography as Type
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ColumnBox} from 'mui-sleazebox'
+import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
 import {
-  faArrowUpLeftFromCircle,
-  faHouseUser,
-  faMouse
+  faAt,
+  faHashtag,
+  faKeyboard,
+  faText
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
 import AlphaKeys from '@components/keyboard/vim/AlphaKeys'
@@ -28,7 +31,10 @@ import LegacyAlphaKeys from '@components/keyboard/vim/LegacyAlphaKeys'
 import LegacyNumNavKeys from '@components/keyboard/vim/LegacyNumNavKeys'
 import LegacySymbolKeys from '@components/keyboard/vim/LegacySymbolKeys'
 import LegacyTextObjKeys from '@components/keyboard/vim/LegacyTextObjKeys'
+import LegacyLeaderAlphaKeys from '@components/keyboard/vim/LegacyLeaderAlphaKeys'
+import LegacyLeaderNumNavKeys from '@components/keyboard/vim/LegacyLeaderNumNavKeys'
 
+type Show = 'descriptions' | 'mappings'
 interface TabPanelProps {
   children?: React.ReactNode
   index: number
@@ -37,7 +43,6 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
   const {children, value, index, ...other} = props
-
   return (
     <div
       role="tabpanel"
@@ -66,27 +71,17 @@ export default function VimPage() {
   }
 
   const [leaderChecked, setLeaderChecked] = useState(false)
-  const [legacyChecked, setLegacyChecked] = useState(false)
+  // const [legacyChecked, setLegacyChecked] = useState(false)
 
-  const handleLeaderChange = (
-    _event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean
-  ) => {
-    if (checked && legacyChecked) {
-      setLegacyChecked(false)
-    }
-    setLeaderChecked(checked)
-  }
-
-  const handleLegacyChange = (
-    _event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean
-  ) => {
-    if (checked && leaderChecked) {
-      setLeaderChecked(false)
-    }
-    setLegacyChecked(checked)
-  }
+  // const handleLegacyChange = (
+  //   _event: React.ChangeEvent<HTMLInputElement>,
+  //   checked: boolean
+  // ) => {
+  //   if (checked && leaderChecked) {
+  //     setLeaderChecked(false)
+  //   }
+  //   setLegacyChecked(checked)
+  // }
 
   useEffect(() => {
     if (leaderChecked && (value === 2 || value === 3)) {
@@ -94,10 +89,31 @@ export default function VimPage() {
     }
   }, [leaderChecked, value])
 
+  const [show, setShow] = useState<Show>('descriptions')
+
+  const handleShowChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    newShow: Show
+  ) => {
+    if (newShow !== null) {
+      setShow(newShow)
+    }
+  }
+
+  const handleLeaderChange = (
+    _event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => {
+    // if (checked && legacyChecked) {
+    //   setLegacyChecked(false)
+    // }
+    setLeaderChecked(checked)
+  }
+
   return (
     <PageLayout>
       <Container sx={{m: 'auto'}}>
-        <ColumnBox sx={{my: 4}} alignItems="center">
+        <ColumnBox sx={{my: 10}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
@@ -112,54 +128,86 @@ export default function VimPage() {
 
           <Box pt={4}>
             <TabPanel value={value} index={0}>
-              {leaderChecked ? (
+              {leaderChecked && show === 'mappings' ? (
+                <LegacyLeaderAlphaKeys />
+              ) : leaderChecked && show === 'descriptions' ? (
                 <LeaderAlphaKeys />
-              ) : legacyChecked ? (
+              ) : show === 'mappings' ? (
                 <LegacyAlphaKeys />
               ) : (
                 <AlphaKeys />
               )}
             </TabPanel>
             <TabPanel value={value} index={1}>
-              {leaderChecked ? (
+              {leaderChecked && show === 'mappings' ? (
+                <LegacyLeaderNumNavKeys />
+              ) : leaderChecked && show === 'descriptions' ? (
                 <LeaderNumNavKeys />
-              ) : legacyChecked ? (
+              ) : show === 'mappings' ? (
                 <LegacyNumNavKeys />
               ) : (
                 <NumNavKeys />
               )}
             </TabPanel>
             <TabPanel value={value} index={2}>
-              {legacyChecked ? <LegacySymbolKeys /> : <SymbolKeys />}
+              {show === 'mappings' ? <LegacySymbolKeys /> : <SymbolKeys />}
             </TabPanel>
             <TabPanel value={value} index={3}>
-              {legacyChecked ? <LegacyTextObjKeys /> : <TextObjKeys />}
+              {show === 'mappings' ? <LegacyTextObjKeys /> : <TextObjKeys />}
             </TabPanel>
           </Box>
 
-          <FormGroup sx={{flexDirection: 'row', marginTop: 4}}>
-            <FormControlLabel
-              sx={{marginRight: 4}}
-              color="primary"
-              control={
-                <Switch
-                  size="small"
-                  sx={{
-                    '& .MuiSwitch-switchBase': {
-                      '&:not(.Mui-checked)': {
-                        color: 'solarized.base01'
-                      }
-                    }
-                  }}
-                  checked={leaderChecked}
-                  onChange={handleLeaderChange}
-                  inputProps={{'aria-label': 'Show Leaders Switch'}}
+          <RowBox
+            mt={4}
+            justifyContent="center"
+            alignItems="center"
+            flexSpacing={8}
+          >
+            <ChildBox>
+              <ToggleButtonGroup
+                color="primary"
+                value={show}
+                exclusive
+                onChange={handleShowChange}
+              >
+                <ToggleButton
+                  sx={{color: 'solarized.base01'}}
+                  value="descriptions"
+                >
+                  Descriptions
+                </ToggleButton>
+                <ToggleButton sx={{color: 'solarized.base01'}} value="mappings">
+                  Mappings
+                </ToggleButton>
+                {/* <ToggleButton sx={{color: 'solarized.base01'}} value="leaders">
+                Leaders
+              </ToggleButton> */}
+              </ToggleButtonGroup>
+            </ChildBox>
+            <ChildBox>
+              <FormGroup sx={{flexDirection: 'row'}}>
+                <FormControlLabel
+                  sx={{marginRight: 4}}
+                  color="primary"
+                  control={
+                    <Switch
+                      size="small"
+                      sx={{
+                        '& .MuiSwitch-switchBase': {
+                          '&:not(.Mui-checked)': {
+                            color: 'solarized.base01'
+                          }
+                        }
+                      }}
+                      checked={leaderChecked}
+                      onChange={handleLeaderChange}
+                      inputProps={{'aria-label': 'Show Leaders Switch'}}
+                    />
+                  }
+                  label={<Type color="text.primary">Show Leaders</Type>}
                 />
-              }
-              label={<Type color="text.primary">Show Leaders</Type>}
-            />
 
-            <FormControlLabel
+                {/* <FormControlLabel
               sx={{marginRight: 4}}
               color="primary"
               control={
@@ -178,8 +226,10 @@ export default function VimPage() {
                 />
               }
               label={<Type color="text.primary">Show Mappings</Type>}
-            />
-          </FormGroup>
+            /> */}
+              </FormGroup>
+            </ChildBox>
+          </RowBox>
 
           <Box
             sx={{
@@ -199,7 +249,7 @@ export default function VimPage() {
                 label="Alphas"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faHouseUser} />
+                    <MuiFaIcon icon={faKeyboard} />
                   </Box>
                 }
                 {...a11yProps(0)}
@@ -208,7 +258,7 @@ export default function VimPage() {
                 label="Num/Nav"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faHouseUser} />
+                    <MuiFaIcon icon={faHashtag} />
                   </Box>
                 }
                 {...a11yProps(1)}
@@ -218,7 +268,7 @@ export default function VimPage() {
                 label="Symbols"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faArrowUpLeftFromCircle} />
+                    <MuiFaIcon icon={faAt} />
                   </Box>
                 }
                 {...a11yProps(2)}
@@ -228,7 +278,7 @@ export default function VimPage() {
                 label="Object Select"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faMouse} />
+                    <MuiFaIcon icon={faText} />
                   </Box>
                 }
                 {...a11yProps(3)}

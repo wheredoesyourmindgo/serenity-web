@@ -6,7 +6,8 @@
     "Lgnd",
     "Overridable",
     "sleazebox",
-    "smoothscroll"
+    "smoothscroll",
+    "Swatchbook"
   ],
   "editor.formatOnSave": true
 }
