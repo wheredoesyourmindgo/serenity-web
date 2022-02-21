@@ -16,12 +16,12 @@ import {
 // import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
-import BaseLyr from '@components/keyboard/firmware/baseLyr'
-import NumNavLyr from '@components/keyboard/firmware/numNavLyr'
-import SymLyr from '@components/keyboard/firmware/symLyr'
-import FuncLyr from '@components/keyboard/firmware/functionLyr'
-import ActionLyr from '@components/keyboard/firmware/actionLyr'
-import MediaLyr from '@components/keyboard/firmware/mediaLyr'
+import BaseLyr from '@components/keyboard/firmware/BaseLyr'
+import NumNavLyr from '@components/keyboard/firmware/NumNavLyr'
+import SymLyr from '@components/keyboard/firmware/SymLyr'
+import FuncLyr from '@components/keyboard/firmware/FunctionLyr'
+import ActionLyr from '@components/keyboard/firmware/ActionLyr'
+import MediaLyr from '@components/keyboard/firmware/MediaLyr'
 import {
   faAnglesDown,
   faAsterisk,
@@ -38,9 +38,9 @@ import {
   faTypewriter
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
-import QwertyLyr from '@components/keyboard/firmware/qwertyLyr'
-import MouseLyr from '@components/keyboard/firmware/mouseLyr'
-import OsLyr from '@components/keyboard/firmware/osLyr'
+import QwertyLyr from '@components/keyboard/firmware/QwertyLyr'
+import MouseLyr from '@components/keyboard/firmware/MouseLyr'
+import OsLyr from '@components/keyboard/firmware/OsLyr'
 import {faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
 
 interface TabPanelProps {
@@ -81,7 +81,7 @@ export default function FirmwarePage() {
   return (
     <PageLayout>
       <Container sx={{m: 'auto'}}>
-        <ColumnBox sx={{my: 4}} alignItems="center">
+        <ColumnBox sx={{my: 10}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
