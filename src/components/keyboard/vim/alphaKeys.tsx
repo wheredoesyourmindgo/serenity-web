@@ -202,9 +202,9 @@ export default function AlphaKeys() {
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              till/find
+              prev.
               <br />
-              char prev.
+              char/till
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="e">
@@ -233,9 +233,9 @@ export default function AlphaKeys() {
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              till/find
+              next
               <br />
-              char next
+              char/till
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="=">
@@ -373,7 +373,11 @@ export default function AlphaKeys() {
               sx: {transform: 'translateX(-1px)'}
             }}
           >
-            <Type {...sharedTypeProps}>redo</Type>
+            <Type {...sharedTypeProps}>
+              repeat
+              <br />
+              cmd.
+            </Type>
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
