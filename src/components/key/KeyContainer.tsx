@@ -50,7 +50,7 @@ export default function KeyContainer({
         boxShadow: `${
           theme.palette.mode === 'light'
             ? 'rgba(50, 50, 93, 0.1)'
-            : 'rgba(205, 205, 51, 0.1)'
+            : 'rgba(205, 205, 51, 0.05)'
         } 0px 50px 100px -20px, ${
           theme.palette.mode === 'light'
             ? 'rgba(0, 0, 0, 0.1)'
