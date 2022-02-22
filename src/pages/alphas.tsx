@@ -1,7 +1,14 @@
 import React from 'react'
-import {Box, Container, Divider, Paper, Typography as Type} from '@mui/material'
+import {
+  Box,
+  Container,
+  Divider,
+  Link,
+  Paper,
+  Typography as Type
+} from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ColumnBox} from 'mui-sleazebox'
+import {ColumnBox, RowBox} from 'mui-sleazebox'
 import AlphaKeyboard from '@components/keyboard/Alphas'
 import PageLayout from '../components/PageLayout'
 import MuiFaIcon from '@components/MuiFaIcon'
@@ -78,6 +85,19 @@ Worst Bigrams:
 Score: 35.02`}
               </Type>
             </Paper>
+            <RowBox justifyContent="flex-end" mt={1}>
+              <Link
+                href="https://github.com/semilin/genkey"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="caption"
+                sx={{
+                  color: 'text.primary'
+                }}
+              >
+                https://github.com/semilin/genkey
+              </Link>
+            </RowBox>
           </Box>
 
           <Box pt={14}>
@@ -132,6 +152,19 @@ Row Use
 `}
               </Type>
             </Paper>
+            <RowBox justifyContent="flex-end" mt={1}>
+              <Link
+                href="https://github.com/ClemenPine/200-analyzer"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="caption"
+                sx={{
+                  color: 'text.primary'
+                }}
+              >
+                https://github.com/ClemenPine/200-analyzer
+              </Link>
+            </RowBox>
           </Box>
         </ColumnBox>
       </Container>
