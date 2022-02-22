@@ -8,11 +8,16 @@ import {
   faArrowTurnDownLeft,
   faArrowUp,
   faArrowUpLeftFromCircle,
+  faAt,
   faBracketSquare,
   faComputerMouse,
-  faLayerGroup,
+  faFunction,
+  faGear,
+  faHashtag,
   faOption,
-  faUp
+  faScissors,
+  faUp,
+  faVolumeXmark
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -175,8 +180,9 @@ export default function QwertyLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faComputerMouse}
-            lyrHoldSubIcn={faLayerGroup}
+            icon={faVolumeXmark}
+            lyrHoldSubIcn={faComputerMouse}
+            tapDance
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'mouse-layer-key',
@@ -194,7 +200,7 @@ export default function QwertyLyr() {
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             special
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faHashtag}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -211,7 +217,7 @@ export default function QwertyLyr() {
           />
           <KeyIcon
             icon={faArrowTurnDownLeft}
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faAt}
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'low-layer-key',
@@ -226,7 +232,7 @@ export default function QwertyLyr() {
           />
           <KeyIcon
             icon={faArrowRightLongToLine}
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faGear}
             sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'high-layer-key',
@@ -244,7 +250,7 @@ export default function QwertyLyr() {
             rotation={270}
             special
             sx={{transform: 'translateY(6px)'}}
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faScissors}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
@@ -262,7 +268,7 @@ export default function QwertyLyr() {
           <KeyLegend
             {...sharedProps}
             shiftLgnd="?"
-            lyrHoldSubIcn={faLayerGroup}
+            lyrHoldSubIcn={faFunction}
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (
