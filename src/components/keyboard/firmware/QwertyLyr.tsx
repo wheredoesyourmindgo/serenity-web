@@ -188,6 +188,10 @@ export default function QwertyLyr() {
               keyId: 'mouse-layer-key',
               popOverContent: (
                 <Box p={1}>
+                  <PopoverDesc action="single tap" output="Mute" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Hide Window" />
+                  <br />
                   <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
