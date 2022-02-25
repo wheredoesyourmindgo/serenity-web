@@ -33,8 +33,8 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
           <KeyLegend {...sharedProps} vimRef="v" />
           <KeyLegend {...sharedProps} vimRef="l" />
-          <KeyLegend {...sharedProps} vimRef="d" />
-          <KeyLegend {...sharedProps} vimRef="w" />
+          <KeyLegend {...sharedProps} vimRef="m" />
+          <KeyLegend {...sharedProps} vimRef="f" />
           <KeyLegend {...sharedProps} vimRef="x" special>
             <Type {...sharedTypeProps}>
               hover
@@ -42,7 +42,7 @@ export default function LeaderAlphaKeys() {
               popup
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="q" special>
+          <KeyLegend {...sharedProps} vimRef="b" special>
             <Type {...sharedTypeProps}>
               goto
               <br />
@@ -51,7 +51,7 @@ export default function LeaderAlphaKeys() {
               nition
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="f">
+          <KeyLegend {...sharedProps} vimRef="w">
             <Type {...sharedTypeProps}>
               end prev.
               <br />
@@ -105,7 +105,7 @@ export default function LeaderAlphaKeys() {
               down
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="h">
+          <KeyLegend {...sharedProps} vimRef="t">
             <Type {...sharedTypeProps}>
               move ln.
               <br />
@@ -129,7 +129,7 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="g" />
-          <KeyLegend {...sharedProps} vimRef="t" homing />
+          <KeyLegend {...sharedProps} vimRef="d" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />
           <KeyLegend {...sharedProps} vimRef="a" />
@@ -145,17 +145,17 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="j" />
-          <KeyLegend {...sharedProps} vimRef="m" />
-          <KeyLegend {...sharedProps} vimRef="c" />
-          <KeyLegend {...sharedProps} vimRef="b" special>
+          <KeyLegend {...sharedProps} vimRef="k" />
+          <KeyLegend {...sharedProps} vimRef="h" />
+          <KeyLegend {...sharedProps} vimRef="q" special>
             <Type {...sharedTypeProps}>
               reflow
               <br />
               text
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k" />
           <KeyLegend {...sharedProps} vimRef="p" />
+          <KeyLegend {...sharedProps} vimRef="c" />
           <KeyLegend {...sharedProps} vimRef="'" />
           <KeyLegend {...sharedProps} vimRef="," />
           <KeyLegend {...sharedProps} vimRef="." />

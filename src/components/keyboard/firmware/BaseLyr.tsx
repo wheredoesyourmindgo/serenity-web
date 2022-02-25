@@ -60,20 +60,20 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="L">
             l
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="D">
-            d
+          <KeyLegend {...sharedProps} shiftLgnd="M">
+            m
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="W">
-            w
+          <KeyLegend {...sharedProps} shiftLgnd="F">
+            f
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="X">
             x
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="Q">
-            q
+          <KeyLegend {...sharedProps} shiftLgnd="B">
+            b
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="F">
-            f
+          <KeyLegend {...sharedProps} shiftLgnd="W">
+            w
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="O">
             o
@@ -111,8 +111,8 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="R">
             r
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="H">
-            h
+          <KeyLegend {...sharedProps} shiftLgnd="T" homing>
+            t
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="N" homing>
             n
@@ -123,8 +123,8 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="G">
             g
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="T" homing>
-            t
+          <KeyLegend {...sharedProps} shiftLgnd="D">
+            d
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="E">
             e
@@ -163,20 +163,20 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="J">
             j
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="M">
-            m
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="C">
-            c
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="B">
-            b
-          </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="K">
             k
           </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="H">
+            h
+          </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="Q">
+            q
+          </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="P">
             p
+          </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="C">
+            c
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd='"'>
             '

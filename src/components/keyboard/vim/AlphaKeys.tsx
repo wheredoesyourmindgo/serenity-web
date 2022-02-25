@@ -55,7 +55,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>g cmds</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="d">
+          <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>
               CHANGE
               <br />
@@ -64,7 +64,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>change</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="w">
+          <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps}>RPLC. LN.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -86,12 +86,12 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="q">
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>TILL REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>till</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="f">
+          <KeyLegend {...sharedProps} vimRef="w">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (non-whtspc)
             </Type>
@@ -153,7 +153,7 @@ export default function AlphaKeys() {
               <br /> mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="h">
+          <KeyLegend {...sharedProps} vimRef="t">
             <Type {...sharedTypeProps}>APND. EOL.</Type>
             <Divider />
             <Type {...sharedTypeProps}>append</Type>
@@ -194,7 +194,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen mid</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="t" homing>
+          <KeyLegend {...sharedProps} vimRef="d" homing>
             <Type {...sharedTypeProps}>
               PREV.
               <br />
@@ -262,7 +262,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>delete</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="m">
+          <KeyLegend {...sharedProps} vimRef="k">
             <Type {...sharedTypeProps}>
               YANK
               <br /> EOL.
@@ -270,7 +270,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>yank</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="c">
+          <KeyLegend {...sharedProps} vimRef="h">
             <Type {...sharedTypeProps}>
               PASTE
               <br /> BEFORE
@@ -282,7 +282,7 @@ export default function AlphaKeys() {
               after
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="q">
             <Type {...sharedTypeProps}>
               REPEAT
               <br /> SUB.
@@ -290,12 +290,12 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>redo</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k">
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>FIND REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>find</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p">
+          <KeyLegend {...sharedProps} vimRef="c">
             <Type {...sharedTypeProps}>
               PREV.
               <br />
