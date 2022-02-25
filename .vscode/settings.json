@@ -9,5 +9,10 @@
     "smoothscroll",
     "Swatchbook"
   ],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.next": true,
+    "**/.vercel": true,
+    "**/node_modules": true
+  }
 }
