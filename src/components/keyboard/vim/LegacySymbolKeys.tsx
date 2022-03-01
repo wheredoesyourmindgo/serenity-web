@@ -65,10 +65,10 @@ export default function LegacySymbolKeys() {
             <Type {...sharedTypeProps}>[%</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="<">
-            <Type {...sharedTypeProps}>]%</Type>
+            <Type {...sharedTypeProps}>%</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=">">
-            <Type {...sharedTypeProps}>[%</Type>
+            <Type {...sharedTypeProps}>%</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="}">
             <Type {...sharedTypeProps}>]%</Type>

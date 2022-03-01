@@ -84,18 +84,10 @@ export default function SymbolKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="<">
-            <Type {...sharedTypeProps}>
-              next
-              <br />
-              bracket
-            </Type>
+            <Type {...sharedTypeProps}>matchit</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=">">
-            <Type {...sharedTypeProps}>
-              previous
-              <br />
-              bracket
-            </Type>
+            <Type {...sharedTypeProps}>matchit</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="}">
             <Type {...sharedTypeProps}>
