@@ -111,7 +111,7 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="R">
             r
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="T" homing>
+          <KeyLegend {...sharedProps} shiftLgnd="T">
             t
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="N" homing>
@@ -123,7 +123,7 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="G">
             g
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="D">
+          <KeyLegend {...sharedProps} shiftLgnd="D" homing>
             d
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="E">
