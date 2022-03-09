@@ -7,13 +7,13 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUp,
+  faArrowUpLeftFromCircle,
   faBorderBottomRight,
   faBorderTopLeft,
   faBracketSquare,
   faCalculatorSimple,
   faCopy,
   faLock,
-  faLockOpen,
   faOption,
   faPageCaretDown,
   faPageCaretUp,
@@ -121,7 +121,10 @@ export default function NumNavLyr() {
               keyId: 'lock-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock Num/Nav Layer" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Lock/Unlock Num/Nav Layer"
+                  />
                 </Box>
               )
             }}
@@ -284,35 +287,39 @@ export default function NumNavLyr() {
           <KeyIcon icon={faOption} sx={{fontSize: 19}} color="text.disabled" />
           <KeyIcon icon={faCommand} color="text.disabled" />
           <KeyIcon
-            icon={faLockOpen}
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 19}}
             KeyContainerProps={{
-              keyId: 'base-layer-key',
+              keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Revert to Base Layer" />
+                  <PopoverDesc action="tap/hold" output="Escape" />
                 </Box>
               )
             }}
           />
           <KeyIcon icon={faArrowTurnDownLeft} />
-          <KeyIcon icon={faArrowRightLongToLine} />
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
+          />
+          <KeyIcon
+            icon={faArrowRightLongToLine}
             lyrHoldSubIcn={faApple}
             LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
+                  <PopoverDesc action="tap" output="Tab" />
                   <br />
                   <PopoverDesc action="hold" output="OS Layer" />
                 </Box>
               )
             }}
           />
+
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faOption}

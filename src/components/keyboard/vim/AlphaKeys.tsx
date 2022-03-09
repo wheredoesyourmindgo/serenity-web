@@ -358,25 +358,14 @@ export default function AlphaKeys() {
                 fontSize: 12
               }
             }}
-          />
+          >
+            <Type {...sharedTypeProps}>escape</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
             <Type {...sharedTypeProps}>
               command
               <br />
               mode
-            </Type>
-          </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            vimRefIcn={faArrowRightLongToLine}
-            VimRefIcnProps={{
-              sx: {transform: 'translateX(-1px)'}
-            }}
-          >
-            <Type {...sharedTypeProps}>
-              repeat
-              <br />
-              cmd.
             </Type>
           </KeyLegend>
           <KeyLegend
@@ -390,6 +379,19 @@ export default function AlphaKeys() {
             }}
           >
             <Type {...sharedTypeProps}>{`<leader>`}</Type>
+          </KeyLegend>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          >
+            <Type {...sharedTypeProps}>
+              repeat
+              <br />
+              cmd.
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

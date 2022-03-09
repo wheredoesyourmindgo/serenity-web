@@ -235,14 +235,15 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(6px)'}}
             lyrHoldSubIcn={faGear}
-            sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
-              keyId: 'high-layer-key',
+              keyId: 'higher-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Tab" />
+                  <PopoverDesc action="tap" output="Space" />
                   <br />
                   <PopoverDesc action="hold" output="Media Layer" />
                 </Box>
@@ -250,16 +251,15 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
-            rotation={270}
             special
-            sx={{transform: 'translateY(6px)'}}
+            icon={faArrowRightLongToLine}
+            sx={{transform: 'translateY(1px)'}}
             lyrHoldSubIcn={faScissors}
             KeyContainerProps={{
-              keyId: 'higher-layer-key',
+              keyId: 'high-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
+                  <PopoverDesc action="tap" output="Tab" />
                   <br />
                   <PopoverDesc
                     action="hold"

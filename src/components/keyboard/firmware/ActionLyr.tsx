@@ -5,11 +5,11 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
+  faBracketSquare,
   faCopy,
   faHandPointLeft,
   faHandPointRight,
   faLock,
-  faLockOpen,
   faMagicWandSparkles,
   faOption,
   faPaste,
@@ -256,7 +256,7 @@ export default function ActionLyr() {
               keyId: 'lock-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock Action Layer" />
+                  <PopoverDesc action="tap" output="Lock/Unlock Action Layer" />
                 </Box>
               )
             }}
@@ -388,15 +388,27 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon icon={faArrowTurnDownLeft} />
-          <KeyIcon icon={faArrowRightLongToLine} />
-
+          {/* <KeyIcon icon={faArrowRightLongToLine} /> */}
           <KeyIcon
-            icon={faLockOpen}
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
-              keyId: 'base-layer-key',
+              keyId: 'space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Revert to Base Layer" />
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faArrowRightLongToLine}
+            KeyContainerProps={{
+              keyId: 'tab-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
             }}

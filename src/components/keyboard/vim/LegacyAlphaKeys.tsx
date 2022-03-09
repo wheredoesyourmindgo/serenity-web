@@ -229,9 +229,23 @@ export default function LegacyAlphaKeys() {
                 fontSize: 12
               }
             }}
-          />
+          >
+            <Type {...sharedTypeProps}>{`<esc>`}</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
             <Type {...sharedTypeProps}>:</Type>
+          </KeyLegend>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faBracketSquare}
+            VimRefIcnProps={{
+              rotation: 270,
+              sx: {
+                transform: 'translateX(-4px)'
+              }
+            }}
+          >
+            <Type {...sharedTypeProps}>\</Type>
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -241,18 +255,6 @@ export default function LegacyAlphaKeys() {
             }}
           >
             <Type {...sharedTypeProps}>.</Type>
-          </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            vimRefIcn={faBracketSquare}
-            VimRefIcnProps={{
-              rotation: 270,
-              sx: {
-                transform: 'translateX(-3px)'
-              }
-            }}
-          >
-            <Type {...sharedTypeProps}>\</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

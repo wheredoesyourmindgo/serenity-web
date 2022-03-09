@@ -7,7 +7,6 @@ import {
   faBracketSquare,
   faLock,
   faLockA,
-  faLockOpen,
   faOption,
   faSort,
   faUp
@@ -176,7 +175,7 @@ export default function MouseLyr() {
               keyId: 'lock-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock Mouse Layer" />
+                  <PopoverDesc action="tap" output="Lock/Unlock Mouse Layer" />
                 </Box>
               )
             }}
@@ -283,17 +282,7 @@ export default function MouseLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon
-            icon={faLockOpen}
-            KeyContainerProps={{
-              keyId: 'base-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Revert to Base Layer" />
-                </Box>
-              )
-            }}
-          />
+          <KeyLegend />
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
@@ -310,7 +299,6 @@ export default function MouseLyr() {
             }}
           />
           <KeyIcon icon={faArrowTurnDownLeft} />
-          <KeyIcon icon={faArrowRightLongToLine} />
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
@@ -324,6 +312,7 @@ export default function MouseLyr() {
               )
             }}
           />
+          <KeyIcon icon={faArrowRightLongToLine} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faOption}

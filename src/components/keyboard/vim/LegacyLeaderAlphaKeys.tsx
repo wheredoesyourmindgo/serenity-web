@@ -136,10 +136,10 @@ export default function LegacyLeaderAlphaKeys() {
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>:</Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>K</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
