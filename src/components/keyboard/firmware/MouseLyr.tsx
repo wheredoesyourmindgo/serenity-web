@@ -203,10 +203,10 @@ export default function MouseLyr() {
           <KeyIcon
             icon={faBullseyePointer}
             KeyContainerProps={{
-              keyId: 'jiggle-mouse-key',
+              keyId: 'shake-mouse-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Jiggle Mouse Pointer" />
+                  <PopoverDesc action="tap" output="Shake Mouse Pointer" />
                 </Box>
               )
             }}
