@@ -5,6 +5,7 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faBracketSquare,
+  faBullseyePointer,
   faLock,
   faLockA,
   faOption,
@@ -199,8 +200,17 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-
+          <KeyIcon
+            icon={faBullseyePointer}
+            KeyContainerProps={{
+              keyId: 'jiggle-mouse-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Jiggle Mouse Pointer" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend
             {...sharedProps}
             sx={{fontSize: 16}}
