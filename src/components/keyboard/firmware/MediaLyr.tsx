@@ -1,6 +1,7 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
+  faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
   faBackward,
@@ -12,7 +13,6 @@ import {
   faLayerGroup,
   faLock,
   faLockA,
-  faLockOpen,
   faOption,
   faPlayPause,
   faTypewriter,
@@ -173,7 +173,7 @@ export default function MediaLyr() {
               keyId: 'lock-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock Media Layer" />
+                  <PopoverDesc action="tap" output="Lock/Unlock Media Layer" />
                 </Box>
               )
             }}
@@ -287,17 +287,6 @@ export default function MediaLyr() {
           <KeyIcon icon={faArrowTurnDownLeft} />
 
           <KeyIcon
-            icon={faLockOpen}
-            KeyContainerProps={{
-              keyId: 'base-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Revert to Base Layer" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
             icon={faBracketSquare}
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
@@ -306,6 +295,30 @@ export default function MediaLyr() {
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(6px)'}}
+            KeyContainerProps={{
+              keyId: 'space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          /> */}
+          <KeyIcon
+            icon={faArrowRightLongToLine}
+            KeyContainerProps={{
+              keyId: 'tab-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
             }}

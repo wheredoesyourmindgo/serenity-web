@@ -102,10 +102,10 @@ export default function LegacyLeaderNumNavKeys() {
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>:</Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>K</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

@@ -3,10 +3,10 @@ import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
   faArrowRightLongToLine,
   faArrowUpLeftFromCircle,
+  faArrowTurnDownLeft,
   faBracketSquare,
   faLock,
   faLockA,
-  faLockOpen,
   faOption,
   faRightToBracket,
   faUp
@@ -152,13 +152,13 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyIcon icon={faLockOpen} />
-          <KeyIcon icon={faArrowRightLongToLine} />
+          <KeyIcon icon={faArrowTurnDownLeft} />
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
           />
+          <KeyIcon icon={faArrowRightLongToLine} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faOption}

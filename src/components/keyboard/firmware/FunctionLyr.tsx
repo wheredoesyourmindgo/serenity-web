@@ -1,11 +1,10 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
-  faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
+  faBracketSquare,
   faLock,
-  faLockOpen,
   faOption,
   faUp
 } from '@fortawesome/pro-regular-svg-icons'
@@ -78,7 +77,10 @@ export default function FuncLyr() {
               keyId: 'lock-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock Function Layer" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Lock/Unlock Function Layer"
+                  />
                 </Box>
               )
             }}
@@ -305,7 +307,20 @@ export default function FuncLyr() {
             }}
           />
           <KeyIcon icon={faArrowTurnDownLeft} />
-          <KeyIcon icon={faArrowRightLongToLine} />
+          {/* <KeyIcon icon={faArrowRightLongToLine} /> */}
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(6px)'}}
+            KeyContainerProps={{
+              keyId: 'space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             icon={faUp}
             color="solarized.cyan"
@@ -321,17 +336,7 @@ export default function FuncLyr() {
           <KeyIcon icon={faCommand} color="solarized.cyan" />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
-          <KeyIcon
-            icon={faLockOpen}
-            KeyContainerProps={{
-              keyId: 'base-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Revert to Base Layer" />
-                </Box>
-              )
-            }}
-          />
+          <KeyLegend />
         </RowBox>
       </ColumnBox>
     </Box>

@@ -120,10 +120,10 @@ export default function LeaderNumNavKeys() {
               mode
             </Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>Help</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

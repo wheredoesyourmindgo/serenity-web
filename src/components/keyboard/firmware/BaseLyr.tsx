@@ -290,14 +290,15 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            icon={faBracketSquare}
+            rotation={270}
             lyrHoldSubIcn={faGear}
-            sx={{transform: 'translateY(1px)'}}
+            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'high-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Tab" />
+                  <PopoverDesc action="tap" output="Space" />
                   <br />
                   <PopoverDesc action="hold" output="Media Layer" />
                 </Box>
@@ -305,16 +306,15 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
-            rotation={270}
             special
-            sx={{transform: 'translateY(6px)', fontSize: 11}}
+            icon={faArrowRightLongToLine}
             lyrHoldSubIcn={faScissors}
+            sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
+                  <PopoverDesc action="tap" output="Tab" />
                   <br />
                   <PopoverDesc
                     action="hold"
