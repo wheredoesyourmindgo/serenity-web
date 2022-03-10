@@ -313,12 +313,11 @@ export default function MouseLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faUp}
-            color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
