@@ -10,7 +10,8 @@ import {
   faLockA,
   faOption,
   faSort,
-  faUp
+  faUp,
+  faVolumeXmark
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -73,7 +74,9 @@ export default function MouseLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} shiftLgnd="~">
+            `
+          </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -292,7 +295,24 @@ export default function MouseLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend />
+          <KeyIcon
+            icon={faVolumeXmark}
+            tapDance
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'oops-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="Toggle Mute" />
+                  <br />
+                  <PopoverDesc
+                    action="double tap"
+                    output="Mute & Hide Window"
+                  />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
           <KeyIcon icon={faCommand} color="solarized.cyan" />

@@ -8,6 +8,7 @@ import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
 import TapDanceSubIcn from './TapDanceSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
+import ReqSetupSubLgnd from './ReqSetupSubLgnd'
 
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps
@@ -16,6 +17,7 @@ type Props = MuiFaIconProps & {
   ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
   customShiftCode?: boolean
   special?: boolean
+  requiresOsConf?: boolean
   tapDance?: boolean
   homing?: boolean
   lyrHoldSubIcn?: HoldSubIcnProps['icon']
@@ -34,6 +36,7 @@ export default function KeyIcon({
   icon,
   customShiftCode = false,
   special = false,
+  requiresOsConf = false,
   tapDance = false,
   homing = false,
   lyrHoldSubIcn,
@@ -68,6 +71,7 @@ export default function KeyIcon({
           />
         ) : null}
         {special ? <SpecialSubLgnd /> : null}
+        {requiresOsConf ? <ReqSetupSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {lyrHoldSubIcn ? (

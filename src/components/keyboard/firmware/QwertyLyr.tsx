@@ -89,7 +89,21 @@ export default function QwertyLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
+          <KeyLegend
+            {...sharedProps}
+            shiftLgnd="_"
+            lyrHoldSubIcn={faComputerMouse}
+            KeyContainerProps={{
+              keyId: 'lowest-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Minus" />
+                  <br />
+                  <PopoverDesc action="hold" output="Mouse Layer" />
+                </Box>
+              )
+            }}
+          >
             -
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="A">
@@ -181,18 +195,18 @@ export default function QwertyLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faVolumeXmark}
-            lyrHoldSubIcn={faComputerMouse}
             tapDance
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
-              keyId: 'mouse-layer-key',
+              keyId: 'oops-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="Mute" />
+                  <PopoverDesc action="single tap" output="Toggle Mute" />
                   <br />
-                  <PopoverDesc action="double tap" output="Hide Window" />
-                  <br />
-                  <PopoverDesc action="hold" output="Mouse Layer" />
+                  <PopoverDesc
+                    action="double tap"
+                    output="Mute & Hide Window"
+                  />
                 </Box>
               )
             }}
