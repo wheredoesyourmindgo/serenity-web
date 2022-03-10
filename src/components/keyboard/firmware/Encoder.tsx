@@ -136,11 +136,17 @@ export default function Encoder() {
               keyId: 'action-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="clockwise" output="Redo" />
+                  <PopoverDesc action="clockwise" output="Next Tab" />
                   <br />
-                  <PopoverDesc action="counter-cl." output="Undo" />
+                  <PopoverDesc action="clockwise +shift" output="Redo" />
                   <br />
-                  <PopoverDesc action="press" output="Save" />
+                  <PopoverDesc action="counter-cl." output="Previous Tab" />
+                  <br />
+                  <PopoverDesc action="counter-cl. +shift" output="Undo" />
+                  <br />
+                  <PopoverDesc action="press" output="Close Window" />
+                  <br />
+                  <PopoverDesc action="press +shift" output="Save" />
                 </Box>
               )
             }}
