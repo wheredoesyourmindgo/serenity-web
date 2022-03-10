@@ -19,7 +19,8 @@ import {
   faUp,
   faVolumeDown,
   faVolumeSlash,
-  faVolumeUp
+  faVolumeUp,
+  faVolumeXmark
 } from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
 import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
@@ -79,6 +80,7 @@ export default function MediaLyr() {
           />
           <KeyIcon
             icon={faCircleHalfStroke}
+            requiresOsConf
             KeyContainerProps={{
               keyId: 'toggle-dark-mode-key',
               popOverContent: (
@@ -129,7 +131,9 @@ export default function MediaLyr() {
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend />
+          <KeyLegend {...sharedProps} shiftLgnd="~">
+            `
+          </KeyLegend>
           <KeyLegend />
           <KeyIcon
             icon={faVolumeDown}
@@ -255,8 +259,24 @@ export default function MediaLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-
+          <KeyIcon
+            icon={faVolumeXmark}
+            tapDance
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'oops-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="Toggle Mute" />
+                  <br />
+                  <PopoverDesc
+                    action="double tap"
+                    output="Mute & Hide Window"
+                  />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} />
           <KeyIcon
             icon={faOption}

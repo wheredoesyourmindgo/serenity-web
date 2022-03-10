@@ -23,6 +23,7 @@ import FuncLyr from '@components/keyboard/firmware/FunctionLyr'
 import ActionLyr from '@components/keyboard/firmware/ActionLyr'
 import MediaLyr from '@components/keyboard/firmware/MediaLyr'
 import {
+  faWrenchSimple,
   faAnglesDown,
   faAsterisk,
   faAt,
@@ -282,6 +283,15 @@ export default function FirmwarePage() {
                       <MuiFaIcon icon={faAnglesDown} color="solarized.orange" />
                     </ListItemIcon>
                     <ListItemText primary="Tap Force Hold" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemIcon>
+                      <MuiFaIcon
+                        icon={faWrenchSimple}
+                        color="solarized.magenta"
+                      />
+                    </ListItemIcon>
+                    <ListItemText primary="Requires OS Configuration" />
                   </ListItem>
                 </List>
               </Box>

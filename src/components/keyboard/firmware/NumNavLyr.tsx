@@ -12,6 +12,7 @@ import {
   faBorderTopLeft,
   faBracketSquare,
   faCalculatorSimple,
+  faComputerMouse,
   faCopy,
   faLock,
   faOption,
@@ -22,7 +23,8 @@ import {
   faRightToBracket,
   faScissors,
   faUndo,
-  faUp
+  faUp,
+  faVolumeXmark
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -108,7 +110,21 @@ export default function NumNavLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="~">
+          <KeyLegend
+            {...sharedProps}
+            shiftLgnd="~"
+            lyrHoldSubIcn={faComputerMouse}
+            KeyContainerProps={{
+              keyId: 'lowest-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Grave" />
+                  <br />
+                  <PopoverDesc action="hold" output="Mouse Layer" />
+                </Box>
+              )
+            }}
+          >
             `
           </KeyLegend>
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
@@ -282,7 +298,24 @@ export default function NumNavLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faVolumeXmark}
+            tapDance
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'oops-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="Toggle Mute" />
+                  <br />
+                  <PopoverDesc
+                    action="double tap"
+                    output="Mute & Hide Window"
+                  />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} color="text.disabled" />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} color="text.disabled" />
           <KeyIcon icon={faCommand} color="text.disabled" />

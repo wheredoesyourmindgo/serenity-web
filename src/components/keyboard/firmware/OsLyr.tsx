@@ -119,6 +119,7 @@ export default function OsLyr() {
           />
           <KeyIcon
             icon={faSidebarFlip}
+            requiresOsConf
             KeyContainerProps={{
               keyId: 'sidebar-key',
               popOverContent: (

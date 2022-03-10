@@ -23,6 +23,7 @@ import {
   faUndo,
   faUp,
   faUpRightAndDownLeftFromCenter,
+  faVolumeXmark,
   faWindowRestore
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
@@ -354,8 +355,24 @@ export default function ActionLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-
+          <KeyIcon
+            icon={faVolumeXmark}
+            tapDance
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'oops-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="Toggle Mute" />
+                  <br />
+                  <PopoverDesc
+                    action="double tap"
+                    output="Mute & Hide Window"
+                  />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} />
           <KeyIcon
             icon={faOption}
