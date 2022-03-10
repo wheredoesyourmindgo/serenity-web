@@ -9,12 +9,14 @@ import SpecialSubLgnd from './SpecialSubLgnd'
 import TapDanceSubIcn from './TapDanceSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 import ReqSetupSubLgnd from './ReqSetupSubLgnd'
+import EncoderSubLgnd from './EncoderSubLgnd'
 
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps
   shiftLgnd?: String | React.ReactNode
   shiftSubIcn?: ShiftSubIcnProps['icon']
   ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
+  optEncoder?: boolean
   customShiftCode?: boolean
   special?: boolean
   requiresOsConf?: boolean
@@ -45,6 +47,7 @@ export default function KeyIcon({
   ModHoldSubIcnProps,
   children,
   tapForceHold,
+  optEncoder,
   ...rest
 }: Props) {
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
@@ -71,6 +74,7 @@ export default function KeyIcon({
           />
         ) : null}
         {special ? <SpecialSubLgnd /> : null}
+        {optEncoder ? <EncoderSubLgnd /> : null}
         {requiresOsConf ? <ReqSetupSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}

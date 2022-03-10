@@ -341,7 +341,6 @@ export default function FuncLyr() {
           />
           <KeyIcon
             icon={faUp}
-            color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -351,9 +350,9 @@ export default function FuncLyr() {
               )
             }}
           />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyIcon icon={faCommand} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faChevronUp} />
           <KeyLegend />
         </RowBox>
       </ColumnBox>

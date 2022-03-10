@@ -182,10 +182,10 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyIcon icon={faUp} homing />
+          <KeyIcon icon={faCommand} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faChevronUp} />
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             Debug
           </KeyLegend>

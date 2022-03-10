@@ -249,6 +249,7 @@ export default function BaseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
+            optEncoder
             icon={faVolumeXmark}
             tapDance
             sx={{transform: 'translateY(2px)'}}
