@@ -91,7 +91,7 @@ export default function Encoder() {
                   <br />
                   <PopoverDesc action="counter-cl." output="Volume Down" />
                   <br />
-                  <PopoverDesc action="single press" output="Toggle Mute" />
+                  <PopoverDesc action="press" output="Toggle Mute" />
                   <br />
                   <PopoverDesc
                     action="double press"
