@@ -83,6 +83,23 @@ export default function Encoder() {
               transform: 'translateY(0px)',
               fontSize: 26
             }}
+            KeyContainerProps={{
+              keyId: 'encoder-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="clockwise" output="Volume Up" />
+                  <br />
+                  <PopoverDesc action="counter-cl." output="Volume Down" />
+                  <br />
+                  <PopoverDesc action="single press" output="Toggle Mute" />
+                  <br />
+                  <PopoverDesc
+                    action="double press"
+                    output="Mute & Hide Window"
+                  />
+                </Box>
+              )
+            }}
           />
 
           <KeyLegend {...sharedProps} />
