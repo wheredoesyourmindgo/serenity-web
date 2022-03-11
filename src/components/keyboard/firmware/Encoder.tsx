@@ -216,7 +216,17 @@ export default function Encoder() {
                 <Box p={1}>
                   <PopoverDesc action="clockwise" output="Scroll Down" />
                   <br />
+                  <PopoverDesc
+                    action="clockwise +shift"
+                    output="Scroll Right"
+                  />
+                  <br />
                   <PopoverDesc action="counter-cl." output="Scroll Up" />
+                  <br />
+                  <PopoverDesc
+                    action="counter-cl. +shift"
+                    output="Scroll Left"
+                  />
                   <br />
                   <PopoverDesc action="press" output="Left Mouse Click" />
                 </Box>
