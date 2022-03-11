@@ -5,7 +5,8 @@ import {
   faUp,
   faDial,
   faScissors,
-  faCog
+  faCog,
+  faFunction
 } from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
 import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
@@ -206,7 +207,22 @@ export default function Encoder() {
               )
             }}
           />
-          <KeyLegend />
+          <KeyIcon
+            icon={faFunction}
+            color="solarized.green"
+            KeyContainerProps={{
+              keyId: 'function-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="clockwise" output="Scroll Down" />
+                  <br />
+                  <PopoverDesc action="counter-cl." output="Scroll Up" />
+                  <br />
+                  <PopoverDesc action="press" output="Left Mouse Click" />
+                </Box>
+              )
+            }}
+          />
         </RowBox>
       </ColumnBox>
     </Box>
