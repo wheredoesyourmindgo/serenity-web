@@ -164,7 +164,12 @@ export default function Encoder() {
                     output="App Switcher Left"
                   />
                   <br />
-                  <PopoverDesc action="press" output="Toggle App Hide" />
+                  <PopoverDesc action="press" output="App Hide Toggle" />
+                  <br />
+                  <PopoverDesc
+                    action="double press"
+                    output="Quit Selected Switcher App"
+                  />
                 </Box>
               )
             }}
@@ -196,7 +201,7 @@ export default function Encoder() {
                   <br />
                   <PopoverDesc action="counter-cl." output="Zoom Out" />
                   <br />
-                  <PopoverDesc action="press" output="Reset Zoom" />
+                  <PopoverDesc action="press" output="Reset Zoom Toggle" />
                 </Box>
               )
             }}
