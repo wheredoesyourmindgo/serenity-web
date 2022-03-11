@@ -311,7 +311,7 @@ export default function FirmwarePage() {
                     <ListItemIcon>
                       <MuiFaIcon
                         icon={faCircleDashed}
-                        // color="solarized.base1"
+                        color="solarized.base00"
                       />
                     </ListItemIcon>
                     <ListItemText primary="Optional Encoder" />
