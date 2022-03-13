@@ -1,5 +1,5 @@
 import KeyIcon from '@components/key/KeyIcon'
-import {ColumnBox, RowBox} from 'mui-sleazebox'
+import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import {
   faOption,
   faUp,
@@ -12,7 +12,7 @@ import {KeyLegend} from '@components/key'
 import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
 import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box} from '@mui/material'
+import {Box, Typography} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 
 export default function Encoder() {
@@ -234,6 +234,13 @@ export default function Encoder() {
             }}
           />
         </RowBox>
+        <ChildBox maxWidth={700}>
+          <Typography variant="caption" color="solarized.base00">
+            Encoder controls Volume by default. The following mods are available
+            for changing the encoder behavior and can be activated by holding
+            down the keys shown above.
+          </Typography>
+        </ChildBox>
       </ColumnBox>
     </Box>
   )
