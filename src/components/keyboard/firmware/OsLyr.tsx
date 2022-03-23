@@ -2,7 +2,9 @@ import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
   faArrowLeftLong,
-  faArrowRightLong
+  faArrowRightLong,
+  faWindowMinimize,
+  faXmark
 } from '@fortawesome/pro-solid-svg-icons'
 import {
   faCameraViewfinder,
@@ -293,8 +295,51 @@ export default function OsLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faGalleryThumbnails}
+            fontSize={22}
+            KeyContainerProps={{
+              keyId: 'app-switch-quit-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="App Switcher Quit App" />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              icon={faXmark}
+              fontSize={13}
+              sx={{
+                transform: 'translate3D(8px, -4px, 0)',
+                color: 'solarized.base00'
+              }}
+            />
+          </KeyIcon>
+          <KeyIcon
+            icon={faGalleryThumbnails}
+            fontSize={22}
+            KeyContainerProps={{
+              keyId: 'app-switch-hide-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap"
+                    output="App Switcher Toggle Hide App"
+                  />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              icon={faWindowMinimize}
+              fontSize={13}
+              sx={{
+                transform: 'translate3D(6px, -6px, 0)',
+                color: 'solarized.base00'
+              }}
+            />
+          </KeyIcon>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
         </RowBox>
