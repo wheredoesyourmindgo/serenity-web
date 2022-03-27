@@ -44,12 +44,12 @@ export default function TextObjKeys() {
           <KeyLegend {...sharedProps} vimRef="r" />
           <KeyLegend {...sharedProps} vimRef="t" />
           <KeyLegend {...sharedProps} vimRef="n" homing />
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>AROUND</Type>
             <Divider />
             <Type {...sharedTypeProps}>inner</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="g" />
+          <KeyLegend {...sharedProps} vimRef="y" />
           <KeyLegend {...sharedProps} vimRef="d" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />

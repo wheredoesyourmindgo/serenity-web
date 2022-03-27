@@ -73,7 +73,7 @@ export default function AlphaKeys() {
               char
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="x" special>
+          <KeyLegend {...sharedProps} vimRef="q" special>
             <Type {...sharedTypeProps}>UN-EXP.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -86,7 +86,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="x">
             <Type {...sharedTypeProps}>TILL REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>till</Type>
@@ -169,7 +169,7 @@ export default function AlphaKeys() {
               <br /> below
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>
               VISUAL
               <br /> LINE
@@ -180,7 +180,7 @@ export default function AlphaKeys() {
               <br /> mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="g">
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>
               FIND
               <br />
@@ -282,7 +282,7 @@ export default function AlphaKeys() {
               after
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="q">
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>
               REPEAT
               <br /> SUB.
@@ -290,7 +290,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>redo</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p">
+          <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>FIND REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>find</Type>

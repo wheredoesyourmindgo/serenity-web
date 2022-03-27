@@ -58,7 +58,7 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>r</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="x" special>
+          <KeyLegend {...sharedProps} vimRef="q" special>
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<bs>`}</Type>
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<cr>`}</Type>
@@ -68,7 +68,7 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="x">
             <Type {...sharedTypeProps}>T</Type>
             <Divider />
             <Type {...sharedTypeProps}>t</Type>
@@ -121,12 +121,12 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>o</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>V</Type>
             <Divider />
             <Type {...sharedTypeProps}>v</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="g">
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>F</Type>
             <Divider />
             <Type {...sharedTypeProps}>f</Type>
@@ -184,12 +184,12 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>p</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="q">
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>&</Type>
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-r>`}</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p">
+          <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>?</Type>
             <Divider />
             <Type {...sharedTypeProps}>/</Type>
