@@ -3,8 +3,11 @@ import {
   Box,
   Container,
   Divider,
+  FormControlLabel,
+  FormGroup,
   Link,
   Paper,
+  Switch,
   ToggleButton,
   ToggleButtonGroup,
   Typography as Type
@@ -19,6 +22,10 @@ import genkey from '@components/stats/genkey'
 import a200 from '@components/stats/a200'
 import colemakmods from '@components/stats/colemakmods'
 import {faStarShooting} from '@fortawesome/pro-regular-svg-icons'
+import StaggerAlphaKeyboard from '@components/keyboard/StaggerAlphas'
+import genkeyStagger from '@components/stats/genkeyStagger'
+import a200Stagger from '@components/stats/a200Stagger'
+import colemakmodsStagger from '@components/stats/colemakmodsStagger'
 
 type Show = 'a200' | 'genkey' | 'colemakmods'
 
@@ -33,7 +40,16 @@ export default function AlphasPage() {
       setShow(newShow)
     }
   }
-
+  const handleStaggerChange = (
+    _event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => {
+    // if (checked && legacyChecked) {
+    //   setLegacyChecked(false)
+    // }
+    setStaggerChecked(checked)
+  }
+  const [staggerChecked, setStaggerChecked] = useState(false)
   return (
     <PageLayout>
       <Container sx={{m: 'auto'}}>
@@ -50,8 +66,56 @@ export default function AlphasPage() {
             Alphas
           </Type>
           <Box pt={4} />
-          <AlphaKeyboard />
+          {staggerChecked ? <StaggerAlphaKeyboard /> : <AlphaKeyboard />}
+          <RowBox child mt={6}>
+            <ChildBox>
+              <FormGroup>
+                <FormControlLabel
+                  sx={{marginRight: 4}}
+                  color="primary"
+                  control={
+                    <Switch
+                      size="small"
+                      sx={{
+                        '& .MuiSwitch-switchBase': {
+                          '&:not(.Mui-checked)': {
+                            color: 'solarized.base01'
+                          }
+                        }
+                      }}
+                      checked={staggerChecked}
+                      onChange={handleStaggerChange}
+                      inputProps={{'aria-label': 'Alt. Layout'}}
+                    />
+                  }
+                  label={
+                    <Type color="text.primary">Alt. Staggered Layout</Type>
+                  }
+                />
 
+                {/* <FormControlLabel
+              sx={{marginRight: 4}}
+              color="primary"
+              control={
+                <Switch
+                  size="small"
+                  sx={{
+                    '& .MuiSwitch-switchBase': {
+                      '&:not(.Mui-checked)': {
+                        color: 'solarized.base01'
+                      }
+                    }
+                  }}
+                  checked={legacyChecked}
+                  onChange={handleLegacyChange}
+                  inputProps={{'aria-label': 'Show Mappings Switch'}}
+                />
+              }
+              label={<Type color="text.primary">Show Mappings</Type>}
+            /> */}
+              </FormGroup>
+            </ChildBox>
+          </RowBox>
           <ColumnBox
             mt={14}
             justifyContent="center"
@@ -119,7 +183,11 @@ export default function AlphasPage() {
                   icon={faAngleRight}
                   sx={{color: 'solarized.green', paddingRight: 2}}
                 />
-                <em>{`./genkey -stagger=false analyze serenity`}</em>
+                <em>
+                  {staggerChecked
+                    ? `./genkey -stagger=true analyze serenity_stagger`
+                    : `./genkey -stagger=false analyze serenity`}
+                </em>
               </Type>
               <Divider />
               <Type
@@ -127,7 +195,7 @@ export default function AlphasPage() {
                 variant="body2"
                 sx={{color: 'solarized.base00'}}
               >
-                {genkey}
+                {staggerChecked ? genkeyStagger : genkey}
               </Type>
             </Paper>
             <RowBox justifyContent="flex-end" mt={1}>
@@ -169,7 +237,7 @@ export default function AlphasPage() {
                 variant="body2"
                 sx={{color: 'solarized.base00'}}
               >
-                {a200}
+                {staggerChecked ? a200Stagger : a200}
               </Type>
             </Paper>
             <RowBox justifyContent="flex-end" mt={1}>
@@ -207,7 +275,7 @@ export default function AlphasPage() {
                 variant="body2"
                 sx={{color: 'solarized.base00'}}
               >
-                {colemakmods}
+                {staggerChecked ? colemakmodsStagger : colemakmods}
               </Type>
             </Paper>
             <RowBox justifyContent="flex-end" mt={1}>
