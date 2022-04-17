@@ -35,8 +35,7 @@ export default function AlphaKeyboard() {
     <ColumnBox flexSpacing={2}>
       <RowBox child flexSpacing={1}>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
-        <AlphaKeyLgnd />
-        <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">F</AlphaKeyLgnd>
@@ -45,12 +44,11 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd color="solarized.base00">W</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>O</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">U</AlphaKeyLgnd>
-        <AlphaKeyLgnd>-</AlphaKeyLgnd>
+        <AlphaKeyLgnd>;</AlphaKeyLgnd>
         {/* <AlphaKeyIcn icon={faDeleteLeft} /> */}
         <AlphaKeyLgnd />
       </RowBox>
       <RowBox child flexSpacing={1}>
-        <AlphaKeyLgnd>`</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>S</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>T</AlphaKeyLgnd>
@@ -61,11 +59,10 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd color={base03}>E</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>I</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>A</AlphaKeyLgnd>
-        <AlphaKeyLgnd>=</AlphaKeyLgnd>
+        {/* <AlphaKeyLgnd>=</AlphaKeyLgnd> */}
       </RowBox>
       <RowBox child flexSpacing={1}>
-        <AlphaKeyLgnd />
-        <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">J</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base0">K</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>H</AlphaKeyLgnd>
