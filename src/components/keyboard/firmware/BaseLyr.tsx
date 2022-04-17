@@ -54,8 +54,8 @@ export default function BaseLyr() {
               transform: 'translateX(2px)'
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd="V">
-            v
+          <KeyLegend {...sharedProps} shiftLgnd="Z">
+            z
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="L">
             l
@@ -81,8 +81,8 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="U">
             u
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
           </KeyLegend>
           <KeyIcon
             customShiftCode
@@ -104,20 +104,20 @@ export default function BaseLyr() {
         <RowBox child flexSpacing={1}>
           <KeyLegend
             {...sharedProps}
-            shiftLgnd="~"
+            shiftLgnd="_"
             lyrHoldSubIcn={faComputerMouse}
             KeyContainerProps={{
               keyId: 'lowest-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Grave" />
+                  <PopoverDesc action="tap" output="Minus" />
                   <br />
                   <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
             }}
           >
-            `
+            -
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="S">
             s
@@ -171,8 +171,8 @@ export default function BaseLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd="Z">
-            z
+          <KeyLegend {...sharedProps} shiftLgnd="V">
+            v
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="J">
             j
@@ -197,8 +197,8 @@ export default function BaseLyr() {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            shiftLgnd=";"
-            customShiftCode
+            shiftLgnd="<"
+            // customShiftCode
             KeyContainerProps={{
               keyId: 'comma-key',
               popOverContent: (
@@ -214,8 +214,8 @@ export default function BaseLyr() {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            shiftLgnd=":"
-            customShiftCode
+            shiftLgnd=">"
+            // customShiftCode
             KeyContainerProps={{
               keyId: 'period-key',
               popOverContent: (

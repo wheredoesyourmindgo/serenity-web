@@ -54,15 +54,9 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps}>%</KeyLegend>
           <KeyLegend {...sharedProps}>^</KeyLegend>
           <KeyLegend {...sharedProps}>&amp;</KeyLegend>
-          <KeyLegend {...sharedProps} customShiftCode>
-            (
-          </KeyLegend>
-          <KeyLegend {...sharedProps} customShiftCode>
-            )
-          </KeyLegend>
-          <KeyLegend {...sharedProps} customShiftCode>
-            *
-          </KeyLegend>
+          <KeyLegend {...sharedProps}>*</KeyLegend>
+          <KeyLegend {...sharedProps}>(</KeyLegend>
+          <KeyLegend {...sharedProps}>)</KeyLegend>
           <KeyIcon
             customShiftCode
             icon={faDeleteLeft}
@@ -83,32 +77,34 @@ export default function SymLyr() {
         <RowBox child flexSpacing={1}>
           <KeyLegend
             {...sharedProps}
-            shiftLgnd="~"
+            shiftLgnd="_"
             lyrHoldSubIcn={faComputerMouse}
             KeyContainerProps={{
               keyId: 'lowest-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Grave" />
+                  <PopoverDesc action="tap" output="Minus" />
                   <br />
                   <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
             }}
           >
-            `
+            -
           </KeyLegend>
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
           <KeyIcon icon={faUp} color="solarized.cyan" homing />
           <KeyIcon icon={faLock} />
-          <KeyLegend {...sharedProps}>?</KeyLegend>
+          <KeyLegend {...sharedProps}>`</KeyLegend>
           <KeyLegend {...sharedProps} homing>
-            {'{'}
+            {'/'}
           </KeyLegend>
-          <KeyLegend {...sharedProps}>&lt;</KeyLegend>
-          <KeyLegend {...sharedProps}>&gt;</KeyLegend>
+          {/* <KeyLegend {...sharedProps}>&lt;</KeyLegend>
+          <KeyLegend {...sharedProps}>&gt;</KeyLegend> */}
+          <KeyLegend {...sharedProps}>\</KeyLegend>
+          <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
           <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
           <KeyLegend {...sharedProps}>=</KeyLegend>
         </RowBox>
@@ -134,11 +130,11 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>~</KeyLegend>
+          <KeyLegend {...sharedProps}>?</KeyLegend>
           <KeyLegend {...sharedProps}>|</KeyLegend>
-          <KeyLegend {...sharedProps}>/</KeyLegend>
           <KeyLegend {...sharedProps}>[</KeyLegend>
           <KeyLegend {...sharedProps}>]</KeyLegend>
-          <KeyLegend {...sharedProps}>\</KeyLegend>
           <KeyIcon
             icon={faLockA}
             KeyContainerProps={{

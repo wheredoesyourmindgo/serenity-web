@@ -74,8 +74,8 @@ export default function MouseLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="~">
-            `
+          <KeyLegend {...sharedProps} shiftLgnd="_">
+            -
           </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
