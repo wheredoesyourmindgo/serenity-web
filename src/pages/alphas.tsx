@@ -229,7 +229,9 @@ export default function AlphasPage() {
                   icon={faAngleRight}
                   sx={{color: 'solarized.green', paddingRight: 2}}
                 />
-                <em>{`./a200 vw serenity`}</em>
+                {staggerChecked
+                  ? `./a200 vw serenity_stagger`
+                  : `./a200 vw serenity`}
               </Type>
               <Divider />
               <Type
