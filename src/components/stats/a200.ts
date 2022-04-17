@@ -3,9 +3,9 @@ MONKEYTYPE-QUOTES.JSON
 thumb: RT
 
 Serenity
-v l m f q  x w o u ;
+z l m f q  x w o u ;
 s r t n p  y d e i a
-z j k h b  g c ' , .
+v j k h b  g c ' , .
 
 Trigrams
 ========
