@@ -31,7 +31,7 @@ export default function LeaderAlphaKeys() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
-          <KeyLegend {...sharedProps} vimRef="v" />
+          <KeyLegend {...sharedProps} vimRef="z" />
           <KeyLegend {...sharedProps} vimRef="l" />
           <KeyLegend {...sharedProps} vimRef="m" />
           <KeyLegend {...sharedProps} vimRef="f" />
@@ -84,7 +84,7 @@ export default function LeaderAlphaKeys() {
               camelCase
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="-">
+          <KeyLegend {...sharedProps} vimRef=";">
             <Type {...sharedTypeProps}>
               beg. next
               <br />
@@ -94,7 +94,7 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRef="`" />
+          <KeyLegend {...sharedProps} vimRef="-" />
           <KeyLegend {...sharedProps} vimRef="s">
             <Type {...sharedTypeProps}>unindent</Type>
           </KeyLegend>
@@ -137,7 +137,7 @@ export default function LeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-          <KeyLegend {...sharedProps} vimRef="z">
+          <KeyLegend {...sharedProps} vimRef="v">
             <Type {...sharedTypeProps}>
               toggle
               <br />
