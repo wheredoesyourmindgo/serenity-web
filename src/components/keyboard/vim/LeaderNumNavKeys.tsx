@@ -2,6 +2,18 @@ import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, Typography as Type} from '@mui/material'
+import {
+  faArrowDown,
+  faArrowLeft,
+  faArrowRight,
+  faArrowUp,
+  faBorderBottomRight,
+  faBorderTopLeft,
+  faDeleteLeft,
+  faPageCaretDown,
+  faPageCaretUp,
+  faUp
+} from '@fortawesome/pro-regular-svg-icons'
 
 export default function LeaderNumNavKeys() {
   const sharedProps: KeyLegendProps = {
@@ -48,7 +60,7 @@ export default function LeaderNumNavKeys() {
               bottom
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
@@ -58,23 +70,27 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing>
+          <KeyLegend {...sharedProps} homing vimRefIcn={faArrowLeft}>
             <Type {...sharedTypeProps}>
               jump to
               <br />
               middle
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowDown}>
+            <Type {...sharedTypeProps} />
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowUp}>
+            <Type {...sharedTypeProps} />
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight}>
             <Type {...sharedTypeProps}>
               scroll
               <br />
               middle
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRef="=" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
@@ -84,22 +100,27 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
             <Type {...sharedTypeProps}>
               jump to
               <br />
               bottom
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faPageCaretDown}>
+            <Type {...sharedTypeProps} />
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faPageCaretUp}>
+            <Type {...sharedTypeProps} />
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight}>
             <Type {...sharedTypeProps}>
               scroll
-              <br /> top
+              <br />
+              top
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
