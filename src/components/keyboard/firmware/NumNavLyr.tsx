@@ -83,13 +83,13 @@ export default function NumNavLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="&amp;">
             7
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="(" customShiftCode>
+          <KeyLegend {...sharedProps} shiftLgnd="*">
             8
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd=")" customShiftCode>
+          <KeyLegend {...sharedProps} shiftLgnd="(">
             9
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="*" customShiftCode>
+          <KeyLegend {...sharedProps} shiftLgnd=")">
             0
           </KeyLegend>
           <KeyIcon
@@ -112,20 +112,20 @@ export default function NumNavLyr() {
         <RowBox child flexSpacing={1}>
           <KeyLegend
             {...sharedProps}
-            shiftLgnd="~"
+            shiftLgnd="_"
             lyrHoldSubIcn={faComputerMouse}
             KeyContainerProps={{
               keyId: 'lowest-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Grave" />
+                  <PopoverDesc action="tap" output="Minus" />
                   <br />
                   <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
             }}
           >
-            `
+            -
           </KeyLegend>
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
