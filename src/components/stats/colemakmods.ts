@@ -29,7 +29,7 @@ finger 8-7 	IO 	0.323%
 
 Finger Effort
  		base	s-bigrams	n-bigrams	total
-finger 0 	0.125	0.000		0.004		0.129
+finger 0 	0.127	0.000		0.004		0.131
 finger 1 	0.175	0.003		0.002		0.179
 finger 2 	0.163	0.001		-0.006		0.158
 finger 3 	0.301	0.004				0.306
@@ -37,7 +37,7 @@ finger 6 	0.250	0.006				0.256
 finger 7 	0.302	0.005		-0.009		0.299
 finger 8 	0.203	0.005		0.004		0.212
 finger 9 	0.168	0.000		0.005		0.174
-total * 	1.689	0.024		0.000		1.713
+total * 	1.690	0.024		0.001		1.715
 `
 
 export default colemakmods
