@@ -16,7 +16,9 @@ export default function ColStaggerAlphaKeyboard() {
   const AlphaKeyLgnd = useCallback(
     ({children, ...props}: KeyLegendProps) => (
       <KeyLegend
-        KeyContainerProps={{sx: {borderWidth: 0, boxShadow: 'none'}}}
+        KeyContainerProps={{
+          sx: {borderWidth: 0, boxShadow: 'none', height: 72}
+        }}
         {...props}
       >
         {children}
@@ -36,7 +38,7 @@ export default function ColStaggerAlphaKeyboard() {
     r: 2,
     m: 1,
     i: 2,
-    ii: 4
+    ii: 3
   } as const
 
   return (
