@@ -72,7 +72,6 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
-        <AlphaKeyLgnd />
       </RowBox>
     </ColumnBox>
   )
