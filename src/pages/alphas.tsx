@@ -103,24 +103,26 @@ export default function AlphasPage() {
               <FormGroup>
                 <FormControlLabel
                   sx={{marginRight: 4}}
-                  color="primary"
+                  // color="primary"
+                  disabled
                   control={
                     <Switch
                       size="small"
-                      sx={{
-                        '& .MuiSwitch-switchBase': {
-                          '&:not(.Mui-checked)': {
-                            color: 'solarized.base01'
-                          }
-                        }
-                      }}
+                      // sx={{
+                      //   '& .MuiSwitch-switchBase': {
+                      //     '&:not(.Mui-checked)': {
+                      //       color: 'solarized.base01'
+                      //     }
+                      //   }
+                      // }}
                       checked={staggerChecked}
                       onChange={handleStaggerChange}
                       inputProps={{'aria-label': 'Alt. Row Staggered Layout'}}
                     />
                   }
                   label={
-                    <Type color="text.primary">Alt. Row Staggered Layout</Type>
+                    // <Type color="text.primary">Alt. Row Staggered Layout</Type>
+                    <Type color="text.disabled">Alt. Row Staggered Layout</Type>
                   }
                 />
               </FormGroup>
@@ -129,24 +131,28 @@ export default function AlphasPage() {
               <FormGroup>
                 <FormControlLabel
                   sx={{marginRight: 4}}
-                  color="primary"
+                  // color="primary"
+                  disabled
                   control={
                     <Switch
                       size="small"
-                      sx={{
-                        '& .MuiSwitch-switchBase': {
-                          '&:not(.Mui-checked)': {
-                            color: 'solarized.base01'
-                          }
-                        }
-                      }}
+                      // sx={{
+                      //   '& .MuiSwitch-switchBase': {
+                      //     '&:not(.Mui-checked)': {
+                      //       color: 'solarized.base01'
+                      //     }
+                      //   }
+                      // }}
                       checked={colStaggerChecked}
                       onChange={handleColStaggerChange}
                       inputProps={{'aria-label': 'Alt. Column Stagger Layout'}}
                     />
                   }
                   label={
-                    <Type color="text.primary">
+                    // <Type color="text.primary">
+                    //   Alt. Column Staggered Layout
+                    // </Type>
+                    <Type color="text.disabled">
                       Alt. Column Staggered Layout
                     </Type>
                   }
@@ -210,6 +216,7 @@ export default function AlphasPage() {
                   sx={{color: 'solarized.base01'}}
                   value="a200"
                   aria-label="200 Analyzer button"
+                  disabled
                 >
                   200 Analyzer
                 </ToggleButton>
@@ -217,6 +224,7 @@ export default function AlphasPage() {
                   sx={{color: 'solarized.base01'}}
                   value="colemakmods"
                   aria-label="Keyboard Layout Analyzer [SP] button"
+                  disabled
                 >
                   Keyboard Layout Analyzer [SP]
                 </ToggleButton>
