@@ -216,7 +216,6 @@ export default function AlphasPage() {
                   sx={{color: 'solarized.base01'}}
                   value="a200"
                   aria-label="200 Analyzer button"
-                  disabled
                 >
                   200 Analyzer
                 </ToggleButton>
@@ -224,7 +223,6 @@ export default function AlphasPage() {
                   sx={{color: 'solarized.base01'}}
                   value="colemakmods"
                   aria-label="Keyboard Layout Analyzer [SP] button"
-                  disabled
                 >
                   Keyboard Layout Analyzer [SP]
                 </ToggleButton>
