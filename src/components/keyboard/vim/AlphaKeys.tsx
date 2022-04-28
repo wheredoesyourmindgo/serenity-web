@@ -41,7 +41,7 @@ export default function AlphaKeys() {
               char
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="z">
+          <KeyLegend {...sharedProps} vimRef="q">
             {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
             {/* <Divider /> */}
             <Type {...sharedTypeProps}>
@@ -55,7 +55,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>g cmds</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="m">
+          <KeyLegend {...sharedProps} vimRef="d">
             <Type {...sharedTypeProps}>
               CHANGE
               <br />
@@ -64,7 +64,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>change</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="f">
+          <KeyLegend {...sharedProps} vimRef="w">
             <Type {...sharedTypeProps}>RPLC. LN.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -73,7 +73,7 @@ export default function AlphaKeys() {
               char
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="q" special>
+          <KeyLegend {...sharedProps} vimRef="z" special>
             <Type {...sharedTypeProps}>UN-EXP.</Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -86,12 +86,12 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="x">
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>TILL REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>till</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="w">
+          <KeyLegend {...sharedProps} vimRef="v">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (non-whtspc)
             </Type>
@@ -140,7 +140,7 @@ export default function AlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="-">
             <Type {...sharedTypeProps}>set mark</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="s">
+          <KeyLegend {...sharedProps} vimRef="n">
             <Type {...sharedTypeProps}>SUBST LINE</Type>
             <Divider />
             <Type {...sharedTypeProps}>subst char</Type>
@@ -158,7 +158,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>append</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="n" homing>
+          <KeyLegend {...sharedProps} vimRef="s" homing>
             <Type {...sharedTypeProps}>
               OPEN
               <br /> ABOVE
@@ -169,7 +169,7 @@ export default function AlphaKeys() {
               <br /> below
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p">
+          <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>
               VISUAL
               <br /> LINE
@@ -180,7 +180,7 @@ export default function AlphaKeys() {
               <br /> mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>
               FIND
               <br />
@@ -194,7 +194,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen mid</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="d" homing>
+          <KeyLegend {...sharedProps} vimRef="h" homing>
             <Type {...sharedTypeProps}>
               PREV.
               <br />
@@ -249,7 +249,7 @@ export default function AlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-          <KeyLegend {...sharedProps} vimRef="v">
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>UNDO LINE</Type>
             <Divider />
             <Type {...sharedTypeProps}>undo</Type>
@@ -262,7 +262,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>delete</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k">
+          <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>
               YANK
               <br /> EOL.
@@ -270,7 +270,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>yank</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="h">
+          <KeyLegend {...sharedProps} vimRef="c">
             <Type {...sharedTypeProps}>
               PASTE
               <br /> BEFORE
@@ -282,7 +282,7 @@ export default function AlphaKeys() {
               after
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="x">
             <Type {...sharedTypeProps}>
               REPEAT
               <br /> SUB.
@@ -290,12 +290,12 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>redo</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="g">
+          <KeyLegend {...sharedProps} vimRef="k">
             <Type {...sharedTypeProps}>FIND REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>find</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="c">
+          <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps}>
               PREV.
               <br />
