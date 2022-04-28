@@ -40,18 +40,18 @@ export default function LegacyTextObjKeys() {
           <KeyLegend {...sharedProps} />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRef="`" />
-          <KeyLegend {...sharedProps} vimRef="s" />
+          <KeyLegend {...sharedProps} vimRef="-" />
+          <KeyLegend {...sharedProps} vimRef="n" />
           <KeyLegend {...sharedProps} vimRef="r" />
           <KeyLegend {...sharedProps} vimRef="t" />
-          <KeyLegend {...sharedProps} vimRef="n" homing />
-          <KeyLegend {...sharedProps} vimRef="p">
+          <KeyLegend {...sharedProps} vimRef="s" homing />
+          <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>a</Type>
             <Divider />
             <Type {...sharedTypeProps}>i</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y" />
-          <KeyLegend {...sharedProps} vimRef="d" homing />
+          <KeyLegend {...sharedProps} vimRef="p" />
+          <KeyLegend {...sharedProps} vimRef="h" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />
           <KeyLegend {...sharedProps} vimRef="a" />
