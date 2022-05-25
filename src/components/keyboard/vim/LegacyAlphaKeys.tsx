@@ -68,12 +68,12 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="k">
             <Type {...sharedTypeProps}>T</Type>
             <Divider />
             <Type {...sharedTypeProps}>t</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="v">
+          <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps}>gE</Type>
             <Divider />
             <Type {...sharedTypeProps}>ge</Type>
@@ -126,7 +126,7 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>v</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p">
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>F</Type>
             <Divider />
             <Type {...sharedTypeProps}>f</Type>
@@ -164,7 +164,7 @@ export default function LegacyAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="x">
             <Type {...sharedTypeProps}>U</Type>
             <Divider />
             <Type {...sharedTypeProps}>u</Type>
@@ -184,17 +184,17 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>p</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="x">
+          <KeyLegend {...sharedProps} vimRef="v">
             <Type {...sharedTypeProps}>&</Type>
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-r>`}</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k">
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>?</Type>
             <Divider />
             <Type {...sharedTypeProps}>/</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="f">
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>#</Type>
             <Divider />
             <Type {...sharedTypeProps}>N</Type>
