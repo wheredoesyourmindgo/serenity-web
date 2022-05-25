@@ -98,7 +98,7 @@ export default function AlphasPage() {
           ) : (
             <AlphaKeyboard />
           )}
-          <RowBox child mt={8}>
+          {/* <RowBox child mt={8}>
             <ChildBox>
               <FormGroup>
                 <FormControlLabel
@@ -157,29 +157,9 @@ export default function AlphasPage() {
                     </Type>
                   }
                 />
-                {/* <FormControlLabel
-              sx={{marginRight: 4}}
-              color="primary"
-              control={
-                <Switch
-                  size="small"
-                  sx={{
-                    '& .MuiSwitch-switchBase': {
-                      '&:not(.Mui-checked)': {
-                        color: 'solarized.base01'
-                      }
-                    }
-                  }}
-                  checked={legacyChecked}
-                  onChange={handleLegacyChange}
-                  inputProps={{'aria-label': 'Show Mappings Switch'}}
-                />
-              }
-              label={<Type color="text.primary">Show Mappings</Type>}
-            /> */}
               </FormGroup>
             </ChildBox>
-          </RowBox>
+          </RowBox> */}
           <ColumnBox
             mt={10}
             justifyContent="center"
