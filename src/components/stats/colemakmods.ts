@@ -28,18 +28,16 @@ finger 1-2 	LD 	0.363%
 finger 8-7 	IO 	0.323%
 
 Finger Effort
-		base	s-bgrm	n-bgrm	total
+ 		base	s-bgrm	n-bgrm	total
 finger 0 	0.113	0.001	0.002	0.115
 finger 1 	0.175	0.003	0.003	0.180
 finger 2 	0.239	0.001	-0.003	0.237
 finger 3 	0.232	0.007		0.239
-finger 6 	0.256	0.009		0.265
-finger 7 	0.302	0.005	-0.012	0.296
+finger 6 	0.259	0.009		0.268
+finger 7 	0.302	0.005	-0.014	0.294
 finger 8 	0.203	0.005	0.004	0.212
 finger 9 	0.168	0.000	0.005	0.174
-total * 	1.688	0.031	-0.001	1.719
-
-
+total * 	1.691	0.031	-0.003	1.720
 `
 
 export default colemakmods
