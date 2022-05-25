@@ -16,12 +16,12 @@ import PageLayout from '../components/PageLayout'
 import MuiFaIcon from '@components/MuiFaIcon'
 import {faAngleRight} from '@fortawesome/pro-solid-svg-icons'
 import {faStarShooting} from '@fortawesome/pro-regular-svg-icons'
+import genkey from '@components/stats/genkey'
+import a200 from '@components/stats/a200'
+import colemakmods from '@components/stats/colemakmods'
 // import StaggerAlphaKeyboard from '@components/keyboard/StaggerAlphas'
 // import ColStaggerAlphaKeyboard from '@components/keyboard/ColStaggerAlphas'
-// import genkey from '@components/stats/genkey'
 // import genkeyColStagger from '@components/stats/genkeyColStagger'
-// import a200 from '@components/stats/a200'
-// import colemakmods from '@components/stats/colemakmods'
 // import genkeyStagger from '@components/stats/genkeyStagger'
 // import a200Stagger from '@components/stats/a200Stagger'
 // import colemakmodsStagger from '@components/stats/colemakmodsStagger'
@@ -243,7 +243,7 @@ export default function AlphasPage() {
                   : colStaggerChecked
                   ? genkeyColStagger */}
                 {/* :  */}
-                genkey
+                {genkey}
                 {/* } */}
               </Type>
             </Paper>
@@ -295,7 +295,7 @@ export default function AlphasPage() {
                   : colStaggerChecked
                   ? a200ColStagger
                   :  */}
-                a200
+                {a200}
                 {/* } */}
               </Type>
             </Paper>
@@ -339,7 +339,7 @@ export default function AlphasPage() {
                   : colStaggerChecked
                   ? colemakmodsColStagger
                   :  */}
-                colemakmods
+                {colemakmods}
                 {/* } */}
               </Type>
             </Paper>
