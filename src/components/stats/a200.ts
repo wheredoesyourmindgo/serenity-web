@@ -1,34 +1,33 @@
 const a200 = `
-MONKEYTYPE-QUOTES.JSON
+WORDLISTS/MONKEYTYPE-450K.JSON
 thumb: RT
 
 serenity
-q l d w z  k p o u ;
+q l d w z  k f o u ;
 n r t s g  y h e i a
-x j m c v  b f ' , .
+x j m c v  b p ' , .
 
 Trigrams
 ========
-Alternates - Total: 31.48%
-     Rolls - Total: 42.04%   In: 20.47%   Out: 21.58%   Ratio:   0.95
-  Onehands - Total:  5.67%   In:  1.11%   Out:  4.56%   Ratio:   0.24
- Redirects - Total:  8.13%
-   Unknown - Total:  0.00%
+Alternates - Total: 37.08%
+     Rolls - Total: 39.05%   In: 18.56%   Out: 20.49%   Ratio:   0.91
+  Onehands - Total:  2.47%   In:  0.47%   Out:  2.00%   Ratio:   0.23
+ Redirects - Total:  3.12%
 
 Same Finger
 ===========
-       SFB - 1.45%         DSFB - 4.85%
-       SFT - 0.01%          SFR - 6.37%
+       SFB - 3.55%         DSFB - 5.63%
+       SFT - 0.13%          SFR - 8.98%
 
 Finger Use
 ==========
-      Left - Total: 36.67%   LP:  5.68%   LR:  7.66%   LM: 12.37%   LI: 10.96%
-     Right - Total: 44.82%   RP:  7.54%   RR:  9.14%   RM: 16.85%   RI: 11.29%
-     Thumb - Total: 18.50%
+      Left - Total: 44.99%   LP:  6.85%   LR: 11.32%   LM: 11.55%   LI: 15.28%
+     Right - Total: 45.55%   RP:  7.46%   RR: 11.44%   RM: 16.33%   RI: 10.32%
+     Thumb - Total:  9.46%
 
 Row Use
 =======
-       Top - 23.80%         Home - 62.97%       Bottom - 13.23%
+       Top - 22.47%         Home - 63.93%       Bottom - 13.60%
 `
 
 export default a200
