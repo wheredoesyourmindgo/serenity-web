@@ -49,7 +49,7 @@ export default function TextObjKeys() {
             <Divider />
             <Type {...sharedTypeProps}>inner</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p" />
+          <KeyLegend {...sharedProps} vimRef="y" />
           <KeyLegend {...sharedProps} vimRef="h" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />

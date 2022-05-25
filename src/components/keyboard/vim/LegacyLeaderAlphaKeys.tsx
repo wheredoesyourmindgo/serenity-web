@@ -41,12 +41,12 @@ export default function LegacyLeaderAlphaKeys() {
               <em>todo</em>
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y" special>
+          <KeyLegend {...sharedProps} vimRef="k" special>
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>
               <em>todo</em>
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="v">
+          <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>`}</Type>
             <br />
             <Type {...sharedTypeProps}>ge</Type>
@@ -98,7 +98,7 @@ export default function LegacyLeaderAlphaKeys() {
               {/* <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<spc>`}</Type> */}
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p" />
+          <KeyLegend {...sharedProps} vimRef="y" />
           <KeyLegend {...sharedProps} vimRef="h" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />
@@ -107,19 +107,19 @@ export default function LegacyLeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="x">
             <Type {...sharedTypeProps}>za</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="j" />
           <KeyLegend {...sharedProps} vimRef="m" />
           <KeyLegend {...sharedProps} vimRef="c" />
-          <KeyLegend {...sharedProps} vimRef="x" special>
+          <KeyLegend {...sharedProps} vimRef="v" special>
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>
               <em>todo</em>
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k" />
-          <KeyLegend {...sharedProps} vimRef="f" />
+          <KeyLegend {...sharedProps} vimRef="b" />
+          <KeyLegend {...sharedProps} vimRef="p" />
           <KeyLegend {...sharedProps} vimRef="'" />
           <KeyLegend {...sharedProps} vimRef="," />
           <KeyLegend {...sharedProps} vimRef="." />

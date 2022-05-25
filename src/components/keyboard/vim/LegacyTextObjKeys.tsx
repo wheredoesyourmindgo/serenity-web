@@ -50,7 +50,7 @@ export default function LegacyTextObjKeys() {
             <Divider />
             <Type {...sharedTypeProps}>i</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="p" />
+          <KeyLegend {...sharedProps} vimRef="y" />
           <KeyLegend {...sharedProps} vimRef="h" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />
