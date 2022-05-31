@@ -32,7 +32,7 @@ export default function LegacyLeaderAlphaKeys() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
-          <KeyLegend {...sharedProps} vimRef="q" />
+          <KeyLegend {...sharedProps} vimRef="x" />
           <KeyLegend {...sharedProps} vimRef="l" />
           <KeyLegend {...sharedProps} vimRef="d" />
           <KeyLegend {...sharedProps} vimRef="w" />
@@ -107,7 +107,7 @@ export default function LegacyLeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-          <KeyLegend {...sharedProps} vimRef="x">
+          <KeyLegend {...sharedProps} vimRef="q">
             <Type {...sharedTypeProps}>za</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="j" />

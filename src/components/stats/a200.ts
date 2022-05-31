@@ -3,9 +3,9 @@ WORDLISTS/MONKEYTYPE-450K.JSON
 thumb: RT
 
 serenity
-q l d w z  k f o u ;
+x l d w z  k f o u ;
 n r t s g  y h e i a
-x j m c v  b p ' , .
+q j m c v  b p ' , .
 
 Trigrams
 ========
@@ -27,7 +27,7 @@ Finger Use
 
 Row Use
 =======
-       Top - 22.47%         Home - 63.93%       Bottom - 13.60%
+       Top - 22.59%         Home - 63.93%       Bottom - 13.48%
 `
 
 export default a200
