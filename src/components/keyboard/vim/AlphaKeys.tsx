@@ -41,7 +41,7 @@ export default function AlphaKeys() {
               char
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="q">
+          <KeyLegend {...sharedProps} vimRef="x">
             {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
             {/* <Divider /> */}
             <Type {...sharedTypeProps}>
@@ -249,7 +249,7 @@ export default function AlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-          <KeyLegend {...sharedProps} vimRef="x">
+          <KeyLegend {...sharedProps} vimRef="q">
             <Type {...sharedTypeProps}>UNDO LINE</Type>
             <Divider />
             <Type {...sharedTypeProps}>undo</Type>
