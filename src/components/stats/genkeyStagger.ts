@@ -1,34 +1,34 @@
 const genkeyStagger = `
 serenity_stagger
-v l m f b  x w o u ;
-s r t n p  y d e i a
-z j k h q  g c ' , .
-Rolls (l): 19.41%
-        Inward: ~10.39%
-        Outward: ~9.02%
-Rolls (r): 23.87%
-        Inward: ~11.17%
-        Outward: ~12.70%
-Alternates: ~40.51%
-Onehands: ~2.00%
-Redirects: ~5.64%
-Finger Speed (weighted): [0.67 0.83 0.97 1.97 2.05 2.28 1.40 0.77]
-Finger Speed (unweighted): [1.00 2.99 4.67 10.85 11.26 10.94 5.05 1.16]
-Highest Speed (weighted): 2.28 (RM)
-Highest Speed (unweighted): 11.26 (RI)
-Index Usage: 17.2% 12.7%
-SFBs: 0.712%
-DSFBs: 6.251%
-LSBs: 0.76%
+q l d w v  k f o u ;
+n r t s g  y h e i a
+x j m c z  b p ' , .
+Rolls (l): 18.24%
+        Inward: ~12.84%
+        Outward: ~5.40%
+Rolls (r): 26.45%
+        Inward: ~6.80%
+        Outward: ~19.65%
+Alternates: ~41.41%
+Onehands: ~1.94%
+Redirects: ~3.25%
+Finger Speed (weighted): [0.20 0.83 1.84 2.43 2.08 2.28 1.40 0.77]
+Finger Speed (unweighted): [0.30 2.99 8.85 13.39 11.46 10.94 5.05 1.16]
+Highest Speed (weighted): 2.43 (LI)
+Highest Speed (unweighted): 13.39 (LI)
+Index Usage: 14.5% 13.0%
+SFBs: 0.898%
+DSFBs: 6.440%
+LSBs: 0.67%
 Top SFBs:
-        ui 0.107%       eo 0.078%       rl 0.077%       ph 0.070%
-        nf 0.060%       dy 0.049%       e' 0.048%       oe 0.044%
+        sc 0.138%       by 0.112%       ui 0.107%       eo 0.078%
+        rl 0.077%       ph 0.070%       gs 0.061%       e' 0.048%
 
 Worst Bigrams:
-        oe 24.974       ui 12.490       lr 11.214       a. 10.978
-        vs 8.602        mt 8.262        nh 7.794        o' 6.658
+        oe 24.974       sc 12.736       ui 12.490       dm 12.016
+        lr 11.214       a. 10.978       tm 10.220       yp 6.854
 
-Score: 34.94
+Score: 36.67
 `
 
 export default genkeyStagger

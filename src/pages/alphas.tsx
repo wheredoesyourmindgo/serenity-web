@@ -3,8 +3,11 @@ import {
   Box,
   Container,
   Divider,
+  FormControlLabel,
+  FormGroup,
   Link,
   Paper,
+  Switch,
   ToggleButton,
   ToggleButtonGroup,
   Typography as Type
@@ -19,12 +22,12 @@ import {faStarShooting} from '@fortawesome/pro-regular-svg-icons'
 import genkey from '@components/stats/genkey'
 import a200 from '@components/stats/a200'
 import colemakmods from '@components/stats/colemakmods'
-// import StaggerAlphaKeyboard from '@components/keyboard/StaggerAlphas'
+import StaggerAlphaKeyboard from '@components/keyboard/StaggerAlphas'
+import genkeyStagger from '@components/stats/genkeyStagger'
+import a200Stagger from '@components/stats/a200Stagger'
+import colemakmodsStagger from '@components/stats/colemakmodsStagger'
 // import ColStaggerAlphaKeyboard from '@components/keyboard/ColStaggerAlphas'
 // import genkeyColStagger from '@components/stats/genkeyColStagger'
-// import genkeyStagger from '@components/stats/genkeyStagger'
-// import a200Stagger from '@components/stats/a200Stagger'
-// import colemakmodsStagger from '@components/stats/colemakmodsStagger'
 // import a200ColStagger from '@components/stats/a200ColStagger'
 // import colemakmodsColStagger from '@components/stats/colemakmodsColStagger'
 
@@ -42,28 +45,22 @@ export default function AlphasPage() {
     }
   }
 
-  // const handleStaggerChange = (
-  //   _event: React.ChangeEvent<HTMLInputElement>,
-  //   checked: boolean
-  // ) => {
-  //   // if (checked && legacyChecked) {
-  //   //   setLegacyChecked(false)
-  //   // }
-  //   if (checked) {
-  //     setColStaggerChecked(false)
-  //   }
-  //   setStaggerChecked(checked)
-  // }
+  const handleStaggerChange = (
+    _event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => {
+    // if (checked) {
+    //   setColStaggerChecked(false)
+    // }
+    setStaggerChecked(checked)
+  }
 
-  // const [staggerChecked, setStaggerChecked] = useState(false)
+  const [staggerChecked, setStaggerChecked] = useState(false)
 
   // const handleColStaggerChange = (
   //   _event: React.ChangeEvent<HTMLInputElement>,
   //   checked: boolean
   // ) => {
-  //   // if (checked && legacyChecked) {
-  //   //   setLegacyChecked(false)
-  //   // }
   //   if (checked) {
   //     setStaggerChecked(false)
   //   }
@@ -88,20 +85,21 @@ export default function AlphasPage() {
             Alphas
           </Type>
           <Box pt={4} />
-          {/* {staggerChecked ? (
+          {staggerChecked ? (
             <StaggerAlphaKeyboard />
-          ) : colStaggerChecked ? ( */}
-          {/* <ColStaggerAlphaKeyboard />
-          ) : ( */}
-          <AlphaKeyboard />
-          {/* )} */}
-          {/* <RowBox child mt={8}>
+          ) : (
+            // : colStaggerChecked ? (
+            //   <ColStaggerAlphaKeyboard />
+            // )
+            <AlphaKeyboard />
+          )}
+          <RowBox child mt={8}>
             <ChildBox>
               <FormGroup>
                 <FormControlLabel
                   sx={{marginRight: 4}}
                   // color="primary"
-                  disabled
+                  // disabled
                   control={
                     <Switch
                       size="small"
@@ -118,13 +116,13 @@ export default function AlphasPage() {
                     />
                   }
                   label={
-                    // <Type color="text.primary">Alt. Row Staggered Layout</Type>
-                    <Type color="text.disabled">Alt. Row Staggered Layout</Type>
+                    <Type color="text.primary">Alt. Row Staggered Layout</Type>
+                    // <Type color="text.disabled">Alt. Row Staggered Layout</Type>
                   }
                 />
               </FormGroup>
             </ChildBox>
-            <ChildBox>
+            {/* <ChildBox>
               <FormGroup>
                 <FormControlLabel
                   sx={{marginRight: 4}}
@@ -155,8 +153,8 @@ export default function AlphasPage() {
                   }
                 />
               </FormGroup>
-            </ChildBox>
-          </RowBox> */}
+            </ChildBox> */}
+          </RowBox>
           <ColumnBox
             mt={10}
             justifyContent="center"
@@ -225,11 +223,9 @@ export default function AlphasPage() {
                   sx={{color: 'solarized.green', paddingRight: 2}}
                 />
                 <em>
-                  {/* {staggerChecked
+                  {staggerChecked
                     ? `./genkey -stagger=true analyze serenity_stagger`
-                    :  */}
-                  `./genkey -stagger=false analyze serenity`
-                  {/* } */}
+                    : `./genkey -stagger=false analyze serenity`}
                 </em>
               </Type>
               <Divider />
@@ -238,12 +234,11 @@ export default function AlphasPage() {
                 variant="body2"
                 sx={{color: 'solarized.base00'}}
               >
-                {/* {staggerChecked
+                {staggerChecked
                   ? genkeyStagger
-                  : colStaggerChecked
-                  ? genkeyColStagger */}
-                {/* :  */}
-                {genkey}
+                  : // : colStaggerChecked
+                    // ? genkeyColStagger
+                    genkey}
                 {/* } */}
               </Type>
             </Paper>
@@ -278,11 +273,9 @@ export default function AlphasPage() {
                   icon={faAngleRight}
                   sx={{color: 'solarized.green', paddingRight: 2}}
                 />
-                {/* {staggerChecked
+                {staggerChecked
                   ? `./a200 vw serenity_stagger`
-                  :  */}
-                `./a200 vw serenity`
-                {/* } */}
+                  : `./a200 vw serenity`}
               </Type>
               <Divider />
               <Type
@@ -290,13 +283,11 @@ export default function AlphasPage() {
                 variant="body2"
                 sx={{color: 'solarized.base00'}}
               >
-                {/* {staggerChecked
+                {staggerChecked
                   ? a200Stagger
-                  : colStaggerChecked
-                  ? a200ColStagger
-                  :  */}
-                {a200}
-                {/* } */}
+                  : // : colStaggerChecked
+                    // ? a200ColStagger
+                    a200}
               </Type>
             </Paper>
             <RowBox justifyContent="flex-end" mt={1}>
@@ -334,13 +325,11 @@ export default function AlphasPage() {
                 variant="body2"
                 sx={{color: 'solarized.base00'}}
               >
-                {/* {staggerChecked
+                {staggerChecked
                   ? colemakmodsStagger
-                  : colStaggerChecked
-                  ? colemakmodsColStagger
-                  :  */}
-                {colemakmods}
-                {/* } */}
+                  : // : colStaggerChecked
+                    // ? colemakmodsColStagger
+                    colemakmods}
               </Type>
             </Paper>
             <RowBox justifyContent="flex-end" mt={1}>
