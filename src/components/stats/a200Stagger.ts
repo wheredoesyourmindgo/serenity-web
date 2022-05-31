@@ -1,34 +1,33 @@
 const a200Stagger = `
-MONKEYTYPE-QUOTES.JSON
+WORDLISTS/MONKEYTYPE-450K.JSON
 thumb: RT
 
-Serenity_stagger
-v l m f b  x w o u ;
-s r t n p  y d e i a
-z j k h q  g c ' , .
+serenity_stagger
+q l d w v  k f o u ;
+n r t s g  y h e i a
+x j m c z  b p ' , .
 
 Trigrams
 ========
-Alternates - Total: 30.23%
-     Rolls - Total: 44.05%   In: 25.14%   Out: 18.91%   Ratio:   1.33
-  Onehands - Total:  5.58%   In:  1.24%   Out:  4.34%   Ratio:   0.29
- Redirects - Total:  7.75%
-   Unknown - Total:  0.00%
+Alternates - Total: 37.08%
+     Rolls - Total: 39.05%   In: 18.56%   Out: 20.49%   Ratio:   0.91
+  Onehands - Total:  2.47%   In:  0.47%   Out:  2.00%   Ratio:   0.23
+ Redirects - Total:  3.12%
 
 Same Finger
 ===========
-       SFB - 1.10%         DSFB - 4.92%
-       SFT - 0.00%          SFR - 6.37%
+       SFB - 3.55%         DSFB - 5.63%
+       SFT - 0.13%          SFR - 8.98%
 
 Finger Use
 ==========
-      Left - Total: 37.52%   LP:  5.65%   LR:  7.66%   LM: 10.25%   LI: 13.95%
-     Right - Total: 43.98%   RP:  7.54%   RR:  9.14%   RM: 16.85%   RI: 10.45%
-     Thumb - Total: 18.50%
+      Left - Total: 44.99%   LP:  6.85%   LR: 11.32%   LM: 11.55%   LI: 15.28%
+     Right - Total: 45.55%   RP:  7.46%   RR: 11.44%   RM: 16.33%   RI: 10.32%
+     Thumb - Total:  9.46%
 
 Row Use
 =======
-       Top - 24.89%         Home - 60.60%       Bottom - 14.51%
+       Top - 22.95%         Home - 63.93%       Bottom - 13.13%
 `
 
 export default a200Stagger
