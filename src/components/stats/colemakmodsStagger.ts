@@ -37,7 +37,7 @@ finger 6 	0.252	0.009		0.261
 finger 7 	0.303	0.005	-0.014	0.295
 finger 8 	0.203	0.005	0.004	0.212
 finger 9 	0.172	0.000	0.005	0.178
-total * 	1.721	0.031	-0.003	1.749
+total * 	1.721	0.031	-0.003	1.750
 `
 
 export default colemakmodsStagger
