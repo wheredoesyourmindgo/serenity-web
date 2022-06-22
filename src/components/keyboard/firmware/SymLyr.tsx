@@ -125,11 +125,21 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps}>{'<'}</KeyLegend>
-          <KeyLegend {...sharedProps}>{'>'}</KeyLegend>
-          <KeyLegend {...sharedProps}>"</KeyLegend>
-          <KeyLegend {...sharedProps}>:</KeyLegend>
-          <KeyLegend {...sharedProps}>+</KeyLegend>
+          <KeyLegend {...sharedProps} color="text.disabled">
+            {'<'}
+          </KeyLegend>
+          <KeyLegend {...sharedProps} color="text.disabled">
+            {'>'}
+          </KeyLegend>
+          <KeyLegend {...sharedProps} color="text.disabled">
+            "
+          </KeyLegend>
+          <KeyLegend {...sharedProps} color="text.disabled">
+            :
+          </KeyLegend>
+          <KeyLegend {...sharedProps} color="text.disabled">
+            +
+          </KeyLegend>
           <KeyLegend {...sharedProps}>~</KeyLegend>
           <KeyLegend {...sharedProps}>?</KeyLegend>
           <KeyLegend {...sharedProps}>|</KeyLegend>
