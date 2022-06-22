@@ -68,7 +68,7 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="k">
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>T</Type>
             <Divider />
             <Type {...sharedTypeProps}>t</Type>
@@ -189,7 +189,7 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-r>`}</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="k">
             <Type {...sharedTypeProps}>?</Type>
             <Divider />
             <Type {...sharedTypeProps}>/</Type>

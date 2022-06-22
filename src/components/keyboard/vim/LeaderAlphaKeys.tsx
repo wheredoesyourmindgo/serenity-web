@@ -42,7 +42,7 @@ export default function LeaderAlphaKeys() {
               popup
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k" special>
+          <KeyLegend {...sharedProps} vimRef="b" special>
             <Type {...sharedTypeProps}>
               goto
               <br />
@@ -154,7 +154,7 @@ export default function LeaderAlphaKeys() {
               text
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="b" />
+          <KeyLegend {...sharedProps} vimRef="k" />
           <KeyLegend {...sharedProps} vimRef="p" />
           <KeyLegend {...sharedProps} vimRef="'" />
           <KeyLegend {...sharedProps} vimRef="," />

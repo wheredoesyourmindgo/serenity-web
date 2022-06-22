@@ -86,7 +86,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
-          <KeyLegend {...sharedProps} vimRef="k">
+          <KeyLegend {...sharedProps} vimRef="b">
             <Type {...sharedTypeProps}>TILL REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>till</Type>
@@ -290,7 +290,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>redo</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="b">
+          <KeyLegend {...sharedProps} vimRef="k">
             <Type {...sharedTypeProps}>FIND REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>find</Type>

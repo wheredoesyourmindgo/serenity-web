@@ -40,7 +40,7 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd color={base02}>D</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">W</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base0">K</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base0">B</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">F</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>O</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">U</AlphaKeyLgnd>
@@ -67,7 +67,7 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">C</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base0">B</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base0">K</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">P</AlphaKeyLgnd>
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
