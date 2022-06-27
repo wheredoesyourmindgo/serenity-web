@@ -45,7 +45,9 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd color="solarized.base0">
           <em>K</em>
         </AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base00">F</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base00">
+          <em>P</em>
+        </AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>O</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">U</AlphaKeyLgnd>
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
@@ -75,7 +77,9 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd color="solarized.base0">
           <em>B</em>
         </AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base00">P</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base00">
+          <em>F</em>
+        </AlphaKeyLgnd>
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>

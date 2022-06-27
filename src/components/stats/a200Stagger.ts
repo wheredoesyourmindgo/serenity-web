@@ -3,9 +3,9 @@ WORDLISTS/MONKEYTYPE-450K.JSON
 thumb: RT
 
 serenity_stagger
-q l d w v  k f o u ;
+q l d w v  k p o u ;
 n r t s g  y h e i a
-x j m c z  b p ' , .
+x j m c z  b f ' , .
 
 Trigrams
 ========
@@ -27,7 +27,7 @@ Finger Use
 
 Row Use
 =======
-       Top - 22.95%         Home - 63.93%       Bottom - 13.13%
+       Top - 25.05%         Home - 63.93%       Bottom - 11.02%
 `
 
 export default a200Stagger

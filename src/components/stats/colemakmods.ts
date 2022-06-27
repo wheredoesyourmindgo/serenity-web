@@ -11,7 +11,7 @@ finger 0 	0.018%	 finger 9 	0.016%
 finger 1 	0.085%	 finger 8 	0.144%
 finger 2 	0.034%	 finger 7 	0.171%
 finger 3 	0.250%	 finger 6 	0.311%
-total	1.029%
+		total			1.029%
 
 Top Same-Finger Bigrams
 finger 6 	BY 	0.146%
