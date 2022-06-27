@@ -11,7 +11,7 @@ finger 0 	0.018%	 finger 9 	0.016%
 finger 1 	0.085%	 finger 8 	0.144%
 finger 2 	0.034%	 finger 7 	0.171%
 finger 3 	0.250%	 finger 6 	0.311%
-total	1.029%
+		total			1.029%
 
 Top Same-Finger Bigrams
 finger 6 	BY 	0.146%
@@ -28,16 +28,16 @@ finger 1-2 	LD 	0.363%
 finger 8-7 	IO 	0.323%
 
 Finger Effort
- 		base	s-bgrm	n-bgrm	total
+		base	s-bgrm	n-bgrm	total
 finger 0 	0.119	0.001	0.002	0.121
 finger 1 	0.174	0.003	0.003	0.180
 finger 2 	0.253	0.001	-0.003	0.251
 finger 3 	0.245	0.007		0.252
-finger 6 	0.252	0.009		0.261
-finger 7 	0.303	0.005	-0.014	0.295
+finger 6 	0.250	0.009		0.259
+finger 7 	0.303	0.005	-0.012	0.297
 finger 8 	0.203	0.005	0.004	0.212
 finger 9 	0.172	0.000	0.005	0.178
-total * 	1.721	0.031	-0.003	1.750
+total * 	1.719	0.031	-0.001	1.749
 `
 
 export default colemakmodsStagger
