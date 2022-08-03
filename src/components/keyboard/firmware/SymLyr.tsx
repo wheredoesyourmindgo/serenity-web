@@ -99,11 +99,11 @@ export default function SymLyr() {
           <KeyIcon icon={faLock} />
           <KeyLegend {...sharedProps}>`</KeyLegend>
           <KeyLegend {...sharedProps} homing>
-            {'/'}
+            \
           </KeyLegend>
           {/* <KeyLegend {...sharedProps}>&lt;</KeyLegend>
           <KeyLegend {...sharedProps}>&gt;</KeyLegend> */}
-          <KeyLegend {...sharedProps}>\</KeyLegend>
+          <KeyLegend {...sharedProps}>=</KeyLegend>
           <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
           <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
           <KeyLegend {...sharedProps}>=</KeyLegend>
@@ -125,24 +125,14 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} color="text.disabled">
-            {'<'}
-          </KeyLegend>
-          <KeyLegend {...sharedProps} color="text.disabled">
-            {'>'}
-          </KeyLegend>
-          <KeyLegend {...sharedProps} color="text.disabled">
-            "
-          </KeyLegend>
-          <KeyLegend {...sharedProps} color="text.disabled">
-            :
-          </KeyLegend>
-          <KeyLegend {...sharedProps} color="text.disabled">
-            +
-          </KeyLegend>
+          <KeyLegend {...sharedProps} color="text.disabled" />
+          <KeyLegend {...sharedProps} color="text.disabled" />
+          <KeyLegend {...sharedProps} color="text.disabled" />
+          <KeyLegend {...sharedProps} color="text.disabled" />
+          <KeyLegend {...sharedProps} color="text.disabled" />
           <KeyLegend {...sharedProps}>~</KeyLegend>
-          <KeyLegend {...sharedProps}>?</KeyLegend>
           <KeyLegend {...sharedProps}>|</KeyLegend>
+          <KeyLegend {...sharedProps}>+</KeyLegend>
           <KeyLegend {...sharedProps}>[</KeyLegend>
           <KeyLegend {...sharedProps}>]</KeyLegend>
           <KeyIcon

@@ -60,17 +60,17 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="L">
             l
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="D">
-            d
+          <KeyLegend {...sharedProps} shiftLgnd="C">
+            c
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="W">
-            w
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="Z">
-            z
+          <KeyLegend {...sharedProps} shiftLgnd="P">
+            p
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="B">
             b
+          </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="J">
+            j
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="F">
             f
@@ -119,26 +119,26 @@ export default function BaseLyr() {
           >
             -
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="N">
-            n
+          <KeyLegend {...sharedProps} shiftLgnd="Y">
+            y
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="R">
             r
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="T">
-            t
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="S" homing>
+          <KeyLegend {...sharedProps} shiftLgnd="S">
             s
+          </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="T" homing>
+            t
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="G">
             g
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="Y">
-            y
+          <KeyLegend {...sharedProps} shiftLgnd="M">
+            m
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="H" homing>
-            h
+          <KeyLegend {...sharedProps} shiftLgnd="N" homing>
+            n
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="E">
             e
@@ -149,8 +149,8 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="A">
             a
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="+">
-            =
+          <KeyLegend {...sharedProps} shiftLgnd='"'>
+            '
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -171,29 +171,29 @@ export default function BaseLyr() {
               )
             }}
           />
+          <KeyLegend {...sharedProps} shiftLgnd="V">
+            v
+          </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="X">
             x
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="J">
-            j
+          <KeyLegend {...sharedProps} shiftLgnd="W">
+            w
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="M">
-            m
+          <KeyLegend {...sharedProps} shiftLgnd="D">
+            d
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="C">
-            c
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="V">
-            v
+          <KeyLegend {...sharedProps} shiftLgnd="Z">
+            z
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="K">
             k
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="P">
-            p
+          <KeyLegend {...sharedProps} shiftLgnd="H">
+            h
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd='"'>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd="?">
+            /
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
