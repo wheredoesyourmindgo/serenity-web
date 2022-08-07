@@ -1,43 +1,44 @@
 const colemakmods = `
 Finger Frequency
-finger 0 	6.81%	 finger 9 	9.13%
-finger 1 	9.70%	 finger 8 	11.30%
-finger 2 	15.38%	 finger 7 	20.28%
-finger 3 	13.46%	 finger 6 	13.94%
-total L 	45.36%	 total R 	54.64%
+finger 0 	3.05%	 finger 9 	9.21%
+finger 1 	9.79%	 finger 8 	11.40%
+finger 2 	10.65%	 finger 7 	19.58%
+finger 3 	18.03%	 finger 6 	18.30%
+total L 	41.52%	 total R 	58.48%
 
 Finger Bigram Frequency
-finger 0 	0.018%	 finger 9 	0.016%
-finger 1 	0.085%	 finger 8 	0.144%
-finger 2 	0.034%	 finger 7 	0.171%
-finger 3 	0.250%	 finger 6 	0.311%
-		total			1.029%
+finger 0 	0.007%	 finger 9 	0.016%
+finger 1 	0.086%	 finger 8 	0.146%
+finger 2 	0.186%	 finger 7 	0.124%
+finger 3 	0.141%	 finger 6 	0.324%
+total	1.030%
 
 Top Same-Finger Bigrams
-finger 6 	BY 	0.146%
-finger 8 	UI 	0.097%
-finger 3 	SC 	0.097%
-finger 1 	RL 	0.075%
-finger 3 	GS 	0.058%
+finger 6 	KN 	0.107%
+finger 8 	UI 	0.099%
+finger 2 	SC 	0.098%
+finger 6 	NK 	0.090%
+finger 1 	RL 	0.076%
 
 Top Neighbour-Finger Bigrams
-finger 7-8 	OU 	1.453%
-finger 9-8 	AI 	0.475%
-finger 7-8 	E, 	0.400%
-finger 1-2 	LD 	0.363%
-finger 8-7 	IO 	0.323%
+finger 7-8 	OU 	1.471%
+finger 9-8 	AI 	0.482%
+finger 1-0 	LY 	0.425%
+finger 7-8 	E, 	0.405%
+finger 1-2 	RS 	0.364%
 
 Finger Effort
- 		base	s-bgrm	n-bgrm	total
-finger 0 	0.113	0.001	0.002	0.115
-finger 1 	0.175	0.003	0.003	0.180
-finger 2 	0.239	0.001	-0.003	0.237
-finger 3 	0.232	0.007		0.239
-finger 6 	0.261	0.009		0.270
-finger 7 	0.302	0.005	-0.014	0.294
-finger 8 	0.203	0.005	0.004	0.212
-finger 9 	0.168	0.000	0.005	0.174
-total * 	1.693	0.031	-0.003	1.721
+		base	s-bgrm	n-bgrm	total
+finger 0 	0.065	0.000	0.006	0.072
+finger 1 	0.176	0.003	0.002	0.181
+finger 2 	0.166	0.006	-0.003	0.168
+finger 3 	0.297	0.004		0.301
+finger 6 	0.313	0.010		0.322
+finger 7 	0.285	0.004	-0.016	0.272
+finger 8 	0.205	0.005	0.004	0.214
+finger 9 	0.170	0.000	0.005	0.176
+total * 	1.676	0.031	-0.002	1.705
+
 `
 
 export default colemakmods

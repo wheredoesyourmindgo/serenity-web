@@ -226,7 +226,7 @@ export default function AlphasPage() {
                   {/* {staggerChecked
                     ? `./genkey -stagger=true analyze serenity_stagger` */}
                   {/* :  */}
-                  `./genkey -stagger=false analyze serenity`
+                  ./genkey -stagger=false analyze serenity
                 </em>
               </Type>
               <Divider />
@@ -276,7 +276,7 @@ export default function AlphasPage() {
                 />
                 {/* {staggerChecked
                   ? `./a200 vw serenity_stagger` */}
-                `./a200 vw serenity`
+                ./a200 vw serenity
               </Type>
               <Divider />
               <Type
@@ -318,7 +318,7 @@ export default function AlphasPage() {
                 component="pre"
                 sx={{color: 'solarized.base01'}}
               >
-                <em>{`Keyboard Analysis Tool - v1.32`}</em>
+                <em>Keyboard Analysis Tool - v1.32</em>
               </Type>
               <Divider />
               <Type
