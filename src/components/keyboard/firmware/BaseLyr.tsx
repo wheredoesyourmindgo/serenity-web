@@ -1,3 +1,4 @@
+// cspell:ignore xmark
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
