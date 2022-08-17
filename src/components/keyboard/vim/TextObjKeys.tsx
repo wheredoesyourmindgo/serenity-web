@@ -40,21 +40,21 @@ export default function TextObjKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRef="-" />
-          <KeyLegend {...sharedProps} vimRef="n" />
+          <KeyLegend {...sharedProps} vimRef="y" />
           <KeyLegend {...sharedProps} vimRef="r" />
-          <KeyLegend {...sharedProps} vimRef="t" />
-          <KeyLegend {...sharedProps} vimRef="s" homing />
+          <KeyLegend {...sharedProps} vimRef="s" />
+          <KeyLegend {...sharedProps} vimRef="t" homing />
           <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>AROUND</Type>
             <Divider />
             <Type {...sharedTypeProps}>inner</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y" />
-          <KeyLegend {...sharedProps} vimRef="h" homing />
+          <KeyLegend {...sharedProps} vimRef="m" />
+          <KeyLegend {...sharedProps} vimRef="n" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />
           <KeyLegend {...sharedProps} vimRef="a" />
-          <KeyLegend {...sharedProps} vimRef="=" />
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />

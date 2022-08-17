@@ -76,14 +76,14 @@ export default function SymbolKeys() {
               match
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="/" homing>
+          <KeyLegend {...sharedProps} vimRef="\" homing>
             <Type {...sharedTypeProps}>
               previous
               <br />
               bracket
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="\">
+          <KeyLegend {...sharedProps} vimRef="=">
             <Type {...sharedTypeProps}>matchit</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="{">
@@ -96,7 +96,7 @@ export default function SymbolKeys() {
               bracket
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="=" />
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
@@ -106,7 +106,7 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRef="~" />
-          <KeyLegend {...sharedProps} vimRef="?" special>
+          <KeyLegend {...sharedProps} vimRef="|" special>
             <Type {...sharedTypeProps}>
               add sel.
               <br />
@@ -114,7 +114,7 @@ export default function SymbolKeys() {
               <br /> match
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="|" />
+          <KeyLegend {...sharedProps} vimRef="+" />
           <KeyLegend {...sharedProps} vimRef="[" />
           <KeyLegend {...sharedProps} vimRef="]" special>
             <Type {...sharedTypeProps}>
