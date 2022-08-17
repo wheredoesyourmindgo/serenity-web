@@ -106,7 +106,9 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps}>=</KeyLegend>
           <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
           <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
-          <KeyLegend {...sharedProps}>'</KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd='"'>
+            '
+          </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
