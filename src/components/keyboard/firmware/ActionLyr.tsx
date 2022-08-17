@@ -266,7 +266,7 @@ export default function ActionLyr() {
           <KeyIcon icon={faCommand} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} />
-          <KeyLegend {...sharedProps}>=</KeyLegend>
+          <KeyLegend {...sharedProps}>'</KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
