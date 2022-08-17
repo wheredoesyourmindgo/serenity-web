@@ -152,7 +152,9 @@ export default function NumNavLyr() {
           <KeyIcon icon={faArrowUp} />
           <KeyIcon icon={faArrowRight} />
 
-          <KeyLegend {...sharedProps}>'</KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd='"'>
+            '
+          </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
