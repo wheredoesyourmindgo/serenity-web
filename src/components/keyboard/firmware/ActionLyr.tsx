@@ -61,7 +61,7 @@ export default function ActionLyr() {
               transform: 'translateX(2px)'
             }}
           />
-          <KeyIcon
+          {/* <KeyIcon
             icon={faHandPointLeft}
             shiftSubIcn={faHandPointRight}
             KeyContainerProps={{
@@ -74,8 +74,21 @@ export default function ActionLyr() {
                 </Box>
               )
             }}
+          /> */}
+          <KeyIcon
+            icon={faRectangleVerticalHistory}
+            flip="horizontal"
+            KeyContainerProps={{
+              keyId: 'prev-app-window',
+              popOverContent: (
+                <Box p={1}>
+                  {/* <PopoverDesc action="tap" output="Next App Window" />
+                  <br /> */}
+                  <PopoverDesc action="shifted" output="Prev App Window" />
+                </Box>
+              )
+            }}
           />
-
           <KeyIcon
             icon={faSquareUpLeft}
             KeyContainerProps={{
@@ -100,15 +113,15 @@ export default function ActionLyr() {
           />
           <KeyIcon
             icon={faRectangleVerticalHistory}
-            shiftSubIcn={faRectangleVerticalHistory}
-            ShiftSubIcnProps={{flip: 'horizontal', fontSize: 12}}
+            // shiftSubIcn={faRectangleVerticalHistory}
+            // ShiftSubIcnProps={{flip: 'horizontal', fontSize: 12}}
             KeyContainerProps={{
               keyId: 'next-app-window',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Next App Window" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Prev App Window" />
+                  {/* <br />
+                  <PopoverDesc action="shifted" output="Prev App Window" /> */}
                 </Box>
               )
             }}
@@ -171,20 +184,22 @@ export default function ActionLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon
-            tapDance
-            icon={faWindowRestore}
+          <KeyLegend shiftLgnd="_" {...sharedProps}>
+            -
+          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          {/* <KeyIcon
+            special
+            icon={faTableLayout}
             KeyContainerProps={{
-              keyId: 'window-restore-key',
+              keyId: 'window-management3-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="Center Window" />
-                  <br />
-                  <PopoverDesc action="double tap" output="Restore Window" />
+                  <PopoverDesc action="tap" output="Window Management 3" />
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon
             special
             icon={faTableLayout}
@@ -210,18 +225,21 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            special
-            icon={faTableLayout}
+            homing
+            tapDance
+            icon={faWindowRestore}
             KeyContainerProps={{
-              keyId: 'window-management3-key',
+              keyId: 'window-restore-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Window Management 3" />
+                  <PopoverDesc action="single tap" output="Center Window" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Restore Window" />
                 </Box>
               )
             }}
           />
-          <KeyIcon
+          {/* <KeyIcon
             homing
             special
             icon={faTableLayout}
@@ -233,7 +251,7 @@ export default function ActionLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon
             tapDance
             icon={faUpRightAndDownLeftFromCenter}
