@@ -9,12 +9,15 @@ import {
   faBrightness,
   faBrightnessLow,
   faCircleHalfStroke,
+  faDeleteLeft,
+  faDeleteRight,
   faForward,
   faLayerGroup,
   faLock,
   faLockA,
   faOption,
   faPlayPause,
+  faRightToBracket,
   faTypewriter,
   faUp,
   faVolumeDown,
@@ -37,16 +40,21 @@ export default function MediaLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faTypewriter}
-            lyrHoldSubIcn={faLayerGroup}
-            sx={{transform: 'translateY(2px)'}}
+            customShiftCode
+            icon={faDeleteRight}
             KeyContainerProps={{
-              keyId: 'qwerty-key',
+              keyId: 'delete-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
+                  <PopoverDesc action="tap/hold" output="Delete" />
+                  <br />
+                  <PopoverDesc action="shifted" output="Delete word right" />
                 </Box>
               )
+            }}
+            shiftSubIcn={faRightToBracket}
+            sx={{
+              transform: 'translateX(2px)'
             }}
           />
           <KeyLegend {...sharedProps} />
@@ -126,9 +134,23 @@ export default function MediaLyr() {
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Reset
-          </KeyLegend>
+
+          <KeyIcon
+            customShiftCode
+            icon={faDeleteLeft}
+            KeyContainerProps={{
+              keyId: 'backspace-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Backspace" />
+                  <br />
+                  <PopoverDesc action="shifted" output="Backspace word left" />
+                </Box>
+              )
+            }}
+            shiftSubIcn={faRightToBracket}
+            ShiftSubIcnProps={{flip: 'horizontal'}}
+          />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} shiftLgnd="_">
@@ -186,8 +208,8 @@ export default function MediaLyr() {
           <KeyIcon icon={faCommand} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Debug
+          <KeyLegend shiftLgnd='"' {...sharedProps}>
+            '
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -243,9 +265,25 @@ export default function MediaLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faTypewriter}
+            lyrHoldSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'qwerty-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            Debug
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            Reset
+          </KeyLegend>
           <KeyIcon
             icon={faUp}
             KeyContainerProps={{

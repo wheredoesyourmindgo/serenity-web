@@ -12,7 +12,6 @@ import {
   faBorderTopLeft,
   faBracketSquare,
   faCalculatorSimple,
-  faComputerMouse,
   faCopy,
   faLock,
   faOption,
@@ -110,21 +109,7 @@ export default function NumNavLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend
-            {...sharedProps}
-            shiftLgnd="_"
-            lyrHoldSubIcn={faComputerMouse}
-            KeyContainerProps={{
-              keyId: 'lowest-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Minus" />
-                  <br />
-                  <PopoverDesc action="hold" output="Mouse Layer" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} shiftLgnd="_">
             -
           </KeyLegend>
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />

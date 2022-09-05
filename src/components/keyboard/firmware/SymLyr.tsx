@@ -10,8 +10,7 @@ import {
   faOption,
   faRightToBracket,
   faUp,
-  faVolumeXmark,
-  faComputerMouse
+  faVolumeXmark
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -75,28 +74,24 @@ export default function SymLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend
-            {...sharedProps}
-            shiftLgnd="_"
-            lyrHoldSubIcn={faComputerMouse}
-            KeyContainerProps={{
-              keyId: 'lowest-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Minus" />
-                  <br />
-                  <PopoverDesc action="hold" output="Mouse Layer" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} shiftLgnd="_">
             -
           </KeyLegend>
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
           <KeyIcon icon={faUp} color="solarized.cyan" homing />
-          <KeyIcon icon={faLock} />
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock/Unlock Mouse Layer" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps}>`</KeyLegend>
           <KeyLegend {...sharedProps} homing>
             \

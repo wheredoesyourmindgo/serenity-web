@@ -55,9 +55,15 @@ export default function FuncLyr() {
             F5
           </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F22
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F23
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F24
+          </KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faDeleteLeft}
@@ -72,6 +78,24 @@ export default function FuncLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
+          <KeyLegend {...sharedProps} shiftLgnd="_">
+            -
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F6
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F7
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F8
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx} homing>
+            F9
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F10
+          </KeyLegend>
           <KeyIcon
             icon={faLock}
             KeyContainerProps={{
@@ -86,103 +110,19 @@ export default function FuncLyr() {
               )
             }}
           />
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f16"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f6-f16-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F6" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F16" />
-                </Box>
-              )
-            }}
-          >
-            F6
+          <KeyLegend {...sharedProps} homing sx={fxSx}>
+            F19
           </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f17"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f7-f17-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F7" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F17" />
-                </Box>
-              )
-            }}
-          >
-            F7
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F20
           </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f18"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f8-f18-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F8" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F18" />
-                </Box>
-              )
-            }}
-          >
-            F8
-          </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f19"
-            customShiftCode
-            homing
-            KeyContainerProps={{
-              keyId: 'f9-f19-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F9" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F19" />
-                </Box>
-              )
-            }}
-          >
-            F9
-          </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f20"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f10-f20-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F10" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F20" />
-                </Box>
-              )
-            }}
-          >
-            F10
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F21
           </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend shiftLgnd='"' {...sharedProps}>
+            '
+          </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
@@ -196,87 +136,43 @@ export default function FuncLyr() {
               )
             }}
           />
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f21"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f11-f21-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F11" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F21" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} sx={fxSx}>
             F11
           </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f22"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f12-f22-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F12" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F22" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} sx={fxSx}>
             F12
           </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f23"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f13-f23-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F13" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F23" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} sx={fxSx}>
             F13
           </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            sx={fxSx}
-            shiftLgnd="f24"
-            customShiftCode
-            KeyContainerProps={{
-              keyId: 'f14-f24-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="F14" />
-                  <br />
-                  <PopoverDesc action="shifted" output="F24" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} sx={fxSx}>
             F14
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
             F15
           </KeyLegend>
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F16
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F17
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            F18
+          </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faUp}
+            KeyContainerProps={{
+              keyId: 'right-shift-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                </Box>
+              )
+            }}
+          />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
