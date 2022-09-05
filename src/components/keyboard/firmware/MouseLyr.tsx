@@ -6,6 +6,7 @@ import {
   faArrowTurnDownLeft,
   faBracketSquare,
   faBullseyePointer,
+  faArrowUpLeftFromCircle,
   faLock,
   faLockA,
   faOption,
@@ -77,12 +78,33 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="_">
             -
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing />
 
-          <KeyLegend {...sharedProps} />
+          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faCommand} />
+          <KeyIcon
+            homing
+            icon={faUp}
+            KeyContainerProps={{
+              keyId: 'left-shift-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock/Unlock Mouse Layer" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             icon={faLockA}
             KeyContainerProps={{
@@ -173,17 +195,9 @@ export default function MouseLyr() {
             R
           </KeyLegend>
 
-          <KeyIcon
-            icon={faLock}
-            KeyContainerProps={{
-              keyId: 'lock-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock/Unlock Mouse Layer" />
-                </Box>
-              )
-            }}
-          />
+          <KeyLegend shiftLgnd={'"'} {...sharedProps}>
+            '
+          </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
@@ -294,6 +308,7 @@ export default function MouseLyr() {
             }}
           />
         </RowBox>
+
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faVolumeXmark}
@@ -313,16 +328,18 @@ export default function MouseLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} />
+
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faUp}
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 19, transform: 'translateY(1px)'}}
             KeyContainerProps={{
-              keyId: 'left-shift-key',
+              keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                  <PopoverDesc action="tap" output="Escape" />
                 </Box>
               )
             }}
