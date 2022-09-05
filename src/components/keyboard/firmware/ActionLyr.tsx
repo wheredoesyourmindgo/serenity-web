@@ -7,8 +7,6 @@ import {
   faArrowUpLeftFromCircle,
   faBracketSquare,
   faCopy,
-  faHandPointLeft,
-  faHandPointRight,
   faLock,
   faMagicWandSparkles,
   faOption,
