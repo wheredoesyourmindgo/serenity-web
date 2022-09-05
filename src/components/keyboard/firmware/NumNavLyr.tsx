@@ -11,6 +11,7 @@ import {
   faBorderBottomRight,
   faBorderTopLeft,
   faBracketSquare,
+  faCalculator,
   faCalculatorSimple,
   faCopy,
   faLock,
@@ -130,8 +131,22 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps}>.</KeyLegend>
-
+          <KeyIcon
+            tapDance
+            icon={faCalculator}
+            KeyContainerProps={{
+              keyId: 'pemdas-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="." />
+                  <br />
+                  <PopoverDesc action="double tap" output="=" />
+                  <br />
+                  <PopoverDesc action="triple tap" output="%" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faArrowLeft} homing />
           <KeyIcon icon={faArrowDown} />
           <KeyIcon icon={faArrowUp} />
@@ -220,8 +235,6 @@ export default function NumNavLyr() {
                   <PopoverDesc action="double tap" output="/" />
                   <br />
                   <PopoverDesc action="triple tap" output="+" />
-                  <br />
-                  <PopoverDesc action="quadruple tap" output="-" />
                 </Box>
               )
             }}
