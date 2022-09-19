@@ -95,7 +95,7 @@ export default function LeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRef="-" />
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>unindent</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="r">
@@ -128,7 +128,7 @@ export default function LeaderAlphaKeys() {
               comment
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="m" />
+          <KeyLegend {...sharedProps} vimRef="y" />
           <KeyLegend {...sharedProps} vimRef="n" homing />
           <KeyLegend {...sharedProps} vimRef="e" />
           <KeyLegend {...sharedProps} vimRef="i" />

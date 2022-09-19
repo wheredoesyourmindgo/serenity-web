@@ -140,7 +140,7 @@ export default function AlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="-">
             <Type {...sharedTypeProps}>set mark</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>SUBST LINE</Type>
             <Divider />
             <Type {...sharedTypeProps}>subst char</Type>
@@ -180,7 +180,7 @@ export default function AlphaKeys() {
               <br /> mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="m">
+          <KeyLegend {...sharedProps} vimRef="y">
             <Type {...sharedTypeProps}>
               FIND
               <br />
