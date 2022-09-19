@@ -4,25 +4,25 @@ thumb: RT
 
 serenity
 q l c p b  j f o u ;
-y r s t g  m n e i a
+m r s t g  y n e i a
 v x w d z  k h / , .
 
 Trigrams
 ========
-Alternates - Total: 32.70%
-     Rolls - Total: 39.72%   In: 18.87%   Out: 20.85%   Ratio:   0.91
-  Onehands - Total:  3.69%   In:  1.47%   Out:  2.21%   Ratio:   0.67
- Redirects - Total:  5.49%
+Alternates - Total: 36.03%
+     Rolls - Total: 38.32%   In: 19.44%   Out: 18.88%   Ratio:   1.03
+  Onehands - Total:  2.79%   In:  1.33%   Out:  1.45%   Ratio:   0.92
+ Redirects - Total:  4.54%
 
 Same Finger
 ===========
-       SFB - 2.85%         DSFB - 6.56%
-       SFT - 0.00%          SFR - 8.98%
+       SFB - 3.32%         DSFB - 6.01%
+       SFT - 0.01%          SFR - 8.98%
 
 Finger Use
 ==========
-      Left - Total: 41.92%   LP:  2.66%   LR: 11.44%   LM: 11.82%   LI: 16.00%
-     Right - Total: 48.62%   RP:  7.46%   RR: 11.44%   RM: 16.33%   RI: 13.40%
+      Left - Total: 42.95%   LP:  3.69%   LR: 11.44%   LM: 11.82%   LI: 16.00%
+     Right - Total: 47.59%   RP:  7.46%   RR: 11.44%   RM: 16.33%   RI: 12.37%
      Thumb - Total:  9.46%
 
 Row Use
