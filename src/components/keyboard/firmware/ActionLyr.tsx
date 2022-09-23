@@ -74,20 +74,6 @@ export default function ActionLyr() {
             }}
           /> */}
           <KeyIcon
-            icon={faRectangleVerticalHistory}
-            flip="horizontal"
-            KeyContainerProps={{
-              keyId: 'prev-app-window',
-              popOverContent: (
-                <Box p={1}>
-                  {/* <PopoverDesc action="tap" output="Next App Window" />
-                  <br /> */}
-                  <PopoverDesc action="shifted" output="Prev App Window" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
             icon={faSquareUpLeft}
             KeyContainerProps={{
               keyId: 'nav-left-tab',
@@ -99,12 +85,15 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faSquareUpRight}
+            icon={faRectangleVerticalHistory}
+            flip="horizontal"
             KeyContainerProps={{
-              keyId: 'nav-right-tab',
+              keyId: 'prev-app-window',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Switch Tab Right" />
+                  {/* <PopoverDesc action="tap" output="Next App Window" />
+                  <br /> */}
+                  <PopoverDesc action="shifted" output="Prev App Window" />
                 </Box>
               )
             }}
@@ -120,6 +109,17 @@ export default function ActionLyr() {
                   <PopoverDesc action="tap" output="Next App Window" />
                   {/* <br />
                   <PopoverDesc action="shifted" output="Prev App Window" /> */}
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faSquareUpRight}
+            KeyContainerProps={{
+              keyId: 'nav-right-tab',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Switch Tab Right" />
                 </Box>
               )
             }}
