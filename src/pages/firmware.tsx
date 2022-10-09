@@ -42,9 +42,10 @@ import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@components/keyboard/firmware/MouseLyr'
 import OsLyr from '@components/keyboard/firmware/OsLyr'
-import {faDial, faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
-import Encoder from '@components/keyboard/firmware/Encoder'
-import {faCircleDashed} from '@fortawesome/pro-regular-svg-icons'
+// import {faDial, faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
+import {faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
+// import Encoder from '@components/keyboard/firmware/Encoder'
+// import {faCircleDashed} from '@fortawesome/pro-regular-svg-icons'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -125,9 +126,9 @@ export default function FirmwarePage() {
             <TabPanel value={value} index={8}>
               <QwertyLyr />
             </TabPanel>
-            <TabPanel value={value} index={9}>
+            {/* <TabPanel value={value} index={9}>
               <Encoder />
-            </TabPanel>
+            </TabPanel> */}
           </Box>
           <Box
             sx={{
@@ -235,7 +236,7 @@ export default function FirmwarePage() {
                 }
                 {...a11yProps(8)}
               />
-              <Tab
+              {/* <Tab
                 label="Encoder"
                 icon={
                   <Box component="span">
@@ -243,7 +244,7 @@ export default function FirmwarePage() {
                   </Box>
                 }
                 {...a11yProps(9)}
-              />
+              /> */}
             </Tabs>
           </Box>
           {/* <Copyright /> */}
@@ -307,7 +308,7 @@ export default function FirmwarePage() {
                     </ListItemIcon>
                     <ListItemText primary="Requires OS Configuration" />
                   </ListItem>
-                  <ListItem>
+                  {/* <ListItem>
                     <ListItemIcon>
                       <MuiFaIcon
                         icon={faCircleDashed}
@@ -315,7 +316,7 @@ export default function FirmwarePage() {
                       />
                     </ListItemIcon>
                     <ListItemText primary="Optional Encoder" />
-                  </ListItem>
+                  </ListItem> */}
                 </List>
               </Box>
             </Paper>

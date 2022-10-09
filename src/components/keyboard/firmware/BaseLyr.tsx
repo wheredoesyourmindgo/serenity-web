@@ -250,7 +250,9 @@ export default function BaseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            optEncoder
+            lyrHoldSubIcn={faFunction}
+            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            // optEncoder
             icon={faVolumeXmark}
             tapDance
             sx={{transform: 'translateY(2px)'}}
@@ -389,8 +391,8 @@ export default function BaseLyr() {
           <KeyIcon
             icon={faArrowRight}
             tapForceHold
-            lyrHoldSubIcn={faFunction}
-            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            // lyrHoldSubIcn={faFunction}
+            // LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (

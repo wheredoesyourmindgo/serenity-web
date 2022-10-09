@@ -39,6 +39,11 @@ export default function FuncLyr() {
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} sx={fxSx}>
             F1
           </KeyLegend>
@@ -54,17 +59,6 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} sx={fxSx}>
             F5
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F22
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F23
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F24
-          </KeyLegend>
-          <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faDeleteLeft}
             KeyContainerProps={{
@@ -81,6 +75,24 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="_">
             -
           </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap"
+                    output="Lock/Unlock Function Layer"
+                  />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} sx={fxSx}>
             F6
           </KeyLegend>
@@ -96,30 +108,6 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} sx={fxSx}>
             F10
           </KeyLegend>
-          <KeyIcon
-            icon={faLock}
-            KeyContainerProps={{
-              keyId: 'lock-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Lock/Unlock Function Layer"
-                  />
-                </Box>
-              )
-            }}
-          />
-          <KeyLegend {...sharedProps} homing sx={fxSx}>
-            F19
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F20
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F21
-          </KeyLegend>
-          <KeyLegend {...sharedProps} />
           <KeyLegend shiftLgnd='"' {...sharedProps}>
             '
           </KeyLegend>
@@ -136,6 +124,11 @@ export default function FuncLyr() {
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} sx={fxSx}>
             F11
           </KeyLegend>
@@ -151,17 +144,6 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} sx={fxSx}>
             F15
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F16
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F17
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F18
-          </KeyLegend>
-          <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faUp}
             KeyContainerProps={{
