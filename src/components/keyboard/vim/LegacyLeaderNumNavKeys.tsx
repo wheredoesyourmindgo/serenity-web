@@ -12,7 +12,8 @@ import {
   faDeleteLeft,
   faDeleteRight,
   faPageCaretDown,
-  faPageCaretUp
+  faPageCaretUp,
+  faUp
 } from '@fortawesome/pro-regular-svg-icons'
 
 export default function LegacyLeaderNumNavKeys() {
@@ -28,11 +29,11 @@ export default function LegacyLeaderNumNavKeys() {
     }
   } as const
 
-  const sharedTypeProps = {
-    component: 'span',
-    noWrap: true,
-    variant: 'inherit'
-  } as const
+  // const sharedTypeProps = {
+  //   component: 'span',
+  //   noWrap: true,
+  //   variant: 'inherit'
+  // } as const
 
   return (
     <Box>
@@ -45,14 +46,10 @@ export default function LegacyLeaderNumNavKeys() {
           <KeyLegend {...sharedProps} vimRef="4" />
           <KeyLegend {...sharedProps} vimRef="5" />
           <KeyLegend {...sharedProps} vimRef="6" />
-          <KeyLegend {...sharedProps} vimRef="7">
-            <Type {...sharedTypeProps}>H</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="7" />
           <KeyLegend {...sharedProps} vimRef="8" />
           <KeyLegend {...sharedProps} vimRef="9" />
-          <KeyLegend {...sharedProps} vimRef="0">
-            <Type {...sharedTypeProps}>zb</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="0" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -63,15 +60,11 @@ export default function LegacyLeaderNumNavKeys() {
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowLeft} homing>
-            <Type {...sharedTypeProps}>M</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowLeft} homing />
           <KeyLegend {...sharedProps} vimRefIcn={faArrowDown} />
           <KeyLegend {...sharedProps} vimRefIcn={faArrowUp} />
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight}>
-            <Type {...sharedTypeProps}>zz</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="=" />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight} />
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
@@ -81,31 +74,21 @@ export default function LegacyLeaderNumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
-            <Type {...sharedTypeProps}>L</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft} />
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretDown} />
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretUp} />
-          <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight}>
-            <Type {...sharedTypeProps}>zt</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight} />
+          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>:noh</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>:</Type>
-          </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>K</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

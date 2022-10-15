@@ -98,10 +98,17 @@ export default function LegacyLeaderAlphaKeys() {
               {/* <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<spc>`}</Type> */}
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y" />
+          <KeyLegend {...sharedProps} vimRef="y">
+            <Type {...sharedTypeProps}>M</Type>
+          </KeyLegend>
+          <Type {...sharedTypeProps} />
           <KeyLegend {...sharedProps} vimRef="n" homing />
-          <KeyLegend {...sharedProps} vimRef="e" />
-          <KeyLegend {...sharedProps} vimRef="i" />
+          <KeyLegend {...sharedProps} vimRef="e">
+            <Type {...sharedTypeProps}>L</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="i">
+            <Type {...sharedTypeProps}>H</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a" />
           <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
@@ -118,10 +125,16 @@ export default function LegacyLeaderAlphaKeys() {
               <em>todo</em>
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k" />
+          <KeyLegend {...sharedProps} vimRef="k">
+            <Type {...sharedTypeProps}>zz</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="h" />
-          <KeyLegend {...sharedProps} vimRef="/" />
-          <KeyLegend {...sharedProps} vimRef="," />
+          <KeyLegend {...sharedProps} vimRef="/">
+            <Type {...sharedTypeProps}>zb</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef=",">
+            <Type {...sharedTypeProps}>zt</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="." />
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>

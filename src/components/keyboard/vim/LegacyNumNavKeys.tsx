@@ -78,7 +78,7 @@ export default function LegacyNumNavKeys() {
               {`<right>`}
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="=" />
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
