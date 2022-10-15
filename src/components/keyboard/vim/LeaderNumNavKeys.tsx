@@ -10,6 +10,7 @@ import {
   faBorderBottomRight,
   faBorderTopLeft,
   faDeleteLeft,
+  faDeleteRight,
   faPageCaretDown,
   faPageCaretUp,
   faUp
@@ -37,29 +38,17 @@ export default function LeaderNumNavKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
           <KeyLegend {...sharedProps} vimRef="1" />
           <KeyLegend {...sharedProps} vimRef="2" />
           <KeyLegend {...sharedProps} vimRef="3" />
           <KeyLegend {...sharedProps} vimRef="4" />
           <KeyLegend {...sharedProps} vimRef="5" />
           <KeyLegend {...sharedProps} vimRef="6" />
-          <KeyLegend {...sharedProps} vimRef="7">
-            <Type {...sharedTypeProps}>
-              jump
-              <br />
-              to top
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="7" />
           <KeyLegend {...sharedProps} vimRef="8" />
           <KeyLegend {...sharedProps} vimRef="9" />
-          <KeyLegend {...sharedProps} vimRef="0">
-            <Type {...sharedTypeProps}>
-              scroll
-              <br />
-              bottom
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="0" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -70,27 +59,15 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing vimRefIcn={faArrowLeft}>
-            <Type {...sharedTypeProps}>
-              jump to
-              <br />
-              middle
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} homing vimRefIcn={faArrowLeft} />
           <KeyLegend {...sharedProps} vimRefIcn={faArrowDown}>
             <Type {...sharedTypeProps} />
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowUp}>
             <Type {...sharedTypeProps} />
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight}>
-            <Type {...sharedTypeProps}>
-              scroll
-              <br />
-              middle
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="=" />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight} />
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
@@ -100,26 +77,14 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
-            <Type {...sharedTypeProps}>
-              jump to
-              <br />
-              bottom
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft} />
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretDown}>
             <Type {...sharedTypeProps} />
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretUp}>
             <Type {...sharedTypeProps} />
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight}>
-            <Type {...sharedTypeProps}>
-              scroll
-              <br />
-              top
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight} />
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -127,24 +92,10 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              no
-              <br />
-              highlight
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              command
-              <br />
-              mode
-            </Type>
-          </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>Help</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

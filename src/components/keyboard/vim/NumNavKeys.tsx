@@ -71,7 +71,7 @@ export default function NumNavKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faArrowRight}>
             <Type {...sharedTypeProps}>right</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="=" />
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />

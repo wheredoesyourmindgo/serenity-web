@@ -128,10 +128,28 @@ export default function LeaderAlphaKeys() {
               comment
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y" />
+          <KeyLegend {...sharedProps} vimRef="y">
+            <Type {...sharedTypeProps}>
+              jump to
+              <br />
+              middle
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="n" homing />
-          <KeyLegend {...sharedProps} vimRef="e" />
-          <KeyLegend {...sharedProps} vimRef="i" />
+          <KeyLegend {...sharedProps} vimRef="e">
+            <Type {...sharedTypeProps}>
+              jump to
+              <br />
+              bottom
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="i">
+            <Type {...sharedTypeProps}>
+              jump
+              <br />
+              to top
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a" />
           <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
@@ -154,10 +172,28 @@ export default function LeaderAlphaKeys() {
               text
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k" />
+          <KeyLegend {...sharedProps} vimRef="k">
+            <Type {...sharedTypeProps}>
+              scroll
+              <br />
+              middle
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="h" />
-          <KeyLegend {...sharedProps} vimRef="/" />
-          <KeyLegend {...sharedProps} vimRef="," />
+          <KeyLegend {...sharedProps} vimRef="/">
+            <Type {...sharedTypeProps}>
+              scroll
+              <br />
+              bottom
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef=",">
+            <Type {...sharedTypeProps}>
+              scroll
+              <br />
+              top
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="." />
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
