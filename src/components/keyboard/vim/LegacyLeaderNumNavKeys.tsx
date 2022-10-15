@@ -1,7 +1,7 @@
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box, Typography as Type} from '@mui/material'
+import {Box} from '@mui/material'
 import {
   faArrowDown,
   faArrowLeft,
