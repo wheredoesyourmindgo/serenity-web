@@ -59,14 +59,26 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} homing vimRefIcn={faArrowLeft} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowLeft} homing>
+            <Type {...sharedTypeProps}>unindent</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowDown}>
-            <Type {...sharedTypeProps} />
+            <Type {...sharedTypeProps}>
+              move ln.
+              <br />
+              down
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowUp}>
-            <Type {...sharedTypeProps} />
+            <Type {...sharedTypeProps}>
+              move ln.
+              <br />
+              up
+            </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight}>
+            <Type {...sharedTypeProps}>indent</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
