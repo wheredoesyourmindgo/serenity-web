@@ -95,26 +95,10 @@ export default function LeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRef="-" />
-          <KeyLegend {...sharedProps} vimRef="m">
-            <Type {...sharedTypeProps}>unindent</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="r">
-            <Type {...sharedTypeProps}>
-              move ln.
-              <br />
-              down
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="s">
-            <Type {...sharedTypeProps}>
-              move ln.
-              <br />
-              up
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="t" homing>
-            <Type {...sharedTypeProps}>indent</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="m" />
+          <KeyLegend {...sharedProps} vimRef="r" />
+          <KeyLegend {...sharedProps} vimRef="s" />
+          <KeyLegend {...sharedProps} vimRef="t" homing />
           <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>
               BLOCK

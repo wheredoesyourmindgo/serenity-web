@@ -70,31 +70,17 @@ export default function LegacyLeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRef="-" />
-          <KeyLegend {...sharedProps} vimRef="m">
-            <Type {...sharedTypeProps}>{`<`}</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="r">
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`ddp`}</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="s">
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>
-              {`dd<up>`}
-              <br />
-              {`<up>p`}
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="t" homing>
-            <Type {...sharedTypeProps}>{`>`}</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="m" />
+          <KeyLegend {...sharedProps} vimRef="r" />
+          <KeyLegend {...sharedProps} vimRef="s" />
+          <KeyLegend {...sharedProps} vimRef="t" homing />
           <KeyLegend {...sharedProps} vimRef="g">
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>
+            <Type {...sharedTypeProps} sx={{fontSize: 12}}>
               <em>todo</em>
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>`}</Type>
-              <br />
-              <Type {...sharedTypeProps}>c</Type>
+              <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>c`}</Type>
               {/* <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<spc>`}</Type> */}
             </Type>
           </KeyLegend>
