@@ -5,9 +5,12 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
+  faAt,
   faBracketSquare,
   faCopy,
+  faLayerGroup,
   faLock,
+  faLockA,
   faMagicWandSparkles,
   faOption,
   faPaste,
@@ -18,6 +21,7 @@ import {
   faSquareUpLeft,
   faSquareUpRight,
   faTableLayout,
+  faTypewriter,
   faUndo,
   faUp,
   faUpRightAndDownLeftFromCenter,
@@ -32,7 +36,6 @@ import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
-import {faSignatureLock} from '@fortawesome/pro-regular-svg-icons'
 
 export default function ActionLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -288,6 +291,17 @@ export default function ActionLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
+            icon={faUp}
+            KeyContainerProps={{
+              keyId: 'left-shift-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyIcon
             icon={faSignatureLock}
             KeyContainerProps={{
               keyId: 'caps-sentence-key',
@@ -297,7 +311,7 @@ export default function ActionLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon
             icon={faUndo}
             KeyContainerProps={{
@@ -353,9 +367,30 @@ export default function ActionLyr() {
               )
             }}
           />
-
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faTypewriter}
+            lyrHoldSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'qwerty-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faLockA}
+            KeyContainerProps={{
+              keyId: 'caps-lock-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Caps-lock" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -422,7 +457,21 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon icon={faArrowTurnDownLeft} />
+          <KeyIcon
+            icon={faArrowTurnDownLeft}
+            lyrHoldSubIcn={faAt}
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'low-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Enter" />
+                  <br />
+                  <PopoverDesc action="hold" output="Symbol Layer" />
+                </Box>
+              )
+            }}
+          />
           {/* <KeyIcon icon={faArrowRightLongToLine} /> */}
           <KeyIcon
             icon={faBracketSquare}

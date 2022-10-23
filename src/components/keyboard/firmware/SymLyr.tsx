@@ -6,11 +6,11 @@ import {
   faArrowTurnDownLeft,
   faBracketSquare,
   faLock,
-  faLockA,
   faOption,
   faRightToBracket,
   faUp,
-  faVolumeXmark
+  faVolumeXmark,
+  faHashtag
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -113,11 +113,6 @@ export default function SymLyr() {
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Left Shift" />
-                  <br />
-                  <PopoverDesc
-                    action="simultaneously tap w/ Right Shift"
-                    output="Caps-word"
-                  />
                 </Box>
               )
             }}
@@ -133,12 +128,12 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps}>[</KeyLegend>
           <KeyLegend {...sharedProps}>]</KeyLegend>
           <KeyIcon
-            icon={faLockA}
+            icon={faUp}
             KeyContainerProps={{
-              keyId: 'caps-lock-key',
+              keyId: 'right-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Caps-lock" />
+                  <PopoverDesc action="tap/hold" output="Right Shift" />
                 </Box>
               )
             }}
@@ -168,12 +163,15 @@ export default function SymLyr() {
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faArrowUpLeftFromCircle}
-            sx={{fontSize: 19}}
+            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            lyrHoldSubIcn={faHashtag}
             KeyContainerProps={{
-              keyId: 'escape-key',
+              keyId: 'lower-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Escape" />
+                  <PopoverDesc action="tap" output="Escape" />
+                  <br />
+                  <PopoverDesc action="hold" output="Num/Nav Layer" />
                 </Box>
               )
             }}
