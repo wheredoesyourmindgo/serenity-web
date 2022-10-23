@@ -203,10 +203,10 @@ export default function MouseLyr() {
           <KeyIcon
             icon={faUp}
             KeyContainerProps={{
-              keyId: 'right-shift-key',
+              keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                  <PopoverDesc action="tap/hold" output="Left Shift" />
                 </Box>
               )
             }}

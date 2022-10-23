@@ -12,13 +12,10 @@ import {
   faDeleteLeft,
   faDeleteRight,
   faForward,
-  faLayerGroup,
   faLock,
-  faLockA,
   faOption,
   faPlayPause,
   faRightToBracket,
-  faTypewriter,
   faUp,
   faVolumeDown,
   faVolumeSlash,
@@ -99,42 +96,15 @@ export default function MediaLyr() {
             }}
           />
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            <>
-              RGB
-              <br />
-              +/-
-            </>
+            Debug
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            <>
-              Mode
-              <br />
-              +/-
-            </>
+            Reset
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            <>
-              Hue
-              <br />
-              +/-
-            </>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            <>
-              Sat
-              <br />
-              +/-
-            </>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            <>
-              Bri
-              <br />
-              +/-
-            </>
-          </KeyLegend>
-
           <KeyIcon
             customShiftCode
             icon={faDeleteLeft}
@@ -214,12 +184,12 @@ export default function MediaLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faLockA}
+            icon={faUp}
             KeyContainerProps={{
-              keyId: 'caps-lock-key',
+              keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Caps-lock" />
+                  <PopoverDesc action="tap/hold" output="Left Shift" />
                 </Box>
               )
             }}
@@ -263,27 +233,42 @@ export default function MediaLyr() {
             }}
           />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyIcon
-            icon={faTypewriter}
-            lyrHoldSubIcn={faLayerGroup}
-            sx={{transform: 'translateY(2px)'}}
-            KeyContainerProps={{
-              keyId: 'qwerty-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
-                </Box>
-              )
-            }}
-          />
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Debug
+            <>
+              RGB
+              <br />
+              +/-
+            </>
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Reset
+            <>
+              Mode
+              <br />
+              +/-
+            </>
           </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            <>
+              Hue
+              <br />
+              +/-
+            </>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            <>
+              Sat
+              <br />
+              +/-
+            </>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            <>
+              Bri
+              <br />
+              +/-
+            </>
+          </KeyLegend>
+
           <KeyIcon
             icon={faUp}
             KeyContainerProps={{

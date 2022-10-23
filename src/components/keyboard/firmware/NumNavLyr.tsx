@@ -8,6 +8,7 @@ import {
   faArrowTurnDownLeft,
   faArrowUp,
   faArrowUpLeftFromCircle,
+  faAt,
   faBorderBottomRight,
   faBorderTopLeft,
   faBracketSquare,
@@ -35,7 +36,6 @@ import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
-import {faSignatureLock} from '@fortawesome/pro-regular-svg-icons'
 
 export default function NumNavLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -284,14 +284,13 @@ export default function NumNavLyr() {
               )
             }}
           />
-
           <KeyIcon
-            icon={faSignatureLock}
+            icon={faUp}
             KeyContainerProps={{
-              keyId: 'caps-sentence-key',
+              keyId: 'right-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Caps-sentence" />
+                  <PopoverDesc action="tap/hold" output="Right Shift" />
                 </Box>
               )
             }}
@@ -331,7 +330,21 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyIcon icon={faArrowTurnDownLeft} />
+          <KeyIcon
+            icon={faArrowTurnDownLeft}
+            lyrHoldSubIcn={faAt}
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'low-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Enter" />
+                  <br />
+                  <PopoverDesc action="hold" output="Symbol Layer" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
