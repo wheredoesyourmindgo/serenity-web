@@ -7,16 +7,27 @@ import {CacheProvider, EmotionCache} from '@emotion/react'
 import theme from '@lib/theme'
 import createEmotionCache from '@lib/createEmotionCache'
 import smoothscroll from 'smoothscroll-polyfill'
-import '@lib/css/styles.css'
 import UiProvider from '@components/UiStore'
 import ToggleColorMode from '@components/ToggleColorMode'
+import localFont from '@next/font/local'
 // Font Awesome config
-import { config } from '@fortawesome/fontawesome-svg-core'
+import {config} from '@fortawesome/fontawesome-svg-core'
+
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
+const bodyFont = localFont({
+  src: [
+    {path: '../fonts/MonoLisaVariableNormal.woff2', style: 'normal'},
+    {path: '../fonts/MonoLisaVariableItalic.woff2', style: 'italic'}
+  ],
+  variable: '--mono-lisa-font',
+  display: 'swap'
+})
+
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
+
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
@@ -38,7 +49,12 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <UiProvider>
           <ToggleColorMode>
-            <Component {...pageProps} />
+            <div
+              className={`${bodyFont.variable} ${bodyFont.className}`}
+              style={{height: '100%'}}
+            >
+              <Component {...pageProps} />
+            </div>
           </ToggleColorMode>
         </UiProvider>
       </ThemeProvider>
