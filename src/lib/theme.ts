@@ -60,7 +60,7 @@ const basePalette = {
 // Create a theme instance.
 const appTheme = {
   typography: {
-    fontFamily: ['MonoLisa', ...systemFonts].join(',')
+    fontFamily: ['var(--mono-lisa-font)', ...systemFonts].join(',')
   },
   palette: {...basePalette}
   // components: {

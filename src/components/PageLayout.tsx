@@ -51,16 +51,15 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
               {/* <Type variant="h6" component="div" sx={{flexGrow: 1}}>
               Serenity
             </Type> */}
-              <Link href="/alphas" passHref>
-                <Button color="inherit">Alphas</Button>
-              </Link>
-              <Link href="/firmware" passHref>
-                <Button color="inherit">Firmware</Button>
-              </Link>
-              <Link href="/vim" passHref>
-                <Button color="inherit">Vim</Button>
-              </Link>
-
+              <Button LinkComponent={Link} href="/alphas" color="inherit">
+                Alphas
+              </Button>
+              <Button LinkComponent={Link} href="/firmware" color="inherit">
+                Firmware
+              </Button>
+              <Button LinkComponent={Link} href="/vim" color="inherit">
+                Vim
+              </Button>
               <Box sx={{flexGrow: 1}} />
               <ToggleDarkModeBtn />
             </Toolbar>
