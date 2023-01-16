@@ -1,7 +1,7 @@
+import React, {useRef} from 'react'
 import {AppTheme} from '@lib/theme'
-import {alpha, Popover, useTheme} from '@mui/material'
+import {alpha, Popover, useTheme, Box} from '@mui/material'
 import {FlexBox, FlexBoxProps} from 'mui-sleazebox'
-import React from 'react'
 
 type Props = FlexBoxProps & {
   keyId?: string
@@ -17,6 +17,7 @@ export default function KeyContainer({
   ...rest
 }: Props) {
   const {sx, ...r} = rest
+  const popoverContainerRef = useRef()
   const theme = useTheme<AppTheme>()
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
 
@@ -76,9 +77,10 @@ export default function KeyContainer({
       onMouseLeave={handlePopoverClose}
       {...r}
     >
-      <div>
+      <Box ref={popoverContainerRef}>
         <Popover
           id={popOverId}
+          container={popoverContainerRef.current}
           sx={{
             pointerEvents: 'none'
           }}
@@ -98,8 +100,8 @@ export default function KeyContainer({
         >
           {popOverContent}
         </Popover>
-      </div>
-      {children}
+        {children}
+      </Box>
     </FlexBox>
   )
 }
