@@ -14,6 +14,7 @@ import localFont from '@next/font/local'
 import {config} from '@fortawesome/fontawesome-svg-core'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
+// import {GlobalStyles} from '@mui/material'
 config.autoAddCss = false
 
 const bodyFont = localFont({
@@ -47,6 +48,7 @@ export default function MyApp(props: MyAppProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
+        {/* <GlobalStyles styles={{}} /> */}
         <UiProvider>
           <ToggleColorMode>
             <div
