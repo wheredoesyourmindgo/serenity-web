@@ -12,10 +12,9 @@ import {
   faBorderBottomRight,
   faBorderTopLeft,
   faBracketSquare,
-  faCalculator,
-  faCalculatorSimple,
   faCopy,
   faLock,
+  faLockA,
   faOption,
   faPageCaretDown,
   faPageCaretUp,
@@ -131,7 +130,25 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyIcon
+          <KeyLegend
+            {...sharedProps}
+            tapDance
+            // shiftLgnd=">"
+            KeyContainerProps={{
+              keyId: 'alt-period-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="period" />
+                  <br />
+
+                  <PopoverDesc action="hold" output="comma" />
+                </Box>
+              )
+            }}
+          >
+            .
+          </KeyLegend>
+          {/* <KeyIcon
             tapDance
             icon={faCalculator}
             KeyContainerProps={{
@@ -146,7 +163,7 @@ export default function NumNavLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon icon={faArrowLeft} homing />
           <KeyIcon icon={faArrowDown} />
           <KeyIcon icon={faArrowUp} />
@@ -223,7 +240,7 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyIcon
+          {/* <KeyIcon
             tapDance
             icon={faCalculatorSimple}
             KeyContainerProps={{
@@ -235,6 +252,17 @@ export default function NumNavLyr() {
                   <PopoverDesc action="double tap" output="/" />
                   <br />
                   <PopoverDesc action="triple tap" output="+" />
+                </Box>
+              )
+            }}
+          /> */}
+          <KeyIcon
+            icon={faLockA}
+            KeyContainerProps={{
+              keyId: 'caps-lock-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Caps-lock" />
                 </Box>
               )
             }}

@@ -201,14 +201,14 @@ export default function BaseLyr() {
             shiftLgnd="<"
             // customShiftCode
             KeyContainerProps={{
-              keyId: 'comma-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Comma" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Semicolon" />
-                </Box>
-              )
+              keyId: 'comma-key'
+              // popOverContent: (
+              //   <Box p={1}>
+              //     <PopoverDesc action="tap/hold" output="Comma" />
+              //     <br />
+              //     <PopoverDesc action="shifted" output="Semicolon" />
+              //   </Box>
+              // )
             }}
           >
             ,
@@ -218,14 +218,14 @@ export default function BaseLyr() {
             shiftLgnd=">"
             // customShiftCode
             KeyContainerProps={{
-              keyId: 'period-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Period/Dot" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Colon" />
-                </Box>
-              )
+              keyId: 'period-key'
+              // popOverContent: (
+              //   <Box p={1}>
+              //     <PopoverDesc action="tap/hold" output="Period/Dot" />
+              //     <br />
+              //     <PopoverDesc action="shifted" output="Colon" />
+              //   </Box>
+              // )
             }}
           >
             .
@@ -266,6 +266,8 @@ export default function BaseLyr() {
                     action="double tap"
                     output="Mute & Hide Window"
                   />
+                  <br />
+                  <PopoverDesc action="hold" output="Function Layer" />
                 </Box>
               )
             }}

@@ -291,7 +291,7 @@ export default function FirmwarePage() {
                     <ListItemIcon>
                       <MuiFaIcon icon={faEllipsis} color="solarized.blue" />
                     </ListItemIcon>
-                    <ListItemText primary="Tap Dance" />
+                    <ListItemText primary="Tap vs. Hold" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
