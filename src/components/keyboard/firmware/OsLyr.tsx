@@ -255,7 +255,7 @@ export default function OsLyr() {
               icon={faArrowLeftLong}
               fontSize={13}
               sx={{
-                transform: 'translate3D(6px, -3px, 0)',
+                transform: 'translate3D(7px, -3px, 0)',
                 color: 'solarized.base00'
               }}
             />
@@ -277,7 +277,7 @@ export default function OsLyr() {
               color="solarized.base00"
               fontSize={13}
               sx={{
-                transform: 'translate3D(6px, -3px, 0)',
+                transform: 'translate3D(7px, -3px, 0)',
                 color: 'solarized.base00'
               }}
             />
@@ -317,7 +317,7 @@ export default function OsLyr() {
               icon={faClipboard}
               fontSize={13}
               sx={{
-                transform: 'translate3D(8.5px, 2px, 0)',
+                transform: 'translate3D(8.5px, 3px, 0)',
                 color: 'solarized.base01'
               }}
             />

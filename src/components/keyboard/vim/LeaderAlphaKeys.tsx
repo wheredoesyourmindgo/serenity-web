@@ -168,14 +168,14 @@ export default function LeaderAlphaKeys() {
             <Type {...sharedTypeProps}>
               scroll
               <br />
-              bottom
+              top
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=",">
             <Type {...sharedTypeProps}>
               scroll
               <br />
-              top
+              bottom
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="." />

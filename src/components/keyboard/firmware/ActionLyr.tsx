@@ -3,16 +3,20 @@ import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {faApple} from '@fortawesome/free-brands-svg-icons'
 import {
   faArrowRightLongToLine,
+  faArrowsToDot,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
   faAt,
+  faBorderBottomRight,
+  faBorderLeft,
   faBracketSquare,
   faCopy,
-  faLayerGroup,
   faLock,
   faLockA,
   faMagicWandSparkles,
   faOption,
+  faPageCaretDown,
+  faPageCaretUp,
   faPaste,
   faRectangleVerticalHistory,
   faRedo,
@@ -21,7 +25,6 @@ import {
   faSquareUpLeft,
   faSquareUpRight,
   faTableLayout,
-  faTypewriter,
   faUndo,
   faUp,
   faUpRightAndDownLeftFromCenter,
@@ -188,7 +191,21 @@ export default function ActionLyr() {
           <KeyLegend shiftLgnd="_" {...sharedProps}>
             -
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          {/* <KeyLegend {...sharedProps} /> */}
+          <KeyIcon
+            tapDance
+            icon={faUpRightAndDownLeftFromCenter}
+            KeyContainerProps={{
+              keyId: 'window-fullscreen-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Fullscreen Window" />
+                  <br />
+                  <PopoverDesc action="hold" output="Max Window Height" />
+                </Box>
+              )
+            }}
+          />
           {/* <KeyIcon
             special
             icon={faTableLayout}
@@ -202,25 +219,46 @@ export default function ActionLyr() {
             }}
           /> */}
           <KeyIcon
-            special
+            // special
+            tapDance
             icon={faTableLayout}
             KeyContainerProps={{
               keyId: 'window-management1-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Window Management 1" />
+                  <PopoverDesc action="tap" output="Decrease Window Size" />
+                  <br />
+                  <PopoverDesc action="hold" output="Window Left Half" />
                 </Box>
               )
             }}
           />
           <KeyIcon
-            special
+            // special
+            tapDance
             icon={faTableLayout}
             KeyContainerProps={{
               keyId: 'window-management2-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Window Management 2" />
+                  <PopoverDesc action="tap" output="Increase Window Size" />
+                  <br />
+                  <PopoverDesc action="hold" output="Window Right Half" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            homing
+            tapDance
+            icon={faArrowsToDot}
+            KeyContainerProps={{
+              keyId: 'window-center-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Center Window" />
+                  <br />
+                  <PopoverDesc action="hold" output="Almost Max Window" />
                 </Box>
               )
             }}
@@ -233,9 +271,9 @@ export default function ActionLyr() {
               keyId: 'window-restore-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="Center Window" />
+                  <PopoverDesc action="tap" output="Restore Window" />
                   <br />
-                  <PopoverDesc action="double tap" output="Restore Window" />
+                  <PopoverDesc action="hold" output="Last Window Position" />
                 </Box>
               )
             }}
@@ -253,23 +291,7 @@ export default function ActionLyr() {
               )
             }}
           /> */}
-          <KeyIcon
-            tapDance
-            icon={faUpRightAndDownLeftFromCenter}
-            KeyContainerProps={{
-              keyId: 'window-fullscreen-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="single tap"
-                    output="Max Window Height "
-                  />
-                  <br />
-                  <PopoverDesc action="double tap" output="Fullscreen Window" />
-                </Box>
-              )
-            }}
-          />
+
           <KeyIcon
             icon={faLock}
             KeyContainerProps={{
@@ -281,10 +303,10 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUp} homing />
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyLegend {...sharedProps} shiftLgnd='"'>
             '
           </KeyLegend>
@@ -367,19 +389,7 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon
-            icon={faTypewriter}
-            lyrHoldSubIcn={faLayerGroup}
-            sx={{transform: 'translateY(2px)'}}
-            KeyContainerProps={{
-              keyId: 'qwerty-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
-                </Box>
-              )
-            }}
-          />
+
           <KeyIcon
             icon={faLockA}
             KeyContainerProps={{
@@ -391,10 +401,51 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faBorderLeft}
+            KeyContainerProps={{
+              keyId: 'home-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Home" />
+                </Box>
+              )
+            }}
+          />
 
+          <KeyIcon
+            icon={faPageCaretDown}
+            KeyContainerProps={{
+              keyId: 'page-down-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Page Down" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faPageCaretUp}
+            KeyContainerProps={{
+              keyId: 'page-up-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Page Up" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faBorderBottomRight}
+            KeyContainerProps={{
+              keyId: 'end-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="End" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             icon={faUp}
             KeyContainerProps={{
