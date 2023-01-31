@@ -343,9 +343,9 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} color="text.disabled" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="text.disabled" />
-          <KeyIcon icon={faCommand} color="text.disabled" />
+          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19}}
@@ -361,7 +361,7 @@ export default function NumNavLyr() {
           <KeyIcon
             icon={faArrowTurnDownLeft}
             lyrHoldSubIcn={faAt}
-            sx={{transform: 'translateY(2px)'}}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'low-layer-key',
               popOverContent: (
