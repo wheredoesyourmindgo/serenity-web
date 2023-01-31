@@ -192,16 +192,18 @@ export default function ActionLyr() {
             -
           </KeyLegend>
           {/* <KeyLegend {...sharedProps} /> */}
+
           <KeyIcon
+            homing
             tapDance
-            icon={faUpRightAndDownLeftFromCenter}
+            icon={faWindowRestore}
             KeyContainerProps={{
-              keyId: 'window-fullscreen-key',
+              keyId: 'window-restore-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Fullscreen Window" />
+                  <PopoverDesc action="tap" output="Restore Window" />
                   <br />
-                  <PopoverDesc action="hold" output="Max Window Height" />
+                  <PopoverDesc action="hold" output="Almost Max Window" />
                 </Box>
               )
             }}
@@ -258,22 +260,21 @@ export default function ActionLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Center Window" />
                   <br />
-                  <PopoverDesc action="hold" output="Almost Max Window" />
+                  <PopoverDesc action="hold" output="Last Window Position" />
                 </Box>
               )
             }}
           />
           <KeyIcon
-            homing
             tapDance
-            icon={faWindowRestore}
+            icon={faUpRightAndDownLeftFromCenter}
             KeyContainerProps={{
-              keyId: 'window-restore-key',
+              keyId: 'window-fullscreen-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Restore Window" />
+                  <PopoverDesc action="tap" output="Fullscreen Window" />
                   <br />
-                  <PopoverDesc action="hold" output="Last Window Position" />
+                  <PopoverDesc action="hold" output="Max Window Height" />
                 </Box>
               )
             }}

@@ -10,7 +10,8 @@ import {
   faRightToBracket,
   faUp,
   faVolumeXmark,
-  faHashtag
+  faHashtag,
+  faFunction
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -92,12 +93,12 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps}>`</KeyLegend>
-          <KeyLegend {...sharedProps} homing>
-            \
-          </KeyLegend>
           {/* <KeyLegend {...sharedProps}>&lt;</KeyLegend>
           <KeyLegend {...sharedProps}>&gt;</KeyLegend> */}
+          <KeyLegend {...sharedProps}>`</KeyLegend>
+          <KeyLegend {...sharedProps} homing>
+            +
+          </KeyLegend>
           <KeyLegend {...sharedProps}>=</KeyLegend>
           <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
           <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
@@ -124,7 +125,7 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps} color="text.disabled" />
           <KeyLegend {...sharedProps}>~</KeyLegend>
           <KeyLegend {...sharedProps}>|</KeyLegend>
-          <KeyLegend {...sharedProps}>+</KeyLegend>
+          <KeyLegend {...sharedProps}>\</KeyLegend>
           <KeyLegend {...sharedProps}>[</KeyLegend>
           <KeyLegend {...sharedProps}>]</KeyLegend>
           <KeyIcon
@@ -179,8 +180,19 @@ export default function SymLyr() {
           <KeyIcon icon={faArrowTurnDownLeft} />
           <KeyIcon
             icon={faBracketSquare}
+            lyrHoldSubIcn={faFunction}
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
+            KeyContainerProps={{
+              keyId: 'space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Space" />
+                  <br />
+                  <PopoverDesc action="hold" output="Function Layer" />
+                </Box>
+              )
+            }}
           />
           <KeyIcon icon={faArrowRightLongToLine} />
           <KeyIcon icon={faCommand} />
