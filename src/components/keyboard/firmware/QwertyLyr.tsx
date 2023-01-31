@@ -11,7 +11,6 @@ import {
   faAt,
   faBracketSquare,
   faComputerMouse,
-  faFunction,
   faGear,
   faHashtag,
   faOption,
@@ -273,19 +272,7 @@ export default function QwertyLyr() {
               )
             }}
           />
-          <KeyLegend
-            {...sharedProps}
-            shiftLgnd="?"
-            lyrHoldSubIcn={faFunction}
-            KeyContainerProps={{
-              keyId: 'function-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="hold" output="Function Layer" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} shiftLgnd="?">
             /
           </KeyLegend>
           <KeyIcon icon={faArrowLeft} />
