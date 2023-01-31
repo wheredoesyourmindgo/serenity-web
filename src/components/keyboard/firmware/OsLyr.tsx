@@ -155,13 +155,13 @@ export default function OsLyr() {
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faUpRightAndDownLeftFromCenter}
+            icon={faDesktop}
             flip="horizontal"
             KeyContainerProps={{
-              keyId: 'os-fullscreen-key',
+              keyId: 'show-desktop-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="OS Fullscreen" />
+                  <PopoverDesc action="tap" output="Show/Hide Desktop" />
                 </Box>
               )
             }}
@@ -202,18 +202,17 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faDesktop}
+            icon={faUpRightAndDownLeftFromCenter}
             flip="horizontal"
             KeyContainerProps={{
-              keyId: 'show-desktop-key',
+              keyId: 'os-fullscreen-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Show/Hide Desktop" />
+                  <PopoverDesc action="tap" output="OS Fullscreen" />
                 </Box>
               )
             }}
           />
-
           <KeyIcon
             icon={faDesktopArrowDown}
             flip="horizontal"

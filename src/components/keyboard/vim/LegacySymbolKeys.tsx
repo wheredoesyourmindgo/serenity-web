@@ -61,7 +61,7 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} vimRef="`">
             <Type {...sharedTypeProps}>%</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="\" homing>
+          <KeyLegend {...sharedProps} vimRef="+" homing>
             <Type {...sharedTypeProps}>[%</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="=">
@@ -88,7 +88,7 @@ export default function LegacySymbolKeys() {
               <em>todo</em>
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="+" />
+          <KeyLegend {...sharedProps} vimRef="\" />
           <KeyLegend {...sharedProps} vimRef="[" />
           <KeyLegend {...sharedProps} vimRef="]" special>
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>

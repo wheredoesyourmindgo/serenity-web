@@ -382,6 +382,7 @@ export default function NumNavLyr() {
             icon={faArrowRightLongToLine}
             lyrHoldSubIcn={faApple}
             LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (

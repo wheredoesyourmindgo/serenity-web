@@ -12,6 +12,7 @@ import {
   faDeleteLeft,
   faDeleteRight,
   faForward,
+  faFunction,
   faLayerGroup,
   faLock,
   faOption,
@@ -202,10 +203,10 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUp} homing />
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyLegend shiftLgnd='"' {...sharedProps}>
             '
           </KeyLegend>
@@ -340,7 +341,21 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyIcon icon={faArrowTurnDownLeft} />
+          <KeyIcon
+            icon={faArrowTurnDownLeft}
+            lyrHoldSubIcn={faFunction}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'enter-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Space" />
+                  <br />
+                  <PopoverDesc action="hold" output="Function Layer" />
+                </Box>
+              )
+            }}
+          />
 
           <KeyIcon
             icon={faBracketSquare}

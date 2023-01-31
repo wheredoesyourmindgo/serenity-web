@@ -76,7 +76,7 @@ export default function SymbolKeys() {
               match
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="\" homing>
+          <KeyLegend {...sharedProps} vimRef="+" homing>
             <Type {...sharedTypeProps}>
               previous
               <br />
@@ -114,7 +114,7 @@ export default function SymbolKeys() {
               <br /> match
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="+" />
+          <KeyLegend {...sharedProps} vimRef="\" />
           <KeyLegend {...sharedProps} vimRef="[" />
           <KeyLegend {...sharedProps} vimRef="]" special>
             <Type {...sharedTypeProps}>

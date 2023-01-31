@@ -12,7 +12,6 @@ import {
   faAt,
   faBracketSquare,
   faComputerMouse,
-  faFunction,
   faGear,
   faHashtag,
   faOption,
@@ -103,21 +102,7 @@ export default function BaseLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend
-            {...sharedProps}
-            shiftLgnd="_"
-            lyrHoldSubIcn={faComputerMouse}
-            KeyContainerProps={{
-              keyId: 'lowest-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Minus" />
-                  <br />
-                  <PopoverDesc action="hold" output="Mouse Layer" />
-                </Box>
-              )
-            }}
-          >
+          <KeyLegend {...sharedProps} shiftLgnd="_">
             -
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="M">
@@ -250,8 +235,7 @@ export default function BaseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            lyrHoldSubIcn={faFunction}
-            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            lyrHoldSubIcn={faComputerMouse}
             // optEncoder
             icon={faVolumeXmark}
             tapDance
@@ -267,7 +251,7 @@ export default function BaseLyr() {
                     output="Mute & Hide Window"
                   />
                   <br />
-                  <PopoverDesc action="hold" output="Function Layer" />
+                  <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
             }}
@@ -297,7 +281,7 @@ export default function BaseLyr() {
           <KeyIcon
             icon={faArrowTurnDownLeft}
             lyrHoldSubIcn={faAt}
-            sx={{transform: 'translateY(2px)'}}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'low-layer-key',
               popOverContent: (
