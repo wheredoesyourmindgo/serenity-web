@@ -8,7 +8,7 @@ import {
   faArrowUpLeftFromCircle,
   faAt,
   faBorderBottomRight,
-  faBorderLeft,
+  faBorderTopLeft,
   faBracketSquare,
   faCopy,
   faLock,
@@ -403,7 +403,7 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faBorderLeft}
+            icon={faBorderTopLeft}
             KeyContainerProps={{
               keyId: 'home-key',
               popOverContent: (
