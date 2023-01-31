@@ -549,9 +549,9 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon icon={faCommand} color="text.disabled" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="text.disabled" />
-          <KeyIcon icon={faChevronUp} color="text.disabled" />
+          <KeyIcon icon={faCommand} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faChevronUp} />
           <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>

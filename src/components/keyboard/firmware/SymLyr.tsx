@@ -118,11 +118,11 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} color="text.disabled" />
-          <KeyLegend {...sharedProps} color="text.disabled" />
-          <KeyLegend {...sharedProps} color="text.disabled" />
-          <KeyLegend {...sharedProps} color="text.disabled" />
-          <KeyLegend {...sharedProps} color="text.disabled" />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>~</KeyLegend>
           <KeyLegend {...sharedProps}>|</KeyLegend>
           <KeyLegend {...sharedProps}>\</KeyLegend>
