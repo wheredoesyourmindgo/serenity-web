@@ -1,0 +1,198 @@
+import KeyIcon from '@components/key/KeyIcon'
+import {ColumnBox, RowBox} from 'mui-sleazebox'
+import {
+  faLock,
+  faOption,
+  faUp,
+  faVolumeXmark
+} from '@fortawesome/pro-regular-svg-icons'
+import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
+import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
+import {KeyLegend} from '@components/key'
+import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
+import {faCommand} from '@fortawesome/pro-regular-svg-icons'
+import {KeyLegendProps} from '@components/key/KeyLegend'
+import {Box, SxProps} from '@mui/material'
+import PopoverDesc from '@components/key/PopoverDesc'
+
+export default function NumpadLyr() {
+  const sharedProps: KeyLegendProps = {variant: 'h5'}
+  const fxSx: SxProps = {
+    fontSize: 18
+  }
+
+  return (
+    <Box>
+      <ColumnBox flexSpacing={1}>
+        <RowBox child flexSpacing={1}>
+          <KeyIcon
+            icon={faDeleteRight}
+            KeyContainerProps={{
+              keyId: 'delete-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Delete" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            *
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            7
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            8
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            9
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            /
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx} />
+          <KeyLegend {...sharedProps} sx={fxSx} />
+          <KeyLegend {...sharedProps} sx={fxSx} />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            (
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            )
+          </KeyLegend>
+          <KeyIcon
+            icon={faDeleteLeft}
+            KeyContainerProps={{
+              keyId: 'backspace-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Backspace" />
+                </Box>
+              )
+            }}
+          />
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            +
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            4
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            5
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx} homing>
+            6
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            -
+          </KeyLegend>
+
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock/Unlock Media Layer" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyLegend {...sharedProps} sx={fxSx} />
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyIcon
+            icon={faUp}
+            KeyContainerProps={{
+              keyId: 'right-shift-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            0
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            1
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            2
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            3
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            =
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            ^
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            $
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            %
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            ,
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            .
+          </KeyLegend>
+          <KeyIcon
+            icon={faUp}
+            KeyContainerProps={{
+              keyId: 'left-shift-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                </Box>
+              )
+            }}
+          />
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyIcon
+            icon={faVolumeXmark}
+            tapDance
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'oops-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="Toggle Mute" />
+                  <br />
+                  <PopoverDesc
+                    action="double tap"
+                    output="Mute & Hide Window"
+                  />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faCommand} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyIcon icon={faCommand} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faChevronUp} />
+          <KeyLegend />
+        </RowBox>
+      </ColumnBox>
+    </Box>
+  )
+}

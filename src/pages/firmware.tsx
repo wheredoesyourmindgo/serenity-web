@@ -36,7 +36,8 @@ import {
   faLayerGroup,
   faMouse,
   faScissors,
-  faTypewriter
+  faTypewriter,
+  faCalculator
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/QwertyLyr'
@@ -44,6 +45,7 @@ import MouseLyr from '@components/keyboard/firmware/MouseLyr'
 import OsLyr from '@components/keyboard/firmware/OsLyr'
 // import {faDial, faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
 import {faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
+import NumpadLyr from '@components/keyboard/firmware/Numpad'
 // import Encoder from '@components/keyboard/firmware/Encoder'
 // import {faCircleDashed} from '@fortawesome/pro-regular-svg-icons'
 
@@ -124,6 +126,9 @@ export default function FirmwarePage() {
               <OsLyr />
             </TabPanel>
             <TabPanel value={value} index={8}>
+              <NumpadLyr />
+            </TabPanel>
+            <TabPanel value={value} index={9}>
               <QwertyLyr />
             </TabPanel>
             {/* <TabPanel value={value} index={9}>
@@ -228,13 +233,22 @@ export default function FirmwarePage() {
                 {...a11yProps(7)}
               />
               <Tab
+                label="Numpad"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faCalculator} />
+                  </Box>
+                }
+                {...a11yProps(8)}
+              />
+              <Tab
                 label="Qwerty"
                 icon={
                   <Box component="span">
                     <MuiFaIcon icon={faTypewriter} />
                   </Box>
                 }
-                {...a11yProps(8)}
+                {...a11yProps(9)}
               />
               {/* <Tab
                 label="Encoder"

@@ -11,6 +11,7 @@ import {
   faArrowUpLeftFromCircle,
   faAt,
   faBracketSquare,
+  faCalculator,
   faComputerMouse,
   faGear,
   faHashtag,
@@ -332,6 +333,7 @@ export default function BaseLyr() {
             icon={faArrowLeft}
             tapForceHold
             modHoldSubIcn={faCommand}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-command-key',
               popOverContent: (
@@ -346,6 +348,7 @@ export default function BaseLyr() {
           <KeyIcon
             icon={faArrowDown}
             tapForceHold
+            sx={{transform: 'translateY(4px)'}}
             modHoldSubIcn={faOption}
             ModHoldSubIcnProps={{sx: {fontSize: 11}}}
             KeyContainerProps={{
@@ -363,6 +366,7 @@ export default function BaseLyr() {
             icon={faArrowUp}
             tapForceHold
             modHoldSubIcn={faChevronUp}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-ctrl-key',
               popOverContent: (
@@ -377,10 +381,11 @@ export default function BaseLyr() {
           <KeyIcon
             icon={faArrowRight}
             tapForceHold
-            // lyrHoldSubIcn={faFunction}
+            lyrHoldSubIcn={faCalculator}
+            sx={{transform: 'translateY(4px)'}}
             // LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
-              keyId: 'function-layer-key',
+              keyId: 'numpad-layer-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Right Arrow" />

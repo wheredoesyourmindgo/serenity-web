@@ -55,7 +55,7 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} sx={fxSx}>
             F8
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} homing>
+          <KeyLegend {...sharedProps} sx={fxSx}>
             F9
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
@@ -86,7 +86,7 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} sx={fxSx}>
             F13
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps} sx={fxSx} homing>
             F14
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
@@ -95,13 +95,13 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} sx={fxSx}>
             F16
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps} sx={fxSx} homing>
             F17
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
             F18
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} homing>
+          <KeyLegend {...sharedProps} sx={fxSx}>
             F19
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
