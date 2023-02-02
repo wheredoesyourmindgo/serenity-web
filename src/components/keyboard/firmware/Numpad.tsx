@@ -1,6 +1,11 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {faOption, faUp, faVolumeXmark} from '@fortawesome/pro-regular-svg-icons'
+import {
+  faLock,
+  faOption,
+  faUp,
+  faVolumeXmark
+} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
@@ -10,7 +15,7 @@ import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, SxProps} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 
-export default function FuncLyr() {
+export default function NumpadLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
   const fxSx: SxProps = {
     fontSize: 18
@@ -32,34 +37,28 @@ export default function FuncLyr() {
             }}
           />
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F1
+            *
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F2
+            7
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F3
+            8
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F4
+            9
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F5
+            /
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx} />
+          <KeyLegend {...sharedProps} sx={fxSx} />
+          <KeyLegend {...sharedProps} sx={fxSx} />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            (
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F6
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F7
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F8
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F9
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F10
+            )
           </KeyLegend>
           <KeyIcon
             icon={faDeleteLeft}
@@ -74,42 +73,39 @@ export default function FuncLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            +
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            4
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            5
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx} homing>
+            6
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
             -
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F11
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F12
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F13
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} homing>
-            F14
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F15
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F16
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} homing>
-            F17
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F18
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F19
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
-            F20
-          </KeyLegend>
-          <KeyLegend shiftLgnd='"' {...sharedProps}>
-            '
-          </KeyLegend>
+
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock/Unlock Media Layer" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyLegend {...sharedProps} sx={fxSx} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
@@ -124,23 +120,35 @@ export default function FuncLyr() {
             }}
           />
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F21
+            0
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F22
+            1
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F23
+            2
           </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
-            F24
+            3
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            =
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            ^
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            $
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            %
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            ,
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={fxSx}>
+            .
+          </KeyLegend>
           <KeyIcon
             icon={faUp}
             KeyContainerProps={{
