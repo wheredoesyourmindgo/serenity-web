@@ -45,14 +45,11 @@ export default function ColStaggerAlphaKeyboard() {
     <ColumnBox flexSpacing={2}>
       <RowBox child flexSpacing={1}>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
-        <AlphaKeyLgnd color="solarized.base0" sx={{paddingTop: p.p}}>
-          <em>V</em>
-        </AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.r}}>
           L
         </AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.m}}>
-          M
+        <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.i}}>
+          C
         </AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00" sx={{paddingTop: p.i}}>
           F
@@ -77,11 +74,14 @@ export default function ColStaggerAlphaKeyboard() {
       </RowBox>
       <RowBox child flexSpacing={1}>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} /> */}
-        <AlphaKeyLgnd color={tBase03} sx={{paddingTop: p.p}}>
-          S
+        <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.m}}>
+          M
         </AlphaKeyLgnd>
         <AlphaKeyLgnd color={tBase02} sx={{paddingTop: p.r}}>
           R
+        </AlphaKeyLgnd>
+        <AlphaKeyLgnd color={tBase03} sx={{paddingTop: p.p}}>
+          S
         </AlphaKeyLgnd>
         <AlphaKeyLgnd color={tBase03} sx={{paddingTop: p.m}}>
           T
@@ -111,8 +111,8 @@ export default function ColStaggerAlphaKeyboard() {
       </RowBox>
       <RowBox child flexSpacing={1}>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55, opacity: 0}}} /> */}
-        <AlphaKeyLgnd color="solarized.base1" sx={{paddingTop: p.p}}>
-          <em>Z</em>
+        <AlphaKeyLgnd color="solarized.base0" sx={{paddingTop: p.p}}>
+          <em>V</em>
         </AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1" sx={{paddingTop: p.r}}>
           J
@@ -120,18 +120,18 @@ export default function ColStaggerAlphaKeyboard() {
         <AlphaKeyLgnd color="solarized.base0" sx={{paddingTop: p.m}}>
           K
         </AlphaKeyLgnd>
-        <AlphaKeyLgnd color={tBase02} sx={{paddingTop: p.i}}>
-          H
+        <AlphaKeyLgnd color="solarized.base1" sx={{paddingTop: p.p}}>
+          <em>Z</em>
         </AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base0" sx={{paddingTop: p.ii}}>
           B
         </AlphaKeyLgnd>
         <AlphaKeyLgnd KeyContainerProps={{sx: {width: 25, opacity: 0}}} />
+        <AlphaKeyLgnd color={tBase02} sx={{paddingTop: p.i}}>
+          H
+        </AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00" sx={{paddingTop: p.ii}}>
           G
-        </AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.i}}>
-          C
         </AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.m}}>'</AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.r}}>,</AlphaKeyLgnd>
