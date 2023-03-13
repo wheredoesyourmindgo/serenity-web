@@ -138,11 +138,9 @@ export default function ActionLyr() {
               keyId: 'text-select-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="single tap" output="select word" />
+                  <PopoverDesc action="tap" output="select word" />
                   <br />
-                  <PopoverDesc action="double tap" output="select line" />
-                  <br />
-                  <PopoverDesc action="triple tap" output="select all" />
+                  <PopoverDesc action="hold" output="select line" />
                 </Box>
               )
             }}
