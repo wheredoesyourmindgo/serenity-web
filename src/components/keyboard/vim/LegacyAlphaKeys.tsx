@@ -142,12 +142,12 @@ export default function LegacyAlphaKeys() {
             <Type {...sharedTypeProps}>,</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="e">
-            <Type {...sharedTypeProps}>{`}`}</Type>
+            <Type {...sharedTypeProps}>G</Type>
             <Divider />
             <Type {...sharedTypeProps}>+</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="i">
-            <Type {...sharedTypeProps}>{`{`}</Type>
+            <Type {...sharedTypeProps}>gg</Type>
             <Divider />
             <Type {...sharedTypeProps}>-</Type>
           </KeyLegend>
@@ -200,12 +200,12 @@ export default function LegacyAlphaKeys() {
             <Type {...sharedTypeProps}>N</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
-            <Type {...sharedTypeProps}>G</Type>
+            <Type {...sharedTypeProps}>{`}`}</Type>
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-e>`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=",">
-            <Type {...sharedTypeProps}>gg</Type>
+            <Type {...sharedTypeProps}>{`{`}</Type>
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-y>`}</Type>
           </KeyLegend>

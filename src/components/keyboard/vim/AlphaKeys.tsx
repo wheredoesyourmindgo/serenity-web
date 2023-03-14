@@ -209,18 +209,18 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="e">
             <Type {...sharedTypeProps}>
-              NEXT
+              JUMP TO
               <br />
-              PARAGRAPH
+              LAST LN.
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="i">
             <Type {...sharedTypeProps}>
-              PREV.
+              JUMP TO
               <br />
-              PARAGRAPH
+              FIRST LN.
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
@@ -308,9 +308,9 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
             <Type {...sharedTypeProps}>
-              JUMP TO
+              NEXT
               <br />
-              LAST LN.
+              PARAGRAPH
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -321,9 +321,9 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=",">
             <Type {...sharedTypeProps}>
-              JUMP TO
+              PREV.
               <br />
-              FIRST LN.
+              PARAGRAPH
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
