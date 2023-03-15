@@ -198,9 +198,7 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>
               PREV.
               <br />
-              WORD
-              <br />
-              INSTANCE
+              SENTENCE
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -231,11 +229,8 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>
               NEXT
               <br />
-              WORD
-              <br />
-              INSTANCE
+              SENTENCE
             </Type>
-
             <Divider />
             <Type {...sharedTypeProps}>
               next
@@ -304,7 +299,9 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>
               PREV.
               <br />
-              SENTENCE
+              WORD
+              <br />
+              INSTANCE
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>find prev.</Type>
@@ -339,7 +336,9 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>
               NEXT
               <br />
-              SENTENCE
+              WORD
+              <br />
+              INSTANCE
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>find next</Type>
