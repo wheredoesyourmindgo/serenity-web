@@ -148,6 +148,12 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="h">
+            <Type {...sharedTypeProps}>
+              SOFT BOL.
+              <br />
+              DOWN
+            </Type>
+            <Divider />
             <Type {...sharedTypeProps}>hard bol.</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">

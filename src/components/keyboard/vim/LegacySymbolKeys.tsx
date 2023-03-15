@@ -105,9 +105,7 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~">
-            <Type {...sharedTypeProps}>_</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="~" />
           <KeyLegend {...sharedProps} vimRef="|">
             <Type {...sharedTypeProps}>(</Type>
           </KeyLegend>

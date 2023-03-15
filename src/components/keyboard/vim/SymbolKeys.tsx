@@ -123,13 +123,7 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~">
-            <Type {...sharedTypeProps}>
-              soft bol.
-              <br />
-              down
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="~" />
           <KeyLegend {...sharedProps} vimRef="|">
             <Type {...sharedTypeProps}>
               prev.

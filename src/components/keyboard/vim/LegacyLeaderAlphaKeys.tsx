@@ -101,6 +101,8 @@ export default function LegacyLeaderAlphaKeys() {
             <Type {...sharedTypeProps}>zz</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="h">
+            <Type {...sharedTypeProps}>_</Type>
+            <Divider />
             <Type {...sharedTypeProps}>0</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
