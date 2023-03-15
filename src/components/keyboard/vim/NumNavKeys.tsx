@@ -83,9 +83,9 @@ export default function NumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
             <Type {...sharedTypeProps}>
-              bol.
+              soft
               <br />
-              down
+              bol.
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretDown}>
