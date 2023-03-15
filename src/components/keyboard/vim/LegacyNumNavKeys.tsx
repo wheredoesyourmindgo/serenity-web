@@ -89,7 +89,7 @@ export default function LegacyNumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
-            <Type {...sharedTypeProps}>_</Type>
+            <Type {...sharedTypeProps}>^</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretDown}>
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>
