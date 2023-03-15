@@ -137,8 +137,6 @@ export default function LegacyAlphaKeys() {
             <Type {...sharedTypeProps}>screen mid</Type>
           </KeyLegend> */}
           <KeyLegend {...sharedProps} vimRef="n" homing>
-            <Type {...sharedTypeProps}>(</Type>
-            <Divider />
             <Type {...sharedTypeProps}>,</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="e">
@@ -152,8 +150,6 @@ export default function LegacyAlphaKeys() {
             <Type {...sharedTypeProps}>-</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a">
-            <Type {...sharedTypeProps}>)</Type>
-            <Divider />
             <Type {...sharedTypeProps}>;</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="'">
@@ -200,12 +196,12 @@ export default function LegacyAlphaKeys() {
             <Type {...sharedTypeProps}>N</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
-            <Type {...sharedTypeProps}>{`}`}</Type>
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-d>`}</Type>
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-e>`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=",">
-            <Type {...sharedTypeProps}>{`{`}</Type>
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-u>`}</Type>
             <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-y>`}</Type>
           </KeyLegend>

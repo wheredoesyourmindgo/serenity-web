@@ -51,13 +51,7 @@ export default function LeaderAlphaKeys() {
               nition
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="f">
-            <Type {...sharedTypeProps}>
-              end prev.
-              <br />
-              camelCase
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="f" />
           <KeyLegend {...sharedProps} vimRef="o">
             {/* <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (INC-
@@ -65,11 +59,6 @@ export default function LeaderAlphaKeys() {
               WHTSPC)
             </Type>
             <Divider /> */}
-            <Type {...sharedTypeProps}>
-              beg.
-              <br />
-              camelCase
-            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="u">
             {/* <Type {...sharedTypeProps} sx={{fontSize: 9}}>
@@ -78,19 +67,8 @@ export default function LeaderAlphaKeys() {
               WHTSPC)
             </Type>
             <Divider /> */}
-            <Type {...sharedTypeProps}>
-              end
-              <br />
-              camelCase
-            </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef=";">
-            <Type {...sharedTypeProps}>
-              beg. next
-              <br />
-              camelCase
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef=";" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -135,7 +113,13 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a" />
-          <KeyLegend {...sharedProps} vimRef="'" />
+          <KeyLegend {...sharedProps} vimRef="'">
+            <Type {...sharedTypeProps}>
+              goto
+              <br />
+              match
+            </Type>
+          </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
@@ -163,7 +147,9 @@ export default function LeaderAlphaKeys() {
               middle
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="h" />
+          <KeyLegend {...sharedProps} vimRef="h">
+            <Type {...sharedTypeProps}>hard bol.</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
             <Type {...sharedTypeProps}>
               scroll

@@ -1,7 +1,7 @@
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box, Typography as Type} from '@mui/material'
+import {Box} from '@mui/material'
 import {
   faArrowDown,
   faArrowLeft,
@@ -29,11 +29,11 @@ export default function LegacyLeaderNumNavKeys() {
     }
   } as const
 
-  const sharedTypeProps = {
-    component: 'span',
-    noWrap: true,
-    variant: 'inherit'
-  } as const
+  // const sharedTypeProps = {
+  //   component: 'span',
+  //   noWrap: true,
+  //   variant: 'inherit'
+  // } as const
 
   return (
     <Box>
@@ -60,22 +60,10 @@ export default function LegacyLeaderNumNavKeys() {
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowLeft} homing>
-            <Type {...sharedTypeProps}>{`<`}</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowDown}>
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`ddp`}</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowUp}>
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>
-              {`dd<up>`}
-              <br />
-              {`<up>p`}
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight}>
-            <Type {...sharedTypeProps}>{`>`}</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowLeft} homing />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowDown} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowUp} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowRight} />
           <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
