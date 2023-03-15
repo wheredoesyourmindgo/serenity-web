@@ -56,10 +56,34 @@ export default function SymbolKeys() {
 
           <KeyLegend {...sharedProps} vimRef="%" />
           <KeyLegend {...sharedProps} vimRef="^" />
-          <KeyLegend {...sharedProps} vimRef="&" />
-          <KeyLegend {...sharedProps} vimRef="*" />
-          <KeyLegend {...sharedProps} vimRef="(" />
-          <KeyLegend {...sharedProps} vimRef=")" />
+          <KeyLegend {...sharedProps} vimRef="&">
+            <Type {...sharedTypeProps}>
+              end prev.
+              <br />
+              camelCase
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="*">
+            <Type {...sharedTypeProps}>
+              beg.
+              <br />
+              camelCase
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="(">
+            <Type {...sharedTypeProps}>
+              end
+              <br />
+              camelCase
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef=")">
+            <Type {...sharedTypeProps}>
+              beg. next
+              <br />
+              camelCase
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -69,32 +93,26 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="`">
-            <Type {...sharedTypeProps}>
-              goto
-              <br />
-              match
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="`" />
           <KeyLegend {...sharedProps} vimRef="+" homing>
-            <Type {...sharedTypeProps}>
-              previous
-              <br />
-              bracket
-            </Type>
+            <Type {...sharedTypeProps}>unindent</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="=">
-            <Type {...sharedTypeProps}>matchit</Type>
+            <Type {...sharedTypeProps}>
+              move ln.
+              <br />
+              down
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="{">
-            <Type {...sharedTypeProps}>matchit</Type>
+            <Type {...sharedTypeProps}>
+              move ln.
+              <br />
+              up
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="}">
-            <Type {...sharedTypeProps}>
-              next
-              <br />
-              bracket
-            </Type>
+            <Type {...sharedTypeProps}>indent</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
@@ -106,23 +124,32 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRef="~" />
-          <KeyLegend {...sharedProps} vimRef="|" special>
+          <KeyLegend {...sharedProps} vimRef="|">
             <Type {...sharedTypeProps}>
-              add sel.
-              <br />
               prev.
-              <br /> match
+              <br />
+              sentence
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="\" />
-          <KeyLegend {...sharedProps} vimRef="[" />
-          <KeyLegend {...sharedProps} vimRef="]" special>
+          <KeyLegend {...sharedProps} vimRef="\">
             <Type {...sharedTypeProps}>
-              add sel.
-              <br />
               next
               <br />
-              match
+              paragraph
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="[">
+            <Type {...sharedTypeProps}>
+              prev.
+              <br />
+              paragraph
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="]">
+            <Type {...sharedTypeProps}>
+              next
+              <br />
+              sentence
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />

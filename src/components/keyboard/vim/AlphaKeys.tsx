@@ -196,12 +196,6 @@ export default function AlphaKeys() {
           </KeyLegend> */}
           <KeyLegend {...sharedProps} vimRef="n" homing>
             <Type {...sharedTypeProps}>
-              PREV.
-              <br />
-              SENTENCE
-            </Type>
-            <Divider />
-            <Type {...sharedTypeProps}>
               prev.
               <br />
               char/till
@@ -226,12 +220,6 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>prev. line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a">
-            <Type {...sharedTypeProps}>
-              NEXT
-              <br />
-              SENTENCE
-            </Type>
-            <Divider />
             <Type {...sharedTypeProps}>
               next
               <br />
@@ -308,9 +296,8 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
             <Type {...sharedTypeProps}>
-              NEXT
-              <br />
-              PARAGRAPH
+              HALF <br />
+              PG. DOWN
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
@@ -321,9 +308,8 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=",">
             <Type {...sharedTypeProps}>
-              PREV.
-              <br />
-              PARAGRAPH
+              HALF <br />
+              PG. UP
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>

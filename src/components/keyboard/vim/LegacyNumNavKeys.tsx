@@ -1,7 +1,7 @@
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box, Divider, Typography as Type} from '@mui/material'
+import {Box, Typography as Type} from '@mui/material'
 import {
   faArrowDown,
   faArrowLeft,
@@ -89,21 +89,14 @@ export default function LegacyNumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
-            <Type {...sharedTypeProps}>
-              0
-              <Divider />_
-            </Type>
+            <Type {...sharedTypeProps}>_</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretDown}>
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-d>`}</Type>
-            <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>
               {`<C-f>`}
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretUp}>
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-u>`}</Type>
-            <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>
               {`<C-b>`}
             </Type>

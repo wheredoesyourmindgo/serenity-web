@@ -9,7 +9,7 @@ import createEmotionCache from '@lib/createEmotionCache'
 import smoothscroll from 'smoothscroll-polyfill'
 import UiProvider from '@components/UiStore'
 import ToggleColorMode from '@components/ToggleColorMode'
-import localFont from '@next/font/local'
+import localFont from "next/font/local"
 // Font Awesome config
 import {config} from '@fortawesome/fontawesome-svg-core'
 

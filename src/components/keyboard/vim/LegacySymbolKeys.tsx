@@ -42,13 +42,34 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} vimRef="$">
             <Type {...sharedTypeProps}>$</Type>
           </KeyLegend>
-
           <KeyLegend {...sharedProps} vimRef="%" />
           <KeyLegend {...sharedProps} vimRef="^" />
-          <KeyLegend {...sharedProps} vimRef="&" />
-          <KeyLegend {...sharedProps} vimRef="*" />
-          <KeyLegend {...sharedProps} vimRef="(" />
-          <KeyLegend {...sharedProps} vimRef=")" />
+          <KeyLegend {...sharedProps} vimRef="&">
+            <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>`}</Type>
+            <br />
+            <Type {...sharedTypeProps}>ge</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="*">
+            <Type {...sharedTypeProps}>
+              <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>`}</Type>
+              <br />
+              <Type {...sharedTypeProps}>b</Type>
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="(">
+            <Type {...sharedTypeProps}>
+              <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>`}</Type>
+              <br />
+              <Type {...sharedTypeProps}>e</Type>
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef=")">
+            <Type {...sharedTypeProps}>
+              <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>`}</Type>
+              <br />
+              <Type {...sharedTypeProps}>w</Type>
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -58,20 +79,22 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="`">
-            <Type {...sharedTypeProps}>%</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="`" />
           <KeyLegend {...sharedProps} vimRef="+" homing>
-            <Type {...sharedTypeProps}>[%</Type>
+            <Type {...sharedTypeProps}>{`<`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="=">
-            <Type {...sharedTypeProps}>%</Type>
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`ddp`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="{">
-            <Type {...sharedTypeProps}>%</Type>
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>
+              {`dd<up>`}
+              <br />
+              {`<up>p`}
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="}">
-            <Type {...sharedTypeProps}>]%</Type>
+            <Type {...sharedTypeProps}>{`>`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
@@ -83,17 +106,17 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRef="~" />
-          <KeyLegend {...sharedProps} vimRef="|" special>
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>
-              <em>todo</em>
-            </Type>
+          <KeyLegend {...sharedProps} vimRef="|">
+            <Type {...sharedTypeProps}>(</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="\" />
-          <KeyLegend {...sharedProps} vimRef="[" />
-          <KeyLegend {...sharedProps} vimRef="]" special>
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>
-              <em>todo</em>
-            </Type>
+          <KeyLegend {...sharedProps} vimRef="\">
+            <Type {...sharedTypeProps}>{`}`}</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="[">
+            <Type {...sharedTypeProps}>{`{`}</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="]">
+            <Type {...sharedTypeProps}>)</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>

@@ -11,7 +11,6 @@ import {
   ToggleButtonGroup,
   Typography as Type
 } from '@mui/material'
-// import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
 import {
@@ -25,14 +24,14 @@ import AlphaKeys from '@components/keyboard/vim/AlphaKeys'
 import TextObjKeys from '@components/keyboard/vim/TextObjKeys'
 import SymbolKeys from '@components/keyboard/vim/SymbolKeys'
 import LeaderAlphaKeys from '@components/keyboard/vim/LeaderAlphaKeys'
-import LeaderNumNavKeys from '@components/keyboard/vim/LeaderNumNavKeys'
 import NumNavKeys from '@components/keyboard/vim/NumNavKeys'
 import LegacyAlphaKeys from '@components/keyboard/vim/LegacyAlphaKeys'
 import LegacyNumNavKeys from '@components/keyboard/vim/LegacyNumNavKeys'
 import LegacySymbolKeys from '@components/keyboard/vim/LegacySymbolKeys'
 import LegacyTextObjKeys from '@components/keyboard/vim/LegacyTextObjKeys'
 import LegacyLeaderAlphaKeys from '@components/keyboard/vim/LegacyLeaderAlphaKeys'
-import LegacyLeaderNumNavKeys from '@components/keyboard/vim/LegacyLeaderNumNavKeys'
+// import LeaderNumNavKeys from '@components/keyboard/vim/LeaderNumNavKeys'
+// import LegacyLeaderNumNavKeys from '@components/keyboard/vim/LegacyLeaderNumNavKeys'
 
 type Show = 'descriptions' | 'mappings'
 interface TabPanelProps {
@@ -139,15 +138,7 @@ export default function VimPage() {
               )}
             </TabPanel>
             <TabPanel value={value} index={1}>
-              {leaderChecked && show === 'mappings' ? (
-                <LegacyLeaderNumNavKeys />
-              ) : leaderChecked && show === 'descriptions' ? (
-                <LeaderNumNavKeys />
-              ) : show === 'mappings' ? (
-                <LegacyNumNavKeys />
-              ) : (
-                <NumNavKeys />
-              )}
+              {show === 'mappings' ? <LegacyNumNavKeys /> : <NumNavKeys />}
             </TabPanel>
             <TabPanel value={value} index={2}>
               {show === 'mappings' ? <LegacySymbolKeys /> : <SymbolKeys />}
@@ -255,6 +246,7 @@ export default function VimPage() {
                 {...a11yProps(0)}
               />
               <Tab
+                disabled={leaderChecked}
                 label="Num/Nav"
                 icon={
                   <Box component="span">
