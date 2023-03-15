@@ -83,7 +83,7 @@ export default function NumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
             <Type {...sharedTypeProps}>
-              soft bol.
+              bol.
               <br />
               down
             </Type>
