@@ -141,12 +141,12 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>^</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="e">
+          <KeyLegend {...sharedProps} vimRef="e" special>
             <Type {...sharedTypeProps}>]%</Type>
             <Divider />
             <Type {...sharedTypeProps}>+</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="i">
+          <KeyLegend {...sharedProps} vimRef="i" special>
             <Type {...sharedTypeProps}>[%</Type>
             <Divider />
             <Type {...sharedTypeProps}>-</Type>
