@@ -79,7 +79,9 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="`" />
+          <KeyLegend {...sharedProps} vimRef="`">
+            0
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="+" homing>
             <Type {...sharedTypeProps}>{`<`}</Type>
           </KeyLegend>
@@ -105,7 +107,9 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~" />
+          <KeyLegend {...sharedProps} vimRef="~">
+            _
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="|">
             <Type {...sharedTypeProps}>(</Type>
           </KeyLegend>

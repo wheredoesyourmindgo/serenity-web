@@ -83,9 +83,9 @@ export default function NumNavKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRefIcn={faBorderTopLeft}>
             <Type {...sharedTypeProps}>
-              soft
+              jump to
               <br />
-              bol.
+              first ln.
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faPageCaretDown}>
@@ -95,7 +95,11 @@ export default function NumNavKeys() {
             <Type {...sharedTypeProps}>pg. up</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight}>
-            <Type {...sharedTypeProps}>eol.</Type>
+            <Type {...sharedTypeProps}>
+              jump to
+              <br />
+              last ln.
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
