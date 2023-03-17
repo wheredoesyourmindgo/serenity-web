@@ -83,7 +83,7 @@ export default function VimPage() {
   // }
 
   useEffect(() => {
-    if (leaderChecked && (value === 2 || value === 3)) {
+    if (leaderChecked && (value === 1 || value === 2 || value === 3)) {
       setValue(0)
     }
   }, [leaderChecked, value])
