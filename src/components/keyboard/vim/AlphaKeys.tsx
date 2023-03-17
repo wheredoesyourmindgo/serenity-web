@@ -207,7 +207,7 @@ export default function AlphaKeys() {
               bol.
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="e">
+          <KeyLegend {...sharedProps} vimRef="e" special>
             <Type {...sharedTypeProps}>
               NEXT <br />
               BRACKET.
@@ -215,7 +215,7 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="i">
+          <KeyLegend {...sharedProps} vimRef="i" special>
             <Type {...sharedTypeProps}>
               PREV. <br />
               BRACKET.
