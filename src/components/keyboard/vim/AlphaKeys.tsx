@@ -208,9 +208,19 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="e">
+            <Type {...sharedTypeProps}>
+              NEXT <br />
+              BRACKET.
+            </Type>
+            <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="i">
+            <Type {...sharedTypeProps}>
+              PREV. <br />
+              BRACKET.
+            </Type>
+            <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a">
