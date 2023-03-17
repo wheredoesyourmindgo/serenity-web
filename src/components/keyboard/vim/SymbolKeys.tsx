@@ -93,7 +93,9 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="`" />
+          <KeyLegend {...sharedProps} vimRef="`">
+            <Type {...sharedTypeProps}>hard bol.</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="+" homing>
             <Type {...sharedTypeProps}>unindent</Type>
           </KeyLegend>
@@ -123,7 +125,13 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~" />
+          <KeyLegend {...sharedProps} vimRef="~">
+            <Type {...sharedTypeProps}>
+              SOFT BOL.
+              <br />
+              DOWN
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="|">
             <Type {...sharedTypeProps}>
               prev.

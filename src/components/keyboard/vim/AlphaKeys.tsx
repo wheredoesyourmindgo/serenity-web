@@ -87,9 +87,13 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
           <KeyLegend {...sharedProps} vimRef="j">
-            <Type {...sharedTypeProps}>TILL REV.</Type>
+            <Type {...sharedTypeProps}>
+              FIND
+              <br />
+              CHAR REV.
+            </Type>
             <Divider />
-            <Type {...sharedTypeProps}>till</Type>
+            <Type {...sharedTypeProps}>find char</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
@@ -181,13 +185,9 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="y">
-            <Type {...sharedTypeProps}>
-              FIND
-              <br />
-              CHAR REV.
-            </Type>
+            <Type {...sharedTypeProps}>TILL REV.</Type>
             <Divider />
-            <Type {...sharedTypeProps}>find char</Type>
+            <Type {...sharedTypeProps}>till</Type>
           </KeyLegend>
           {/* <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>SCROLL MID</Type>
@@ -196,35 +196,31 @@ export default function AlphaKeys() {
           </KeyLegend> */}
           <KeyLegend {...sharedProps} vimRef="n" homing>
             <Type {...sharedTypeProps}>
-              prev.
+              PREV.
               <br />
-              char/till
+              CHAR/TILL
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              soft
+              <br />
+              bol.
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="e">
-            <Type {...sharedTypeProps}>
-              JUMP TO
-              <br />
-              LAST LN.
-            </Type>
-            <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="i">
-            <Type {...sharedTypeProps}>
-              JUMP TO
-              <br />
-              FIRST LN.
-            </Type>
-            <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a">
             <Type {...sharedTypeProps}>
-              next
+              NEXT
               <br />
-              char/till
+              CHAR/TILL
             </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>eol.</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="'">
             <Type {...sharedTypeProps}>
@@ -284,15 +280,13 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>find</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="h">
-            <Type {...sharedTypeProps}>
-              PREV.
-              <br />
-              WORD
-              <br />
-              INSTANCE
-            </Type>
+            <Type {...sharedTypeProps}>FIND PREV.</Type>
             <Divider />
-            <Type {...sharedTypeProps}>find prev.</Type>
+            <Type {...sharedTypeProps}>
+              prv. word
+              <br />
+              instance
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
             <Type {...sharedTypeProps}>
@@ -319,15 +313,13 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=".">
-            <Type {...sharedTypeProps}>
-              NEXT
-              <br />
-              WORD
-              <br />
-              INSTANCE
-            </Type>
+            <Type {...sharedTypeProps}>FIND NEXT</Type>
             <Divider />
-            <Type {...sharedTypeProps}>find next</Type>
+            <Type {...sharedTypeProps}>
+              next word
+              <br />
+              instance
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
         </RowBox>
