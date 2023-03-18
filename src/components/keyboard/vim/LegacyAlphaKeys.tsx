@@ -141,13 +141,13 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>^</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="e" special>
-            <Type {...sharedTypeProps}>]%</Type>
+          <KeyLegend {...sharedProps} vimRef="e">
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-e>`}</Type>
             <Divider />
             <Type {...sharedTypeProps}>+</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="i" special>
-            <Type {...sharedTypeProps}>[%</Type>
+          <KeyLegend {...sharedProps} vimRef="i">
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-y>`}</Type>
             <Divider />
             <Type {...sharedTypeProps}>-</Type>
           </KeyLegend>
@@ -199,15 +199,15 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>#</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="/">
+          <KeyLegend {...sharedProps} vimRef="/" special>
+            <Type {...sharedTypeProps}>]%</Type>
+            <Divider />
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-d>`}</Type>
-            <Divider />
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-e>`}</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef=",">
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-u>`}</Type>
+          <KeyLegend {...sharedProps} vimRef="," special>
+            <Type {...sharedTypeProps}>[%</Type>
             <Divider />
-            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-y>`}</Type>
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<C-u>`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=".">
             <Type {...sharedTypeProps}>n</Type>
