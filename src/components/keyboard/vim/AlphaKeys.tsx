@@ -207,18 +207,20 @@ export default function AlphaKeys() {
               bol.
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="e" special>
+          <KeyLegend {...sharedProps} vimRef="e">
             <Type {...sharedTypeProps}>
-              NEXT <br />
-              BRACKET.
+              SCROLL
+              <br />
+              DOWN
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>next line</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="i" special>
+          <KeyLegend {...sharedProps} vimRef="i">
             <Type {...sharedTypeProps}>
-              PREV. <br />
-              BRACKET.
+              SCROLL
+              <br />
+              UP
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>prev. line</Type>
@@ -298,28 +300,26 @@ export default function AlphaKeys() {
               instance
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="/">
+          <KeyLegend {...sharedProps} vimRef="/" special>
             <Type {...sharedTypeProps}>
-              HALF <br />
-              PG. DOWN
+              NEXT <br />
+              BRACKET
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              scroll
-              <br />
-              down
+              half <br />
+              pg. down
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef=",">
+          <KeyLegend {...sharedProps} vimRef="," special>
             <Type {...sharedTypeProps}>
-              HALF <br />
-              PG. UP
+              PREV. <br />
+              BRACKET
             </Type>
             <Divider />
             <Type {...sharedTypeProps}>
-              scroll
-              <br />
-              up
+              half <br />
+              pg. up
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=".">

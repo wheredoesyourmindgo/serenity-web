@@ -53,6 +53,11 @@ export default function LeaderAlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="f" />
           <KeyLegend {...sharedProps} vimRef="o">
+            <Type {...sharedTypeProps}>
+              jump to
+              <br />
+              top
+            </Type>
             {/* <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (INC-
               <br />
@@ -61,6 +66,11 @@ export default function LeaderAlphaKeys() {
             <Divider /> */}
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="u">
+            <Type {...sharedTypeProps}>
+              scroll
+              <br />
+              bottom
+            </Type>
             {/* <Type {...sharedTypeProps} sx={{fontSize: 9}}>
               (INC-
               <br />
@@ -90,26 +100,20 @@ export default function LeaderAlphaKeys() {
               comment
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="y" />
+          <KeyLegend {...sharedProps} vimRef="n" homing />
+          <KeyLegend {...sharedProps} vimRef="e">
             <Type {...sharedTypeProps}>
               jump to
               <br />
               middle
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="n" homing />
-          <KeyLegend {...sharedProps} vimRef="e">
-            <Type {...sharedTypeProps}>
-              jump to
-              <br />
-              bottom
-            </Type>
-          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="i">
             <Type {...sharedTypeProps}>
-              jump
+              scroll
               <br />
-              to top
+              middle
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a" />
@@ -140,26 +144,20 @@ export default function LeaderAlphaKeys() {
               text
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="k">
-            <Type {...sharedTypeProps}>
-              scroll
-              <br />
-              middle
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="k" />
           <KeyLegend {...sharedProps} vimRef="h" />
           <KeyLegend {...sharedProps} vimRef="/">
             <Type {...sharedTypeProps}>
-              scroll
+              jump to
               <br />
-              top
+              bottom
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=",">
             <Type {...sharedTypeProps}>
               scroll
               <br />
-              bottom
+              top
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="." />
