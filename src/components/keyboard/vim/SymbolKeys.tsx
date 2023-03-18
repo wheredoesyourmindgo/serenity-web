@@ -46,16 +46,19 @@ export default function SymbolKeys() {
               lines
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="$">
+          <KeyLegend {...sharedProps} vimRef="$" />
+          <KeyLegend {...sharedProps} vimRef="%">
             <Type {...sharedTypeProps}>
               toggle
               <br />
               case
             </Type>
           </KeyLegend>
-
-          <KeyLegend {...sharedProps} vimRef="%" />
-          <KeyLegend {...sharedProps} vimRef="^" />
+          <KeyLegend {...sharedProps} vimRef="^">
+            <Type {...sharedTypeProps}>
+              goto <br /> match
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="&">
             <Type {...sharedTypeProps}>
               end prev.

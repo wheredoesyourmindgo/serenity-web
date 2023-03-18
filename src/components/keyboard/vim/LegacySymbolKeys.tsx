@@ -39,11 +39,13 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} vimRef="#">
             <Type {...sharedTypeProps}>J</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="$">
+          <KeyLegend {...sharedProps} vimRef="$" />
+          <KeyLegend {...sharedProps} vimRef="%">
             <Type {...sharedTypeProps}>$</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="%" />
-          <KeyLegend {...sharedProps} vimRef="^" />
+          <KeyLegend {...sharedProps} vimRef="^">
+            <Type {...sharedTypeProps}>%</Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="&">
             <Type {...sharedTypeProps} sx={{fontSize: 12}}>{`<ldr>`}</Type>
             <br />
