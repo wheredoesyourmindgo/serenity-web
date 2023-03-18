@@ -117,13 +117,7 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a" />
-          <KeyLegend {...sharedProps} vimRef="'">
-            <Type {...sharedTypeProps}>
-              goto
-              <br />
-              match
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />

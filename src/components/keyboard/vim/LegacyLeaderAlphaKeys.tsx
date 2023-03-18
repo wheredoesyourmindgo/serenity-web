@@ -82,9 +82,7 @@ export default function LegacyLeaderAlphaKeys() {
             <Type {...sharedTypeProps}>zz</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a" />
-          <KeyLegend {...sharedProps} vimRef="'">
-            <Type {...sharedTypeProps}>%</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="'" />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
