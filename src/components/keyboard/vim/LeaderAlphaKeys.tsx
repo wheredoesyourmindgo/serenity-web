@@ -176,7 +176,12 @@ export default function LeaderAlphaKeys() {
               mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps}>
+              Match <br />
+              Tag
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>Help</Type>
           </KeyLegend>

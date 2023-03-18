@@ -119,7 +119,11 @@ export default function LegacyLeaderAlphaKeys() {
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>:</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>
+              <em>todo</em>
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>K</Type>
           </KeyLegend>
