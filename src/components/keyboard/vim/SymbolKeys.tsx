@@ -31,29 +31,17 @@ export default function SymbolKeys() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
-          <KeyLegend {...sharedProps} vimRef="!" />
-          <KeyLegend {...sharedProps} vimRef="@">
+          <KeyLegend {...sharedProps} vimRef="!">
             <Type {...sharedTypeProps}>
               expert
               <br />
               mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="#">
-            <Type {...sharedTypeProps}>
-              join
-              <br />
-              lines
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="@" />
+          <KeyLegend {...sharedProps} vimRef="#" />
           <KeyLegend {...sharedProps} vimRef="$" />
-          <KeyLegend {...sharedProps} vimRef="%">
-            <Type {...sharedTypeProps}>
-              toggle
-              <br />
-              case
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="%" />
           <KeyLegend {...sharedProps} vimRef="^">
             <Type {...sharedTypeProps}>
               goto <br /> match
@@ -97,7 +85,10 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRef="`">
-            <Type {...sharedTypeProps}>hard bol.</Type>
+            <Type {...sharedTypeProps}>
+              join <br />
+              lines
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="+" homing>
             <Type {...sharedTypeProps}>unindent</Type>
@@ -128,13 +119,7 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~">
-            <Type {...sharedTypeProps}>
-              SOFT BOL.
-              <br />
-              DOWN
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="~" />
           <KeyLegend {...sharedProps} vimRef="|">
             <Type {...sharedTypeProps}>
               prev.
