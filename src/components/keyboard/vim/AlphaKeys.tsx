@@ -44,16 +44,16 @@ export default function AlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="q">
             {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
             {/* <Divider /> */}
-            <Type {...sharedTypeProps}>
-              register
-              <br />
-              spc.
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="l">
             <Type {...sharedTypeProps}>Z CMDS</Type>
             <Divider />
             <Type {...sharedTypeProps}>g cmds</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="l">
+            <Type {...sharedTypeProps}>
+              change
+              <br />
+              case
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="c">
             <Type {...sharedTypeProps}>
@@ -142,7 +142,13 @@ export default function AlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRef="-">
-            <Type {...sharedTypeProps}>set mark</Type>
+            <Type {...sharedTypeProps}>SET MARK</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              register
+              <br />
+              spc.
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>SUBST LINE</Type>

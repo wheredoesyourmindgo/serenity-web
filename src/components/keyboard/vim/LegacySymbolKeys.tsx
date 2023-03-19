@@ -32,17 +32,13 @@ export default function LegacySymbolKeys() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
-          <KeyLegend {...sharedProps} vimRef="!" />
-          <KeyLegend {...sharedProps} vimRef="@">
+          <KeyLegend {...sharedProps} vimRef="!">
             <Type {...sharedTypeProps}>Q</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="#">
-            <Type {...sharedTypeProps}>J</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="@" />
+          <KeyLegend {...sharedProps} vimRef="#" />
           <KeyLegend {...sharedProps} vimRef="$" />
-          <KeyLegend {...sharedProps} vimRef="%">
-            <Type {...sharedTypeProps}>~</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="%" />
           <KeyLegend {...sharedProps} vimRef="^">
             <Type {...sharedTypeProps}>%</Type>
           </KeyLegend>
@@ -82,7 +78,7 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} vimRef="`">
-            0
+            J
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="+" homing>
             <Type {...sharedTypeProps}>{`<`}</Type>
@@ -109,9 +105,7 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~">
-            _
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="~" />
           <KeyLegend {...sharedProps} vimRef="|">
             <Type {...sharedTypeProps}>(</Type>
           </KeyLegend>

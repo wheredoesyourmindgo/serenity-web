@@ -41,12 +41,12 @@ export default function LegacyAlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="q">
             {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
             {/* <Divider /> */}
-            <Type {...sharedTypeProps}>"</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="l">
             <Type {...sharedTypeProps}>z</Type>
             <Divider />
             <Type {...sharedTypeProps}>g</Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="l">
+            <Type {...sharedTypeProps}>~</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="c">
             <Type {...sharedTypeProps}>C</Type>
@@ -100,6 +100,8 @@ export default function LegacyAlphaKeys() {
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRef="-">
             <Type {...sharedTypeProps}>m</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>"</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>S</Type>
