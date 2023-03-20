@@ -41,9 +41,9 @@ export default function LegacyLeaderAlphaKeys() {
               <em>todo</em>
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="j" special>
+          <KeyLegend {...sharedProps} vimRef="j">
             <Type {...sharedTypeProps} sx={{fontSize: 14}}>
-              <em>todo</em>
+              gD
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="f" />
