@@ -42,15 +42,7 @@ export default function LeaderAlphaKeys() {
               popup
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="j">
-            <Type {...sharedTypeProps}>
-              goto
-              <br />
-              defi-
-              <br />
-              nition
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="j" />
           <KeyLegend {...sharedProps} vimRef="f" />
           <KeyLegend {...sharedProps} vimRef="o">
             <Type {...sharedTypeProps}>
@@ -86,7 +78,13 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="m" />
           <KeyLegend {...sharedProps} vimRef="r" />
           <KeyLegend {...sharedProps} vimRef="s" />
-          <KeyLegend {...sharedProps} vimRef="t" homing />
+          <KeyLegend {...sharedProps} vimRef="t" homing special>
+            <Type {...sharedTypeProps}>
+              MATCH
+              <br />
+              TAG
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="g">
             <Type {...sharedTypeProps}>
               BLOCK
@@ -136,7 +134,15 @@ export default function LeaderAlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="x" />
           <KeyLegend {...sharedProps} vimRef="w" />
-          <KeyLegend {...sharedProps} vimRef="d" />
+          <KeyLegend {...sharedProps} vimRef="d">
+            <Type {...sharedTypeProps}>
+              goto
+              <br />
+              defi-
+              <br />
+              nition
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="z" special>
             <Type {...sharedTypeProps}>
               reflow
