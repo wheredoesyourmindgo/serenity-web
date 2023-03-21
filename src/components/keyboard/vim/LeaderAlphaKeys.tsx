@@ -33,17 +33,35 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
           <KeyLegend {...sharedProps} vimRef="q" />
           <KeyLegend {...sharedProps} vimRef="l" />
-          <KeyLegend {...sharedProps} vimRef="c" />
-          <KeyLegend {...sharedProps} vimRef="p" />
-          <KeyLegend {...sharedProps} vimRef="b" special>
+          <KeyLegend {...sharedProps} vimRef="c">
+            <Type {...sharedTypeProps}>
+              BLOCK
+              <br />
+              COMMENT
+            </Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              line
+              <br />
+              comment
+            </Type>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="p">
             <Type {...sharedTypeProps}>
               hover
               <br />
               popup
             </Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="b" special />
           <KeyLegend {...sharedProps} vimRef="j" />
-          <KeyLegend {...sharedProps} vimRef="f" />
+          <KeyLegend {...sharedProps} vimRef="f">
+            <Type {...sharedTypeProps}>
+              toggle
+              <br />
+              fold
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="o">
             <Type {...sharedTypeProps}>
               jump to
@@ -85,19 +103,7 @@ export default function LeaderAlphaKeys() {
               TAG
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="g">
-            <Type {...sharedTypeProps}>
-              BLOCK
-              <br />
-              COMMENT
-            </Type>
-            <Divider />
-            <Type {...sharedTypeProps}>
-              line
-              <br />
-              comment
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="g" />
           <KeyLegend {...sharedProps} vimRef="y" />
           <KeyLegend {...sharedProps} vimRef="n" homing>
             <Type {...sharedTypeProps}>
@@ -125,13 +131,7 @@ export default function LeaderAlphaKeys() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-          <KeyLegend {...sharedProps} vimRef="v">
-            <Type {...sharedTypeProps}>
-              toggle
-              <br />
-              fold
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="v" />
           <KeyLegend {...sharedProps} vimRef="x" />
           <KeyLegend {...sharedProps} vimRef="w" />
           <KeyLegend {...sharedProps} vimRef="d">
@@ -194,12 +194,7 @@ export default function LeaderAlphaKeys() {
               mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              Match <br />
-              Tag
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>
             <Type {...sharedTypeProps}>Help</Type>
           </KeyLegend>
