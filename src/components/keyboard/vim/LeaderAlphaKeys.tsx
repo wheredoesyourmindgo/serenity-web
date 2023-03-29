@@ -98,20 +98,14 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="s" />
           <KeyLegend {...sharedProps} vimRef="t" homing special>
             <Type {...sharedTypeProps}>
-              MATCH
+              match
               <br />
-              TAG
+              tag
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="g" />
           <KeyLegend {...sharedProps} vimRef="y" />
-          <KeyLegend {...sharedProps} vimRef="n" homing>
-            <Type {...sharedTypeProps}>
-              hard
-              <br />
-              bol
-            </Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="n" homing />
           <KeyLegend {...sharedProps} vimRef="e">
             <Type {...sharedTypeProps}>
               jump to
@@ -152,11 +146,7 @@ export default function LeaderAlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="k" />
           <KeyLegend {...sharedProps} vimRef="h">
-            <Type {...sharedTypeProps}>
-              soft bol.
-              <br />
-              down
-            </Type>
+            <Type {...sharedTypeProps}>Help</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
             <Type {...sharedTypeProps}>
@@ -195,9 +185,7 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>Help</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

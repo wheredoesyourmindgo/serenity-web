@@ -74,9 +74,7 @@ export default function LegacyLeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="g" />
           <KeyLegend {...sharedProps} vimRef="y" />
           <Type {...sharedTypeProps} />
-          <KeyLegend {...sharedProps} vimRef="n" homing>
-            <Type {...sharedTypeProps}>0</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} vimRef="n" homing />
           <KeyLegend {...sharedProps} vimRef="e">
             <Type {...sharedTypeProps}>M</Type>
           </KeyLegend>
@@ -101,7 +99,7 @@ export default function LegacyLeaderAlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="k" />
           <KeyLegend {...sharedProps} vimRef="h">
-            <Type {...sharedTypeProps}>_</Type>
+            <Type {...sharedTypeProps}>K</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="/">
             <Type {...sharedTypeProps}>L</Type>
@@ -124,9 +122,7 @@ export default function LegacyLeaderAlphaKeys() {
             <Type {...sharedTypeProps}>:</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>K</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
