@@ -6,14 +6,14 @@ import {
   faArrowDown,
   faArrowLeft,
   faArrowRight,
+  faArrowRightLongToLine,
+  faArrowTurnDownLeft,
   faArrowUp,
   faBorderBottomRight,
   faBorderTopLeft,
   faDeleteLeft,
-  faDeleteRight,
   faPageCaretDown,
-  faPageCaretUp,
-  faUp
+  faPageCaretUp
 } from '@fortawesome/pro-regular-svg-icons'
 
 export default function LegacyNumNavKeys() {
@@ -39,7 +39,13 @@ export default function LegacyNumNavKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          />
           <KeyLegend {...sharedProps} vimRef="1" />
           <KeyLegend {...sharedProps} vimRef="2" />
           <KeyLegend {...sharedProps} vimRef="3" />
@@ -104,7 +110,7 @@ export default function LegacyNumNavKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight}>
             <Type {...sharedTypeProps}>G</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />

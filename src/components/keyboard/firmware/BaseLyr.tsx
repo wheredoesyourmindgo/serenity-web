@@ -2,6 +2,8 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
+  faAnglesDown,
+  faAnglesUp,
   faArrowDown,
   faArrowLeft,
   faArrowRight,
@@ -11,12 +13,10 @@ import {
   faArrowUpLeftFromCircle,
   faAt,
   faBracketSquare,
-  faCalculator,
   faComputerMouse,
   faGear,
   faHashtag,
   faOption,
-  faRightToBracket,
   faScissors,
   faUp,
   faVolumeXmark
@@ -38,22 +38,23 @@ export default function BaseLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            customShiftCode
-            icon={faDeleteRight}
+            // customShiftCode
+            icon={faArrowRightLongToLine}
+            sx={{
+              fontSize: 19
+              // transform: 'translateX(2px)'
+            }}
             KeyContainerProps={{
-              keyId: 'delete-key',
+              keyId: 'tab-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Delete" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Delete word right" />
+                  <PopoverDesc action="tap/hold" output="Tab" />
+                  {/* <br />
+                  <PopoverDesc action="shifted" output="Delete word right" /> */}
                 </Box>
               )
             }}
-            shiftSubIcn={faRightToBracket}
-            sx={{
-              transform: 'translateX(2px)'
-            }}
+            // shiftSubIcn={faRightToBracket}
           />
           <KeyLegend {...sharedProps} shiftLgnd="Q">
             q
@@ -94,18 +95,28 @@ export default function BaseLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
-                  <PopoverDesc action="shifted" output="Backspace word left" />
+                  <PopoverDesc action="shifted" output="Forward Delete" />
                 </Box>
               )
             }}
-            shiftSubIcn={faRightToBracket}
-            ShiftSubIcnProps={{flip: 'horizontal'}}
+            // shiftSubIcn={faRightToBracket}
+            // ShiftSubIcnProps={{flip: 'horizontal'}}
+            shiftSubIcn={faDeleteRight}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
-          </KeyLegend>
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              keyId: 'escape-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Escape" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} shiftLgnd="M">
             m
           </KeyLegend>
@@ -149,11 +160,11 @@ export default function BaseLyr() {
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Left Shift" />
-                  <br />
+                  {/* <br />
                   <PopoverDesc
                     action="simultaneously tap w/ Right Shift"
                     output="Caps-word"
-                  />
+                  /> */}
                 </Box>
               )
             }}
@@ -216,7 +227,7 @@ export default function BaseLyr() {
           >
             .
           </KeyLegend>
-          <KeyIcon
+          {/* <KeyIcon
             special
             icon={faUp}
             KeyContainerProps={{
@@ -229,6 +240,22 @@ export default function BaseLyr() {
                     action="simultaneously tap w/ Left Shift"
                     output="Caps-word"
                   />
+                </Box>
+              )
+            }}
+          /> */}
+          <KeyIcon
+            tapForceHold
+            icon={faArrowTurnDownLeft}
+            modHoldSubIcn={faUp}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-shift-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Enter" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Shift" />
                 </Box>
               )
             }}
@@ -261,7 +288,7 @@ export default function BaseLyr() {
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            icon={faAnglesDown}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             special
             lyrHoldSubIcn={faHashtag}
@@ -269,8 +296,8 @@ export default function BaseLyr() {
               keyId: 'lower-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Escape" />
-                  <br />
+                  {/* <PopoverDesc action="tap" output="Escape" />
+                  <br /> */}
                   <PopoverDesc
                     action="hold"
                     output="Num/Nav Layer (or Left Shift)"
@@ -280,16 +307,18 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowTurnDownLeft}
-            lyrHoldSubIcn={faAt}
-            sx={{transform: 'translateY(4px)'}}
+            icon={faBracketSquare}
+            rotation={270}
+            lyrHoldSubIcn={faScissors}
+            sx={{transform: 'translateY(6px)'}}
+            tapForceHold
             KeyContainerProps={{
-              keyId: 'low-layer-key',
+              keyId: 'action-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Enter" />
+                  <PopoverDesc action="tap" output="Space" />
                   <br />
-                  <PopoverDesc action="hold" output="Symbol Layer" />
+                  <PopoverDesc action="hold" output="Action Layer" />
                 </Box>
               )
             }}
@@ -299,8 +328,9 @@ export default function BaseLyr() {
             rotation={270}
             lyrHoldSubIcn={faGear}
             sx={{transform: 'translateY(6px)'}}
+            tapForceHold
             KeyContainerProps={{
-              keyId: 'high-layer-key',
+              keyId: 'media-layer-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Space" />
@@ -312,18 +342,18 @@ export default function BaseLyr() {
           />
           <KeyIcon
             special
-            icon={faArrowRightLongToLine}
-            lyrHoldSubIcn={faScissors}
-            sx={{transform: 'translateY(1px)'}}
+            icon={faAnglesUp}
+            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            lyrHoldSubIcn={faAt}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Tab" />
-                  <br />
+                  {/* <PopoverDesc action="tap" output="Tab" />
+                  <br /> */}
                   <PopoverDesc
                     action="hold"
-                    output="Action Layer (or Right Shift)"
+                    output="Symbol Layer (or Right Shift)"
                   />
                 </Box>
               )
@@ -380,17 +410,18 @@ export default function BaseLyr() {
           />
           <KeyIcon
             icon={faArrowRight}
-            tapForceHold
-            lyrHoldSubIcn={faCalculator}
-            sx={{transform: 'translateY(4px)'}}
+            // tapForceHold
+            // lyrHoldSubIcn={faCalculator}
+            // sx={{transform: 'translateY(4px)'}}
             // LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
-              keyId: 'numpad-layer-key',
+              // keyId: 'numpad-layer-key',
+              keyId: 'right-arrow-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Right Arrow" />
-                  <br />
-                  <PopoverDesc action="hold" output="Function Layer" />
+                  <PopoverDesc action="tap/hold" output="Right Arrow" />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="Function Layer" /> */}
                 </Box>
               )
             }}

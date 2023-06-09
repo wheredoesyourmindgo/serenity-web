@@ -3,9 +3,9 @@ import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, Typography as Type} from '@mui/material'
 import {
-  faDeleteLeft,
-  faDeleteRight,
-  faUp
+  faArrowRightLongToLine,
+  faArrowTurnDownLeft,
+  faDeleteLeft
 } from '@fortawesome/pro-regular-svg-icons'
 
 export default function LegacySymbolKeys() {
@@ -31,7 +31,13 @@ export default function LegacySymbolKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          />
           <KeyLegend {...sharedProps} vimRef="!">
             <Type {...sharedTypeProps}>Q</Type>
           </KeyLegend>
@@ -77,10 +83,10 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="`">
+          <KeyLegend {...sharedProps} vimRef="\">
             J
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="+" homing>
+          <KeyLegend {...sharedProps} vimRef="-" homing>
             <Type {...sharedTypeProps}>{`<`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="=">
@@ -105,11 +111,11 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~" />
-          <KeyLegend {...sharedProps} vimRef="|">
+          <KeyLegend {...sharedProps} vimRef="|" />
+          <KeyLegend {...sharedProps} vimRef="_">
             <Type {...sharedTypeProps}>(</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="\">
+          <KeyLegend {...sharedProps} vimRef="+">
             <Type {...sharedTypeProps}>{`}`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="[">
@@ -118,7 +124,7 @@ export default function LegacySymbolKeys() {
           <KeyLegend {...sharedProps} vimRef="]">
             <Type {...sharedTypeProps}>)</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />

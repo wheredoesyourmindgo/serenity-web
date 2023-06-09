@@ -1,6 +1,8 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
+  faAnglesDown,
+  faAnglesUp,
   faArrowDown,
   faArrowLeft,
   faArrowRight,
@@ -35,12 +37,15 @@ export default function QwertyLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faDeleteRight}
+            icon={faArrowRightLongToLine}
+            sx={{
+              fontSize: 19
+            }}
             KeyContainerProps={{
-              keyId: 'delete-key',
+              keyId: 'tab-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Delete" />
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
             }}
@@ -76,21 +81,34 @@ export default function QwertyLyr() {
             p
           </KeyLegend>
           <KeyIcon
+            customShiftCode
             icon={faDeleteLeft}
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
+                  <br />
+                  <PopoverDesc action="shifted" output="Forward Delete" />
+                </Box>
+              )
+            }}
+            shiftSubIcn={faDeleteRight}
+          />
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              keyId: 'escape-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Escape" />
                 </Box>
               )
             }}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
-          </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="A">
             a
           </KeyLegend>
@@ -166,12 +184,17 @@ export default function QwertyLyr() {
           </KeyLegend>
           <KeyIcon icon={faArrowUp} />
           <KeyIcon
-            icon={faUp}
+            tapForceHold
+            icon={faArrowTurnDownLeft}
+            modHoldSubIcn={faUp}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                  <PopoverDesc action="tap" output="Enter" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Shift" />
                 </Box>
               )
             }}
@@ -204,7 +227,7 @@ export default function QwertyLyr() {
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            icon={faAnglesDown}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             special
             lyrHoldSubIcn={faHashtag}
@@ -212,8 +235,8 @@ export default function QwertyLyr() {
               keyId: 'lower-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Escape" />
-                  <br />
+                  {/* <PopoverDesc action="tap" output="Escape" />
+                  <br /> */}
                   <PopoverDesc
                     action="hold"
                     output="Num/Nav Layer (or Left Shift)"
@@ -223,16 +246,18 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowTurnDownLeft}
-            lyrHoldSubIcn={faAt}
-            sx={{transform: 'translateY(2px)'}}
+            icon={faBracketSquare}
+            rotation={270}
+            lyrHoldSubIcn={faScissors}
+            sx={{transform: 'translateY(6px)'}}
+            tapForceHold
             KeyContainerProps={{
-              keyId: 'low-layer-key',
+              keyId: 'action-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Enter" />
+                  <PopoverDesc action="tap" output="Space" />
                   <br />
-                  <PopoverDesc action="hold" output="Symbol Layer" />
+                  <PopoverDesc action="hold" output="Action Layer" />
                 </Box>
               )
             }}
@@ -240,10 +265,11 @@ export default function QwertyLyr() {
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             lyrHoldSubIcn={faGear}
+            sx={{transform: 'translateY(6px)'}}
+            tapForceHold
             KeyContainerProps={{
-              keyId: 'higher-layer-key',
+              keyId: 'media-layer-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Space" />
@@ -255,18 +281,18 @@ export default function QwertyLyr() {
           />
           <KeyIcon
             special
-            icon={faArrowRightLongToLine}
-            sx={{transform: 'translateY(1px)'}}
-            lyrHoldSubIcn={faScissors}
+            icon={faAnglesUp}
+            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            lyrHoldSubIcn={faAt}
             KeyContainerProps={{
-              keyId: 'high-layer-key',
+              keyId: 'higher-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Tab" />
-                  <br />
+                  {/* <PopoverDesc action="tap" output="Tab" />
+                  <br /> */}
                   <PopoverDesc
                     action="hold"
-                    output="Action Layer (or Right Shift)"
+                    output="Symbol Layer (or Right Shift)"
                   />
                 </Box>
               )

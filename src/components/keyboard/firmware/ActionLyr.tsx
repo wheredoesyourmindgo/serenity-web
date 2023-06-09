@@ -1,31 +1,19 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {faApple} from '@fortawesome/free-brands-svg-icons'
 import {
   faArrowRightLongToLine,
   faArrowsToDot,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
-  faAt,
-  faBorderBottomRight,
-  faBorderTopLeft,
   faBracketSquare,
-  faCopy,
+  faFunction,
   faLock,
-  faLockA,
   faMagicWandSparkles,
   faOption,
-  faPageCaretDown,
-  faPageCaretUp,
-  faPaste,
   faRectangleVerticalHistory,
-  faRedo,
-  faRightToBracket,
-  faScissors,
   faSquareUpLeft,
   faSquareUpRight,
   faTableLayout,
-  faUndo,
   faUp,
   faUpRightAndDownLeftFromCenter,
   faVolumeXmark,
@@ -48,23 +36,56 @@ export default function ActionLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            customShiftCode
-            icon={faDeleteRight}
+            icon={faArrowRightLongToLine}
+            sx={{
+              fontSize: 19
+            }}
             KeyContainerProps={{
-              keyId: 'delete-key',
+              keyId: 'tab-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Delete" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Delete word right" />
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
             }}
-            shiftSubIcn={faRightToBracket}
-            sx={{
-              transform: 'translateX(2px)'
+          />
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            <>
+              Prt
+              <br />
+              Scr
+            </>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            <>
+              Scrl
+              <br />
+              Lck
+            </>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            Pause
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            Ins
+          </KeyLegend>
+          <KeyIcon
+            icon={faMagicWandSparkles}
+            tapDance
+            KeyContainerProps={{
+              keyId: 'text-select-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="select word" />
+                  <br />
+                  <PopoverDesc action="hold" output="select line" />
+                </Box>
+              )
             }}
           />
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            App
+          </KeyLegend>
           {/* <KeyIcon
             icon={faHandPointLeft}
             shiftSubIcn={faHandPointRight}
@@ -132,43 +153,6 @@ export default function ActionLyr() {
           />
 
           <KeyIcon
-            icon={faMagicWandSparkles}
-            tapDance
-            KeyContainerProps={{
-              keyId: 'text-select-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="select word" />
-                  <br />
-                  <PopoverDesc action="hold" output="select line" />
-                </Box>
-              )
-            }}
-          />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            App
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            <>
-              Prt
-              <br />
-              Scr
-            </>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            <>
-              Scrl
-              <br />
-              Lck
-            </>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Pause
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Ins
-          </KeyLegend>
-          <KeyIcon
             customShiftCode
             icon={faDeleteLeft}
             KeyContainerProps={{
@@ -177,35 +161,42 @@ export default function ActionLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
-                  <PopoverDesc action="shifted" output="Backspace word left" />
+                  <PopoverDesc action="shifted" output="Forward Delete" />
                 </Box>
               )
             }}
-            shiftSubIcn={faRightToBracket}
-            ShiftSubIcnProps={{flip: 'horizontal'}}
+            shiftSubIcn={faDeleteRight}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend shiftLgnd="_" {...sharedProps}>
-            -
-          </KeyLegend>
-          {/* <KeyLegend {...sharedProps} /> */}
-
           <KeyIcon
-            homing
-            tapDance
-            icon={faWindowRestore}
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 18}}
             KeyContainerProps={{
-              keyId: 'window-restore-key',
+              keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Restore Window" />
-                  <br />
-                  <PopoverDesc action="hold" output="Almost Max Window" />
+                  <PopoverDesc action="tap/hold" output="Escape" />
                 </Box>
               )
             }}
           />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock/Unlock Action Layer" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyLegend {...sharedProps} /> */}
           {/* <KeyIcon
             special
             icon={faTableLayout}
@@ -218,6 +209,35 @@ export default function ActionLyr() {
               )
             }}
           /> */}
+          <KeyIcon
+            tapDance
+            icon={faUpRightAndDownLeftFromCenter}
+            KeyContainerProps={{
+              keyId: 'window-fullscreen-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Fullscreen Window" />
+                  <br />
+                  <PopoverDesc action="hold" output="Max Window Height" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            homing
+            tapDance
+            icon={faArrowsToDot}
+            KeyContainerProps={{
+              keyId: 'window-center-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Center Window" />
+                  <br />
+                  <PopoverDesc action="hold" output="Last Window Position" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             // special
             tapDance
@@ -248,35 +268,6 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon
-            homing
-            tapDance
-            icon={faArrowsToDot}
-            KeyContainerProps={{
-              keyId: 'window-center-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Center Window" />
-                  <br />
-                  <PopoverDesc action="hold" output="Last Window Position" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            tapDance
-            icon={faUpRightAndDownLeftFromCenter}
-            KeyContainerProps={{
-              keyId: 'window-fullscreen-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Fullscreen Window" />
-                  <br />
-                  <PopoverDesc action="hold" output="Max Window Height" />
-                </Box>
-              )
-            }}
-          />
           {/* <KeyIcon
             homing
             special
@@ -290,22 +281,21 @@ export default function ActionLyr() {
               )
             }}
           /> */}
-
           <KeyIcon
-            icon={faLock}
+            homing
+            tapDance
+            icon={faWindowRestore}
             KeyContainerProps={{
-              keyId: 'lock-layer-key',
+              keyId: 'window-restore-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock/Unlock Action Layer" />
+                  <PopoverDesc action="tap" output="Restore Window" />
+                  <br />
+                  <PopoverDesc action="hold" output="Almost Max Window" />
                 </Box>
               )
             }}
           />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyLegend {...sharedProps} shiftLgnd='"'>
             '
           </KeyLegend>
@@ -333,125 +323,23 @@ export default function ActionLyr() {
               )
             }}
           /> */}
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faUndo}
+            icon={faArrowTurnDownLeft}
             KeyContainerProps={{
-              keyId: 'undo-key',
+              keyId: 'enter-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Undo" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faScissors}
-            KeyContainerProps={{
-              keyId: 'cut-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Cut" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faCopy}
-            KeyContainerProps={{
-              keyId: 'copy-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Copy" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faPaste}
-            KeyContainerProps={{
-              keyId: 'paste-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Paste" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faRedo}
-            KeyContainerProps={{
-              keyId: 'redo-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Redo" />
-                </Box>
-              )
-            }}
-          />
-
-          <KeyIcon
-            icon={faLockA}
-            KeyContainerProps={{
-              keyId: 'caps-lock-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Caps-lock" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faBorderTopLeft}
-            KeyContainerProps={{
-              keyId: 'home-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Home" />
-                </Box>
-              )
-            }}
-          />
-
-          <KeyIcon
-            icon={faPageCaretDown}
-            KeyContainerProps={{
-              keyId: 'page-down-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Page Down" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faPageCaretUp}
-            KeyContainerProps={{
-              keyId: 'page-up-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Page Up" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faBorderBottomRight}
-            KeyContainerProps={{
-              keyId: 'end-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="End" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faUp}
-            KeyContainerProps={{
-              keyId: 'right-shift-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                  <PopoverDesc action="tap/hold" output="Enter" />
                 </Box>
               )
             }}
@@ -491,44 +379,13 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon icon={faCommand} />
-          <KeyIcon
-            icon={faArrowUpLeftFromCircle}
-            sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrHoldSubIcn={faApple}
-            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
-            KeyContainerProps={{
-              keyId: 'lower-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Escape" />
-                  <br />
-                  <PopoverDesc action="hold" output="OS Layer" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faArrowTurnDownLeft}
-            lyrHoldSubIcn={faAt}
-            sx={{transform: 'translateY(2px)'}}
-            KeyContainerProps={{
-              keyId: 'low-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Enter" />
-                  <br />
-                  <PopoverDesc action="hold" output="Symbol Layer" />
-                </Box>
-              )
-            }}
-          />
-          {/* <KeyIcon icon={faArrowRightLongToLine} /> */}
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'space-key',
+              keyId: 'left-space-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Space" />
@@ -537,16 +394,22 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            icon={faBracketSquare}
+            rotation={270}
+            lyrHoldSubIcn={faFunction}
+            sx={{transform: 'translateY(8px)'}}
             KeyContainerProps={{
-              keyId: 'tab-key',
+              keyId: 'right-space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Tab" />
+                  <PopoverDesc action="tap" output="Space" />
+                  <br />
+                  <PopoverDesc action="hold" output="Function Layer" />
                 </Box>
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
           <KeyIcon icon={faCommand} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} />

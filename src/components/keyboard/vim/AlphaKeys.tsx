@@ -8,7 +8,6 @@ import {
   faArrowUpLeftFromCircle,
   faBracketSquare,
   faDeleteLeft,
-  faDeleteRight,
   faUp
 } from '@fortawesome/pro-regular-svg-icons'
 
@@ -34,19 +33,32 @@ export default function AlphaKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight}>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          >
             <Type {...sharedTypeProps}>
-              delete
+              repeat
               <br />
-              char
+              cmd.
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="q">
             {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
             {/* <Divider /> */}
-            <Type {...sharedTypeProps}>Z CMDS</Type>
+            {/* <Type {...sharedTypeProps}>Z CMDS</Type>
             <Divider />
-            <Type {...sharedTypeProps}>g cmds</Type>
+            <Type {...sharedTypeProps}>g cmds</Type> */}
+            <Type {...sharedTypeProps}>SET MARK</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>
+              register
+              <br />
+              spc.
+            </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="l">
             <Type {...sharedTypeProps}>
@@ -88,12 +100,11 @@ export default function AlphaKeys() {
           </KeyLegend> */}
           <KeyLegend {...sharedProps} vimRef="j">
             <Type {...sharedTypeProps}>
-              FIND
-              <br />
-              CHAR REV.
+              GOTO MARK
+              <br /> BOL.
             </Type>
             <Divider />
-            <Type {...sharedTypeProps}>find char</Type>
+            <Type {...sharedTypeProps}>goto mark</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps} sx={{fontSize: 9}}>
@@ -137,18 +148,26 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft}>
+            <Type {...sharedTypeProps}>
+              DELETE
+              <br />
+              CHAR
+            </Type>
+            <Divider />
             <Type {...sharedTypeProps}>backspace</Type>
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRef="-">
-            <Type {...sharedTypeProps}>SET MARK</Type>
-            <Divider />
-            <Type {...sharedTypeProps}>
-              register
-              <br />
-              spc.
-            </Type>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowUpLeftFromCircle}
+            VimRefIcnProps={{
+              sx: {
+                fontSize: 12
+              }
+            }}
+          >
+            <Type {...sharedTypeProps}>escape</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>SUBST LINE</Type>
@@ -190,7 +209,7 @@ export default function AlphaKeys() {
               <br /> mode
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="y" special>
             <Type {...sharedTypeProps}>TILL REV.</Type>
             <Divider />
             <Type {...sharedTypeProps}>till</Type>
@@ -240,13 +259,14 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>eol.</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="'">
+          <KeyLegend {...sharedProps} vimRef="'" special>
             <Type {...sharedTypeProps}>
-              GOTO MARK
-              <br /> BOL.
+              FIND
+              <br />
+              CHAR REV.
             </Type>
             <Divider />
-            <Type {...sharedTypeProps}>goto mark</Type>
+            <Type {...sharedTypeProps}>find char</Type>
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -337,24 +357,6 @@ export default function AlphaKeys() {
               instance
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend
-            {...sharedProps}
-            vimRefIcn={faArrowUpLeftFromCircle}
-            VimRefIcnProps={{
-              sx: {
-                fontSize: 12
-              }
-            }}
-          >
-            <Type {...sharedTypeProps}>escape</Type>
-          </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
             <Type {...sharedTypeProps}>
               command
@@ -362,6 +364,13 @@ export default function AlphaKeys() {
               mode
             </Type>
           </KeyLegend>
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faBracketSquare}
@@ -376,17 +385,17 @@ export default function AlphaKeys() {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            vimRefIcn={faArrowRightLongToLine}
+            vimRefIcn={faBracketSquare}
             VimRefIcnProps={{
-              sx: {transform: 'translateX(-1px)'}
+              rotation: 270,
+              sx: {
+                transform: 'translateX(-3px)'
+              }
             }}
           >
-            <Type {...sharedTypeProps}>
-              repeat
-              <br />
-              cmd.
-            </Type>
+            <Type {...sharedTypeProps}>{`<leader>`}</Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

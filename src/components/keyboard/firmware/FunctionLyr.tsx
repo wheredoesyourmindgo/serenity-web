@@ -1,6 +1,13 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {faOption, faUp, faVolumeXmark} from '@fortawesome/pro-regular-svg-icons'
+import {
+  faArrowRightLongToLine,
+  faArrowTurnDownLeft,
+  faArrowUpLeftFromCircle,
+  faOption,
+  faUp,
+  faVolumeXmark
+} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
@@ -21,12 +28,15 @@ export default function FuncLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faDeleteRight}
+            icon={faArrowRightLongToLine}
+            sx={{
+              fontSize: 19
+            }}
             KeyContainerProps={{
-              keyId: 'delete-key',
+              keyId: 'tab-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Delete" />
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
             }}
@@ -62,21 +72,34 @@ export default function FuncLyr() {
             F10
           </KeyLegend>
           <KeyIcon
+            customShiftCode
             icon={faDeleteLeft}
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
+                  <br />
+                  <PopoverDesc action="shifted" output="Forward Delete" />
+                </Box>
+              )
+            }}
+            shiftSubIcn={faDeleteRight}
+          />
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              keyId: 'escape-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Escape" />
                 </Box>
               )
             }}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
-          </KeyLegend>
           <KeyLegend {...sharedProps} sx={fxSx}>
             F11
           </KeyLegend>
@@ -115,10 +138,10 @@ export default function FuncLyr() {
           <KeyIcon
             icon={faUp}
             KeyContainerProps={{
-              keyId: 'right-shift-key',
+              keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                  <PopoverDesc action="tap/hold" output="Left Shift" />
                 </Box>
               )
             }}
@@ -142,12 +165,17 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faUp}
+            tapForceHold
+            icon={faArrowTurnDownLeft}
+            modHoldSubIcn={faUp}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'left-shift-key',
+              keyId: 'right-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                  <PopoverDesc action="tap" output="Enter" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Shift" />
                 </Box>
               )
             }}

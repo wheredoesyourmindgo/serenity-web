@@ -8,7 +8,6 @@ import {
   faArrowUpLeftFromCircle,
   faBracketSquare,
   faDeleteLeft,
-  faDeleteRight,
   faUp
 } from '@fortawesome/pro-regular-svg-icons'
 
@@ -35,15 +34,24 @@ export default function LegacyAlphaKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight}>
-            <Type {...sharedTypeProps}>x</Type>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          >
+            <Type {...sharedTypeProps}>.</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="q">
-            {/* <Type {...sharedTypeProps}>SET MARK</Type> */}
-            {/* <Divider /> */}
+          {/* <KeyLegend {...sharedProps} vimRef="q">
             <Type {...sharedTypeProps}>z</Type>
             <Divider />
             <Type {...sharedTypeProps}>g</Type>
+          </KeyLegend> */}
+          <KeyLegend {...sharedProps} vimRef="q">
+            <Type {...sharedTypeProps}>m</Type>
+            <Divider />
+            <Type {...sharedTypeProps}>"</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="l">
             <Type {...sharedTypeProps}>~</Type>
@@ -69,9 +77,9 @@ export default function LegacyAlphaKeys() {
             <Type {...sharedTypeProps}>screen top</Type>
           </KeyLegend> */}
           <KeyLegend {...sharedProps} vimRef="j">
-            <Type {...sharedTypeProps}>F</Type>
+            <Type {...sharedTypeProps}>'</Type>
             <Divider />
-            <Type {...sharedTypeProps}>f</Type>
+            <Type {...sharedTypeProps}>`</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps}>gE</Type>
@@ -94,14 +102,22 @@ export default function LegacyAlphaKeys() {
             <Type {...sharedTypeProps}>w</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft}>
+            <Type {...sharedTypeProps}>x</Type>
+            <Divider />
             <Type {...sharedTypeProps}>X</Type>
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRef="-">
-            <Type {...sharedTypeProps}>m</Type>
-            <Divider />
-            <Type {...sharedTypeProps}>"</Type>
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowUpLeftFromCircle}
+            VimRefIcnProps={{
+              sx: {
+                fontSize: 12
+              }
+            }}
+          >
+            <Type {...sharedTypeProps} sx={{fontSize: 14}}>{`<esc>`}</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="m">
             <Type {...sharedTypeProps}>S</Type>
@@ -128,7 +144,7 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>v</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="y">
+          <KeyLegend {...sharedProps} vimRef="y" special>
             <Type {...sharedTypeProps}>T</Type>
             <Divider />
             <Type {...sharedTypeProps}>t</Type>
@@ -158,10 +174,10 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>$</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="'">
-            <Type {...sharedTypeProps}>'</Type>
+          <KeyLegend {...sharedProps} vimRef="'" special>
+            <Type {...sharedTypeProps}>F</Type>
             <Divider />
-            <Type {...sharedTypeProps}>`</Type>
+            <Type {...sharedTypeProps}>f</Type>
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
@@ -216,27 +232,16 @@ export default function LegacyAlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>*</Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
+            <Type {...sharedTypeProps}>:</Type>
+          </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend
-            {...sharedProps}
-            vimRefIcn={faArrowUpLeftFromCircle}
-            VimRefIcnProps={{
-              sx: {
-                fontSize: 12
-              }
-            }}
-          >
-            <Type {...sharedTypeProps}>{`<esc>`}</Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
-            <Type {...sharedTypeProps}>:</Type>
-          </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faBracketSquare}
@@ -251,13 +256,17 @@ export default function LegacyAlphaKeys() {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            vimRefIcn={faArrowRightLongToLine}
+            vimRefIcn={faBracketSquare}
             VimRefIcnProps={{
-              sx: {transform: 'translateX(-1px)'}
+              rotation: 270,
+              sx: {
+                transform: 'translateX(-4px)'
+              }
             }}
           >
-            <Type {...sharedTypeProps}>.</Type>
+            <Type {...sharedTypeProps}>\</Type>
           </KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

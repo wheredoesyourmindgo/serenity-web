@@ -2,6 +2,7 @@ import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, Divider, Typography as Type} from '@mui/material'
+import {faArrowUpLeftFromCircle} from '@fortawesome/pro-regular-svg-icons'
 
 export default function TextObjKeys() {
   const sharedProps: KeyLegendProps = {
@@ -39,7 +40,15 @@ export default function TextObjKeys() {
           <KeyLegend {...sharedProps} />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRef="-" />
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowUpLeftFromCircle}
+            VimRefIcnProps={{
+              sx: {
+                fontSize: 12
+              }
+            }}
+          />
           <KeyLegend {...sharedProps} vimRef="m" special>
             <Type {...sharedTypeProps}>surround</Type>
           </KeyLegend>

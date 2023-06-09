@@ -36,8 +36,8 @@ import {
   faLayerGroup,
   faMouse,
   faScissors,
-  faTypewriter,
-  faCalculator
+  faTypewriter
+  // faCalculator
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/QwertyLyr'
@@ -45,7 +45,7 @@ import MouseLyr from '@components/keyboard/firmware/MouseLyr'
 import OsLyr from '@components/keyboard/firmware/OsLyr'
 // import {faDial, faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
 import {faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
-import NumpadLyr from '@components/keyboard/firmware/Numpad'
+// import NumpadLyr from '@components/keyboard/firmware/Numpad'
 // import Encoder from '@components/keyboard/firmware/Encoder'
 // import {faCircleDashed} from '@fortawesome/pro-regular-svg-icons'
 
@@ -111,24 +111,24 @@ export default function FirmwarePage() {
               <NumNavLyr />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              <SymLyr />
+              <ActionLyr />
             </TabPanel>
             <TabPanel value={value} index={4}>
               <MediaLyr />
             </TabPanel>
             <TabPanel value={value} index={5}>
-              <ActionLyr />
+              <SymLyr />
             </TabPanel>
             <TabPanel value={value} index={6}>
-              <FuncLyr />
-            </TabPanel>
-            <TabPanel value={value} index={7}>
               <OsLyr />
             </TabPanel>
-            <TabPanel value={value} index={8}>
-              <NumpadLyr />
+            <TabPanel value={value} index={7}>
+              <FuncLyr />
             </TabPanel>
-            <TabPanel value={value} index={9}>
+            {/* <TabPanel value={value} index={8}>
+              <NumpadLyr />
+            </TabPanel> */}
+            <TabPanel value={value} index={8}>
               <QwertyLyr />
             </TabPanel>
             {/* <TabPanel value={value} index={9}>
@@ -177,10 +177,10 @@ export default function FirmwarePage() {
                 {...a11yProps(2)}
               />
               <Tab
-                label="Symbol"
+                label="Action"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faAt} />
+                    <MuiFaIcon icon={faScissors} />
                   </Box>
                 }
                 {...a11yProps(3)}
@@ -195,22 +195,13 @@ export default function FirmwarePage() {
                 {...a11yProps(4)}
               />
               <Tab
-                label="Action"
+                label="Symbol"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faScissors} />
+                    <MuiFaIcon icon={faAt} />
                   </Box>
                 }
                 {...a11yProps(5)}
-              />
-              <Tab
-                label="Function"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon icon={faFunction} />
-                  </Box>
-                }
-                {...a11yProps(6)}
               />
               <Tab
                 label="OS"
@@ -230,9 +221,18 @@ export default function FirmwarePage() {
                   //   <MuiFaIcon icon={faBracketSquare} rotation={270} />
                   // </Box>
                 }
-                {...a11yProps(7)}
+                {...a11yProps(6)}
               />
               <Tab
+                label="Function"
+                icon={
+                  <Box component="span">
+                    <MuiFaIcon icon={faFunction} />
+                  </Box>
+                }
+                {...a11yProps(7)}
+              />
+              {/* <Tab
                 label="Numpad"
                 icon={
                   <Box component="span">
@@ -240,7 +240,7 @@ export default function FirmwarePage() {
                   </Box>
                 }
                 {...a11yProps(8)}
-              />
+              /> */}
               <Tab
                 label="Qwerty"
                 icon={
@@ -248,7 +248,7 @@ export default function FirmwarePage() {
                     <MuiFaIcon icon={faTypewriter} />
                   </Box>
                 }
-                {...a11yProps(9)}
+                {...a11yProps(8)}
               />
               {/* <Tab
                 label="Encoder"

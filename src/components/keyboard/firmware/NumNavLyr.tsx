@@ -1,6 +1,7 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
 import {
+  faAnglesUp,
   faArrowDown,
   faArrowLeft,
   faArrowRight,
@@ -8,7 +9,6 @@ import {
   faArrowTurnDownLeft,
   faArrowUp,
   faArrowUpLeftFromCircle,
-  faAt,
   faBorderBottomRight,
   faBorderTopLeft,
   faBracketSquare,
@@ -20,7 +20,6 @@ import {
   faPageCaretUp,
   faPaste,
   faRedo,
-  faRightToBracket,
   faScissors,
   faUndo,
   faUp,
@@ -44,21 +43,17 @@ export default function NumNavLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            customShiftCode
-            icon={faDeleteRight}
+            icon={faArrowRightLongToLine}
+            sx={{
+              fontSize: 19
+            }}
             KeyContainerProps={{
-              keyId: 'delete-key',
+              keyId: 'tab-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Delete" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Delete word right" />
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
-            }}
-            shiftSubIcn={faRightToBracket}
-            sx={{
-              transform: 'translateX(2px)'
             }}
           />
           <KeyLegend {...sharedProps} shiftLgnd="!">
@@ -100,18 +95,28 @@ export default function NumNavLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
-                  <PopoverDesc action="shifted" output="Backspace word left" />
+                  <PopoverDesc action="shifted" output="Forward Delete" />
                 </Box>
               )
             }}
-            shiftSubIcn={faRightToBracket}
-            ShiftSubIcnProps={{flip: 'horizontal'}}
+            // shiftSubIcn={faRightToBracket}
+            // ShiftSubIcnProps={{flip: 'horizontal'}}
+            shiftSubIcn={faDeleteRight}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
-          </KeyLegend>
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              keyId: 'escape-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Escape" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
@@ -313,12 +318,12 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faUp}
+            icon={faArrowTurnDownLeft}
             KeyContainerProps={{
-              keyId: 'right-shift-key',
+              keyId: 'enter-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                  <PopoverDesc action="tap/hold" output="Enter" />
                 </Box>
               )
             }}
@@ -346,29 +351,16 @@ export default function NumNavLyr() {
           <KeyIcon icon={faChevronUp} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
-            sx={{fontSize: 19}}
-            KeyContainerProps={{
-              keyId: 'escape-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Escape" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faArrowTurnDownLeft}
-            lyrHoldSubIcn={faAt}
+            icon={faBracketSquare}
+            rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'low-layer-key',
+              keyId: 'left-space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Enter" />
-                  <br />
-                  <PopoverDesc action="hold" output="Symbol Layer" />
+                  <PopoverDesc action="tap/hold" output="Space" />
                 </Box>
               )
             }}
@@ -376,13 +368,22 @@ export default function NumNavLyr() {
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
           />
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            icon={faAnglesUp}
+            // sx={{transform: 'translateY(1px)'}}
+            sx={{fontSize: 19, transform: 'translateY(4px)'}}
             lyrHoldSubIcn={faApple}
             LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
-            sx={{transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (

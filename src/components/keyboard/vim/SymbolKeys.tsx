@@ -3,9 +3,9 @@ import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, Typography as Type} from '@mui/material'
 import {
-  faDeleteLeft,
-  faDeleteRight,
-  faUp
+  faArrowRightLongToLine,
+  faArrowTurnDownLeft,
+  faDeleteLeft
 } from '@fortawesome/pro-regular-svg-icons'
 
 export default function SymbolKeys() {
@@ -30,7 +30,13 @@ export default function SymbolKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          />
           <KeyLegend {...sharedProps} vimRef="!">
             <Type {...sharedTypeProps}>
               expert
@@ -84,13 +90,13 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} homing />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="`">
+          <KeyLegend {...sharedProps} vimRef="\">
             <Type {...sharedTypeProps}>
               join <br />
               lines
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="+" homing>
+          <KeyLegend {...sharedProps} vimRef="-" homing>
             <Type {...sharedTypeProps}>unindent</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="=">
@@ -119,15 +125,15 @@ export default function SymbolKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} vimRef="~" />
-          <KeyLegend {...sharedProps} vimRef="|">
+          <KeyLegend {...sharedProps} vimRef="|" />
+          <KeyLegend {...sharedProps} vimRef="_">
             <Type {...sharedTypeProps}>
               prev.
               <br />
               sentence
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="\">
+          <KeyLegend {...sharedProps} vimRef="+">
             <Type {...sharedTypeProps}>
               next
               <br />
@@ -148,7 +154,7 @@ export default function SymbolKeys() {
               sentence
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} />

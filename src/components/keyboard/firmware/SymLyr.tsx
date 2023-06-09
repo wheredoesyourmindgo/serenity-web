@@ -7,11 +7,9 @@ import {
   faBracketSquare,
   faLock,
   faOption,
-  faRightToBracket,
   faUp,
   faVolumeXmark,
-  faHashtag,
-  faFunction
+  faAnglesDown
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -21,6 +19,7 @@ import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
+import {faApple} from '@fortawesome/free-brands-svg-icons'
 
 export default function SymLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -30,21 +29,17 @@ export default function SymLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            customShiftCode
-            icon={faDeleteRight}
+            icon={faArrowRightLongToLine}
+            sx={{
+              fontSize: 19
+            }}
             KeyContainerProps={{
-              keyId: 'delete-key',
+              keyId: 'tab-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Delete" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Delete word right" />
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
-            }}
-            shiftSubIcn={faRightToBracket}
-            sx={{
-              transform: 'translateX(2px)'
             }}
           />
           <KeyLegend {...sharedProps}>!</KeyLegend>
@@ -66,18 +61,26 @@ export default function SymLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
-                  <PopoverDesc action="shifted" output="Backspace word left" />
+                  <PopoverDesc action="shifted" output="Forward Delete" />
                 </Box>
               )
             }}
-            shiftSubIcn={faRightToBracket}
-            ShiftSubIcnProps={{flip: 'horizontal'}}
+            shiftSubIcn={faDeleteRight}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
-          </KeyLegend>
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              keyId: 'escape-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Escape" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
@@ -95,9 +98,9 @@ export default function SymLyr() {
           />
           {/* <KeyLegend {...sharedProps}>&lt;</KeyLegend>
           <KeyLegend {...sharedProps}>&gt;</KeyLegend> */}
-          <KeyLegend {...sharedProps}>`</KeyLegend>
+          <KeyLegend {...sharedProps}>\</KeyLegend>
           <KeyLegend {...sharedProps} homing>
-            +
+            -
           </KeyLegend>
           <KeyLegend {...sharedProps}>=</KeyLegend>
           <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
@@ -120,21 +123,21 @@ export default function SymLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>~</KeyLegend>
+          <KeyLegend {...sharedProps}>`</KeyLegend>
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps}>|</KeyLegend>
-          <KeyLegend {...sharedProps}>\</KeyLegend>
+          <KeyLegend {...sharedProps}>_</KeyLegend>
+          <KeyLegend {...sharedProps}>+</KeyLegend>
           <KeyLegend {...sharedProps}>[</KeyLegend>
           <KeyLegend {...sharedProps}>]</KeyLegend>
           <KeyIcon
-            icon={faUp}
+            icon={faArrowTurnDownLeft}
             KeyContainerProps={{
-              keyId: 'right-shift-key',
+              keyId: 'enter-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                  <PopoverDesc action="tap/hold" output="Enter" />
                 </Box>
               )
             }}
@@ -163,9 +166,11 @@ export default function SymLyr() {
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            // icon={faArrowUpLeftFromCircle}
+            icon={faAnglesDown}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrHoldSubIcn={faHashtag}
+            lyrHoldSubIcn={faApple}
+            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -177,24 +182,33 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyIcon icon={faArrowTurnDownLeft} />
           <KeyIcon
             icon={faBracketSquare}
-            lyrHoldSubIcn={faFunction}
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'space-key',
+              keyId: 'left-space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
-                  <br />
-                  <PopoverDesc action="hold" output="Function Layer" />
+                  <PopoverDesc action="tap/hold" output="Space" />
                 </Box>
               )
             }}
           />
-          <KeyIcon icon={faArrowRightLongToLine} />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faOption}
