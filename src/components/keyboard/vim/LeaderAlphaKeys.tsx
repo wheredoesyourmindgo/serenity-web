@@ -3,8 +3,10 @@ import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, Divider, Typography as Type} from '@mui/material'
 import {
+  faArrowRightLongToLine,
+  faArrowTurnDownLeft,
+  faArrowUpLeftFromCircle,
   faDeleteLeft,
-  faDeleteRight,
   faUp
 } from '@fortawesome/pro-regular-svg-icons'
 
@@ -30,7 +32,13 @@ export default function LeaderAlphaKeys() {
     <Box>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowRightLongToLine}
+            VimRefIcnProps={{
+              sx: {transform: 'translateX(-1px)'}
+            }}
+          />
           <KeyLegend {...sharedProps} vimRef="q" />
           <KeyLegend {...sharedProps} vimRef="l" />
           <KeyLegend {...sharedProps} vimRef="c">
@@ -53,7 +61,7 @@ export default function LeaderAlphaKeys() {
               popup
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="b" special />
+          <KeyLegend {...sharedProps} vimRef="b" />
           <KeyLegend {...sharedProps} vimRef="j" />
           <KeyLegend {...sharedProps} vimRef="f">
             <Type {...sharedTypeProps}>
@@ -92,7 +100,21 @@ export default function LeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} vimRef="-" />
+          <KeyLegend
+            {...sharedProps}
+            vimRefIcn={faArrowUpLeftFromCircle}
+            VimRefIcnProps={{
+              sx: {
+                fontSize: 12
+              }
+            }}
+          >
+            <Type {...sharedTypeProps}>
+              no
+              <br />
+              highlight
+            </Type>
+          </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="m" />
           <KeyLegend {...sharedProps} vimRef="r" />
           <KeyLegend {...sharedProps} vimRef="s" />
@@ -137,12 +159,8 @@ export default function LeaderAlphaKeys() {
               nition
             </Type>
           </KeyLegend>
-          <KeyLegend {...sharedProps} vimRef="z" special>
-            <Type {...sharedTypeProps}>
-              reflow
-              <br />
-              text
-            </Type>
+          <KeyLegend {...sharedProps} vimRef="z">
+            <Type {...sharedTypeProps}>Z CMDS</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="k" />
           <KeyLegend {...sharedProps} vimRef="h">
@@ -163,27 +181,21 @@ export default function LeaderAlphaKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="." />
-          <KeyLegend {...sharedProps} vimRefIcn={faUp} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>
-            <Type {...sharedTypeProps}>
-              no
-              <br />
-              highlight
-            </Type>
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
+          <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
             <Type {...sharedTypeProps}>
               command
               <br />
               mode
             </Type>
           </KeyLegend>
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

@@ -32,12 +32,15 @@ export default function MouseLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faDeleteRight}
+            icon={faArrowRightLongToLine}
+            sx={{
+              fontSize: 19
+            }}
             KeyContainerProps={{
-              keyId: 'delete-key',
+              keyId: 'tab-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Delete" />
+                  <PopoverDesc action="tap/hold" output="Tab" />
                 </Box>
               )
             }}
@@ -63,21 +66,36 @@ export default function MouseLyr() {
             Btn4
           </KeyLegend>
           <KeyIcon
+            customShiftCode
             icon={faDeleteLeft}
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Backspace" />
+                  <br />
+                  <PopoverDesc action="shifted" output="Forward Delete" />
+                </Box>
+              )
+            }}
+            // shiftSubIcn={faRightToBracket}
+            // ShiftSubIcnProps={{flip: 'horizontal'}}
+            shiftSubIcn={faDeleteRight}
+          />
+        </RowBox>
+        <RowBox child flexSpacing={1}>
+          <KeyIcon
+            icon={faArrowUpLeftFromCircle}
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              keyId: 'escape-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Escape" />
                 </Box>
               )
             }}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
-          </KeyLegend>
           <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
           <KeyIcon icon={faCommand} color="solarized.cyan" />
@@ -297,12 +315,17 @@ export default function MouseLyr() {
             R
           </KeyLegend>
           <KeyIcon
-            icon={faUp}
+            tapForceHold
+            icon={faArrowTurnDownLeft}
+            modHoldSubIcn={faUp}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
+                  <PopoverDesc action="tap" output="Enter" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Shift" />
                 </Box>
               )
             }}
@@ -332,7 +355,8 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon
+          <KeyLegend {...sharedProps} />
+          {/* <KeyIcon
             icon={faArrowUpLeftFromCircle}
             sx={{fontSize: 19, transform: 'translateY(1px)'}}
             KeyContainerProps={{
@@ -343,14 +367,13 @@ export default function MouseLyr() {
                 </Box>
               )
             }}
-          />
-          <KeyIcon icon={faArrowTurnDownLeft} />
+          /> */}
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'space-key',
+              keyId: 'left-space-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Space" />
@@ -358,7 +381,21 @@ export default function MouseLyr() {
               )
             }}
           />
-          <KeyIcon icon={faArrowRightLongToLine} />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} />
+          {/* <KeyIcon icon={faArrowRightLongToLine} /> */}
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faOption}
