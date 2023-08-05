@@ -81,30 +81,30 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
-          <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyLegend {...sharedProps}>[</KeyLegend>
+          <KeyLegend {...sharedProps}>]</KeyLegend>
+          {/* <KeyLegend {...sharedProps}>&lt;</KeyLegend>
+          <KeyLegend {...sharedProps}>&gt;</KeyLegend> */}
+          <KeyLegend {...sharedProps} homing>
+            -
+          </KeyLegend>
+          <KeyLegend {...sharedProps}>=</KeyLegend>
+          <KeyLegend {...sharedProps}>`</KeyLegend>
           <KeyIcon
             icon={faLock}
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock/Unlock Mouse Layer" />
+                  <PopoverDesc action="tap" output="Lock/Unlock Symbol Layer" />
                 </Box>
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps}>&lt;</KeyLegend>
-          <KeyLegend {...sharedProps}>&gt;</KeyLegend> */}
-          <KeyLegend {...sharedProps}>\</KeyLegend>
-          <KeyLegend {...sharedProps} homing>
-            -
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>=</KeyLegend>
-          <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
-          <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyLegend {...sharedProps} shiftLgnd='"'>
             '
           </KeyLegend>
@@ -121,16 +121,16 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>~</KeyLegend>
-          <KeyLegend {...sharedProps}>`</KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps}>|</KeyLegend>
+          <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
+          <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
           <KeyLegend {...sharedProps}>_</KeyLegend>
           <KeyLegend {...sharedProps}>+</KeyLegend>
-          <KeyLegend {...sharedProps}>[</KeyLegend>
-          <KeyLegend {...sharedProps}>]</KeyLegend>
+          <KeyLegend {...sharedProps}>~</KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>|</KeyLegend>
+          <KeyLegend {...sharedProps}>\</KeyLegend>
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faArrowTurnDownLeft}
             KeyContainerProps={{

@@ -52,6 +52,48 @@ export default function MediaLyr() {
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faBrightnessLow}
+            KeyContainerProps={{
+              keyId: 'screen-brightness-down-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Screen Brightness Down"
+                  />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faBrightness}
+            KeyContainerProps={{
+              keyId: 'screen-brightness-up-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Screen Brightness Up"
+                  />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faCircleHalfStroke}
+            requiresOsConf
+            KeyContainerProps={{
+              keyId: 'toggle-dark-mode-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Toggle Light/Dark Mode" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             <>
               RGB
@@ -87,48 +129,6 @@ export default function MediaLyr() {
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyIcon
-            icon={faCircleHalfStroke}
-            requiresOsConf
-            KeyContainerProps={{
-              keyId: 'toggle-dark-mode-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Toggle Light/Dark Mode" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faBrightnessLow}
-            KeyContainerProps={{
-              keyId: 'screen-brightness-down-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Down"
-                  />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faBrightness}
-            KeyContainerProps={{
-              keyId: 'screen-brightness-up-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Up"
-                  />
-                </Box>
-              )
-            }}
-          />
-          <KeyLegend {...sharedProps} />
 
           <KeyIcon
             customShiftCode
@@ -159,34 +159,7 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
-          <KeyIcon
-            icon={faLock}
-            KeyContainerProps={{
-              keyId: 'lock-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Lock/Unlock Media Layer" />
-                </Box>
-              )
-            }}
-          />
           <KeyLegend />
-          <KeyIcon
-            homing
-            icon={faVolumeSlash}
-            KeyContainerProps={{
-              keyId: 'mute-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Toggle Mute" />
-                </Box>
-              )
-            }}
-          />
           <KeyIcon
             icon={faVolumeDown}
             KeyContainerProps={{
@@ -209,7 +182,34 @@ export default function MediaLyr() {
               )
             }}
           />
+          <KeyIcon
+            homing
+            icon={faVolumeSlash}
+            KeyContainerProps={{
+              keyId: 'mute-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Toggle Mute" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend />
+          <KeyIcon
+            icon={faLock}
+            KeyContainerProps={{
+              keyId: 'lock-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Lock/Unlock Media Layer" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon icon={faUp} color="solarized.cyan" homing />
+          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
+          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
           <KeyLegend shiftLgnd='"' {...sharedProps}>
             '
           </KeyLegend>
@@ -226,39 +226,8 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Reset
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
-            Debug
-          </KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyIcon
-            icon={faTypewriter}
-            lyrHoldSubIcn={faLayerGroup}
-            sx={{transform: 'translateY(2px)'}}
-            KeyContainerProps={{
-              keyId: 'qwerty-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            icon={faPlayPause}
-            KeyContainerProps={{
-              keyId: 'play-pause-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Play/Pause" />
-                </Box>
-              )
-            }}
-          />
+
           <KeyIcon
             icon={faBackward}
             KeyContainerProps={{
@@ -285,7 +254,39 @@ export default function MediaLyr() {
               )
             }}
           />
+          <KeyIcon
+            icon={faPlayPause}
+            KeyContainerProps={{
+              keyId: 'play-pause-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Play/Pause" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faTypewriter}
+            lyrHoldSubIcn={faLayerGroup}
+            sx={{transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'qwerty-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            Debug
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+            Reset
+          </KeyLegend>
           <KeyIcon
             icon={faArrowTurnDownLeft}
             KeyContainerProps={{
