@@ -63,12 +63,12 @@ export default function AlphaKeyboard() {
         {/* <AlphaKeyLgnd>=</AlphaKeyLgnd> */}
       </RowBox>
       <RowBox child flexSpacing={1}>
-        <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base0">K</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">W</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>D</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base0">K</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>H</AlphaKeyLgnd>
         <AlphaKeyLgnd>/</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
