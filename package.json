@@ -16,16 +16,16 @@
     "@fortawesome/pro-solid-svg-icons": "^6.4.2",
     "@fortawesome/pro-thin-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@mui/icons-material": "^5.14.3",
-    "@mui/material": "5.14.3",
+    "@mui/icons-material": "^5.14.6",
+    "@mui/material": "5.14.6",
     "clsx": "2.0.0",
     "mui-jackinbox": "^1.0.0",
     "mui-sleazebox": "^1.0.3",
-    "next": "13.4.12",
+    "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "smoothscroll-polyfill": "^0.4.4",
-    "vercel": "^31.2.2"
+    "vercel": "^32.1.0"
   },
   "scripts": {
     "start": "next start",
