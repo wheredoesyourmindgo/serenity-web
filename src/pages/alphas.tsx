@@ -134,7 +134,7 @@ export default function AlphasPage() {
                   icon={faAngleRight}
                   sx={{color: 'solarized.green', paddingRight: 2}}
                 />
-                <em>./genkey -stagger=false analyze serenity`</em>
+                <em>./genkey -stagger=false analyze serenity</em>
               </Type>
               <Divider />
               <Type
@@ -175,7 +175,7 @@ export default function AlphasPage() {
                   icon={faAngleRight}
                   sx={{color: 'solarized.green', paddingRight: 2}}
                 />
-                ./a200 vw serenity
+                <em>./a200 vw serenity</em>
               </Type>
               <Divider />
               <Type
