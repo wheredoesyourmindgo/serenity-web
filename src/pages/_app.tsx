@@ -3,13 +3,12 @@ import Head from 'next/head'
 import {AppProps} from 'next/app'
 import {ThemeProvider} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import {CacheProvider, EmotionCache} from '@emotion/react'
 import theme from '@lib/theme'
-import createEmotionCache from '@lib/createEmotionCache'
 import smoothscroll from 'smoothscroll-polyfill'
 import UiProvider from '@components/UiStore'
 import ToggleColorMode from '@components/ToggleColorMode'
-import localFont from "next/font/local"
+import localFont from 'next/font/local'
+import {AppCacheProvider} from '@mui/material-nextjs/v13-pagesRouter'
 // Font Awesome config
 import {config} from '@fortawesome/fontawesome-svg-core'
 
@@ -26,21 +25,14 @@ const bodyFont = localFont({
   display: 'swap'
 })
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache()
-
-interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache
-}
-
-export default function MyApp(props: MyAppProps) {
-  const {Component, emotionCache = clientSideEmotionCache, pageProps} = props
+export default function MyApp(props: AppProps) {
+  const {Component, pageProps} = props
   useEffect(() => {
     smoothscroll.polyfill()
   })
 
   return (
-    <CacheProvider value={emotionCache}>
+    <AppCacheProvider>
       <Head>
         <title>My page</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -60,6 +52,6 @@ export default function MyApp(props: MyAppProps) {
           </ToggleColorMode>
         </UiProvider>
       </ThemeProvider>
-    </CacheProvider>
+    </AppCacheProvider>
   )
 }
