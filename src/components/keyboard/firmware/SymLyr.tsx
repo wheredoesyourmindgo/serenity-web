@@ -111,12 +111,15 @@ export default function SymLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
+            special
             icon={faUp}
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                  <PopoverDesc action="single tap/hold" output="Left Shift" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Caps-word" />
                 </Box>
               )
             }}
@@ -146,8 +149,7 @@ export default function SymLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faVolumeXmark}
-            tapDance
-            sx={{transform: 'translateY(2px)'}}
+            special
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (

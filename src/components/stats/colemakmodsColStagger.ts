@@ -28,7 +28,7 @@ finger 1-0 	RS 	0.359%
 finger 8-7 	IO 	0.323%
 
 Finger Effort
- 		base	s-bigrams	n-bigrams	total
+ 		base	s-bgrms	n-bgrms	total
 finger 0 	0.125	0.000		0.004		0.129
 finger 1 	0.175	0.003		0.002		0.179
 finger 2 	0.163	0.001		-0.006		0.158
