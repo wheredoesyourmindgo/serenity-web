@@ -1,35 +1,34 @@
 const genkey = `
 serenity
-q l c p b  j f o u ;
-m r s t g  y n e i a
-z x w d v  k h / , .
-Missing characters: [']
-Rolls (l): 13.83%
-        Inward: ~7.95%
-        Outward: ~5.88%
-Rolls (r): 31.84%
-        Inward: ~14.19%
-        Outward: ~17.66%
-Alternates: ~37.25%
-Onehands: ~2.37%
-Redirects: ~5.35%
-Finger Speed (weighted): [0.06 0.89 1.14 3.82 2.35 1.61 1.22 0.59]
-Finger Speed (unweighted): [0.09 3.22 5.48 21.03 12.92 7.75 4.41 0.89]
-Highest Speed (weighted): 3.82 (LI)
-Highest Speed (unweighted): 21.03 (LI)
-Index Usage: 19.3% 16.5%
-SFBs: 1.033%
-DSFBs: 7.372%
-LSBs: 1.18%
+q l d w v  j f o u ;
+n r t s g  y h e i a '
+x z m c b  k p / , .
+Rolls (l): 19.55%
+        Inward: ~13.39%
+        Outward: ~6.16%
+Rolls (r): 25.02%
+        Inward: ~6.06%
+        Outward: ~18.96%
+Alternates: ~41.84%
+Onehands: ~1.77%
+Redirects: ~2.88%
+Finger Speed (weighted): [0.16 0.82 1.52 3.16 1.08 1.61 1.22 0.59]
+Finger Speed (unweighted): [0.24 2.94 7.30 17.37 5.95 7.72 4.39 0.89]
+Highest Speed (weighted): 3.16 (LI)
+Highest Speed (unweighted): 17.37 (LI)
+Index Usage: 15.9% 11.7%
+SFBs: 0.808%
+DSFBs: 6.477%
+LSBs: 1.22%
 Top SFBs:
-        sc 0.138%       ny 0.119%       ui 0.107%       nk 0.079%
-        pt 0.078%       eo 0.078%       rl 0.077%       nf 0.060%
+        sc 0.138%       ui 0.107%       eo 0.078%       rl 0.077%
+        ph 0.070%       gs 0.061%       oe 0.044%       ws 0.042%
 
 Worst Bigrams:
-        oe 23.001       ui 11.503       cs 10.865       lr 10.328
-        bt 9.544        nk 9.265        a. 8.173        tg 6.921
+        oe 23.001       ui 11.503       lr 10.328       dm 10.048
+        sc 9.482        a. 8.173        tm 7.609        sb 7.205
 
-Score: 37.15
+Score: 32.95
 `
 
 export default genkey

@@ -11,6 +11,8 @@ import {
   faMagicWandSparkles,
   faOption,
   faRectangleVerticalHistory,
+  faSquareLeft,
+  faSquareRight,
   faSquareUpLeft,
   faSquareUpRight,
   faTableLayout,
@@ -216,9 +218,9 @@ export default function ActionLyr() {
               keyId: 'window-fullscreen-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Fullscreen Window" />
+                  <PopoverDesc action="tap" output="Max Window Height" />
                   <br />
-                  <PopoverDesc action="hold" output="Max Window Height" />
+                  <PopoverDesc action="hold" output="Fullscreen Window" />
                 </Box>
               )
             }}
@@ -231,9 +233,9 @@ export default function ActionLyr() {
               keyId: 'window-center-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Center Window" />
+                  <PopoverDesc action="tap" output="Almost Max Window" />
                   <br />
-                  <PopoverDesc action="hold" output="Last Window Position" />
+                  <PopoverDesc action="hold" output="Center Window" />
                 </Box>
               )
             }}
@@ -289,9 +291,9 @@ export default function ActionLyr() {
               keyId: 'window-restore-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Restore Window" />
+                  <PopoverDesc action="tap" output="Last Window Position" />
                   <br />
-                  <PopoverDesc action="hold" output="Almost Max Window" />
+                  <PopoverDesc action="hold" output="Restore Window" />
                 </Box>
               )
             }}
@@ -302,12 +304,15 @@ export default function ActionLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
+            special
             icon={faUp}
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                  <PopoverDesc action="single tap/hold" output="Left Shift" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Caps-word" />
                 </Box>
               )
             }}
@@ -330,8 +335,28 @@ export default function ActionLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faSquareLeft}
+            KeyContainerProps={{
+              keyId: 'throw-space-left-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Throw Window Space Left" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faSquareRight}
+            KeyContainerProps={{
+              keyId: 'throw-space-right-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Throw Window Space Right" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faArrowTurnDownLeft}
@@ -348,8 +373,7 @@ export default function ActionLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             icon={faVolumeXmark}
-            tapDance
-            sx={{transform: 'translateY(2px)'}}
+            special
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (

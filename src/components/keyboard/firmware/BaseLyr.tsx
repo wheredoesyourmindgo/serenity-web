@@ -62,14 +62,14 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="L">
             l
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="C">
-            c
+          <KeyLegend {...sharedProps} shiftLgnd="D">
+            d
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="P">
-            p
+          <KeyLegend {...sharedProps} shiftLgnd="W">
+            w
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="B">
-            b
+          <KeyLegend {...sharedProps} shiftLgnd="V">
+            v
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="J">
             j
@@ -106,28 +106,32 @@ export default function BaseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
+            tapForceHold
+            lyrHoldSubIcn={faComputerMouse}
             icon={faArrowUpLeftFromCircle}
-            sx={{fontSize: 18}}
+            sx={{transform: 'translateY(4px)', fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Escape" />
+                  <PopoverDesc action="tap" output="Escape" />
+                  <br />
+                  <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd="M">
-            m
+          <KeyLegend {...sharedProps} shiftLgnd="N">
+            n
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="R">
             r
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="S">
-            s
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="T" homing>
+          <KeyLegend {...sharedProps} shiftLgnd="T">
             t
+          </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="S" homing>
+            s
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="G">
             g
@@ -159,36 +163,33 @@ export default function BaseLyr() {
               keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Left Shift" />
-                  {/* <br />
-                  <PopoverDesc
-                    action="simultaneously tap w/ Right Shift"
-                    output="Caps-word"
-                  /> */}
+                  <PopoverDesc action="single tap/hold" output="Left Shift" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Caps-word" />
                 </Box>
               )
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd="Z">
-            z
-          </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="X">
             x
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="W">
-            w
+          <KeyLegend {...sharedProps} shiftLgnd="Z">
+            z
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="D">
-            d
+          <KeyLegend {...sharedProps} shiftLgnd="M">
+            m
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="V">
-            v
+          <KeyLegend {...sharedProps} shiftLgnd="C">
+            c
+          </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="B">
+            b
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="K">
             k
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="H">
-            h
+          <KeyLegend {...sharedProps} shiftLgnd="P">
+            p
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="?">
             /
@@ -263,11 +264,11 @@ export default function BaseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            lyrHoldSubIcn={faComputerMouse}
+            // lyrHoldSubIcn={faComputerMouse}
             // optEncoder
             icon={faVolumeXmark}
-            tapDance
-            sx={{transform: 'translateY(2px)'}}
+            special
+            // sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
@@ -278,8 +279,8 @@ export default function BaseLyr() {
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                  <br />
-                  <PopoverDesc action="hold" output="Mouse Layer" />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="Mouse Layer" /> */}
                 </Box>
               )
             }}

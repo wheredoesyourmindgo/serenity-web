@@ -98,13 +98,17 @@ export default function QwertyLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
+            tapForceHold
+            lyrHoldSubIcn={faComputerMouse}
             icon={faArrowUpLeftFromCircle}
-            sx={{fontSize: 18}}
+            sx={{transform: 'translateY(4px)', fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Escape" />
+                  <PopoverDesc action="tap" output="Escape" />
+                  <br />
+                  <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
             }}
@@ -145,12 +149,15 @@ export default function QwertyLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
+            special
             icon={faUp}
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Left Shift" />
+                  <PopoverDesc action="single tap/hold" output="Left Shift" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Caps-word" />
                 </Box>
               )
             }}
@@ -182,7 +189,9 @@ export default function QwertyLyr() {
           <KeyLegend {...sharedProps} shiftLgnd=">">
             .
           </KeyLegend>
-          <KeyIcon icon={faArrowUp} />
+          <KeyLegend {...sharedProps} shiftLgnd="?">
+            /
+          </KeyLegend>
           <KeyIcon
             tapForceHold
             icon={faArrowTurnDownLeft}
@@ -202,11 +211,8 @@ export default function QwertyLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            lyrHoldSubIcn={faComputerMouse}
-            // optEncoder
             icon={faVolumeXmark}
-            tapDance
-            sx={{transform: 'translateY(2px)'}}
+            special
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
@@ -217,8 +223,6 @@ export default function QwertyLyr() {
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                  <br />
-                  <PopoverDesc action="hold" output="Mouse Layer" />
                 </Box>
               )
             }}
@@ -298,12 +302,73 @@ export default function QwertyLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd="?">
-            /
-          </KeyLegend>
-          <KeyIcon icon={faArrowLeft} />
-          <KeyIcon icon={faArrowDown} />
-          <KeyIcon icon={faArrowRight} />
+          <KeyIcon
+            icon={faArrowLeft}
+            tapForceHold
+            modHoldSubIcn={faCommand}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-command-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Left Arrow" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Command" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faArrowDown}
+            tapForceHold
+            sx={{transform: 'translateY(4px)'}}
+            modHoldSubIcn={faOption}
+            ModHoldSubIcnProps={{sx: {fontSize: 11}}}
+            KeyContainerProps={{
+              keyId: 'right-alt-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Down Arrow" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Alt/Option" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faArrowUp}
+            tapForceHold
+            modHoldSubIcn={faChevronUp}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-ctrl-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Up Arrow" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Control" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faArrowRight}
+            // tapForceHold
+            // lyrHoldSubIcn={faCalculator}
+            // sx={{transform: 'translateY(4px)'}}
+            // LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            KeyContainerProps={{
+              // keyId: 'numpad-layer-key',
+              keyId: 'right-arrow-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Right Arrow" />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="Function Layer" /> */}
+                </Box>
+              )
+            }}
+          />
         </RowBox>
       </ColumnBox>
     </Box>
