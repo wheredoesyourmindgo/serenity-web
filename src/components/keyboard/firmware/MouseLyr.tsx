@@ -378,6 +378,7 @@ export default function MouseLyr() {
             }}
           />
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           {/* <KeyIcon icon={faArrowRightLongToLine} /> */}
           <KeyIcon icon={faCommand} />
           <KeyIcon
@@ -394,7 +395,6 @@ export default function MouseLyr() {
             }}
           />
           <KeyIcon icon={faChevronUp} />
-          <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>
     </Box>

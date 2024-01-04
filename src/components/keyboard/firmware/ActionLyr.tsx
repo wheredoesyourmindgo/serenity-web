@@ -7,8 +7,8 @@ import {
   faArrowUpLeftFromCircle,
   faBracketSquare,
   faFunction,
+  faLayerGroup,
   faLock,
-  faMagicWandSparkles,
   faOption,
   faRectangleVerticalHistory,
   faSquareLeft,
@@ -18,7 +18,6 @@ import {
   faTableLayout,
   faUp,
   faUpRightAndDownLeftFromCenter,
-  faVolumeXmark,
   faWindowRestore
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
@@ -71,20 +70,6 @@ export default function ActionLyr() {
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             Ins
           </KeyLegend>
-          <KeyIcon
-            icon={faMagicWandSparkles}
-            tapDance
-            KeyContainerProps={{
-              keyId: 'text-select-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="select word" />
-                  <br />
-                  <PopoverDesc action="hold" output="select line" />
-                </Box>
-              )
-            }}
-          />
           <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             App
           </KeyLegend>
@@ -102,6 +87,7 @@ export default function ActionLyr() {
               )
             }}
           /> */}
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faSquareUpLeft}
             KeyContainerProps={{
@@ -371,7 +357,7 @@ export default function ActionLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon
+          {/* <KeyIcon
             icon={faVolumeXmark}
             special
             KeyContainerProps={{
@@ -387,7 +373,7 @@ export default function ActionLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon icon={faChevronUp} />
           <KeyIcon
             icon={faOption}
@@ -403,6 +389,7 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon icon={faCommand} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faBracketSquare}
@@ -420,24 +407,33 @@ export default function ActionLyr() {
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
-            lyrHoldSubIcn={faFunction}
-            sx={{transform: 'translateY(8px)'}}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
-                  <br />
-                  <PopoverDesc action="hold" output="Function Layer" />
+                  <PopoverDesc action="tap/hold" output="Space" />
                 </Box>
               )
             }}
           />
           <KeyLegend {...sharedProps} />
+          <KeyIcon
+            lyrHoldSubIcn={faFunction}
+            icon={faLayerGroup}
+            sx={{fontSize: 16, transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'function-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="hold" output="Function Layer" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon icon={faCommand} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} />
-          <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>
     </Box>

@@ -15,10 +15,10 @@ import {
   faComputerMouse,
   faGear,
   faHashtag,
+  faLayerGroup,
   faOption,
-  faScissors,
-  faUp,
-  faVolumeXmark
+  faTableLayout,
+  faUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -210,7 +210,7 @@ export default function QwertyLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon
+          {/* <KeyIcon
             icon={faVolumeXmark}
             special
             KeyContainerProps={{
@@ -226,15 +226,15 @@ export default function QwertyLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon icon={faChevronUp} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
-            icon={faAnglesDown}
-            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            icon={faLayerGroup}
+            sx={{fontSize: 16, transform: 'translateY(2px)'}}
             special
-            lyrHoldSubIcn={faHashtag}
+            lyrHoldSubIcn={faTableLayout}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -243,25 +243,23 @@ export default function QwertyLyr() {
                   <br /> */}
                   <PopoverDesc
                     action="hold"
-                    output="Num/Nav Layer (or Left Shift)"
+                    output="Action Layer (or Left Shift)"
                   />
                 </Box>
               )
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
-            rotation={270}
-            lyrHoldSubIcn={faScissors}
-            sx={{transform: 'translateY(6px)'}}
-            tapForceHold
+            icon={faAnglesDown}
+            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            lyrHoldSubIcn={faHashtag}
             KeyContainerProps={{
-              keyId: 'action-layer-key',
+              keyId: 'lower-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
-                  <br />
-                  <PopoverDesc action="hold" output="Action Layer" />
+                  {/* <PopoverDesc action="tap" output="Escape" />
+                  <br /> */}
+                  <PopoverDesc action="hold" output="Num/Nav Layer" />
                 </Box>
               )
             }}
@@ -269,22 +267,30 @@ export default function QwertyLyr() {
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
-            lyrHoldSubIcn={faGear}
             sx={{transform: 'translateY(6px)'}}
-            tapForceHold
             KeyContainerProps={{
-              keyId: 'media-layer-key',
+              keyId: 'left-space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
-                  <br />
-                  <PopoverDesc action="hold" output="Media Layer" />
+                  <PopoverDesc action="tap/hold" output="Space" />
                 </Box>
               )
             }}
           />
           <KeyIcon
-            special
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(6px)'}}
+            KeyContainerProps={{
+              keyId: 'right-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
             icon={faAnglesUp}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             lyrHoldSubIcn={faAt}
@@ -294,26 +300,27 @@ export default function QwertyLyr() {
                 <Box p={1}>
                   {/* <PopoverDesc action="tap" output="Tab" />
                   <br /> */}
-                  <PopoverDesc
-                    action="hold"
-                    output="Symbol Layer (or Right Shift)"
-                  />
+                  <PopoverDesc action="hold" output="Symbol Layer" />
                 </Box>
               )
             }}
           />
           <KeyIcon
             icon={faArrowLeft}
+            special
+            lyrHoldSubIcn={faGear}
             tapForceHold
-            modHoldSubIcn={faCommand}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'right-command-key',
+              keyId: 'media-layer-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Left Arrow" />
                   <br />
-                  <PopoverDesc action="hold" output="Right Command" />
+                  <PopoverDesc
+                    action="hold"
+                    output="Media Layer (or Right Shift)"
+                  />
                 </Box>
               )
             }}
@@ -322,15 +329,15 @@ export default function QwertyLyr() {
             icon={faArrowDown}
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
-            modHoldSubIcn={faOption}
+            modHoldSubIcn={faCommand}
             ModHoldSubIcnProps={{sx: {fontSize: 11}}}
             KeyContainerProps={{
-              keyId: 'right-alt-key',
+              keyId: 'right-command-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Down Arrow" />
                   <br />
-                  <PopoverDesc action="hold" output="Right Alt/Option" />
+                  <PopoverDesc action="hold" output="Right Command" />
                 </Box>
               )
             }}
@@ -338,33 +345,31 @@ export default function QwertyLyr() {
           <KeyIcon
             icon={faArrowUp}
             tapForceHold
-            modHoldSubIcn={faChevronUp}
+            modHoldSubIcn={faOption}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'right-ctrl-key',
+              keyId: 'right-option-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Up Arrow" />
                   <br />
-                  <PopoverDesc action="hold" output="Right Control" />
+                  <PopoverDesc action="hold" output="Right Alt/Option" />
                 </Box>
               )
             }}
           />
           <KeyIcon
             icon={faArrowRight}
-            // tapForceHold
-            // lyrHoldSubIcn={faCalculator}
-            // sx={{transform: 'translateY(4px)'}}
-            // LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            modHoldSubIcn={faChevronUp}
+            tapForceHold
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              // keyId: 'numpad-layer-key',
-              keyId: 'right-arrow-key',
+              keyId: 'right-ctrl-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Right Arrow" />
-                  {/* <br />
-                  <PopoverDesc action="hold" output="Function Layer" /> */}
+                  <PopoverDesc action="tap" output="Right Arrow" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Control" />
                 </Box>
               )
             }}

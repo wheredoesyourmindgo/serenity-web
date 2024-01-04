@@ -8,7 +8,6 @@ import {
   faLock,
   faOption,
   faUp,
-  faVolumeXmark,
   faAnglesDown
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
@@ -147,7 +146,7 @@ export default function SymLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon
+          {/* <KeyIcon
             icon={faVolumeXmark}
             special
             KeyContainerProps={{
@@ -163,10 +162,11 @@ export default function SymLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon icon={faChevronUp} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             // icon={faArrowUpLeftFromCircle}
             icon={faAnglesDown}
@@ -211,6 +211,7 @@ export default function SymLyr() {
             }}
           />
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faOption}
@@ -226,7 +227,6 @@ export default function SymLyr() {
             }}
           />
           <KeyIcon icon={faChevronUp} />
-          <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>
     </Box>
