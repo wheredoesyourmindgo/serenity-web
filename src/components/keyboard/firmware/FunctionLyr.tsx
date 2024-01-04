@@ -4,6 +4,7 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
+  faBracketSquare,
   faOption,
   faUp
 } from '@fortawesome/pro-regular-svg-icons'
@@ -206,8 +207,32 @@ export default function FuncLyr() {
           <KeyIcon icon={faCommand} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'left-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon icon={faCommand} />

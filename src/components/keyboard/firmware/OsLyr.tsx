@@ -10,6 +10,7 @@ import {
   faArrowRightLongToLine,
   faArrowTurnDownLeft,
   faArrowUpLeftFromCircle,
+  faBracketSquare,
   faCameraViewfinder,
   faClipboard,
   faDesktop,
@@ -498,18 +499,59 @@ export default function OsLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
+          {/* <KeyIcon
+            icon={faVolumeXmark}
+            special
+            KeyContainerProps={{
+              keyId: 'oops-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="single tap" output="Toggle Mute" />
+                  <br />
+                  <PopoverDesc
+                    action="double tap"
+                    output="Mute & Hide Window"
+                  />
+                </Box>
+              )
+            }}
+          /> */}
+          <KeyIcon icon={faChevronUp} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faCommand} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'left-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            icon={faBracketSquare}
+            rotation={270}
+            sx={{transform: 'translateY(4px)'}}
+            KeyContainerProps={{
+              keyId: 'right-space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon icon={faCommand} />
+          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
+          <KeyIcon icon={faChevronUp} />
         </RowBox>
       </ColumnBox>
     </Box>
