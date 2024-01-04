@@ -21,8 +21,7 @@ import {
   faUp,
   faVolumeDown,
   faVolumeSlash,
-  faVolumeUp,
-  faVolumeXmark
+  faVolumeUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
 import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
@@ -303,7 +302,7 @@ export default function MediaLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon
+          {/* <KeyIcon
             icon={faVolumeXmark}
             special
             KeyContainerProps={{
@@ -319,7 +318,7 @@ export default function MediaLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon icon={faChevronUp} />
           <KeyIcon
             icon={faOption}
@@ -335,19 +334,29 @@ export default function MediaLyr() {
             }}
           />
           <KeyIcon icon={faCommand} />
+          <KeyIcon
+            lyrHoldSubIcn={faFunction}
+            icon={faLayerGroup}
+            sx={{fontSize: 16, transform: 'translateY(2px)'}}
+            KeyContainerProps={{
+              keyId: 'function-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="hold" output="Function Layer" />
+                </Box>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faBracketSquare}
             rotation={270}
-            lyrHoldSubIcn={faFunction}
-            sx={{transform: 'translateY(8px)'}}
+            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Space" />
-                  <br />
-                  <PopoverDesc action="hold" output="Function Layer" />
+                  <PopoverDesc action="tap/hold" output="Space" />
                 </Box>
               )
             }}
@@ -366,6 +375,7 @@ export default function MediaLyr() {
             }}
           />
           <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           {/* <KeyIcon
             icon={faBracketSquare}
             rotation={270}
@@ -382,7 +392,6 @@ export default function MediaLyr() {
           <KeyIcon icon={faCommand} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faChevronUp} />
-          <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>
     </Box>

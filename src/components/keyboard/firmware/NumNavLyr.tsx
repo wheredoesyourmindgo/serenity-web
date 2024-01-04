@@ -15,6 +15,7 @@ import {
   faCopy,
   faLock,
   faLockA,
+  faMagicWandSparkles,
   faOption,
   faPageCaretDown,
   faPageCaretUp,
@@ -22,8 +23,7 @@ import {
   faRedo,
   faScissors,
   faUndo,
-  faUp,
-  faVolumeXmark
+  faUp
 } from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
 import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
@@ -135,7 +135,21 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyLegend
+          <KeyIcon
+            icon={faMagicWandSparkles}
+            tapDance
+            KeyContainerProps={{
+              keyId: 'text-select-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="select word" />
+                  <br />
+                  <PopoverDesc action="hold" output="select line" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyLegend
             {...sharedProps}
             tapDance
             // shiftLgnd=">"
@@ -152,7 +166,7 @@ export default function NumNavLyr() {
             }}
           >
             .
-          </KeyLegend>
+          </KeyLegend> */}
           {/* <KeyIcon
             tapDance
             icon={faCalculator}
@@ -333,7 +347,7 @@ export default function NumNavLyr() {
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
-          <KeyIcon
+          {/* <KeyIcon
             icon={faVolumeXmark}
             special
             KeyContainerProps={{
@@ -349,10 +363,11 @@ export default function NumNavLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyIcon icon={faChevronUp} />
           <KeyIcon icon={faOption} sx={{fontSize: 19}} />
           <KeyIcon icon={faCommand} />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
             icon={faBracketSquare}
@@ -397,7 +412,7 @@ export default function NumNavLyr() {
               )
             }}
           />
-
+          <KeyLegend {...sharedProps} />
           <KeyIcon icon={faCommand} />
           <KeyIcon
             icon={faOption}
@@ -413,7 +428,6 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon icon={faChevronUp} />
-          <KeyLegend {...sharedProps} />
         </RowBox>
       </ColumnBox>
     </Box>

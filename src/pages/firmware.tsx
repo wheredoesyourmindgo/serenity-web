@@ -35,8 +35,8 @@ import {
   faHouseUser,
   faLayerGroup,
   faMouse,
-  faScissors,
-  faTypewriter
+  faTypewriter,
+  faTableLayout
   // faCalculator
 } from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
@@ -180,7 +180,7 @@ export default function FirmwarePage() {
                 label="Action"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faScissors} />
+                    <MuiFaIcon icon={faTableLayout} />
                   </Box>
                 }
                 {...a11yProps(3)}
