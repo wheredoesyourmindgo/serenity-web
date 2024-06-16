@@ -61,7 +61,7 @@ export default function NumpadLyr() {
             )
           </KeyLegend>
           <KeyIcon
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -91,7 +91,7 @@ export default function NumpadLyr() {
           </KeyLegend>
 
           <KeyIcon
-            icon={faLock}
+            className="fa-regular fa-lock"
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
@@ -101,15 +101,22 @@ export default function NumpadLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
+          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            color="solarized.cyan"
+          />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="solarized.cyan"
+          />
           <KeyLegend {...sharedProps} sx={fxSx} />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
@@ -150,7 +157,7 @@ export default function NumpadLyr() {
             .
           </KeyLegend>
           <KeyIcon
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -180,16 +187,16 @@ export default function NumpadLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
           <KeyLegend />
         </RowBox>
       </ColumnBox>

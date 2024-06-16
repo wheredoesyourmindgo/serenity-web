@@ -62,7 +62,7 @@ export default function Encoder() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
@@ -82,7 +82,7 @@ export default function Encoder() {
             icon={faDial}
             sx={{
               transform: 'translateY(0px)',
-              fontSize: 26
+              fontSize: 27
             }}
             KeyContainerProps={{
               keyId: 'encoder-key',
@@ -109,7 +109,7 @@ export default function Encoder() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faCog}
+            className="fa-regular fa-cog"
             color="solarized.green"
             KeyContainerProps={{
               keyId: 'media-layer-key',
@@ -131,7 +131,7 @@ export default function Encoder() {
             }}
           />
           <KeyIcon
-            icon={faScissors}
+            className="fa-regular fa-scissors"
             color="solarized.green"
             KeyContainerProps={{
               keyId: 'action-layer-key',
@@ -153,7 +153,7 @@ export default function Encoder() {
             }}
           />
           <KeyIcon
-            icon={faCommand}
+            className="fa-regular fa-command"
             KeyContainerProps={{
               keyId: 'right-command-key',
               popOverContent: (
@@ -176,8 +176,8 @@ export default function Encoder() {
             }}
           />
           <KeyIcon
-            icon={faOption}
-            sx={{fontSize: 19}}
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'right-option-key',
               popOverContent: (
@@ -193,7 +193,7 @@ export default function Encoder() {
           />
           <KeyIcon
             requiresOsConf
-            icon={faChevronUp}
+            className="fa-regular fa-chevron-up"
             KeyContainerProps={{
               keyId: 'right-control-key',
               popOverContent: (
@@ -208,7 +208,7 @@ export default function Encoder() {
             }}
           />
           <KeyIcon
-            icon={faFunction}
+            className="fa-regular fa-function"
             color="solarized.green"
             KeyContainerProps={{
               keyId: 'function-layer-key',

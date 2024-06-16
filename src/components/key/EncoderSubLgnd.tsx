@@ -1,5 +1,4 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {faCircleDashed} from '@fortawesome/pro-light-svg-icons'
 import {Box} from '@mui/material'
 
 export default function EncoderSubLgnd(props: Partial<MuiFaIconProps>) {
@@ -15,7 +14,7 @@ export default function EncoderSubLgnd(props: Partial<MuiFaIconProps>) {
       }}
     >
       <MuiFaIcon
-        icon={faCircleDashed}
+        className="fa-regular fa-circle-dashed"
         sx={{color: specialColor, fontSize: 40, opacity: 0.5}}
         {...rest}
       />

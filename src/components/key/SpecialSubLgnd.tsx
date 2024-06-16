@@ -1,5 +1,4 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {faAsterisk} from '@fortawesome/pro-regular-svg-icons'
 import {Box} from '@mui/material'
 
 export default function SpecialSubLgnd(props: Partial<MuiFaIconProps>) {
@@ -10,11 +9,11 @@ export default function SpecialSubLgnd(props: Partial<MuiFaIconProps>) {
       sx={{
         position: 'absolute',
         left: 6,
-        top: -4
+        top: -6
       }}
     >
       <MuiFaIcon
-        icon={faAsterisk}
+        className="fa-regular fa-asterisk"
         sx={{color: specialColor, fontSize: 9}}
         {...rest}
       />

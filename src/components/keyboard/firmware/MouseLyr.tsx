@@ -1,27 +1,12 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faArrowPointer,
-  faArrowRightLongToLine,
-  faArrowTurnDownLeft,
-  faBracketSquare,
-  faBullseyePointer,
-  faArrowUpLeftFromCircle,
-  faLock,
-  faLockA,
-  faOption,
-  faSort,
-  faUp
-} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
-import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
-import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import MuiFaIcon from '@components/MuiFaIcon'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
 
 export default function MouseLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -31,7 +16,7 @@ export default function MouseLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -66,7 +51,7 @@ export default function MouseLyr() {
           </KeyLegend>
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -79,12 +64,14 @@ export default function MouseLyr() {
             }}
             // shiftSubIcn={faRightToBracket}
             // ShiftSubIcnProps={{flip: 'horizontal'}}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -95,12 +82,19 @@ export default function MouseLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="solarized.cyan"
+          />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            color="solarized.cyan"
+          />
+          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
           <KeyIcon
             homing
-            icon={faUp}
+            className="fa-regular fa-up"
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'left-shift-key',
@@ -112,7 +106,7 @@ export default function MouseLyr() {
             }}
           />
           <KeyIcon
-            icon={faLock}
+            className="fa-regular fa-lock"
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
@@ -123,7 +117,7 @@ export default function MouseLyr() {
             }}
           />
           <KeyIcon
-            icon={faLockA}
+            className="fa-regular fa-lock-a"
             KeyContainerProps={{
               keyId: 'lock-key-key',
               popOverContent: (
@@ -147,9 +141,8 @@ export default function MouseLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faArrowPointer}
-              sx={{paddingRight: 0.5}}
-              fontSize={12}
+              className="fa-regular fa-arrow-pointer"
+              sx={{paddingRight: 0.5, fontSize: 12}}
             />
             L
           </KeyLegend>
@@ -167,9 +160,8 @@ export default function MouseLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faArrowPointer}
-              sx={{paddingRight: 0.5}}
-              fontSize={12}
+              className="fa-regular fa-arrow-pointer"
+              sx={{paddingRight: 0.5, fontSize: 12}}
             />
             D
           </KeyLegend>
@@ -186,9 +178,8 @@ export default function MouseLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faArrowPointer}
-              sx={{paddingRight: 0.5}}
-              fontSize={12}
+              className="fa-regular fa-arrow-pointer"
+              sx={{paddingRight: 0.5, fontSize: 12}}
             />
             U
           </KeyLegend>
@@ -205,9 +196,8 @@ export default function MouseLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faArrowPointer}
-              sx={{paddingRight: 0.5}}
-              fontSize={12}
+              className="fa-regular fa-arrow-pointer"
+              sx={{paddingRight: 0.5, fontSize: 12}}
             />
             R
           </KeyLegend>
@@ -219,7 +209,7 @@ export default function MouseLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -237,7 +227,7 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faBullseyePointer}
+            className="fa-regular fa-bullseye-pointer"
             KeyContainerProps={{
               keyId: 'shake-mouse-key',
               popOverContent: (
@@ -260,10 +250,9 @@ export default function MouseLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faSort}
-              sx={{paddingRight: 0.5}}
-              fontSize={14}
-              rotation={90}
+              rotation={270}
+              className="fa-regular fa-circle-sort-up"
+              sx={{marginRight: 0.5, fontSize: 14}}
             />
             L
           </KeyLegend>
@@ -279,7 +268,11 @@ export default function MouseLyr() {
               )
             }}
           >
-            <MuiFaIcon icon={faSort} sx={{paddingRight: 0.5}} fontSize={14} />D
+            <MuiFaIcon
+              className="fa-regular fa-circle-sort-down"
+              sx={{marginRight: 0.5, fontSize: 14}}
+            />
+            D
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -293,7 +286,11 @@ export default function MouseLyr() {
               )
             }}
           >
-            <MuiFaIcon icon={faSort} sx={{paddingRight: 0.5}} fontSize={14} />U
+            <MuiFaIcon
+              className="fa-regular fa-circle-sort-up"
+              sx={{marginRight: 0.5, fontSize: 14}}
+            />
+            U
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -308,17 +305,16 @@ export default function MouseLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faSort}
-              sx={{paddingRight: 0.5}}
-              fontSize={14}
+              sx={{marginRight: 0.5, fontSize: 14}}
               rotation={90}
+              className="fa-regular fa-circle-sort-up"
             />
             R
           </KeyLegend>
           <KeyIcon
             tapForceHold
-            icon={faArrowTurnDownLeft}
-            modHoldSubIcn={faUp}
+            className="fa-regular fa-arrow-turn-down-left"
+            ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-shift-key',
@@ -340,7 +336,7 @@ export default function MouseLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           {/* <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 19, transform: 'translateY(1px)'}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -352,7 +348,7 @@ export default function MouseLyr() {
             }}
           /> */}
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -365,7 +361,7 @@ export default function MouseLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -379,11 +375,11 @@ export default function MouseLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          {/* <KeyIcon icon={faArrowRightLongToLine} /> */}
-          <KeyIcon icon={faCommand} />
+          {/* <KeyIcon className="fa-regular fa-arrow-right-long-to-line" /> */}
+          <KeyIcon className="fa-regular fa-command" />
           <KeyIcon
-            icon={faOption}
-            sx={{fontSize: 19}}
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
@@ -394,7 +390,7 @@ export default function MouseLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
         </RowBox>
       </ColumnBox>
     </Box>

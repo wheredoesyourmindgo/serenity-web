@@ -1,5 +1,4 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {faWrenchSimple} from '@fortawesome/pro-regular-svg-icons'
 import {Box} from '@mui/material'
 
 export default function ReqSetupSubLgnd(props: Partial<MuiFaIconProps>) {
@@ -14,7 +13,7 @@ export default function ReqSetupSubLgnd(props: Partial<MuiFaIconProps>) {
       }}
     >
       <MuiFaIcon
-        icon={faWrenchSimple}
+        className="fa-regular fa-wrench-simple"
         sx={{color: specialColor, fontSize: 10}}
         {...rest}
       />

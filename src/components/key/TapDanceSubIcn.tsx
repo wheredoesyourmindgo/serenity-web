@@ -1,5 +1,4 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {faEllipsis} from '@fortawesome/pro-regular-svg-icons'
 import {Box} from '@mui/material'
 
 type Props = MuiFaIconProps
@@ -10,11 +9,11 @@ export default function TapDanceSubIcn() {
       sx={{
         position: 'absolute',
         left: 4,
-        bottom: -6
+        bottom: -5
       }}
     >
       <MuiFaIcon
-        icon={faEllipsis}
+        className="fa-regular fa-ellipsis"
         sx={{color: 'solarized.blue', fontSize: 14}}
       />
     </Box>

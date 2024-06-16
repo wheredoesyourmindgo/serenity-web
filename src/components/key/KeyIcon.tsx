@@ -2,8 +2,6 @@ import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
 import {Box} from '@mui/material'
 import {ChildBox} from 'mui-sleazebox'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
-import HoldSubIcn, {HoldSubIcnProps} from './HoldSubIcn'
-import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
 import TapDanceSubIcn from './TapDanceSubIcn'
@@ -14,18 +12,15 @@ import EncoderSubLgnd from './EncoderSubLgnd'
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps
   shiftLgnd?: String | React.ReactNode
-  shiftSubIcn?: ShiftSubIcnProps['icon']
-  ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
   optEncoder?: boolean
   customShiftCode?: boolean
   special?: boolean
   requiresOsConf?: boolean
   tapDance?: boolean
   homing?: boolean
-  lyrHoldSubIcn?: HoldSubIcnProps['icon']
-  LyrHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
-  modHoldSubIcn?: HoldSubIcnProps['icon']
-  ModHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
+  LyrHoldSubIcn?: React.FC
+  ModHoldSubIcn?: React.FC
+  ShiftSubIcn?: React.FC
   children?: React.ReactNode
   tapForceHold?: boolean
 }
@@ -33,69 +28,41 @@ type Props = MuiFaIconProps & {
 export default function KeyIcon({
   KeyContainerProps,
   shiftLgnd,
-  shiftSubIcn,
-  ShiftSubIcnProps,
-  icon,
+  ShiftSubIcn,
   customShiftCode = false,
   special = false,
   requiresOsConf = false,
   tapDance = false,
   homing = false,
-  lyrHoldSubIcn,
-  LyrHoldSubIcnProps,
-  modHoldSubIcn,
-  ModHoldSubIcnProps,
+  LyrHoldSubIcn,
+  ModHoldSubIcn,
   children,
   tapForceHold,
   optEncoder,
-  ...rest
+  ...props
 }: Props) {
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
-  const lyrColor = 'solarized.green'
-  const modColor = 'solarized.yellow'
 
-  const {sx, color, ...r} = rest
-  // const {sx: VimRefIcnSx, ...VimRefIcnRest} = VimRefIcnProps || {}
-  const {sx: ShiftSubIcnSx, ...ShiftSubIcnRest} = ShiftSubIcnProps || {}
-  const {sx: modHoldSubIcnSx, ...ModHoldSubIcnRest} = ModHoldSubIcnProps || {}
-  const {sx: lyrHoldSubIcnSx, ...LyrHoldSubIcnRest} = LyrHoldSubIcnProps || {}
+  const {sx, color, ...rest} = props
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
-      <ChildBox sx={{overflow: 'visible'}}>
+      <ChildBox>
         {shiftLgnd ? (
           <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
         ) : null}
-        {shiftSubIcn ? (
-          <ShiftSubIcn
-            icon={shiftSubIcn}
-            sx={{color: shiftColor, ...ShiftSubIcnSx}}
-            {...ShiftSubIcnRest}
-          />
-        ) : null}
+        {ShiftSubIcn ? <ShiftSubIcn /> : null}
         {special ? <SpecialSubLgnd /> : null}
         {optEncoder ? <EncoderSubLgnd /> : null}
         {requiresOsConf ? <ReqSetupSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
-        {lyrHoldSubIcn ? (
-          <HoldSubIcn
-            icon={lyrHoldSubIcn}
-            sx={{color: lyrColor, ...lyrHoldSubIcnSx}}
-            {...LyrHoldSubIcnRest}
-          />
-        ) : null}
-        {modHoldSubIcn ? (
-          <HoldSubIcn
-            icon={modHoldSubIcn}
-            sx={{color: modColor, ...modHoldSubIcnSx}}
-            {...ModHoldSubIcnRest}
-          />
-        ) : null}
+        {LyrHoldSubIcn ? <LyrHoldSubIcn /> : null}
+        {ModHoldSubIcn ? <ModHoldSubIcn /> : null}
         <Box
           sx={{
-            ...(shiftSubIcn && {transform: 'translateY(4px)'}),
-            ...((lyrHoldSubIcn || modHoldSubIcn) && {
+            ...(ShiftSubIcn && {transform: 'translateY(2px)'}),
+            ...((LyrHoldSubIcn || ModHoldSubIcn) && {
               transform: 'translateY(-4px)'
             })
           }}
@@ -104,9 +71,12 @@ export default function KeyIcon({
             <Box overflow="visible">
               <Box>
                 <MuiFaIcon
-                  icon={icon}
-                  sx={{color: color || 'solarized.base00', fontSize: 20, ...sx}}
-                  {...r}
+                  sx={{
+                    color: color || 'solarized.base00',
+                    fontSize: 20,
+                    ...sx
+                  }}
+                  {...rest}
                 />
               </Box>
               <Box

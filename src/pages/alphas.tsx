@@ -14,8 +14,6 @@ import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import AlphaKeyboard from '@components/keyboard/Alphas'
 import PageLayout from '../components/PageLayout'
 import MuiFaIcon from '@components/MuiFaIcon'
-import {faAngleRight} from '@fortawesome/pro-solid-svg-icons'
-import {faStarShooting} from '@fortawesome/pro-regular-svg-icons'
 import genkey from '@components/stats/genkey'
 import a200 from '@components/stats/a200'
 import colemakmods from '@components/stats/colemakmods'
@@ -76,8 +74,8 @@ export default function AlphasPage() {
           >
             <RowBox flex alignItems="center">
               <MuiFaIcon
-                icon={faStarShooting}
-                sx={{color: 'solarized.base1', paddingRight: 1}}
+                className="fa-regular fa-star-shooting"
+                sx={{color: 'solarized.base1', marginRight: 1}}
               />
               <Type variant="h6" sx={{color: 'solarized.base00'}}>
                 Statistics
@@ -131,8 +129,8 @@ export default function AlphasPage() {
                 sx={{color: 'solarized.base01'}}
               >
                 <MuiFaIcon
-                  icon={faAngleRight}
-                  sx={{color: 'solarized.green', paddingRight: 2}}
+                  className="fa-regular fa-angle-right"
+                  sx={{color: 'solarized.green', marginRight: 1}}
                 />
                 <em>./genkey -stagger=false analyze serenity</em>
               </Type>
@@ -172,7 +170,7 @@ export default function AlphasPage() {
                 sx={{color: 'solarized.base01'}}
               >
                 <MuiFaIcon
-                  icon={faAngleRight}
+                  className="fa-regular fa-angle-right"
                   sx={{color: 'solarized.green', paddingRight: 2}}
                 />
                 <em>./a200 vw serenity</em>

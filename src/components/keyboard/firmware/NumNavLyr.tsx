@@ -1,39 +1,11 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faAnglesUp,
-  faArrowDown,
-  faArrowLeft,
-  faArrowRight,
-  faArrowRightLongToLine,
-  faArrowTurnDownLeft,
-  faArrowUp,
-  faArrowUpLeftFromCircle,
-  faBorderBottomRight,
-  faBorderTopLeft,
-  faBracketSquare,
-  faCopy,
-  faLock,
-  faLockA,
-  faMagicWandSparkles,
-  faOption,
-  faPageCaretDown,
-  faPageCaretUp,
-  faPaste,
-  faRedo,
-  faScissors,
-  faUndo,
-  faUp
-} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
-import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
-import {faApple} from '@fortawesome/free-brands-svg-icons'
-import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 
 export default function NumNavLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -43,7 +15,7 @@ export default function NumNavLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -88,8 +60,9 @@ export default function NumNavLyr() {
           </KeyLegend>
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
+              className: 'container nrshrneatsrnts',
               keyId: 'backspace-key',
               popOverContent: (
                 <Box p={1}>
@@ -101,12 +74,14 @@ export default function NumNavLyr() {
             }}
             // shiftSubIcn={faRightToBracket}
             // ShiftSubIcnProps={{flip: 'horizontal'}}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -117,12 +92,19 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
-          <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
           <KeyIcon
-            icon={faLock}
+            className="fa-regular fa-chevron-up"
+            color="solarized.cyan"
+          />
+          <KeyIcon
+            className="fa-regular fa-option"
+            color="solarized.cyan"
+            sx={{fontSize: 18}}
+          />
+          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
+          <KeyIcon
+            className="fa-regular fa-lock"
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
@@ -136,7 +118,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faMagicWandSparkles}
+            className="fa-regular fa-magic-wand-sparkles"
             tapDance
             KeyContainerProps={{
               keyId: 'text-select-key',
@@ -183,10 +165,10 @@ export default function NumNavLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faArrowLeft} homing />
-          <KeyIcon icon={faArrowDown} />
-          <KeyIcon icon={faArrowUp} />
-          <KeyIcon icon={faArrowRight} />
+          <KeyIcon className="fa-regular fa-arrow-left" homing />
+          <KeyIcon className="fa-regular fa-arrow-down" />
+          <KeyIcon className="fa-regular fa-arrow-up" />
+          <KeyIcon className="fa-regular fa-arrow-right" />
 
           <KeyLegend {...sharedProps} shiftLgnd='"'>
             '
@@ -195,7 +177,7 @@ export default function NumNavLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -208,7 +190,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faUndo}
+            className="fa-regular fa-undo"
             KeyContainerProps={{
               keyId: 'undo-key',
               popOverContent: (
@@ -219,7 +201,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faScissors}
+            className="fa-regular fa-scissors"
             KeyContainerProps={{
               keyId: 'cut-key',
               popOverContent: (
@@ -230,7 +212,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faCopy}
+            className="fa-regular fa-copy"
             KeyContainerProps={{
               keyId: 'copy-key',
               popOverContent: (
@@ -241,7 +223,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faPaste}
+            className="fa-regular fa-paste"
             KeyContainerProps={{
               keyId: 'paste-key',
               popOverContent: (
@@ -252,7 +234,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faRedo}
+            className="fa-regular fa-redo"
             KeyContainerProps={{
               keyId: 'redo-key',
               popOverContent: (
@@ -279,7 +261,7 @@ export default function NumNavLyr() {
             }}
           /> */}
           <KeyIcon
-            icon={faLockA}
+            className="fa-regular fa-lock-a"
             KeyContainerProps={{
               keyId: 'caps-lock-key',
               popOverContent: (
@@ -290,7 +272,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faBorderTopLeft}
+            className="fa-regular fa-border-top-left"
             KeyContainerProps={{
               keyId: 'home-key',
               popOverContent: (
@@ -302,7 +284,7 @@ export default function NumNavLyr() {
           />
 
           <KeyIcon
-            icon={faPageCaretDown}
+            className="fa-regular fa-page-caret-down"
             KeyContainerProps={{
               keyId: 'page-down-key',
               popOverContent: (
@@ -313,7 +295,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faPageCaretUp}
+            className="fa-regular fa-page-caret-up"
             KeyContainerProps={{
               keyId: 'page-up-key',
               popOverContent: (
@@ -324,7 +306,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faBorderBottomRight}
+            className="fa-regular fa-border-bottom-right"
             KeyContainerProps={{
               keyId: 'end-key',
               popOverContent: (
@@ -335,7 +317,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowTurnDownLeft}
+            className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
@@ -364,13 +346,13 @@ export default function NumNavLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -383,7 +365,7 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -396,11 +378,15 @@ export default function NumNavLyr() {
             }}
           />
           <KeyIcon
-            icon={faAnglesUp}
+            className="fa-regular fa-angles-up"
             // sx={{transform: 'translateY(1px)'}}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrHoldSubIcn={faApple}
-            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn
+                className="fa-brands fa-apple"
+                sx={{fontSize: 14}}
+              />
+            )}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -413,10 +399,10 @@ export default function NumNavLyr() {
             }}
           />
           <KeyLegend {...sharedProps} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyIcon
-            icon={faOption}
-            sx={{fontSize: 19}}
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
@@ -427,7 +413,7 @@ export default function NumNavLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
         </RowBox>
       </ColumnBox>
     </Box>

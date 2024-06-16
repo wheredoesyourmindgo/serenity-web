@@ -1,24 +1,11 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faArrowRightLongToLine,
-  faArrowUpLeftFromCircle,
-  faArrowTurnDownLeft,
-  faBracketSquare,
-  faLock,
-  faOption,
-  faUp,
-  faAnglesDown
-} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
-import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
-import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
-import {faApple} from '@fortawesome/free-brands-svg-icons'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 
 export default function SymLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -28,7 +15,7 @@ export default function SymLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -53,7 +40,7 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps}>)</KeyLegend>
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -64,12 +51,14 @@ export default function SymLyr() {
                 </Box>
               )
             }}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -90,7 +79,7 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps}>=</KeyLegend>
           <KeyLegend {...sharedProps}>`</KeyLegend>
           <KeyIcon
-            icon={faLock}
+            className="fa-regular fa-lock"
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
@@ -100,10 +89,17 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faOption} color="solarized.cyan" sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
+          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
+          <KeyIcon
+            className="fa-regular fa-option"
+            color="solarized.cyan"
+            sx={{fontSize: 18}}
+          />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="solarized.cyan"
+          />
           <KeyLegend {...sharedProps} shiftLgnd='"'>
             '
           </KeyLegend>
@@ -111,7 +107,7 @@ export default function SymLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -134,7 +130,7 @@ export default function SymLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faArrowTurnDownLeft}
+            className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
@@ -163,16 +159,20 @@ export default function SymLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            // icon={faArrowUpLeftFromCircle}
-            icon={faAnglesDown}
+            // className="fa-regular fa-arrow-up-left-from-circle"
+            className="fa-regular fa-angles-down"
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrHoldSubIcn={faApple}
-            LyrHoldSubIcnProps={{sx: {fontSize: 14}}}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn
+                className="fa-brands fa-apple"
+                sx={{fontSize: 14}}
+              />
+            )}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -185,7 +185,7 @@ export default function SymLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -198,7 +198,7 @@ export default function SymLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -212,10 +212,10 @@ export default function SymLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyIcon
-            icon={faOption}
-            sx={{fontSize: 19}}
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
@@ -226,7 +226,7 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
         </RowBox>
       </ColumnBox>
     </Box>

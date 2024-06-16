@@ -1,21 +1,10 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faArrowRightLongToLine,
-  faArrowTurnDownLeft,
-  faArrowUpLeftFromCircle,
-  faBracketSquare,
-  faOption,
-  faUp
-} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
-import {KeyLegend} from '@components/key'
-import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
-import {faCommand} from '@fortawesome/pro-regular-svg-icons'
-import {KeyLegendProps} from '@components/key/KeyLegend'
+import KeyLegend, {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, SxProps} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
 
 export default function FuncLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -28,7 +17,7 @@ export default function FuncLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -73,7 +62,7 @@ export default function FuncLyr() {
           </KeyLegend>
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -84,12 +73,14 @@ export default function FuncLyr() {
                 </Box>
               )
             }}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -137,7 +128,7 @@ export default function FuncLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -169,8 +160,8 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} />
           <KeyIcon
             tapForceHold
-            icon={faArrowTurnDownLeft}
-            modHoldSubIcn={faUp}
+            className="fa-regular fa-arrow-turn-down-left"
+            ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-shift-key',
@@ -202,13 +193,13 @@ export default function FuncLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -221,7 +212,7 @@ export default function FuncLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -235,9 +226,9 @@ export default function FuncLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
         </RowBox>
       </ColumnBox>
     </Box>

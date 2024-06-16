@@ -1,33 +1,11 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faArrowRightLongToLine,
-  faArrowsToDot,
-  faArrowTurnDownLeft,
-  faArrowUpLeftFromCircle,
-  faBracketSquare,
-  faFunction,
-  faLayerGroup,
-  faLock,
-  faOption,
-  faRectangleVerticalHistory,
-  faSquareLeft,
-  faSquareRight,
-  faSquareUpLeft,
-  faSquareUpRight,
-  faTableLayout,
-  faUp,
-  faUpRightAndDownLeftFromCenter,
-  faWindowRestore
-} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
-import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
-import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 
 export default function ActionLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -37,7 +15,7 @@ export default function ActionLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -89,7 +67,7 @@ export default function ActionLyr() {
           /> */}
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faSquareUpLeft}
+            className="fa-regular fa-square-up-left"
             KeyContainerProps={{
               keyId: 'nav-left-tab',
               popOverContent: (
@@ -100,8 +78,8 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faRectangleVerticalHistory}
-            flip="horizontal"
+            className="fa-regular fa-rectangle-vertical-history"
+            rotation={180}
             KeyContainerProps={{
               keyId: 'prev-app-window',
               popOverContent: (
@@ -114,7 +92,7 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faRectangleVerticalHistory}
+            className="fa-regular fa-rectangle-vertical-history"
             // shiftSubIcn={faRectangleVerticalHistory}
             // ShiftSubIcnProps={{flip: 'horizontal', fontSize: 12}}
             KeyContainerProps={{
@@ -129,7 +107,7 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faSquareUpRight}
+            className="fa-regular fa-square-up-right"
             KeyContainerProps={{
               keyId: 'nav-right-tab',
               popOverContent: (
@@ -142,7 +120,7 @@ export default function ActionLyr() {
 
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -153,12 +131,14 @@ export default function ActionLyr() {
                 </Box>
               )
             }}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -169,12 +149,19 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
           <KeyIcon
-            icon={faLock}
+            className="fa-regular fa-chevron-up"
+            color="solarized.cyan"
+          />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            color="solarized.cyan"
+          />
+          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
+          <KeyIcon
+            className="fa-regular fa-lock"
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
@@ -187,7 +174,7 @@ export default function ActionLyr() {
           {/* <KeyLegend {...sharedProps} /> */}
           {/* <KeyIcon
             special
-            icon={faTableLayout}
+            className="fa-regular fa-table-layout"
             KeyContainerProps={{
               keyId: 'window-management3-key',
               popOverContent: (
@@ -199,7 +186,7 @@ export default function ActionLyr() {
           /> */}
           <KeyIcon
             tapDance
-            icon={faUpRightAndDownLeftFromCenter}
+            className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
               keyId: 'window-fullscreen-key',
               popOverContent: (
@@ -214,7 +201,7 @@ export default function ActionLyr() {
           <KeyIcon
             homing
             tapDance
-            icon={faArrowsToDot}
+            className="fa-regular fa-arrows-to-dot"
             KeyContainerProps={{
               keyId: 'window-center-key',
               popOverContent: (
@@ -229,7 +216,7 @@ export default function ActionLyr() {
           <KeyIcon
             // special
             tapDance
-            icon={faTableLayout}
+            className="fa-regular fa-table-layout"
             KeyContainerProps={{
               keyId: 'window-management1-key',
               popOverContent: (
@@ -244,7 +231,7 @@ export default function ActionLyr() {
           <KeyIcon
             // special
             tapDance
-            icon={faTableLayout}
+            className="fa-regular fa-table-layout"
             KeyContainerProps={{
               keyId: 'window-management2-key',
               popOverContent: (
@@ -259,7 +246,7 @@ export default function ActionLyr() {
           {/* <KeyIcon
             homing
             special
-            icon={faTableLayout}
+            className="fa-regular fa-table-layout"
             KeyContainerProps={{
               keyId: 'window-management4-key',
               popOverContent: (
@@ -272,7 +259,7 @@ export default function ActionLyr() {
           <KeyIcon
             homing
             tapDance
-            icon={faWindowRestore}
+            className="fa-regular fa-window-restore"
             KeyContainerProps={{
               keyId: 'window-restore-key',
               popOverContent: (
@@ -291,7 +278,7 @@ export default function ActionLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -322,7 +309,7 @@ export default function ActionLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faSquareLeft}
+            className="fa-regular fa-square-left"
             KeyContainerProps={{
               keyId: 'throw-space-left-key',
               popOverContent: (
@@ -333,7 +320,7 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faSquareRight}
+            className="fa-regular fa-square-right"
             KeyContainerProps={{
               keyId: 'throw-space-right-key',
               popOverContent: (
@@ -345,7 +332,7 @@ export default function ActionLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faArrowTurnDownLeft}
+            className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
@@ -374,10 +361,10 @@ export default function ActionLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
           <KeyIcon
-            icon={faOption}
-            sx={{fontSize: 19}}
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
@@ -388,11 +375,11 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -405,7 +392,7 @@ export default function ActionLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -419,8 +406,13 @@ export default function ActionLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            lyrHoldSubIcn={faFunction}
-            icon={faLayerGroup}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn
+                className="fa-regular fa-function"
+                sx={{transform: 'translateX(-3px)'}}
+              />
+            )}
+            className="fa-regular fa-layer-group"
             sx={{fontSize: 16, transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'function-layer-key',
@@ -431,9 +423,9 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
         </RowBox>
       </ColumnBox>
     </Box>

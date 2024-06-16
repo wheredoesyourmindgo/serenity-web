@@ -3,20 +3,20 @@ import {Box} from '@mui/material'
 
 type Props = MuiFaIconProps
 
-export default function ShiftSubIcn({sx, ...rest}: Props) {
+export default function ModSubHoldIcn({sx, ...rest}: Props) {
   return (
     <Box
       component="span"
       sx={{
-        color: 'solarized.violet',
+        color: 'solarized.yellow',
         position: 'absolute',
-        right: 5,
-        top: -2
+        right: 3,
+        bottom: 1
       }}
     >
-      <MuiFaIcon sx={{fontSize: 14, ...sx}} {...rest} />
+      <MuiFaIcon sx={{fontSize: 12, ...sx}} {...rest} />
     </Box>
   )
 }
 
-export type {Props as ShiftSubIcnProps}
+export type {Props as ModSubHoldIcnProps}

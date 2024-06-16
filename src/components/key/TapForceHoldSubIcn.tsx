@@ -1,5 +1,4 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {faAnglesDown} from '@fortawesome/pro-regular-svg-icons'
 import {Box} from '@mui/material'
 
 type Props = MuiFaIconProps
@@ -14,11 +13,10 @@ export default function TapForceHoldSubIcn() {
       }}
     >
       <MuiFaIcon
-        icon={faAnglesDown}
+        className="fa-regular fa-angles-down"
         sx={{
           color: 'solarized.orange',
           fontSize: 10,
-          // transformOrigin: 'center',
           transform: 'translateX(-50%)'
         }}
       />
