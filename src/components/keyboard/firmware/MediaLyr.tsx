@@ -195,8 +195,8 @@ export default function MediaLyr() {
             className="fa-regular fa-chevron-up"
             color="solarized.cyan"
           />
-          <KeyLegend shiftLgnd='"' {...sharedProps}>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>

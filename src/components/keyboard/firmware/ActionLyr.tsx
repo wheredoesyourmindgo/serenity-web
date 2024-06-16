@@ -271,8 +271,8 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd='"'>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>

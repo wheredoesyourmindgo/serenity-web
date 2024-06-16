@@ -169,9 +169,8 @@ export default function NumNavLyr() {
           <KeyIcon className="fa-regular fa-arrow-down" />
           <KeyIcon className="fa-regular fa-arrow-up" />
           <KeyIcon className="fa-regular fa-arrow-right" />
-
-          <KeyLegend {...sharedProps} shiftLgnd='"'>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
