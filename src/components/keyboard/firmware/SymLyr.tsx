@@ -121,14 +121,14 @@ export default function SymLyr() {
           />
           <KeyLegend {...sharedProps}>{'{'}</KeyLegend>
           <KeyLegend {...sharedProps}>{'}'}</KeyLegend>
-          <KeyLegend {...sharedProps}>_</KeyLegend>
           <KeyLegend {...sharedProps}>+</KeyLegend>
-          <KeyLegend {...sharedProps}>~</KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>?</KeyLegend>
           <KeyLegend {...sharedProps}>|</KeyLegend>
-          <KeyLegend {...sharedProps}>\</KeyLegend>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>~</KeyLegend>
+          <KeyLegend {...sharedProps}>`</KeyLegend>
+          <KeyLegend {...sharedProps}>{'<'}</KeyLegend>
+          <KeyLegend {...sharedProps}>{'>'}</KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
