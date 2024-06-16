@@ -71,13 +71,11 @@ export default function SymLyr() {
           />
           <KeyLegend {...sharedProps}>[</KeyLegend>
           <KeyLegend {...sharedProps}>]</KeyLegend>
-          {/* <KeyLegend {...sharedProps}>&lt;</KeyLegend>
-          <KeyLegend {...sharedProps}>&gt;</KeyLegend> */}
+          <KeyLegend {...sharedProps}>{'='}</KeyLegend>
           <KeyLegend {...sharedProps} homing>
-            -
+            /
           </KeyLegend>
-          <KeyLegend {...sharedProps}>=</KeyLegend>
-          <KeyLegend {...sharedProps}>`</KeyLegend>
+          <KeyLegend {...sharedProps}>\</KeyLegend>
           <KeyIcon
             className="fa-regular fa-lock"
             KeyContainerProps={{
