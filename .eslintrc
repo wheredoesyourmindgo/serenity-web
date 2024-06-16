@@ -1,6 +1,8 @@
 {
+  "plugins": ["compat"],
   "extends": ["next", "prettier"],
   "rules": {
+    "compat/compat": "warn",
     "linebreak-style": ["error", "unix"],
     "no-console": "off",
     "react/no-unescaped-entities": 0,
