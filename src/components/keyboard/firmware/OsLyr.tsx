@@ -276,7 +276,9 @@ export default function OsLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
+          </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon

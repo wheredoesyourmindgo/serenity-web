@@ -100,8 +100,8 @@ export default function SymLyr() {
             className="fa-regular fa-chevron-up"
             color="solarized.cyan"
           />
-          <KeyLegend {...sharedProps} shiftLgnd='"'>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>

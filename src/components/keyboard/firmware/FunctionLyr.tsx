@@ -121,8 +121,8 @@ export default function FuncLyr() {
           <KeyLegend {...sharedProps} sx={fxSx}>
             F20
           </KeyLegend>
-          <KeyLegend shiftLgnd='"' {...sharedProps}>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>

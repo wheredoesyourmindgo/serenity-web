@@ -202,8 +202,8 @@ export default function MouseLyr() {
             R
           </KeyLegend>
 
-          <KeyLegend shiftLgnd={'"'} {...sharedProps}>
-            '
+          <KeyLegend {...sharedProps} shiftLgnd=":">
+            ;
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
