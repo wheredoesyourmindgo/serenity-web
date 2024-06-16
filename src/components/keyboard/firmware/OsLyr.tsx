@@ -1,51 +1,12 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faArrowLeftLong,
-  faArrowRightLong,
-  faWindowMinimize,
-  faXmark
-} from '@fortawesome/pro-solid-svg-icons'
-import {
-  faArrowRightLongToLine,
-  faArrowTurnDownLeft,
-  faArrowUpLeftFromCircle,
-  faBracketSquare,
-  faCameraViewfinder,
-  faChevronUp,
-  faClipboard,
-  faCommand,
-  faDesktop,
-  faDesktopArrowDown,
-  faDiagramPrevious,
-  faGrid,
-  faImage,
-  faMagnifyingGlass,
-  faMicrophone,
-  faOption,
-  faRocketLaunch,
-  faSidebarFlip,
-  faSquareLeft,
-  faSquareRight,
-  faTerminal,
-  faUp
-} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
 import MuiFaIcon from '@components/MuiFaIcon'
-import {faUpRightAndDownLeftFromCenter} from '@fortawesome/pro-regular-svg-icons'
-import {
-  faFolderMagnifyingGlass,
-  faDisplay,
-  faObjectsColumn,
-  faSquareDashed,
-  faGalleryThumbnails,
-  faChartTreeMap
-} from '@fortawesome/pro-light-svg-icons'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
 
 export default function OsLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -55,7 +16,7 @@ export default function OsLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -71,7 +32,7 @@ export default function OsLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faTerminal}
+            className="fa-regular fa-terminal"
             KeyContainerProps={{
               keyId: 'terminal-visor-key',
               popOverContent: (
@@ -82,7 +43,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faRocketLaunch}
+            className="fa-regular fa-rocket-launch"
             KeyContainerProps={{
               keyId: 'launcher-key',
               popOverContent: (
@@ -95,8 +56,8 @@ export default function OsLyr() {
           <KeyLegend {...sharedProps} />
 
           <KeyIcon
-            icon={faFolderMagnifyingGlass}
-            size="lg"
+            className="fa-light fa-folder-magnifying-glass"
+            sx={{fontSize: 25}}
             KeyContainerProps={{
               keyId: 'spotlight-finder-key',
               popOverContent: (
@@ -107,7 +68,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faMagnifyingGlass}
+            className="fa-regular fa-magnifying-glass"
             KeyContainerProps={{
               keyId: 'spotlight-key',
               popOverContent: (
@@ -118,7 +79,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faGrid}
+            className="fa-regular fa-grid"
             KeyContainerProps={{
               keyId: 'launchpad-key',
               popOverContent: (
@@ -129,7 +90,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faMicrophone}
+            className="fa-regular fa-microphone"
             KeyContainerProps={{
               keyId: 'siri-key',
               popOverContent: (
@@ -140,7 +101,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faSidebarFlip}
+            className="fa-regular fa-sidebar-flip"
             requiresOsConf
             KeyContainerProps={{
               keyId: 'sidebar-key',
@@ -153,7 +114,7 @@ export default function OsLyr() {
           />
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -164,12 +125,14 @@ export default function OsLyr() {
                 </Box>
               )
             }}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -181,7 +144,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faDiagramPrevious}
+            className="fa-regular fa-diagram-previous"
             KeyContainerProps={{
               keyId: 'previous-window-key',
               popOverContent: (
@@ -192,8 +155,8 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faGalleryThumbnails}
-            size="lg"
+            className="fa-light fa-gallery-thumbnails"
+            sx={{fontSize: 25}}
             KeyContainerProps={{
               keyId: 'app-switch-left-key',
               popOverContent: (
@@ -204,17 +167,17 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faArrowLeftLong}
-              fontSize={13}
+              className="fa-solid fa-arrow-left-long"
               sx={{
-                transform: 'translate3D(7px, -3px, 0)',
-                color: 'solarized.base00'
+                transform: 'translate3D(7px, -4px, 0)',
+                color: 'solarized.base00',
+                fontSize: 14
               }}
             />
           </KeyIcon>
           <KeyIcon
-            icon={faGalleryThumbnails}
-            size="lg"
+            className="fa-light fa-gallery-thumbnails"
+            sx={{fontSize: 25}}
             KeyContainerProps={{
               keyId: 'app-switch-right-key',
               popOverContent: (
@@ -225,19 +188,18 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faArrowRightLong}
+              className="fa-solid fa-arrow-right-long"
               color="solarized.base00"
-              fontSize={13}
               sx={{
-                transform: 'translate3D(7px, -3px, 0)',
-                color: 'solarized.base00'
+                transform: 'translate3D(7px, -4px, 0)',
+                color: 'solarized.base00',
+                fontSize: 14
               }}
             />
           </KeyIcon>
           <KeyIcon
             homing
-            icon={faObjectsColumn}
-            size="lg"
+            className="fa-regular fa-objects-column"
             KeyContainerProps={{
               keyId: 'app-expose-control-key',
               popOverContent: (
@@ -248,8 +210,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faDesktopArrowDown}
-            flip="horizontal"
+            className="fa-regular fa-desktop-arrow-down"
             KeyContainerProps={{
               keyId: 'select-dock-key',
               popOverContent: (
@@ -260,8 +221,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faUpRightAndDownLeftFromCenter}
-            flip="horizontal"
+            className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
               keyId: 'os-fullscreen-key',
               popOverContent: (
@@ -273,8 +233,7 @@ export default function OsLyr() {
           />
           <KeyIcon
             homing
-            icon={faChartTreeMap}
-            size="lg"
+            className="fa-regular fa-chart-tree-map"
             KeyContainerProps={{
               keyId: 'mission-control-key',
               popOverContent: (
@@ -285,7 +244,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faSquareLeft}
+            className="fa-regular fa-square-left"
             KeyContainerProps={{
               keyId: 'jump-space-left-key',
               popOverContent: (
@@ -296,7 +255,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faSquareRight}
+            className="fa-regular fa-square-right"
             KeyContainerProps={{
               keyId: 'jump-space-right-key',
               popOverContent: (
@@ -307,8 +266,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faDesktop}
-            flip="horizontal"
+            className="fa-regular fa-desktop"
             KeyContainerProps={{
               keyId: 'show-desktop-key',
               popOverContent: (
@@ -323,7 +281,7 @@ export default function OsLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -337,8 +295,8 @@ export default function OsLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faGalleryThumbnails}
-            size="lg"
+            className="fa-light fa-gallery-thumbnails"
+            sx={{fontSize: 25}}
             KeyContainerProps={{
               keyId: 'app-switch-quit-key',
               popOverContent: (
@@ -349,17 +307,17 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faXmark}
-              fontSize={13}
+              className="fa-solid fa-xmark"
               sx={{
-                transform: 'translate3D(10px, -3px, 0)',
-                color: 'solarized.base00'
+                transform: 'translate3D(7.5px, -4px, 0)',
+                color: 'solarized.base00',
+                fontSize: 14
               }}
             />
           </KeyIcon>
           <KeyIcon
-            icon={faGalleryThumbnails}
-            size="lg"
+            className="fa-light fa-gallery-thumbnails"
+            sx={{fontSize: 25}}
             KeyContainerProps={{
               keyId: 'app-switch-hide-key',
               popOverContent: (
@@ -373,18 +331,18 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faWindowMinimize}
-              fontSize={13}
+              className="fa-solid fa-window-minimize"
               sx={{
-                transform: 'translate3D(7px, -4px, 0)',
-                color: 'solarized.base00'
+                transform: 'translate3D(7.5px, -6px, 0)',
+                color: 'solarized.base00',
+                fontSize: 14
               }}
             />
           </KeyIcon>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faCameraViewfinder}
+            className="fa-regular fa-camera-viewfinder"
             KeyContainerProps={{
               keyId: 'screenshot-key',
               popOverContent: (
@@ -395,8 +353,8 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faSquareDashed}
-            size="xl"
+            className="fa-light fa-square-dashed"
+            sx={{fontSize: 27}}
             KeyContainerProps={{
               keyId: 'screenshot-sel-file-key',
               popOverContent: (
@@ -410,17 +368,17 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faImage}
-              fontSize={13}
+              className="fa-regular fa-image"
               sx={{
-                transform: 'translate3D(7px, 3px, 0)',
-                color: 'solarized.base01'
+                transform: 'translate3D(7px, 1px, 0)',
+                color: 'solarized.base01',
+                fontSize: 13
               }}
             />
           </KeyIcon>
           <KeyIcon
-            icon={faDisplay}
-            size="lg"
+            className="fa-light fa-display"
+            sx={{fontSize: 25}}
             KeyContainerProps={{
               keyId: 'screenshot-dsktp-file-key',
               popOverContent: (
@@ -431,17 +389,17 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faImage}
-              fontSize={13}
+              className="fa-regular fa-image"
               sx={{
-                transform: 'translate3D(7px, -2px, 0)',
-                color: 'solarized.base01'
+                transform: 'translate3D(7px, -2.5px, 0)',
+                color: 'solarized.base01',
+                fontSize: 13
               }}
             />
           </KeyIcon>
           <KeyIcon
-            icon={faSquareDashed}
-            size="xl"
+            className="fa-light fa-square-dashed"
+            sx={{fontSize: 27}}
             KeyContainerProps={{
               keyId: 'screenshot-sel-clip-key',
               popOverContent: (
@@ -455,17 +413,17 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faClipboard}
-              fontSize={13}
+              className="fa-regular fa-clipboard"
               sx={{
-                transform: 'translate3D(8.5px, 3px, 0)',
-                color: 'solarized.base01'
+                transform: 'translate3D(6.5px, 1px, 0)',
+                color: 'solarized.base01',
+                fontSize: 14
               }}
             />
           </KeyIcon>
           <KeyIcon
-            icon={faDisplay}
-            size="lg"
+            className="fa-light fa-display"
+            sx={{fontSize: 27}}
             KeyContainerProps={{
               keyId: 'screenshot-dsktp-clip-key',
               popOverContent: (
@@ -476,18 +434,20 @@ export default function OsLyr() {
             }}
           >
             <MuiFaIcon
-              icon={faClipboard}
-              fontSize={13}
+              className="fa-regular fa-clipboard"
               sx={{
-                transform: 'translate3D(9px, -2px, 0)',
-                color: 'solarized.base01'
+                transform: 'translate3D(8px, -2px, 0)',
+                color: 'solarized.base01',
+                fontSize: 14
               }}
             />
           </KeyIcon>
           <KeyIcon
             tapForceHold
-            icon={faArrowTurnDownLeft}
-            modHoldSubIcn={faUp}
+            className="fa-regular fa-arrow-turn-down-left"
+            ModHoldSubIcn={() => (
+              <ModSubHoldIcn className="fa-regular fa-up" sx={{fontSize: 11}} />
+            )}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-shift-key',
@@ -519,13 +479,13 @@ export default function OsLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -538,7 +498,7 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -552,9 +512,9 @@ export default function OsLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
         </RowBox>
       </ColumnBox>
     </Box>

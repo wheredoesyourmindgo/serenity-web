@@ -1,34 +1,11 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faArrowRightLongToLine,
-  faArrowTurnDownLeft,
-  faArrowUpLeftFromCircle,
-  faBackward,
-  faBracketSquare,
-  faBrightness,
-  faBrightnessLow,
-  faCircleHalfStroke,
-  faDeleteLeft,
-  faDeleteRight,
-  faForward,
-  faFunction,
-  faLayerGroup,
-  faLock,
-  faOption,
-  faPlayPause,
-  faTypewriter,
-  faUp,
-  faVolumeDown,
-  faVolumeSlash,
-  faVolumeUp
-} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
-import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
-import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 
 export default function MediaLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -38,7 +15,7 @@ export default function MediaLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -53,7 +30,7 @@ export default function MediaLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faBrightnessLow}
+            className="fa-regular fa-brightness-low"
             KeyContainerProps={{
               keyId: 'screen-brightness-down-key',
               popOverContent: (
@@ -67,7 +44,7 @@ export default function MediaLyr() {
             }}
           />
           <KeyIcon
-            icon={faBrightness}
+            className="fa-regular fa-brightness"
             KeyContainerProps={{
               keyId: 'screen-brightness-up-key',
               popOverContent: (
@@ -81,7 +58,7 @@ export default function MediaLyr() {
             }}
           />
           <KeyIcon
-            icon={faCircleHalfStroke}
+            className="fa-regular fa-circle-half-stroke"
             requiresOsConf
             KeyContainerProps={{
               keyId: 'toggle-dark-mode-key',
@@ -131,7 +108,7 @@ export default function MediaLyr() {
 
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -142,12 +119,14 @@ export default function MediaLyr() {
                 </Box>
               )
             }}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowUpLeftFromCircle}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -160,7 +139,7 @@ export default function MediaLyr() {
           />
           <KeyLegend />
           <KeyIcon
-            icon={faVolumeDown}
+            className="fa-regular fa-volume-down"
             KeyContainerProps={{
               keyId: 'volume-down-key',
               popOverContent: (
@@ -171,7 +150,7 @@ export default function MediaLyr() {
             }}
           />
           <KeyIcon
-            icon={faVolumeUp}
+            className="fa-regular fa-volume-up"
             KeyContainerProps={{
               keyId: 'volume-up-key',
               popOverContent: (
@@ -183,7 +162,7 @@ export default function MediaLyr() {
           />
           <KeyIcon
             homing
-            icon={faVolumeSlash}
+            className="fa-regular fa-volume-slash"
             KeyContainerProps={{
               keyId: 'mute-key',
               popOverContent: (
@@ -195,7 +174,7 @@ export default function MediaLyr() {
           />
           <KeyLegend />
           <KeyIcon
-            icon={faLock}
+            className="fa-regular fa-lock"
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
@@ -205,10 +184,17 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyIcon icon={faUp} color="solarized.cyan" homing />
-          <KeyIcon icon={faCommand} color="solarized.cyan" />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} color="solarized.cyan" />
-          <KeyIcon icon={faChevronUp} color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
+          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            color="solarized.cyan"
+          />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="solarized.cyan"
+          />
           <KeyLegend shiftLgnd='"' {...sharedProps}>
             '
           </KeyLegend>
@@ -216,7 +202,7 @@ export default function MediaLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -231,7 +217,7 @@ export default function MediaLyr() {
           <KeyLegend {...sharedProps} />
 
           <KeyIcon
-            icon={faBackward}
+            className="fa-regular fa-backward"
             KeyContainerProps={{
               keyId: 'previous-track-key',
               popOverContent: (
@@ -244,7 +230,7 @@ export default function MediaLyr() {
             }}
           />
           <KeyIcon
-            icon={faForward}
+            className="fa-regular fa-forward"
             KeyContainerProps={{
               keyId: 'next-track-key',
               popOverContent: (
@@ -257,7 +243,7 @@ export default function MediaLyr() {
             }}
           />
           <KeyIcon
-            icon={faPlayPause}
+            className="fa-regular fa-play-pause"
             KeyContainerProps={{
               keyId: 'play-pause-key',
               popOverContent: (
@@ -269,8 +255,13 @@ export default function MediaLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faTypewriter}
-            lyrHoldSubIcn={faLayerGroup}
+            className="fa-regular fa-typewriter"
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn
+                className="fa-regular fa-layer-group"
+                sx={{transform: 'translateX(-2px)'}}
+              />
+            )}
             sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'qwerty-key',
@@ -290,7 +281,7 @@ export default function MediaLyr() {
             Reset
           </KeyLegend>
           <KeyIcon
-            icon={faArrowTurnDownLeft}
+            className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
@@ -319,10 +310,10 @@ export default function MediaLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
           <KeyIcon
-            icon={faOption}
-            sx={{fontSize: 19}}
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
@@ -333,10 +324,15 @@ export default function MediaLyr() {
               )
             }}
           />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyIcon
-            lyrHoldSubIcn={faFunction}
-            icon={faLayerGroup}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn
+                className="fa-regular fa-function"
+                sx={{transform: 'translateX(-3px)'}}
+              />
+            )}
+            className="fa-regular fa-layer-group"
             sx={{fontSize: 16, transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'function-layer-key',
@@ -349,7 +345,7 @@ export default function MediaLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -362,7 +358,7 @@ export default function MediaLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -377,7 +373,7 @@ export default function MediaLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           {/* <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
@@ -389,9 +385,9 @@ export default function MediaLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faCommand} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faChevronUp} />
+          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
         </RowBox>
       </ColumnBox>
     </Box>

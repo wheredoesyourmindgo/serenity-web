@@ -14,7 +14,7 @@ import VimRefLgnd from './VimRefLgnd'
 
 type Props = Partial<TypographyProps> & {
   shiftLgnd?: String | React.ReactNode
-  shiftSubIcn?: ShiftSubIcnProps['icon']
+  shiftSubIcn?: any
   ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
   children?: React.ReactNode
   KeyContainerProps?: KeyContainerProps
@@ -23,11 +23,11 @@ type Props = Partial<TypographyProps> & {
   tapDance?: boolean
   homing?: boolean
   vimRef?: String | React.ReactNode
-  vimRefIcn?: VimRefIcnProps['icon']
+  vimRefIcn?: any
   VimRefIcnProps?: Omit<VimRefIcnProps, 'icon'>
-  lyrHoldSubIcn?: HoldSubIcnProps['icon']
+  lyrHoldSubIcn?: any
   LyrHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
-  modHoldSubIcn?: HoldSubIcnProps['icon']
+  modHoldSubIcn?: any
   ModHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
   tapForceHold?: boolean
 }
@@ -65,13 +65,12 @@ export default function KeyLegend({
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
-      <ChildBox sx={{overflow: 'visible'}}>
+      <ChildBox>
         {shiftLgnd ? (
           <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
         ) : null}
         {shiftSubIcn ? (
           <ShiftSubIcn
-            icon={shiftSubIcn}
             sx={{color: shiftColor, ...ShiftSubIcnSx}}
             {...ShiftSubIcnRest}
           />
@@ -81,14 +80,12 @@ export default function KeyLegend({
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {lyrHoldSubIcn ? (
           <HoldSubIcn
-            icon={lyrHoldSubIcn}
             sx={{color: lyrColor, ...lyrHoldSubIcnSx}}
             {...LyrHoldSubIcnRest}
           />
         ) : null}
         {modHoldSubIcn ? (
           <HoldSubIcn
-            icon={modHoldSubIcn}
             sx={{color: modColor, ...modHoldSubIcnSx}}
             {...ModHoldSubIcnRest}
           />
@@ -96,7 +93,6 @@ export default function KeyLegend({
         {vimRef ? <VimRefLgnd>{vimRef}</VimRefLgnd> : null}
         {vimRefIcn ? (
           <VimRefIcn
-            icon={vimRefIcn}
             sx={{color: shiftColor, ...VimRefIcnSx}}
             {...VimRefIcnRest}
           />

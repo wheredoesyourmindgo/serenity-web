@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {faApple} from '@fortawesome/free-brands-svg-icons'
 import {
   Box,
   Container,
@@ -22,29 +21,10 @@ import SymLyr from '@components/keyboard/firmware/SymLyr'
 import FuncLyr from '@components/keyboard/firmware/FunctionLyr'
 import ActionLyr from '@components/keyboard/firmware/ActionLyr'
 import MediaLyr from '@components/keyboard/firmware/MediaLyr'
-import {
-  faWrenchSimple,
-  faAnglesDown,
-  faAsterisk,
-  faAt,
-  faCog,
-  faCommand,
-  faEllipsis,
-  faFunction,
-  faHashtag,
-  faHouseUser,
-  faLayerGroup,
-  faMouse,
-  faTypewriter,
-  faTableLayout
-  // faCalculator
-} from '@fortawesome/pro-regular-svg-icons'
 import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@components/keyboard/firmware/MouseLyr'
 import OsLyr from '@components/keyboard/firmware/OsLyr'
-// import {faDial, faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
-import {faSwatchbook} from '@fortawesome/pro-duotone-svg-icons'
 // import NumpadLyr from '@components/keyboard/firmware/Numpad'
 // import Encoder from '@components/keyboard/firmware/Encoder'
 // import {faCircleDashed} from '@fortawesome/pro-regular-svg-icons'
@@ -153,7 +133,7 @@ export default function FirmwarePage() {
                 label="Base"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faHouseUser} />
+                    <MuiFaIcon className="fa-regular fa-house-user" />
                   </Box>
                 }
                 {...a11yProps(0)}
@@ -162,7 +142,7 @@ export default function FirmwarePage() {
                 label="Mouse"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faMouse} />
+                    <MuiFaIcon className="fa-regular fa-mouse" />
                   </Box>
                 }
                 {...a11yProps(1)}
@@ -171,7 +151,10 @@ export default function FirmwarePage() {
                 label="Num/Nav"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faHashtag} />
+                    <MuiFaIcon
+                      className="fa-regular fa-hashtag"
+                      sx={{fontSize: 15}}
+                    />
                   </Box>
                 }
                 {...a11yProps(2)}
@@ -180,7 +163,7 @@ export default function FirmwarePage() {
                 label="Action"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faTableLayout} />
+                    <MuiFaIcon className="fa-regular fa-table-layout" />
                   </Box>
                 }
                 {...a11yProps(3)}
@@ -189,7 +172,7 @@ export default function FirmwarePage() {
                 label="Media"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faCog} />
+                    <MuiFaIcon className="fa-regular fa-cog" />
                   </Box>
                 }
                 {...a11yProps(4)}
@@ -198,7 +181,7 @@ export default function FirmwarePage() {
                 label="Symbol"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faAt} />
+                    <MuiFaIcon className="fa-regular fa-at" />
                   </Box>
                 }
                 {...a11yProps(5)}
@@ -207,18 +190,21 @@ export default function FirmwarePage() {
                 label="OS"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faApple} sx={{fontSize: 16}} />
+                    <MuiFaIcon
+                      className="fa-brands fa-apple"
+                      sx={{fontSize: 15}}
+                    />
                   </Box>
                   // <Box component="span">
                   //   <MuiFaIcon
-                  //     icon={faArrowUpLeftFromCircle}
+                  //     className="fa-regular fa-arrow-up-left-from-circle"
                   //     sx={{paddingRight: 0.5}}
                   //   />
                   //   <MuiFaIcon
                   //     icon={faPlus}
                   //     sx={{paddingRight: 1, color: 'solarized.base0'}}
                   //   />
-                  //   <MuiFaIcon icon={faBracketSquare} rotation={270} />
+                  //   <MuiFaIcon className="fa-regular fa-bracket-square" rotation={270} />
                   // </Box>
                 }
                 {...a11yProps(6)}
@@ -227,7 +213,7 @@ export default function FirmwarePage() {
                 label="Function"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faFunction} />
+                    <MuiFaIcon className="fa-regular fa-function" />
                   </Box>
                 }
                 {...a11yProps(7)}
@@ -245,7 +231,7 @@ export default function FirmwarePage() {
                 label="Qwerty"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faTypewriter} />
+                    <MuiFaIcon className="fa-regular fa-typewriter" />
                   </Box>
                 }
                 {...a11yProps(8)}
@@ -273,50 +259,71 @@ export default function FirmwarePage() {
                   <ListSubheader>Legend</ListSubheader>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faSwatchbook} color="solarized.violet" />
+                      <MuiFaIcon
+                        className="fa-duotone fa-swatchbook"
+                        color="solarized.violet"
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Custom Shift Key" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faSwatchbook} color="solarized.cyan" />
+                      <MuiFaIcon
+                        className="fa-duotone fa-swatchbook"
+                        color="solarized.cyan"
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Stackable One-shot Mod" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faAsterisk} color="solarized.red" />
+                      <MuiFaIcon
+                        className="fa-regular fa-asterisk"
+                        color="solarized.red"
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Special (see notes)" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faLayerGroup} color="solarized.green" />
+                      <MuiFaIcon
+                        className="fa-regular fa-layer-group"
+                        color="solarized.green"
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Layer Tap" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faCommand} color="solarized.yellow" />
+                      <MuiFaIcon
+                        className="fa-regular fa-command"
+                        color="solarized.yellow"
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Mod Tap" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faEllipsis} color="solarized.blue" />
+                      <MuiFaIcon
+                        className="fa-regular fa-ellipsis"
+                        color="solarized.blue"
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Tap vs. Hold" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <MuiFaIcon icon={faAnglesDown} color="solarized.orange" />
+                      <MuiFaIcon
+                        className="fa-regular fa-angles-down"
+                        color="solarized.orange"
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Tap Force Hold" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
                       <MuiFaIcon
-                        icon={faWrenchSimple}
+                        className="fa-regular fa-wrench-simple"
                         color="solarized.magenta"
                       />
                     </ListItemIcon>
@@ -325,7 +332,7 @@ export default function FirmwarePage() {
                   {/* <ListItem>
                     <ListItemIcon>
                       <MuiFaIcon
-                        icon={faCircleDashed}
+                        className="fa-regular fa-circle-dashed"
                         color="solarized.base00"
                       />
                     </ListItemIcon>

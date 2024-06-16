@@ -250,7 +250,7 @@ export default function VimPage() {
                 label="Num/Nav"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faHashtag} />
+                    <MuiFaIcon className="fa-regular fa-hashtag" />
                   </Box>
                 }
                 {...a11yProps(1)}
@@ -260,7 +260,7 @@ export default function VimPage() {
                 label="Symbols"
                 icon={
                   <Box component="span">
-                    <MuiFaIcon icon={faAt} />
+                    <MuiFaIcon className="fa-regular fa-at" />
                   </Box>
                 }
                 {...a11yProps(2)}

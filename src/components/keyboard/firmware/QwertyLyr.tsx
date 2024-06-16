@@ -1,33 +1,12 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {ColumnBox, RowBox} from 'mui-sleazebox'
-import {
-  faAnglesDown,
-  faAnglesUp,
-  faArrowDown,
-  faArrowLeft,
-  faArrowRight,
-  faArrowRightLongToLine,
-  faArrowTurnDownLeft,
-  faArrowUp,
-  faArrowUpLeftFromCircle,
-  faAt,
-  faBracketSquare,
-  faComputerMouse,
-  faGear,
-  faHashtag,
-  faLayerGroup,
-  faOption,
-  faTableLayout,
-  faUp
-} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteRight} from '@fortawesome/pro-regular-svg-icons'
-import {faDeleteLeft} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegend} from '@components/key'
-import {faChevronUp} from '@fortawesome/pro-regular-svg-icons'
-import {faCommand} from '@fortawesome/pro-regular-svg-icons'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
+import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
+import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
 
 export default function QwertyLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -37,7 +16,7 @@ export default function QwertyLyr() {
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            icon={faArrowRightLongToLine}
+            className="fa-regular fa-arrow-right-long-to-line"
             sx={{
               fontSize: 19
             }}
@@ -82,7 +61,7 @@ export default function QwertyLyr() {
           </KeyLegend>
           <KeyIcon
             customShiftCode
-            icon={faDeleteLeft}
+            className="fa-regular fa-delete-left"
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
@@ -93,14 +72,18 @@ export default function QwertyLyr() {
                 </Box>
               )
             }}
-            shiftSubIcn={faDeleteRight}
+            ShiftSubIcn={() => (
+              <ShiftSubIcn className="fa-regular fa-delete-right" />
+            )}
           />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
             tapForceHold
-            lyrHoldSubIcn={faComputerMouse}
-            icon={faArrowUpLeftFromCircle}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn className="fa-regular fa-computer-mouse" />
+            )}
+            className="fa-regular fa-arrow-up-left-from-circle"
             sx={{transform: 'translateY(4px)', fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
@@ -150,7 +133,7 @@ export default function QwertyLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             special
-            icon={faUp}
+            className="fa-regular fa-up"
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
@@ -194,8 +177,8 @@ export default function QwertyLyr() {
           </KeyLegend>
           <KeyIcon
             tapForceHold
-            icon={faArrowTurnDownLeft}
-            modHoldSubIcn={faUp}
+            className="fa-regular fa-arrow-turn-down-left"
+            ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-shift-key',
@@ -227,14 +210,16 @@ export default function QwertyLyr() {
               )
             }}
           /> */}
-          <KeyIcon icon={faChevronUp} />
-          <KeyIcon icon={faOption} sx={{fontSize: 19}} />
-          <KeyIcon icon={faCommand} />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-command" />
           <KeyIcon
-            icon={faLayerGroup}
+            className="fa-regular fa-layer-group"
             sx={{fontSize: 16, transform: 'translateY(2px)'}}
             special
-            lyrHoldSubIcn={faTableLayout}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn className="fa-regular fa-table-layout" />
+            )}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -250,9 +235,11 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faAnglesDown}
+            className="fa-regular fa-angles-down"
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrHoldSubIcn={faHashtag}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn className="fa-regular fa-hashtag" />
+            )}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -265,7 +252,7 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
@@ -278,7 +265,7 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faBracketSquare}
+            className="fa-regular fa-bracket-square"
             rotation={270}
             sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
@@ -291,9 +278,9 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faAnglesUp}
+            className="fa-regular fa-angles-up"
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            lyrHoldSubIcn={faAt}
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-at" />}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
@@ -306,9 +293,11 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowLeft}
+            className="fa-regular fa-arrow-left"
             special
-            lyrHoldSubIcn={faGear}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn className="fa-regular fa-gear" />
+            )}
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
@@ -326,11 +315,15 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowDown}
+            className="fa-regular fa-arrow-down"
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
-            modHoldSubIcn={faCommand}
-            ModHoldSubIcnProps={{sx: {fontSize: 11}}}
+            ModHoldSubIcn={() => (
+              <ModSubHoldIcn
+                className="fa-regular fa-command"
+                sx={{fontSize: 11}}
+              />
+            )}
             KeyContainerProps={{
               keyId: 'right-command-key',
               popOverContent: (
@@ -343,9 +336,14 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowUp}
+            className="fa-regular fa-arrow-up"
             tapForceHold
-            modHoldSubIcn={faOption}
+            ModHoldSubIcn={() => (
+              <ModSubHoldIcn
+                className="fa-regular fa-option"
+                sx={{transform: 'translateX(-3px)', fontSize: 11}}
+              />
+            )}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-option-key',
@@ -359,8 +357,10 @@ export default function QwertyLyr() {
             }}
           />
           <KeyIcon
-            icon={faArrowRight}
-            modHoldSubIcn={faChevronUp}
+            className="fa-regular fa-arrow-right"
+            ModHoldSubIcn={() => (
+              <ModSubHoldIcn className="fa-regular fa-chevron-up" />
+            )}
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{

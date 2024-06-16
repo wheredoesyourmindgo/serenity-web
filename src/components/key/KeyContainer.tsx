@@ -96,7 +96,11 @@ export default function KeyContainer({
           }}
           onClose={handlePopoverClose}
           disableRestoreFocus
-          PaperProps={{elevation: 4}}
+          slotProps={{
+            paper: {
+              elevation: 4
+            }
+          }}
         >
           {popOverContent}
         </Popover>

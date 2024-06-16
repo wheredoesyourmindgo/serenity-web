@@ -39,12 +39,12 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
               bgcolor:
                 theme.palette.mode === 'light'
                   ? 'solarized.blue'
-                  : 'solarized.cyan',
-              opacity: 0.85,
-              transition: '200ms linear opacity',
-              '&:hover': {
-                opacity: 1
-              }
+                  : 'solarized.cyan'
+              // opacity: 0.85,
+              // transition: '200ms linear opacity'
+              // '&:hover': {
+              // opacity: 1
+              // }
             }}
           >
             <Toolbar variant={isMd ? 'dense' : 'regular'}>
