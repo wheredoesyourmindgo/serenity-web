@@ -1,8 +1,8 @@
 const genkey = `
 serenity
-q l d w v  j f o u ;
-n r t s g  y h e i a '
-x z m c b  k p / , .
+q l d w v  j f o u -
+n r t s g  y h e a i ;
+x z m c b  k p ' , .
 Rolls (l): 19.55%
         Inward: ~13.39%
         Outward: ~6.16%

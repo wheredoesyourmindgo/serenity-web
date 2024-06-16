@@ -11,7 +11,7 @@ import localFont from 'next/font/local'
 import {AppCacheProvider} from '@mui/material-nextjs/v13-pagesRouter'
 // Font Awesome config
 import {config} from '@fortawesome/fontawesome-svg-core'
-import '../public/fonts/fontawesome/css/all.min.css'
+import '../public/static/fonts/fontawesome/css/all.min.css'
 config.autoAddCss = false
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
