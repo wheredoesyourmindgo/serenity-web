@@ -45,4 +45,3 @@ yarn-error.log*
 
 # TypeScript build info
 tsconfig.tsbuildinfo
-src/public/fonts/**/*
