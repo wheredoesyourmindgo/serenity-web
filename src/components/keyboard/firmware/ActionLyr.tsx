@@ -201,7 +201,7 @@ export default function ActionLyr() {
           <KeyIcon
             homing
             tapDance
-            className="fa-regular fa-arrows-to-dot"
+            className="fa-regular fa-sidebar"
             KeyContainerProps={{
               keyId: 'window-center-key',
               popOverContent: (
@@ -216,7 +216,8 @@ export default function ActionLyr() {
           <KeyIcon
             // special
             tapDance
-            className="fa-regular fa-table-layout"
+            rotation={180}
+            className="fa-regular fa-window-maximize"
             KeyContainerProps={{
               keyId: 'window-management1-key',
               popOverContent: (
@@ -231,7 +232,7 @@ export default function ActionLyr() {
           <KeyIcon
             // special
             tapDance
-            className="fa-regular fa-table-layout"
+            className="fa-regular fa-window-maximize"
             KeyContainerProps={{
               keyId: 'window-management2-key',
               popOverContent: (
@@ -259,7 +260,7 @@ export default function ActionLyr() {
           <KeyIcon
             homing
             tapDance
-            className="fa-regular fa-window-restore"
+            className="fa-regular fa-sidebar-flip"
             KeyContainerProps={{
               keyId: 'window-restore-key',
               popOverContent: (
@@ -307,7 +308,6 @@ export default function ActionLyr() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
           <KeyIcon
             className="fa-regular fa-square-left"
             KeyContainerProps={{
@@ -319,6 +319,8 @@ export default function ActionLyr() {
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             className="fa-regular fa-square-right"
             KeyContainerProps={{
@@ -330,7 +332,6 @@ export default function ActionLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
