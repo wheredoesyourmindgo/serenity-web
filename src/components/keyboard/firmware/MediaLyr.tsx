@@ -347,7 +347,7 @@ export default function MediaLyr() {
           <KeyIcon
             className="fa-regular fa-bracket-square"
             rotation={270}
-            sx={{transform: 'translateY(4px)'}}
+            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
@@ -360,7 +360,7 @@ export default function MediaLyr() {
           <KeyIcon
             className="fa-regular fa-bracket-square"
             rotation={270}
-            sx={{transform: 'translateY(4px)'}}
+            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
