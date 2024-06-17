@@ -208,7 +208,7 @@ export default function ActionLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Almost Max Window" />
                   <br />
-                  <PopoverDesc action="hold" output="Center Window" />
+                  <PopoverDesc action="hold" output="Window Left Half" />
                 </Box>
               )
             }}
@@ -223,7 +223,7 @@ export default function ActionLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Decrease Window Size" />
                   <br />
-                  <PopoverDesc action="hold" output="Window Left Half" />
+                  <PopoverDesc action="hold" output="Center Window" />
                 </Box>
               )
             }}
@@ -238,7 +238,7 @@ export default function ActionLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Increase Window Size" />
                   <br />
-                  <PopoverDesc action="hold" output="Window Right Half" />
+                  <PopoverDesc action="hold" output="Restore Window" />
                 </Box>
               )
             }}
@@ -266,7 +266,7 @@ export default function ActionLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Last Window Position" />
                   <br />
-                  <PopoverDesc action="hold" output="Restore Window" />
+                  <PopoverDesc action="hold" output="Window Right Half" />
                 </Box>
               )
             }}
