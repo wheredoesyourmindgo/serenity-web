@@ -65,7 +65,7 @@ export default function KeyContainer({
         ...(homing && {
           background: `radial-gradient(circle farthest-side, ${alpha(
             theme.palette.solarized.base0,
-            0.15
+            0.2
           )}, ${theme.palette.background.default})`,
           backgroundRepeat: 'no-repeat'
         }),

@@ -29,9 +29,81 @@ export default function OsLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
           <KeyIcon
+            className="fa-solid fa-circle"
+            sx={{
+              opacity: 0.5,
+              color: 'solarized.red',
+              fontSize: 22
+            }}
+            KeyContainerProps={{
+              keyId: 'os-close-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Close Window" />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              sx={{
+                transform: 'translate3D(4.5px, -1.5px, 0)',
+                fontSize: 13
+              }}
+              className="fa-solid fa-xmark"
+            />
+          </KeyIcon>
+          <KeyIcon
+            className="fa-solid fa-circle"
+            sx={{
+              opacity: 0.5,
+              color: 'solarized.yellow',
+              fontSize: 22
+            }}
+            KeyContainerProps={{
+              keyId: 'os-mimimize-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Minimize Window" />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              sx={{
+                transform: 'translate3D(4.5px, -1.5px, 0)',
+                fontSize: 13
+              }}
+              className="fa-solid fa-subtract"
+            />
+          </KeyIcon>
+          <KeyIcon
+            className="fa-solid fa-circle"
+            sx={{
+              opacity: 0.5,
+              color: 'solarized.green',
+              fontSize: 22
+            }}
+            KeyContainerProps={{
+              keyId: 'os-fullscreen-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="OS Fullscreen" />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              rotation={135}
+              sx={{
+                transform: 'translate3D(4.5px, -1.5px, 0)',
+                fontSize: 13
+              }}
+              className="fa-solid fa-sort"
+            />
+          </KeyIcon>
+          <KeyLegend {...sharedProps} />
+          {/* <KeyIcon
             className="fa-regular fa-terminal"
             KeyContainerProps={{
               keyId: 'terminal-visor-key',
@@ -52,9 +124,8 @@ export default function OsLyr() {
                 </Box>
               )
             }}
-          />
+          /> */}
           <KeyLegend {...sharedProps} />
-
           <KeyIcon
             className="fa-light fa-folder-magnifying-glass"
             sx={{fontSize: 25}}
@@ -68,17 +139,21 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
+            // tapDance
             className="fa-regular fa-magnifying-glass"
             KeyContainerProps={{
               keyId: 'spotlight-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Spotlight" />
+                  <PopoverDesc action="tap/hold" output="Spotlight" />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="Spotlight in Finder" /> */}
                 </Box>
               )
             }}
           />
           <KeyIcon
+            requiresOsConf
             className="fa-regular fa-grid"
             KeyContainerProps={{
               keyId: 'launchpad-key',
@@ -144,12 +219,70 @@ export default function OsLyr() {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-diagram-previous"
+            className="fa-regular fa-desktop"
             KeyContainerProps={{
-              keyId: 'previous-window-key',
+              keyId: 'show-desktop-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Previous Window" />
+                  <PopoverDesc action="tap" output="Show/Hide Desktop" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-square-left"
+            KeyContainerProps={{
+              keyId: 'jump-space-left-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Switch Space Left" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-square-right"
+            KeyContainerProps={{
+              keyId: 'jump-space-right-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Switch Space Right" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            homing
+            className="fa-regular fa-chart-tree-map"
+            KeyContainerProps={{
+              keyId: 'mission-control-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Mission Control" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-desktop-arrow-down"
+            KeyContainerProps={{
+              keyId: 'select-dock-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Select Dock" />
+                </Box>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            homing
+            className="fa-regular fa-objects-column"
+            KeyContainerProps={{
+              keyId: 'app-expose-control-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="App Expose" />
                 </Box>
               )
             }}
@@ -198,80 +331,12 @@ export default function OsLyr() {
             />
           </KeyIcon>
           <KeyIcon
-            homing
-            className="fa-regular fa-objects-column"
+            className="fa-regular fa-diagram-previous"
             KeyContainerProps={{
-              keyId: 'app-expose-control-key',
+              keyId: 'previous-window-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="App Expose" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-desktop-arrow-down"
-            KeyContainerProps={{
-              keyId: 'select-dock-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Select Dock" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-up-right-and-down-left-from-center"
-            KeyContainerProps={{
-              keyId: 'os-fullscreen-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="OS Fullscreen" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            homing
-            className="fa-regular fa-chart-tree-map"
-            KeyContainerProps={{
-              keyId: 'mission-control-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Mission Control" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-square-left"
-            KeyContainerProps={{
-              keyId: 'jump-space-left-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Switch Space Left" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-square-right"
-            KeyContainerProps={{
-              keyId: 'jump-space-right-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Switch Space Right" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-desktop"
-            KeyContainerProps={{
-              keyId: 'show-desktop-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Show/Hide Desktop" />
+                  <PopoverDesc action="tap" output="Previous Window" />
                 </Box>
               )
             }}
@@ -295,6 +360,127 @@ export default function OsLyr() {
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            tapDance
+            className="fa-light fa-square-dashed"
+            sx={{fontSize: 27}}
+            KeyContainerProps={{
+              keyId: 'screenshot-sel-file-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap"
+                    output="Screenshot Selection to file"
+                  />
+                  <br />
+                  <PopoverDesc
+                    action="hold"
+                    output="Screenshot Selection to clipboard"
+                  />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              className="fa-regular fa-image"
+              sx={{
+                transform: 'translate3D(7px, 1px, 0)',
+                color: 'solarized.base01',
+                fontSize: 13
+              }}
+            />
+          </KeyIcon>
+          <KeyIcon
+            tapDance
+            className="fa-light fa-display"
+            sx={{fontSize: 25}}
+            KeyContainerProps={{
+              keyId: 'screenshot-dsktp-file-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap"
+                    output="Screenshot Screen to file"
+                  />
+                  <br />
+                  <PopoverDesc
+                    action="hold"
+                    output="Screenshot Screen to clipboard"
+                  />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              className="fa-regular fa-image"
+              sx={{
+                transform: 'translate3D(7px, -2.5px, 0)',
+                color: 'solarized.base01',
+                fontSize: 13
+              }}
+            />
+          </KeyIcon>
+          <KeyIcon
+            className="fa-regular fa-camera-viewfinder"
+            KeyContainerProps={{
+              keyId: 'screenshot-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Screenshot Options" />
+                </Box>
+              )
+            }}
+          />
+
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+
+          {/* <KeyIcon
+            className="fa-light fa-square-dashed"
+            sx={{fontSize: 27}}
+            KeyContainerProps={{
+              keyId: 'screenshot-sel-clip-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap"
+                    output="Screenshot Selection to Clipboard"
+                  />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              className="fa-regular fa-clipboard"
+              sx={{
+                transform: 'translate3D(6.5px, 1px, 0)',
+                color: 'solarized.base01',
+                fontSize: 14
+              }}
+            />
+          </KeyIcon> */}
+          {/* <KeyIcon
+            className="fa-light fa-display"
+            sx={{fontSize: 27}}
+            KeyContainerProps={{
+              keyId: 'screenshot-dsktp-clip-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Screenshot to Clipboard" />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              className="fa-regular fa-clipboard"
+              sx={{
+                transform: 'translate3D(8px, -2px, 0)',
+                color: 'solarized.base01',
+                fontSize: 14
+              }}
+            />
+          </KeyIcon> */}
           <KeyLegend {...sharedProps} />
           <KeyIcon
             className="fa-light fa-gallery-thumbnails"
@@ -342,108 +528,6 @@ export default function OsLyr() {
             />
           </KeyIcon>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyIcon
-            className="fa-regular fa-camera-viewfinder"
-            KeyContainerProps={{
-              keyId: 'screenshot-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Screenshot Options" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-light fa-square-dashed"
-            sx={{fontSize: 27}}
-            KeyContainerProps={{
-              keyId: 'screenshot-sel-file-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Screenshot Selection to file"
-                  />
-                </Box>
-              )
-            }}
-          >
-            <MuiFaIcon
-              className="fa-regular fa-image"
-              sx={{
-                transform: 'translate3D(7px, 1px, 0)',
-                color: 'solarized.base01',
-                fontSize: 13
-              }}
-            />
-          </KeyIcon>
-          <KeyIcon
-            className="fa-light fa-display"
-            sx={{fontSize: 25}}
-            KeyContainerProps={{
-              keyId: 'screenshot-dsktp-file-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Screenshot to file" />
-                </Box>
-              )
-            }}
-          >
-            <MuiFaIcon
-              className="fa-regular fa-image"
-              sx={{
-                transform: 'translate3D(7px, -2.5px, 0)',
-                color: 'solarized.base01',
-                fontSize: 13
-              }}
-            />
-          </KeyIcon>
-          <KeyIcon
-            className="fa-light fa-square-dashed"
-            sx={{fontSize: 27}}
-            KeyContainerProps={{
-              keyId: 'screenshot-sel-clip-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Screenshot Selection to Clipboard"
-                  />
-                </Box>
-              )
-            }}
-          >
-            <MuiFaIcon
-              className="fa-regular fa-clipboard"
-              sx={{
-                transform: 'translate3D(6.5px, 1px, 0)',
-                color: 'solarized.base01',
-                fontSize: 14
-              }}
-            />
-          </KeyIcon>
-          <KeyIcon
-            className="fa-light fa-display"
-            sx={{fontSize: 27}}
-            KeyContainerProps={{
-              keyId: 'screenshot-dsktp-clip-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Screenshot to Clipboard" />
-                </Box>
-              )
-            }}
-          >
-            <MuiFaIcon
-              className="fa-regular fa-clipboard"
-              sx={{
-                transform: 'translate3D(8px, -2px, 0)',
-                color: 'solarized.base01',
-                fontSize: 14
-              }}
-            />
-          </KeyIcon>
           <KeyIcon
             tapForceHold
             className="fa-regular fa-arrow-turn-down-left"
