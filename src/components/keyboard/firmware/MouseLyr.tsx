@@ -221,11 +221,61 @@ export default function MouseLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            className="fa-regular fa-undo"
+            KeyContainerProps={{
+              keyId: 'undo-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Undo" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-scissors"
+            KeyContainerProps={{
+              keyId: 'cut-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Cut" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-copy"
+            KeyContainerProps={{
+              keyId: 'copy-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Copy" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-paste"
+            KeyContainerProps={{
+              keyId: 'paste-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Paste" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-redo"
+            KeyContainerProps={{
+              keyId: 'redo-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Redo" />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-bullseye-pointer"
             KeyContainerProps={{
