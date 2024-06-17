@@ -4,7 +4,6 @@ import KeyLegend, {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, SxProps} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
-import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
 
 export default function FuncLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
