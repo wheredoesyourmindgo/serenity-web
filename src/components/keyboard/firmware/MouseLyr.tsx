@@ -362,17 +362,12 @@ export default function MouseLyr() {
             R
           </KeyLegend>
           <KeyIcon
-            tapForceHold
             className="fa-regular fa-arrow-turn-down-left"
-            ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
-            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              keyId: 'right-shift-key',
+              keyId: 'enter-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Enter" />
-                  <br />
-                  <PopoverDesc action="hold" output="Right Shift" />
+                  <PopoverDesc action="tap/hold" output="Enter" />
                 </Box>
               )
             }}
