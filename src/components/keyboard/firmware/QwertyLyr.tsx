@@ -176,7 +176,6 @@ export default function QwertyLyr() {
             /
           </KeyLegend>
           <KeyIcon
-            tapForceHold
             className="fa-regular fa-arrow-turn-down-left"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             sx={{transform: 'translateY(4px)'}}
