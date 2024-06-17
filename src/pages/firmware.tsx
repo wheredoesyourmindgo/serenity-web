@@ -318,7 +318,7 @@ export default function FirmwarePage() {
                         color="solarized.orange"
                       />
                     </ListItemIcon>
-                    <ListItemText primary="Tap Force Hold" />
+                    <ListItemText primary="Quick Tap Term" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
