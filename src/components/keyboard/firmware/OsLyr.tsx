@@ -103,18 +103,7 @@ export default function OsLyr() {
             />
           </KeyIcon>
           <KeyLegend {...sharedProps} />
-          {/* <KeyIcon
-            className="fa-regular fa-terminal"
-            KeyContainerProps={{
-              keyId: 'terminal-visor-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Terminal Visor" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
+          {/*<KeyIcon
             className="fa-regular fa-rocket-launch"
             KeyContainerProps={{
               keyId: 'launcher-key',
@@ -528,6 +517,17 @@ export default function OsLyr() {
             />
           </KeyIcon>
           <KeyLegend {...sharedProps} />
+          {/* <KeyIcon
+            className="fa-regular fa-terminal"
+            KeyContainerProps={{
+              keyId: 'terminal-visor-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Terminal Visor" />
+                </Box>
+              )
+            }}
+          /> */}
           <KeyIcon
             tapForceHold
             className="fa-regular fa-arrow-turn-down-left"
