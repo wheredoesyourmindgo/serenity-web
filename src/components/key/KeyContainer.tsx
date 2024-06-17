@@ -35,6 +35,7 @@ export default function KeyContainer({
   return (
     <FlexBox
       child
+      className="foobar"
       sx={{
         position: 'relative',
         justifyContent: 'center',
@@ -77,7 +78,8 @@ export default function KeyContainer({
       onMouseLeave={handlePopoverClose}
       {...r}
     >
-      <Box ref={popoverContainerRef}>
+      {/* overflow fixes issues on mouse hover where partial icons can disappear, ex. backspace icon */}
+      <Box ref={popoverContainerRef} sx={{overflow: 'visible !important'}}>
         <Popover
           id={popOverId}
           container={popoverContainerRef.current}
