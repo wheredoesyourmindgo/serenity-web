@@ -6,7 +6,6 @@ import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
 import MuiFaIcon from '@components/MuiFaIcon'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
-import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
 
 export default function OsLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
