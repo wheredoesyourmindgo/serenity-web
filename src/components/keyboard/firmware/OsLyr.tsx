@@ -263,6 +263,7 @@ export default function OsLyr() {
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             className="fa-regular fa-desktop-arrow-down"
             KeyContainerProps={{
@@ -274,7 +275,6 @@ export default function OsLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
           <KeyIcon
             homing
             className="fa-regular fa-objects-column"
