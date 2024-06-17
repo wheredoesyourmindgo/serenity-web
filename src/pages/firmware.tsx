@@ -318,7 +318,7 @@ export default function FirmwarePage() {
                         color="solarized.orange"
                       />
                     </ListItemIcon>
-                    <ListItemText primary="Quick Tap Term" />
+                    <ListItemText primary="Auto-repeat Enabled" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
