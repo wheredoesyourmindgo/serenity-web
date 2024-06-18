@@ -46,7 +46,7 @@ export default function OsLyr() {
           >
             <MuiFaIcon
               sx={{
-                transform: 'translate3D(4.5px, -1.5px, 0)',
+                transform: 'translate3D(4.5px, -2px, 0)',
                 fontSize: 13
               }}
               className="fa-solid fa-xmark"
@@ -70,7 +70,7 @@ export default function OsLyr() {
           >
             <MuiFaIcon
               sx={{
-                transform: 'translate3D(4.5px, -1.5px, 0)',
+                transform: 'translate3D(4.5px, -2px, 0)',
                 fontSize: 13
               }}
               className="fa-solid fa-subtract"
@@ -95,7 +95,7 @@ export default function OsLyr() {
             <MuiFaIcon
               rotation={135}
               sx={{
-                transform: 'translate3D(4.5px, -1.5px, 0)',
+                transform: 'translate3D(4.5px, -2px, 0)',
                 fontSize: 13
               }}
               className="fa-solid fa-sort"
