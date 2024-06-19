@@ -193,7 +193,7 @@ export default function ActionLyr() {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Almost Max Window" />
                   <br />
-                  <PopoverDesc action="tap" output="Max Window Height" />
+                  <PopoverDesc action="hold" output="Max Window Height" />
                 </Box>
               )
             }}
@@ -206,7 +206,7 @@ export default function ActionLyr() {
               keyId: 'window-center-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="hold" output="Window Left Half" />
+                  <PopoverDesc action="tap" output="Window Left Half" />
                   <br />
                   <PopoverDesc action="hold" output="Fullscreen Window" />
                 </Box>
@@ -265,9 +265,9 @@ export default function ActionLyr() {
               keyId: 'window-restore-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="hold" output="Window Right Half" />
+                  <PopoverDesc action="tap" output="Window Right Half" />
                   <br />
-                  <PopoverDesc action="tap" output="Last Window Position" />
+                  <PopoverDesc action="hold" output="Last Window Position" />
                 </Box>
               )
             }}
