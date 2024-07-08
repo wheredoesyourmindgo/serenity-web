@@ -287,6 +287,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
+            special
             className="fa-regular fa-angles-down"
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             LyrHoldSubIcn={() => (
@@ -299,6 +300,11 @@ export default function BaseLyr() {
                   {/* <PopoverDesc action="tap" output="Escape" />
                   <br /> */}
                   <PopoverDesc action="hold" output="Num/Nav Layer" />
+                  <br />
+                  <PopoverDesc
+                    action="tap -> hold"
+                    output="Base Layer w/ Home Row Mods on left side"
+                  />
                 </Box>
               )
             }}
@@ -330,6 +336,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
+            special
             className="fa-regular fa-angles-up"
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-at" />}
@@ -337,9 +344,12 @@ export default function BaseLyr() {
               keyId: 'higher-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  {/* <PopoverDesc action="tap" output="Tab" />
-                  <br /> */}
                   <PopoverDesc action="hold" output="Symbol Layer" />
+                  <br />
+                  <PopoverDesc
+                    action="tap -> hold"
+                    output="Base Layer w/ Home Row Mods on right side"
+                  />
                 </Box>
               )
             }}

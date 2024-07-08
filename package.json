@@ -12,8 +12,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mui/icons-material": "^5.15.20",
-    "@mui/material": "5.15.20",
+    "@mui/icons-material": "^5.16.0",
+    "@mui/material": "5.16.0",
     "@mui/material-nextjs": "^5.15.11",
     "clsx": "2.1.1",
     "mui-jackinbox": "^1.0.0",
@@ -22,7 +22,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "smoothscroll-polyfill": "^0.4.4",
-    "vercel": "^34.2.7"
+    "vercel": "^34.3.0"
   },
   "scripts": {
     "start": "next start",
@@ -39,14 +39,14 @@
     "test": "ava"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.10",
     "@types/smoothscroll-polyfill": "^0.3.4",
-    "@vercel/node": "^3.1.7",
+    "@vercel/node": "^3.2.1",
     "eslint": "^8.54.0",
     "eslint-config-next": "^14.2.4",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-compat": "^5.0.0",
     "prettier": "^3.3.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   }
 }
