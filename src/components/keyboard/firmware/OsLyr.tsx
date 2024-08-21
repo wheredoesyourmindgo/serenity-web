@@ -348,7 +348,68 @@ export default function OsLyr() {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            tapDance
+            className="fa-light fa-display"
+            sx={{fontSize: 25}}
+            KeyContainerProps={{
+              keyId: 'screenshot-dsktp-file-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap"
+                    output="Screenshot Entire Screen to file"
+                  />
+                  <br />
+                  <PopoverDesc
+                    action="hold"
+                    output="Screenshot Entire Screen to clipboard"
+                  />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              className="fa-regular fa-image"
+              sx={{
+                transform: 'translate3D(7px, -2.5px, 0)',
+                color: 'solarized.base01',
+                fontSize: 13
+              }}
+            />
+          </KeyIcon>
+
+          <KeyIcon
+            tapDance
+            className="fa-light fa-window"
+            sx={{fontSize: 29}}
+            KeyContainerProps={{
+              keyId: 'screenshot-sel-file-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap"
+                    output="Screenshot Selected Window to file"
+                  />
+                  <br />
+                  <PopoverDesc
+                    action="hold"
+                    output="Screenshot Selected Window to clipboard"
+                  />
+                </Box>
+              )
+            }}
+          >
+            <MuiFaIcon
+              className="fa-regular fa-image"
+              sx={{
+                transform: 'translate3D(8px, 4px, 0)',
+                color: 'solarized.base01',
+                fontSize: 13
+              }}
+            />
+          </KeyIcon>
+
           <KeyIcon
             tapDance
             className="fa-light fa-square-dashed"
@@ -379,36 +440,7 @@ export default function OsLyr() {
               }}
             />
           </KeyIcon>
-          <KeyIcon
-            tapDance
-            className="fa-light fa-display"
-            sx={{fontSize: 25}}
-            KeyContainerProps={{
-              keyId: 'screenshot-dsktp-file-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Screenshot Screen to file"
-                  />
-                  <br />
-                  <PopoverDesc
-                    action="hold"
-                    output="Screenshot Screen to clipboard"
-                  />
-                </Box>
-              )
-            }}
-          >
-            <MuiFaIcon
-              className="fa-regular fa-image"
-              sx={{
-                transform: 'translate3D(7px, -2.5px, 0)',
-                color: 'solarized.base01',
-                fontSize: 13
-              }}
-            />
-          </KeyIcon>
+
           <KeyIcon
             className="fa-regular fa-camera-viewfinder"
             KeyContainerProps={{
