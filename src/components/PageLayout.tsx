@@ -4,7 +4,6 @@ import {
   BoxProps,
   Box,
   Toolbar,
-  Typography as Type,
   Button,
   useMediaQuery
 } from '@mui/material'
@@ -12,7 +11,6 @@ import Link from 'next/link'
 import ToggleDarkModeBtn from './ToggleDarkModeBtn'
 import {AppTheme} from '@lib/theme'
 import Head from 'next/head'
-import {ChildBox, FlexBox} from 'mui-sleazebox'
 
 type Props = Partial<BoxProps> & {containerProps?: Partial<BoxProps>}
 
@@ -20,6 +18,7 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
   const theme = useTheme<AppTheme>()
   const isMd = useMediaQuery(theme.breakpoints.up('md'))
   const isSm = useMediaQuery(theme.breakpoints.down('md'))
+  const isXs = useMediaQuery(theme.breakpoints.only('xs'))
 
   return (
     <>
@@ -66,16 +65,29 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
           </AppBar>
         </Box>
         <Box component="main" {...rest}>
-          {isSm ? (
-            <FlexBox justifyContent="center" alignItems="center" height="100vh">
-              <ChildBox flex="0 0 80%">
-                <Type variant="subtitle1" sx={{color: 'solarized.base01'}}>
-                  This site doesn't work with mobile devices, not yet at least
-                  :(
-                </Type>
-              </ChildBox>
-            </FlexBox>
+          {isXs || isSm ? (
+            <Box
+              sx={{
+                transform: isXs
+                  ? 'scale(0.53)'
+                  : 'scale(0.69)' /* Adjust the scale value as needed */,
+                transformOrigin:
+                  'center center' /* Ensures the scaling starts from the top left corner */,
+                width: '100%'
+                // overflowX: 'hidden' /* Prevents horizontal scrolling */
+              }}
+            >
+              {children}
+            </Box>
           ) : (
+            // <FlexBox justifyContent="center" alignItems="center" height="100vh">
+            //   <ChildBox flex="0 0 80%">
+            //     <Type variant="subtitle1" sx={{color: 'solarized.base01'}}>
+            //       This site doesn't work with mobile devices, not yet at least
+            //       :(
+            //     </Type>
+            //   </ChildBox>
+            // </FlexBox>
             <>{children}</>
           )}
         </Box>
