@@ -390,8 +390,6 @@ export default function NumNavLyr() {
               keyId: 'lower-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Tab" />
-                  <br />
                   <PopoverDesc action="hold" output="OS Layer" />
                 </Box>
               )

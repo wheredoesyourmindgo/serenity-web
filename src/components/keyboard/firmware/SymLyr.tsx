@@ -175,9 +175,7 @@ export default function SymLyr() {
               keyId: 'lower-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Escape" />
-                  <br />
-                  <PopoverDesc action="hold" output="Num/Nav Layer" />
+                  <PopoverDesc action="hold" output="OS Layer" />
                 </Box>
               )
             }}
