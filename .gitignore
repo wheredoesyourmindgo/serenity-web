@@ -19,6 +19,7 @@
 
 # local env files
 .env*.local
+.env
 
 # next.js build output
 .next/
