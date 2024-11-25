@@ -8,7 +8,7 @@ import smoothscroll from 'smoothscroll-polyfill'
 import UiProvider from '@components/UiStore'
 import ToggleColorMode from '@components/ToggleColorMode'
 import localFont from 'next/font/local'
-import {AppCacheProvider} from '@mui/material-nextjs/v13-pagesRouter'
+import {AppCacheProvider} from '@mui/material-nextjs/v14-pagesRouter'
 // Font Awesome config
 import {config} from '@fortawesome/fontawesome-svg-core'
 import '../public/static/fonts/fontawesome/css/all.min.css'
