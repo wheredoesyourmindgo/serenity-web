@@ -282,7 +282,7 @@ export default function FirmwarePage() {
                         color="solarized.red"
                       />
                     </ListItemIcon>
-                    <ListItemText primary="Special (see notes)" />
+                    <ListItemText primary="Special (see notes/tooltip)" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
