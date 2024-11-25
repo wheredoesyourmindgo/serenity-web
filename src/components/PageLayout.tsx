@@ -48,8 +48,8 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
           >
             <Toolbar variant={isMd ? 'dense' : 'regular'}>
               {/* <Type variant="h6" component="div" sx={{flexGrow: 1}}>
-              Serenity
-            </Type> */}
+            Serenity
+          </Type> */}
               <Button LinkComponent={Link} href="/alphas" color="inherit">
                 Alphas
               </Button>
@@ -57,8 +57,8 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
                 Firmware
               </Button>
               {/* <Button LinkComponent={Link} href="/vim" color="inherit">
-                Vim
-              </Button> */}
+              Vim
+            </Button> */}
               <Box sx={{flexGrow: 1}} />
               <ToggleDarkModeBtn />
             </Toolbar>
