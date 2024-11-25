@@ -2,27 +2,30 @@
   "name": "serenity-web",
   "version": "5.0.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "11.11.4",
+    "@emotion/cache": "^11.13.5",
+    "@emotion/react": "11.13.5",
     "@emotion/server": "^11.11.0",
-    "@emotion/styled": "11.11.5",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-regular-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@emotion/styled": "11.13.5",
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
+    "@fortawesome/free-regular-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mui/icons-material": "^5.16.0",
-    "@mui/material": "5.16.0",
-    "@mui/material-nextjs": "^5.15.11",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "5.16.7",
+    "@mui/material-nextjs": "^5.16.6",
     "clsx": "2.1.1",
     "mui-jackinbox": "^1.0.0",
     "mui-sleazebox": "^1.0.3",
-    "next": "14.2.4",
+    "next": "14.2.18",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "smoothscroll-polyfill": "^0.4.4",
-    "vercel": "^34.3.0"
+    "vercel": "^34.4.0"
   },
   "scripts": {
     "start": "next start",
@@ -39,14 +42,15 @@
     "test": "ava"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.17.8",
     "@types/smoothscroll-polyfill": "^0.3.4",
-    "@vercel/node": "^3.2.1",
-    "eslint": "^8.54.0",
-    "eslint-config-next": "^14.2.4",
-    "eslint-config-prettier": "^9.0.0",
+    "@vercel/node": "^3.2.26",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.18",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-compat": "^5.0.0",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.3"
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
