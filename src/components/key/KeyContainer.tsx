@@ -17,7 +17,7 @@ export default function KeyContainer({
   ...rest
 }: Props) {
   const {sx, ...r} = rest
-  const popoverContainerRef = useRef()
+  const popoverContainerRef = useRef(undefined)
   const theme = useTheme<AppTheme>()
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
 
