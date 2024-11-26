@@ -59,6 +59,9 @@ export default function PageLayout({children, containerProps, ...rest}: Props) {
               {/* <Button LinkComponent={Link} href="/vim" color="inherit">
               Vim
             </Button> */}
+              <Button LinkComponent={Link} href="/software" color="inherit">
+                Software
+              </Button>
               <Box sx={{flexGrow: 1}} />
               <ToggleDarkModeBtn />
             </Toolbar>
