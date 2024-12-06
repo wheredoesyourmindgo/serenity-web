@@ -16,8 +16,8 @@ import {
 import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
 import PageLayout from '../components/PageLayout'
 import BaseLyr from '@components/keyboard/software/BaseLyr'
-import NumNavLyr from '@components/keyboard/firmware/NumNavLyr'
 import MuiFaIcon from '@components/MuiFaIcon'
+import FnLyr from '@components/keyboard/software/FnLyr'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -76,7 +76,7 @@ export default function SoftwarePage() {
             </TabPanel>
 
             <TabPanel value={value} index={1}>
-              <NumNavLyr />
+              <FnLyr />
             </TabPanel>
           </Box>
           <Box

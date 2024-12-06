@@ -62,7 +62,6 @@ export default function NumNavLyr() {
             customShiftCode
             className="fa-regular fa-delete-left"
             KeyContainerProps={{
-              className: 'container nrshrneatsrnts',
               keyId: 'backspace-key',
               popOverContent: (
                 <Box p={1}>
