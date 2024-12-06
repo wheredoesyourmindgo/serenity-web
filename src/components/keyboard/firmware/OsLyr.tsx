@@ -241,7 +241,7 @@ export default function OsLyr() {
           />
           <KeyIcon
             homing
-            className="fa-regular fa-chart-tree-map"
+            className="fa-regular fa-rectangles-mixed"
             KeyContainerProps={{
               keyId: 'mission-control-key',
               popOverContent: (

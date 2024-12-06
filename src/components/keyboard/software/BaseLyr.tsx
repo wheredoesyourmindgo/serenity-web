@@ -18,79 +18,224 @@ export default function BaseLyr() {
         <RowBox child flexSpacing={1}>
           <KeyIcon
             // customShiftCode
-            className="fa-regular fa-arrow-up-left-from-circle"
+            className="fa-regular fa-lock-a"
             sx={{
               fontSize: 19
               // transform: 'translateX(2px)'
             }}
             KeyContainerProps={{
               sx: {
-                width: 82.5,
+                width: 86.5, // 1.5u (equation is: (55+8)*1.5-8)
                 height: 55
               },
-              keyId: 'escape-key',
+              keyId: 'capslock-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Esc" />
-                  {/* <br />
-                  <PopoverDesc action="shifted" output="Delete word right" /> */}
+                  <PopoverDesc action="tap/hold" output="Capslock" />
                 </Box>
               )
             }}
             // shiftSubIcn={faRightToBracket}
           />
-          <KeyLegend {...sharedProps}>F1</KeyLegend>
-          <KeyLegend {...sharedProps}>F2</KeyLegend>
-          <KeyLegend {...sharedProps}>F3</KeyLegend>
-          <KeyLegend {...sharedProps}>F4</KeyLegend>
-          <KeyLegend {...sharedProps}>F5</KeyLegend>
-          <KeyLegend {...sharedProps}>F6</KeyLegend>
-          <KeyLegend {...sharedProps}>F7</KeyLegend>
-          <KeyLegend {...sharedProps}>F8</KeyLegend>
-          <KeyLegend {...sharedProps}>F9</KeyLegend>
-          <KeyLegend {...sharedProps}>F10</KeyLegend>
-          <KeyLegend {...sharedProps}>F11</KeyLegend>
-          <KeyLegend {...sharedProps}>F12</KeyLegend>
-          <KeyLegend {...sharedProps}>O</KeyLegend>
+          <KeyIcon
+            className="fa-regular fa-brightness-low"
+            KeyContainerProps={{
+              keyId: 'screen-brightness-down-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Screen Brightness Down"
+                  />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-brightness"
+            KeyContainerProps={{
+              keyId: 'screen-brightness-up-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Screen Brightness Up"
+                  />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-rectangles-mixed"
+            KeyContainerProps={{
+              keyId: 'mission-control-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Mission Control" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-magnifying-glass"
+            KeyContainerProps={{
+              keyId: 'spotlight-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Spotlight" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-microphone"
+            KeyContainerProps={{
+              keyId: 'siri-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Siri" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-moon"
+            KeyContainerProps={{
+              keyId: 'do-not-disturb-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Do Not Disturb" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-backward"
+            KeyContainerProps={{
+              keyId: 'rewind-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Rewind" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-play-pause"
+            KeyContainerProps={{
+              keyId: 'play-pause-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Play Pause" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-forward"
+            KeyContainerProps={{
+              keyId: 'fast-forward-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Fast Forward" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-volume-slash"
+            KeyContainerProps={{
+              keyId: 'mute-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Mute" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-volume-low"
+            KeyContainerProps={{
+              keyId: 'volume-down-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Volume Down" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            sx={{fontSize: 19}}
+            className="fa-regular fa-volume-high"
+            KeyContainerProps={{
+              keyId: 'volume-up-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Volume Up" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-fingerprint"
+            KeyContainerProps={{
+              keyId: 'fingerprint-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Power/Sleep" />
+                  <br />
+                  <PopoverDesc action="hold" output="Fingerprint Reader" />
+                </Box>
+              )
+            }}
+          />
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyLegend {...sharedProps} shiftLgnd="~">
             `
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="!">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="!">
             1
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="@">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="@">
             2
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="#">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="#">
             3
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="$">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="$">
             4
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="%">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="%">
             5
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="^">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="^">
             6
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="&">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="&">
             7
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="*">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="*">
             8
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="(">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="(">
             9
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd=")">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd=")">
             0
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="{">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="{">
             [
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="}">
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="}">
             ]
           </KeyLegend>
           <KeyIcon
@@ -98,7 +243,7 @@ export default function BaseLyr() {
             className="fa-regular fa-delete-left"
             KeyContainerProps={{
               sx: {
-                width: 82.5,
+                width: 86.5, // 1.5u
                 height: 55
               },
               keyId: 'backspace-key',
@@ -127,7 +272,7 @@ export default function BaseLyr() {
             }}
             KeyContainerProps={{
               sx: {
-                width: 82.5,
+                width: 86.5, // 1.5u
                 height: 55
               },
               keyId: 'tab-key',
@@ -171,51 +316,29 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="_">
             -
           </KeyLegend>
-          <KeyIcon
-            customShiftCode
-            className="fa-regular fa-delete-left"
-            KeyContainerProps={{
-              keyId: 'backspace-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Backspace" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
-              )
-            }}
-            // shiftSubIcn={faRightToBracket}
-            // ShiftSubIcnProps={{flip: 'horizontal'}}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
-          />
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
+          <KeyLegend {...sharedProps} shiftLgnd="+">
+            =
           </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="_">
-            -
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="?">
+            /
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="|">
+            \
           </KeyLegend>
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            tapForceHold
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-computer-mouse" />
-            )}
             className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{transform: 'translateY(4px)', fontSize: 18}}
+            sx={{fontSize: 18}}
             KeyContainerProps={{
               sx: {
-                width: 96.25,
+                width: 102.25, // 1.75u
                 height: 55
               },
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Escape" />
-                  <br />
-                  <PopoverDesc action="hold" output="Mouse Layer" />
+                  <PopoverDesc action="tap/hold" output="Escape" />
                 </Box>
               )
             }}
@@ -258,7 +381,7 @@ export default function BaseLyr() {
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx: {width: 96.25, height: 55},
+              sx: {width: 102.25, height: 55},
               keyId: 'right-shift-key',
               popOverContent: (
                 <Box p={1}>
@@ -272,16 +395,13 @@ export default function BaseLyr() {
         </RowBox>
         <RowBox child flexSpacing={1}>
           <KeyIcon
-            special
             className="fa-regular fa-up"
             KeyContainerProps={{
-              sx: {width: 137.5, height: 55},
+              sx: {width: 133.75, height: 55}, // 2.25u
               keyId: 'left-shift-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
-                  <br />
-                  <PopoverDesc action="double tap" output="Caps-word" />
                 </Box>
               )
             }}
@@ -366,7 +486,7 @@ export default function BaseLyr() {
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx: {width: 123.75, height: 55},
+              sx: {width: 133.75, height: 55}, // 2.25u
               keyId: 'right-shift-key',
               popOverContent: (
                 <Box p={1}>
@@ -398,176 +518,109 @@ export default function BaseLyr() {
           /> */}
           <KeyIcon className="fa-regular fa-chevron-up" />
           <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
-          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon className="fa-regular fa-command" sx={{fontSize: 18}} />
           <KeyIcon
             className="fa-regular fa-layer-group"
-            sx={{fontSize: 16, transform: 'translateY(2px)'}}
-            special
+            sx={{fontSize: 18, transform: 'translateY(2px)'}}
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-table-layout" />
-            )}
-            KeyContainerProps={{
-              keyId: 'lower-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  {/* <PopoverDesc action="tap" output="Escape" />
-                  <br /> */}
-                  <PopoverDesc
-                    action="hold"
-                    output="Action Layer (or Left Shift)"
-                  />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            special
-            className="fa-regular fa-angles-down"
-            sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-hashtag" />
-            )}
-            KeyContainerProps={{
-              keyId: 'lower-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  {/* <PopoverDesc action="tap" output="Escape" />
-                  <br /> */}
-                  <PopoverDesc action="hold" output="Num/Nav Layer" />
-                  <br />
-                  <PopoverDesc
-                    action="tap -> hold"
-                    output="Base Layer w/ Home Row Mods on left side"
-                  />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-bracket-square"
-            rotation={270}
-            sx={{transform: 'translateY(6px)'}}
-            KeyContainerProps={{
-              keyId: 'left-space-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-bracket-square"
-            rotation={270}
-            sx={{transform: 'translateY(6px)'}}
-            KeyContainerProps={{
-              keyId: 'right-space-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            special
-            className="fa-regular fa-angles-up"
-            sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-at" />}
-            KeyContainerProps={{
-              keyId: 'higher-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="hold" output="Symbol Layer" />
-                  <br />
-                  <PopoverDesc
-                    action="tap -> hold"
-                    output="Base Layer w/ Home Row Mods on right side"
-                  />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-arrow-left"
-            special
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-gear" />
-            )}
-            tapForceHold
-            sx={{transform: 'translateY(4px)'}}
-            KeyContainerProps={{
-              keyId: 'media-layer-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Left Arrow" />
-                  <br />
-                  <PopoverDesc
-                    action="hold"
-                    output="Media Layer (or Right Shift)"
-                  />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-arrow-down"
-            tapForceHold
-            sx={{transform: 'translateY(4px)'}}
-            ModHoldSubIcn={() => (
-              <ModSubHoldIcn
-                className="fa-regular fa-command"
-                sx={{fontSize: 11}}
+              <LyrHoldSubIcn
+                className="fa-regular fa-keyboard"
+                sx={{transform: 'translateX(-4px)'}}
               />
             )}
             KeyContainerProps={{
+              sx: {width: 70.75, height: 55}, // 1.25u
+              keyId: 'lower-layer-key',
+              popOverContent: (
+                <Box p={1}>
+                  {/* <PopoverDesc action="tap" output="Escape" />
+                  <br /> */}
+                  <PopoverDesc action="hold" output="FN Layer" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-bracket-square"
+            rotation={270}
+            sx={{transform: 'translateY(6px)'}}
+            KeyContainerProps={{
+              sx: {width: 307, height: 55}, // 5u
+              keyId: 'space-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Space" />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              sx: {width: 70.75, height: 55}, // 1.25u
               keyId: 'right-command-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Down Arrow" />
-                  <br />
-                  <PopoverDesc action="hold" output="Right Command" />
+                  <PopoverDesc action="tap/hold" output="Right Command" />
                 </Box>
               )
             }}
           />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+
           <KeyIcon
-            className="fa-regular fa-arrow-up"
-            tapForceHold
-            ModHoldSubIcn={() => (
-              <ModSubHoldIcn
-                className="fa-regular fa-option"
-                sx={{transform: 'translateX(-3px)', fontSize: 11}}
-              />
-            )}
-            sx={{transform: 'translateY(4px)'}}
+            className="fa-regular fa-arrow-left"
+            sx={{
+              transform: 'translateY(-2px)',
+              fontSize: 14
+            }}
             KeyContainerProps={{
-              keyId: 'right-option-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Up Arrow" />
-                  <br />
-                  <PopoverDesc action="hold" output="Right Alt/Option" />
-                </Box>
-              )
+              sx: {width: 55, height: 25, alignSelf: 'flex-end'} // 1.25u
             }}
           />
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              alignItems: 'stretch',
+              marginLeft: 1
+            }}
+          >
+            <KeyIcon
+              className="fa-regular fa-arrow-up"
+              sx={{
+                transform: 'translateY(-2px)',
+                fontSize: 14
+              }}
+              KeyContainerProps={{
+                sx: {width: 55, height: 25} // 1u
+              }}
+            />
+            <KeyIcon
+              className="fa-regular fa-arrow-down"
+              sx={{
+                transform: 'translateY(-2px)',
+                fontSize: 14
+              }}
+              KeyContainerProps={{
+                sx: {width: 55, height: 25} // 1u
+              }}
+            />
+          </Box>
+          {/* <KeyIcon
+            className="fa-regular fa-arrow-up"
+               sx={{transform: 'translateY(-2px)', fontSize: 14}}
+          /> */}
           <KeyIcon
             className="fa-regular fa-arrow-right"
-            ModHoldSubIcn={() => (
-              <ModSubHoldIcn className="fa-regular fa-chevron-up" />
-            )}
-            tapForceHold
-            sx={{transform: 'translateY(4px)'}}
+            sx={{
+              transform: 'translateY(-2px)',
+              fontSize: 14
+            }}
             KeyContainerProps={{
-              keyId: 'right-ctrl-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap" output="Right Arrow" />
-                  <br />
-                  <PopoverDesc action="hold" output="Right Control" />
-                </Box>
-              )
+              sx: {width: 55, height: 25, alignSelf: 'flex-end'} // 1u
             }}
           />
         </RowBox>
