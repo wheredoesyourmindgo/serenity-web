@@ -561,16 +561,23 @@ export default function FnLyr() {
               )
             }}
           /> */}
-          <KeyIcon className="fa-regular fa-chevron-up" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
-          <KeyIcon className="fa-regular fa-command" sx={{fontSize: 18}} />
 
           <KeyLegend
             {...sharedProps}
+            // KeyContainerProps={{
+            //   sx: {width: 70.75, height: 55} // 1.25u
+            // }}
+          />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon
+            className="fa-regular fa-command"
+            sx={{fontSize: 18}}
             KeyContainerProps={{
               sx: {width: 70.75, height: 55} // 1.25u
             }}
           />
+
           <KeyIcon
             className="fa-regular fa-bracket-square"
             rotation={270}
