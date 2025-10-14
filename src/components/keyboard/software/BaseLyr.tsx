@@ -516,11 +516,8 @@ export default function BaseLyr() {
               )
             }}
           /> */}
-          <KeyIcon className="fa-regular fa-chevron-up" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
-          <KeyIcon className="fa-regular fa-command" sx={{fontSize: 18}} />
           <KeyIcon
-            className="fa-regular fa-layer-group"
+            className="fa-light fa-globe"
             sx={{fontSize: 18, transform: 'translateY(2px)'}}
             LyrHoldSubIcn={() => (
               <LyrHoldSubIcn
@@ -529,8 +526,7 @@ export default function BaseLyr() {
               />
             )}
             KeyContainerProps={{
-              sx: {width: 70.75, height: 55}, // 1.25u
-              keyId: 'lower-layer-key',
+              keyId: 'fn-layer-key',
               popOverContent: (
                 <Box p={1}>
                   {/* <PopoverDesc action="tap" output="Escape" />
@@ -540,19 +536,37 @@ export default function BaseLyr() {
               )
             }}
           />
+          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon
+            className="fa-regular fa-command"
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              sx: {width: 70.75, height: 55} // 1.25u
+            }}
+          />
+
           <KeyIcon
             className="fa-regular fa-bracket-square"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
+            sx={{transform: 'translateY(10px)'}}
             KeyContainerProps={{
               sx: {width: 307, height: 55}, // 5u
               keyId: 'space-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Space" />
+                  <PopoverDesc action="tap" output="Space" />
+                  <br />
+                  <PopoverDesc action="hold" output="FN Layer" />
                 </Box>
               )
             }}
+            LyrHoldSubIcn={() => (
+              <LyrHoldSubIcn
+                className="fa-regular fa-keyboard"
+                sx={{transform: 'translateX(-6px)'}}
+              />
+            )}
           />
           <KeyIcon
             className="fa-regular fa-command"
