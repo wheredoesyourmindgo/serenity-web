@@ -1,6 +1,6 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
 import {Box} from '@mui/material'
-import {ChildBox} from 'mui-sleazebox'
+import {ChildBox} from '@components/mui-sleazebox'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'

@@ -1,5 +1,5 @@
 import KeyIcon from '@components/key/KeyIcon'
-import {ColumnBox, RowBox} from 'mui-sleazebox'
+import {ColumnBox, RowBox} from '@components/mui-sleazebox'
 import {
   faLock,
   faOption,

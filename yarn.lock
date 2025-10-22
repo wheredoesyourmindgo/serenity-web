@@ -5061,19 +5061,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mui-sleazebox@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "mui-sleazebox@npm:1.0.3"
-  dependencies:
-    clsx: "npm:^1.1.1"
-  peerDependencies:
-    "@mui/material": ^5.0.1
-    react: ^16.13.1
-    react-dom: ^16.13.1
-  checksum: 10c0/72cc11ab482343644bfb7b362d07a2dfaa5bb11296f0e27d8cdd7afcffe1b9cbc9d114a25ed89f42d945e8deb6de487958e658ff2d87523268a69544974bc97e
-  languageName: node
-  linkType: hard
-
 "multipipe@npm:^1.0.2":
   version: 1.0.2
   resolution: "multipipe@npm:1.0.2"
@@ -6026,7 +6013,6 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-compat: "npm:^6.0.2"
     mui-jackinbox: "npm:^1.0.0"
-    mui-sleazebox: "npm:^1.0.3"
     next: "npm:15.5.6"
     prettier: "npm:^3.6.2"
     react: "npm:19.2.0"
