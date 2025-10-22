@@ -1,6 +1,6 @@
 // cspell:ignore xmark
 import KeyIcon from '@components/key/KeyIcon'
-import {ColumnBox, RowBox} from 'mui-sleazebox'
+import {ColumnBox, RowBox} from '@components/mui-sleazebox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/system'

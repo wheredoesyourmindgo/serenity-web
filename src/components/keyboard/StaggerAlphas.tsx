@@ -1,5 +1,5 @@
 // cspell:ignore Lgnd
-import {ColumnBox, RowBox} from 'mui-sleazebox'
+import {ColumnBox, RowBox} from '@components/mui-sleazebox'
 // import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
 // import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'

@@ -11,7 +11,7 @@ import {
   ToggleButtonGroup,
   Typography as Type
 } from '@mui/material'
-import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
+import {ChildBox, ColumnBox, RowBox} from '@components/mui-sleazebox'
 import PageLayout from '../components/PageLayout'
 import {
   faAt,

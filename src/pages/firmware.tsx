@@ -13,8 +13,8 @@ import {
   Typography as Type
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ChildBox, ColumnBox, RowBox} from 'mui-sleazebox'
-import PageLayout from '../components/PageLayout'
+import {ChildBox, ColumnBox, RowBox} from '@components/mui-sleazebox'
+import PageLayout from '@components/PageLayout'
 import BaseLyr from '@components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@components/keyboard/firmware/NumNavLyr'
 import SymLyr from '@components/keyboard/firmware/SymLyr'

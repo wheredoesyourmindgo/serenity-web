@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import {AppTheme} from '@lib/theme'
 import {alpha, Popover, useTheme, Box} from '@mui/material'
-import {FlexBox, FlexBoxProps} from 'mui-sleazebox'
+import {FlexBox, FlexBoxProps} from '@components/mui-sleazebox'
 
 type Props = FlexBoxProps & {
   keyId?: string
