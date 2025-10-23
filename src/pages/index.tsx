@@ -1,7 +1,6 @@
-import React from 'react'
 import {Container, Box, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ColumnBox} from '@components/mui-sleazebox'
+import {ColumnBox} from '@components/flexbox'
 import AlphaKeyboard from '@components/keyboard/Alphas'
 import PageLayout from '../components/PageLayout'
 

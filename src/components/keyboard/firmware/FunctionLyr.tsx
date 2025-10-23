@@ -1,5 +1,5 @@
 import KeyIcon from '@components/key/KeyIcon'
-import {ColumnBox, RowBox} from '@components/mui-sleazebox'
+import {ColumnBox, RowBox} from '@components/flexbox'
 import KeyLegend, {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, SxProps} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
