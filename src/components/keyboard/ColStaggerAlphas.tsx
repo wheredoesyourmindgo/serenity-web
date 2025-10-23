@@ -6,26 +6,24 @@ import {ColumnBox, RowBox} from '@components/flexbox'
 import {KeyLegend} from '@components/key'
 import {alpha, useTheme} from '@mui/material'
 import {AppTheme} from '@lib/theme'
-import {useCallback} from 'react'
 import {KeyLegendProps} from '@components/key/KeyLegend'
+
+const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
+  <KeyLegend
+    KeyContainerProps={{
+      sx: {borderWidth: 0, boxShadow: 'none', height: 72}
+    }}
+    {...props}
+  >
+    {children}
+  </KeyLegend>
+)
 
 export default function ColStaggerAlphaKeyboard() {
   const theme = useTheme<AppTheme>()
   const tBase02 = alpha(theme.palette.solarized.base02, 0.85)
   const tBase03 = alpha(theme.palette.solarized.base03, 0.95)
-  const AlphaKeyLgnd = useCallback(
-    ({children, ...props}: KeyLegendProps) => (
-      <KeyLegend
-        KeyContainerProps={{
-          sx: {borderWidth: 0, boxShadow: 'none', height: 72}
-        }}
-        {...props}
-      >
-        {children}
-      </KeyLegend>
-    ),
-    []
-  )
+
   // const AlphaKeyIcn = useCallback(
   //   ({...props}: KeyIconProps) => (
   //     <KeyIcon KeyContainerProps={{sx: {borderWidth: 0}}} {...props} />

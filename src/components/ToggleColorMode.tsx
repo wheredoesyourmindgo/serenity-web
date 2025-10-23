@@ -1,4 +1,4 @@
-import React, {useState, useMemo, useContext, useEffect} from 'react'
+import React, {useMemo, useContext, useEffect} from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import {useMediaQuery, useTheme, Box} from '@mui/material'
 import {UiContext, setColorMode} from '@components/UiStore'
@@ -14,22 +14,10 @@ export default function ToggleColorMode({children}: Props) {
   const {mode} = state
   const theme = useTheme()
 
-  // track prefersDarkMode as darkMode so that prefersDarkMode doesn't overwrite explicit mode changes
-  const [darkMode, setDarkMode] = useState(prefersDarkMode)
+  // Sync UI color mode with system preference changes only
   useEffect(() => {
-    if (darkMode !== prefersDarkMode) {
-      setDarkMode(prefersDarkMode)
-    }
-  }, [prefersDarkMode, darkMode])
-
-  // if and when tracked darkMode changes update mode
-  useEffect(() => {
-    if (darkMode) {
-      dispatch(setColorMode('dark'))
-    } else {
-      dispatch(setColorMode('light'))
-    }
-  }, [darkMode, dispatch])
+    dispatch(setColorMode(prefersDarkMode ? 'dark' : 'light'))
+  }, [prefersDarkMode, dispatch])
 
   const sysTheme = useMemo(() => {
     // don't spread-in theme palette cause it will break the theme
