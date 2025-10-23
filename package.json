@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "next start",
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "clean": "rimraf yarn.lock node_modules .next",
     "vc": "vc",
     "vc:prod": "vc --prod",
