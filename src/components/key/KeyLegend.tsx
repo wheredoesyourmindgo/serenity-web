@@ -1,5 +1,5 @@
 import {Typography as Type, TypographyProps} from '@mui/material'
-import {ChildBox} from '@components/mui-sleazebox'
+import {ChildBox} from '@components/flexbox'
 import React from 'react'
 import {KeyContainer} from '.'
 import {KeyContainerProps} from './KeyContainer'
