@@ -1,11 +1,11 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import {AppTheme} from '@lib/theme'
 import {alpha, Popover, useTheme, Box} from '@mui/material'
 import {FlexBox, FlexBoxProps} from '@components/flexbox'
 
 type Props = FlexBoxProps & {
   keyId?: string
-  popOverContent?: React.ReactNode | String
+  popOverContent?: React.ReactNode | string
   homing?: boolean
 }
 
@@ -17,7 +17,6 @@ export default function KeyContainer({
   ...rest
 }: Props) {
   const {sx, ...r} = rest
-  const popoverContainerRef = useRef(undefined)
   const theme = useTheme<AppTheme>()
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
 
@@ -79,10 +78,9 @@ export default function KeyContainer({
       {...r}
     >
       {/* overflow fixes issues on mouse hover where partial icons can disappear, ex. backspace icon */}
-      <Box ref={popoverContainerRef} sx={{overflow: 'visible !important'}}>
+      <Box sx={{overflow: 'visible !important'}}>
         <Popover
           id={popOverId}
-          container={popoverContainerRef.current}
           sx={{
             pointerEvents: 'none'
           }}

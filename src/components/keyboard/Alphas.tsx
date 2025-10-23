@@ -6,24 +6,22 @@ import {ColumnBox, RowBox} from '@components/flexbox'
 import {KeyLegend} from '@components/key'
 import {alpha, useTheme} from '@mui/material'
 import {AppTheme} from '@lib/theme'
-import {useCallback} from 'react'
 import {KeyLegendProps} from '@components/key/KeyLegend'
+
+const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
+  <KeyLegend
+    KeyContainerProps={{sx: {borderWidth: 0, boxShadow: 'none'}}}
+    {...props}
+  >
+    {children}
+  </KeyLegend>
+)
 
 export default function AlphaKeyboard() {
   const theme = useTheme<AppTheme>()
   const base02 = alpha(theme.palette.solarized.base02, 0.85)
   const base03 = alpha(theme.palette.solarized.base03, 0.95)
-  const AlphaKeyLgnd = useCallback(
-    ({children, ...props}: KeyLegendProps) => (
-      <KeyLegend
-        KeyContainerProps={{sx: {borderWidth: 0, boxShadow: 'none'}}}
-        {...props}
-      >
-        {children}
-      </KeyLegend>
-    ),
-    []
-  )
+
   // const AlphaKeyIcn = useCallback(
   //   ({...props}: KeyIconProps) => (
   //     <KeyIcon KeyContainerProps={{sx: {borderWidth: 0}}} {...props} />

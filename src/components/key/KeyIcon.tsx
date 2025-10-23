@@ -11,7 +11,7 @@ import EncoderSubLgnd from './EncoderSubLgnd'
 
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps
-  shiftLgnd?: String | React.ReactNode
+  shiftLgnd?: string | React.ReactNode
   optEncoder?: boolean
   customShiftCode?: boolean
   special?: boolean
