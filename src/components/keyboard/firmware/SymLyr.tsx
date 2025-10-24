@@ -6,12 +6,14 @@ import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
+import {type KeyboardLayout} from '@pages/firmware'
 
-export default function SymLyr() {
+export default function SymLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
+  const isCorneLayout = layout === '42 key'
 
   return (
-    <Box>
+    <Box data-layout={layout}>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
@@ -157,9 +159,25 @@ export default function SymLyr() {
               )
             }}
           /> */}
-          <KeyIcon className="fa-regular fa-chevron-up" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
-          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
           <KeyLegend {...sharedProps} />
           <KeyIcon
             // className="fa-regular fa-arrow-up-left-from-circle"
@@ -208,13 +226,19 @@ export default function SymLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon
+            className="fa-regular fa-command"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-option"
             sx={{fontSize: 18}}
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap/hold" output="Right Option" />
@@ -222,7 +246,12 @@ export default function SymLyr() {
               )
             }}
           />
-          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
         </RowBox>
       </ColumnBox>
     </Box>

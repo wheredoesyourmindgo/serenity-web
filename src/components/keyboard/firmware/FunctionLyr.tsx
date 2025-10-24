@@ -4,15 +4,17 @@ import KeyLegend, {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, SxProps} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
+import {type KeyboardLayout} from '@pages/firmware'
 
-export default function FuncLyr() {
+export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
   const fxSx: SxProps = {
     fontSize: 18
   }
+  const isCorneLayout = layout === '42 key'
 
   return (
-    <Box>
+    <Box data-layout={layout}>
       <ColumnBox flexSpacing={1}>
         <RowBox child flexSpacing={1}>
           <KeyIcon
@@ -187,9 +189,25 @@ export default function FuncLyr() {
               )
             }}
           /> */}
-          <KeyIcon className="fa-regular fa-chevron-up" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
-          <KeyIcon className="fa-regular fa-command" />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
@@ -220,9 +238,25 @@ export default function FuncLyr() {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyIcon className="fa-regular fa-command" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
-          <KeyIcon className="fa-regular fa-chevron-up" />
+          <KeyIcon
+            className="fa-regular fa-command"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
         </RowBox>
       </ColumnBox>
     </Box>

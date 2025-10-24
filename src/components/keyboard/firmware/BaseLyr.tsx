@@ -8,13 +8,13 @@ import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
-import {type KeyboardLayout } from '@pages/firmware'
+import {type KeyboardLayout} from '@pages/firmware'
 
 export interface BaseLyrProps {
   layout: KeyboardLayout
 }
 
-export default function BaseLyr({ layout }: BaseLyrProps) {
+export default function BaseLyr({layout}: BaseLyrProps) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
 
   const isCorneLayout = layout === '42 key'
@@ -269,9 +269,25 @@ export default function BaseLyr({ layout }: BaseLyrProps) {
               )
             }}
           /> */}
-          <KeyIcon className="fa-regular fa-chevron-up" KeyContainerProps={{sx:{visibility: isCorneLayout ? 'hidden' : 'visible'}}} />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} KeyContainerProps={{sx:{visibility: isCorneLayout ? 'hidden' : 'visible'}}}  />
-          <KeyIcon className="fa-regular fa-command" KeyContainerProps={{sx:{visibility: isCorneLayout ? 'hidden' : 'visible'}}} />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option"
+            sx={{fontSize: 18}}
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            KeyContainerProps={{
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-layer-group"
             sx={{fontSize: 16, transform: 'translateY(2px)'}}
@@ -281,13 +297,17 @@ export default function BaseLyr({ layout }: BaseLyrProps) {
             )}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
-              popOverContent: (
+              popOverContent: isCorneLayout ? (
+                <Box p={1}>
+                  <PopoverDesc action="hold" output="Action Layer" />
+                </Box>
+              ) : (
                 <Box p={1}>
                   {/* <PopoverDesc action="tap" output="Escape" />
-                  <br /> */}
+                              <br /> */}
                   <PopoverDesc
                     action="hold"
-                    output={isCorneLayout ? "Action Layer" : "Action Layer (or Left Shift)"}
+                    output="Action Layer (or Left Shift)"
                   />
                 </Box>
               )
@@ -362,22 +382,34 @@ export default function BaseLyr({ layout }: BaseLyrProps) {
             }}
           />
           <KeyIcon
-            className={isCorneLayout ? "fa-regular fa-layer-group" : "fa-regular fa-arrow-left"}
+            className={
+              isCorneLayout
+                ? 'fa-regular fa-layer-group'
+                : 'fa-regular fa-arrow-left'
+            }
             special={!isCorneLayout}
             LyrHoldSubIcn={() => (
               <LyrHoldSubIcn className="fa-regular fa-gear" />
             )}
             tapForceHold={!isCorneLayout}
-            sx={isCorneLayout ? {fontSize: 16, transform: 'translateY(2px)'}:{transform: 'translateY(4px)'}}
+            sx={
+              isCorneLayout
+                ? {fontSize: 16, transform: 'translateY(2px)'}
+                : {transform: 'translateY(4px)'}
+            }
             KeyContainerProps={{
               keyId: 'media-layer-key',
-              popOverContent: (
+              popOverContent: isCorneLayout ? (
+                <Box p={1}>
+                  <PopoverDesc action="hold" output="Media Layer" />
+                </Box>
+              ) : (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Left Arrow" />
                   <br />
                   <PopoverDesc
                     action="hold"
-                    output={isCorneLayout ? "Media Layer" : "Media Layer (or Right Shift)"}
+                    output="Media Layer (or Right Shift)"
                   />
                 </Box>
               )
@@ -394,7 +426,7 @@ export default function BaseLyr({ layout }: BaseLyrProps) {
               />
             )}
             KeyContainerProps={{
-              sx:{visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
               keyId: 'right-command-key',
               popOverContent: (
                 <Box p={1}>
@@ -416,7 +448,7 @@ export default function BaseLyr({ layout }: BaseLyrProps) {
             )}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx:{visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
               keyId: 'right-option-key',
               popOverContent: (
                 <Box p={1}>
@@ -435,7 +467,7 @@ export default function BaseLyr({ layout }: BaseLyrProps) {
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx:{visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
               keyId: 'right-ctrl-key',
               popOverContent: (
                 <Box p={1}>

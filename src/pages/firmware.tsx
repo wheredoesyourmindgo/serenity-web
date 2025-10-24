@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {
   Box,
+  Button,
   Container,
   List,
   ListItem,
@@ -12,7 +13,12 @@ import {
   Tabs,
   Typography as Type
 } from '@mui/material'
-import { FormControl, FormLabel, ToggleButton, ToggleButtonGroup } from '@mui/material'
+import {
+  FormControl,
+  FormLabel,
+  ToggleButton,
+  ToggleButtonGroup
+} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from '@components/flexbox'
 import PageLayout from '@components/PageLayout'
@@ -26,6 +32,7 @@ import MuiFaIcon from '@components/MuiFaIcon'
 import QwertyLyr from '@components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@components/keyboard/firmware/MouseLyr'
 import OsLyr from '@components/keyboard/firmware/OsLyr'
+import GitHubIcon from '@mui/icons-material/GitHub'
 // import NumpadLyr from '@components/keyboard/firmware/Numpad'
 // import Encoder from '@components/keyboard/firmware/Encoder'
 // import {faCircleDashed} from '@fortawesome/pro-regular-svg-icons'
@@ -64,12 +71,11 @@ function a11yProps(index: number) {
 export default function FirmwarePage() {
   const [value, setValue] = useState(0)
 
-  const [layout, setLayout] = useState<KeyboardLayout>('48 key');
-  console.log(layout)
+  const [layout, setLayout] = useState<KeyboardLayout>('48 key')
 
   const handleLayoutChange = (
     _event: React.MouseEvent<HTMLElement>,
-    newLayout:  KeyboardLayout | null
+    newLayout: KeyboardLayout | null
   ) => {
     if (newLayout) setLayout(newLayout)
   }
@@ -79,11 +85,41 @@ export default function FirmwarePage() {
   }
   return (
     <PageLayout>
-      <Container sx={{m: 'auto'}}>
+      <Box
+        sx={{
+          my: 7.5,
+          marginRight: 2,
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }}
+      >
+        <Button
+          variant="outlined"
+          href="https://github.com/wheredoesyourmindgo/serenity-qmk"
+          target="_blank"
+          rel="noopener noreferrer"
+          startIcon={<GitHubIcon />}
+          size="small"
+          sx={{
+            textTransform: 'none',
+            fontWeight: 600,
+            color: 'white',
+            bgcolor: '#24292e',
+            borderColor: '#24292e',
+            '&:hover': {
+              bgcolor: '#2f363d',
+              borderColor: '#2f363d'
+            }
+          }}
+        >
+          Serenity QMK
+        </Button>
+      </Box>
+      <Container>
         <ColumnBox sx={{my: 10}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Box pt={4} />
+          {/* <Box pt={4} /> */}
           <Type
             variant="h2"
             gutterBottom
@@ -98,31 +134,31 @@ export default function FirmwarePage() {
               <BaseLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <MouseLyr />
+              <MouseLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <NumNavLyr />
+              <NumNavLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              <ActionLyr />
+              <ActionLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={4}>
-              <MediaLyr />
+              <MediaLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={5}>
-              <SymLyr />
+              <SymLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={6}>
-              <OsLyr />
+              <OsLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={7}>
-              <FuncLyr />
+              <FuncLyr layout={layout} />
             </TabPanel>
             {/* <TabPanel value={value} index={8}>
               <NumpadLyr />
             </TabPanel> */}
             <TabPanel value={value} index={8}>
-              <QwertyLyr />
+              <QwertyLyr layout={layout} />
             </TabPanel>
             {/* <TabPanel value={value} index={9}>
               <Encoder />
@@ -264,8 +300,8 @@ export default function FirmwarePage() {
         </ColumnBox>
         <RowBox justifyContent="space-around">
           <ChildBox>
-            <FormControl component="fieldset" >
-              <FormLabel component="legend" sx={{ textAlign: 'center', mb: 1 }}>
+            <FormControl component="fieldset">
+              <FormLabel component="legend" sx={{textAlign: 'center', mb: 1}}>
                 Layout
               </FormLabel>
               <ToggleButtonGroup
@@ -274,9 +310,52 @@ export default function FirmwarePage() {
                 onChange={handleLayoutChange}
                 size="small"
                 aria-label="Keyboard layout"
+                color="primary"
+                sx={{
+                  '& .MuiToggleButton-root': {
+                    color: 'text.primary'
+                  }
+                  // '& .Mui-selected': {
+                  // bgcolor: 'primary.main',
+                  // color: 'primary.contrastText'
+                  // '&:hover': {bgcolor: 'primary.dark'}
+                  // }
+                }}
               >
-                <ToggleButton value="48 key" aria-label="48 key">48 key (Planck)</ToggleButton>
-                <ToggleButton value="42 key" aria-label="42 key">42 key (Corne)</ToggleButton>
+                <ToggleButton
+                  value="48 key"
+                  aria-label="48 key"
+                  sx={{paddingX: 2}}
+                >
+                  48 key{' '}
+                  <Type
+                    variant="inherit"
+                    sx={{
+                      display: 'inline',
+                      fontStyle: 'italic',
+                      paddingLeft: 1
+                    }}
+                  >
+                    (Planck)
+                  </Type>
+                </ToggleButton>
+                <ToggleButton
+                  value="42 key"
+                  aria-label="42 key"
+                  sx={{paddingX: 2}}
+                >
+                  42 key{' '}
+                  <Type
+                    variant="inherit"
+                    sx={{
+                      display: 'inline',
+                      fontStyle: 'italic',
+                      paddingLeft: 1
+                    }}
+                  >
+                    (Corne)
+                  </Type>
+                </ToggleButton>
               </ToggleButtonGroup>
             </FormControl>
           </ChildBox>
