@@ -78,10 +78,18 @@ export default function SoftwarePage() {
             fontWeight: 600,
             color: 'white',
             bgcolor: '#24292e',
-            borderColor: '#24292e',
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: (theme) =>
+              theme.palette.mode === 'dark'
+                ? 'rgba(255, 255, 255, 0.3)'
+                : 'rgba(0, 0, 0, 0.3)',
             '&:hover': {
               bgcolor: '#2f363d',
-              borderColor: '#2f363d'
+              borderColor: (theme) =>
+                theme.palette.mode === 'dark'
+                  ? 'rgba(255, 255, 255, 0.5)'
+                  : 'rgba(0, 0, 0, 0.5)'
             }
           }}
         >
