@@ -12,6 +12,7 @@ import {
   Tabs,
   Typography as Type
 } from '@mui/material'
+import { FormControl, FormLabel, ToggleButton, ToggleButtonGroup } from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from '@components/flexbox'
 import PageLayout from '@components/PageLayout'
@@ -34,6 +35,8 @@ interface TabPanelProps {
   index: number
   value: number
 }
+
+export type KeyboardLayout = '48 key' | '42 key'
 
 function TabPanel(props: TabPanelProps) {
   const {children, value, index, ...other} = props
@@ -61,6 +64,16 @@ function a11yProps(index: number) {
 export default function FirmwarePage() {
   const [value, setValue] = useState(0)
 
+  const [layout, setLayout] = useState<KeyboardLayout>('48 key');
+  console.log(layout)
+
+  const handleLayoutChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    newLayout:  KeyboardLayout | null
+  ) => {
+    if (newLayout) setLayout(newLayout)
+  }
+
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
@@ -82,7 +95,7 @@ export default function FirmwarePage() {
 
           <Box pt={4}>
             <TabPanel value={value} index={0}>
-              <BaseLyr />
+              <BaseLyr layout={layout} />
             </TabPanel>
             <TabPanel value={value} index={1}>
               <MouseLyr />
@@ -250,7 +263,23 @@ export default function FirmwarePage() {
           {/* <Copyright /> */}
         </ColumnBox>
         <RowBox justifyContent="space-around">
-          <ChildBox />
+          <ChildBox>
+            <FormControl component="fieldset" >
+              <FormLabel component="legend" sx={{ textAlign: 'center', mb: 1 }}>
+                Layout
+              </FormLabel>
+              <ToggleButtonGroup
+                value={layout}
+                exclusive
+                onChange={handleLayoutChange}
+                size="small"
+                aria-label="Keyboard layout"
+              >
+                <ToggleButton value="48 key" aria-label="48 key">48 key (Planck)</ToggleButton>
+                <ToggleButton value="42 key" aria-label="42 key">42 key (Corne)</ToggleButton>
+              </ToggleButtonGroup>
+            </FormControl>
+          </ChildBox>
           <ChildBox>
             <Paper elevation={2} sx={{borderRadius: 1}}>
               <Box sx={{padding: 2, bgcolor: 'inherit', borderRadius: 1}}>
