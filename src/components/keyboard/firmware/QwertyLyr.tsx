@@ -16,7 +16,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
   return (
     <Box data-layout={layout}>
       <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-right-long-to-line"
             sx={{
@@ -79,7 +79,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             )}
           />
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             tapForceHold
             LyrHoldSubIcn={() => (
@@ -132,7 +132,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             '
           </KeyLegend>
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -193,7 +193,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special
@@ -214,20 +214,32 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-option"
             sx={{fontSize: 18}}
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
@@ -359,7 +371,11 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             )}
             KeyContainerProps={{
               keyId: 'right-command-key',
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              },
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Down Arrow" />
@@ -381,7 +397,11 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-option-key',
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              },
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Up Arrow" />
@@ -400,7 +420,11 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-ctrl-key',
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              },
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Right Arrow" />
