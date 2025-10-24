@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {
   Box,
+  Button,
   Container,
   List,
   ListItem,
@@ -18,6 +19,7 @@ import PageLayout from '../components/PageLayout'
 import BaseLyr from '@components/keyboard/software/BaseLyr'
 import MuiFaIcon from '@components/MuiFaIcon'
 import FnLyr from '@components/keyboard/software/FnLyr'
+import GitHubIcon from '@mui/icons-material/GitHub'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -56,11 +58,41 @@ export default function SoftwarePage() {
   }
   return (
     <PageLayout>
+      <Box
+        sx={{
+          my: 7.5,
+          marginRight: 2,
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }}
+      >
+        <Button
+          variant="outlined"
+          href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
+          target="_blank"
+          rel="noopener noreferrer"
+          startIcon={<GitHubIcon />}
+          size="small"
+          sx={{
+            textTransform: 'none',
+            fontWeight: 600,
+            color: 'white',
+            bgcolor: '#24292e',
+            borderColor: '#24292e',
+            '&:hover': {
+              bgcolor: '#2f363d',
+              borderColor: '#2f363d'
+            }
+          }}
+        >
+          Serenity Karabiner
+        </Button>
+      </Box>
       <Container sx={{m: 'auto'}}>
         <ColumnBox sx={{my: 10}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Box pt={4} />
+          {/* <Box pt={4} /> */}
           <Type
             variant="h2"
             gutterBottom
