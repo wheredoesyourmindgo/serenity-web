@@ -22,7 +22,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
   return (
     <Box data-layout={layout}>
       <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line"
@@ -92,7 +92,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             )}
           />
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             tapForceHold
             LyrHoldSubIcn={() => (
@@ -145,7 +145,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             ;
           </KeyLegend>
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -251,7 +251,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             }}
           />
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special
@@ -272,20 +272,32 @@ export default function BaseLyr({layout}: BaseLyrProps) {
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-option"
             sx={{fontSize: 18}}
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
@@ -426,7 +438,11 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               />
             )}
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              },
               keyId: 'right-command-key',
               popOverContent: (
                 <Box p={1}>
@@ -448,7 +464,11 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             )}
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              },
               keyId: 'right-option-key',
               popOverContent: (
                 <Box p={1}>
@@ -467,7 +487,11 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'},
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              },
               keyId: 'right-ctrl-key',
               popOverContent: (
                 <Box p={1}>

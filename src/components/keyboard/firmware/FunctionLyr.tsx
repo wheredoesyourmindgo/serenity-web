@@ -16,7 +16,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
   return (
     <Box data-layout={layout}>
       <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-right-long-to-line"
             sx={{
@@ -79,7 +79,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             )}
           />
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
@@ -126,7 +126,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             ;
           </KeyLegend>
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -171,7 +171,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </RowBox>
-        <RowBox child flexSpacing={1}>
+        <RowBox child flexSpacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special
@@ -192,20 +192,32 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-option"
             sx={{fontSize: 18}}
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyLegend {...sharedProps} />
@@ -241,20 +253,32 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-option"
             sx={{fontSize: 18}}
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {visibility: isCorneLayout ? 'hidden' : 'visible'}
+              sx: {
+                opacity: isCorneLayout ? 0 : 1,
+                transition: 'opacity 160ms ease-in-out',
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              }
             }}
           />
         </RowBox>
