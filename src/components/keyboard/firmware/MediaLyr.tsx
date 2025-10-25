@@ -71,42 +71,112 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 12, textAlign: 'center'}}
+            KeyContainerProps={{
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="RGB Speed Up" />
+                  <br />
+                  <PopoverDesc action="shifted" output="RGB Speed Down" />
+                </Box>
+              )
+            }}
+          >
             <>
               Speed
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 12, textAlign: 'center'}}
+            KeyContainerProps={{
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="RGB Mode Next" />
+                  <br />
+                  <PopoverDesc action="shifted" output="RGB Mode Previous" />
+                </Box>
+              )
+            }}
+          >
             <>
               Mode
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 11, textAlign: 'center'}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 11, textAlign: 'center'}}
+            KeyContainerProps={{
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="RGB Toggle" />
+                </Box>
+              )
+            }}
+          >
             <>
               RGB
               <br />
               toggle
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 12, textAlign: 'center'}}
+            KeyContainerProps={{
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="RGB Hue Up" />
+                  <br />
+                  <PopoverDesc action="shifted" output="RGB Hue Down" />
+                </Box>
+              )
+            }}
+          >
             <>
               Hue
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 12, textAlign: 'center'}}
+            KeyContainerProps={{
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="RGB Saturation Up" />
+                  <br />
+                  <PopoverDesc action="shifted" output="RGB Saturation Down" />
+                </Box>
+              )
+            }}
+          >
             <>
               Sat
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
+          <KeyLegend
+            {...sharedProps}
+            sx={{fontSize: 12, textAlign: 'center'}}
+            KeyContainerProps={{
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="RGB Brightness Up" />
+                  <br />
+                  <PopoverDesc action="shifted" output="RGB Brightness Down" />
+                </Box>
+              )
+            }}
+          >
             <>
               Bri
               <br />
