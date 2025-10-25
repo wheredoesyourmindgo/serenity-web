@@ -71,36 +71,42 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
             <>
-              RGB
+              Speed
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
             <>
               Mode
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: 11, textAlign: 'center'}}>
+            <>
+              RGB
+              <br />
+              toggle
+            </>
+          </KeyLegend>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
             <>
               Hue
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
             <>
               Sat
               <br />
               +/-
             </>
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: 12, textAlign: 'center'}}>
             <>
               Bri
               <br />
