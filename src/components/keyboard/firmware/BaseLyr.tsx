@@ -160,11 +160,11 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd="Z">
-            z
-          </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="X">
             x
+          </KeyLegend>
+          <KeyLegend {...sharedProps} shiftLgnd="Z">
+            z
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd="M">
             m

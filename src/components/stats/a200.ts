@@ -5,7 +5,7 @@ thumb: RT
 serenity
 q l d w v  j f o u -
 r n t s g  y h e a i
-z x m c b  k p ' , .
+x z m c b  k p ' , .
 
 Trigrams
 ========
