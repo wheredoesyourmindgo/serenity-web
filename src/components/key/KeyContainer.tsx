@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {AppTheme} from '@lib/theme'
 import {alpha, Popover, useTheme, Box} from '@mui/material'

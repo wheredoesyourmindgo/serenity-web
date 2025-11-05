@@ -15,7 +15,7 @@ export default function EncoderSubLgnd(props: Partial<MuiFaIconProps>) {
     >
       <MuiFaIcon
         className="fa-regular fa-circle-dashed"
-        sx={{color: specialColor, fontSize: 40, opacity: 0.5}}
+        sx={{color: specialColor, fontSize: 40, opacity: 0.5, ...sx}}
         {...rest}
       />
     </Box>

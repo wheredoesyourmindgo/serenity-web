@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useMemo, useContext, useEffect} from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import {useMediaQuery, useTheme, Box} from '@mui/material'

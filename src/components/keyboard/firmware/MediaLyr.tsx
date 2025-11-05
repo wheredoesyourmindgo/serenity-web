@@ -6,7 +6,7 @@ import {Box} from '@mui/system'
 import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
-import {type KeyboardLayout} from '@pages/firmware'
+import {type KeyboardLayout} from 'src/app/firmware/page'
 
 export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}

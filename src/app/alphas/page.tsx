@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useState} from 'react'
 import {
   Box,
@@ -12,7 +14,7 @@ import {
 // import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from '@components/flexbox'
 import AlphaKeyboard from '@components/keyboard/Alphas'
-import PageLayout from '../components/PageLayout'
+import PageLayout from '@components/PageLayout'
 import MuiFaIcon from '@components/MuiFaIcon'
 import genkey from '@components/stats/genkey'
 import a200 from '@components/stats/a200'

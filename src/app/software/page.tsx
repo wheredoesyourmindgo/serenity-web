@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useState} from 'react'
 import {
   Box,
@@ -15,7 +17,7 @@ import {
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
 import {ChildBox, ColumnBox, RowBox} from '@components/flexbox'
-import PageLayout from '../components/PageLayout'
+import PageLayout from '@components/PageLayout'
 import BaseLyr from '@components/keyboard/software/BaseLyr'
 import MuiFaIcon from '@components/MuiFaIcon'
 import FnLyr from '@components/keyboard/software/FnLyr'

@@ -3,7 +3,7 @@ import {Box} from '@mui/material'
 
 type Props = MuiFaIconProps
 
-export default function TapForceHoldSubIcn() {
+export default function TapForceHoldSubIcn({sx, ...rest}: Props) {
   return (
     <Box
       sx={{
@@ -17,8 +17,10 @@ export default function TapForceHoldSubIcn() {
         sx={{
           color: 'solarized.orange',
           fontSize: 10,
-          transform: 'translateX(-50%)'
+          transform: 'translateX(-50%)',
+          ...sx
         }}
+        {...rest}
       />
     </Box>
   )

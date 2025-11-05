@@ -1,4 +1,11 @@
-import {IconProps, Icon, Box, BoxProps, Theme, SxProps} from '@mui/material'
+import {
+  IconProps,
+  Icon,
+  Box,
+  BoxProps,
+  Theme,
+  type SxProps
+} from '@mui/material'
 
 type Props = Omit<IconProps, 'color'> &
   Omit<Partial<BoxProps>, 'color'> & {color?: string; rotation?: number}

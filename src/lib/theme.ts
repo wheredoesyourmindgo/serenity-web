@@ -1,3 +1,5 @@
+'use client'
+
 import {createTheme} from '@mui/material/styles'
 import {Palette, PaletteMode, Theme} from '@mui/material'
 import localFont from 'next/font/local'

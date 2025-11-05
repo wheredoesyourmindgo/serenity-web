@@ -1,3 +1,5 @@
+'use client'
+
 import {PaletteMode} from '@mui/material'
 import React, {createContext, useReducer} from 'react'
 // type ValueOf<T> = T[keyof T]
