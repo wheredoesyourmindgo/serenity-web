@@ -14,7 +14,7 @@ export default function ReqSetupSubLgnd(props: Partial<MuiFaIconProps>) {
     >
       <MuiFaIcon
         className="fa-regular fa-wrench-simple"
-        sx={{color: specialColor, fontSize: 10}}
+        sx={{color: specialColor, fontSize: 10, ...sx}}
         {...rest}
       />
     </Box>

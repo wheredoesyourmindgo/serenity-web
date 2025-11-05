@@ -3,7 +3,7 @@ import {Box} from '@mui/material'
 
 type Props = MuiFaIconProps
 
-export default function TapDanceSubIcn() {
+export default function TapDanceSubIcn({sx, ...rest}: Props) {
   return (
     <Box
       sx={{
@@ -14,7 +14,8 @@ export default function TapDanceSubIcn() {
     >
       <MuiFaIcon
         className="fa-regular fa-ellipsis"
-        sx={{color: 'solarized.blue', fontSize: 14}}
+        sx={{color: 'solarized.blue', fontSize: 14, ...sx}}
+        {...rest}
       />
     </Box>
   )

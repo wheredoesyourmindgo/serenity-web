@@ -4,7 +4,7 @@ import KeyLegend, {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box, SxProps} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
-import {type KeyboardLayout} from '@pages/firmware'
+import {type KeyboardLayout} from 'src/app/firmware/page'
 
 export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}

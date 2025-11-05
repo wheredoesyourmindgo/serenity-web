@@ -5,9 +5,8 @@ import {KeyLegendProps} from '@components/key/KeyLegend'
 import {Box} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import MuiFaIcon from '@components/MuiFaIcon'
-
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
-import {type KeyboardLayout} from '@pages/firmware'
+import {type KeyboardLayout} from 'src/app/firmware/page'
 
 export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}

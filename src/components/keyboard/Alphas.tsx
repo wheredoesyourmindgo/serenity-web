@@ -1,3 +1,5 @@
+'use client'
+
 // cspell:ignore Lgnd
 import {ColumnBox, RowBox} from '@components/flexbox'
 // import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
