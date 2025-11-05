@@ -89,10 +89,10 @@ export default function FirmwarePage() {
     <PageLayout>
       <Box
         sx={{
-          my: 7.5,
           marginRight: 2,
-          display: 'flex',
-          justifyContent: 'flex-end'
+          position: 'absolute',
+          right: 0,
+          top: 60
         }}
       >
         <Button
@@ -129,7 +129,7 @@ export default function FirmwarePage() {
         <ColumnBox sx={{my: 10}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          {/* <Box pt={4} /> */}
+          <Box pt={4} />
           <Type
             variant="h2"
             gutterBottom
@@ -311,7 +311,10 @@ export default function FirmwarePage() {
         <RowBox justifyContent="space-around">
           <ChildBox>
             <FormControl component="fieldset">
-              <FormLabel component="legend" sx={{textAlign: 'center', mb: 1}}>
+              <FormLabel
+                component="legend"
+                sx={{textAlign: 'center', mb: 1, width: '100%'}}
+              >
                 Layout
               </FormLabel>
               <ToggleButtonGroup
