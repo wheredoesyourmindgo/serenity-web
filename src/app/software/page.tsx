@@ -62,10 +62,10 @@ export default function SoftwarePage() {
     <PageLayout>
       <Box
         sx={{
-          my: 7.5,
           marginRight: 2,
-          display: 'flex',
-          justifyContent: 'flex-end'
+          position: 'absolute',
+          right: 0,
+          top: 60
         }}
       >
         <Button
@@ -102,7 +102,7 @@ export default function SoftwarePage() {
         <ColumnBox sx={{my: 10}} alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          {/* <Box pt={4} /> */}
+          <Box pt={4} />
           <Type
             variant="h2"
             gutterBottom
