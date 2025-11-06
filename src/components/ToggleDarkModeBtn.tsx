@@ -20,7 +20,7 @@ export default function ToggleDarkModeBtn() {
   }
 
   return (
-    <Box sx={{float: 'right', marginRight: 4}}>
+    <Box>
       <ToggleButtonGroup
         size="small"
         value={mode}
