@@ -5,20 +5,17 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   PaletteMode,
-  Tooltip
+  Tooltip,
+  useColorScheme
 } from '@mui/material'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
-import {setColorMode, UiContext} from '@components/UiStore'
-import {useContext} from 'react'
 
 export default function ToggleDarkModeBtn() {
-  const uiContext = useContext(UiContext)
-  const {dispatch, state} = uiContext
-  const {mode} = state
+  const {mode, setMode} = useColorScheme()
   const handleMode = (_event: React.MouseEvent, value: PaletteMode) => {
     if (value !== null && mode !== value) {
-      dispatch(setColorMode(value))
+      setMode(value)
     }
   }
 

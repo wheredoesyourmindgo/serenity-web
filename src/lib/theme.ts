@@ -1,8 +1,92 @@
 'use client'
 
-import {createTheme} from '@mui/material/styles'
-import {Palette, PaletteMode, Theme} from '@mui/material'
+import {createTheme} from '@mui/material'
 import localFont from 'next/font/local'
+
+declare module '@mui/material' {
+  interface SolarizedShades {
+    base3: string
+    base2: string
+    base1: string
+    base0: string
+    base00: string
+    base01: string
+    base02: string
+    base03: string
+  }
+  interface SolarizedNeutrals {
+    yellow: string
+    orange: string
+    red: string
+    magenta: string
+    violet: string
+    blue: string
+    cyan: string
+    green: string
+  }
+  interface Palette {
+    solarized: SolarizedShades & SolarizedNeutrals
+  }
+  interface PaletteOptions {
+    solarized?: Partial<SolarizedShades & SolarizedNeutrals>
+  }
+}
+
+export const lightSolarizedPalette = {
+  base3: '#fdf6e3',
+  base2: '#eee8d5',
+  base1: '#93a0a1',
+  base0: '#839497',
+  base00: '#647b83',
+  base01: '#596e75',
+  base02: '#063642',
+  base03: '#002b36'
+}
+
+// light values flipped
+export const darkSolarizedPalette = {
+  base03: '#fdf6e3',
+  base02: '#eee8d5',
+  base01: '#93a0a1',
+  base00: '#839497',
+  base0: '#647b83',
+  base1: '#596e75',
+  base2: '#063642',
+  base3: '#002b36'
+}
+
+export const neutralSolarizedPalette = {
+  yellow: '#b58900',
+  orange: '#Cb4b16',
+  red: '#dc322f',
+  magenta: '#d33682',
+  violet: '#6c71c4',
+  blue: '#268bd2',
+  cyan: '#2aa198',
+  green: '#859900'
+}
+
+const commonPalette = {
+  primary: {
+    main: neutralSolarizedPalette.green
+  },
+  secondary: {
+    main: neutralSolarizedPalette.violet
+  }
+}
+
+const systemFonts = [
+  '-apple-system',
+  'BlinkMacSystemFont',
+  '"Segoe UI"',
+  'Roboto',
+  '"Helvetica Neue"',
+  'Arial',
+  'sans-serif',
+  '"Apple Color Emoji"',
+  '"Segoe UI Emoji"',
+  '"Segoe UI Symbol"'
+] as const
 
 const bodyFont = localFont({
   src: [
@@ -83,87 +167,15 @@ const bodyFont = localFont({
   display: 'swap' // Use font swapping for better performance
 })
 
-export const lightSolarizedPalette = {
-  base3: '#fdf6e3',
-  base2: '#eee8d5',
-  base1: '#93a0a1',
-  base0: '#839497',
-  base00: '#647b83',
-  base01: '#596e75',
-  base02: '#063642',
-  base03: '#002b36'
-} as const
-
-// light values flipped
-export const darkSolarizedPalette = {
-  base03: '#fdf6e3',
-  base02: '#eee8d5',
-  base01: '#93a0a1',
-  base00: '#839497',
-  base0: '#647b83',
-  base1: '#596e75',
-  base2: '#063642',
-  base3: '#002b36'
-} as const
-
-export const neutralSolarizedPalette = {
-  yellow: '#b58900',
-  orange: '#Cb4b16',
-  red: '#dc322f',
-  magenta: '#d33682',
-  violet: '#6c71c4',
-  blue: '#268bd2',
-  cyan: '#2aa198',
-  green: '#859900'
-} as const
-
-const systemFonts = [
-  '-apple-system',
-  'BlinkMacSystemFont',
-  '"Segoe UI"',
-  'Roboto',
-  '"Helvetica Neue"',
-  'Arial',
-  'sans-serif',
-  '"Apple Color Emoji"',
-  '"Segoe UI Emoji"',
-  '"Segoe UI Symbol"'
-] as const
-
-const basePalette = {
-  primary: {
-    main: neutralSolarizedPalette.green
-  },
-  secondary: {
-    main: neutralSolarizedPalette.violet
-  }
-} as const
-
-// Create a theme instance.
-const appTheme = {
+// Create a theme instance with color schemes (CSS variables)
+const theme = createTheme({
   typography: {
     fontFamily: [bodyFont.style.fontFamily, ...systemFonts].join(',')
   },
-  palette: {...basePalette}
-  // components: {
-  //   MuiSwitch: {
-  //     styleOverrides: {
-  //       switchBase: {
-  //         color: lightSolarizedPalette.base1
-  //       }
-  //     }
-  //   }
-  // }
-}
-
-const theme = createTheme(appTheme)
-
-export const getPalette = (mode: PaletteMode) => ({
-  mode,
-  ...basePalette,
-  ...(mode === 'light'
-    ? {
-        // palette values for light mode
+  colorSchemes: {
+    light: {
+      palette: {
+        ...commonPalette,
         background: {
           default: lightSolarizedPalette.base3,
           paper: lightSolarizedPalette.base2
@@ -178,8 +190,10 @@ export const getPalette = (mode: PaletteMode) => ({
           ...lightSolarizedPalette
         }
       }
-    : {
-        // palette values for dark mode
+    },
+    dark: {
+      palette: {
+        ...commonPalette,
         background: {
           default: darkSolarizedPalette.base3,
           paper: darkSolarizedPalette.base2
@@ -193,11 +207,9 @@ export const getPalette = (mode: PaletteMode) => ({
           ...neutralSolarizedPalette,
           ...darkSolarizedPalette
         }
-      })
+      }
+    }
+  }
 })
 
-interface AppTheme extends Theme {
-  palette: Palette & ReturnType<typeof getPalette>
-}
-export type {AppTheme}
 export default theme

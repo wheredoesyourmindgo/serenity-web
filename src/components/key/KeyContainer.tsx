@@ -1,8 +1,7 @@
 'use client'
 
 import React from 'react'
-import {AppTheme} from '@lib/theme'
-import {alpha, Popover, useTheme, Box} from '@mui/material'
+import {alpha, Popover, useTheme, Box, useColorScheme} from '@mui/material'
 import {FlexBox, FlexBoxProps} from '@components/flexbox'
 
 type Props = FlexBoxProps & {
@@ -19,8 +18,10 @@ export default function KeyContainer({
   ...rest
 }: Props) {
   const {sx, ...r} = rest
-  const theme = useTheme<AppTheme>()
-  const darkMode = theme.palette.mode === 'dark'
+  const theme = useTheme()
+  const scheme = useColorScheme()
+  const darkMode = scheme.mode === 'dark'
+
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
 
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
