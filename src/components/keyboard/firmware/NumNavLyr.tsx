@@ -1,8 +1,7 @@
 import KeyIcon from '@components/key/KeyIcon'
-import {ColumnBox, RowBox} from '@components/flexbox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box} from '@mui/system'
+import {Box, Grid} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
@@ -14,8 +13,8 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
 
   return (
     <Box data-layout={layout}>
-      <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1} data-row>
+      <Grid container direction="column" spacing={1}>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-right-long-to-line"
             sx={{
@@ -79,8 +78,8 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               <ShiftSubIcn className="fa-regular fa-delete-right" />
             )}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1} data-row>
+        </Grid>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
@@ -173,8 +172,8 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
-        </RowBox>
-        <RowBox child flexSpacing={1} data-row>
+        </Grid>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -327,8 +326,8 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1} data-row>
+        </Grid>
+        <Grid container spacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special
@@ -463,8 +462,8 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               }
             }}
           />
-        </RowBox>
-      </ColumnBox>
+        </Grid>
+      </Grid>
     </Box>
   )
 }

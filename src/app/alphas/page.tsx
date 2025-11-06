@@ -12,7 +12,6 @@ import {
   Typography as Type
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ChildBox, ColumnBox, RowBox} from '@components/flexbox'
 import AlphaKeyboard from '@components/keyboard/Alphas'
 import PageLayout from '@components/PageLayout'
 import MuiFaIcon from '@components/MuiFaIcon'
@@ -53,7 +52,9 @@ export default function AlphasPage() {
   return (
     <PageLayout>
       <Container>
-        <ColumnBox alignItems="center">
+        <Box
+          sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+        >
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
@@ -68,13 +69,16 @@ export default function AlphasPage() {
           <Box pt={4} />
           <AlphaKeyboard />
 
-          <ColumnBox
-            mt={10}
-            justifyContent="center"
-            alignItems="center"
-            // flexSpacing={8}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              mt: 10,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
           >
-            <RowBox flex alignItems="center">
+            <Box sx={{display: 'flex', alignItems: 'center'}}>
               <MuiFaIcon
                 className="fa-regular fa-star-shooting"
                 sx={{color: 'solarized.base1', marginRight: 1}}
@@ -82,9 +86,9 @@ export default function AlphasPage() {
               <Type variant="h6" sx={{color: 'solarized.base00'}}>
                 Statistics
               </Type>
-            </RowBox>
+            </Box>
 
-            <ChildBox flex mt={2}>
+            <Box sx={{display: 'flex', mt: 2}}>
               <ToggleButtonGroup
                 color="primary"
                 value={show}
@@ -115,8 +119,8 @@ export default function AlphasPage() {
                   Keyboard Layout Analyzer [SP]
                 </ToggleButton>
               </ToggleButtonGroup>
-            </ChildBox>
-          </ColumnBox>
+            </Box>
+          </Box>
           {/* <Copyright /> */}
           <Box
             pt={4}
@@ -145,7 +149,7 @@ export default function AlphasPage() {
                 {genkey}
               </Type>
             </Paper>
-            <RowBox justifyContent="flex-end" mt={1}>
+            <Box sx={{display: 'flex', justifyContent: 'flex-end', mt: 1}}>
               <Link
                 href="https://github.com/semilin/genkey"
                 rel="noopener noreferrer"
@@ -157,7 +161,7 @@ export default function AlphasPage() {
               >
                 https://github.com/semilin/genkey
               </Link>
-            </RowBox>
+            </Box>
           </Box>
           <Box
             pt={4}
@@ -186,7 +190,7 @@ export default function AlphasPage() {
                 {a200}
               </Type>
             </Paper>
-            <RowBox justifyContent="flex-end" mt={1}>
+            <Box sx={{display: 'flex', justifyContent: 'flex-end', mt: 1}}>
               <Link
                 href="https://github.com/ClemenPine/200-analyzer"
                 rel="noopener noreferrer"
@@ -198,7 +202,7 @@ export default function AlphasPage() {
               >
                 https://github.com/ClemenPine/200-analyzer
               </Link>
-            </RowBox>
+            </Box>
           </Box>
           <Box
             pt={4}
@@ -223,7 +227,7 @@ export default function AlphasPage() {
                 {colemakmods}
               </Type>
             </Paper>
-            <RowBox justifyContent="flex-end" mt={1}>
+            <Box sx={{display: 'flex', justifyContent: 'flex-end', mt: 1}}>
               <Link
                 href="https://colemakmods.github.io/mod-dh/analyze.html"
                 rel="noopener noreferrer"
@@ -235,9 +239,9 @@ export default function AlphasPage() {
               >
                 https://colemakmods.github.io/mod-dh/analyze.html
               </Link>
-            </RowBox>
+            </Box>
           </Box>
-        </ColumnBox>
+        </Box>
       </Container>
     </PageLayout>
   )

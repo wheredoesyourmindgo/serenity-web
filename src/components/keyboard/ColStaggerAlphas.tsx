@@ -1,12 +1,11 @@
 'use client'
 
 // cspell:ignore Lgnd
-import {ColumnBox, RowBox} from '@components/flexbox'
 // import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
 // import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
-import {alpha, useTheme} from '@mui/material'
+import {alpha, useTheme, Grid} from '@mui/material'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
@@ -41,8 +40,8 @@ export default function ColStaggerAlphaKeyboard() {
   } as const
 
   return (
-    <ColumnBox flexSpacing={2}>
-      <RowBox child flexSpacing={1}>
+    <Grid container direction="column" spacing={2}>
+      <Grid container spacing={1}>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.r}}>
           L
@@ -70,8 +69,8 @@ export default function ColStaggerAlphaKeyboard() {
           U
         </AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.p}}>;</AlphaKeyLgnd>
-      </RowBox>
-      <RowBox child flexSpacing={1}>
+      </Grid>
+      <Grid container spacing={1}>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.m}}>
           M
@@ -107,8 +106,8 @@ export default function ColStaggerAlphaKeyboard() {
         <AlphaKeyLgnd color={tBase03} sx={{paddingTop: p.p}}>
           A
         </AlphaKeyLgnd>
-      </RowBox>
-      <RowBox child flexSpacing={1}>
+      </Grid>
+      <Grid container spacing={1}>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="solarized.base0" sx={{paddingTop: p.p}}>
           <em>V</em>
@@ -135,7 +134,7 @@ export default function ColStaggerAlphaKeyboard() {
         <AlphaKeyLgnd sx={{paddingTop: p.m}}>'</AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.r}}>,</AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.p}}>.</AlphaKeyLgnd>
-      </RowBox>
-    </ColumnBox>
+      </Grid>
+    </Grid>
   )
 }

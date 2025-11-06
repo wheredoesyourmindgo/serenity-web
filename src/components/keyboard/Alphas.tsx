@@ -1,12 +1,11 @@
 'use client'
 
 // cspell:ignore Lgnd
-import {ColumnBox, RowBox} from '@components/flexbox'
 // import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
 // import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
-import {alpha, useTheme} from '@mui/material'
+import {alpha, Grid, useTheme} from '@mui/material'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
@@ -31,8 +30,8 @@ export default function AlphaKeyboard() {
   // )
 
   return (
-    <ColumnBox flexSpacing={2}>
-      <RowBox child flexSpacing={1}>
+    <Grid container direction="column" spacing={2}>
+      <Grid container spacing={1}>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
@@ -46,8 +45,8 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>-</AlphaKeyLgnd>
         {/* <AlphaKeyIcn className="fa-regular fa-delete-left" /> */}
         <AlphaKeyLgnd />
-      </RowBox>
-      <RowBox child flexSpacing={1}>
+      </Grid>
+      <Grid container spacing={1}>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>N</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>T</AlphaKeyLgnd>
@@ -60,8 +59,8 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd color={base03}>I</AlphaKeyLgnd>
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
         {/* <AlphaKeyLgnd>=</AlphaKeyLgnd> */}
-      </RowBox>
-      <RowBox child flexSpacing={1}>
+      </Grid>
+      <Grid container spacing={1}>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">M</AlphaKeyLgnd>
@@ -72,7 +71,7 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
-      </RowBox>
-    </ColumnBox>
+      </Grid>
+    </Grid>
   )
 }

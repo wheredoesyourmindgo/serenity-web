@@ -18,7 +18,6 @@ import {
   Typography as Type
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ColumnBox} from '@components/flexbox'
 import PageLayout from '@components/PageLayout'
 import BaseLyr from '@components/keyboard/software/BaseLyr'
 import MuiFaIcon from '@components/MuiFaIcon'
@@ -104,7 +103,9 @@ export default function SoftwarePage() {
             Serenity Karabiner
           </Button>
         </Box>
-        <ColumnBox alignItems="center">
+        <Box
+          sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+        >
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
@@ -162,7 +163,7 @@ export default function SoftwarePage() {
             </Tabs>
           </Box>
           {/* <Copyright /> */}
-        </ColumnBox>
+        </Box>
         <Grid
           container
           sx={{mt: 10}}

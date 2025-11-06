@@ -37,8 +37,8 @@ export default function LegacyNumNavKeys() {
 
   return (
     <Box>
-      <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+      <Grid container direction="column" spacing={1}>
+        <Grid container spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowRightLongToLine}
@@ -57,8 +57,8 @@ export default function LegacyNumNavKeys() {
           <KeyLegend {...sharedProps} vimRef="9" />
           <KeyLegend {...sharedProps} vimRef="0" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -85,8 +85,8 @@ export default function LegacyNumNavKeys() {
             </Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="'" />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -111,8 +111,8 @@ export default function LegacyNumNavKeys() {
             <Type {...sharedTypeProps}>G</Type>
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

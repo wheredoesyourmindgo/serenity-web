@@ -1,12 +1,11 @@
 'use client'
 
 // cspell:ignore Lgnd
-import {ColumnBox, RowBox} from '@components/flexbox'
 // import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
 // import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
-import {alpha, useTheme} from '@mui/material'
+import {alpha, useTheme, Grid} from '@mui/material'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
@@ -31,8 +30,8 @@ export default function StaggerAlphaKeyboard() {
   // )
 
   return (
-    <ColumnBox flexSpacing={2}>
-      <RowBox child flexSpacing={1}>
+    <Grid container direction="column" spacing={2}>
+      <Grid container spacing={1}>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
@@ -44,8 +43,8 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd color={base03}>O</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">U</AlphaKeyLgnd>
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
-      </RowBox>
-      <RowBox child flexSpacing={1}>
+      </Grid>
+      <Grid container spacing={1}>
         <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} />
         <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
@@ -58,8 +57,8 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd color={base03}>I</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>A</AlphaKeyLgnd>
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
-      </RowBox>
-      <RowBox child flexSpacing={1}>
+      </Grid>
+      <Grid container spacing={1}>
         <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55, opacity: 0}}} />
         <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
@@ -76,7 +75,7 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
         <AlphaKeyLgnd />
-      </RowBox>
-    </ColumnBox>
+      </Grid>
+    </Grid>
   )
 }
