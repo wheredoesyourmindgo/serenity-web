@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect, useEffectEvent} from 'react'
+import {useEffect, useEffectEvent} from 'react'
 import {ThemeProvider, useColorScheme} from '@mui/material/styles'
 import {useMediaQuery, useTheme, Box} from '@mui/material'
 

@@ -1,5 +1,4 @@
 import {Box, Typography as Type, TypographyProps} from '@mui/material'
-import React from 'react'
 import {KeyContainer} from '.'
 import {KeyContainerProps} from './KeyContainer'
 import HoldSubIcn, {HoldSubIcnProps} from './HoldSubIcn'
