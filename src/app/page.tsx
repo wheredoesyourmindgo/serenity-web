@@ -1,5 +1,3 @@
-'use client'
-
 import {Box, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import AlphaKeyboard from '@components/keyboard/Alphas'
