@@ -75,25 +75,28 @@ export default function SoftwarePage() {
           rel="noopener noreferrer"
           startIcon={<GitHubIcon />}
           size="small"
-          sx={{
-            textTransform: 'none',
-            fontWeight: 600,
-            color: 'white',
-            bgcolor: '#24292e',
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderColor: (theme) =>
-              theme.palette.mode === 'dark'
-                ? 'rgba(255, 255, 255, 0.3)'
-                : 'rgba(0, 0, 0, 0.3)',
-            '&:hover': {
-              bgcolor: '#2f363d',
-              borderColor: (theme) =>
-                theme.palette.mode === 'dark'
-                  ? 'rgba(255, 255, 255, 0.5)'
-                  : 'rgba(0, 0, 0, 0.5)'
-            }
-          }}
+          sx={[
+            {
+              textTransform: 'none',
+              fontWeight: 600,
+              color: 'white',
+              bgcolor: '#24292e',
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'rgba(0, 0, 0, 0.3)',
+              '&:hover': {
+                bgcolor: '#2f363d',
+                borderColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            },
+            (theme) =>
+              theme.applyStyles('dark', {
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                '&:hover': {
+                  borderColor: 'rgba(255, 255, 255, 0.5)'
+                }
+              })
+          ]}
         >
           Serenity Karabiner
         </Button>

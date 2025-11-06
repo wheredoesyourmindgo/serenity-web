@@ -36,7 +36,6 @@ export default function KeyContainer({
   return (
     <FlexBox
       child
-      className="foobar"
       sx={{
         position: 'relative',
         justifyContent: 'center',
