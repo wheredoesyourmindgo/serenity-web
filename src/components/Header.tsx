@@ -1,20 +1,10 @@
 'use client'
 
-import {
-  AppBar,
-  Box,
-  Button,
-  Toolbar,
-  useMediaQuery,
-  useTheme
-} from '@mui/material'
+import {AppBar, Box, Button, Toolbar} from '@mui/material'
 import Link from 'next/link'
 import ToggleDarkModeBtn from './ToggleDarkModeBtn'
 
 export default function Header() {
-  const theme = useTheme()
-  const isMd = useMediaQuery(theme.breakpoints.up('md'))
-
   return (
     <AppBar
       position="fixed"
