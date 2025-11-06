@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import {useState, type MouseEvent, type ReactNode} from 'react'
 import {
   alpha,
   Popover,
@@ -12,7 +12,7 @@ import {
 
 type Props = BoxProps & {
   keyId?: string
-  popOverContent?: React.ReactNode | string
+  popOverContent?: ReactNode | string
   homing?: boolean
 }
 
@@ -28,9 +28,9 @@ export default function KeyContainer({
   const scheme = useColorScheme()
   const darkMode = scheme.mode === 'dark'
 
-  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
 
-  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+  const handlePopoverOpen = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
 
