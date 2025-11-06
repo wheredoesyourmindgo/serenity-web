@@ -31,8 +31,8 @@ export default function LegacyLeaderAlphaKeys() {
 
   return (
     <Box>
-      <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+      <Grid container direction="column" spacing={1}>
+        <Grid container spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowRightLongToLine}
@@ -70,8 +70,8 @@ export default function LegacyLeaderAlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef=";" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowUpLeftFromCircle}
@@ -106,8 +106,8 @@ export default function LegacyLeaderAlphaKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="a" />
           <KeyLegend {...sharedProps} vimRef="'" />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
           <KeyLegend {...sharedProps} vimRef="v" />
           <KeyLegend {...sharedProps} vimRef="x" />
@@ -132,8 +132,8 @@ export default function LegacyLeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft}>
             <Type {...sharedTypeProps}>:</Type>
           </KeyLegend>
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

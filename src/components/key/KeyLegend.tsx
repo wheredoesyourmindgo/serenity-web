@@ -1,5 +1,4 @@
-import {Typography as Type, TypographyProps} from '@mui/material'
-import {ChildBox} from '@components/flexbox'
+import {Box, Typography as Type, TypographyProps} from '@mui/material'
 import React from 'react'
 import {KeyContainer} from '.'
 import {KeyContainerProps} from './KeyContainer'
@@ -65,7 +64,7 @@ export default function KeyLegend({
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
-      <ChildBox>
+      <Box>
         {shiftLgnd ? (
           <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
         ) : null}
@@ -100,7 +99,7 @@ export default function KeyLegend({
         <Type variant="h3" sx={{color, ...sx}} {...rest}>
           {children}
         </Type>
-      </ChildBox>
+      </Box>
     </KeyContainer>
   )
 }

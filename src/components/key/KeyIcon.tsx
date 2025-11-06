@@ -1,6 +1,5 @@
 import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
 import {Box} from '@mui/material'
-import {ChildBox} from '@components/flexbox'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
@@ -47,7 +46,7 @@ export default function KeyIcon({
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
-      <ChildBox>
+      <Box>
         {shiftLgnd ? (
           <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
         ) : null}
@@ -93,7 +92,7 @@ export default function KeyIcon({
             </Box>
           </Box>
         </Box>
-      </ChildBox>
+      </Box>
     </KeyContainer>
   )
 }

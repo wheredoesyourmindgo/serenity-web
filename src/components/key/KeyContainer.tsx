@@ -1,10 +1,16 @@
 'use client'
 
 import React from 'react'
-import {alpha, Popover, useTheme, Box, useColorScheme} from '@mui/material'
-import {FlexBox, FlexBoxProps} from '@components/flexbox'
+import {
+  alpha,
+  Popover,
+  useTheme,
+  Box,
+  useColorScheme,
+  type BoxProps
+} from '@mui/material'
 
-type Props = FlexBoxProps & {
+type Props = BoxProps & {
   keyId?: string
   popOverContent?: React.ReactNode | string
   homing?: boolean
@@ -36,9 +42,9 @@ export default function KeyContainer({
   const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
 
   return (
-    <FlexBox
-      child
+    <Box
       sx={{
+        display: 'flex',
         position: 'relative',
         justifyContent: 'center',
         alignItems: 'center',
@@ -102,7 +108,7 @@ export default function KeyContainer({
         </Popover>
         {children}
       </Box>
-    </FlexBox>
+    </Box>
   )
 }
 

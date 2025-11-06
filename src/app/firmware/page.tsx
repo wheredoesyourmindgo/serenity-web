@@ -24,7 +24,6 @@ import {
   ToggleButtonGroup
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ColumnBox} from '@components/flexbox'
 import PageLayout from '@components/PageLayout'
 import BaseLyr from '@components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@components/keyboard/firmware/NumNavLyr'
@@ -131,7 +130,9 @@ export default function FirmwarePage() {
             Serenity QMK
           </Button>
         </Box>
-        <ColumnBox alignItems="center">
+        <Box
+          sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+        >
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
@@ -312,7 +313,7 @@ export default function FirmwarePage() {
             </Tabs>
           </Box>
           {/* <Copyright /> */}
-        </ColumnBox>
+        </Box>
         <Grid
           container
           sx={{mt: 10}}

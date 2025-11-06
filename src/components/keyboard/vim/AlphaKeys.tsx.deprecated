@@ -31,8 +31,8 @@ export default function AlphaKeys() {
 
   return (
     <Box>
-      <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+      <Grid container direction="column" spacing={1}>
+        <Grid container spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowRightLongToLine}
@@ -156,8 +156,8 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>backspace</Type>
           </KeyLegend>
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowUpLeftFromCircle}
@@ -268,8 +268,8 @@ export default function AlphaKeys() {
             <Divider />
             <Type {...sharedTypeProps}>find char</Type>
           </KeyLegend>
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
           <KeyLegend {...sharedProps} vimRef="v">
             <Type {...sharedTypeProps}>UNDO LINE</Type>
@@ -364,8 +364,8 @@ export default function AlphaKeys() {
               mode
             </Type>
           </KeyLegend>
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

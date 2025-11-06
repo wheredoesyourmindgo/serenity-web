@@ -24,8 +24,8 @@ export default function TextObjKeys() {
 
   return (
     <Box>
-      <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+      <Grid container direction="column" spacing={1}>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -38,8 +38,8 @@ export default function TextObjKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowUpLeftFromCircle}
@@ -66,8 +66,8 @@ export default function TextObjKeys() {
           <KeyLegend {...sharedProps} vimRef="i" />
           <KeyLegend {...sharedProps} vimRef="a" />
           <KeyLegend {...sharedProps} vimRef="'" />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -80,8 +80,8 @@ export default function TextObjKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

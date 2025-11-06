@@ -1,9 +1,8 @@
 // cspell:ignore xmark
 import KeyIcon from '@components/key/KeyIcon'
-import {ColumnBox, RowBox} from '@components/flexbox'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box} from '@mui/system'
+import {Box, Grid} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
@@ -21,8 +20,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
 
   return (
     <Box data-layout={layout}>
-      <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1} data-row>
+      <Grid container direction="column" spacing={1}>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line"
@@ -91,8 +90,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               <ShiftSubIcn className="fa-regular fa-delete-right" />
             )}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1} data-row>
+        </Grid>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             tapForceHold
             LyrHoldSubIcn={() => (
@@ -144,8 +143,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
-        </RowBox>
-        <RowBox child flexSpacing={1} data-row>
+        </Grid>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -250,8 +249,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               )
             }}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1} data-row>
+        </Grid>
+        <Grid container spacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special
@@ -502,8 +501,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               )
             }}
           />
-        </RowBox>
-      </ColumnBox>
+        </Grid>
+      </Grid>
     </Box>
   )
 }

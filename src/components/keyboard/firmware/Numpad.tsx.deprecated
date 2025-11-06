@@ -23,8 +23,8 @@ export default function NumpadLyr() {
 
   return (
     <Box>
-      <ColumnBox flexSpacing={1}>
-        <RowBox child flexSpacing={1}>
+      <Grid container direction="column" spacing={1}>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             icon={faDeleteRight}
             KeyContainerProps={{
@@ -71,8 +71,8 @@ export default function NumpadLyr() {
               )
             }}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} sx={fxSx}>
             +
@@ -113,8 +113,8 @@ export default function NumpadLyr() {
             color="solarized.cyan"
           />
           <KeyLegend {...sharedProps} sx={fxSx} />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-up"
             KeyContainerProps={{
@@ -167,8 +167,8 @@ export default function NumpadLyr() {
               )
             }}
           />
-        </RowBox>
-        <RowBox child flexSpacing={1}>
+           </Grid>
+        <Grid container spacing={1} data-row>
           <KeyIcon
             icon={faVolumeXmark}
             tapDance
