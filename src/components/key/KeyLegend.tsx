@@ -14,7 +14,7 @@ import VimRefLgnd from './VimRefLgnd'
 
 type Props = Partial<TypographyProps> & {
   shiftLgnd?: string | React.ReactNode
-  shiftSubIcn?: any
+  shiftSubIcn?: React.FC
   ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
   children?: React.ReactNode
   KeyContainerProps?: KeyContainerProps
@@ -23,11 +23,11 @@ type Props = Partial<TypographyProps> & {
   tapDance?: boolean
   homing?: boolean
   vimRef?: string | React.ReactNode
-  vimRefIcn?: any
+  vimRefIcn?: React.FC
   VimRefIcnProps?: Omit<VimRefIcnProps, 'icon'>
-  lyrHoldSubIcn?: any
+  lyrHoldSubIcn?: React.FC
   LyrHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
-  modHoldSubIcn?: any
+  modHoldSubIcn?: React.FC
   ModHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
   tapForceHold?: boolean
 }
