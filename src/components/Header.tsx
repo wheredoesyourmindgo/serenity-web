@@ -18,19 +18,22 @@ export default function Header() {
   return (
     <AppBar
       position="fixed"
-      sx={{
-        color:
-          theme.palette.mode === 'light'
-            ? 'solarized.base3'
-            : 'solarized.base03',
-        bgcolor:
-          theme.palette.mode === 'light' ? 'solarized.blue' : 'solarized.cyan'
-        // opacity: 0.85,
-        // transition: '200ms linear opacity'
-        // '&:hover': {
-        // opacity: 1
-        // }
-      }}
+      sx={[
+        {
+          color: 'solarized.base3',
+          bgcolor: 'solarized.blue'
+          // opacity: 0.85,
+          // transition: '200ms linear opacity'
+          // '&:hover': {
+          // opacity: 1
+          // }
+        },
+        (theme) =>
+          theme.applyStyles('dark', {
+            color: 'solarized.base03',
+            backgroundColor: 'solarized.cyan'
+          })
+      ]}
     >
       <Toolbar variant={isMd ? 'dense' : 'regular'}>
         {/* <Type variant="h6" component="div" sx={{flexGrow: 1}}>
