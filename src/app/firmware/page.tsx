@@ -6,6 +6,7 @@ import {
   Box,
   Button,
   Container,
+  Grid,
   List,
   ListItem,
   ListItemIcon,
@@ -23,7 +24,7 @@ import {
   ToggleButtonGroup
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ChildBox, ColumnBox, RowBox} from '@components/flexbox'
+import {ColumnBox} from '@components/flexbox'
 import PageLayout from '@components/PageLayout'
 import BaseLyr from '@components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@components/keyboard/firmware/NumNavLyr'
@@ -88,49 +89,49 @@ export default function FirmwarePage() {
   }
   return (
     <PageLayout>
-      <Box
-        sx={{
-          marginRight: 2,
-          position: 'absolute',
-          right: 0,
-          top: 60
-        }}
-      >
-        <Button
-          variant="outlined"
-          href="https://github.com/wheredoesyourmindgo/serenity-qmk"
-          target="_blank"
-          rel="noopener noreferrer"
-          startIcon={<GitHubIcon />}
-          size="small"
-          sx={[
-            {
-              textTransform: 'none',
-              fontWeight: 600,
-              color: 'white',
-              bgcolor: '#24292e',
-              borderWidth: '1px',
-              borderStyle: 'solid',
-              borderColor: 'rgba(0, 0, 0, 0.3)',
-              '&:hover': {
-                bgcolor: alpha('#2f363d', 0.9),
-                borderColor: 'rgba(0, 0, 0, 0.5)'
-              }
-            },
-            (theme) =>
-              theme.applyStyles('dark', {
-                borderColor: 'rgba(255, 255, 255, 0.3)',
-                '&:hover': {
-                  borderColor: 'rgba(255, 255, 255, 0.5)'
-                }
-              })
-          ]}
+      <Container sx={{position: 'relative'}}>
+        <Box
+          sx={{
+            marginRight: 2,
+            position: 'absolute',
+            right: 0,
+            top: 0
+          }}
         >
-          Serenity QMK
-        </Button>
-      </Box>
-      <Container>
-        <ColumnBox sx={{my: 10}} alignItems="center">
+          <Button
+            variant="outlined"
+            href="https://github.com/wheredoesyourmindgo/serenity-qmk"
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<GitHubIcon />}
+            size="small"
+            sx={[
+              {
+                textTransform: 'none',
+                fontWeight: 600,
+                color: 'white',
+                bgcolor: '#24292e',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'rgba(0, 0, 0, 0.3)',
+                '&:hover': {
+                  bgcolor: alpha('#2f363d', 0.9),
+                  borderColor: 'rgba(0, 0, 0, 0.5)'
+                }
+              },
+              (theme) =>
+                theme.applyStyles('dark', {
+                  borderColor: 'rgba(255, 255, 255, 0.3)',
+                  '&:hover': {
+                    borderColor: 'rgba(255, 255, 255, 0.5)'
+                  }
+                })
+            ]}
+          >
+            Serenity QMK
+          </Button>
+        </Box>
+        <ColumnBox alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
@@ -312,8 +313,18 @@ export default function FirmwarePage() {
           </Box>
           {/* <Copyright /> */}
         </ColumnBox>
-        <RowBox justifyContent="space-around">
-          <ChildBox>
+        <Grid
+          container
+          sx={{mt: 10}}
+          justifyContent="center"
+          columnSpacing={12}
+          rowSpacing={6}
+        >
+          <Grid
+            size={{xs: 12, sm: 'auto'}}
+            display="flex"
+            justifyContent="center"
+          >
             <FormControl component="fieldset">
               <FormLabel
                 component="legend"
@@ -375,8 +386,8 @@ export default function FirmwarePage() {
                 </ToggleButton>
               </ToggleButtonGroup>
             </FormControl>
-          </ChildBox>
-          <ChildBox>
+          </Grid>
+          <Grid size={{xs: 12, sm: 'auto'}}>
             <Paper elevation={2} sx={{borderRadius: 1}}>
               <Box sx={{padding: 2, bgcolor: 'inherit', borderRadius: 1}}>
                 {/* <Type variant="subtitle1">Legend</Type> */}
@@ -466,8 +477,8 @@ export default function FirmwarePage() {
                 </List>
               </Box>
             </Paper>
-          </ChildBox>
-        </RowBox>
+          </Grid>
+        </Grid>
       </Container>
     </PageLayout>
   )

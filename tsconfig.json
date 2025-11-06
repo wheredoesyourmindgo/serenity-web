@@ -43,6 +43,7 @@
     "src/**/*.tsx",
     "scripts/generate-sitemap.ts",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "src/app/layout-test/page.tsx.inactive"
   ]
 }
