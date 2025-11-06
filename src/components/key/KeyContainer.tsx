@@ -20,6 +20,7 @@ export default function KeyContainer({
 }: Props) {
   const {sx, ...r} = rest
   const theme = useTheme<AppTheme>()
+  const darkMode = theme.palette.mode === 'dark'
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
 
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -49,19 +50,12 @@ export default function KeyContainer({
         borderStyle: 'solid',
         padding: 1,
         // https://getcssscan.com/css-box-shadow-examples #14 edit
-        boxShadow: `${
-          theme.palette.mode === 'light'
-            ? 'rgba(50, 50, 93, 0.1)'
-            : 'rgba(205, 205, 51, 0.05)'
-        } 0px 50px 100px -20px, ${
-          theme.palette.mode === 'light'
-            ? 'rgba(0, 0, 0, 0.1)'
-            : 'rgba(255, 255, 255, 0.1)'
-        } 0px 30px 60px -30px, ${
-          theme.palette.mode === 'light'
-            ? 'rgba(10, 37, 64, 0.1)'
-            : 'rgba(245, 218, 162, 0.1)'
-        } 0px -2px 6px 0px inset`,
+        boxShadow:
+          'rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.1) 0px -2px 6px 0px inset',
+        ...(darkMode && {
+          boxShadow:
+            'rgba(205, 205, 51, 0.05) 0px 50px 100px -20px, rgba(255, 255, 255, 0.1) 0px 30px 60px -30px, rgba(245, 218, 162, 0.1) 0px -2px 6px 0px inset'
+        }),
         ...(homing && {
           background: `radial-gradient(circle farthest-side, ${alpha(
             theme.palette.solarized.base0,
