@@ -35,7 +35,7 @@ export default function Header() {
           })
       ]}
     >
-      <Toolbar variant={isMd ? 'dense' : 'regular'}>
+      <Toolbar variant="dense">
         {/* <Type variant="h6" component="div" sx={{flexGrow: 1}}>
             Serenity
           </Type> */}
