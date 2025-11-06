@@ -1,4 +1,4 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
+import MuiFaIcon, {type MuiFaIconProps} from '@components/MuiFaIcon'
 import {Box} from '@mui/material'
 
 type Props = MuiFaIconProps
