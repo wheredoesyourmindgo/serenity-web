@@ -111,7 +111,7 @@ const RowBox = ({
   flexDirection: flexDirectionProp, // swallow prop
   wrapSpacing: wrapSpacingProp,
   sx,
-  className: classNameProp,
+  className: _classNameProp,
   ...rest
 }: RowBoxProps) => {
   const theme = useTheme()
@@ -213,7 +213,7 @@ const RowBox = ({
 const ColumnBox = ({
   children,
   flexSpacing,
-  flexDirection: flexDirectionProp, // swallow prop
+  flexDirection: _flexDirectionProp, // swallow prop
   sx,
   ...rest
 }: Props) => {
