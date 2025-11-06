@@ -2,7 +2,6 @@ import AppStyles from '@components/AppStyles'
 import theme from '@lib/theme'
 import {CssBaseline, ThemeProvider} from '@mui/material'
 import {AppRouterCacheProvider} from '@mui/material-nextjs/v16-appRouter'
-import UiProvider from '@components/UiStore'
 import ToggleColorMode from '@components/ToggleColorMode'
 // Font Awesome config
 import {config} from '@fortawesome/fontawesome-svg-core'
@@ -27,11 +26,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 html height and body height are getting unset in production, maybe due to <CssBaseline/>.
                 Workaround is to use Mui <GlobalStyles/> which yields desired behavior in both dev and prod env.  */}
             <AppStyles />
-            <UiProvider>
-              <ToggleColorMode>
-                <div style={{height: '100%'}}>{children}</div>
-              </ToggleColorMode>
-            </UiProvider>
+            <ToggleColorMode>
+              <div style={{height: '100%'}}>{children}</div>
+            </ToggleColorMode>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

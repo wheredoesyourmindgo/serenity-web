@@ -1,39 +1,28 @@
 'use client'
 
-import React, {useMemo, useContext, useEffect} from 'react'
-import {ThemeProvider, createTheme} from '@mui/material/styles'
+import React, {useEffect, useEffectEvent} from 'react'
+import {ThemeProvider, useColorScheme} from '@mui/material/styles'
 import {useMediaQuery, useTheme, Box} from '@mui/material'
-import {UiContext, setColorMode} from '@components/UiStore'
-import {getPalette} from '@lib/theme'
 
 type Props = {
   children: React.ReactNode
 }
 export default function ToggleColorMode({children}: Props) {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  const uiContext = useContext(UiContext)
-  const {dispatch, state} = uiContext
-  const {mode} = state
   const theme = useTheme()
+  const {mode: _mode, setMode} = useColorScheme()
+
+  const onDarkModeChange = useEffectEvent(() => {
+    setMode(prefersDarkMode ? 'dark' : 'light')
+  })
 
   // Sync UI color mode with system preference changes only
   useEffect(() => {
-    dispatch(setColorMode(prefersDarkMode ? 'dark' : 'light'))
-  }, [prefersDarkMode, dispatch])
-
-  const sysTheme = useMemo(() => {
-    // don't spread-in theme palette cause it will break the theme
-    const {palette: _palette, ...rest} = theme
-    const palette = getPalette(mode)
-
-    return createTheme({
-      ...rest,
-      palette
-    })
-  }, [mode, theme])
+    onDarkModeChange()
+  }, [prefersDarkMode])
 
   return (
-    <ThemeProvider theme={sysTheme}>
+    <ThemeProvider theme={theme}>
       <Box
         bgcolor="background.default"
         overflow="auto"

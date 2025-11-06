@@ -7,7 +7,6 @@ import {ColumnBox, RowBox} from '@components/flexbox'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
 import {alpha, useTheme} from '@mui/material'
-import {AppTheme} from '@lib/theme'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
@@ -20,7 +19,7 @@ const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
 )
 
 export default function AlphaKeyboard() {
-  const theme = useTheme<AppTheme>()
+  const theme = useTheme()
   const base02 = alpha(theme.palette.solarized.base02, 0.85)
   const base03 = alpha(theme.palette.solarized.base03, 0.95)
 
