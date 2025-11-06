@@ -2,6 +2,7 @@
 
 import React, {useState} from 'react'
 import {
+  alpha,
   Box,
   Button,
   Container,
@@ -85,7 +86,7 @@ export default function SoftwarePage() {
               borderStyle: 'solid',
               borderColor: 'rgba(0, 0, 0, 0.3)',
               '&:hover': {
-                bgcolor: '#2f363d',
+                bgcolor: alpha('#2f363d', 0.9),
                 borderColor: 'rgba(0, 0, 0, 0.5)'
               }
             },
