@@ -1,9 +1,0 @@
-import PageLayout from '@components/PageLayout'
-
-export default function LayoutTestPage() {
-  return (
-    <PageLayout>
-      <div>body</div>
-    </PageLayout>
-  )
-}
