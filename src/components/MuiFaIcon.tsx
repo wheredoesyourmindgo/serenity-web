@@ -1,25 +1,34 @@
+import {isSxObject} from '@lib/isSxObject'
 import {
-  IconProps,
   Icon,
   Box,
-  BoxProps,
-  Theme,
-  type SxProps
+  type IconProps,
+  type BoxProps,
+  type SxProps,
+  type Theme
 } from '@mui/material'
 
 type Props = Omit<IconProps, 'color'> &
   Omit<Partial<BoxProps>, 'color'> & {color?: string; rotation?: number}
 
 export default function MuiFaIcon({...props}: Props) {
-  const {sx = {}, color, rotation, ...rest} = props
+  const {sx, color, rotation, ...rest} = props
 
-  // Safely access the transform property from the sx prop
-  const {transform, ...restSx} = sx as SxProps<Theme> & {
-    transform?: string
+  // Safely access the transform property from the sx prop (only if it's a plain object)
+  let incomingTransform: string | undefined
+  let restSx: SxProps<Theme> = {}
+
+  if (isSxObject(sx)) {
+    const {transform: t, ...others} = sx as Record<string, unknown>
+    incomingTransform = typeof t === 'string' ? t : undefined
+    restSx = others
+  } else if (sx) {
+    // Forward array or function forms unchanged
+    restSx = sx
   }
 
   // add space if transform provided
-  const transformSpc = transform ? `${transform} ` : ''
+  const transformWithSpace = incomingTransform ? `${incomingTransform} ` : ''
 
   return (
     <Box
@@ -33,10 +42,10 @@ export default function MuiFaIcon({...props}: Props) {
           fontSize: 'inherit',
           overflow: 'visible',
           // first add transform, overwrite below if rotation passed in too
-          transform: transform,
-          ...(rotation && {
+          transform: incomingTransform,
+          ...(typeof rotation === 'number' && {
             // order matters, translate then rotate
-            transform: `${transformSpc}rotate(${rotation}deg)`,
+            transform: `${transformWithSpace}rotate(${rotation}deg)`,
             transformOrigin: 'center'
           }),
           ...(color && {color}),
