@@ -6,6 +6,7 @@ import {
   Box,
   Button,
   Container,
+  Grid,
   List,
   ListItem,
   ListItemIcon,
@@ -17,7 +18,7 @@ import {
   Typography as Type
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
-import {ChildBox, ColumnBox, RowBox} from '@components/flexbox'
+import {ColumnBox} from '@components/flexbox'
 import PageLayout from '@components/PageLayout'
 import BaseLyr from '@components/keyboard/software/BaseLyr'
 import MuiFaIcon from '@components/MuiFaIcon'
@@ -61,49 +62,49 @@ export default function SoftwarePage() {
   }
   return (
     <PageLayout>
-      <Box
-        sx={{
-          marginRight: 2,
-          position: 'absolute',
-          right: 0,
-          top: 60
-        }}
-      >
-        <Button
-          variant="outlined"
-          href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
-          target="_blank"
-          rel="noopener noreferrer"
-          startIcon={<GitHubIcon />}
-          size="small"
-          sx={[
-            {
-              textTransform: 'none',
-              fontWeight: 600,
-              color: 'white',
-              bgcolor: '#24292e',
-              borderWidth: '1px',
-              borderStyle: 'solid',
-              borderColor: 'rgba(0, 0, 0, 0.3)',
-              '&:hover': {
-                bgcolor: alpha('#2f363d', 0.9),
-                borderColor: 'rgba(0, 0, 0, 0.5)'
-              }
-            },
-            (theme) =>
-              theme.applyStyles('dark', {
-                borderColor: 'rgba(255, 255, 255, 0.3)',
-                '&:hover': {
-                  borderColor: 'rgba(255, 255, 255, 0.5)'
-                }
-              })
-          ]}
+      <Container sx={{position: 'relative'}}>
+        <Box
+          sx={{
+            marginRight: 2,
+            position: 'absolute',
+            right: 0,
+            top: 0
+          }}
         >
-          Serenity Karabiner
-        </Button>
-      </Box>
-      <Container sx={{m: 'auto'}}>
-        <ColumnBox sx={{my: 10}} alignItems="center">
+          <Button
+            variant="outlined"
+            href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<GitHubIcon />}
+            size="small"
+            sx={[
+              {
+                textTransform: 'none',
+                fontWeight: 600,
+                color: 'white',
+                bgcolor: '#24292e',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'rgba(0, 0, 0, 0.3)',
+                '&:hover': {
+                  bgcolor: alpha('#2f363d', 0.9),
+                  borderColor: 'rgba(0, 0, 0, 0.5)'
+                }
+              },
+              (theme) =>
+                theme.applyStyles('dark', {
+                  borderColor: 'rgba(255, 255, 255, 0.3)',
+                  '&:hover': {
+                    borderColor: 'rgba(255, 255, 255, 0.5)'
+                  }
+                })
+            ]}
+          >
+            Serenity Karabiner
+          </Button>
+        </Box>
+        <ColumnBox alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
@@ -162,9 +163,15 @@ export default function SoftwarePage() {
           </Box>
           {/* <Copyright /> */}
         </ColumnBox>
-        <RowBox justifyContent="space-around">
-          <ChildBox />
-          <ChildBox>
+        <Grid
+          container
+          sx={{mt: 10}}
+          justifyContent="center"
+          columnSpacing={12}
+          rowSpacing={6}
+        >
+          <Grid size={{xs: 12, sm: 5}} />
+          <Grid size={{xs: 12, sm: 'auto'}}>
             <Paper elevation={2} sx={{borderRadius: 1}}>
               <Box sx={{padding: 2, bgcolor: 'inherit', borderRadius: 1}}>
                 {/* <Type variant="subtitle1">Legend</Type> */}
@@ -254,8 +261,8 @@ export default function SoftwarePage() {
                 </List>
               </Box>
             </Paper>
-          </ChildBox>
-        </RowBox>
+          </Grid>
+        </Grid>
       </Container>
     </PageLayout>
   )

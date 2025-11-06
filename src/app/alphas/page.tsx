@@ -52,8 +52,8 @@ export default function AlphasPage() {
 
   return (
     <PageLayout>
-      <Container sx={{m: 'auto'}}>
-        <ColumnBox sx={{my: 10}} alignItems="center">
+      <Container>
+        <ColumnBox alignItems="center">
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Box pt={4} />
