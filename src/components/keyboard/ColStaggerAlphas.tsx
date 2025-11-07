@@ -7,6 +7,7 @@
 import {KeyLegend} from '@components/key'
 import {alpha, useTheme, Grid} from '@mui/material'
 import {KeyLegendProps} from '@components/key/KeyLegend'
+import KeyboardGridRow from './KeyboardGridRow'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
   <KeyLegend
@@ -41,7 +42,7 @@ export default function ColStaggerAlphaKeyboard() {
 
   return (
     <Grid container direction="column" spacing={2}>
-      <Grid container wrap="nowrap" spacing={1} data-row>
+      <KeyboardGridRow>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.r}}>
           L
@@ -69,8 +70,8 @@ export default function ColStaggerAlphaKeyboard() {
           U
         </AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.p}}>;</AlphaKeyLgnd>
-      </Grid>
-      <Grid container wrap="nowrap" spacing={1} data-row>
+      </KeyboardGridRow>
+      <KeyboardGridRow>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.m}}>
           M
@@ -106,8 +107,8 @@ export default function ColStaggerAlphaKeyboard() {
         <AlphaKeyLgnd color={tBase03} sx={{paddingTop: p.p}}>
           A
         </AlphaKeyLgnd>
-      </Grid>
-      <Grid container wrap="nowrap" spacing={1} data-row>
+      </KeyboardGridRow>
+      <KeyboardGridRow>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="solarized.base0" sx={{paddingTop: p.p}}>
           <em>V</em>
@@ -134,7 +135,7 @@ export default function ColStaggerAlphaKeyboard() {
         <AlphaKeyLgnd sx={{paddingTop: p.m}}>'</AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.r}}>,</AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.p}}>.</AlphaKeyLgnd>
-      </Grid>
+      </KeyboardGridRow>
     </Grid>
   )
 }

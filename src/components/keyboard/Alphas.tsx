@@ -7,6 +7,7 @@
 import {KeyLegend} from '@components/key'
 import {alpha, Grid, useTheme} from '@mui/material'
 import {KeyLegendProps} from '@components/key/KeyLegend'
+import KeyboardGridRow from './KeyboardGridRow'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
   <KeyLegend
@@ -19,7 +20,6 @@ const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
 
 export default function AlphaKeyboard() {
   const theme = useTheme()
-  console.log(theme.palette)
   const base02 = alpha(theme.palette.solarized.base02, 0.85)
   const base03 = alpha(theme.palette.solarized.base03, 0.95)
 
@@ -31,8 +31,8 @@ export default function AlphaKeyboard() {
   // )
 
   return (
-    <Grid container direction="column" spacing={2}>
-      <Grid container wrap="nowrap" spacing={1} data-row>
+    <Grid container direction="column" spacing={2} sx={{maxWidth: '100%'}}>
+      <KeyboardGridRow>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
@@ -46,8 +46,8 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>-</AlphaKeyLgnd>
         {/* <AlphaKeyIcn className="fa-regular fa-delete-left" /> */}
         <AlphaKeyLgnd />
-      </Grid>
-      <Grid container wrap="nowrap" spacing={1} data-row>
+      </KeyboardGridRow>
+      <KeyboardGridRow>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>N</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>T</AlphaKeyLgnd>
@@ -60,8 +60,8 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd color={base03}>I</AlphaKeyLgnd>
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
         {/* <AlphaKeyLgnd>=</AlphaKeyLgnd> */}
-      </Grid>
-      <Grid container wrap="nowrap" spacing={1} data-row>
+      </KeyboardGridRow>
+      <KeyboardGridRow>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">M</AlphaKeyLgnd>
@@ -72,7 +72,7 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
-      </Grid>
+      </KeyboardGridRow>
     </Grid>
   )
 }

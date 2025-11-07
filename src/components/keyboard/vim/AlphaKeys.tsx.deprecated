@@ -32,7 +32,7 @@ export default function AlphaKeys() {
   return (
     <Box>
       <Grid container direction="column" spacing={1}>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowRightLongToLine}
@@ -157,7 +157,7 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>backspace</Type>
           </KeyLegend>
            </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowUpLeftFromCircle}
@@ -269,7 +269,7 @@ export default function AlphaKeys() {
             <Type {...sharedTypeProps}>find char</Type>
           </KeyLegend>
            </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
           <KeyLegend {...sharedProps} vimRef="v">
             <Type {...sharedTypeProps}>UNDO LINE</Type>
@@ -365,7 +365,7 @@ export default function AlphaKeys() {
             </Type>
           </KeyLegend>
            </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
