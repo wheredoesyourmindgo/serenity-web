@@ -607,60 +607,81 @@ export default function FnLyr() {
           />
           <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
 
-          <KeyIcon
-            className="fa-regular fa-arrow-left"
-            sx={{
-              transform: 'translateY(-2px)',
-              fontSize: 14
-            }}
-            KeyContainerProps={{
-              sx: {width: 55, height: 25, alignSelf: 'flex-end'} // 1.25u
-            }}
-          />
           <Box
             sx={{
               display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'stretch',
-              marginLeft: 1
+              flexDirection: 'row',
+              justifyContent: 'center'
             }}
           >
-            <KeyIcon
-              className="fa-regular fa-arrow-up"
+            <Box
               sx={{
-                transform: 'translateY(-2px)',
-                fontSize: 14
+                alignSelf: 'flex-end'
               }}
-              KeyContainerProps={{
-                sx: {width: 55, height: 25} // 1u
-              }}
-            />
-            <KeyIcon
-              className="fa-regular fa-arrow-down"
+            >
+              <KeyIcon
+                className="fa-regular fa-arrow-left"
+                sx={{
+                  transform: 'translateY(-2px)',
+                  fontSize: 14
+                }}
+                KeyContainerProps={{
+                  sx: {width: 55, height: 25} // 1u
+                }}
+              />
+            </Box>
+            <Box
               sx={{
-                transform: 'translateY(-2px)',
-                fontSize: 14
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                alignItems: 'stretch',
+                marginLeft: 1
               }}
-              KeyContainerProps={{
-                sx: {width: 55, height: 25} // 1u
+            >
+              <KeyIcon
+                className="fa-regular fa-arrow-up"
+                sx={{
+                  transform: 'translateY(-2px)',
+                  fontSize: 14
+                }}
+                KeyContainerProps={{
+                  sx: {width: 55, height: 25} // 1u
+                }}
+              />
+              <KeyIcon
+                className="fa-regular fa-arrow-down"
+                sx={{
+                  transform: 'translateY(-2px)',
+                  fontSize: 14
+                }}
+                KeyContainerProps={{
+                  sx: {width: 55, height: 25} // 1u
+                }}
+              />
+            </Box>
+            {/* <KeyIcon
+                className="fa-regular fa-arrow-up"
+                   sx={{transform: 'translateY(-2px)', fontSize: 14}}
+              /> */}
+            <Box
+              sx={{
+                alignSelf: 'flex-end',
+                marginLeft: 1
               }}
-            />
+            >
+              <KeyIcon
+                className="fa-regular fa-arrow-right"
+                sx={{
+                  transform: 'translateY(-2px)',
+                  fontSize: 14
+                }}
+                KeyContainerProps={{
+                  sx: {width: 55, height: 25} // 1u
+                }}
+              />
+            </Box>
           </Box>
-          {/* <KeyIcon
-            className="fa-regular fa-arrow-up"
-               sx={{transform: 'translateY(-2px)', fontSize: 14}}
-          /> */}
-          <KeyIcon
-            className="fa-regular fa-arrow-right"
-            sx={{
-              transform: 'translateY(-2px)',
-              fontSize: 14
-            }}
-            KeyContainerProps={{
-              sx: {width: 55, height: 25, alignSelf: 'flex-end'} // 1u
-            }}
-          />
         </KeyboardGridRow>
       </Grid>
     </Box>

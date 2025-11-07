@@ -601,7 +601,7 @@ export default function BaseLyr() {
                   fontSize: 14
                 }}
                 KeyContainerProps={{
-                  sx: {width: 55, height: 25} // 1.25u
+                  sx: {width: 55, height: 25} // 1u
                 }}
               />
             </Box>
