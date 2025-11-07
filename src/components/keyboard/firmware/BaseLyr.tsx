@@ -21,7 +21,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
   return (
     <Box data-layout={layout}>
       <Grid container direction="column" spacing={1}>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line"
@@ -91,7 +91,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             )}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             tapForceHold
             LyrHoldSubIcn={() => (
@@ -144,7 +144,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             ;
           </KeyLegend>
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -250,7 +250,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             }}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special

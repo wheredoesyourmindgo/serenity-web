@@ -26,7 +26,7 @@ export default function LegacyTextObjKeys() {
   return (
     <Box>
       <Grid container direction="column" spacing={1}>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -40,7 +40,7 @@ export default function LegacyTextObjKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowUpLeftFromCircle}
@@ -68,7 +68,7 @@ export default function LegacyTextObjKeys() {
           <KeyLegend {...sharedProps} vimRef="a" />
           <KeyLegend {...sharedProps} vimRef="'" />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -82,7 +82,7 @@ export default function LegacyTextObjKeys() {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

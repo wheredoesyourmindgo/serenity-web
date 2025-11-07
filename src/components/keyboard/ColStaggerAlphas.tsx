@@ -41,7 +41,7 @@ export default function ColStaggerAlphaKeyboard() {
 
   return (
     <Grid container direction="column" spacing={2}>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.r}}>
           L
@@ -70,7 +70,7 @@ export default function ColStaggerAlphaKeyboard() {
         </AlphaKeyLgnd>
         <AlphaKeyLgnd sx={{paddingTop: p.p}}>;</AlphaKeyLgnd>
       </Grid>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="solarized.base01" sx={{paddingTop: p.m}}>
           M
@@ -107,7 +107,7 @@ export default function ColStaggerAlphaKeyboard() {
           A
         </AlphaKeyLgnd>
       </Grid>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         {/* <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="solarized.base0" sx={{paddingTop: p.p}}>
           <em>V</em>

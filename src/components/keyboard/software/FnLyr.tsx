@@ -13,7 +13,7 @@ export default function FnLyr() {
   return (
     <Box>
       <Grid container direction="column" spacing={1}>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-lock-a"
@@ -85,7 +85,7 @@ export default function FnLyr() {
             }}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} shiftLgnd="~">
             `
           </KeyLegend>
@@ -260,7 +260,7 @@ export default function FnLyr() {
             )}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line"
@@ -324,7 +324,7 @@ export default function FnLyr() {
             \
           </KeyLegend>
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
@@ -385,7 +385,7 @@ export default function FnLyr() {
             }}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-up"
             KeyContainerProps={{
@@ -542,7 +542,7 @@ export default function FnLyr() {
             }}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special

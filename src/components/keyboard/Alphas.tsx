@@ -32,7 +32,7 @@ export default function AlphaKeyboard() {
 
   return (
     <Grid container direction="column" spacing={2}>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
@@ -47,7 +47,7 @@ export default function AlphaKeyboard() {
         {/* <AlphaKeyIcn className="fa-regular fa-delete-left" /> */}
         <AlphaKeyLgnd />
       </Grid>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>N</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>T</AlphaKeyLgnd>
@@ -61,7 +61,7 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
         {/* <AlphaKeyLgnd>=</AlphaKeyLgnd> */}
       </Grid>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">M</AlphaKeyLgnd>

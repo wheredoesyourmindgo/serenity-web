@@ -14,7 +14,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
   return (
     <Box data-layout={layout}>
       <Grid container direction="column" spacing={1}>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-right-long-to-line"
             sx={{
@@ -201,7 +201,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             )}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
@@ -276,7 +276,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             ;
           </KeyLegend>
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -369,7 +369,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special

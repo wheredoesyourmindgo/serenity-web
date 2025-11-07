@@ -31,7 +31,7 @@ export default function StaggerAlphaKeyboard() {
 
   return (
     <Grid container direction="column" spacing={2}>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
@@ -44,7 +44,7 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd color="solarized.base01">U</AlphaKeyLgnd>
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
       </Grid>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} />
         <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
@@ -58,7 +58,7 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd color={base03}>A</AlphaKeyLgnd>
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
       </Grid>
-      <Grid container spacing={1}>
+      <Grid container wrap="nowrap" spacing={1} data-row>
         <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55, opacity: 0}}} />
         <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
