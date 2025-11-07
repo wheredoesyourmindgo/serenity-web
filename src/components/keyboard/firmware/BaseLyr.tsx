@@ -8,6 +8,7 @@ import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
 import {type KeyboardLayout} from 'src/app/firmware/page'
+import KeyboardGridRow from '../KeyboardGridRow'
 
 export interface BaseLyrProps {
   layout: KeyboardLayout
@@ -21,7 +22,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
   return (
     <Box data-layout={layout}>
       <Grid container direction="column" spacing={1}>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line"
@@ -90,8 +91,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               <ShiftSubIcn className="fa-regular fa-delete-right" />
             )}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyIcon
             tapForceHold
             LyrHoldSubIcn={() => (
@@ -143,8 +144,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -249,8 +250,8 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               )
             }}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special
@@ -501,7 +502,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
               )
             }}
           />
-        </Grid>
+        </KeyboardGridRow>
       </Grid>
     </Box>
   )

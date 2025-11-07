@@ -6,6 +6,7 @@ import PopoverDesc from '@components/key/PopoverDesc'
 import MuiFaIcon from '@components/MuiFaIcon'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import {type KeyboardLayout} from 'src/app/firmware/page'
+import KeyboardGridRow from '../KeyboardGridRow'
 
 export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -14,7 +15,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
   return (
     <Box data-layout={layout}>
       <Grid container direction="column" spacing={1}>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyIcon
             className="fa-regular fa-arrow-right-long-to-line"
             sx={{
@@ -68,8 +69,8 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               <ShiftSubIcn className="fa-regular fa-delete-right" />
             )}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyIcon
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
@@ -205,8 +206,8 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyIcon
             special
             className="fa-regular fa-up"
@@ -372,8 +373,8 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyLegend
             {...sharedProps}
             KeyContainerProps={{
@@ -485,7 +486,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               }
             }}
           />
-        </Grid>
+        </KeyboardGridRow>
       </Grid>
     </Box>
   )

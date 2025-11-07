@@ -38,7 +38,7 @@ export default function LegacyNumNavKeys() {
   return (
     <Box>
       <Grid container direction="column" spacing={1}>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowRightLongToLine}
@@ -58,7 +58,7 @@ export default function LegacyNumNavKeys() {
           <KeyLegend {...sharedProps} vimRef="0" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
            </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -86,7 +86,7 @@ export default function LegacyNumNavKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRef="'" />
            </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -112,7 +112,7 @@ export default function LegacyNumNavKeys() {
           </KeyLegend>
           <KeyLegend {...sharedProps} vimRefIcn={faArrowTurnDownLeft} />
            </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

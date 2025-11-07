@@ -1,16 +1,9 @@
-'use client'
-
-import {useTheme, BoxProps, Box, useMediaQuery} from '@mui/material'
+import {BoxProps, Box} from '@mui/material'
 import Navbar from '@components/Navbar'
 
 type Props = Partial<BoxProps>
 
 export default function PageLayout({children, sx, ...rest}: Props) {
-  const theme = useTheme()
-
-  const isSm = useMediaQuery(theme.breakpoints.down('md'))
-  const isXs = useMediaQuery(theme.breakpoints.only('xs'))
-
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', height: '100vh'}}>
       <Navbar />
@@ -26,13 +19,13 @@ export default function PageLayout({children, sx, ...rest}: Props) {
       >
         <Box
           sx={{
-            ...((isXs || isSm) && {
-              transform: isXs
-                ? 'scale(0.53)'
-                : 'scale(0.69)' /* Adjust the scale value as needed */,
-              transformOrigin:
-                'center center' /* Ensures the scaling starts from the top left corner */
-            }),
+            // ...((isXs || isSm) && {
+            //   transform: isXs
+            //     ? 'scale(0.53)'
+            //     : 'scale(0.69)' /* Adjust the scale value as needed */,
+            //   transformOrigin:
+            //     'center center' /* Ensures the scaling starts from the top left corner */
+            // }),
             // overflowX: 'hidden' /* Prevents horizontal scrolling */
             display: 'block',
             flexGrow: 1,

@@ -7,6 +7,7 @@ import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
+import KeyboardGridRow from '../KeyboardGridRow'
 
 export default function BaseLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -14,7 +15,7 @@ export default function BaseLyr() {
   return (
     <Box>
       <Grid container direction="column" spacing={1}>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        <KeyboardGridRow>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-lock-a"
@@ -196,8 +197,8 @@ export default function BaseLyr() {
               )
             }}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyLegend {...sharedProps} shiftLgnd="~">
             `
           </KeyLegend>
@@ -260,8 +261,8 @@ export default function BaseLyr() {
               <ShiftSubIcn className="fa-regular fa-delete-right" />
             )}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyIcon
             // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line"
@@ -324,8 +325,8 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="|">
             \
           </KeyLegend>
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyIcon
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
@@ -391,8 +392,8 @@ export default function BaseLyr() {
               )
             }}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           <KeyIcon
             className="fa-regular fa-up"
             KeyContainerProps={{
@@ -496,8 +497,8 @@ export default function BaseLyr() {
               )
             }}
           />
-        </Grid>
-        <Grid container wrap="nowrap" spacing={1} data-row>
+        </KeyboardGridRow>
+        <KeyboardGridRow>
           {/* <KeyIcon
             icon={faVolumeXmark}
             special
@@ -636,7 +637,7 @@ export default function BaseLyr() {
               sx: {width: 55, height: 25, alignSelf: 'flex-end'} // 1u
             }}
           />
-        </Grid>
+        </KeyboardGridRow>
       </Grid>
     </Box>
   )
