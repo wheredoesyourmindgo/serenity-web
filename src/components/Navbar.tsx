@@ -1,3 +1,5 @@
+'use client'
+
 import {AppBar, Box, Button, Toolbar} from '@mui/material'
 import Link from 'next/link'
 import ToggleDarkModeBtn from './ToggleDarkModeBtn'
