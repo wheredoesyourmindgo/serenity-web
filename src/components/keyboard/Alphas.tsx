@@ -19,6 +19,7 @@ const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
 
 export default function AlphaKeyboard() {
   const theme = useTheme()
+  console.log(theme.palette)
   const base02 = alpha(theme.palette.solarized.base02, 0.85)
   const base03 = alpha(theme.palette.solarized.base03, 0.95)
 
