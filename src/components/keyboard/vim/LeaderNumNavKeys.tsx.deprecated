@@ -37,7 +37,7 @@ export default function LeaderNumNavKeys() {
   return (
     <Box>
       <Grid container direction="column" spacing={1}>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteRight} />
           <KeyLegend {...sharedProps} vimRef="1" />
           <KeyLegend {...sharedProps} vimRef="2" />
@@ -51,7 +51,7 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} vimRef="0" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -65,7 +65,7 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faArrowRight} />
           <KeyLegend {...sharedProps} vimRef="'" />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
@@ -83,7 +83,7 @@ export default function LeaderNumNavKeys() {
           <KeyLegend {...sharedProps} vimRefIcn={faBorderBottomRight} />
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

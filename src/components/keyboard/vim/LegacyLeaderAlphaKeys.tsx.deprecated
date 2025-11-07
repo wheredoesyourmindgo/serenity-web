@@ -32,7 +32,7 @@ export default function LegacyLeaderAlphaKeys() {
   return (
     <Box>
       <Grid container direction="column" spacing={1}>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowRightLongToLine}
@@ -71,7 +71,7 @@ export default function LegacyLeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRef=";" />
           <KeyLegend {...sharedProps} vimRefIcn={faDeleteLeft} />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend
             {...sharedProps}
             vimRefIcn={faArrowUpLeftFromCircle}
@@ -107,7 +107,7 @@ export default function LegacyLeaderAlphaKeys() {
           <KeyLegend {...sharedProps} vimRef="a" />
           <KeyLegend {...sharedProps} vimRef="'" />
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} vimRefIcn={faUp} />
           <KeyLegend {...sharedProps} vimRef="v" />
           <KeyLegend {...sharedProps} vimRef="x" />
@@ -133,7 +133,7 @@ export default function LegacyLeaderAlphaKeys() {
             <Type {...sharedTypeProps}>:</Type>
           </KeyLegend>
            </Grid>
-        <Grid container spacing={1} data-row>
+        <Grid container wrap="nowrap" spacing={1} data-row>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
