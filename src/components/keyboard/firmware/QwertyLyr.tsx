@@ -261,7 +261,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
                   <br /> */}
                   <PopoverDesc
                     action="hold"
-                    output="Action Layer (or Left Shift)"
+                    output="Action Layer (or Left Shift when held with other Left Mod keys)"
                   />
                 </Box>
               )
@@ -353,7 +353,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
                   <br />
                   <PopoverDesc
                     action="hold"
-                    output="Media Layer (or Right Shift)"
+                    output="Media Layer (or Right Shift when held with other Right Mod keys)"
                   />
                 </Box>
               )
