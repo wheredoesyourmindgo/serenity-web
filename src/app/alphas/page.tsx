@@ -71,7 +71,7 @@ export default function AlphasPage() {
           </Type>
           <Box
             sx={{
-              transform: {xs: 'scale(0.55)', sm: 'scale(0.75)', md: 'none'},
+              transform: {xs: 'scale(0.54)', sm: 'scale(0.75)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
               height: {xs: 175, sm: 200, md: 'auto'}
             }}
