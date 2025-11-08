@@ -128,7 +128,7 @@ export default function SoftwarePage() {
 
           <Box
             sx={{
-              transform: {xs: 'scale(0.41)', sm: 'scale(0.60)', md: 'none'},
+              transform: {xs: 'scale(0.40)', sm: 'scale(0.60)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
               height: {xs: 250, sm: 300, md: 'auto'}
             }}
