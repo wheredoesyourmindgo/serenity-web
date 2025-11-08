@@ -3,7 +3,7 @@ import {Box} from '@mui/material'
 
 type Props = MuiFaIconProps
 
-export default function AppSubIcn({sx, ...rest}: Props) {
+export default function AppShortcutSubIcn({sx, ...rest}: Props) {
   return (
     <Box
       sx={{
@@ -15,7 +15,7 @@ export default function AppSubIcn({sx, ...rest}: Props) {
       <MuiFaIcon
         className="fa-regular fa-browser"
         sx={{
-          color: 'solarized.cyan',
+          color: 'solarized.blue',
           fontSize: 9,
           transform: 'translateX(-50%)',
           ...sx

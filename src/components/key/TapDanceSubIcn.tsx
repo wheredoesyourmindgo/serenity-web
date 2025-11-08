@@ -14,7 +14,7 @@ export default function TapDanceSubIcn({sx, ...rest}: Props) {
     >
       <MuiFaIcon
         className="fa-regular fa-ellipsis"
-        sx={{color: 'solarized.blue', fontSize: 14, ...sx}}
+        sx={{color: 'solarized.orange', fontSize: 14, ...sx}}
         {...rest}
       />
     </Box>

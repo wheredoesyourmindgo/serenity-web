@@ -10,7 +10,7 @@ import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 
 import VimRefIcn, {VimRefIcnProps} from './VimRefIcn'
 import VimRefLgnd from './VimRefLgnd'
-import AppSubIcn from './AppSubIcn'
+import AppSubIcn from './AppShortcutSubIcn'
 
 type Props = Partial<TypographyProps> & {
   shiftLgnd?: string | React.ReactNode
