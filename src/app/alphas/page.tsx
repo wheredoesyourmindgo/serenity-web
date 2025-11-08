@@ -57,7 +57,7 @@ export default function AlphasPage() {
         >
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Box pt={4} />
+          <Box sx={{pt: {xs: 2, md: 4}}} />
           <Type
             variant="h2"
             gutterBottom
@@ -66,8 +66,16 @@ export default function AlphasPage() {
           >
             Alphas
           </Type>
-          <Box pt={4} />
-          <AlphaKeyboard />
+          <Box sx={{pt: {xs: 2, md: 4}}} />
+          <Box
+            sx={{
+              transform: {xs: 'scale(0.65)', sm: 'scale(0.75)', md: 'none'},
+              transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
+              height: {xs: 175, sm: 200, md: 'auto'}
+            }}
+          >
+            <AlphaKeyboard />
+          </Box>
 
           <Box
             sx={{
@@ -123,12 +131,19 @@ export default function AlphasPage() {
           </Box>
           {/* <Copyright /> */}
           <Box
-            pt={4}
             sx={{
+              pt: 4,
+              maxWidth: '100%',
               ...(show !== 'genkey' && {display: 'none'})
             }}
           >
-            <Paper sx={{padding: 4}} elevation={0}>
+            <Paper
+              sx={{
+                padding: 4,
+                overflowX: 'scroll',
+                elevation: 0
+              }}
+            >
               <Type
                 gutterBottom
                 component="pre"
@@ -164,12 +179,19 @@ export default function AlphasPage() {
             </Box>
           </Box>
           <Box
-            pt={4}
             sx={{
+              pt: 4,
+              maxWidth: '100%',
               ...(show !== 'a200' && {display: 'none'})
             }}
           >
-            <Paper sx={{padding: 4}} elevation={0}>
+            <Paper
+              sx={{
+                padding: 4,
+                overflowX: 'scroll',
+                elevation: 0
+              }}
+            >
               <Type
                 gutterBottom
                 component="pre"
@@ -205,12 +227,19 @@ export default function AlphasPage() {
             </Box>
           </Box>
           <Box
-            pt={4}
             sx={{
+              pt: 4,
+              maxWidth: '100%',
               ...(show !== 'colemakmods' && {display: 'none'})
             }}
           >
-            <Paper sx={{padding: 4}} elevation={0}>
+            <Paper
+              sx={{
+                padding: 4,
+                overflowX: 'scroll',
+                elevation: 0
+              }}
+            >
               <Type
                 gutterBottom
                 component="pre"

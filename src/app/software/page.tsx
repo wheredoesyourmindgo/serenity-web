@@ -108,7 +108,7 @@ export default function SoftwarePage() {
         >
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Box pt={4} />
+          <Box sx={{pt: {xs: 2, md: 4}}} />
           <Type
             variant="h2"
             gutterBottom
@@ -118,7 +118,15 @@ export default function SoftwarePage() {
             Software
           </Type>
 
-          <Box pt={4}>
+          <Box sx={{pt: {xs: 2, md: 4}}} />
+
+          <Box
+            sx={{
+              transform: {xs: 'scale(0.50)', sm: 'scale(0.60)', md: 'none'},
+              transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
+              height: {xs: 250, sm: 300, md: 'auto'}
+            }}
+          >
             <TabPanel value={value} index={0}>
               <BaseLyr />
             </TabPanel>
@@ -127,16 +135,21 @@ export default function SoftwarePage() {
               <FnLyr />
             </TabPanel>
           </Box>
+
           <Box
             sx={{
               marginTop: 6,
-              bgcolor: 'background.paper'
+              bgcolor: 'background.paper',
+              maxWidth: '100%'
             }}
           >
             <Tabs
               value={value}
               onChange={handleChange}
-              aria-label="keyboard layer tabs example"
+              aria-label="Keyboard Layer tabs"
+              variant="scrollable"
+              scrollButtons="auto"
+              allowScrollButtonsMobile
             >
               <Tab
                 label="Base"
@@ -171,7 +184,10 @@ export default function SoftwarePage() {
           columnSpacing={12}
           rowSpacing={6}
         >
-          <Grid size={{xs: 12, sm: 5}} />
+          <Grid
+            size={{xs: 12, sm: 5}}
+            sx={{display: {xs: 'none', md: 'block'}}}
+          />
           <Grid size={{xs: 12, sm: 'auto'}}>
             <Paper elevation={2} sx={{borderRadius: 1}}>
               <Box sx={{padding: 2, bgcolor: 'inherit', borderRadius: 1}}>

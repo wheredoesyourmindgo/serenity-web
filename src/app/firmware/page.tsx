@@ -86,6 +86,7 @@ export default function FirmwarePage() {
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
+
   return (
     <PageLayout>
       <Container sx={{position: 'relative'}}>
@@ -135,7 +136,7 @@ export default function FirmwarePage() {
         >
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Box pt={4} />
+          <Box sx={{pt: {xs: 2, md: 4}}} />
           <Type
             variant="h2"
             gutterBottom
@@ -145,7 +146,14 @@ export default function FirmwarePage() {
             Firmware
           </Type>
 
-          <Box pt={4}>
+          <Box sx={{pt: {xs: 2, md: 4}}} />
+          <Box
+            sx={{
+              transform: {xs: 'scale(0.55)', sm: 'scale(0.65)', md: 'none'},
+              transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
+              height: {xs: 175, sm: 200, md: 'auto'}
+            }}
+          >
             <TabPanel value={value} index={0}>
               <BaseLyr layout={layout} />
             </TabPanel>
@@ -183,7 +191,8 @@ export default function FirmwarePage() {
           <Box
             sx={{
               marginTop: 6,
-              bgcolor: 'background.paper'
+              bgcolor: 'background.paper',
+              maxWidth: '100%'
               // borderRadius: 1
               // borderBottom: 1,
               // borderColor: 'divider'
@@ -192,7 +201,10 @@ export default function FirmwarePage() {
             <Tabs
               value={value}
               onChange={handleChange}
-              aria-label="keyboard layer tabs example"
+              aria-label="Keyboard Layer tabs"
+              variant="scrollable"
+              scrollButtons="auto"
+              allowScrollButtonsMobile
             >
               <Tab
                 label="Base"
