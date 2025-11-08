@@ -95,7 +95,23 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           /> */}
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            tapDance
+            appShortcut
+            className="fa-regular fa-up-right-and-down-left-from-center"
+            KeyContainerProps={{
+              keyId: 'window-partial-fullscreen-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Fullscreen Window" />
+                  <br />
+                  <PopoverDesc action="hold" output="Restore Window" />
+                  <br />
+                  <RectangleProCaption />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-square-up-left"
             KeyContainerProps={{
@@ -217,14 +233,15 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             tapDance
             appShortcut
-            className="fa-regular fa-up-right-and-down-left-from-center"
+            rotation={90}
+            className="fa-regular fa-down-left-and-up-right-to-center"
             KeyContainerProps={{
-              keyId: 'window-fullscreen-key',
+              keyId: 'window-partial-fullscreen-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Almost Max Window" />
+                  <PopoverDesc action="tap" output="Center Window" />
                   <br />
-                  <PopoverDesc action="hold" output="Max Window Height" />
+                  <PopoverDesc action="hold" output="Last Window Position" />
                   <br />
                   <RectangleProCaption />
                 </Box>
@@ -242,7 +259,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Window Left Half" />
                   <br />
-                  <PopoverDesc action="hold" output="Fullscreen Window" />
+                  <PopoverDesc action="hold" output="Window Fill Left" />
                   <br />
                   <RectangleProCaption />
                 </Box>
@@ -259,9 +276,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-management1-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Decrease Window Size" />
+                  <PopoverDesc action="tap" output="Window Bottom Half" />
                   <br />
-                  <PopoverDesc action="hold" output="Center Window" />
+                  <PopoverDesc action="hold" output="Window Fill Bottom" />
                   <br />
                   <RectangleProCaption />
                 </Box>
@@ -277,9 +294,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-management2-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap" output="Increase Window Size" />
+                  <PopoverDesc action="tap" output="Window Top Half" />
                   <br />
-                  <PopoverDesc action="hold" output="Restore Window" />
+                  <PopoverDesc action="hold" output="Window Fill Top" />
                   <br />
                   <RectangleProCaption />
                 </Box>
@@ -310,7 +327,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Window Right Half" />
                   <br />
-                  <PopoverDesc action="hold" output="Last Window Position" />
+                  <PopoverDesc action="hold" output="Window Fill Right" />
                   <br />
                   <RectangleProCaption />
                 </Box>
@@ -352,7 +369,24 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            tapDance
+            appShortcut
+            rotation={-45}
+            className="fa-regular fa-up-right-and-down-left-from-center"
+            KeyContainerProps={{
+              keyId: 'window-partial-fullscreen-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap" output="Almost Max Window" />
+                  <br />
+                  <PopoverDesc action="hold" output="Max Window Height" />
+                  <br />
+                  <RectangleProCaption />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             appShortcut
             className="fa-regular fa-square-left"
@@ -367,8 +401,49 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            // special
+            // tapDance
+            appShortcut
+            rotation={180}
+            className="fa-regular fa-octagon-minus"
+            KeyContainerProps={{
+              keyId: 'window-management1-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Decrease Window Size"
+                  />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="" />
+                  <br /> */}
+                  <RectangleProCaption />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            // special
+            // tapDance
+            appShortcut
+            className="fa-regular fa-octagon-plus"
+            KeyContainerProps={{
+              keyId: 'window-management2-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Increase Window Size"
+                  />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="" />
+                  <br /> */}
+                  <RectangleProCaption />
+                </Box>
+              )
+            }}
+          />
           <KeyIcon
             appShortcut
             className="fa-regular fa-square-right"
