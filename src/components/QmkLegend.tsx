@@ -65,7 +65,7 @@ export default function QmkLegend() {
             <ListItemIcon>
               <MuiFaIcon
                 className="fa-regular fa-ellipsis"
-                color="solarized.blue"
+                color="solarized.orange"
               />
             </ListItemIcon>
             <ListItemText primary="Tap vs. Hold" />
@@ -78,6 +78,15 @@ export default function QmkLegend() {
               />
             </ListItemIcon>
             <ListItemText primary="Auto-repeat Enabled" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <MuiFaIcon
+                className="fa-regular fa-browser"
+                color="solarized.blue"
+              />
+            </ListItemIcon>
+            <ListItemText primary="Application Shortcut" />
           </ListItem>
           <ListItem>
             <ListItemIcon>
@@ -97,15 +106,6 @@ export default function QmkLegend() {
                     </ListItemIcon>
                     <ListItemText primary="Optional Encoder" />
                   </ListItem> */}
-          <ListItem>
-            <ListItemIcon>
-              <MuiFaIcon
-                className="fa-regular fa-browser"
-                color="solarized.cyan"
-              />
-            </ListItemIcon>
-            <ListItemText primary="Application Shortcut" />
-          </ListItem>
         </List>
       </Box>
     </Paper>

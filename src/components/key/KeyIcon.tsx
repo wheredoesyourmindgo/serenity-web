@@ -7,7 +7,7 @@ import TapDanceSubIcn from './TapDanceSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 import ReqSetupSubLgnd from './ReqSetupSubLgnd'
 import EncoderSubLgnd from './EncoderSubLgnd'
-import AppSubIcn from './AppSubIcn'
+import AppSubIcn from './AppShortcutSubIcn'
 
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps

@@ -20,14 +20,14 @@ function RectangleProCaption() {
     >
       <Typography
         sx={{
-          color: 'solarized.cyan',
+          color: 'solarized.blue',
           fontSize: 11,
           fontWeight: 'bold'
         }}
       >
         <MuiFaIcon
           className="fa-regular fa-browser"
-          color="solarized.cyan"
+          color="solarized.blue"
           sx={{paddingRight: 2.25}}
         />
         Rectangle Pro
