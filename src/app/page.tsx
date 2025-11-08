@@ -19,14 +19,18 @@ export default function IndexPage() {
         {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
         <Type
-          variant="h1"
+          // variant='h1'
           gutterBottom
           color="primary"
-          sx={{fontStyle: 'italic', fontFeatureSettings: "'ss02' on"}}
+          sx={{
+            typography: {xs: 'h2', md: 'h1'}, // responsive typography
+            fontStyle: 'italic',
+            fontFeatureSettings: "'ss02' on",
+            pb: {xs: 2, md: 4}
+          }}
         >
           Serenity
         </Type>
-        <Box sx={{pt: {xs: 2, md: 4}}} />
         <Box
           sx={{
             transform: {xs: 'scale(0.56)', sm: 'scale(0.75)', md: 'none'},

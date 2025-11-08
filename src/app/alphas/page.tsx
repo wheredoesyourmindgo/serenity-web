@@ -57,16 +57,18 @@ export default function AlphasPage() {
         >
           {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Box sx={{pt: {xs: 2, md: 4}}} />
           <Type
             variant="h2"
             gutterBottom
             color="primary"
-            // sx={{fontStyle: 'italic'}}
+            sx={{
+              // sx={{fontStyle: 'italic'}}
+              pt: {xs: 2, md: 4},
+              pb: {xs: 2, md: 4}
+            }}
           >
             Alphas
           </Type>
-          <Box sx={{pt: {xs: 2, md: 4}}} />
           <Box
             sx={{
               transform: {xs: 'scale(0.55)', sm: 'scale(0.75)', md: 'none'},
