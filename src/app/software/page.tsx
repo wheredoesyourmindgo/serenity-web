@@ -104,7 +104,8 @@ export default function SoftwarePage() {
             marginRight: 2,
             position: 'absolute',
             right: 0,
-            top: 0
+            top: 0,
+            display: {xs: 'none', md: 'block'}
           }}
         >
           <SerenityKarabinerButton />
@@ -130,7 +131,7 @@ export default function SoftwarePage() {
             sx={{
               transform: {xs: 'scale(0.40)', sm: 'scale(0.60)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-              height: {xs: 250, sm: 300, md: 'auto'}
+              height: {xs: 225, sm: 300, md: 'auto'}
             }}
           >
             <TabPanel value={value} index={0}>
@@ -284,6 +285,15 @@ export default function SoftwarePage() {
                 </List>
               </Box>
             </Paper>
+          </Grid>
+          <Grid size={{xs: 12, sm: 'auto'}}>
+            <Box
+              sx={{
+                display: {xs: 'block', md: 'none'}
+              }}
+            >
+              <SerenityKarabinerButton />
+            </Box>
           </Grid>
         </Grid>
       </Container>
