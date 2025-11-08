@@ -30,6 +30,43 @@ interface TabPanelProps {
   value: number
 }
 
+function SerenityKarabinerButton() {
+  return (
+    <Button
+      variant="outlined"
+      href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
+      target="_blank"
+      rel="noopener noreferrer"
+      startIcon={<GitHubIcon />}
+      size="small"
+      sx={[
+        {
+          textTransform: 'none',
+          fontWeight: 600,
+          color: 'white',
+          bgcolor: '#24292e',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'rgba(0, 0, 0, 0.3)',
+          '&:hover': {
+            bgcolor: alpha('#2f363d', 0.9),
+            borderColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        },
+        (theme) =>
+          theme.applyStyles('dark', {
+            borderColor: 'rgba(255, 255, 255, 0.3)',
+            '&:hover': {
+              borderColor: 'rgba(255, 255, 255, 0.5)'
+            }
+          })
+      ]}
+    >
+      Serenity Karabiner
+    </Button>
+  )
+}
+
 function TabPanel(props: TabPanelProps) {
   const {children, value, index, ...other} = props
 
@@ -70,38 +107,7 @@ export default function SoftwarePage() {
             top: 0
           }}
         >
-          <Button
-            variant="outlined"
-            href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
-            target="_blank"
-            rel="noopener noreferrer"
-            startIcon={<GitHubIcon />}
-            size="small"
-            sx={[
-              {
-                textTransform: 'none',
-                fontWeight: 600,
-                color: 'white',
-                bgcolor: '#24292e',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'rgba(0, 0, 0, 0.3)',
-                '&:hover': {
-                  bgcolor: alpha('#2f363d', 0.9),
-                  borderColor: 'rgba(0, 0, 0, 0.5)'
-                }
-              },
-              (theme) =>
-                theme.applyStyles('dark', {
-                  borderColor: 'rgba(255, 255, 255, 0.3)',
-                  '&:hover': {
-                    borderColor: 'rgba(255, 255, 255, 0.5)'
-                  }
-                })
-            ]}
-          >
-            Serenity Karabiner
-          </Button>
+          <SerenityKarabinerButton />
         </Box>
         <Box
           sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
@@ -122,7 +128,7 @@ export default function SoftwarePage() {
 
           <Box
             sx={{
-              transform: {xs: 'scale(0.45)', sm: 'scale(0.60)', md: 'none'},
+              transform: {xs: 'scale(0.42)', sm: 'scale(0.60)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
               height: {xs: 250, sm: 300, md: 'auto'}
             }}

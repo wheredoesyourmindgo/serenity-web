@@ -48,6 +48,43 @@ interface TabPanelProps {
 
 export type KeyboardLayout = '48 key' | '42 key'
 
+function SerenityQmkButton() {
+  return (
+    <Button
+      variant="outlined"
+      href="https://github.com/wheredoesyourmindgo/serenity-qmk"
+      target="_blank"
+      rel="noopener noreferrer"
+      startIcon={<GitHubIcon />}
+      size="small"
+      sx={[
+        {
+          textTransform: 'none',
+          fontWeight: 600,
+          color: 'white',
+          bgcolor: '#24292e',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'rgba(0, 0, 0, 0.3)',
+          '&:hover': {
+            bgcolor: alpha('#2f363d', 0.9),
+            borderColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        },
+        (theme) =>
+          theme.applyStyles('dark', {
+            borderColor: 'rgba(255, 255, 255, 0.3)',
+            '&:hover': {
+              borderColor: 'rgba(255, 255, 255, 0.5)'
+            }
+          })
+      ]}
+    >
+      Serenity QMK
+    </Button>
+  )
+}
+
 function TabPanel(props: TabPanelProps) {
   const {children, value, index, ...other} = props
 
@@ -98,38 +135,7 @@ export default function FirmwarePage() {
             top: 0
           }}
         >
-          <Button
-            variant="outlined"
-            href="https://github.com/wheredoesyourmindgo/serenity-qmk"
-            target="_blank"
-            rel="noopener noreferrer"
-            startIcon={<GitHubIcon />}
-            size="small"
-            sx={[
-              {
-                textTransform: 'none',
-                fontWeight: 600,
-                color: 'white',
-                bgcolor: '#24292e',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'rgba(0, 0, 0, 0.3)',
-                '&:hover': {
-                  bgcolor: alpha('#2f363d', 0.9),
-                  borderColor: 'rgba(0, 0, 0, 0.5)'
-                }
-              },
-              (theme) =>
-                theme.applyStyles('dark', {
-                  borderColor: 'rgba(255, 255, 255, 0.3)',
-                  '&:hover': {
-                    borderColor: 'rgba(255, 255, 255, 0.5)'
-                  }
-                })
-            ]}
-          >
-            Serenity QMK
-          </Button>
+          <SerenityQmkButton />
         </Box>
         <Box
           sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
@@ -149,7 +155,7 @@ export default function FirmwarePage() {
           <Box sx={{pt: {xs: 2, md: 4}}} />
           <Box
             sx={{
-              transform: {xs: 'scale(0.50)', sm: 'scale(0.65)', md: 'none'},
+              transform: {xs: 'scale(0.47)', sm: 'scale(0.65)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
               height: {xs: 175, sm: 200, md: 'auto'}
             }}
