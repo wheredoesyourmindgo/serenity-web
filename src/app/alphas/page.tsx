@@ -69,7 +69,7 @@ export default function AlphasPage() {
           <Box sx={{pt: {xs: 2, md: 4}}} />
           <Box
             sx={{
-              transform: {xs: 'scale(0.56)', sm: 'scale(0.75)', md: 'none'},
+              transform: {xs: 'scale(0.55)', sm: 'scale(0.75)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
               height: {xs: 175, sm: 200, md: 'auto'}
             }}

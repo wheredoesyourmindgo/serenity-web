@@ -132,7 +132,8 @@ export default function FirmwarePage() {
             marginRight: 2,
             position: 'absolute',
             right: 0,
-            top: 0
+            top: 0,
+            display: {xs: 'none', md: 'block'}
           }}
         >
           <SerenityQmkButton />
@@ -496,6 +497,15 @@ export default function FirmwarePage() {
                 </List>
               </Box>
             </Paper>
+          </Grid>
+          <Grid size={{xs: 12, sm: 'auto'}}>
+            <Box
+              sx={{
+                display: {xs: 'block', md: 'none'}
+              }}
+            >
+              <SerenityQmkButton />
+            </Box>
           </Grid>
         </Grid>
       </Container>
