@@ -7,8 +7,10 @@ import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
 import TapDanceSubIcn from './TapDanceSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
+
 import VimRefIcn, {VimRefIcnProps} from './VimRefIcn'
 import VimRefLgnd from './VimRefLgnd'
+import AppSubIcn from './AppSubIcn'
 
 type Props = Partial<TypographyProps> & {
   shiftLgnd?: string | React.ReactNode
@@ -28,6 +30,7 @@ type Props = Partial<TypographyProps> & {
   modHoldSubIcn?: React.FC
   ModHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
   tapForceHold?: boolean
+  appShortcut?: boolean
 }
 
 export default function KeyLegend({
@@ -49,6 +52,7 @@ export default function KeyLegend({
   ModHoldSubIcnProps,
   color = 'solarized.base00',
   tapForceHold,
+  appShortcut,
   sx,
   ...rest
 }: Props) {
@@ -76,6 +80,7 @@ export default function KeyLegend({
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
+        {appShortcut ? <AppSubIcn /> : null}
         {lyrHoldSubIcn ? (
           <HoldSubIcn
             sx={{color: lyrColor, ...lyrHoldSubIcnSx}}

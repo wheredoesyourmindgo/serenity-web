@@ -5,8 +5,36 @@ import PopoverDesc from '@components/key/PopoverDesc'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from 'src/app/firmware/page'
-import {Grid, Box} from '@mui/material'
+import {Grid, Box, Typography} from '@mui/material'
 import KeyboardGridRow from '../KeyboardGridRow'
+import MuiFaIcon from '@components/MuiFaIcon'
+
+function RectangleProCaption() {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        textAlign: 'right'
+      }}
+    >
+      <Typography
+        sx={{
+          color: 'solarized.cyan',
+          fontSize: 11,
+          fontWeight: 'bold'
+        }}
+      >
+        <MuiFaIcon
+          className="fa-regular fa-browser"
+          color="solarized.cyan"
+          sx={{paddingRight: 2.25}}
+        />
+        Rectangle Pro
+      </Typography>
+    </Box>
+  )
+}
 
 export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -188,6 +216,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           /> */}
           <KeyIcon
             tapDance
+            appShortcut
             className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
               keyId: 'window-fullscreen-key',
@@ -196,6 +225,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                   <PopoverDesc action="tap" output="Almost Max Window" />
                   <br />
                   <PopoverDesc action="hold" output="Max Window Height" />
+                  <br />
+                  <RectangleProCaption />
                 </Box>
               )
             }}
@@ -203,6 +234,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             homing
             tapDance
+            appShortcut
             className="fa-regular fa-sidebar"
             KeyContainerProps={{
               keyId: 'window-center-key',
@@ -211,6 +243,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                   <PopoverDesc action="tap" output="Window Left Half" />
                   <br />
                   <PopoverDesc action="hold" output="Fullscreen Window" />
+                  <br />
+                  <RectangleProCaption />
                 </Box>
               )
             }}
@@ -218,6 +252,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             // special
             tapDance
+            appShortcut
             rotation={180}
             className="fa-regular fa-window-maximize"
             KeyContainerProps={{
@@ -227,6 +262,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                   <PopoverDesc action="tap" output="Decrease Window Size" />
                   <br />
                   <PopoverDesc action="hold" output="Center Window" />
+                  <br />
+                  <RectangleProCaption />
                 </Box>
               )
             }}
@@ -234,6 +271,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             // special
             tapDance
+            appShortcut
             className="fa-regular fa-window-maximize"
             KeyContainerProps={{
               keyId: 'window-management2-key',
@@ -242,6 +280,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                   <PopoverDesc action="tap" output="Increase Window Size" />
                   <br />
                   <PopoverDesc action="hold" output="Restore Window" />
+                  <br />
+                  <RectangleProCaption />
                 </Box>
               )
             }}
@@ -262,6 +302,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             homing
             tapDance
+            appShortcut
             className="fa-regular fa-sidebar-flip"
             KeyContainerProps={{
               keyId: 'window-restore-key',
@@ -270,6 +311,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                   <PopoverDesc action="tap" output="Window Right Half" />
                   <br />
                   <PopoverDesc action="hold" output="Last Window Position" />
+                  <br />
+                  <RectangleProCaption />
                 </Box>
               )
             }}
@@ -311,12 +354,15 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
+            appShortcut
             className="fa-regular fa-square-left"
             KeyContainerProps={{
               keyId: 'throw-space-left-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Throw Window Space Left" />
+                  <br />
+                  <RectangleProCaption />
                 </Box>
               )
             }}
@@ -324,12 +370,15 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
+            appShortcut
             className="fa-regular fa-square-right"
             KeyContainerProps={{
               keyId: 'throw-space-right-key',
               popOverContent: (
                 <Box p={1}>
                   <PopoverDesc action="tap" output="Throw Window Space Right" />
+                  <br />
+                  <RectangleProCaption />
                 </Box>
               )
             }}

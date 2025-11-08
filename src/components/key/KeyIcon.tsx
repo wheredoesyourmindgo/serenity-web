@@ -7,6 +7,7 @@ import TapDanceSubIcn from './TapDanceSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 import ReqSetupSubLgnd from './ReqSetupSubLgnd'
 import EncoderSubLgnd from './EncoderSubLgnd'
+import AppSubIcn from './AppSubIcn'
 
 type Props = MuiFaIconProps & {
   KeyContainerProps?: KeyContainerProps
@@ -22,6 +23,7 @@ type Props = MuiFaIconProps & {
   ShiftSubIcn?: React.FC
   children?: React.ReactNode
   tapForceHold?: boolean
+  appShortcut?: boolean
 }
 
 export default function KeyIcon({
@@ -37,6 +39,7 @@ export default function KeyIcon({
   ModHoldSubIcn,
   children,
   tapForceHold,
+  appShortcut,
   optEncoder,
   ...props
 }: Props) {
@@ -56,6 +59,7 @@ export default function KeyIcon({
         {requiresOsConf ? <ReqSetupSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
+        {appShortcut ? <AppSubIcn /> : null}
         {LyrHoldSubIcn ? <LyrHoldSubIcn /> : null}
         {ModHoldSubIcn ? <ModHoldSubIcn /> : null}
         <Box
