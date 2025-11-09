@@ -23,7 +23,7 @@ export default function IndexPage() {
           gutterBottom
           color="primary"
           sx={{
-            typography: {xs: 'h2', md: 'h1'}, // responsive typography
+            // typography: {xs: 'h2', md: 'h1'}, // responsive typography
             fontStyle: 'italic',
             fontFeatureSettings: "'ss02' on",
             pb: {xs: 2, md: 4}
