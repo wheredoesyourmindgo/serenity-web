@@ -1,6 +1,6 @@
 'use client'
 
-import {createTheme} from '@mui/material'
+import {createTheme, responsiveFontSizes} from '@mui/material'
 import localFont from 'next/font/local'
 import {
   muiSolarizedDarkPalette,
@@ -125,4 +125,4 @@ const theme = createTheme({
   }
 })
 
-export default theme
+export default responsiveFontSizes(theme)
