@@ -20,7 +20,6 @@ export default function IndexPage() {
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
         <Type
           variant="h1"
-          gutterBottom
           color="primary"
           sx={{
             // typography: {xs: 'h2', md: 'h1'}, // responsive typography
@@ -33,9 +32,10 @@ export default function IndexPage() {
         </Type>
         <Box
           sx={{
-            transform: {xs: 'scale(0.56)', sm: 'scale(0.75)', md: 'none'},
-            transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-            height: {xs: 175, sm: 200, md: 'auto'}
+            mt: 6,
+            transform: {xs: 'scale(0.53)', sm: 'scale(0.75)', md: 'none'},
+            transformOrigin: {xs: 'center center', md: 'initial'} // Ensures the scaling starts from the top left corner */
+            // height: {xs: 110, sm: 200, md: 'auto'}
           }}
         >
           <AlphaKeyboard />

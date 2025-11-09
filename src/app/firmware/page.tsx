@@ -141,7 +141,6 @@ export default function FirmwarePage() {
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Type
             variant="h2"
-            gutterBottom
             color="primary"
             sx={{
               // sx={{fontStyle: 'italic'}}

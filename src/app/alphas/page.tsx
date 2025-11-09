@@ -59,7 +59,6 @@ export default function AlphasPage() {
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Type
             variant="h2"
-            gutterBottom
             color="primary"
             sx={{
               // sx={{fontStyle: 'italic'}}
@@ -71,9 +70,9 @@ export default function AlphasPage() {
           </Type>
           <Box
             sx={{
-              transform: {xs: 'scale(0.53)', sm: 'scale(0.75)', md: 'none'},
+              transform: {xs: 'scale(0.52)', sm: 'scale(0.75)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-              height: {xs: 160, sm: 200, md: 'auto'}
+              height: {xs: 100, sm: 200, md: 'auto'}
             }}
           >
             <AlphaKeyboard />
