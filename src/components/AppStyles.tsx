@@ -46,8 +46,8 @@ export default function AppStyles() {
         '[data-row="true"] > :nth-child(7)': {
           transition: 'margin-left 160ms ease-in-out'
         },
-        // In 42-key layout, add the visual split before the 7th key
-        '[data-layout="42 key"] [data-row="true"] > :nth-child(7)': {
+        // With corne layout, add the visual split before the 7th key
+        '[data-layout="corne"] [data-row="true"] > :nth-child(7)': {
           marginLeft: 30 // px (or use theme.spacing)
         },
         // Respect reduced motion preferences

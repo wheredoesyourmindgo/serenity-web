@@ -11,7 +11,7 @@ import KeyboardGridRow from '../KeyboardGridRow'
 
 export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
-  const isCorneLayout = layout === '42 key'
+  const isCorneLayout = layout === 'corne'
 
   return (
     <Box data-layout={layout}>

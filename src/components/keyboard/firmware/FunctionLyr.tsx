@@ -11,7 +11,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
   const fxSx: SxProps = {
     fontSize: 18
   }
-  const isCorneLayout = layout === '42 key'
+  const isCorneLayout = layout === 'corne'
 
   return (
     <Box data-layout={layout}>

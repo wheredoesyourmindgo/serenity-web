@@ -42,7 +42,7 @@ interface TabPanelProps {
   value: number
 }
 
-export type KeyboardLayout = '48 key' | '42 key'
+export type KeyboardLayout = 'planck' | 'corne'
 
 function SerenityQmkButton() {
   return (
@@ -107,7 +107,7 @@ function a11yProps(index: number) {
 export default function FirmwarePage() {
   const [value, setValue] = useState(0)
 
-  const [layout, setLayout] = useState<KeyboardLayout>('48 key')
+  const [layout, setLayout] = useState<KeyboardLayout>('planck')
 
   const handleLayoutChange = (
     _event: React.MouseEvent<HTMLElement>,
@@ -348,15 +348,16 @@ export default function FirmwarePage() {
                 component="legend"
                 sx={{textAlign: 'center', mb: 1, width: '100%'}}
               >
-                Layout
+                Bottom Row Layout
               </FormLabel>
               <ToggleButtonGroup
                 value={layout}
                 exclusive
                 onChange={handleLayoutChange}
                 size="small"
-                aria-label="Keyboard layout"
+                aria-label="Keyboard Bottom Row layout"
                 color="primary"
+                orientation="vertical"
                 sx={{
                   '& .MuiToggleButton-root': {
                     color: 'text.primary'
@@ -369,11 +370,11 @@ export default function FirmwarePage() {
                 }}
               >
                 <ToggleButton
-                  value="48 key"
-                  aria-label="48 key"
+                  value="planck"
+                  aria-label="11-12 keys"
                   sx={{paddingX: 2}}
                 >
-                  48 key{' '}
+                  11-12 keys{' '}
                   <Type
                     variant="inherit"
                     sx={{
@@ -386,11 +387,11 @@ export default function FirmwarePage() {
                   </Type>
                 </ToggleButton>
                 <ToggleButton
-                  value="42 key"
-                  aria-label="42 key"
+                  value="corne"
+                  aria-label="5-6 keys"
                   sx={{paddingX: 2}}
                 >
-                  42 key{' '}
+                  5-6 keys{' '}
                   <Type
                     variant="inherit"
                     sx={{
