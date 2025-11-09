@@ -60,13 +60,17 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
+            special
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{fontSize: 18}}
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Escape" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (or turn off Symbol layer lock)"
+                  />
                 </Box>
               )
             }}
