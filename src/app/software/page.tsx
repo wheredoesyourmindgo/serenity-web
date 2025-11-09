@@ -112,7 +112,6 @@ export default function SoftwarePage() {
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
           <Type
             variant="h2"
-            gutterBottom
             color="primary"
             sx={{
               // sx={{fontStyle: 'italic'}}
