@@ -46,6 +46,9 @@ export default function Navbar() {
           <Button LinkComponent={Link} href="/software" color="inherit">
             Software
           </Button>
+          <Button LinkComponent={Link} href="/misc" color="inherit">
+            Misc
+          </Button>
           <Box sx={{flex: '1 0 auto'}} />
           <ToggleDarkModeBtn />
         </Toolbar>
