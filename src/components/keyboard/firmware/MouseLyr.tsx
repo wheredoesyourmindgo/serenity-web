@@ -97,19 +97,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             color="solarized.cyan"
           />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
-          <KeyIcon
-            homing
-            className="fa-regular fa-up"
-            color="solarized.cyan"
-            KeyContainerProps={{
-              keyId: 'left-shift-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc action="tap/hold" output="Left Shift" />
-                </Box>
-              )
-            }}
-          />
+          <KeyIcon homing className="fa-regular fa-up" color="solarized.cyan" />
           <KeyIcon
             className="fa-regular fa-lock"
             KeyContainerProps={{
