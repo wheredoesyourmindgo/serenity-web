@@ -534,7 +534,7 @@ export default function FirmwarePage() {
                       // borderColor: 'divider'
                     }}
                   >
-                    <em>48-Key+ Layouts Only (non-Corne)</em>
+                    <em>11-12 Key Bottom Row Layouts Only</em>
                   </Type>
                   <li>
                     <Type>
