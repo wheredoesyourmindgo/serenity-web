@@ -268,6 +268,49 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             // special
+            // tapDance
+            appShortcut
+            rotation={180}
+            className="fa-regular fa-octagon-minus"
+            KeyContainerProps={{
+              keyId: 'window-management1-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Decrease Window Size"
+                  />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="" />
+                  <br /> */}
+                  <RectangleProCaption />
+                </Box>
+              )
+            }}
+          />
+          <KeyIcon
+            // special
+            // tapDance
+            appShortcut
+            className="fa-regular fa-octagon-plus"
+            KeyContainerProps={{
+              keyId: 'window-management2-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Increase Window Size"
+                  />
+                  {/* <br />
+                  <PopoverDesc action="hold" output="" />
+                  <br /> */}
+                  <RectangleProCaption />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyIcon
+            // special
             tapDance
             appShortcut
             rotation={180}
@@ -284,8 +327,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                 </Box>
               )
             }}
-          />
-          <KeyIcon
+          /> */}
+          {/* <KeyIcon
             // special
             tapDance
             appShortcut
@@ -302,7 +345,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                 </Box>
               )
             }}
-          />
+          /> */}
           {/* <KeyIcon
             homing
             special
@@ -401,49 +444,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyIcon
-            // special
-            // tapDance
-            appShortcut
-            rotation={180}
-            className="fa-regular fa-octagon-minus"
-            KeyContainerProps={{
-              keyId: 'window-management1-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Decrease Window Size"
-                  />
-                  {/* <br />
-                  <PopoverDesc action="hold" output="" />
-                  <br /> */}
-                  <RectangleProCaption />
-                </Box>
-              )
-            }}
-          />
-          <KeyIcon
-            // special
-            // tapDance
-            appShortcut
-            className="fa-regular fa-octagon-plus"
-            KeyContainerProps={{
-              keyId: 'window-management2-key',
-              popOverContent: (
-                <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Increase Window Size"
-                  />
-                  {/* <br />
-                  <PopoverDesc action="hold" output="" />
-                  <br /> */}
-                  <RectangleProCaption />
-                </Box>
-              )
-            }}
-          />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
           <KeyIcon
             appShortcut
             className="fa-regular fa-square-right"
