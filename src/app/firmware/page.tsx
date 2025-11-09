@@ -7,6 +7,7 @@ import {
   Button,
   Container,
   Grid,
+  Link,
   Tab,
   Tabs,
   Typography as Type
@@ -407,6 +408,243 @@ export default function FirmwarePage() {
           <Grid size={{xs: 12, sm: 'auto'}}>
             <QmkLegend />
           </Grid>
+
+          <Grid size={{xs: 12}}>
+            <Box
+              id="highlights"
+              sx={{
+                mt: 6,
+                p: {xs: 2, md: 3},
+                bgcolor: 'background.paper',
+                border: 1,
+                borderColor: 'divider',
+                borderRadius: 2,
+                maxWidth: 900,
+                mx: 'auto'
+              }}
+            >
+              <Type
+                variant="h4"
+                gutterBottom
+                sx={{fontWeight: 400, textAlign: 'center', mb: 3}}
+              >
+                Highlights
+              </Type>
+
+              {/* QMK Customizations */}
+              <Box sx={{mt: 4}}>
+                <Type variant="h5" gutterBottom color="primary">
+                  QMK Customizations
+                </Type>
+                {/* <Type paragraph>
+                These notes describe the custom firmware logic and modules that
+                extend standard QMK functionality in the Serenity layout. They
+                highlight how QMK is tailored to match the keyboard’s unique
+                feel and workflow.
+              </Type> */}
+                <Box
+                  component="ul"
+                  sx={{
+                    pl: 3,
+                    mb: 2,
+                    '& li:not(:last-child)': {
+                      // borderBottom: '1px solid',
+                      // borderColor: 'divider',
+                      marginBottom: 2
+                    }
+                  }}
+                >
+                  <li>
+                    <Type>
+                      <strong>Custom One Shot Mods</strong> — a tailored feature
+                      enabling dynamic stacking of modifiers across principal
+                      layers, allowing any combination to be triggered
+                      individually or together, without the need to hold
+                      modifier keys during subsequent key presses on the Base,
+                      Qwerty, or Function layers.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Backspace + Shift</strong> — Backspace performs
+                      Forward Delete (del) when held with Shift.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Custom App Switcher</strong> — a firmware‑level
+                      feature within the OS Layer that provides app cycling and
+                      fast switching that replicates Cmd+Tab/Cmd+Shift+Tab
+                      shortcuts.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Symbol Tap Guard</strong> — custom logic on the
+                      Symbol layer that suppresses unintended Shift during fast
+                      layer activations, ensuring quick taps send unshifted
+                      symbols (e.g., '=' instead of '+'); deliberate Shift still
+                      produces the shifted variant when intended.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Layer Lock</strong> — custom shortcut toggle on
+                      principal layers (located in consistent position): tap
+                      once to lock the layer; tap again or press Escape to
+                      release, letting you remain in the layer without holding
+                      the layer key continuously.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Temporary Home Row Mods w/ Base Layer</strong> —
+                      tap the Num/Nav or Symbol key once, then press it again
+                      and hold to temporarily use that side’s home‑row modifiers
+                      on the Base layer. Useful for certain edge cases where
+                      custom one shot mods (see above) are insufficient.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Long‑press dual keys</strong> — For select
+                      shortcuts, perform primary action on tap or an alternate
+                      action on hold, giving each key two functions without
+                      relying on QMK Tap Dance timing. See{' '}
+                      <Link
+                        href="https://getreuer.info/posts/keyboards/triggers/index.html#tap-vs.-long-press"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        this article
+                      </Link>{' '}
+                      for more info about the implementation.
+                    </Type>
+                  </li>
+                  <Type
+                    variant="subtitle2"
+                    color="text.secondary"
+                    sx={{
+                      mb: 2,
+                      mt: 2,
+                      pt: 2,
+                      fontWeight: 600
+                      // borderTop: '1px solid',
+                      // borderColor: 'divider'
+                    }}
+                  >
+                    <em>48-Key+ Layouts Only (non-Corne)</em>
+                  </Type>
+                  <li>
+                    <Type>
+                      <strong>Dual‑Role Layer Holds</strong> — the outer layer
+                      hold keys (specifically Action and Media) activate their
+                      layer normally; when a same‑side modifier is held
+                      simultaneously, they instead hold Shift on that side
+                      (LShift/RShift). This enables effortless Shift+mod
+                      combinations using pinky-ring-middle-index fingers.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Safe Arrow Cluster</strong> — the bottom‑right
+                      arrow group is tuned for quick taps without accidental
+                      modifier activation; short presses always send arrow
+                      keycodes, guarding against nearby mod‑taps for fast,
+                      reliable navigation.
+                    </Type>
+                  </li>
+                </Box>
+              </Box>
+              {/* <Type
+                variant="body2"
+                color="text.secondary"
+                sx={{fontStyle: 'italic', mb: 4}}
+              >
+                This section documents the deeper firmware-level changes that
+                make Serenity distinct.
+              </Type> */}
+
+              <Box sx={{mt: 4}}>
+                {/* Layout Design & Logic */}
+                <Type variant="h5" gutterBottom color="primary">
+                  Layout Design & Logic
+                </Type>
+                {/* <Type paragraph>
+                This section explains the reasoning and design goals behind the
+                key layout and overall structure of Serenity’s firmware. It’s
+                meant to help others understand how the layers, functions, and
+                ergonomics come together.
+              </Type> */}
+                <Box
+                  component="ul"
+                  sx={{
+                    pl: 3,
+                    mb: 2,
+                    '& li:not(:last-child)': {
+                      // borderBottom: '1px solid',
+                      // borderColor: 'divider',
+                      marginBottom: 2
+                    }
+                  }}
+                >
+                  <li>
+                    <Type>
+                      <strong>OS</strong> — optimized primarily for macOS
+                      behavior and shortcuts
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Vim-style directional mnemonics</strong> —
+                      shortcuts and key placements often follow a
+                      left–down–up–right pattern (H‑J‑K‑L), mirroring Vim
+                      navigation for fast, intuitive recall across layers.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Tri‑layer access</strong> — uses QMK’s tri‑layer
+                      logic to reach the OS and Function layers by combining
+                      principal layer holds; the appropriate pair momentarily
+                      exposes the target layer for quick commands.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Caps Word</strong> — activated by double‑tapping
+                      the Left Shift key, this feature enables a quick temporary
+                      Caps Lock mode for typing uppercase words without fully
+                      toggling Caps Lock.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Mouse layer</strong> — a dedicated layer providing
+                      smooth, responsive cursor control and scrolling, ideal for
+                      quick pointer adjustments without leaving the home row.
+                    </Type>
+                  </li>
+                  <li>
+                    <Type>
+                      <strong>Qwerty layer</strong> — full standard QWERTY
+                      layout which can be toggled on; useful for app and game
+                      compatibility.
+                    </Type>
+                  </li>
+                </Box>
+                {/* <Type
+                variant="body2"
+                color="text.secondary"
+                sx={{fontStyle: 'italic'}}
+              >
+                Intended to capture the thought process behind the Serenity
+                layout’s design.
+              </Type> */}
+              </Box>
+            </Box>
+          </Grid>
+
           <Grid size={{xs: 12, sm: 'auto'}}>
             <Box
               sx={{
