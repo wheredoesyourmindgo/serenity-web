@@ -58,29 +58,84 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             <>
               Prt
               <br />
               Scr
             </>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          </KeyLegend> */}
+          <KeyIcon
+            className="fa-regular fa-print-magnifying-glass"
+            KeyContainerProps={{
+              keyId: 'print-screen-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Print Screen" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             <>
               Scrl
               <br />
               Lck
             </>
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          </KeyLegend> */}
+          <KeyIcon
+            className="fa-regular fa-scroll"
+            KeyContainerProps={{
+              keyId: 'scroll-lock-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Scroll Lock" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             Pause
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          </KeyLegend> */}
+          <KeyIcon
+            className="fa-regular fa-circle-pause"
+            KeyContainerProps={{
+              keyId: 'pause-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Pause" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             Ins
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          </KeyLegend> */}
+          <KeyIcon
+            className="fa-regular fa-i-cursor"
+            KeyContainerProps={{
+              keyId: 'insert-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Insert" />
+                </Box>
+              )
+            }}
+          />
+          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
             App
-          </KeyLegend>
+          </KeyLegend> */}
+          <KeyIcon
+            className="fa-regular fa-list-dropdown"
+            KeyContainerProps={{
+              keyId: 'app-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="App (Menu)" />
+                </Box>
+              )
+            }}
+          />
           {/* <KeyIcon
             icon={faHandPointLeft}
             shiftSubIcn={faHandPointRight}
