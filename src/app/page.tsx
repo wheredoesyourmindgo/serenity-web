@@ -19,7 +19,7 @@ export default function IndexPage() {
         {/* <Type>mode: {mode}</Type>
           <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
         <Type
-          // variant='h1'
+          variant="h1"
           gutterBottom
           color="primary"
           sx={{

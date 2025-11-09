@@ -73,7 +73,7 @@ export default function AlphasPage() {
             sx={{
               transform: {xs: 'scale(0.53)', sm: 'scale(0.75)', md: 'none'},
               transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-              height: {xs: 175, sm: 200, md: 'auto'}
+              height: {xs: 165, sm: 200, md: 'auto'}
             }}
           >
             <AlphaKeyboard />
