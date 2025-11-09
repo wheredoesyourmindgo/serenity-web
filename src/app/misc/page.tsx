@@ -199,7 +199,7 @@ keybind = alt+delete=esc:d
             gutterBottom
             sx={{fontWeight: 400, textAlign: 'center', mb: 3}}
           >
-            Contact Info
+            Get In Touch
           </Type>
           <Type variant="body1" sx={{textAlign: 'center', mt: 2}}>
             Have questions, comments, or feedback? Feel free to reach out
