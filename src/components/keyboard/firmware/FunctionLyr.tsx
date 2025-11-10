@@ -9,7 +9,7 @@ import KeyboardGridRow from '../KeyboardGridRow'
 export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
   const fxSx: SxProps = {
-    fontSize: 18
+    fontSize: '1.1rem'
   }
   const isCorneLayout = layout === 'corne'
 

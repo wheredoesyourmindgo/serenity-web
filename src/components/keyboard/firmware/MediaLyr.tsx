@@ -73,7 +73,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 12, textAlign: 'center'}}
+            sx={{fontSize: '0.75rem', textAlign: 'center'}}
             KeyContainerProps={{
               popOverContent: (
                 <Box p={1}>
@@ -92,7 +92,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 12, textAlign: 'center'}}
+            sx={{fontSize: '0.75rem', textAlign: 'center'}}
             KeyContainerProps={{
               popOverContent: (
                 <Box p={1}>
@@ -128,7 +128,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 12, textAlign: 'center'}}
+            sx={{fontSize: '0.75rem', textAlign: 'center'}}
             KeyContainerProps={{
               popOverContent: (
                 <Box p={1}>
@@ -147,7 +147,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 12, textAlign: 'center'}}
+            sx={{fontSize: '0.75rem', textAlign: 'center'}}
             KeyContainerProps={{
               popOverContent: (
                 <Box p={1}>
@@ -166,7 +166,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 12, textAlign: 'center'}}
+            sx={{fontSize: '0.75rem', textAlign: 'center'}}
             KeyContainerProps={{
               popOverContent: (
                 <Box p={1}>
@@ -356,10 +356,10 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
             Debug
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
             Reset
           </KeyLegend>
           <KeyIcon

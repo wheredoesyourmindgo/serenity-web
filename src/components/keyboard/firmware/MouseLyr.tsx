@@ -35,19 +35,19 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
             Btn5
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
             Btn1
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
             Btn2
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
             Btn3
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
             Btn4
           </KeyLegend>
           <KeyIcon
@@ -135,7 +135,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           >
             <MuiFaIcon
               className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: 12}}
+              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
             L
           </KeyLegend>
@@ -154,7 +154,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           >
             <MuiFaIcon
               className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: 12}}
+              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
             D
           </KeyLegend>
@@ -172,7 +172,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           >
             <MuiFaIcon
               className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: 12}}
+              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
             U
           </KeyLegend>
@@ -190,7 +190,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           >
             <MuiFaIcon
               className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: 12}}
+              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
             R
           </KeyLegend>

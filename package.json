@@ -24,7 +24,7 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-syntax-highlighter": "^16.1.0",
-    "vercel": "^48.8.2"
+    "vercel": "^48.9.0"
   },
   "scripts": {
     "start": "next start",
@@ -44,7 +44,7 @@
     "@types/node": "^20.19.24",
     "@types/react": "19.2.2",
     "@types/react-syntax-highlighter": "^15.5.13",
-    "@vercel/node": "^5.5.4",
+    "@vercel/node": "^5.5.5",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.1",
     "eslint-config-prettier": "^10.1.8",
