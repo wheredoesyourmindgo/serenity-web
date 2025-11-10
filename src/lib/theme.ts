@@ -122,6 +122,25 @@ const theme = createTheme({
     dark: {
       palette: muiSolarizedDarkPalette
     }
+  },
+  components: {
+    MuiTypography: {
+      styleOverrides: {
+        /* There is a specificity issue with using <Typography sx={{fontSize: 0.9rem}} .../> with responsizeFontSizes used in theme.
+          Instead of using !important, use class specificity here. See https://github.com/mui/material-ui/issues/31078 for more info */
+        root: (props) => {
+          const {ownerState} = props
+          const sx: any = ownerState.sx || {}
+          return {
+            ...(Boolean(sx?.fontSize) && {
+              '&.MuiTypography-root': {
+                fontSize: sx.fontSize
+              }
+            })
+          }
+        }
+      }
+    }
   }
 })
 
