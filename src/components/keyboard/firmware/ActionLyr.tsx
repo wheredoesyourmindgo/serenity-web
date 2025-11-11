@@ -187,7 +187,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                 <Box p={1}>
                   {/* <PopoverDesc action="tap" output="Next App Window" />
                   <br /> */}
-                  <PopoverDesc action="shifted" output="Prev App Window" />
+                  <PopoverDesc action="tap" output="Prev App Window" />
                 </Box>
               )
             }}

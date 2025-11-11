@@ -1,7 +1,7 @@
 import KeyIcon from '@components/key/KeyIcon'
 import {KeyLegend} from '@components/key'
 import {KeyLegendProps} from '@components/key/KeyLegend'
-import {Box, Grid} from '@mui/material'
+import {Box, Grid, Typography} from '@mui/material'
 import PopoverDesc from '@components/key/PopoverDesc'
 import MuiFaIcon from '@components/MuiFaIcon'
 import ShiftSubIcn from '@components/key/ShiftSubIcn'
@@ -35,21 +35,126 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
-            Btn5
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
-            Btn1
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
-            Btn2
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
-            Btn3
-          </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
-            Btn4
-          </KeyLegend>
+          <KeyIcon
+            className="fa-thin fa-computer-mouse"
+            sx={{fontSize: 32}}
+            KeyContainerProps={{
+              keyId: 'mouse-button-5-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Button 5" />
+                </Box>
+              )
+            }}
+          >
+            <Typography
+              sx={{
+                position: 'absolute',
+                right: 11,
+                bottom: 0,
+                fontSize: '1rem',
+                fontWeight: 600
+              }}
+            >
+              5
+            </Typography>
+          </KeyIcon>
+          <KeyIcon
+            className="fa-thin fa-computer-mouse"
+            sx={{fontSize: 32}}
+            KeyContainerProps={{
+              keyId: 'mouse-button-1-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Button 1" />
+                </Box>
+              )
+            }}
+          >
+            <Typography
+              sx={{
+                position: 'absolute',
+                right: 11,
+                bottom: 0,
+                fontSize: '1rem',
+                fontWeight: 600
+              }}
+            >
+              1
+            </Typography>
+          </KeyIcon>
+          <KeyIcon
+            className="fa-thin fa-computer-mouse"
+            sx={{fontSize: 32}}
+            KeyContainerProps={{
+              keyId: 'mouse-button-2-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Button 2" />
+                </Box>
+              )
+            }}
+          >
+            <Typography
+              sx={{
+                position: 'absolute',
+                right: 11,
+                bottom: 0,
+                fontSize: '1rem',
+                fontWeight: 600
+              }}
+            >
+              2
+            </Typography>
+          </KeyIcon>
+          <KeyIcon
+            className="fa-thin fa-computer-mouse"
+            sx={{fontSize: 32}}
+            KeyContainerProps={{
+              keyId: 'mouse-button-3-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Button 3" />
+                </Box>
+              )
+            }}
+          >
+            <Typography
+              sx={{
+                position: 'absolute',
+                right: 11,
+                bottom: 0,
+                fontSize: '1rem',
+                fontWeight: 600
+              }}
+            >
+              3
+            </Typography>
+          </KeyIcon>
+          <KeyIcon
+            className="fa-thin fa-computer-mouse"
+            sx={{fontSize: 32}}
+            KeyContainerProps={{
+              keyId: 'mouse-button-4-key',
+              popOverContent: (
+                <Box p={1}>
+                  <PopoverDesc action="tap/hold" output="Mouse Button 4" />
+                </Box>
+              )
+            }}
+          >
+            <Typography
+              sx={{
+                position: 'absolute',
+                right: 11,
+                bottom: 0,
+                fontSize: '1rem',
+                fontWeight: 600
+              }}
+            >
+              4
+            </Typography>
+          </KeyIcon>
           <KeyIcon
             customShiftCode
             className="fa-regular fa-delete-left"
