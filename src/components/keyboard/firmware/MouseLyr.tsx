@@ -60,7 +60,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             </Typography>
           </KeyIcon>
           <KeyIcon
-            className="fa-thin fa-computer-mouse"
+            className="fa-thin fa-computer-mouse-button-left"
             sx={{fontSize: 32}}
             KeyContainerProps={{
               keyId: 'mouse-button-1-key',
@@ -84,7 +84,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             </Typography>
           </KeyIcon>
           <KeyIcon
-            className="fa-thin fa-computer-mouse"
+            className="fa-thin fa-computer-mouse-button-right"
             sx={{fontSize: 32}}
             KeyContainerProps={{
               keyId: 'mouse-button-2-key',
