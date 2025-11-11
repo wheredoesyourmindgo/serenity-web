@@ -30,36 +30,16 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} shiftLgnd="!">
-            1
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="@">
-            2
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="#">
-            3
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="$">
-            4
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="%">
-            5
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="^">
-            6
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="&amp;">
-            7
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="*">
-            8
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd="(">
-            9
-          </KeyLegend>
-          <KeyLegend {...sharedProps} shiftLgnd=")">
-            0
-          </KeyLegend>
+          <KeyLegend {...sharedProps}>1</KeyLegend>
+          <KeyLegend {...sharedProps}>2</KeyLegend>
+          <KeyLegend {...sharedProps}>3</KeyLegend>
+          <KeyLegend {...sharedProps}>4</KeyLegend>
+          <KeyLegend {...sharedProps}>5</KeyLegend>
+          <KeyLegend {...sharedProps}>6</KeyLegend>
+          <KeyLegend {...sharedProps}>7</KeyLegend>
+          <KeyLegend {...sharedProps}>8</KeyLegend>
+          <KeyLegend {...sharedProps}>9</KeyLegend>
+          <KeyLegend {...sharedProps}>0</KeyLegend>
           <KeyIcon
             customShiftCode
             className="fa-regular fa-delete-left"
