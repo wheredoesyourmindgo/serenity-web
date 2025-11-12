@@ -102,6 +102,18 @@ function setKarabinerVariable(variableName, variableValue)
   screenWatcher:start()
 `
 
+  const toggleDarkModeSnippet = `
+on run {input, parameters}
+	tell application "System Events"
+		tell appearance preferences
+			set dark mode to not dark mode
+		end tell
+	end tell
+
+	return input
+end run
+`
+
   const patchedSolarizedDarkAtom = {
     ...solarizedDarkAtom,
     'pre[class*="language-"]': {
@@ -243,6 +255,43 @@ function setKarabinerVariable(variableName, variableValue)
               }}
             >
               {hammerspoonSnippet}
+            </SyntaxHighlighter>
+          </Box>
+
+          <Divider sx={{marginTop: 4}} variant="middle" />
+
+          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+            <MuiFaIcon
+              className="fa-regular fa-robot"
+              color="solarized.green"
+              sx={{fontSize: 24, marginRight: 2}}
+            />
+            <Type variant="h5" gutterBottom color="primary">
+              Automator
+            </Type>
+          </Box>
+          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+            Use the following Applescript Quick Action to toggle Dark Mode on
+            macOS; created via Automator. Can be assigned a keyboard shortcut
+            (ctrl+opt+cmd+D for Serenity QMK Media Layer) in System Settings.
+          </Type>
+          <Box
+            sx={{
+              position: 'relative',
+              backgroundColor: 'background.default',
+              borderRadius: 2
+            }}
+          >
+            <CopyFab text={toggleDarkModeSnippet} />
+            <SyntaxHighlighter
+              language="applescript"
+              style={codeStyle}
+              customStyle={{
+                borderRadius: 8,
+                padding: '1rem'
+              }}
+            >
+              {toggleDarkModeSnippet}
             </SyntaxHighlighter>
           </Box>
         </Box>
