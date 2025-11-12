@@ -11,7 +11,14 @@ import {
   useColorScheme,
   Tooltip,
   Link,
-  Divider
+  Divider,
+  TableRow,
+  TableCell,
+  TableContainer,
+  Paper,
+  Table,
+  TableHead,
+  TableBody
 } from '@mui/material'
 import {SxProps, Theme} from '@mui/material/styles'
 import {useState} from 'react'
@@ -71,6 +78,125 @@ const CopyFab = ({text, tooltip = 'Copy', onCopied, sx}: CopyFabProps) => {
     </Tooltip>
   )
 }
+
+type VimlessRow = {
+  action: string
+  keys: string
+  vim: string
+}
+
+const vimlessRows: VimlessRow[] = [
+  {
+    action: 'Move',
+    keys: '\u2190, \u2193, \u2191, \u2192',
+    vim: 'h, j, k, l'
+  },
+  {
+    action: 'Move to beginning of line (soft)',
+    keys: '\u2318 \u2190 (or home)',
+    vim: '^'
+  },
+  {
+    action: 'Move to beginning of line (hard)',
+    keys: '\u2318 \u2190 \u2190 (or home twice)',
+    vim: '0'
+  },
+  {
+    action: 'Move to end of line',
+    keys: '\u2318 \u2192 (or end)',
+    vim: '$'
+  },
+  {
+    action: 'Jump to beginning of document',
+    keys: '\u2318 \u2191',
+    vim: 'gg'
+  },
+  {
+    action: 'Jump to end of document',
+    keys: '\u2318 \u2193',
+    vim: 'G'
+  },
+  {
+    action: 'Delete previous character',
+    keys: '\u232b',
+    vim: 'X'
+  },
+  {
+    action: 'Delete character',
+    keys: '\u2326',
+    vim: 'x'
+  },
+  {
+    action: 'Undo',
+    keys: 'Undo key (Num/Nav layer)',
+    vim: 'u'
+  },
+  {
+    action: 'Cut',
+    keys: 'Cut key (Num/Nav layer)',
+    vim: 'd'
+  },
+  {
+    action: 'Copy',
+    keys: 'Copy key (Num/Nav layer)',
+    vim: 'y'
+  },
+  {
+    action: 'Paste',
+    keys: 'Paste key (Num/Nav layer)',
+    vim: 'p'
+  },
+  {
+    action: 'Redo',
+    keys: 'Redo key (Num/Nav layer)',
+    vim: 'Ctrl-r'
+  },
+  {
+    action: 'Move to start word',
+    keys: '\u2325 \u2190',
+    vim: 'b'
+  },
+  {
+    action: 'Move to end word',
+    keys: '\u2325 \u2192',
+    vim: 'e'
+  },
+  {
+    action: 'Delete start word',
+    keys: '\u2325 \u232b',
+    vim: 'db'
+  },
+  {
+    action: 'Delete end word',
+    keys: '\u2325 \u2326',
+    vim: 'de'
+  },
+  {
+    action: 'Delete start line',
+    keys: '\u2318 \u232b',
+    vim: 'd0'
+  },
+  {
+    action: 'Delete end line',
+    keys: '\u2318 \u2326',
+    vim: 'D'
+  },
+  {
+    action: 'Selection (Visual mode)',
+    keys: '\u21E7 (use other movement shortcuts, often in conjunction with arrow keys, to select)',
+    vim: 'v'
+  },
+  {
+    action: 'Select cursor word',
+    keys: 'Word Select key (Num/Nav layer, tap)',
+    vim: 'viw'
+  },
+  {
+    action: 'Select cursor line',
+    keys: 'Line Select key (Num/Nav layer, long press)',
+    vim: 'V'
+  }
+]
 
 export default function ConfigPage() {
   const ghosttyConfSnippet = `
@@ -294,6 +420,92 @@ end run
             >
               {toggleDarkModeSnippet}
             </SyntaxHighlighter>
+          </Box>
+        </Box>
+
+        <Box
+          id="config"
+          sx={{
+            mt: 6,
+            p: {xs: 2, md: 3},
+            bgcolor: 'background.paper',
+            border: 1,
+            borderColor: 'divider',
+            borderRadius: 2,
+            maxWidth: 900,
+            mx: 'auto'
+          }}
+        >
+          <Type
+            variant="h4"
+            gutterBottom
+            sx={{fontWeight: 400, textAlign: 'center', mb: 3}}
+          >
+            Reference
+          </Type>
+
+          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+            <MuiFaIcon
+              className="fa-regular fa-ban-smoking"
+              color="solarized.green"
+              sx={{fontSize: 27, marginRight: 2}}
+            />
+            <Type variant="h5" gutterBottom color="primary">
+              Vim-less
+            </Type>
+          </Box>
+          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+            Thinking of quitting Vim? Here is a useful reference for performing
+            common Vim-like{' '}
+            <Type variant="inherit" component="span" noWrap>
+              motions/commands
+            </Type>{' '}
+            by effortlessly using standard keybindings (primarily made possible
+            with QMK due to Mod and Arrow key availability on the home row).
+            These shortcuts are application-agnostic and eliminate the need for
+            a modal editor for most tasks.
+          </Type>
+          <Box
+            sx={{
+              position: 'relative',
+              backgroundColor: 'background.default',
+              borderRadius: 2
+            }}
+          >
+            {/* table here */}
+            {/* Material-UI Table for VIM-less reference */}
+            <TableContainer
+              component={Paper}
+              sx={{
+                borderRadius: 2,
+                bgcolor: 'background.default'
+              }}
+            >
+              <Table size="small" aria-label="vimless reference table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
+                      Do the following...
+                    </TableCell>
+                    <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
+                      by pressing
+                    </TableCell>
+                    <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
+                      which is similar to ___ in Vim
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {vimlessRows.map((row) => (
+                    <TableRow key={row.action}>
+                      <TableCell>{row.action}</TableCell>
+                      <TableCell>{row.keys}</TableCell>
+                      <TableCell>{row.vim}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Box>
         </Box>
         <Box
