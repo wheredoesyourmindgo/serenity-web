@@ -485,7 +485,7 @@ end run
                 <TableHead>
                   <TableRow>
                     <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
-                      Do the following...
+                      Do the following
                     </TableCell>
                     <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
                       by pressing
