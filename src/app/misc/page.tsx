@@ -491,7 +491,7 @@ end run
                       by pressing
                     </TableCell>
                     <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
-                      which is similar to ___ in Vim
+                      which is similar to this in Vim
                     </TableCell>
                   </TableRow>
                 </TableHead>
