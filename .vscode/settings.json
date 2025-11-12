@@ -22,7 +22,8 @@
     "sleazebox",
     "smoothscroll",
     "solarizedlight",
-    "Swatchbook"
+    "Swatchbook",
+    "Vimless"
   ],
   "editor.formatOnSave": true,
   "files.exclude": {
