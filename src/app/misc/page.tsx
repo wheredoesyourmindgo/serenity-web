@@ -488,10 +488,10 @@ end run
                       Do the following
                     </TableCell>
                     <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
-                      by pressing
+                      By pressing
                     </TableCell>
                     <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
-                      which is similar to this in Vim
+                      Which is similar to this in Vim
                     </TableCell>
                   </TableRow>
                 </TableHead>
