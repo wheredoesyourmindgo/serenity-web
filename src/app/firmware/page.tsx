@@ -460,7 +460,7 @@ export default function FirmwarePage() {
                       enabling dynamic stacking of modifiers across principal
                       layers, allowing any combination to be triggered
                       individually or together, without the need to hold
-                      modifier keys during subsequent key presses on the Base,
+                      modifier keys during subsequent key press on the Base,
                       Qwerty, or Function layers.
                     </Type>
                   </li>
