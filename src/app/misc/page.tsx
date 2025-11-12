@@ -10,7 +10,8 @@ import {
   Typography as Type,
   useColorScheme,
   Tooltip,
-  Link
+  Link,
+  Divider
 } from '@mui/material'
 import {SxProps, Theme} from '@mui/material/styles'
 import {useState} from 'react'
@@ -75,6 +76,30 @@ export default function ConfigPage() {
   const ghosttyConfSnippet = `
 # sends ESC d, which Zsh/Bash typically interpret as kill-word (delete next word).
 keybind = alt+delete=esc:d
+`
+
+const hammerspoonSnippet = `
+-- Function to set Karabiner-Elements variable
+function setKarabinerVariable(variableName, variableValue)
+	local karabiner_cli = "/Library/Application\\ Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
+	local command = string.format(
+		'%s --set-variables \'{"%s": %d}\'',
+		karabiner_cli, variableName, variableValue
+	  )
+	hs.execute(command)
+  end
+
+  -- Watch for screen lock and unlock events
+  local screenWatcher = hs.caffeinate.watcher.new(function(eventType)
+	if eventType == hs.caffeinate.watcher.screensDidLock then
+	  setKarabinerVariable("is_lock_screen", 1)
+	elseif eventType == hs.caffeinate.watcher.screensDidUnlock then
+	  setKarabinerVariable("is_lock_screen", 0)
+	end
+  end)
+
+  -- Start the screen watcher
+  screenWatcher:start()
 `
 
   const patchedSolarizedDarkAtom = {
@@ -144,7 +169,7 @@ keybind = alt+delete=esc:d
             Application Config
           </Type>
 
-          {/* QMK Customizations */}
+
           <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
             <MuiFaIcon
               className="fa-regular fa-ghost"
@@ -159,7 +184,7 @@ keybind = alt+delete=esc:d
             Partial config snippet to add to your Ghostty config file{' '}
             <em>
               (located at <code>~/.config/ghostty/config</code> by default)
-            </em>
+            </em>.
           </Type>
           <Box
             sx={{
@@ -178,6 +203,45 @@ keybind = alt+delete=esc:d
               }}
             >
               {ghosttyConfSnippet}
+            </SyntaxHighlighter>
+          </Box>
+
+          <Divider sx={{marginTop:4}} variant='middle'/>
+          
+ 
+          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+            <MuiFaIcon
+              className="fa-regular fa-hammer"
+              color="solarized.green"
+              sx={{fontSize: 24, marginRight: 2}}
+            />
+            <Type variant="h5" gutterBottom color="primary">
+              Hammerspoon
+            </Type>
+          </Box>
+          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+            Partial config snippet to add to your Hammerspoon initialization file{' '}
+            <em>
+              (located at <code>~/.hammerspoon/init.lua</code> by default)
+            </em>. Used in conjunction with Karabiner-Elements to detect lock screen.
+          </Type>
+          <Box
+            sx={{
+              position: 'relative',
+              backgroundColor: 'background.default',
+              borderRadius: 2
+            }}
+          >
+            <CopyFab text={hammerspoonSnippet} />
+            <SyntaxHighlighter
+              language="lua"
+              style={codeStyle}
+              customStyle={{
+                borderRadius: 8,
+                padding: '1rem'
+              }}
+            >
+              {hammerspoonSnippet}
             </SyntaxHighlighter>
           </Box>
         </Box>
