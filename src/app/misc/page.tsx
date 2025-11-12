@@ -271,9 +271,10 @@ end run
             </Type>
           </Box>
           <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Use the following Applescript Quick Action to toggle Dark Mode on
-            macOS; created via Automator. Can be assigned a keyboard shortcut
-            (ctrl+opt+cmd+D for Serenity QMK Media Layer) in System Settings.
+            Use the following AppleScript Quick Action to toggle Dark Mode on
+            macOS; created via Automator. This service can be assigned a
+            keyboard shortcut (ctrl+opt+cmd+D for Serenity QMK Media Layer) in
+            System Settings.
           </Type>
           <Box
             sx={{
