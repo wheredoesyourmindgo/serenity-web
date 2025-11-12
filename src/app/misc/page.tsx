@@ -78,7 +78,7 @@ export default function ConfigPage() {
 keybind = alt+delete=esc:d
 `
 
-const hammerspoonSnippet = `
+  const hammerspoonSnippet = `
 -- Function to set Karabiner-Elements variable
 function setKarabinerVariable(variableName, variableValue)
 	local karabiner_cli = "/Library/Application\\ Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
@@ -169,7 +169,6 @@ function setKarabinerVariable(variableName, variableValue)
             Application Config
           </Type>
 
-
           <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
             <MuiFaIcon
               className="fa-regular fa-ghost"
@@ -184,7 +183,8 @@ function setKarabinerVariable(variableName, variableValue)
             Partial config snippet to add to your Ghostty config file{' '}
             <em>
               (located at <code>~/.config/ghostty/config</code> by default)
-            </em>.
+            </em>
+            .
           </Type>
           <Box
             sx={{
@@ -195,7 +195,7 @@ function setKarabinerVariable(variableName, variableValue)
           >
             <CopyFab text={ghosttyConfSnippet} />
             <SyntaxHighlighter
-              language="txt"
+              language="shell"
               style={codeStyle}
               customStyle={{
                 borderRadius: 8,
@@ -206,9 +206,8 @@ function setKarabinerVariable(variableName, variableValue)
             </SyntaxHighlighter>
           </Box>
 
-          <Divider sx={{marginTop:4}} variant='middle'/>
-          
- 
+          <Divider sx={{marginTop: 4}} variant="middle" />
+
           <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
             <MuiFaIcon
               className="fa-regular fa-hammer"
@@ -220,10 +219,12 @@ function setKarabinerVariable(variableName, variableValue)
             </Type>
           </Box>
           <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Partial config snippet to add to your Hammerspoon initialization file{' '}
+            Partial config snippet to add to your Hammerspoon initialization
+            file{' '}
             <em>
               (located at <code>~/.hammerspoon/init.lua</code> by default)
-            </em>. Used in conjunction with Karabiner-Elements to detect lock screen.
+            </em>
+            . Used in conjunction with Karabiner-Elements to detect lock screen.
           </Type>
           <Box
             sx={{
