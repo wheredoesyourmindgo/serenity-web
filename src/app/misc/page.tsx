@@ -117,6 +117,16 @@ const vimlessRows: VimlessRow[] = [
     vim: 'G'
   },
   {
+    action: 'Page up',
+    keys: 'Page Up key (Num/Nav layer)',
+    vim: '\u2303 b'
+  },
+  {
+    action: 'Page down',
+    keys: 'Page Down key (Num/Nav layer)',
+    vim: '\u2303 f'
+  },
+  {
     action: 'Delete previous character',
     keys: '\u232b',
     vim: 'X'
@@ -149,7 +159,7 @@ const vimlessRows: VimlessRow[] = [
   {
     action: 'Redo',
     keys: 'Redo key (Num/Nav layer)',
-    vim: 'Ctrl-r'
+    vim: '\u2303 r'
   },
   {
     action: 'Move to start word',
@@ -195,6 +205,16 @@ const vimlessRows: VimlessRow[] = [
     action: 'Select cursor line',
     keys: 'Line Select key (Num/Nav layer, long press)',
     vim: 'V'
+  },
+  {
+    action: 'Indent',
+    keys: '\u21E5',
+    vim: '>'
+  },
+  {
+    action: 'Un-indent',
+    keys: '\u21E7 \u21E4',
+    vim: '<'
   }
 ]
 
@@ -506,6 +526,64 @@ end run
                 </TableBody>
               </Table>
             </TableContainer>
+          </Box>
+          <Type sx={{mt: 6, mb: 2}}>
+            Some of the other commands and movements not covered by the basic
+            movements can often be implemented in modern text editors via
+            extensions or built-in functionality. Here are a couple of VSCode
+            Extensions I maintain to fill in some functionality gaps so to
+            speak.
+          </Type>
+          <Box sx={{mb: 4, ml: 1}}>
+            <Type variant="subtitle2" sx={{fontWeight: 600, mb: 1}}>
+              VSCode Extensions
+            </Type>
+
+            <Box sx={{display: 'flex', flexDirection: 'column', gap: 1.5}}>
+              <Link
+                href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  paddingLeft: 4,
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  color: 'primary.main',
+                  textDecoration: 'none',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                    color: 'primary.light'
+                  }
+                }}
+              >
+                Beam Me Up, Scotty!{' '}
+                <Type component="span" variant="inherit" sx={{fontWeight: 400}}>
+                  :: Jump navigation inspired by clever-f
+                </Type>
+              </Link>
+
+              <Link
+                href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  paddingLeft: 4,
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  color: 'primary.main',
+                  textDecoration: 'none',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                    color: 'primary.light'
+                  }
+                }}
+              >
+                Relativity_{' '}
+                <Type component="span" variant="inherit" sx={{fontWeight: 400}}>
+                  :: Jump lines by number relative to current line
+                </Type>
+              </Link>
+            </Box>
           </Box>
         </Box>
         <Box
