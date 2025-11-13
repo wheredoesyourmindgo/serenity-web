@@ -3,6 +3,7 @@ import theme from '@lib/theme'
 import {CssBaseline, ThemeProvider} from '@mui/material'
 import {AppRouterCacheProvider} from '@mui/material-nextjs/v16-appRouter'
 import ToggleColorMode from '@components/ToggleColorMode'
+import {Analytics} from '@vercel/analytics/next'
 // Font Awesome config
 import {config} from '@fortawesome/fontawesome-svg-core'
 import '../public/static/fonts/fontawesome/css/all.min.css'
@@ -29,6 +30,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <ToggleColorMode>
               <div style={{height: '100%'}}>{children}</div>
             </ToggleColorMode>
+            <Analytics />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
