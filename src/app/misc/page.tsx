@@ -563,7 +563,7 @@ end run
               </Link>
 
               <Link
-                href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty"
+                href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-relativity"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
