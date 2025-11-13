@@ -484,7 +484,8 @@ end run
             with QMK due to Mod and Arrow key availability on the home row).
             These shortcuts are application-agnostic and eliminate the need for
             a modal editor for most tasks, or, at a minimum reduce the reliance
-            of using Normal Mode, allowing you to remain in Insert Mode longer.
+            of using Normal Mode, allowing you to remain in Insert Mode more
+            often than not.
           </Type>
           <Box
             sx={{
