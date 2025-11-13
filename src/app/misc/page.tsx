@@ -475,8 +475,8 @@ end run
             </Type>
           </Box>
           <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Thinking of quitting Vim? Here is a useful reference for performing
-            common Vim-like{' '}
+            Thinking of quitting Vim? Here is an indicative reference for
+            performing common Vim-like{' '}
             <Type variant="inherit" component="span" noWrap>
               motions/commands
             </Type>{' '}
