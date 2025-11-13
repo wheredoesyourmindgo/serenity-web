@@ -18,7 +18,8 @@ import {
   Paper,
   Table,
   TableHead,
-  TableBody
+  TableBody,
+  type TypographyProps
 } from '@mui/material'
 import {SxProps, Theme} from '@mui/material/styles'
 import {useState} from 'react'
@@ -79,61 +80,101 @@ const CopyFab = ({text, tooltip = 'Copy', onCopied, sx}: CopyFabProps) => {
   )
 }
 
+const USym = ({children, sx}: TypographyProps) => {
+  return (
+    <Type
+      component="span"
+      sx={{
+        fontWeight: 500,
+        fontSize: '1.1rem',
+        color: 'solarized.cyan',
+        ...sx
+      }}
+    >
+      {children}
+    </Type>
+  )
+}
+
 type VimlessRow = {
-  action: string
-  keys: string
-  vim: string
+  action: string | React.ReactNode
+  keys: string | React.ReactNode
+  vim: string | React.ReactNode
 }
 
 const vimlessRows: VimlessRow[] = [
   {
     action: 'Move',
-    keys: '\u2190, \u2193, \u2191, \u2192',
+    keys: (
+      <>
+        <USym>←</USym>, <USym>↓</USym>, <USym>↑</USym>, <USym>→</USym>
+      </>
+    ),
     vim: 'h, j, k, l'
   },
   {
     action: 'Move to beginning of line (soft)',
-    keys: '\u2318 \u2190 (or home)',
+    keys: (
+      <>
+        <USym>⌘ ←</USym> (or home)
+      </>
+    ),
     vim: '^'
   },
   {
     action: 'Move to beginning of line (hard)',
-    keys: '\u2318 \u2190 \u2190 (or home twice)',
+    keys: (
+      <>
+        <USym>⌘ ←</USym> <USym>←</USym> (or home twice)
+      </>
+    ),
     vim: '0'
   },
   {
     action: 'Move to end of line',
-    keys: '\u2318 \u2192 (or end)',
+    keys: (
+      <>
+        <USym>⌘ →</USym> (or end)
+      </>
+    ),
     vim: '$'
   },
   {
     action: 'Jump to beginning of document',
-    keys: '\u2318 \u2191',
+    keys: <USym>⌘ ↑</USym>,
     vim: 'gg'
   },
   {
     action: 'Jump to end of document',
-    keys: '\u2318 \u2193',
+    keys: <USym>⌘ ↓</USym>,
     vim: 'G'
   },
   {
     action: 'Page up',
     keys: 'Page Up key (Num/Nav layer)',
-    vim: '\u2303 b'
+    vim: (
+      <>
+        <USym>⌃</USym> b
+      </>
+    )
   },
   {
     action: 'Page down',
     keys: 'Page Down key (Num/Nav layer)',
-    vim: '\u2303 f'
+    vim: (
+      <>
+        <USym>⌃</USym> f
+      </>
+    )
   },
   {
     action: 'Delete previous character',
-    keys: '\u232b',
+    keys: <USym>⌫</USym>,
     vim: 'X'
   },
   {
     action: 'Delete character',
-    keys: '\u2326',
+    keys: <USym>⌦</USym>,
     vim: 'x'
   },
   {
@@ -159,41 +200,50 @@ const vimlessRows: VimlessRow[] = [
   {
     action: 'Redo',
     keys: 'Redo key (Num/Nav layer)',
-    vim: '\u2303 r'
+    vim: (
+      <>
+        <USym>⌃</USym> r
+      </>
+    )
   },
   {
     action: 'Move to start word',
-    keys: '\u2325 \u2190',
+    keys: <USym>⌥ ←</USym>,
     vim: 'b'
   },
   {
     action: 'Move to end word',
-    keys: '\u2325 \u2192',
+    keys: <USym>⌥ →</USym>,
     vim: 'e'
   },
   {
     action: 'Delete start word',
-    keys: '\u2325 \u232b',
+    keys: <USym>⌥ ⌫</USym>,
     vim: 'db'
   },
   {
     action: 'Delete end word',
-    keys: '\u2325 \u2326',
+    keys: <USym>⌥ ⌦</USym>,
     vim: 'de'
   },
   {
     action: 'Delete start line',
-    keys: '\u2318 \u232b',
+    keys: <USym>⌘ ⌫</USym>,
     vim: 'd0'
   },
   {
     action: 'Delete end line',
-    keys: '\u2318 \u2326',
+    keys: <USym>⌘ ⌦</USym>,
     vim: 'D'
   },
   {
     action: 'Selection (Visual mode)',
-    keys: '\u21E7 (use other movement shortcuts, often in conjunction with arrow keys, to select)',
+    keys: (
+      <>
+        <USym sx={{fontSize: '1.2rem', fontWeight: 600}}>⇧</USym> (use other
+        movement shortcuts, often in conjunction with arrow keys, to select)
+      </>
+    ),
     vim: 'v'
   },
   {
@@ -208,12 +258,16 @@ const vimlessRows: VimlessRow[] = [
   },
   {
     action: 'Indent',
-    keys: '\u21E5',
+    keys: <USym sx={{fontSize: '1.3rem'}}>⇥</USym>,
     vim: '>'
   },
   {
     action: 'Un-indent',
-    keys: '\u21E7 \u21E4',
+    keys: (
+      <>
+        <USym sx={{fontSize: '1.3rem'}}>⇤</USym>
+      </>
+    ),
     vim: '<'
   }
 ]
