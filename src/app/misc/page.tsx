@@ -97,6 +97,7 @@ const USym = ({children, sx}: TypographyProps) => {
 }
 
 type VimlessRow = {
+  id: number
   action: string | React.ReactNode
   keys: string | React.ReactNode
   vim: string | React.ReactNode
@@ -104,6 +105,7 @@ type VimlessRow = {
 
 const vimlessRows: VimlessRow[] = [
   {
+    id: 1,
     action: 'Move',
     keys: (
       <>
@@ -113,6 +115,7 @@ const vimlessRows: VimlessRow[] = [
     vim: 'h, j, k, l'
   },
   {
+    id: 2,
     action: 'Move to beginning of line (soft)',
     keys: (
       <>
@@ -122,6 +125,7 @@ const vimlessRows: VimlessRow[] = [
     vim: '^'
   },
   {
+    id: 3,
     action: 'Move to beginning of line (hard)',
     keys: (
       <>
@@ -131,6 +135,7 @@ const vimlessRows: VimlessRow[] = [
     vim: '0'
   },
   {
+    id: 4,
     action: 'Move to end of line',
     keys: (
       <>
@@ -140,16 +145,19 @@ const vimlessRows: VimlessRow[] = [
     vim: '$'
   },
   {
+    id: 5,
     action: 'Jump to beginning of document',
     keys: <USym>⌘ ↑</USym>,
     vim: 'gg'
   },
   {
+    id: 6,
     action: 'Jump to end of document',
     keys: <USym>⌘ ↓</USym>,
     vim: 'G'
   },
   {
+    id: 7,
     action: 'Page up',
     keys: 'Page Up key (Num/Nav layer)',
     vim: (
@@ -159,6 +167,7 @@ const vimlessRows: VimlessRow[] = [
     )
   },
   {
+    id: 8,
     action: 'Page down',
     keys: 'Page Down key (Num/Nav layer)',
     vim: (
@@ -168,36 +177,43 @@ const vimlessRows: VimlessRow[] = [
     )
   },
   {
+    id: 9,
     action: 'Delete previous character',
     keys: <USym>⌫</USym>,
     vim: 'X'
   },
   {
+    id: 10,
     action: 'Delete character',
     keys: <USym>⌦</USym>,
     vim: 'x'
   },
   {
+    id: 11,
     action: 'Undo',
     keys: 'Undo key (Num/Nav layer)',
     vim: 'u'
   },
   {
+    id: 12,
     action: 'Cut',
     keys: 'Cut key (Num/Nav layer)',
     vim: 'd'
   },
   {
+    id: 13,
     action: 'Copy',
     keys: 'Copy key (Num/Nav layer)',
     vim: 'y'
   },
   {
+    id: 14,
     action: 'Paste',
     keys: 'Paste key (Num/Nav layer)',
     vim: 'p'
   },
   {
+    id: 15,
     action: 'Redo',
     keys: 'Redo key (Num/Nav layer)',
     vim: (
@@ -207,36 +223,43 @@ const vimlessRows: VimlessRow[] = [
     )
   },
   {
+    id: 16,
     action: 'Move to start word',
     keys: <USym>⌥ ←</USym>,
     vim: 'b'
   },
   {
+    id: 17,
     action: 'Move to end word',
     keys: <USym>⌥ →</USym>,
     vim: 'e'
   },
   {
+    id: 18,
     action: 'Delete start word',
     keys: <USym>⌥ ⌫</USym>,
     vim: 'db'
   },
   {
+    id: 19,
     action: 'Delete end word',
     keys: <USym>⌥ ⌦</USym>,
     vim: 'de'
   },
   {
+    id: 20,
     action: 'Delete start line',
     keys: <USym>⌘ ⌫</USym>,
     vim: 'd0'
   },
   {
+    id: 21,
     action: 'Delete end line',
     keys: <USym>⌘ ⌦</USym>,
     vim: 'D'
   },
   {
+    id: 22,
     action: 'Selection (Visual mode)',
     keys: (
       <>
@@ -248,21 +271,25 @@ const vimlessRows: VimlessRow[] = [
     vim: 'v'
   },
   {
+    id: 23,
     action: 'Select cursor word',
     keys: 'Word Select key (Num/Nav layer, tap)',
     vim: 'viw'
   },
   {
+    id: 24,
     action: 'Select cursor line',
     keys: 'Line Select key (Num/Nav layer, long press)',
     vim: 'V'
   },
   {
+    id: 25,
     action: 'Indent',
     keys: <USym sx={{fontSize: '1.3rem'}}>⇥</USym>,
     vim: '>'
   },
   {
+    id: 26,
     action: 'Un-indent',
     keys: (
       <>
@@ -574,7 +601,7 @@ end run
                 </TableHead>
                 <TableBody>
                   {vimlessRows.map((row) => (
-                    <TableRow key={row.action}>
+                    <TableRow key={row.id}>
                       <TableCell>{row.action}</TableCell>
                       <TableCell>{row.keys}</TableCell>
                       <TableCell>{row.vim}</TableCell>
