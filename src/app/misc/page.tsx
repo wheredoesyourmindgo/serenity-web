@@ -241,7 +241,8 @@ const vimlessRows: VimlessRow[] = [
     keys: (
       <>
         <USym sx={{fontSize: '1.2rem', fontWeight: 600}}>⇧</USym> (use other
-        movement shortcuts, often in conjunction with arrow keys, to select)
+        movement shortcuts while holding shift, often in conjunction with arrow
+        keys, to expand or shrink selection)
       </>
     ),
     vim: 'v'
