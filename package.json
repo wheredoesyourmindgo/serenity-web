@@ -21,11 +21,11 @@
     "@vercel/analytics": "^1.5.0",
     "clsx": "2.1.1",
     "mui-jackinbox": "^1.0.0",
-    "next": "16.0.2",
+    "next": "16.0.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-syntax-highlighter": "^16.1.0",
-    "vercel": "^48.9.1"
+    "vercel": "^48.9.2"
   },
   "scripts": {
     "start": "next start",
@@ -43,19 +43,17 @@
   },
   "devDependencies": {
     "@types/node": "^20.19.25",
-    "@types/react": "19.2.2",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.3",
     "@types/react-syntax-highlighter": "^15.5.13",
-    "@vercel/node": "^5.5.5",
+    "@vercel/node": "^5.5.6",
     "eslint": "^9.39.1",
-    "eslint-config-next": "16.0.2",
+    "eslint-config-next": "16.0.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-compat": "^6.0.2",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
     "typescript": "5.7.3"
   },
-  "packageManager": "yarn@4.11.0",
-  "resolutions": {
-    "@types/react": "19.2.2"
-  }
+  "packageManager": "yarn@4.11.0"
 }
