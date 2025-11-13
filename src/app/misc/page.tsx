@@ -483,7 +483,8 @@ end run
             by effortlessly using standard keybindings (primarily made possible
             with QMK due to Mod and Arrow key availability on the home row).
             These shortcuts are application-agnostic and eliminate the need for
-            a modal editor for most tasks.
+            a modal editor for most tasks, or, at a minimum reduce the reliance
+            of using Normal Mode, allowing you to remain in Insert Mode longer.
           </Type>
           <Box
             sx={{
