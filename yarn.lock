@@ -3081,13 +3081,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^1.1.1":
-  version: 1.2.1
-  resolution: "clsx@npm:1.2.1"
-  checksum: 10c0/34dead8bee24f5e96f6e7937d711978380647e936a22e76380290e35486afd8634966ce300fc4b74a32f3762c7d4c0303f442c3e259f4ce02374eb0c82834f27
-  languageName: node
-  linkType: hard
-
 "code-block-writer@npm:^10.1.1":
   version: 10.1.1
   resolution: "code-block-writer@npm:10.1.1"
@@ -5894,20 +5887,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mui-jackinbox@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "mui-jackinbox@npm:1.0.0"
-  dependencies:
-    clsx: "npm:^1.1.1"
-  peerDependencies:
-    "@mui/material": ^5.0.1
-    next: ^10.2.0
-    react: ^16.13.1
-    react-dom: ^16.13.1
-  checksum: 10c0/97a592f546c6a57b3b478d831968058d51cc88f75ed16db843b53eba282a71885b18cb8e8509ee07cc5882c26a776156eb950009e78b296150e0dfc2b5cd6995
-  languageName: node
-  linkType: hard
-
 "multipipe@npm:^1.0.2":
   version: 1.0.2
   resolution: "multipipe@npm:1.0.2"
@@ -7030,7 +7009,6 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-compat: "npm:^6.0.2"
     eslint-plugin-prettier: "npm:^5.5.4"
-    mui-jackinbox: "npm:^1.0.0"
     next: "npm:16.0.3"
     prettier: "npm:^3.6.2"
     react: "npm:19.2.0"
