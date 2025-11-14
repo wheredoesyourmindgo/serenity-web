@@ -155,6 +155,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            requiresOsConf
             className="fa-regular fa-microphone"
             KeyContainerProps={{
               keyId: 'siri-key',
