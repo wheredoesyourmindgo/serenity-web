@@ -306,6 +306,13 @@ export default function ConfigPage() {
 keybind = alt+delete=esc:d
 `
 
+   const itermConfSnippet = `
+{"Key Mappings":{"0xf702-0x320000-0x7b":{"Version":0,"Action":47,"Text":"2","Label":""},"0xf703-0x280000-0x0":{"Version":0,"Action":10,"Text":"f","Label":""},"0x7a-0x100000-0x6":{"Version":0,"Action":11,"Text":"0x1f","Label":""},"0xf703-0x2a0000-0x7c":{"Version":0,"Action":46,"Text":"1","Label":""},"0x5a-0x120000-0x6":{"Version":0,"Action":11,"Text":"0x18 0x1f","Label":""},"0xf700-0x300000-0x0":{"Version":0,"Action":7,"Text":"","Label":""},"0xf702-0x2a0000-0x7b":{"Version":0,"Action":47,"Text":"1","Label":""},"0x9-0x40000-0x0":{"Version":0,"Action":25,"Text":"Select Next Tab\nSelect Next Tab","Label":""},"0x7f-0x100000-0x33":{"Version":0,"Action":11,"Text":"0x15","Label":""},"0xf72d-0x100000-0x0":{"Version":0,"Action":8,"Text":"","Label":""},"0xf702-0x280000-0x0":{"Version":0,"Action":10,"Text":"b","Label":""},"0xf72b-0x100000-0x0":{"Version":0,"Action":4,"Text":"","Label":""},"0x74-0x100000-0x0":{"Version":0,"Action":25,"Text":"New Tab with Current Profile","Label":""},"0x54-0x120000-0x0":{"Version":0,"Action":25,"Text":"Split Vertically with Current Profile\nSplit Vertically with Current Profile","Label":""},"0xf703-0x300000-0x0":{"Version":0,"Action":11,"Text":"0x05","Label":""},"0x19-0x60000-0x0":{"Version":0,"Action":25,"Text":"Select Previous Tab\nSelect Previous Tab","Label":""},"0xf703-0x320000-0x0":{"Version":0,"Action":46,"Text":"2","Label":""},"0xf72c-0x20000-0x0":{"Version":0,"Action":9,"Text":"","Label":""},"0xf72d-0x20000-0x0":{"Version":0,"Action":8,"Text":"","Label":""},"0xf703-0x220000-0x7c":{"Version":0,"Action":46,"Text":"0","Label":""},"0x7f-0x80000-0x33":{"Version":0,"Action":11,"Text":"0x17","Label":""},"0xf729-0x100000-0x0":{"Version":0,"Action":5,"Text":"","Label":""},"0xf72c-0x100000-0x0":{"Version":0,"Action":9,"Text":"","Label":""},"0xf702-0x300000-0x7b":{"Version":0,"Action":11,"Text":"0x01","Label":""},"0xf701-0x300000-0x0":{"Version":0,"Action":6,"Text":"","Label":""},"0xf728-0x80000-0x75":{"Version":0,"Action":11,"Text":"0x1b 0x64","Label":""},"0xf702-0x220000-0x7b":{"Version":0,"Action":47,"Text":"0","Label":""}},"Touch Bar Items":{}}
+`
+  const itermAbbrevConfSnippet = `
+{"Key Mappings":{"0xf702-0x320000-0x7b":{"Version":0,"Action":47,"Text":"2","Label":""},"0xf703-0x280000-0x0":{"Version":0,"Action":10,"Text":"f","Label":""},...}
+`
+
   const hammerspoonSnippet = `
 -- Function to set Karabiner-Elements variable
 function setKarabinerVariable(variableName, variableValue)
