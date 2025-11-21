@@ -4,7 +4,7 @@ finger 0 	5.72%	 finger 9 	8.29%
 finger 1 	10.67%	 finger 8 	12.34%
 finger 2 	13.00%	 finger 7 	20.23%
 finger 3 	14.50%	 finger 6 	15.25%
-total L 	43.90%	total R 	56.10%
+total L 	43.90%	 total R 	56.10%
 
 Finger Bigram Frequency
 finger 0 	0.003%	 finger 9 	0.029%
