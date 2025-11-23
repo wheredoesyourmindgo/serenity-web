@@ -60,7 +60,7 @@ export default function AlphaKeyboard() {
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd frequencyColor>Q</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>L</AlphaKeyLgnd>
-        <AlphaKeyLgnd frequencyColor>G</AlphaKeyLgnd>
+        <AlphaKeyLgnd frequencyColor>D</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>W</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>V</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>J</AlphaKeyLgnd>
@@ -76,7 +76,7 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd frequencyColor>N</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>T</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>S</AlphaKeyLgnd>
-        <AlphaKeyLgnd frequencyColor>P</AlphaKeyLgnd>
+        <AlphaKeyLgnd frequencyColor>G</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>Y</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>H</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>E</AlphaKeyLgnd>
@@ -92,7 +92,7 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd frequencyColor>C</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>B</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>K</AlphaKeyLgnd>
-        <AlphaKeyLgnd frequencyColor>D</AlphaKeyLgnd>
+        <AlphaKeyLgnd frequencyColor>P</AlphaKeyLgnd>
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
