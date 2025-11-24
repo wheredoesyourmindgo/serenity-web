@@ -1,6 +1,6 @@
 const a200 = `
 WORDLISTS/MONKEYTYPE-450K.JSON
-thumb: LT
+thumb: RT
 
 serenity
 q l d w v  j f o u -
