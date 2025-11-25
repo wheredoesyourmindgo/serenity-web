@@ -463,8 +463,8 @@ end run
             </Type>
           </Box>
           <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Custom key mappings JSON export to add to your iTerm2 profile key
-            mappings under <em>Settings → Keys</em>. These will allow movements
+            Custom key mappings JSON export to add to your iTerm2 key
+            bindings under <em>Settings → Keys -> Key Bindings -> Presets... -> Import...</em>. These will allow movements
             using arrow keys in conjunction with modifier keys.
           </Type>
           <Box
