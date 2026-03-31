@@ -1,6 +1,6 @@
 'use client'
 
-import MuiFaIcon from '@components/MuiFaIcon'
+import MuiFaIcon from '@components/FaIcon'
 import {solarized} from '@lib/solarizedPalette'
 import {
   Box,

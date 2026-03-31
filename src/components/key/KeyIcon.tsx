@@ -1,4 +1,4 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
 import {Box} from '@mui/material'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
 import ShiftSubLgnd from './ShiftSubLgnd'
@@ -9,7 +9,7 @@ import ReqSetupSubLgnd from './ReqSetupSubLgnd'
 import EncoderSubLgnd from './EncoderSubLgnd'
 import AppSubIcn from './AppShortcutSubIcn'
 
-type Props = MuiFaIconProps & {
+type Props = FaIconProps & {
   KeyContainerProps?: KeyContainerProps
   shiftLgnd?: string | React.ReactNode
   optEncoder?: boolean
@@ -71,7 +71,7 @@ export default function KeyIcon({
           <Box sx={{transform: 'translateY(2px)'}} position="relative">
             <Box overflow="visible">
               <Box>
-                <MuiFaIcon
+                <FaIcon
                   sx={{
                     color: color || 'solarized.base00',
                     fontSize: 20,

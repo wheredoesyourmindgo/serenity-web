@@ -1,23 +1,18 @@
-import MuiFaIcon, {type MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {type FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-type Props = MuiFaIconProps
+type Props = FaIconProps
 
-export default function TapDanceSubIcn({sx, ...rest}: Props) {
+export default function TapDanceSubIcn({sx, className, ...rest}: Props) {
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        left: 4,
-        bottom: -5
-      }}
-    >
-      <MuiFaIcon
-        className="fa-regular fa-ellipsis"
-        sx={{color: 'solarized.orange', fontSize: 14, ...sx}}
+    <span className="absolute bottom-[-5px] left-1">
+      <FaIcon
+        className={cn('fa-regular fa-ellipsis', className)}
+        color="solarized.orange"
+        sx={{fontSize: 14, ...sx}}
         {...rest}
       />
-    </Box>
+    </span>
   )
 }
 

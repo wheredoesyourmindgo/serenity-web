@@ -1,28 +1,20 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-type Props = MuiFaIconProps
+type Props = Omit<FaIconProps, 'sx' | 'className' | 'color'> & {
+  className?: string
+  iconClassName?: string
+}
 
-export default function AppShortcutSubIcn({sx, ...rest}: Props) {
+export default function AppShortcutSubIcn({className, iconClassName, ...rest}: Props) {
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        left: 10,
-        top: -5
-      }}
-    >
-      <MuiFaIcon
-        className="fa-regular fa-browser"
-        sx={{
-          color: 'solarized.blue',
-          fontSize: 9,
-          transform: 'translateX(-50%)',
-          ...sx
-        }}
+    <span className={cn('absolute -top-[5px] left-2.5', className)}>
+      <FaIcon
+        className={cn('fa-regular fa-browser -translate-x-1/2 text-[9px]', iconClassName)}
+        color="solarized.blue"
         {...rest}
       />
-    </Box>
+    </span>
   )
 }
 

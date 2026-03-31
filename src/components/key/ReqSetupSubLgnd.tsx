@@ -1,22 +1,18 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-export default function ReqSetupSubLgnd(props: Partial<MuiFaIconProps>) {
-  const {sx, ...rest} = props
-  const specialColor = 'solarized.magenta'
+type Props = Partial<FaIconProps>
+
+export default function ReqSetupSubLgnd(props: Props) {
+  const {sx, className, ...rest} = props
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        left: 6,
-        top: -4
-      }}
-    >
-      <MuiFaIcon
-        className="fa-regular fa-wrench-simple"
-        sx={{color: specialColor, fontSize: 10, ...sx}}
+    <span className="absolute top-[-4px] left-1.5">
+      <FaIcon
+        className={cn('fa-regular fa-wrench-simple', className)}
+        color="solarized.magenta"
+        sx={{fontSize: 10, ...sx}}
         {...rest}
       />
-    </Box>
+    </span>
   )
 }

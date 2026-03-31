@@ -1,23 +1,19 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-export default function EncoderSubLgnd(props: Partial<MuiFaIconProps>) {
-  const {sx, ...rest} = props
-  const specialColor = 'solarized.base1'
+type Props = Omit<Partial<FaIconProps>, 'sx' | 'className' | 'color'> & {
+  className?: string
+  iconClassName?: string
+}
+
+export default function EncoderSubLgnd({className, iconClassName, ...rest}: Props) {
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        left: 7,
-        top: 6,
-        zIndex: 0
-      }}
-    >
-      <MuiFaIcon
-        className="fa-regular fa-circle-dashed"
-        sx={{color: specialColor, fontSize: 40, opacity: 0.5, ...sx}}
+    <span className={cn('absolute top-[6px] left-[7px] z-0', className)}>
+      <FaIcon
+        className={cn('fa-regular fa-circle-dashed text-[40px] opacity-50', iconClassName)}
+        color="solarized.base1"
         {...rest}
       />
-    </Box>
+    </span>
   )
 }

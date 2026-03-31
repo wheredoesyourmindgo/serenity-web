@@ -1,21 +1,18 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-type Props = MuiFaIconProps
+type Props = FaIconProps
 
-export default function ShiftSubIcn({sx, ...rest}: Props) {
+export default function ShiftSubIcn({sx, className, ...rest}: Props) {
   return (
-    <Box
-      component="span"
-      sx={{
-        color: 'solarized.violet',
-        position: 'absolute',
-        right: 5,
-        top: -2
-      }}
-    >
-      <MuiFaIcon sx={{fontSize: 14, ...sx}} {...rest} />
-    </Box>
+    <span className="absolute top-[-2px] right-[5px]">
+      <FaIcon
+        className={cn(className)}
+        color="solarized.violet"
+        sx={{fontSize: 14, ...sx}}
+        {...rest}
+      />
+    </span>
   )
 }
 

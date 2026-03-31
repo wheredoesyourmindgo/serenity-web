@@ -1,23 +1,17 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-type Props = MuiFaIconProps & {
+type Props = FaIconProps & {
   customShiftCode?: boolean
 }
 
 export default function VimRefIcn({customShiftCode: _customShiftCode, ...props}: Props) {
-  const {sx, ...rest} = props
+  const {sx, className, ...rest} = props
 
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        right: 5,
-        top: 0
-      }}
-    >
-      <MuiFaIcon sx={{fontSize: 14, ...sx}} {...rest} />
-    </Box>
+    <span className="absolute top-0 right-[5px]">
+      <FaIcon className={cn(className)} sx={{fontSize: 14, ...sx}} {...rest} />
+    </span>
   )
 }
 
