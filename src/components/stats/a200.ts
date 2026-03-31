@@ -3,9 +3,9 @@ WORDLISTS/MONKEYTYPE-450K.JSON
 thumb: RT
 
 serenity
-q l d w v  j f o u -
+q z m w v  j f o u -
 r n t s g  y h e a i
-x z m c b  k p ' , .
+x l d c b  k p ' , .
 
 Trigrams
 ========
