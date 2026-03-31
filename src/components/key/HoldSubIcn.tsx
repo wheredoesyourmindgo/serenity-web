@@ -1,23 +1,17 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-type Props = MuiFaIconProps & {
+type Props = FaIconProps & {
   customShiftCode?: boolean
 }
 
 export default function LyrSubIcn({customShiftCode: _customShiftCode, ...props}: Props) {
-  const {sx, ...rest} = props
+  const {sx, className, ...rest} = props
 
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        right: 4,
-        bottom: 0
-      }}
-    >
-      <MuiFaIcon sx={{fontSize: 12, ...sx}} {...rest} />
-    </Box>
+    <span className="absolute right-1 bottom-0">
+      <FaIcon className={cn(className)} sx={{fontSize: 12, ...sx}} {...rest} />
+    </span>
   )
 }
 

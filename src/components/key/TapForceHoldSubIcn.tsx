@@ -1,28 +1,22 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-type Props = MuiFaIconProps
+type Props = FaIconProps
 
-export default function TapForceHoldSubIcn({sx, ...rest}: Props) {
+export default function TapForceHoldSubIcn({sx, className, ...rest}: Props) {
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        left: '50%',
-        top: -6
-      }}
-    >
-      <MuiFaIcon
-        className="fa-regular fa-angles-down"
+    <span className="absolute top-[-6px] left-1/2">
+      <FaIcon
+        className={cn('fa-regular fa-angles-down', className)}
+        color="solarized.orange"
         sx={{
-          color: 'solarized.orange',
           fontSize: 10,
           transform: 'translateX(-50%)',
           ...sx
         }}
         {...rest}
       />
-    </Box>
+    </span>
   )
 }
 

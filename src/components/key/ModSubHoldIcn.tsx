@@ -1,21 +1,18 @@
-import MuiFaIcon, {MuiFaIconProps} from '@components/MuiFaIcon'
-import {Box} from '@mui/material'
+import FaIcon, {FaIconProps} from '@components/FaIcon'
+import {cn} from '@lib/cn'
 
-type Props = MuiFaIconProps
+type Props = FaIconProps
 
-export default function ModSubHoldIcn({sx, ...rest}: Props) {
+export default function ModSubHoldIcn({sx, className, ...rest}: Props) {
   return (
-    <Box
-      component="span"
-      sx={{
-        color: 'solarized.yellow',
-        position: 'absolute',
-        right: 3,
-        bottom: 1
-      }}
-    >
-      <MuiFaIcon sx={{fontSize: 12, ...sx}} {...rest} />
-    </Box>
+    <span className="absolute right-[3px] bottom-px">
+      <FaIcon
+        className={cn(className)}
+        color="solarized.yellow"
+        sx={{fontSize: 12, ...sx}}
+        {...rest}
+      />
+    </span>
   )
 }
 

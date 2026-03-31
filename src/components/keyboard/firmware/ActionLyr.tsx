@@ -7,7 +7,7 @@ import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from 'src/app/firmware/page'
 import {Grid, Box, Typography} from '@mui/material'
 import KeyboardGridRow from '../KeyboardGridRow'
-import MuiFaIcon from '@components/MuiFaIcon'
+import MuiFaIcon from '@components/FaIcon'
 
 function RectangleProCaption() {
   return (

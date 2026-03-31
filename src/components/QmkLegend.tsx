@@ -1,5 +1,5 @@
 import {Box, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Paper} from '@mui/material'
-import MuiFaIcon from '@components/MuiFaIcon'
+import MuiFaIcon from '@components/FaIcon'
 
 export default function QmkLegend() {
   return (

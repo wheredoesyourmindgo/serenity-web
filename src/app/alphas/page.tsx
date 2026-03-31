@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 // import Copyright from '@components/Copyright'
 import AlphaKeyboard from '@components/keyboard/Alphas'
-import MuiFaIcon from '@components/MuiFaIcon'
+import MuiFaIcon from '@components/FaIcon'
 import genkey from '@components/stats/genkey'
 import a200 from '@components/stats/a200'
 import colemakmods from '@components/stats/colemakmods'
