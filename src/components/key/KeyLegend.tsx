@@ -68,37 +68,23 @@ export default function KeyLegend({
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
       <Box>
-        {shiftLgnd ? (
-          <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
-        ) : null}
+        {shiftLgnd ? <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd> : null}
         {shiftSubIcn ? (
-          <ShiftSubIcn
-            sx={{color: shiftColor, ...ShiftSubIcnSx}}
-            {...ShiftSubIcnRest}
-          />
+          <ShiftSubIcn sx={{color: shiftColor, ...ShiftSubIcnSx}} {...ShiftSubIcnRest} />
         ) : null}
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {appShortcut ? <AppSubIcn /> : null}
         {lyrHoldSubIcn ? (
-          <HoldSubIcn
-            sx={{color: lyrColor, ...lyrHoldSubIcnSx}}
-            {...LyrHoldSubIcnRest}
-          />
+          <HoldSubIcn sx={{color: lyrColor, ...lyrHoldSubIcnSx}} {...LyrHoldSubIcnRest} />
         ) : null}
         {modHoldSubIcn ? (
-          <HoldSubIcn
-            sx={{color: modColor, ...modHoldSubIcnSx}}
-            {...ModHoldSubIcnRest}
-          />
+          <HoldSubIcn sx={{color: modColor, ...modHoldSubIcnSx}} {...ModHoldSubIcnRest} />
         ) : null}
         {vimRef ? <VimRefLgnd>{vimRef}</VimRefLgnd> : null}
         {vimRefIcn ? (
-          <VimRefIcn
-            sx={{color: shiftColor, ...VimRefIcnSx}}
-            {...VimRefIcnRest}
-          />
+          <VimRefIcn sx={{color: shiftColor, ...VimRefIcnSx}} {...VimRefIcnRest} />
         ) : null}
         <Type variant="h3" sx={{color, ...sx}} {...rest}>
           {children}

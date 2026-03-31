@@ -1,14 +1,7 @@
 'use client'
 
 import {useState, type MouseEvent, type ReactNode} from 'react'
-import {
-  alpha,
-  Popover,
-  useTheme,
-  Box,
-  useColorScheme,
-  type BoxProps
-} from '@mui/material'
+import {alpha, Popover, useTheme, Box, useColorScheme, type BoxProps} from '@mui/material'
 
 type Props = BoxProps & {
   keyId?: string
@@ -16,13 +9,7 @@ type Props = BoxProps & {
   homing?: boolean
 }
 
-export default function KeyContainer({
-  children,
-  keyId,
-  popOverContent,
-  homing,
-  ...rest
-}: Props) {
+export default function KeyContainer({children, keyId, popOverContent, homing, ...rest}: Props) {
   const {sx, ...r} = rest
   const theme = useTheme()
   const scheme = useColorScheme()

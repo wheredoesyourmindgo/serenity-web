@@ -50,9 +50,7 @@ export default function KeyIcon({
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
       <Box>
-        {shiftLgnd ? (
-          <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd>
-        ) : null}
+        {shiftLgnd ? <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd> : null}
         {ShiftSubIcn ? <ShiftSubIcn /> : null}
         {special ? <SpecialSubLgnd /> : null}
         {optEncoder ? <EncoderSubLgnd /> : null}

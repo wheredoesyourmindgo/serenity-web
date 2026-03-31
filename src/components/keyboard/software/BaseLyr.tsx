@@ -43,10 +43,7 @@ export default function BaseLyr() {
               keyId: 'screen-brightness-down-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Down"
-                  />
+                  <PopoverDesc action="tap/hold" output="Screen Brightness Down" />
                 </Box>
               )
             }}
@@ -57,10 +54,7 @@ export default function BaseLyr() {
               keyId: 'screen-brightness-up-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Up"
-                  />
+                  <PopoverDesc action="tap/hold" output="Screen Brightness Up" />
                 </Box>
               )
             }}
@@ -257,9 +251,7 @@ export default function BaseLyr() {
             }}
             // shiftSubIcn={faRightToBracket}
             // ShiftSubIcnProps={{flip: 'horizontal'}}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>

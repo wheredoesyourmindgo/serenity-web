@@ -1,6 +1,13 @@
-package.json
 .next/
+.vercel/
 out/
 public/
 bundles/
+coverage/
+dist/
+extra/
 node_modules/
+src/fonts/
+.yarn/
+.vscode/
+.vite

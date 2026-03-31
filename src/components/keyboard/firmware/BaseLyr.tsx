@@ -87,17 +87,13 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             }}
             // shiftSubIcn={faRightToBracket}
             // ShiftSubIcnProps={{flip: 'horizontal'}}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
             tapForceHold
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-computer-mouse" />
-            )}
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-computer-mouse" />}
             className="fa-regular fa-arrow-up-left-from-circle"
             sx={{transform: 'translateY(4px)', fontSize: 18}}
             KeyContainerProps={{
@@ -304,9 +300,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             className="fa-regular fa-layer-group"
             sx={{fontSize: 16, transform: 'translateY(2px)'}}
             special={!isCorneLayout}
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-table-layout" />
-            )}
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-table-layout" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: isCorneLayout ? (
@@ -329,9 +323,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             special
             className="fa-regular fa-angles-down"
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-hashtag" />
-            )}
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-hashtag" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
@@ -394,15 +386,9 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             }}
           />
           <KeyIcon
-            className={
-              isCorneLayout
-                ? 'fa-regular fa-layer-group'
-                : 'fa-regular fa-arrow-left'
-            }
+            className={isCorneLayout ? 'fa-regular fa-layer-group' : 'fa-regular fa-arrow-left'}
             special={!isCorneLayout}
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-gear" />
-            )}
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-gear" />}
             tapForceHold={!isCorneLayout}
             sx={
               isCorneLayout
@@ -432,10 +418,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
             ModHoldSubIcn={() => (
-              <ModSubHoldIcn
-                className="fa-regular fa-command"
-                sx={{fontSize: 11}}
-              />
+              <ModSubHoldIcn className="fa-regular fa-command" sx={{fontSize: 11}} />
             )}
             KeyContainerProps={{
               sx: {
@@ -481,9 +464,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
           />
           <KeyIcon
             className="fa-regular fa-arrow-right"
-            ModHoldSubIcn={() => (
-              <ModSubHoldIcn className="fa-regular fa-chevron-up" />
-            )}
+            ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-chevron-up" />}
             tapForceHold
             sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{

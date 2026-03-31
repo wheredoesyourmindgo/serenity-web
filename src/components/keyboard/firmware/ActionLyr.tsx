@@ -232,9 +232,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                 </Box>
               )
             }}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
@@ -246,23 +244,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Escape (or turn off Action layer lock)"
-                  />
+                  <PopoverDesc action="tap/hold" output="Escape (or turn off Action layer lock)" />
                 </Box>
               )
             }}
           />
-          <KeyIcon
-            className="fa-regular fa-chevron-up"
-            color="solarized.cyan"
-          />
-          <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
-            color="solarized.cyan"
-          />
+          <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
           <KeyIcon
@@ -335,10 +323,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-management1-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Decrease Window Size"
-                  />
+                  <PopoverDesc action="tap/hold" output="Decrease Window Size" />
                   {/* <br />
                   <PopoverDesc action="hold" output="" />
                   <br /> */}
@@ -356,10 +341,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-management2-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Increase Window Size"
-                  />
+                  <PopoverDesc action="tap/hold" output="Increase Window Size" />
                   {/* <br />
                   <PopoverDesc action="hold" output="" />
                   <br /> */}

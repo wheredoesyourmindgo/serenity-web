@@ -1,12 +1,5 @@
 import {isSxObject} from '@lib/isSxObject'
-import {
-  Icon,
-  Box,
-  type IconProps,
-  type BoxProps,
-  type SxProps,
-  type Theme
-} from '@mui/material'
+import {Icon, Box, type IconProps, type BoxProps, type SxProps, type Theme} from '@mui/material'
 
 type Props = Omit<IconProps, 'color'> &
   Omit<Partial<BoxProps>, 'color'> & {color?: string; rotation?: number}

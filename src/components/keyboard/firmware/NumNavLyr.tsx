@@ -55,9 +55,7 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
             }}
             // shiftSubIcn={faRightToBracket}
             // ShiftSubIcnProps={{flip: 'horizontal'}}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
@@ -69,23 +67,13 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Escape (or turn off Num-Nav layer lock)"
-                  />
+                  <PopoverDesc action="tap/hold" output="Escape (or turn off Num-Nav layer lock)" />
                 </Box>
               )
             }}
           />
-          <KeyIcon
-            className="fa-regular fa-chevron-up"
-            color="solarized.cyan"
-          />
-          <KeyIcon
-            className="fa-regular fa-option"
-            color="solarized.cyan"
-            sx={{fontSize: 18}}
-          />
+          <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-option" color="solarized.cyan" sx={{fontSize: 18}} />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
           <KeyIcon
@@ -94,10 +82,7 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'lock-layer-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Lock/Unlock Num-Nav Layer"
-                  />
+                  <PopoverDesc action="tap" output="Lock/Unlock Num-Nav Layer" />
                 </Box>
               )
             }}
@@ -394,10 +379,7 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
             // sx={{transform: 'translateY(1px)'}}
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-brands fa-apple"
-                sx={{fontSize: 14}}
-              />
+              <LyrHoldSubIcn className="fa-brands fa-apple" sx={{fontSize: 14}} />
             )}
             KeyContainerProps={{
               keyId: 'lower-layer-key',

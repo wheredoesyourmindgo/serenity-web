@@ -96,10 +96,7 @@ export default function FnLyr() {
               keyId: 'screen-brightness-down-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Down"
-                  />
+                  <PopoverDesc action="tap/hold" output="Screen Brightness Down" />
                 </Box>
               )
             }}
@@ -110,10 +107,7 @@ export default function FnLyr() {
               keyId: 'screen-brightness-up-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Up"
-                  />
+                  <PopoverDesc action="tap/hold" output="Screen Brightness Up" />
                 </Box>
               )
             }}
@@ -256,9 +250,7 @@ export default function FnLyr() {
             }}
             // shiftSubIcn={faRightToBracket}
             // ShiftSubIcnProps={{flip: 'horizontal'}}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
@@ -338,10 +330,7 @@ export default function FnLyr() {
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Escape (or turn off Fn layer lock)"
-                  />
+                  <PopoverDesc action="tap/hold" output="Escape (or turn off Fn layer lock)" />
                 </Box>
               )
             }}

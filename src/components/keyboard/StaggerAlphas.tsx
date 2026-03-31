@@ -10,10 +10,7 @@ import {KeyLegendProps} from '@components/key/KeyLegend'
 import KeyboardGridRow from './KeyboardGridRow'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
-  <KeyLegend
-    KeyContainerProps={{sx: {borderWidth: 0, boxShadow: 'none'}}}
-    {...props}
-  >
+  <KeyLegend KeyContainerProps={{sx: {borderWidth: 0, boxShadow: 'none'}}} {...props}>
     {children}
   </KeyLegend>
 )

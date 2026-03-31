@@ -53,9 +53,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
                 </Box>
               )
             }}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
@@ -67,10 +65,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Escape (or turn off Symbol layer lock)"
-                  />
+                  <PopoverDesc action="tap/hold" output="Escape (or turn off Symbol layer lock)" />
                 </Box>
               )
             }}
@@ -95,15 +90,8 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
-          <KeyIcon
-            className="fa-regular fa-option"
-            color="solarized.cyan"
-            sx={{fontSize: 18}}
-          />
-          <KeyIcon
-            className="fa-regular fa-chevron-up"
-            color="solarized.cyan"
-          />
+          <KeyIcon className="fa-regular fa-option" color="solarized.cyan" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
@@ -200,10 +188,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             className="fa-regular fa-angles-down"
             sx={{fontSize: 19, transform: 'translateY(4px)'}}
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-brands fa-apple"
-                sx={{fontSize: 14}}
-              />
+              <LyrHoldSubIcn className="fa-brands fa-apple" sx={{fontSize: 14}} />
             )}
             KeyContainerProps={{
               keyId: 'lower-layer-key',

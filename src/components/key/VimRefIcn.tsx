@@ -5,10 +5,7 @@ type Props = MuiFaIconProps & {
   customShiftCode?: boolean
 }
 
-export default function VimRefIcn({
-  customShiftCode: _customShiftCode,
-  ...props
-}: Props) {
+export default function VimRefIcn({customShiftCode: _customShiftCode, ...props}: Props) {
   const {sx, ...rest} = props
 
   return (
