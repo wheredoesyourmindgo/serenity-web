@@ -35,7 +35,7 @@ export default function StaggerAlphaKeyboard() {
       <KeyboardGridRow>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base01">C</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">P</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base0">B</AlphaKeyLgnd>
@@ -47,7 +47,7 @@ export default function StaggerAlphaKeyboard() {
       </KeyboardGridRow>
       <KeyboardGridRow>
         <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} />
-        <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
+        <AlphaKeyLgnd color={base02}>D</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>S</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>T</AlphaKeyLgnd>
@@ -64,8 +64,8 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">W</AlphaKeyLgnd>
-        <AlphaKeyLgnd color={base02}>D</AlphaKeyLgnd>
-        <AlphaKeyLgnd color="solarized.base1">Z</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base01">M</AlphaKeyLgnd>
+        <AlphaKeyLgnd color="solarized.base01">L</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>
           <em>H</em>
         </AlphaKeyLgnd>

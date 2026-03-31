@@ -59,8 +59,8 @@ export default function AlphaKeyboard() {
       <KeyboardGridRow>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd frequencyColor>Q</AlphaKeyLgnd>
-        <AlphaKeyLgnd frequencyColor>L</AlphaKeyLgnd>
-        <AlphaKeyLgnd frequencyColor>D</AlphaKeyLgnd>
+        <AlphaKeyLgnd frequencyColor>Z</AlphaKeyLgnd>
+        <AlphaKeyLgnd frequencyColor>M</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>W</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>V</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>J</AlphaKeyLgnd>
@@ -87,8 +87,8 @@ export default function AlphaKeyboard() {
       </KeyboardGridRow>
       <KeyboardGridRow>
         <AlphaKeyLgnd frequencyColor>X</AlphaKeyLgnd>
-        <AlphaKeyLgnd frequencyColor>Z</AlphaKeyLgnd>
-        <AlphaKeyLgnd frequencyColor>M</AlphaKeyLgnd>
+        <AlphaKeyLgnd frequencyColor>L</AlphaKeyLgnd>
+        <AlphaKeyLgnd frequencyColor>D</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>C</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>B</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>K</AlphaKeyLgnd>

@@ -1,8 +1,8 @@
 const genkey = `
 serenity
-q l d w v  j f o u -
+q z m w v  j f o u -
 r n t s g  y h e a i ;
-x z m c b  k p ' , .
+x l d c b  k p ' , .
 Missing characters: [/]
 Rolls (l): 19.12%
         Inward: ~13.28%
