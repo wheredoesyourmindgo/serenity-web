@@ -1,7 +1,6 @@
 'use client'
 
 import MuiFaIcon from '@components/MuiFaIcon'
-import PageLayout from '@components/PageLayout'
 import {solarized} from '@lib/solarizedPalette'
 import {
   Box,
@@ -24,10 +23,7 @@ import {
 import {SxProps, Theme} from '@mui/material/styles'
 import {useState} from 'react'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {
-  solarizedlight,
-  solarizedDarkAtom
-} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import {solarizedlight, solarizedDarkAtom} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 type CopyFabProps = {
   text: string
@@ -70,11 +66,7 @@ const CopyFab = ({text, tooltip = 'Copy', onCopied, sx}: CopyFabProps) => {
           ...sx
         }}
       >
-        <MuiFaIcon
-          className="fa-regular fa-copy"
-          color="solarized.base0"
-          sx={{fontSize: 18}}
-        />
+        <MuiFaIcon className="fa-regular fa-copy" color="solarized.base0" sx={{fontSize: 18}} />
       </Fab>
     </Tooltip>
   )
@@ -263,9 +255,8 @@ const vimlessRows: VimlessRow[] = [
     action: 'Selection (Visual mode)',
     keys: (
       <>
-        <USym sx={{fontSize: '1.2rem', fontWeight: 600}}>⇧</USym> (use other
-        movement shortcuts while holding shift, often in conjunction with arrow
-        keys, to expand or shrink selection)
+        <USym sx={{fontSize: '1.2rem', fontWeight: 600}}>⇧</USym> (use other movement shortcuts
+        while holding shift, often in conjunction with arrow keys, to expand or shrink selection)
       </>
     ),
     vim: 'v'
@@ -362,388 +353,360 @@ end run
   const codeStyle = isDarkMode ? patchedSolarizedDarkAtom : solarizedlight
 
   return (
-    <PageLayout>
-      <Container sx={{position: 'relative'}}>
-        <Box
-          sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
-        >
-          <Type
-            variant="h2"
-            // gutterBottom
-            color="primary"
-            sx={{
-              // sx={{fontStyle: 'italic'}}
-              pt: {xs: 2, md: 4}
-              // pb: {xs: 2, md: 4}
-            }}
-          >
-            Miscellaneous
-          </Type>
-          <Type
-            variant="h6"
-            // gutterBottom
-            color="secondary"
-            sx={{
-              fontStyle: 'italic',
-              // pt: {xs: 2, md: 4},
-              pb: {xs: 2, md: 4}
-            }}
-          >
-            page in development...
-          </Type>
-        </Box>
-        <Box
-          id="config"
+    <Container sx={{position: 'relative'}}>
+      <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <Type
+          variant="h2"
+          // gutterBottom
+          color="primary"
           sx={{
-            mt: 6,
-            p: {xs: 2, md: 3},
-            bgcolor: 'background.paper',
-            border: 1,
-            borderColor: 'divider',
-            borderRadius: 2,
-            maxWidth: 900,
-            mx: 'auto'
+            // sx={{fontStyle: 'italic'}}
+            pt: {xs: 2, md: 4}
+            // pb: {xs: 2, md: 4}
           }}
         >
-          <Type
-            variant="h4"
-            gutterBottom
-            sx={{fontWeight: 400, textAlign: 'center', mb: 3}}
-          >
-            Application Config
-          </Type>
-
-          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-            <MuiFaIcon
-              className="fa-regular fa-ghost"
-              color="solarized.green"
-              sx={{fontSize: 24, marginRight: 2}}
-            />
-            <Type variant="h5" gutterBottom color="primary">
-              Ghostty
-            </Type>
-          </Box>
-          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Partial config snippet to add to your Ghostty config file{' '}
-            <em>
-              (located at <code>~/.config/ghostty/config</code> by default)
-            </em>
-            .
-          </Type>
-          <Box
-            sx={{
-              position: 'relative',
-              backgroundColor: 'background.default',
-              borderRadius: 2
-            }}
-          >
-            <CopyFab text={ghosttyConfSnippet} />
-            <SyntaxHighlighter
-              language="shell"
-              style={codeStyle}
-              customStyle={{
-                borderRadius: 8,
-                padding: '1rem'
-              }}
-            >
-              {ghosttyConfSnippet}
-            </SyntaxHighlighter>
-          </Box>
-
-          <Divider sx={{marginTop: 4}} variant="middle" />
-
-          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-            <MuiFaIcon
-              className="fa-regular fa-terminal"
-              color="solarized.green"
-              sx={{fontSize: 22, marginRight: 2}}
-            />
-            <Type variant="h5" gutterBottom color="primary">
-              iTerm2
-            </Type>
-          </Box>
-          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            These custom key mappings will allow movements using arrow keys in
-            conjunction with modifier keys. The following JSON can be added to
-            your iTerm2 key bindings under{' '}
-            <em>
-              Settings {'->'} Keys {'->'} Key Bindings {'->'} Presets... {'->'}{' '}
-              Import...
-            </em>
-          </Type>
-          <Box
-            sx={{
-              position: 'relative',
-              backgroundColor: 'background.default',
-              borderRadius: 2
-            }}
-          >
-            <CopyFab text={itermConfSnippet} />
-            <SyntaxHighlighter
-              language="json"
-              style={codeStyle}
-              customStyle={{
-                borderRadius: 8,
-                padding: '1rem'
-              }}
-            >
-              {itermConfSnippet}
-            </SyntaxHighlighter>
-          </Box>
-
-          <Divider sx={{marginTop: 4}} variant="middle" />
-
-          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-            <MuiFaIcon
-              className="fa-regular fa-hammer"
-              color="solarized.green"
-              sx={{fontSize: 24, marginRight: 2}}
-            />
-            <Type variant="h5" gutterBottom color="primary">
-              Hammerspoon
-            </Type>
-          </Box>
-          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Partial config snippet to add to your Hammerspoon initialization
-            file{' '}
-            <em>
-              (located at <code>~/.hammerspoon/init.lua</code> by default)
-            </em>
-            . Used in conjunction with Karabiner-Elements to detect lock screen.
-          </Type>
-          <Box
-            sx={{
-              position: 'relative',
-              backgroundColor: 'background.default',
-              borderRadius: 2
-            }}
-          >
-            <CopyFab text={hammerspoonSnippet} />
-            <SyntaxHighlighter
-              language="lua"
-              style={codeStyle}
-              customStyle={{
-                borderRadius: 8,
-                padding: '1rem'
-              }}
-            >
-              {hammerspoonSnippet}
-            </SyntaxHighlighter>
-          </Box>
-
-          <Divider sx={{marginTop: 4}} variant="middle" />
-
-          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-            <MuiFaIcon
-              className="fa-regular fa-robot"
-              color="solarized.green"
-              sx={{fontSize: 24, marginRight: 2}}
-            />
-            <Type variant="h5" gutterBottom color="primary">
-              Automator
-            </Type>
-          </Box>
-          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Use the following AppleScript Quick Action to toggle Dark Mode on
-            macOS; created via Automator. This service can be assigned a
-            keyboard shortcut (ctrl+opt+cmd+D for Serenity QMK Media Layer) in
-            System Settings.
-          </Type>
-          <Box
-            sx={{
-              position: 'relative',
-              backgroundColor: 'background.default',
-              borderRadius: 2
-            }}
-          >
-            <CopyFab text={toggleDarkModeSnippet} />
-            <SyntaxHighlighter
-              language="applescript"
-              style={codeStyle}
-              customStyle={{
-                borderRadius: 8,
-                padding: '1rem'
-              }}
-            >
-              {toggleDarkModeSnippet}
-            </SyntaxHighlighter>
-          </Box>
-        </Box>
-
-        <Box
-          id="config"
+          Miscellaneous
+        </Type>
+        <Type
+          variant="h6"
+          // gutterBottom
+          color="secondary"
           sx={{
-            mt: 6,
-            p: {xs: 2, md: 3},
-            bgcolor: 'background.paper',
-            border: 1,
-            borderColor: 'divider',
-            borderRadius: 2,
-            maxWidth: 900,
-            mx: 'auto'
+            fontStyle: 'italic',
+            // pt: {xs: 2, md: 4},
+            pb: {xs: 2, md: 4}
           }}
         >
-          <Type
-            variant="h4"
-            gutterBottom
-            sx={{fontWeight: 400, textAlign: 'center', mb: 3}}
-          >
-            Reference
-          </Type>
+          page in development...
+        </Type>
+      </Box>
+      <Box
+        id="config"
+        sx={{
+          mt: 6,
+          p: {xs: 2, md: 3},
+          bgcolor: 'background.paper',
+          border: 1,
+          borderColor: 'divider',
+          borderRadius: 2,
+          maxWidth: 900,
+          mx: 'auto'
+        }}
+      >
+        <Type variant="h4" gutterBottom sx={{fontWeight: 400, textAlign: 'center', mb: 3}}>
+          Application Config
+        </Type>
 
-          <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-            <MuiFaIcon
-              className="fa-regular fa-ban-smoking"
-              color="solarized.green"
-              sx={{fontSize: 27, marginRight: 2}}
-            />
-            <Type variant="h5" gutterBottom color="primary">
-              Vim-less
-            </Type>
-          </Box>
-          <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
-            Thinking of quitting Vim? Here is an indicative reference for
-            performing common Vim-like{' '}
-            <Type variant="inherit" component="span" noWrap>
-              motions/commands
-            </Type>{' '}
-            by effortlessly using standard keybindings (primarily made possible
-            with QMK due to Mod and Arrow key availability on the home row).
-            These shortcuts are application-agnostic and eliminate the need for
-            a modal editor for most tasks, or, at a minimum reduce the reliance
-            of using Normal Mode, allowing you to remain in Insert Mode more
-            often than not.
+        <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+          <MuiFaIcon
+            className="fa-regular fa-ghost"
+            color="solarized.green"
+            sx={{fontSize: 24, marginRight: 2}}
+          />
+          <Type variant="h5" gutterBottom color="primary">
+            Ghostty
           </Type>
-          <Box
-            sx={{
-              position: 'relative',
-              backgroundColor: 'background.default',
-              borderRadius: 2
+        </Box>
+        <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+          Partial config snippet to add to your Ghostty config file{' '}
+          <em>
+            (located at <code>~/.config/ghostty/config</code> by default)
+          </em>
+          .
+        </Type>
+        <Box
+          sx={{
+            position: 'relative',
+            backgroundColor: 'background.default',
+            borderRadius: 2
+          }}
+        >
+          <CopyFab text={ghosttyConfSnippet} />
+          <SyntaxHighlighter
+            language="shell"
+            style={codeStyle}
+            customStyle={{
+              borderRadius: 8,
+              padding: '1rem'
             }}
           >
-            {/* table here */}
-            {/* Material-UI Table for VIM-less reference */}
-            <TableContainer
-              component={Paper}
-              sx={{
-                borderRadius: 2,
-                bgcolor: 'background.default'
-              }}
-            >
-              <Table size="small" aria-label="vimless reference table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
-                      Do the following
-                    </TableCell>
-                    <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
-                      By pressing
-                    </TableCell>
-                    <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
-                      Which is similar to this in Vim
-                    </TableCell>
+            {ghosttyConfSnippet}
+          </SyntaxHighlighter>
+        </Box>
+
+        <Divider sx={{marginTop: 4}} variant="middle" />
+
+        <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+          <MuiFaIcon
+            className="fa-regular fa-terminal"
+            color="solarized.green"
+            sx={{fontSize: 22, marginRight: 2}}
+          />
+          <Type variant="h5" gutterBottom color="primary">
+            iTerm2
+          </Type>
+        </Box>
+        <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+          These custom key mappings will allow movements using arrow keys in conjunction with
+          modifier keys. The following JSON can be added to your iTerm2 key bindings under{' '}
+          <em>
+            Settings {'->'} Keys {'->'} Key Bindings {'->'} Presets... {'->'} Import...
+          </em>
+        </Type>
+        <Box
+          sx={{
+            position: 'relative',
+            backgroundColor: 'background.default',
+            borderRadius: 2
+          }}
+        >
+          <CopyFab text={itermConfSnippet} />
+          <SyntaxHighlighter
+            language="json"
+            style={codeStyle}
+            customStyle={{
+              borderRadius: 8,
+              padding: '1rem'
+            }}
+          >
+            {itermConfSnippet}
+          </SyntaxHighlighter>
+        </Box>
+
+        <Divider sx={{marginTop: 4}} variant="middle" />
+
+        <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+          <MuiFaIcon
+            className="fa-regular fa-hammer"
+            color="solarized.green"
+            sx={{fontSize: 24, marginRight: 2}}
+          />
+          <Type variant="h5" gutterBottom color="primary">
+            Hammerspoon
+          </Type>
+        </Box>
+        <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+          Partial config snippet to add to your Hammerspoon initialization file{' '}
+          <em>
+            (located at <code>~/.hammerspoon/init.lua</code> by default)
+          </em>
+          . Used in conjunction with Karabiner-Elements to detect lock screen.
+        </Type>
+        <Box
+          sx={{
+            position: 'relative',
+            backgroundColor: 'background.default',
+            borderRadius: 2
+          }}
+        >
+          <CopyFab text={hammerspoonSnippet} />
+          <SyntaxHighlighter
+            language="lua"
+            style={codeStyle}
+            customStyle={{
+              borderRadius: 8,
+              padding: '1rem'
+            }}
+          >
+            {hammerspoonSnippet}
+          </SyntaxHighlighter>
+        </Box>
+
+        <Divider sx={{marginTop: 4}} variant="middle" />
+
+        <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+          <MuiFaIcon
+            className="fa-regular fa-robot"
+            color="solarized.green"
+            sx={{fontSize: 24, marginRight: 2}}
+          />
+          <Type variant="h5" gutterBottom color="primary">
+            Automator
+          </Type>
+        </Box>
+        <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+          Use the following AppleScript Quick Action to toggle Dark Mode on macOS; created via
+          Automator. This service can be assigned a keyboard shortcut (ctrl+opt+cmd+D for Serenity
+          QMK Media Layer) in System Settings.
+        </Type>
+        <Box
+          sx={{
+            position: 'relative',
+            backgroundColor: 'background.default',
+            borderRadius: 2
+          }}
+        >
+          <CopyFab text={toggleDarkModeSnippet} />
+          <SyntaxHighlighter
+            language="applescript"
+            style={codeStyle}
+            customStyle={{
+              borderRadius: 8,
+              padding: '1rem'
+            }}
+          >
+            {toggleDarkModeSnippet}
+          </SyntaxHighlighter>
+        </Box>
+      </Box>
+
+      <Box
+        id="config"
+        sx={{
+          mt: 6,
+          p: {xs: 2, md: 3},
+          bgcolor: 'background.paper',
+          border: 1,
+          borderColor: 'divider',
+          borderRadius: 2,
+          maxWidth: 900,
+          mx: 'auto'
+        }}
+      >
+        <Type variant="h4" gutterBottom sx={{fontWeight: 400, textAlign: 'center', mb: 3}}>
+          Reference
+        </Type>
+
+        <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
+          <MuiFaIcon
+            className="fa-regular fa-ban-smoking"
+            color="solarized.green"
+            sx={{fontSize: 27, marginRight: 2}}
+          />
+          <Type variant="h5" gutterBottom color="primary">
+            Vim-less
+          </Type>
+        </Box>
+        <Type variant="subtitle1" sx={{mt: 3, mb: 2}}>
+          Thinking of quitting Vim? Here is an indicative reference for performing common Vim-like{' '}
+          <Type variant="inherit" component="span" noWrap>
+            motions/commands
+          </Type>{' '}
+          by effortlessly using standard keybindings (primarily made possible with QMK due to Mod
+          and Arrow key availability on the home row). These shortcuts are application-agnostic and
+          eliminate the need for a modal editor for most tasks, or, at a minimum reduce the reliance
+          of using Normal Mode, allowing you to remain in Insert Mode more often than not.
+        </Type>
+        <Box
+          sx={{
+            position: 'relative',
+            backgroundColor: 'background.default',
+            borderRadius: 2
+          }}
+        >
+          {/* table here */}
+          {/* Material-UI Table for VIM-less reference */}
+          <TableContainer
+            component={Paper}
+            sx={{
+              borderRadius: 2,
+              bgcolor: 'background.default'
+            }}
+          >
+            <Table size="small" aria-label="vimless reference table">
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
+                    Do the following
+                  </TableCell>
+                  <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>By pressing</TableCell>
+                  <TableCell sx={{fontWeight: 600, fontStyle: 'italic'}}>
+                    Which is similar to this in Vim
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {vimlessRows.map((row) => (
+                  <TableRow key={row.id}>
+                    <TableCell>{row.action}</TableCell>
+                    <TableCell>{row.keys}</TableCell>
+                    <TableCell>{row.vim}</TableCell>
                   </TableRow>
-                </TableHead>
-                <TableBody>
-                  {vimlessRows.map((row) => (
-                    <TableRow key={row.id}>
-                      <TableCell>{row.action}</TableCell>
-                      <TableCell>{row.keys}</TableCell>
-                      <TableCell>{row.vim}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Box>
-          <Type sx={{mt: 6, mb: 2}}>
-            Some of the other commands and movements not covered by the basic
-            movements can often be implemented in modern text editors via
-            extensions or built-in functionality. Here are a couple of VSCode
-            Extensions I maintain to fill in some functionality gaps so to
-            speak.
-          </Type>
-          <Box sx={{mb: 4, ml: 1}}>
-            <Type variant="subtitle2" sx={{fontWeight: 600, mb: 1}}>
-              VSCode Extensions
-            </Type>
-
-            <Box sx={{display: 'flex', flexDirection: 'column', gap: 1.5}}>
-              <Link
-                href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  paddingLeft: 4,
-                  fontSize: '1rem',
-                  fontWeight: 500,
-                  color: 'primary.main',
-                  textDecoration: 'none',
-                  '&:hover': {
-                    textDecoration: 'underline',
-                    color: 'primary.light'
-                  }
-                }}
-              >
-                Beam Me Up, Scotty!{' '}
-                <Type component="span" variant="inherit" sx={{fontWeight: 400}}>
-                  :: Jump navigation inspired by clever-f
-                </Type>
-              </Link>
-
-              <Link
-                href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-relativity"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  paddingLeft: 4,
-                  fontSize: '1rem',
-                  fontWeight: 500,
-                  color: 'primary.main',
-                  textDecoration: 'none',
-                  '&:hover': {
-                    textDecoration: 'underline',
-                    color: 'primary.light'
-                  }
-                }}
-              >
-                Relativity_{' '}
-                <Type component="span" variant="inherit" sx={{fontWeight: 400}}>
-                  :: Jump lines by number relative to current line
-                </Type>
-              </Link>
-            </Box>
-          </Box>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Box>
-        <Box
-          id="contact"
-          sx={{
-            mt: 10,
-            p: {xs: 2, md: 3},
-            bgcolor: 'background.paper',
-            border: 1,
-            borderColor: 'divider',
-            borderRadius: 2,
-            maxWidth: 900,
-            mx: 'auto'
-          }}
-        >
-          <Type
-            variant="h4"
-            gutterBottom
-            sx={{fontWeight: 400, textAlign: 'center', mb: 3}}
-          >
-            Get In Touch
+        <Type sx={{mt: 6, mb: 2}}>
+          Some of the other commands and movements not covered by the basic movements can often be
+          implemented in modern text editors via extensions or built-in functionality. Here are a
+          couple of VSCode Extensions I maintain to fill in some functionality gaps so to speak.
+        </Type>
+        <Box sx={{mb: 4, ml: 1}}>
+          <Type variant="subtitle2" sx={{fontWeight: 600, mb: 1}}>
+            VSCode Extensions
           </Type>
-          <Type variant="body1" sx={{textAlign: 'center', mt: 2}}>
-            Have questions, comments, or feedback? Feel free to reach out
-            anytime at{' '}
-            <Link noWrap href="mailto:majority-myth-cube@duck.com">
-              majority-myth-cube@duck.com
+
+          <Box sx={{display: 'flex', flexDirection: 'column', gap: 1.5}}>
+            <Link
+              href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                paddingLeft: 4,
+                fontSize: '1rem',
+                fontWeight: 500,
+                color: 'primary.main',
+                textDecoration: 'none',
+                '&:hover': {
+                  textDecoration: 'underline',
+                  color: 'primary.light'
+                }
+              }}
+            >
+              Beam Me Up, Scotty!{' '}
+              <Type component="span" variant="inherit" sx={{fontWeight: 400}}>
+                :: Jump navigation inspired by clever-f
+              </Type>
             </Link>
-          </Type>
+
+            <Link
+              href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-relativity"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                paddingLeft: 4,
+                fontSize: '1rem',
+                fontWeight: 500,
+                color: 'primary.main',
+                textDecoration: 'none',
+                '&:hover': {
+                  textDecoration: 'underline',
+                  color: 'primary.light'
+                }
+              }}
+            >
+              Relativity_{' '}
+              <Type component="span" variant="inherit" sx={{fontWeight: 400}}>
+                :: Jump lines by number relative to current line
+              </Type>
+            </Link>
+          </Box>
         </Box>
-      </Container>
-    </PageLayout>
+      </Box>
+      <Box
+        id="contact"
+        sx={{
+          mt: 10,
+          p: {xs: 2, md: 3},
+          bgcolor: 'background.paper',
+          border: 1,
+          borderColor: 'divider',
+          borderRadius: 2,
+          maxWidth: 900,
+          mx: 'auto'
+        }}
+      >
+        <Type variant="h4" gutterBottom sx={{fontWeight: 400, textAlign: 'center', mb: 3}}>
+          Get In Touch
+        </Type>
+        <Type variant="body1" sx={{textAlign: 'center', mt: 2}}>
+          Have questions, comments, or feedback? Feel free to reach out anytime at{' '}
+          <Link noWrap href="mailto:majority-myth-cube@duck.com">
+            majority-myth-cube@duck.com
+          </Link>
+        </Type>
+      </Box>
+    </Container>
   )
 }

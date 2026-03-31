@@ -74,9 +74,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
                 </Box>
               )
             }}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>

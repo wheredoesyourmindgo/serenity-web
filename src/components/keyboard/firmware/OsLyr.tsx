@@ -191,9 +191,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
                 </Box>
               )
             }}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
@@ -359,15 +357,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'screenshot-dsktp-file-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Screenshot Entire Screen to file"
-                  />
+                  <PopoverDesc action="tap" output="Screenshot Entire Screen to file" />
                   <br />
-                  <PopoverDesc
-                    action="hold"
-                    output="Screenshot Entire Screen to clipboard"
-                  />
+                  <PopoverDesc action="hold" output="Screenshot Entire Screen to clipboard" />
                 </Box>
               )
             }}
@@ -390,15 +382,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'screenshot-sel-file-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Screenshot Selected Window to file"
-                  />
+                  <PopoverDesc action="tap" output="Screenshot Selected Window to file" />
                   <br />
-                  <PopoverDesc
-                    action="hold"
-                    output="Screenshot Selected Window to clipboard"
-                  />
+                  <PopoverDesc action="hold" output="Screenshot Selected Window to clipboard" />
                 </Box>
               )
             }}
@@ -421,15 +407,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'screenshot-sel-file-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="Screenshot Selection to file"
-                  />
+                  <PopoverDesc action="tap" output="Screenshot Selection to file" />
                   <br />
-                  <PopoverDesc
-                    action="hold"
-                    output="Screenshot Selection to clipboard"
-                  />
+                  <PopoverDesc action="hold" output="Screenshot Selection to clipboard" />
                 </Box>
               )
             }}
@@ -533,10 +513,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'app-switch-hide-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap"
-                    output="App Switcher Toggle Hide App"
-                  />
+                  <PopoverDesc action="tap" output="App Switcher Toggle Hide App" />
                 </Box>
               )
             }}

@@ -170,9 +170,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             }}
             // shiftSubIcn={faRightToBracket}
             // ShiftSubIcnProps={{flip: 'horizontal'}}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
@@ -184,23 +182,13 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Escape (or turn off Mouse layer lock)"
-                  />
+                  <PopoverDesc action="tap/hold" output="Escape (or turn off Mouse layer lock)" />
                 </Box>
               )
             }}
           />
-          <KeyIcon
-            className="fa-regular fa-chevron-up"
-            color="solarized.cyan"
-          />
-          <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
-            color="solarized.cyan"
-          />
+          <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
           <KeyIcon homing className="fa-regular fa-up" color="solarized.cyan" />
           <KeyIcon

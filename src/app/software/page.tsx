@@ -1,18 +1,8 @@
 'use client'
 
 import {useState} from 'react'
-import {
-  alpha,
-  Box,
-  Button,
-  Container,
-  Grid,
-  Tab,
-  Tabs,
-  Typography as Type
-} from '@mui/material'
+import {alpha, Box, Button, Container, Grid, Tab, Tabs, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
-import PageLayout from '@components/PageLayout'
 import BaseLyr from '@components/keyboard/software/BaseLyr'
 import MuiFaIcon from '@components/MuiFaIcon'
 import FnLyr from '@components/keyboard/software/FnLyr'
@@ -92,118 +82,102 @@ export default function SoftwarePage() {
     setValue(newValue)
   }
   return (
-    <PageLayout>
-      <Container sx={{position: 'relative'}}>
-        <Box
+    <Container sx={{position: 'relative'}}>
+      <Box
+        sx={{
+          marginRight: 2,
+          position: 'absolute',
+          right: 0,
+          top: 0,
+          display: {xs: 'none', md: 'block'}
+        }}
+      >
+        <SerenityKarabinerButton />
+      </Box>
+      <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        {/* <Type>mode: {mode}</Type>
+          <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
+        <Type
+          variant="h2"
+          color="primary"
           sx={{
-            marginRight: 2,
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            display: {xs: 'none', md: 'block'}
+            // sx={{fontStyle: 'italic'}}
+            pt: {xs: 2, md: 4},
+            pb: {xs: 2, md: 4}
           }}
         >
-          <SerenityKarabinerButton />
-        </Box>
+          Software
+        </Type>
+
         <Box
-          sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+          sx={{
+            transform: {xs: 'scale(0.40)', sm: 'scale(0.60)', md: 'none'},
+            transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
+            height: {xs: 190, sm: 300, md: 'auto'}
+          }}
         >
-          {/* <Type>mode: {mode}</Type>
-          <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-          <Type
-            variant="h2"
-            color="primary"
-            sx={{
-              // sx={{fontStyle: 'italic'}}
-              pt: {xs: 2, md: 4},
-              pb: {xs: 2, md: 4}
-            }}
-          >
-            Software
-          </Type>
+          <TabPanel value={value} index={0}>
+            <BaseLyr />
+          </TabPanel>
 
-          <Box
-            sx={{
-              transform: {xs: 'scale(0.40)', sm: 'scale(0.60)', md: 'none'},
-              transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-              height: {xs: 190, sm: 300, md: 'auto'}
-            }}
-          >
-            <TabPanel value={value} index={0}>
-              <BaseLyr />
-            </TabPanel>
-
-            <TabPanel value={value} index={1}>
-              <FnLyr />
-            </TabPanel>
-          </Box>
-
-          <Box
-            sx={{
-              marginTop: 6,
-              bgcolor: 'background.paper',
-              maxWidth: '100%'
-            }}
-          >
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              aria-label="Keyboard Layer tabs"
-              variant="scrollable"
-              scrollButtons="auto"
-              allowScrollButtonsMobile
-            >
-              <Tab
-                label="Base"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon className="fa-regular fa-house-user" />
-                  </Box>
-                }
-                {...a11yProps(0)}
-              />
-
-              <Tab
-                label="FN Layer"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon
-                      className="fa-regular fa-keyboard"
-                      sx={{fontSize: 15}}
-                    />
-                  </Box>
-                }
-                {...a11yProps(1)}
-              />
-            </Tabs>
-          </Box>
-          {/* <Copyright /> */}
+          <TabPanel value={value} index={1}>
+            <FnLyr />
+          </TabPanel>
         </Box>
-        <Grid
-          container
-          sx={{mt: 10}}
-          justifyContent="center"
-          columnSpacing={12}
-          rowSpacing={6}
+
+        <Box
+          sx={{
+            marginTop: 6,
+            bgcolor: 'background.paper',
+            maxWidth: '100%'
+          }}
         >
-          <Grid
-            size={{xs: 12, sm: 5}}
-            sx={{display: {xs: 'none', md: 'block'}}}
-          />
-          <Grid size={{xs: 12, sm: 'auto'}}>
-            <QmkLegend />
-          </Grid>
-          <Grid size={{xs: 12, sm: 'auto'}}>
-            <Box
-              sx={{
-                display: {xs: 'block', md: 'none'}
-              }}
-            >
-              <SerenityKarabinerButton />
-            </Box>
-          </Grid>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="Keyboard Layer tabs"
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+          >
+            <Tab
+              label="Base"
+              icon={
+                <Box component="span">
+                  <MuiFaIcon className="fa-regular fa-house-user" />
+                </Box>
+              }
+              {...a11yProps(0)}
+            />
+
+            <Tab
+              label="FN Layer"
+              icon={
+                <Box component="span">
+                  <MuiFaIcon className="fa-regular fa-keyboard" sx={{fontSize: 15}} />
+                </Box>
+              }
+              {...a11yProps(1)}
+            />
+          </Tabs>
+        </Box>
+        {/* <Copyright /> */}
+      </Box>
+      <Grid container sx={{mt: 10}} justifyContent="center" columnSpacing={12} rowSpacing={6}>
+        <Grid size={{xs: 12, sm: 5}} sx={{display: {xs: 'none', md: 'block'}}} />
+        <Grid size={{xs: 12, sm: 'auto'}}>
+          <QmkLegend />
         </Grid>
-      </Container>
-    </PageLayout>
+        <Grid size={{xs: 12, sm: 'auto'}}>
+          <Box
+            sx={{
+              display: {xs: 'block', md: 'none'}
+            }}
+          >
+            <SerenityKarabinerButton />
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
   )
 }

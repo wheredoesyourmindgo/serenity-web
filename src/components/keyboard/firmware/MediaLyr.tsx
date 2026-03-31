@@ -37,10 +37,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'screen-brightness-down-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Down"
-                  />
+                  <PopoverDesc action="tap/hold" output="Screen Brightness Down" />
                 </Box>
               )
             }}
@@ -51,10 +48,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'screen-brightness-up-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Screen Brightness Up"
-                  />
+                  <PopoverDesc action="tap/hold" output="Screen Brightness Up" />
                 </Box>
               )
             }}
@@ -197,9 +191,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
                 </Box>
               )
             }}
-            ShiftSubIcn={() => (
-              <ShiftSubIcn className="fa-regular fa-delete-right" />
-            )}
+            ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
@@ -211,10 +203,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <Box p={1}>
-                  <PopoverDesc
-                    action="tap/hold"
-                    output="Escape (or turn off Media layer lock)"
-                  />
+                  <PopoverDesc action="tap/hold" output="Escape (or turn off Media layer lock)" />
                 </Box>
               )
             }}
@@ -268,15 +257,8 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
-          <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
-            color="solarized.cyan"
-          />
-          <KeyIcon
-            className="fa-regular fa-chevron-up"
-            color="solarized.cyan"
-          />
+          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
