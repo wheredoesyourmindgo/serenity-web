@@ -1,3 +1,15 @@
 {
-  "components": []
+  "components": [
+    {
+      "name": "hover-card",
+      "source": "animate-ui",
+      "spec": "@animate-ui/components-radix-hover-card",
+      "paths": [
+        "src/hooks/use-controlled-state.tsx",
+        "src/lib/get-strict-context.tsx",
+        "src/components/animate-ui/primitives/radix/hover-card.tsx",
+        "src/components/animate-ui/components/radix/hover-card.tsx"
+      ]
+    }
+  ]
 }

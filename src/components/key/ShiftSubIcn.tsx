@@ -1,17 +1,12 @@
 import FaIcon, {FaIconProps} from '@components/FaIcon'
 import {cn} from '@lib/cn'
 
-type Props = FaIconProps
+type Props = Omit<FaIconProps, 'color' | 'icon'>
 
-export default function ShiftSubIcn({sx, className, ...rest}: Props) {
+export default function ShiftSubIcn({className, ...rest}: Props) {
   return (
     <span className="absolute top-[-2px] right-[5px]">
-      <FaIcon
-        className={cn(className)}
-        color="solarized.violet"
-        sx={{fontSize: 14, ...sx}}
-        {...rest}
-      />
+      <FaIcon className={cn('text-[14px]', className)} color="solarized.violet" {...rest} />
     </span>
   )
 }

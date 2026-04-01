@@ -3,6 +3,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import type {FontAwesomeIconProps} from '@fortawesome/react-fontawesome'
 import {cn} from '@lib/cn'
+import {sxToInlineStyle} from '@lib/sxToInlineStyle'
 import {useTheme, type SxProps, type Theme} from '@mui/material/styles'
 import type {CSSProperties, HTMLAttributes} from 'react'
 
@@ -11,6 +12,11 @@ type Props = Omit<HTMLAttributes<HTMLElement>, 'color'> & {
   icon?: FontAwesomeIconProps['icon']
   rotation?: number
   sx?: SxProps<Theme>
+}
+
+type IconStyle = CSSProperties & {
+  '--fa-icon-color'?: string
+  '--fa-icon-transform'?: string
 }
 
 function resolveColorToken(theme: Theme, color?: string) {
@@ -38,18 +44,6 @@ function resolveColorToken(theme: Theme, color?: string) {
   return color
 }
 
-function sxToInlineStyle(theme: Theme, sx: SxProps<Theme> | undefined): CSSProperties {
-  if (!sx) {
-    return {}
-  }
-
-  const resolved = theme.unstable_sx(sx)
-
-  return Object.fromEntries(
-    Object.entries(resolved).filter(([, value]) => value == null || typeof value !== 'object')
-  ) as CSSProperties
-}
-
 export default function FaIcon(props: Props) {
   const theme = useTheme()
   const {sx, style, color, rotation, icon, className, ...rest} = props
@@ -58,30 +52,35 @@ export default function FaIcon(props: Props) {
   const incomingTransform = typeof sxTransform === 'string' ? sxTransform : undefined
   const transformWithSpace = incomingTransform ? `${incomingTransform} ` : ''
   const resolvedColor = resolveColorToken(theme, color)
-  const iconStyle: CSSProperties = {
-    fontSize: 'inherit',
-    overflow: 'visible',
-    transform: incomingTransform,
-    ...(typeof rotation === 'number' && {
-      transform: `${transformWithSpace}rotate(${rotation}deg)`,
-      transformOrigin: 'center'
-    }),
-    ...(resolvedColor && {color: resolvedColor}),
+  const computedTransform =
+    typeof rotation === 'number' ? `${transformWithSpace}rotate(${rotation}deg)` : incomingTransform
+
+  const iconStyle: IconStyle = {
+    ...(resolvedColor && {'--fa-icon-color': resolvedColor}),
+    ...(computedTransform && {'--fa-icon-transform': computedTransform}),
     ...restSxStyle,
     ...style
   }
 
+  const iconClassName = cn(
+    'overflow-visible text-inherit',
+    resolvedColor && 'text-[var(--fa-icon-color)]',
+    computedTransform && '[transform:var(--fa-icon-transform)]',
+    typeof rotation === 'number' && 'origin-center',
+    className
+  )
+
   if (icon) {
     return (
       <span className="inline-flex" {...rest}>
-        <FontAwesomeIcon icon={icon} className={cn(className)} style={iconStyle} />
+        <FontAwesomeIcon icon={icon} className={iconClassName} style={iconStyle} />
       </span>
     )
   }
 
   return (
     <span className="inline-flex" {...rest}>
-      <i className={cn(className)} style={iconStyle} />
+      <i className={iconClassName} style={iconStyle} />
     </span>
   )
 }

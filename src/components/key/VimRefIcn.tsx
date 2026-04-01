@@ -1,16 +1,12 @@
 import FaIcon, {FaIconProps} from '@components/FaIcon'
 import {cn} from '@lib/cn'
 
-type Props = FaIconProps & {
-  customShiftCode?: boolean
-}
+type Props = Omit<FaIconProps, 'color' | 'icon'>
 
-export default function VimRefIcn({customShiftCode: _customShiftCode, ...props}: Props) {
-  const {sx, className, ...rest} = props
-
+export default function VimRefIcn({className, ...rest}: Props) {
   return (
     <span className="absolute top-0 right-[5px]">
-      <FaIcon className={cn(className)} sx={{fontSize: 14, ...sx}} {...rest} />
+      <FaIcon className={cn('text-[14px]', className)} {...rest} />
     </span>
   )
 }

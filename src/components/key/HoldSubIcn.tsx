@@ -6,11 +6,11 @@ type Props = FaIconProps & {
 }
 
 export default function LyrSubIcn({customShiftCode: _customShiftCode, ...props}: Props) {
-  const {sx, className, ...rest} = props
+  const {className, ...rest} = props
 
   return (
     <span className="absolute right-1 bottom-0">
-      <FaIcon className={cn(className)} sx={{fontSize: 12, ...sx}} {...rest} />
+      <FaIcon className={cn('text-[12px]', className)} {...rest} />
     </span>
   )
 }

@@ -68,7 +68,7 @@ export default function KeyLegend({
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
       <Box>
-        {shiftLgnd ? <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd> : null}
+        {shiftLgnd ? <ShiftSubLgnd color={shiftColor}>{shiftLgnd}</ShiftSubLgnd> : null}
         {shiftSubIcn ? (
           <ShiftSubIcn sx={{color: shiftColor, ...ShiftSubIcnSx}} {...ShiftSubIcnRest} />
         ) : null}
