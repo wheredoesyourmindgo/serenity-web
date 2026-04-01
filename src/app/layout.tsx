@@ -105,9 +105,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            {/* Importing a global.css doesn't seem to work in production. Certain selectors/properties like
-                html height and body height are getting unset in production, maybe due to <CssBaseline/>.
-                Workaround is to use Mui <GlobalStyles/> which yields desired behavior in both dev and prod env.  */}
             <AppStyles />
             <ToggleColorMode>
               <div className="flex h-screen flex-col">

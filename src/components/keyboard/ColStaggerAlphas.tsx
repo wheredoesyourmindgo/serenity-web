@@ -5,7 +5,8 @@
 // import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@components/key'
-import {alpha, useTheme, Grid} from '@mui/material'
+import withAlpha from 'color-alpha'
+import {useTheme, Grid} from '@mui/material'
 import {KeyLegendProps} from '@components/key/KeyLegend'
 import KeyboardGridRow from './KeyboardGridRow'
 
@@ -22,8 +23,8 @@ const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
 
 export default function ColStaggerAlphaKeyboard() {
   const theme = useTheme()
-  const tBase02 = alpha(theme.palette.solarized.base02, 0.85)
-  const tBase03 = alpha(theme.palette.solarized.base03, 0.95)
+  const tBase02 = withAlpha(theme.palette.solarized.base02, 0.85)
+  const tBase03 = withAlpha(theme.palette.solarized.base03, 0.95)
 
   // const AlphaKeyIcn = useCallback(
   //   ({...props}: KeyIconProps) => (

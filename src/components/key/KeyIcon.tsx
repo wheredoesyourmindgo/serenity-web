@@ -1,5 +1,6 @@
+import type {ComponentType, ReactNode} from 'react'
 import FaIcon, {FaIconProps} from '@components/FaIcon'
-import {Box} from '@mui/material'
+import {cn} from '@lib/cn'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
@@ -9,19 +10,21 @@ import ReqSetupSubLgnd from './ReqSetupSubLgnd'
 import EncoderSubLgnd from './EncoderSubLgnd'
 import AppSubIcn from './AppShortcutSubIcn'
 
+type KeyContainerSlotProps = Omit<KeyContainerProps, 'children' | 'homing'>
+
 type Props = FaIconProps & {
-  KeyContainerProps?: KeyContainerProps
-  shiftLgnd?: string | React.ReactNode
+  KeyContainerProps?: KeyContainerSlotProps
+  shiftLgnd?: ReactNode
   optEncoder?: boolean
   customShiftCode?: boolean
   special?: boolean
   requiresOsConf?: boolean
   tapDance?: boolean
   homing?: boolean
-  LyrHoldSubIcn?: React.FC
-  ModHoldSubIcn?: React.FC
-  ShiftSubIcn?: React.FC
-  children?: React.ReactNode
+  LyrHoldSubIcn?: ComponentType
+  ModHoldSubIcn?: ComponentType
+  ShiftSubIcn?: ComponentType
+  children?: ReactNode
   tapForceHold?: boolean
   appShortcut?: boolean
 }
@@ -44,13 +47,22 @@ export default function KeyIcon({
   ...props
 }: Props) {
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
+  const {sx, color, className, ...rest} = props
+  const hasHoldSubIcon = Boolean(LyrHoldSubIcn || ModHoldSubIcn)
+  const hasShiftSubIcon = Boolean(ShiftSubIcn)
 
-  const {sx, color, ...rest} = props
+  let iconOffsetClass = 'translate-y-[2px]'
+
+  if (hasHoldSubIcon) {
+    iconOffsetClass = '-translate-y-[2px]'
+  } else if (hasShiftSubIcon) {
+    iconOffsetClass = 'translate-y-[4px]'
+  }
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
-      <Box>
-        {shiftLgnd ? <ShiftSubLgnd sx={{color: shiftColor}}>{shiftLgnd}</ShiftSubLgnd> : null}
+      <div>
+        {shiftLgnd ? <ShiftSubLgnd color={shiftColor}>{shiftLgnd}</ShiftSubLgnd> : null}
         {ShiftSubIcn ? <ShiftSubIcn /> : null}
         {special ? <SpecialSubLgnd /> : null}
         {optEncoder ? <EncoderSubLgnd /> : null}
@@ -60,41 +72,18 @@ export default function KeyIcon({
         {appShortcut ? <AppSubIcn /> : null}
         {LyrHoldSubIcn ? <LyrHoldSubIcn /> : null}
         {ModHoldSubIcn ? <ModHoldSubIcn /> : null}
-        <Box
-          sx={{
-            ...(ShiftSubIcn && {transform: 'translateY(2px)'}),
-            ...((LyrHoldSubIcn || ModHoldSubIcn) && {
-              transform: 'translateY(-4px)'
-            })
-          }}
-        >
-          <Box sx={{transform: 'translateY(2px)'}} position="relative">
-            <Box overflow="visible">
-              <Box>
-                <FaIcon
-                  sx={{
-                    color: color || 'solarized.base00',
-                    fontSize: 20,
-                    ...sx
-                  }}
-                  {...rest}
-                />
-              </Box>
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0
-                }}
-              >
-                {children}
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+        <div className={iconOffsetClass}>
+          <div className="relative overflow-visible">
+            <FaIcon
+              className={cn('text-[20px]', className)}
+              color={color || 'solarized.base00'}
+              sx={sx}
+              {...rest}
+            />
+            <div className="absolute inset-0">{children}</div>
+          </div>
+        </div>
+      </div>
     </KeyContainer>
   )
 }

@@ -1,7 +1,8 @@
 'use client'
 
 import {useState} from 'react'
-import {alpha, Box, Button, Container, Grid, Tab, Tabs, Typography as Type} from '@mui/material'
+import withAlpha from 'color-alpha'
+import {Box, Button, Container, Grid, Tab, Tabs, Typography as Type} from '@mui/material'
 // import Copyright from '@components/Copyright'
 import BaseLyr from '@components/keyboard/software/BaseLyr'
 import MuiFaIcon from '@components/FaIcon'
@@ -34,7 +35,7 @@ function SerenityKarabinerButton() {
           borderStyle: 'solid',
           borderColor: 'rgba(0, 0, 0, 0.3)',
           '&:hover': {
-            bgcolor: alpha('#2f363d', 0.9),
+            bgcolor: withAlpha('#2f363d', 0.9),
             borderColor: 'rgba(0, 0, 0, 0.5)'
           }
         },

@@ -1,16 +1,18 @@
-import {Box, Typography as Type, TypographyProps} from '@mui/material'
+'use client'
 
-type Props = TypographyProps & {}
+import {Typography, type TypographyProps} from '@components/ui/typography'
+
+type Props = Omit<TypographyProps, 'variant' | 'as'> & {
+  color?: string
+}
 
 export default function ShiftSubLgnd({children, ...props}: Props) {
-  const {...rest} = props
-
   return (
-    <Box sx={{position: 'absolute', right: 6, top: -2}}>
-      <Type variant="subtitle2" component="span" {...rest}>
-        <>{children}</>
-      </Type>
-    </Box>
+    <span className="absolute top-[-2px] right-1.5">
+      <Typography as="span" variant="subtitle2" {...props}>
+        {children}
+      </Typography>
+    </span>
   )
 }
 

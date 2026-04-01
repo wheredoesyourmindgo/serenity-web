@@ -1,21 +1,22 @@
-import {Box, Typography as Type, TypographyProps} from '@mui/material'
+import {Typography, type TypographyProps} from '@components/ui/typography'
+import {cn} from '@lib/cn'
 
-type Props = TypographyProps & {}
+type Props = Omit<TypographyProps, 'variant' | 'as'>
 
 export default function VimRefLgnd({children, ...props}: Props) {
-  const {sx, ...rest} = props
+  const {className, ...rest} = props
 
   return (
-    <Box sx={{position: 'absolute', right: 6, top: -2}}>
-      <Type
+    <span className="absolute top-[-2px] right-1.5">
+      <Typography
+        as="span"
         variant="subtitle2"
-        sx={{color: 'text.disabled', fontStyle: 'italic', ...sx}}
-        component="span"
+        className={cn('text-muted-foreground italic', className)}
         {...rest}
       >
-        <>{children}</>
-      </Type>
-    </Box>
+        {children}
+      </Typography>
+    </span>
   )
 }
 

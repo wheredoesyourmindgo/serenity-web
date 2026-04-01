@@ -1,19 +1,9 @@
 'use client'
 
 import {useState} from 'react'
-import {
-  alpha,
-  Box,
-  Button,
-  Container,
-  Grid,
-  Link,
-  Tab,
-  Tabs,
-  Typography as Type
-} from '@mui/material'
+import withAlpha from 'color-alpha'
+import {Box, Button, Container, Grid, Link, Tab, Tabs, Typography as Type} from '@mui/material'
 import {FormControl, FormLabel, ToggleButton, ToggleButtonGroup} from '@mui/material'
-// import Copyright from '@components/Copyright'
 import BaseLyr from '@components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@components/keyboard/firmware/NumNavLyr'
 import SymLyr from '@components/keyboard/firmware/SymLyr'
@@ -26,9 +16,6 @@ import MouseLyr from '@components/keyboard/firmware/MouseLyr'
 import OsLyr from '@components/keyboard/firmware/OsLyr'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import QmkLegend from '@components/QmkLegend'
-// import NumpadLyr from '@components/keyboard/firmware/Numpad'
-// import Encoder from '@components/keyboard/firmware/Encoder'
-// import {faCircleDashed} from '@fortawesome/pro-regular-svg-icons'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -57,7 +44,7 @@ function SerenityQmkButton() {
           borderStyle: 'solid',
           borderColor: 'rgba(0, 0, 0, 0.3)',
           '&:hover': {
-            bgcolor: alpha('#2f363d', 0.9),
+            bgcolor: withAlpha('#2f363d', 0.9),
             borderColor: 'rgba(0, 0, 0, 0.5)'
           }
         },
@@ -128,8 +115,6 @@ export default function FirmwarePage() {
         <SerenityQmkButton />
       </Box>
       <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        {/* <Type>mode: {mode}</Type>
-          <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
         <Type
           variant="h2"
           color="primary"
@@ -173,24 +158,15 @@ export default function FirmwarePage() {
           <TabPanel value={value} index={7}>
             <FuncLyr layout={layout} />
           </TabPanel>
-          {/* <TabPanel value={value} index={8}>
-              <NumpadLyr />
-            </TabPanel> */}
           <TabPanel value={value} index={8}>
             <QwertyLyr layout={layout} />
           </TabPanel>
-          {/* <TabPanel value={value} index={9}>
-              <Encoder />
-            </TabPanel> */}
         </Box>
         <Box
           sx={{
             marginTop: 6,
             bgcolor: 'background.paper',
             maxWidth: '100%'
-            // borderRadius: 1
-            // borderBottom: 1,
-            // borderColor: 'divider'
           }}
         >
           <Tabs
@@ -261,17 +237,6 @@ export default function FirmwarePage() {
                 <Box component="span">
                   <MuiFaIcon className="fa-brands fa-apple" sx={{fontSize: 15}} />
                 </Box>
-                // <Box component="span">
-                //   <MuiFaIcon
-                //     className="fa-regular fa-arrow-up-left-from-circle"
-                //     sx={{paddingRight: 0.5}}
-                //   />
-                //   <MuiFaIcon
-                //     icon={faPlus}
-                //     sx={{paddingRight: 1, color: 'solarized.base0'}}
-                //   />
-                //   <MuiFaIcon className="fa-regular fa-bracket-square" rotation={270} />
-                // </Box>
               }
               {...a11yProps(6)}
             />
@@ -284,15 +249,6 @@ export default function FirmwarePage() {
               }
               {...a11yProps(7)}
             />
-            {/* <Tab
-                label="Numpad"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon icon={faCalculator} />
-                  </Box>
-                }
-                {...a11yProps(8)}
-              /> */}
             <Tab
               label="Qwerty"
               icon={
@@ -302,18 +258,8 @@ export default function FirmwarePage() {
               }
               {...a11yProps(8)}
             />
-            {/* <Tab
-                label="Encoder"
-                icon={
-                  <Box component="span">
-                    <MuiFaIcon icon={faDial} sx={{fontSize: 16}} />
-                  </Box>
-                }
-                {...a11yProps(9)}
-              /> */}
           </Tabs>
         </Box>
-        {/* <Copyright /> */}
       </Box>
       <Grid container sx={{mt: 10}} justifyContent="center" columnSpacing={12} rowSpacing={6}>
         <Grid size={{xs: 12, sm: 'auto'}} display="flex" justifyContent="center">
@@ -333,11 +279,6 @@ export default function FirmwarePage() {
                 '& .MuiToggleButton-root': {
                   color: 'text.primary'
                 }
-                // '& .Mui-selected': {
-                // bgcolor: 'primary.main',
-                // color: 'primary.contrastText'
-                // '&:hover': {bgcolor: 'primary.dark'}
-                // }
               }}
             >
               <ToggleButton value="planck" aria-label="11-12 keys" sx={{paddingX: 2}}>
@@ -408,8 +349,6 @@ export default function FirmwarePage() {
                   pl: 3,
                   mb: 2,
                   '& li:not(:last-child)': {
-                    // borderBottom: '1px solid',
-                    // borderColor: 'divider',
                     marginBottom: 2
                   }
                 }}
@@ -482,8 +421,6 @@ export default function FirmwarePage() {
                     mt: 2,
                     pt: 2,
                     fontWeight: 600
-                    // borderTop: '1px solid',
-                    // borderColor: 'divider'
                   }}
                 >
                   <em>11-12 Key Bottom Row Layouts Only</em>
@@ -505,34 +442,19 @@ export default function FirmwarePage() {
                 </li>
               </Box>
             </Box>
-            {/* <Type
-                variant="body2"
-                color="text.secondary"
-                sx={{fontStyle: 'italic', mb: 4}}
-              >
-                This section documents the deeper firmware-level changes that
-                make Serenity distinct.
-              </Type> */}
 
             <Box sx={{mt: 4}}>
               {/* Layout Design & Logic */}
               <Type variant="h5" gutterBottom color="primary">
                 Layout Design & Logic
               </Type>
-              {/* <Type paragraph>
-                This section explains the reasoning and design goals behind the
-                key layout and overall structure of Serenity’s firmware. It’s
-                meant to help others understand how the layers, functions, and
-                ergonomics come together.
-              </Type> */}
+
               <Box
                 component="ul"
                 sx={{
                   pl: 3,
                   mb: 2,
                   '& li:not(:last-child)': {
-                    // borderBottom: '1px solid',
-                    // borderColor: 'divider',
                     marginBottom: 2
                   }
                 }}
@@ -577,14 +499,6 @@ export default function FirmwarePage() {
                   </Type>
                 </li>
               </Box>
-              {/* <Type
-                variant="body2"
-                color="text.secondary"
-                sx={{fontStyle: 'italic'}}
-              >
-                Intended to capture the thought process behind the Serenity
-                layout’s design.
-              </Type> */}
             </Box>
           </Box>
         </Grid>

@@ -116,12 +116,39 @@
 }
 
 @layer base {
+  html,
+  body {
+    @apply m-0 h-full p-0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground max-w-screen overflow-x-hidden font-sans antialiased;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  [data-row='true'] > :nth-child(7) {
+    transition: margin-left 160ms ease-in-out;
+  }
+
+  [data-layout='corne'] [data-row='true'] > :nth-child(7) {
+    @apply ml-8;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-row='true'] > :nth-child(7) {
+      transition: none;
+    }
   }
 
   /* https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor */
@@ -129,10 +156,6 @@
   [role='button']:not(:disabled) {
     cursor: pointer;
   }
-}
-
-body {
-  @apply font-sans;
 }
 
 h1,

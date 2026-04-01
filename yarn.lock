@@ -5785,6 +5785,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"color-alpha@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "color-alpha@npm:2.0.0"
+  dependencies:
+    color-parse: "npm:^2.0.0"
+  checksum: 10c0/3874dc564966ee26545ea0658ebcb66531ce949d7f9b1739d96400c9031c6d792e3f85d5c39a414d16065ca98036cff9a02b6f42e24a0e303e2cd9f30f014579
+  languageName: node
+  linkType: hard
+
 "color-convert@npm:^2.0.1":
   version: 2.0.1
   resolution: "color-convert@npm:2.0.1"
@@ -5794,10 +5803,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"color-name@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "color-name@npm:2.1.0"
+  checksum: 10c0/9c953caba99557fce472232ded438c56b902c569cb15d66fcfbdf6374206126eef52ab66459f3984d4074b4aa8ab95e6f4b31a8e4f228dea57d0afecf94281fa
+  languageName: node
+  linkType: hard
+
 "color-name@npm:~1.1.4":
   version: 1.1.4
   resolution: "color-name@npm:1.1.4"
   checksum: 10c0/a1a3f914156960902f46f7f56bc62effc6c94e84b2cae157a526b1c1f74b677a47ec602bf68a61abfa2b42d15b7c5651c6dbe72a43af720bc588dff885b10f95
+  languageName: node
+  linkType: hard
+
+"color-parse@npm:^2.0.0":
+  version: 2.0.2
+  resolution: "color-parse@npm:2.0.2"
+  dependencies:
+    color-name: "npm:^2.0.0"
+  checksum: 10c0/5761baa81e3c8acf3625f4a6ca77b72e77ee9429c0b9757baab18ea1af0861919aee47e337675c47ee5bf3bc2b10cd0690e226322058e94457f2b501e1ef132b
   languageName: node
   linkType: hard
 
@@ -11336,6 +11361,7 @@ __metadata:
     "@vercel/node": "npm:^5.6.22"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
+    color-alpha: "npm:^2.0.0"
     eslint: "npm:^9.39.4"
     eslint-config-next: "npm:16.2.1"
     eslint-config-prettier: "npm:^10.1.8"
