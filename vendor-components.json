@@ -10,6 +10,31 @@
         "src/components/animate-ui/primitives/radix/hover-card.tsx",
         "src/components/animate-ui/components/radix/hover-card.tsx"
       ]
+    },
+    {
+      "name": "switch",
+      "source": "animate-ui",
+      "spec": "@animate-ui/components-radix-switch",
+      "paths": [
+        "src/hooks/use-controlled-state.tsx",
+        "src/lib/get-strict-context.tsx",
+        "src/components/animate-ui/primitives/radix/switch.tsx",
+        "src/components/animate-ui/components/radix/switch.tsx"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "source": "animate-ui",
+      "spec": "@animate-ui/components-radix-toggle-group",
+      "paths": [
+        "src/hooks/use-controlled-state.tsx",
+        "src/lib/get-strict-context.tsx",
+        "src/components/animate-ui/primitives/effects/highlight.tsx",
+        "src/components/animate-ui/primitives/radix/toggle.tsx",
+        "src/components/animate-ui/components/radix/toggle.tsx",
+        "src/components/animate-ui/primitives/radix/toggle-group.tsx",
+        "src/components/animate-ui/components/radix/toggle-group.tsx"
+      ]
     }
   ]
 }

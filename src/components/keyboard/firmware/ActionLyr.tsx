@@ -1,13 +1,13 @@
-import KeyIcon from '@components/key/KeyIcon'
-import {KeyLegend} from '@components/key'
-import {KeyLegendProps} from '@components/key/KeyLegend'
-import PopoverDesc from '@components/key/PopoverDesc'
-import ShiftSubIcn from '@components/key/ShiftSubIcn'
-import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
-import {type KeyboardLayout} from 'src/app/firmware/page'
+import KeyIcon from '@/components/key/KeyIcon'
+import {KeyLegend} from '@/components/key'
+import {KeyLegendProps} from '@/components/key/KeyLegend'
+import PopoverDesc from '@/components/key/PopoverDesc'
+import ShiftSubIcn from '@/components/key/ShiftSubIcn'
+import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
+import {type KeyboardLayout} from '@/app/firmware/page'
 import {Grid, Box, Typography} from '@mui/material'
 import KeyboardGridRow from '../KeyboardGridRow'
-import MuiFaIcon from '@components/FaIcon'
+import MuiFaIcon from '@/components/FaIcon'
 
 function RectangleProCaption() {
   return (

@@ -6,11 +6,11 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger
-} from '@components/animate-ui/components/radix/hover-card'
+} from '@/components/animate-ui/components/radix/hover-card'
 import {useColorScheme} from '@mui/material'
 import {type SxProps, useTheme, type Theme} from '@mui/material/styles'
-import {cn} from '@lib/cn'
-import {sxToInlineStyle} from '@lib/sxToInlineStyle'
+import {cn} from '@/lib/cn'
+import {sxToInlineStyle} from '@/lib/sxToInlineStyle'
 
 type Props = HTMLAttributes<HTMLDivElement> & {
   keyId?: string

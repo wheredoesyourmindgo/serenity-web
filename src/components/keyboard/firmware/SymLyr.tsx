@@ -1,11 +1,11 @@
-import KeyIcon from '@components/key/KeyIcon'
-import {KeyLegend} from '@components/key'
-import {KeyLegendProps} from '@components/key/KeyLegend'
+import KeyIcon from '@/components/key/KeyIcon'
+import {KeyLegend} from '@/components/key'
+import {KeyLegendProps} from '@/components/key/KeyLegend'
 import {Grid, Box} from '@mui/material'
-import PopoverDesc from '@components/key/PopoverDesc'
-import ShiftSubIcn from '@components/key/ShiftSubIcn'
-import LyrHoldSubIcn from '@components/key/LyrHoldSubIcn'
-import {type KeyboardLayout} from 'src/app/firmware/page'
+import PopoverDesc from '@/components/key/PopoverDesc'
+import ShiftSubIcn from '@/components/key/ShiftSubIcn'
+import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
+import {type KeyboardLayout} from '@/app/firmware/page'
 import KeyboardGridRow from '../KeyboardGridRow'
 
 export default function SymLyr({layout}: {layout: KeyboardLayout}) {

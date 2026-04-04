@@ -1,8 +1,8 @@
 'use client'
 
 import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '@lib/cn'
-import {useTheme} from '@mui/material/styles'
+import {cn} from '@/lib/cn'
+import {colorTokenToCssValue} from '@/lib/colorToken'
 import type {CSSProperties, ElementType, HTMLAttributes} from 'react'
 
 const typographyVariants = cva('', {
@@ -35,28 +35,9 @@ type Props = HTMLAttributes<HTMLElement> &
     color?: string
   }
 
-function resolveColorToken(paletteSource: unknown, path: string[]): string | undefined {
-  let value: unknown = paletteSource
-
-  for (const segment of path) {
-    value =
-      typeof value === 'object' && value !== null
-        ? (value as Record<string, unknown>)[segment]
-        : undefined
-  }
-
-  return typeof value === 'string' ? value : undefined
-}
-
 export function Typography({as: Comp = 'p', className, variant, color, style, ...rest}: Props) {
-  const theme = useTheme()
-  const colorPath = color?.includes('.') ? color.split('.') : undefined
-  const resolvedColor =
-    colorPath &&
-    (resolveColorToken(theme.vars?.palette, colorPath) ??
-      resolveColorToken(theme.palette, colorPath))
   const resolvedStyle: CSSProperties = {
-    ...(resolvedColor && {color: resolvedColor}),
+    ...(color && {color: colorTokenToCssValue(color)}),
     ...style
   }
 

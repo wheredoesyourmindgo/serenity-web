@@ -1,5 +1,5 @@
 import {Box, Typography as Type} from '@mui/material'
-import AlphaKeyboard from '@components/keyboard/Alphas'
+import AlphaKeyboard from '@/components/keyboard/Alphas'
 
 export default function IndexPage() {
   return (

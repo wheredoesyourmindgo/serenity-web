@@ -1,13 +1,13 @@
 'use client'
 
 // cspell:ignore Lgnd
-// import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
+// import KeyIcon, {KeyIconProps} from '@/components/key/KeyIcon'
 // import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
 // import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
-import {KeyLegend} from '@components/key'
+import {KeyLegend} from '@/components/key'
 import withAlpha from 'color-alpha'
 import {useTheme, Grid} from '@mui/material'
-import {KeyLegendProps} from '@components/key/KeyLegend'
+import {KeyLegendProps} from '@/components/key/KeyLegend'
 import KeyboardGridRow from './KeyboardGridRow'
 
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (

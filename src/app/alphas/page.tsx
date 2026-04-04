@@ -11,16 +11,16 @@ import {
   ToggleButtonGroup,
   Typography as Type
 } from '@mui/material'
-// import Copyright from '@components/Copyright'
-import AlphaKeyboard from '@components/keyboard/Alphas'
-import MuiFaIcon from '@components/FaIcon'
-import genkey from '@components/stats/genkey'
-import a200 from '@components/stats/a200'
-import colemakmods from '@components/stats/colemakmods'
-// import ColStaggerAlphaKeyboard from '@components/keyboard/ColStaggerAlphas'
-// import genkeyColStagger from '@components/stats/genkeyColStagger'
-// import a200ColStagger from '@components/stats/a200ColStagger'
-// import colemakmodsColStagger from '@components/stats/colemakmodsColStagger'
+// import Copyright from '@/components/Copyright'
+import AlphaKeyboard from '@/components/keyboard/Alphas'
+import MuiFaIcon from '@/components/FaIcon'
+import genkey from '@/components/stats/genkey'
+import a200 from '@/components/stats/a200'
+import colemakmods from '@/components/stats/colemakmods'
+// import ColStaggerAlphaKeyboard from '@/components/keyboard/ColStaggerAlphas'
+// import genkeyColStagger from '@/components/stats/genkeyColStagger'
+// import a200ColStagger from '@/components/stats/a200ColStagger'
+// import colemakmodsColStagger from '@/components/stats/colemakmodsColStagger'
 
 type Show = 'a200' | 'genkey' | 'colemakmods'
 

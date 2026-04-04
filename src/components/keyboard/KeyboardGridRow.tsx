@@ -1,9 +1,12 @@
-import {Grid, type GridProps} from '@mui/material'
+import type {HTMLAttributes} from 'react'
+import {cn} from '@/lib/cn'
 
-export default function KeyboardGridRow({children, ...rest}: Partial<GridProps>) {
+type Props = HTMLAttributes<HTMLDivElement>
+
+export default function KeyboardGridRow({children, className, ...rest}: Props) {
   return (
-    <Grid container wrap="nowrap" spacing={1} data-row sx={{maxWidth: '100%'}} {...rest}>
+    <div className={cn('flex max-w-full flex-nowrap gap-2', className)} data-row {...rest}>
       {children}
-    </Grid>
+    </div>
   )
 }
