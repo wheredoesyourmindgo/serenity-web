@@ -1,11 +1,11 @@
 // cspell:ignore xmark
-import KeyIcon from '@components/key/KeyIcon'
-import {KeyLegend} from '@components/key'
-import {KeyLegendProps} from '@components/key/KeyLegend'
+import KeyIcon from '@/components/key/KeyIcon'
+import {KeyLegend} from '@/components/key'
+import {KeyLegendProps} from '@/components/key/KeyLegend'
 import {Box, Grid} from '@mui/material'
-import PopoverDesc from '@components/key/PopoverDesc'
-import ShiftSubIcn from '@components/key/ShiftSubIcn'
-import ModSubHoldIcn from '@components/key/ModSubHoldIcn'
+import PopoverDesc from '@/components/key/PopoverDesc'
+import ShiftSubIcn from '@/components/key/ShiftSubIcn'
+import ModSubHoldIcn from '@/components/key/ModSubHoldIcn'
 import KeyboardGridRow from '../KeyboardGridRow'
 
 export default function FnLyr() {

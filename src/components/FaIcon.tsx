@@ -2,8 +2,9 @@
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import type {FontAwesomeIconProps} from '@fortawesome/react-fontawesome'
-import {cn} from '@lib/cn'
-import {sxToInlineStyle} from '@lib/sxToInlineStyle'
+import {cn} from '@/lib/cn'
+import {colorTokenToCssValue} from '@/lib/colorToken'
+import {sxToInlineStyle} from '@/lib/sxToInlineStyle'
 import {useTheme, type SxProps, type Theme} from '@mui/material/styles'
 import type {CSSProperties, HTMLAttributes} from 'react'
 
@@ -19,31 +20,6 @@ type IconStyle = CSSProperties & {
   '--fa-icon-transform'?: string
 }
 
-function resolveColorToken(theme: Theme, color?: string) {
-  if (!color || !color.includes('.')) {
-    return color
-  }
-
-  const path = color.split('.')
-
-  for (const paletteSource of [theme.vars?.palette, theme.palette]) {
-    let value: unknown = paletteSource
-
-    for (const segment of path) {
-      value =
-        typeof value === 'object' && value !== null
-          ? (value as Record<string, unknown>)[segment]
-          : undefined
-    }
-
-    if (typeof value === 'string') {
-      return value
-    }
-  }
-
-  return color
-}
-
 export default function FaIcon(props: Props) {
   const theme = useTheme()
   const {sx, style, color, rotation, icon, className, ...rest} = props
@@ -51,7 +27,7 @@ export default function FaIcon(props: Props) {
   const {transform: sxTransform, ...restSxStyle} = sxStyle
   const incomingTransform = typeof sxTransform === 'string' ? sxTransform : undefined
   const transformWithSpace = incomingTransform ? `${incomingTransform} ` : ''
-  const resolvedColor = resolveColorToken(theme, color)
+  const resolvedColor = colorTokenToCssValue(color)
   const computedTransform =
     typeof rotation === 'number' ? `${transformWithSpace}rotate(${rotation}deg)` : incomingTransform
 

@@ -6,8 +6,8 @@ import {
   type HoverCardProps as HoverCardPrimitiveProps,
   type HoverCardTriggerProps as HoverCardTriggerPrimitiveProps,
   type HoverCardContentProps as HoverCardContentPrimitiveProps
-} from '@components/animate-ui/primitives/radix/hover-card'
-import {cn} from '@lib/cn'
+} from '@/components/animate-ui/primitives/radix/hover-card'
+import {cn} from '@/lib/cn'
 
 type HoverCardProps = HoverCardPrimitiveProps
 

@@ -1,40 +1,41 @@
 'use client'
 
 import {useEffect, useEffectEvent} from 'react'
-import {ThemeProvider, useColorScheme} from '@mui/material/styles'
-import {useMediaQuery, useTheme, Box} from '@mui/material'
+import {useColorScheme} from '@mui/material/styles'
+import {Box} from '@mui/material'
+import {useTheme as useNextTheme} from 'next-themes'
 
 type Props = {
   children: React.ReactNode
 }
 export default function ToggleColorMode({children}: Props) {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  const theme = useTheme()
+  const {resolvedTheme} = useNextTheme()
   const {mode: _mode, setMode} = useColorScheme()
 
-  const onDarkModeChange = useEffectEvent(() => {
-    setMode(prefersDarkMode ? 'dark' : 'light')
+  const syncColorMode = useEffectEvent(() => {
+    if (resolvedTheme !== 'light' && resolvedTheme !== 'dark') {
+      return
+    }
+
+    setMode(resolvedTheme)
   })
 
-  // Sync UI color mode with system preference changes only
   useEffect(() => {
-    onDarkModeChange()
-  }, [prefersDarkMode])
+    syncColorMode()
+  }, [resolvedTheme])
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box
-        bgcolor="background.default"
-        overflow="auto"
-        height="100vh"
-        // position="absolute"
-        // top={0}
-        // left={0}
-        // right={0}
-        // bottom={0}
-      >
-        {children}
-      </Box>
-    </ThemeProvider>
+    <Box
+      bgcolor="background.default"
+      overflow="auto"
+      height="100vh"
+      // position="absolute"
+      // top={0}
+      // left={0}
+      // right={0}
+      // bottom={0}
+    >
+      {children}
+    </Box>
   )
 }

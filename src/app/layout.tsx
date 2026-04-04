@@ -1,9 +1,10 @@
-import AppStyles from '@components/AppStyles'
-import Navbar from '@components/Navbar'
-import theme from '@lib/theme'
-import {CssBaseline, ThemeProvider} from '@mui/material'
+import AppStyles from '@/components/AppStyles'
+import Navbar from '@/components/Navbar'
+import {ThemeProvider as AppThemeProvider} from '@/components/theme-provider'
+import theme from '@/lib/theme'
+import {CssBaseline, ThemeProvider as MuiThemeProvider} from '@mui/material'
 import {AppRouterCacheProvider} from '@mui/material-nextjs/v16-appRouter'
-import ToggleColorMode from '@components/ToggleColorMode'
+import ToggleColorMode from '@/components/ToggleColorMode'
 import {Analytics} from '@vercel/analytics/next'
 import localFont from 'next/font/local'
 import './globals.css'
@@ -99,24 +100,31 @@ const bodyFont = localFont({
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${bodyFont.variable}`} data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      className={`${bodyFont.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <AppStyles />
-            <ToggleColorMode>
-              <div className="flex h-screen flex-col">
-                <Navbar />
-                <main className="flex w-full flex-1 justify-center">
-                  <div className="my-12 block w-full flex-1">{children}</div>
-                </main>
-              </div>
-            </ToggleColorMode>
-            <Analytics />
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <AppThemeProvider>
+          <AppRouterCacheProvider>
+            <MuiThemeProvider theme={theme}>
+              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+              <CssBaseline />
+              <AppStyles />
+              <ToggleColorMode>
+                <div className="flex h-screen flex-col">
+                  <Navbar />
+                  <main className="flex w-full flex-1 justify-center">
+                    <div className="my-12 block w-full flex-1">{children}</div>
+                  </main>
+                </div>
+              </ToggleColorMode>
+              <Analytics />
+            </MuiThemeProvider>
+          </AppRouterCacheProvider>
+        </AppThemeProvider>
       </body>
     </html>
   )

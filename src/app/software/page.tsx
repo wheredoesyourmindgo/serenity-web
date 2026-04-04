@@ -3,12 +3,12 @@
 import {useState} from 'react'
 import withAlpha from 'color-alpha'
 import {Box, Button, Container, Grid, Tab, Tabs, Typography as Type} from '@mui/material'
-// import Copyright from '@components/Copyright'
-import BaseLyr from '@components/keyboard/software/BaseLyr'
-import MuiFaIcon from '@components/FaIcon'
-import FnLyr from '@components/keyboard/software/FnLyr'
+// import Copyright from '@/components/Copyright'
+import BaseLyr from '@/components/keyboard/software/BaseLyr'
+import MuiFaIcon from '@/components/FaIcon'
+import FnLyr from '@/components/keyboard/software/FnLyr'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import QmkLegend from '@components/QmkLegend'
+import QmkLegend from '@/components/QmkLegend'
 
 interface TabPanelProps {
   children?: React.ReactNode

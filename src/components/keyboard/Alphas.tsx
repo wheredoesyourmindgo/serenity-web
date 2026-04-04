@@ -1,15 +1,14 @@
 'use client'
 
 // cspell:ignore Lgnd
-// import KeyIcon, {KeyIconProps} from '@components/key/KeyIcon'
-// import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
-// import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
-import {KeyLegend} from '@components/key'
-import {Grid, useTheme} from '@mui/material'
-import {KeyLegendProps} from '@components/key/KeyLegend'
+import {KeyLegend} from '@/components/key'
+import {KeyLegendProps} from '@/components/key/KeyLegend'
+import {readColorTokenValue} from '@/lib/colorToken'
+import {solarized} from '@/lib/solarizedPalette'
 import KeyboardGridRow from './KeyboardGridRow'
 import {useMemo} from 'react'
-import {createLetterColorScale} from '@lib/letterColorScale'
+import {createLetterColorScale} from '@/lib/letterColorScale'
+import {useTheme as useNextTheme} from 'next-themes'
 
 const AlphaKeyLgnd = ({
   children,
@@ -17,16 +16,17 @@ const AlphaKeyLgnd = ({
   frequencyColor = false,
   ...props
 }: KeyLegendProps & {frequencyColor?: boolean}) => {
-  const theme = useTheme()
+  const {resolvedTheme} = useNextTheme()
   const char = typeof children === 'string' ? children[0].toLowerCase() : ''
+  const fallbackPalette = resolvedTheme === 'dark' ? solarized.dark : solarized.light
 
   const getColor = useMemo(
     () =>
       createLetterColorScale(
-        theme.palette.solarized.base1, // low frequency color
-        theme.palette.solarized.base03 // high frequency color
+        readColorTokenValue('solarized.base1', fallbackPalette.base1), // low frequency color
+        readColorTokenValue('solarized.base03', fallbackPalette.base03) // high frequency color
       ),
-    [theme]
+    [fallbackPalette.base1, fallbackPalette.base03]
   )
 
   return (
@@ -44,18 +44,8 @@ const AlphaKeyLgnd = ({
 }
 
 export default function AlphaKeyboard() {
-  // const base02 = alpha(theme.palette.solarized.base02, 0.85)
-  // const base03 = alpha(theme.palette.solarized.base03, 0.95)
-
-  // const AlphaKeyIcn = useCallback(
-  //   ({...props}: KeyIconProps) => (
-  //     <KeyIcon KeyContainerProps={{sx: {borderWidth: 0}}} {...props} />
-  //   ),
-  //   []
-  // )
-
   return (
-    <Grid container direction="column" spacing={2} sx={{maxWidth: '100%'}}>
+    <div className="flex max-w-full flex-col gap-4">
       <KeyboardGridRow>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd frequencyColor>Q</AlphaKeyLgnd>
@@ -97,6 +87,6 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd>,</AlphaKeyLgnd>
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
       </KeyboardGridRow>
-    </Grid>
+    </div>
   )
 }

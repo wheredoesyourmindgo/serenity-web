@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "react-jsx",
-    "lib": ["dom", "es2017"],
-    "moduleResolution": "node",
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "moduleResolution": "bundler",
     "allowJs": true,
     "noEmit": true,
     "strict": true,
@@ -16,14 +16,8 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
     "paths": {
-      "@lib/*": ["src/lib/*"],
-      "@components/*": ["src/components/*"],
-      "@store/*": ["src/store/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@pages/*": ["src/pages/*"]
-      // "../../src/lib/api/*": ["src/lib/api/*"]
+      "@/*": ["./src/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
@@ -33,17 +27,14 @@
       {
         "name": "next"
       }
-    ],
-    "typeRoots": ["./src/types", "./node_modules/@types", "./src/share/types"]
+    ]
   },
   "exclude": ["node_modules"],
   "include": [
     "next-env.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "scripts/generate-sitemap.ts",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "src/app/layout-test/page.tsx.inactive"
+    ".next/dev/types/**/*.ts"
   ]
 }
