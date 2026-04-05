@@ -120,7 +120,9 @@ const eslintConfig = defineConfig([
             // animate
             'animate-in',
             'fade-in',
-            'fill-mode-both'
+            'fill-mode-both',
+            'font-body',
+            'text-solarized-green'
           ]
         }
       ]

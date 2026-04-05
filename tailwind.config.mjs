@@ -17,10 +17,8 @@ const tailwindConfig = {
     },
     extend: {
       fontFamily: {
-        // Tailwind/shadcn defaults:
-        sans: ['var(--font-body)'], // [TODO] This does not seem to work as expected, see globals.css
-        // Semantic aliases:
-        heading: ['var(--font-heading)'],
+        sans: ['var(--font-body)'],
+        heading: ['var(--font-body)'],
         body: ['var(--font-body)']
       }
     },

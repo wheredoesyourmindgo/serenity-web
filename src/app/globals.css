@@ -179,6 +179,10 @@
     @apply bg-background text-foreground max-w-screen overflow-x-hidden font-sans antialiased;
   }
 
+  h1 {
+    @apply font-light;
+  }
+
   strong {
     font-weight: 600;
   }

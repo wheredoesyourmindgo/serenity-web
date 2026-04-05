@@ -1,65 +1,47 @@
 'use client'
 
 import {
-  Box,
-  ToggleButtonGroup,
-  ToggleButton,
-  PaletteMode,
-  Tooltip,
-  useColorScheme
-} from '@mui/material'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger
+} from '@/components/animate-ui/components/radix/hover-card'
+import {Switch} from '@/components/animate-ui/components/radix/switch'
+import {IconMoon, IconSun} from '@tabler/icons-react'
+import {useTheme as useNextTheme} from 'next-themes'
 
 export default function ToggleDarkModeBtn() {
-  const {mode, setMode} = useColorScheme()
-  const handleMode = (_event: React.MouseEvent, value: PaletteMode) => {
-    if (value !== null && mode !== value) {
-      setMode(value)
-    }
-  }
+  const {resolvedTheme, setTheme} = useNextTheme()
+  const isDark = resolvedTheme === 'dark'
+  const ThemeIcon = isDark ? IconMoon : IconSun
 
   return (
-    <Box>
-      <ToggleButtonGroup
-        size="small"
-        value={mode}
-        exclusive
-        onChange={handleMode}
-        aria-label="text alignment"
-      >
-        <Tooltip title="Light's on!" enterDelay={1000}>
-          <ToggleButton value="light" aria-label="Light Mode">
-            <LightModeIcon
-              sx={[
-                {
-                  color: 'solarized.base2'
-                },
-                (theme) =>
-                  theme.applyStyles('dark', {
-                    color: 'solarized.base1'
-                  })
-              ]}
-            />
-          </ToggleButton>
-        </Tooltip>
+    <HoverCard openDelay={250} closeDelay={100}>
+      <HoverCardTrigger asChild>
+        <div className="flex items-center gap-2 text-white/85 dark:text-white/65">
+          <ThemeIcon className="size-4 shrink-0" stroke={1.9} />
+          <span className="sr-only">Toggle color mode</span>
+          <Switch
+            checked={isDark}
+            onCheckedChange={(checked) => {
+              setTheme(checked ? 'dark' : 'light')
+            }}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            pressedWidth={18}
+            className="h-7 w-12 rounded-full border border-white/20 bg-white/12 px-0.5 shadow-none backdrop-blur-sm data-[state=checked]:bg-black/30 data-[state=unchecked]:bg-white/12 dark:border-black/15 dark:data-[state=checked]:bg-black/35 dark:data-[state=unchecked]:bg-white/10"
+          />
+        </div>
+      </HoverCardTrigger>
 
-        <Tooltip title="Light's out!" enterDelay={1000}>
-          <ToggleButton value="dark" aria-label="Dark Mode">
-            <DarkModeIcon
-              sx={[
-                {
-                  color: 'solarized.base1'
-                },
-                (theme) =>
-                  theme.applyStyles('dark', {
-                    color: 'solarized.base02'
-                  })
-              ]}
-            />
-          </ToggleButton>
-        </Tooltip>
-      </ToggleButtonGroup>
-    </Box>
+      <HoverCardContent side="bottom" align="end" className="w-auto min-w-34 p-3">
+        <div className="flex items-center gap-2 text-sm">
+          {isDark ? (
+            <IconMoon className="size-3.5" stroke={1.8} />
+          ) : (
+            <IconSun className="size-3.5" stroke={1.8} />
+          )}
+          <span>{isDark ? "Light's out!" : "Light's on!"}</span>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
   )
 }

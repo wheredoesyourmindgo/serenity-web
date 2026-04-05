@@ -10,7 +10,7 @@ import SymLyr from '@/components/keyboard/firmware/SymLyr'
 import FuncLyr from '@/components/keyboard/firmware/FunctionLyr'
 import ActionLyr from '@/components/keyboard/firmware/ActionLyr'
 import MediaLyr from '@/components/keyboard/firmware/MediaLyr'
-import MuiFaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/FaIcon'
 import QwertyLyr from '@/components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@/components/keyboard/firmware/MouseLyr'
 import OsLyr from '@/components/keyboard/firmware/OsLyr'
@@ -181,7 +181,7 @@ export default function FirmwarePage() {
               label="Base"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-house-user" />
+                  <FaIcon className="fa-regular fa-house-user" />
                 </Box>
               }
               {...a11yProps(0)}
@@ -190,7 +190,7 @@ export default function FirmwarePage() {
               label="Mouse"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-mouse" />
+                  <FaIcon className="fa-regular fa-mouse" />
                 </Box>
               }
               {...a11yProps(1)}
@@ -199,7 +199,7 @@ export default function FirmwarePage() {
               label="Num/Nav"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-hashtag" sx={{fontSize: 15}} />
+                  <FaIcon className="fa-regular fa-hashtag" sx={{fontSize: 15}} />
                 </Box>
               }
               {...a11yProps(2)}
@@ -208,7 +208,7 @@ export default function FirmwarePage() {
               label="Action"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-table-layout" />
+                  <FaIcon className="fa-regular fa-table-layout" />
                 </Box>
               }
               {...a11yProps(3)}
@@ -217,7 +217,7 @@ export default function FirmwarePage() {
               label="Media"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-cog" />
+                  <FaIcon className="fa-regular fa-cog" />
                 </Box>
               }
               {...a11yProps(4)}
@@ -226,7 +226,7 @@ export default function FirmwarePage() {
               label="Symbol"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-at" />
+                  <FaIcon className="fa-regular fa-at" />
                 </Box>
               }
               {...a11yProps(5)}
@@ -235,7 +235,7 @@ export default function FirmwarePage() {
               label="OS"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-brands fa-apple" sx={{fontSize: 15}} />
+                  <FaIcon className="fa-brands fa-apple" sx={{fontSize: 15}} />
                 </Box>
               }
               {...a11yProps(6)}
@@ -244,7 +244,7 @@ export default function FirmwarePage() {
               label="Function"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-function" />
+                  <FaIcon className="fa-regular fa-function" />
                 </Box>
               }
               {...a11yProps(7)}
@@ -253,7 +253,7 @@ export default function FirmwarePage() {
               label="Qwerty"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-typewriter" />
+                  <FaIcon className="fa-regular fa-typewriter" />
                 </Box>
               }
               {...a11yProps(8)}

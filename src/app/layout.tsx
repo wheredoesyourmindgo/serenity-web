@@ -2,7 +2,7 @@ import AppStyles from '@/components/AppStyles'
 import Navbar from '@/components/Navbar'
 import {ThemeProvider as AppThemeProvider} from '@/components/theme-provider'
 import theme from '@/lib/theme'
-import {CssBaseline, ThemeProvider as MuiThemeProvider} from '@mui/material'
+import {ThemeProvider as MuiThemeProvider} from '@mui/material'
 import {AppRouterCacheProvider} from '@mui/material-nextjs/v16-appRouter'
 import ToggleColorMode from '@/components/ToggleColorMode'
 import {Analytics} from '@vercel/analytics/next'
@@ -94,7 +94,7 @@ const bodyFont = localFont({
       style: 'italic'
     }
   ],
-  variable: '--maple-mono-font',
+  variable: '--font-body',
   display: 'swap' // Use font swapping for better performance
 })
 
@@ -111,7 +111,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <AppRouterCacheProvider>
             <MuiThemeProvider theme={theme}>
               {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-              <CssBaseline />
+              {/* <CssBaseline /> */}
               <AppStyles />
               <ToggleColorMode>
                 <div className="flex h-screen flex-col">
