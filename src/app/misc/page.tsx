@@ -1,6 +1,6 @@
 'use client'
 
-import MuiFaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/FaIcon'
 import {solarized} from '@/lib/solarizedPalette'
 import {
   Box,
@@ -66,7 +66,7 @@ const CopyFab = ({text, tooltip = 'Copy', onCopied, sx}: CopyFabProps) => {
           ...sx
         }}
       >
-        <MuiFaIcon className="fa-regular fa-copy" color="solarized.base0" sx={{fontSize: 18}} />
+        <FaIcon className="fa-regular fa-copy" color="solarized.base0" sx={{fontSize: 18}} />
       </Fab>
     </Tooltip>
   )
@@ -398,7 +398,7 @@ end run
         </Type>
 
         <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-          <MuiFaIcon
+          <FaIcon
             className="fa-regular fa-ghost"
             color="solarized.green"
             sx={{fontSize: 24, marginRight: 2}}
@@ -437,7 +437,7 @@ end run
         <Divider sx={{marginTop: 4}} variant="middle" />
 
         <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-          <MuiFaIcon
+          <FaIcon
             className="fa-regular fa-terminal"
             color="solarized.green"
             sx={{fontSize: 22, marginRight: 2}}
@@ -476,7 +476,7 @@ end run
         <Divider sx={{marginTop: 4}} variant="middle" />
 
         <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-          <MuiFaIcon
+          <FaIcon
             className="fa-regular fa-hammer"
             color="solarized.green"
             sx={{fontSize: 24, marginRight: 2}}
@@ -515,7 +515,7 @@ end run
         <Divider sx={{marginTop: 4}} variant="middle" />
 
         <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-          <MuiFaIcon
+          <FaIcon
             className="fa-regular fa-robot"
             color="solarized.green"
             sx={{fontSize: 24, marginRight: 2}}
@@ -568,7 +568,7 @@ end run
         </Type>
 
         <Box sx={{mt: 4, display: 'inline-flex', alignItems: 'baseline'}}>
-          <MuiFaIcon
+          <FaIcon
             className="fa-regular fa-ban-smoking"
             color="solarized.green"
             sx={{fontSize: 27, marginRight: 2}}

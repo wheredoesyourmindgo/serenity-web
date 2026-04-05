@@ -1,43 +1,14 @@
-import {Box, Typography as Type} from '@mui/material'
 import AlphaKeyboard from '@/components/keyboard/Alphas'
 
 export default function IndexPage() {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center', // vertical centering
-        alignItems: 'center', // horizontal centering
-        minHeight: '100%', // fill the viewport height
-        textAlign: 'center', // optional, centers text inside
-        mt: '-10vh'
-      }}
-    >
-      {/* <Type>mode: {mode}</Type>
-          <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-      <Type
-        variant="h1"
-        color="primary"
-        sx={{
-          // typography: {xs: 'h2', md: 'h1'}, // responsive typography
-          fontStyle: 'italic',
-          fontFeatureSettings: "'ss02' on",
-          pb: {xs: 2, md: 4}
-        }}
-      >
+    <div className="mt-[-10vh] flex min-h-full flex-col items-center justify-center text-center">
+      <h1 className="font-body text-solarized-green pb-4 [font-feature-settings:'ss02'_on] text-4xl italic sm:text-5xl md:pb-8 md:text-6xl lg:text-[6rem]">
         Serenity
-      </Type>
-      <Box
-        sx={{
-          mt: 6,
-          transform: {xs: 'scale(0.53)', sm: 'scale(0.75)', md: 'none'},
-          transformOrigin: {xs: 'center center', md: 'initial'} // Ensures the scaling starts from the top left corner */
-          // height: {xs: 110, sm: 200, md: 'auto'}
-        }}
-      >
+      </h1>
+      <div className="mt-12 origin-center scale-[0.53] sm:scale-75 md:scale-100">
         <AlphaKeyboard />
-      </Box>
-    </Box>
+      </div>
+    </div>
   )
 }

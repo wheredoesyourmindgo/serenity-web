@@ -3,7 +3,7 @@ import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
 import {Box, Grid, Typography} from '@mui/material'
 import PopoverDesc from '@/components/key/PopoverDesc'
-import MuiFaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/FaIcon'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
 import KeyboardGridRow from '../KeyboardGridRow'
@@ -226,7 +226,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-arrow-pointer"
               sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
@@ -245,7 +245,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-arrow-pointer"
               sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
@@ -263,7 +263,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-arrow-pointer"
               sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
@@ -281,7 +281,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-arrow-pointer"
               sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
             />
@@ -385,7 +385,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               rotation={270}
               className="fa-regular fa-circle-sort-up"
               sx={{marginRight: 0.5, fontSize: 14}}
@@ -404,7 +404,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-circle-sort-down"
               sx={{marginRight: 0.5, fontSize: 14}}
             />
@@ -422,7 +422,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-circle-sort-up"
               sx={{marginRight: 0.5, fontSize: 14}}
             />
@@ -440,7 +440,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               sx={{marginRight: 0.5, fontSize: 14}}
               rotation={90}
               className="fa-regular fa-circle-sort-up"

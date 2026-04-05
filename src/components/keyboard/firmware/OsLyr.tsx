@@ -3,7 +3,7 @@ import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
 import {Box, Grid} from '@mui/material'
 import PopoverDesc from '@/components/key/PopoverDesc'
-import MuiFaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/FaIcon'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
 import KeyboardGridRow from '../KeyboardGridRow'
@@ -46,7 +46,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               sx={{
                 transform: 'translate3D(4.5px, -2px, 0)',
                 fontSize: 13
@@ -70,7 +70,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               sx={{
                 transform: 'translate3D(4.5px, -2px, 0)',
                 fontSize: 13
@@ -94,7 +94,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               rotation={135}
               sx={{
                 transform: 'translate3D(4.5px, -2px, 0)',
@@ -288,7 +288,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-solid fa-arrow-left-long"
               sx={{
                 transform: 'translate3D(7px, -4px, 0)',
@@ -309,7 +309,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-solid fa-arrow-right-long"
               color="solarized.base00"
               sx={{
@@ -364,7 +364,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-image"
               sx={{
                 transform: 'translate3D(7px, -2.5px, 0)',
@@ -389,7 +389,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-image"
               sx={{
                 transform: 'translate3D(8px, 4px, 0)',
@@ -414,7 +414,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-image"
               sx={{
                 transform: 'translate3D(7px, 1px, 0)',
@@ -454,7 +454,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-clipboard"
               sx={{
                 transform: 'translate3D(6.5px, 1px, 0)',
@@ -475,7 +475,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-clipboard"
               sx={{
                 transform: 'translate3D(8px, -2px, 0)',
@@ -497,7 +497,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-solid fa-xmark"
               sx={{
                 transform: 'translate3D(7.5px, -4px, 0)',
@@ -518,7 +518,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <MuiFaIcon
+            <FaIcon
               className="fa-solid fa-window-minimize"
               sx={{
                 transform: 'translate3D(7.5px, -6px, 0)',

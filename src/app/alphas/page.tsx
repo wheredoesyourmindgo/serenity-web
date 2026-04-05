@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 // import Copyright from '@/components/Copyright'
 import AlphaKeyboard from '@/components/keyboard/Alphas'
-import MuiFaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/FaIcon'
 import genkey from '@/components/stats/genkey'
 import a200 from '@/components/stats/a200'
 import colemakmods from '@/components/stats/colemakmods'
@@ -81,7 +81,7 @@ export default function AlphasPage() {
           }}
         >
           <Box sx={{display: 'flex', alignItems: 'center'}}>
-            <MuiFaIcon
+            <FaIcon
               className="fa-regular fa-star-shooting"
               sx={{color: 'solarized.base1', marginRight: 1}}
             />
@@ -139,7 +139,7 @@ export default function AlphasPage() {
             }}
           >
             <Type gutterBottom component="pre" sx={{color: 'solarized.base01'}}>
-              <MuiFaIcon
+              <FaIcon
                 className="fa-regular fa-angle-right"
                 sx={{color: 'solarized.green', marginRight: 1}}
               />
@@ -179,7 +179,7 @@ export default function AlphasPage() {
             }}
           >
             <Type gutterBottom component="pre" sx={{color: 'solarized.base01'}}>
-              <MuiFaIcon
+              <FaIcon
                 className="fa-regular fa-angle-right"
                 sx={{color: 'solarized.green', paddingRight: 2}}
               />

@@ -3,7 +3,6 @@
 // cspell:ignore Lgnd
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
-import {readColorTokenValue} from '@/lib/colorToken'
 import {solarized} from '@/lib/solarizedPalette'
 import KeyboardGridRow from './KeyboardGridRow'
 import {useMemo} from 'react'
@@ -18,15 +17,15 @@ const AlphaKeyLgnd = ({
 }: KeyLegendProps & {frequencyColor?: boolean}) => {
   const {resolvedTheme} = useNextTheme()
   const char = typeof children === 'string' ? children[0].toLowerCase() : ''
-  const fallbackPalette = resolvedTheme === 'dark' ? solarized.dark : solarized.light
+  const palette = resolvedTheme === 'dark' ? solarized.dark : solarized.light
 
   const getColor = useMemo(
     () =>
       createLetterColorScale(
-        readColorTokenValue('solarized.base1', fallbackPalette.base1), // low frequency color
-        readColorTokenValue('solarized.base03', fallbackPalette.base03) // high frequency color
+        palette.base1, // low frequency color
+        palette.base03 // high frequency color
       ),
-    [fallbackPalette.base1, fallbackPalette.base03]
+    [palette.base1, palette.base03]
   )
 
   return (

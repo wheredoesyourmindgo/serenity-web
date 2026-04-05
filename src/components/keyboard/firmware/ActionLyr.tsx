@@ -7,7 +7,7 @@ import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
 import {Grid, Box, Typography} from '@mui/material'
 import KeyboardGridRow from '../KeyboardGridRow'
-import MuiFaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/FaIcon'
 
 function RectangleProCaption() {
   return (
@@ -25,7 +25,7 @@ function RectangleProCaption() {
           fontWeight: 'bold'
         }}
       >
-        <MuiFaIcon
+        <FaIcon
           className="fa-regular fa-browser"
           color="solarized.blue"
           sx={{paddingRight: 2.25}}

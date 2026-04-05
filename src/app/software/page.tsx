@@ -5,7 +5,7 @@ import withAlpha from 'color-alpha'
 import {Box, Button, Container, Grid, Tab, Tabs, Typography as Type} from '@mui/material'
 // import Copyright from '@/components/Copyright'
 import BaseLyr from '@/components/keyboard/software/BaseLyr'
-import MuiFaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/FaIcon'
 import FnLyr from '@/components/keyboard/software/FnLyr'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import QmkLegend from '@/components/QmkLegend'
@@ -145,7 +145,7 @@ export default function SoftwarePage() {
               label="Base"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-house-user" />
+                  <FaIcon className="fa-regular fa-house-user" />
                 </Box>
               }
               {...a11yProps(0)}
@@ -155,7 +155,7 @@ export default function SoftwarePage() {
               label="FN Layer"
               icon={
                 <Box component="span">
-                  <MuiFaIcon className="fa-regular fa-keyboard" sx={{fontSize: 15}} />
+                  <FaIcon className="fa-regular fa-keyboard" sx={{fontSize: 15}} />
                 </Box>
               }
               {...a11yProps(1)}
