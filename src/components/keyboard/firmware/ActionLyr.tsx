@@ -24,10 +24,7 @@ function RectangleProCaption() {
           fontWeight: 'bold'
         }}
       >
-        <FaIcon
-          className="fa-regular fa-browser pr-[18px]"
-          color="solarized.blue"
-        />
+        <FaIcon className="fa-regular fa-browser pr-[18px]" color="solarized.blue" />
         Rectangle Pro
       </span>
     </div>
@@ -591,11 +588,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyIcon
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-regular fa-function -translate-x-[3px]"
-              />
+              <LyrHoldSubIcn className="fa-regular fa-function -translate-x-[3px]" />
             )}
-            className="fa-regular fa-layer-group text-[16px] translate-y-[2px]"
+            className="fa-regular fa-layer-group translate-y-[2px] text-[16px]"
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (

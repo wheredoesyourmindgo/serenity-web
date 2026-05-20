@@ -158,7 +158,7 @@ export default function FirmwarePage() {
       <div className="mt-20 flex flex-wrap justify-center gap-x-24 gap-y-12">
         <div className="flex justify-center">
           <fieldset>
-            <legend className="mb-2 w-full text-center text-sm font-medium">
+            <legend className="text-muted-foreground mb-2 w-full text-center text-sm font-medium">
               Bottom Row Layout
             </legend>
             <ToggleGroup
@@ -166,15 +166,20 @@ export default function FirmwarePage() {
               value={layout}
               onValueChange={handleLayoutChange}
               className="flex-col"
+              highlightClassName="bg-solarized-blue/10 dark:bg-solarized-cyan/10"
             >
               <ToggleGroupItem
                 value="planck"
                 aria-label="11-12 keys"
-                className="justify-start px-4"
+                className="data-[state=on]:text-solarized-blue dark:data-[state=on]:text-solarized-cyan justify-start px-4"
               >
                 11-12 keys <span className="inline pl-2 italic">(Planck)</span>
               </ToggleGroupItem>
-              <ToggleGroupItem value="corne" aria-label="5-6 keys" className="justify-start px-4">
+              <ToggleGroupItem
+                value="corne"
+                aria-label="5-6 keys"
+                className="data-[state=on]:text-solarized-blue dark:data-[state=on]:text-solarized-cyan justify-start px-4"
+              >
                 5-6 keys <span className="inline pl-2 italic">(Corne)</span>
               </ToggleGroupItem>
             </ToggleGroup>

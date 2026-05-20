@@ -17,7 +17,7 @@ export default function BaseLyr() {
         <KeyboardGridRow>
           <KeyIcon
             // customShiftCode
-            className="fa-regular fa-lock-a text-[19px] translate-x-[2px]"
+            className="fa-regular fa-lock-a translate-x-[2px] text-[19px]"
             KeyContainerProps={{
               style: {
                 width: 86.5, // 1.5u (equation is: (55+8)*1.5-8)
@@ -55,7 +55,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-rectangles-mixed"
+            className="fa-regular fa-rectangles-mixed text-[19px]"
             KeyContainerProps={{
               keyId: 'mission-control-key',
               popOverContent: (
@@ -66,7 +66,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-magnifying-glass"
+            className="fa-regular fa-magnifying-glass text-[19px]"
             KeyContainerProps={{
               keyId: 'spotlight-key',
               popOverContent: (
@@ -77,7 +77,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-microphone"
+            className="fa-regular fa-microphone text-[19px]"
             KeyContainerProps={{
               keyId: 'siri-key',
               popOverContent: (
@@ -99,7 +99,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-backward"
+            className="fa-regular fa-backward text-[19px]"
             KeyContainerProps={{
               keyId: 'rewind-key',
               popOverContent: (
@@ -110,7 +110,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-play-pause"
+            className="fa-regular fa-play-pause text-[19px]"
             KeyContainerProps={{
               keyId: 'play-pause-key',
               popOverContent: (
@@ -121,7 +121,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-forward"
+            className="fa-regular fa-forward text-[19px]"
             KeyContainerProps={{
               keyId: 'fast-forward-key',
               popOverContent: (
@@ -132,7 +132,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-volume-slash"
+            className="fa-regular fa-volume-slash text-[19px]"
             KeyContainerProps={{
               keyId: 'mute-key',
               popOverContent: (
@@ -143,7 +143,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-volume-low"
+            className="fa-regular fa-volume-low text-[19px]"
             KeyContainerProps={{
               keyId: 'volume-down-key',
               popOverContent: (
@@ -154,7 +154,7 @@ export default function BaseLyr() {
             }}
           />
           <KeyIcon
-            className="text-[19px] fa-regular fa-volume-high"
+            className="fa-regular fa-volume-high text-[19px]"
             KeyContainerProps={{
               keyId: 'volume-up-key',
               popOverContent: (
@@ -243,7 +243,7 @@ export default function BaseLyr() {
         <KeyboardGridRow>
           <KeyIcon
             // customShiftCode
-            className="fa-regular fa-arrow-right-long-to-line text-[19px] translate-x-[2px]"
+            className="fa-regular fa-arrow-right-long-to-line translate-x-[2px] text-[19px]"
             KeyContainerProps={{
               style: {
                 width: 86.5, // 1.5u
@@ -488,11 +488,9 @@ export default function BaseLyr() {
             }}
           /> */}
           <KeyIcon
-            className="fa-light fa-globe text-[18px] translate-y-[2px]"
+            className="fa-light fa-globe translate-y-[2px] text-[18px]"
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-regular fa-keyboard -translate-x-[4px]"
-              />
+              <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-[4px]" />
             )}
             KeyContainerProps={{
               keyId: 'fn-layer-key',
@@ -529,9 +527,7 @@ export default function BaseLyr() {
               )
             }}
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-regular fa-keyboard -translate-x-[6px]"
-              />
+              <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-[6px]" />
             )}
           />
           <KeyIcon

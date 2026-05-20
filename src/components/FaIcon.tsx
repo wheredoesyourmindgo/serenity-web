@@ -20,8 +20,7 @@ type IconStyle = React.CSSProperties & {
 export default function FaIcon(props: Props) {
   const {style, color, rotation, icon, className, ...rest} = props
   const resolvedColor = colorTokenToCssValue(color)
-  const computedTransform =
-    typeof rotation === 'number' ? `rotate(${rotation}deg)` : undefined
+  const computedTransform = typeof rotation === 'number' ? `rotate(${rotation}deg)` : undefined
 
   const iconStyle: IconStyle = {
     ...(resolvedColor && {'--fa-icon-color': resolvedColor}),

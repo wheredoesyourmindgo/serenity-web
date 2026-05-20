@@ -179,9 +179,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyIcon
             // className="fa-regular fa-arrow-up-left-from-circle fa-regular fa-angles-down text-[19px] translate-y-[4px]"
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-brands fa-apple text-[14px]" />
-            )}
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-brands fa-apple text-[14px]" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
