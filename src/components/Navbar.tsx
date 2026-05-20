@@ -1,58 +1,38 @@
 'use client'
 
-import {AppBar, Box, Button, Toolbar} from '@mui/material'
 import Link from 'next/link'
 import ToggleDarkModeBtn from './ToggleDarkModeBtn'
+import {cn} from '@/lib/cn'
+import {usePathname} from 'next/navigation'
+
+const navLinks = [
+  {href: '/alphas', label: 'Alphas'},
+  {href: '/firmware', label: 'Firmware'},
+  {href: '/software', label: 'Software'},
+  {href: '/misc', label: 'Misc'}
+]
 
 export default function Navbar() {
+  const pathname = usePathname()
+
   return (
-    <Box
-      sx={{
-        display: 'relative'
-      }}
-    >
-      <AppBar
-        position="static"
-        sx={[
-          {
-            color: 'solarized.base3',
-            bgcolor: 'solarized.blue'
-            // opacity: 0.85,
-            // transition: '200ms linear opacity'
-            // '&:hover': {
-            // opacity: 1
-            // }
-          },
-          (theme) =>
-            theme.applyStyles('dark', {
-              color: 'solarized.base03',
-              backgroundColor: 'solarized.cyan'
-            })
-        ]}
-      >
-        <Toolbar variant="dense">
-          {/* <Type variant="h6" component="div" sx={{flexGrow: 1}}>
-            Serenity
-          </Type> */}
-          <Button LinkComponent={Link} href="/alphas" color="inherit">
-            Alphas
-          </Button>
-          <Button LinkComponent={Link} href="/firmware" color="inherit">
-            Firmware
-          </Button>
-          {/* <Button LinkComponent={Link} href="/vim" color="inherit">
-              Vim
-            </Button> */}
-          <Button LinkComponent={Link} href="/software" color="inherit">
-            Software
-          </Button>
-          <Button LinkComponent={Link} href="/misc" color="inherit">
-            Misc
-          </Button>
-          <Box sx={{flex: '1 0 auto'}} />
-          <ToggleDarkModeBtn />
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <header className="bg-solarized-blue dark:bg-solarized-cyan text-solarized-base3 dark:text-solarized-base03">
+      <div className="flex h-12 items-center px-4">
+        {navLinks.map(({href, label}) => (
+          <Link
+            key={href}
+            href={href}
+            className={cn(
+              'rounded px-3 py-1.5 text-sm font-medium transition-colors hover:bg-white/15',
+              pathname === href && 'bg-white/10'
+            )}
+          >
+            {label}
+          </Link>
+        ))}
+        <div className="flex-1" />
+        <ToggleDarkModeBtn />
+      </div>
+    </header>
   )
 }

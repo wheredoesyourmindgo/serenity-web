@@ -1,7 +1,6 @@
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
-import {Box, Grid} from '@mui/material'
 import PopoverDesc from '@/components/key/PopoverDesc'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
@@ -13,20 +12,17 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
   const isCorneLayout = layout === 'corne'
 
   return (
-    <Box data-layout={layout}>
-      <Grid container direction="column" spacing={1}>
+    <div data-layout={layout}>
+      <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-right-long-to-line"
-            sx={{
-              fontSize: 19
-            }}
+            className="fa-regular fa-arrow-right-long-to-line text-[19px]"
             KeyContainerProps={{
               keyId: 'tab-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -36,9 +32,9 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'screen-brightness-down-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Screen Brightness Down" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -47,9 +43,9 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'screen-brightness-up-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Screen Brightness Up" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -59,22 +55,22 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'toggle-dark-mode-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Toggle Light/Dark Mode" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: '0.75rem', textAlign: 'center'}}
+            className="text-[0.75rem] text-center"
             KeyContainerProps={{
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="RGB Speed Up" />
                   <br />
                   <PopoverDesc action="shifted" output="RGB Speed Down" />
-                </Box>
+                </div>
               )
             }}
           >
@@ -86,14 +82,14 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: '0.75rem', textAlign: 'center'}}
+            className="text-[0.75rem] text-center"
             KeyContainerProps={{
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="RGB Mode Next" />
                   <br />
                   <PopoverDesc action="shifted" output="RGB Mode Previous" />
-                </Box>
+                </div>
               )
             }}
           >
@@ -105,12 +101,12 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 11, textAlign: 'center'}}
+            className="text-[11px] text-center"
             KeyContainerProps={{
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="RGB Toggle" />
-                </Box>
+                </div>
               )
             }}
           >
@@ -122,14 +118,14 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: '0.75rem', textAlign: 'center'}}
+            className="text-[0.75rem] text-center"
             KeyContainerProps={{
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="RGB Hue Up" />
                   <br />
                   <PopoverDesc action="shifted" output="RGB Hue Down" />
-                </Box>
+                </div>
               )
             }}
           >
@@ -141,14 +137,14 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: '0.75rem', textAlign: 'center'}}
+            className="text-[0.75rem] text-center"
             KeyContainerProps={{
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="RGB Saturation Up" />
                   <br />
                   <PopoverDesc action="shifted" output="RGB Saturation Down" />
-                </Box>
+                </div>
               )
             }}
           >
@@ -160,14 +156,14 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: '0.75rem', textAlign: 'center'}}
+            className="text-[0.75rem] text-center"
             KeyContainerProps={{
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="RGB Brightness Up" />
                   <br />
                   <PopoverDesc action="shifted" output="RGB Brightness Down" />
-                </Box>
+                </div>
               )
             }}
           >
@@ -184,11 +180,11 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
                   <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
+                </div>
               )
             }}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
@@ -197,14 +193,13 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
         <KeyboardGridRow>
           <KeyIcon
             special
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-arrow-up-left-from-circle text-[18px]"
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Escape (or turn off Media layer lock)" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -214,9 +209,9 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'volume-down-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Volume Down" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -225,9 +220,9 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'volume-up-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Volume Up" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -237,9 +232,9 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'mute-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Toggle Mute" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -249,15 +244,15 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Lock/Unlock Media Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-option text-[18px]" color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
@@ -270,11 +265,11 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
                   <br />
                   <PopoverDesc action="double tap" output="Caps-word" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -285,11 +280,11 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'previous-track-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Previous (Playlist)" />
                   <br />
                   <PopoverDesc action="hold" output="Scan Back" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -298,11 +293,11 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'next-track-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Next (Playlist)" />
                   <br />
                   <PopoverDesc action="hold" output="Scan Forward" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -311,37 +306,35 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'play-pause-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Play/Pause" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-regular fa-typewriter"
+            className="fa-regular fa-typewriter translate-y-[2px]"
             LyrHoldSubIcn={() => (
               <LyrHoldSubIcn
-                className="fa-regular fa-layer-group"
-                sx={{transform: 'translateX(-2px)'}}
+                className="fa-regular fa-layer-group -translate-x-[2px]"
               />
             )}
-            sx={{transform: 'translateY(2px)'}}
             KeyContainerProps={{
               keyId: 'qwerty-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
+          <KeyLegend {...sharedProps} className="text-[0.75rem]">
             Debug
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '0.75rem'}}>
+          <KeyLegend {...sharedProps} className="text-[0.75rem]">
             Reset
           </KeyLegend>
           <KeyIcon
@@ -349,9 +342,9 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Enter" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -363,21 +356,21 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap" output="Toggle Mute" />
                   <br />
                   <PopoverDesc
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -385,27 +378,26 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Right Option" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -415,67 +407,62 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             LyrHoldSubIcn={() => (
               <LyrHoldSubIcn
-                className="fa-regular fa-function"
-                sx={{transform: 'translateX(-3px)'}}
+                className="fa-regular fa-function -translate-x-[3px]"
               />
             )}
-            className="fa-regular fa-layer-group"
-            sx={{fontSize: 16, transform: 'translateY(2px)'}}
+            className="fa-regular fa-layer-group text-[16px] translate-y-[2px]"
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="hold" output="Function Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           {/* <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -483,10 +470,9 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -496,7 +482,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -504,7 +490,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </KeyboardGridRow>
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }

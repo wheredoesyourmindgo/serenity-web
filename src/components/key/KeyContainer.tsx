@@ -1,44 +1,35 @@
 'use client'
 
 import type {CSSProperties, HTMLAttributes, ReactNode} from 'react'
-import withAlpha from 'color-alpha'
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger
 } from '@/components/animate-ui/components/radix/hover-card'
-import {useColorScheme} from '@mui/material'
-import {type SxProps, useTheme, type Theme} from '@mui/material/styles'
+import {useTheme} from 'next-themes'
 import {cn} from '@/lib/cn'
-import {sxToInlineStyle} from '@/lib/sxToInlineStyle'
 
 type Props = HTMLAttributes<HTMLDivElement> & {
   keyId?: string
   popOverContent?: ReactNode | string
   homing?: boolean
-  sx?: SxProps<Theme>
 }
 
 export default function KeyContainer({children, keyId, popOverContent, homing, ...rest}: Props) {
-  const {sx, className, style, ...r} = rest
-  const theme = useTheme()
-  const scheme = useColorScheme()
-  const darkMode = scheme.mode === 'dark'
-  const sxStyle = sxToInlineStyle(theme, sx)
+  const {className, style, ...r} = rest
+  const {resolvedTheme} = useTheme()
+  const darkMode = resolvedTheme === 'dark'
+
   const containerStyle: CSSProperties = {
-    borderColor: withAlpha(theme.palette.solarized.base1, 0.4),
+    borderColor: 'color-mix(in srgb, var(--solarized-base1) 40%, transparent)',
     // https://getcssscan.com/css-box-shadow-examples #14 edit
-    boxShadow:
-      'rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.1) 0px -2px 6px 0px inset',
-    ...(darkMode && {
-      boxShadow:
-        'rgba(205, 205, 51, 0.05) 0px 50px 100px -20px, rgba(255, 255, 255, 0.1) 0px 30px 60px -30px, rgba(245, 218, 162, 0.1) 0px -2px 6px 0px inset'
-    }),
+    boxShadow: darkMode
+      ? 'rgba(205, 205, 51, 0.05) 0px 50px 100px -20px, rgba(255, 255, 255, 0.1) 0px 30px 60px -30px, rgba(245, 218, 162, 0.1) 0px -2px 6px 0px inset'
+      : 'rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.1) 0px -2px 6px 0px inset',
     ...(homing && {
-      background: `radial-gradient(circle farthest-side, ${withAlpha(theme.palette.solarized.base0, 0.2)}, ${theme.palette.background.default})`,
+      background: `radial-gradient(circle farthest-side, color-mix(in srgb, var(--solarized-base0) 20%, transparent), var(--background))`,
       backgroundRepeat: 'no-repeat'
     }),
-    ...sxStyle,
     ...style
   }
   const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
@@ -69,8 +60,8 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
         id={popOverId}
         side="top"
         align="start"
-        sideOffset={6}
-        className="pointer-events-none w-max max-w-[24rem] p-3"
+        sideOffset={4}
+        className="pointer-events-none w-max max-w-[24rem] p-1"
       >
         {popOverContent}
       </HoverCardContent>

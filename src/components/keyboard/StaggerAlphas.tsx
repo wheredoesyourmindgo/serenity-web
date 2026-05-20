@@ -1,35 +1,20 @@
-'use client'
-
 // cspell:ignore Lgnd
-// import KeyIcon, {KeyIconProps} from '@/components/key/KeyIcon'
-// import {faDeleteRight} from '@fortawesome/pro-light-svg-icons'
-// import {faDeleteLeft} from '@fortawesome/pro-light-svg-icons'
 import {KeyLegend} from '@/components/key'
-import withAlpha from 'color-alpha'
-import {useTheme, Grid} from '@mui/material'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
 import KeyboardGridRow from './KeyboardGridRow'
 
+const base02 = 'color-mix(in srgb, var(--solarized-base02) 85%, transparent)'
+const base03 = 'color-mix(in srgb, var(--solarized-base03) 95%, transparent)'
+
 const AlphaKeyLgnd = ({children, ...props}: KeyLegendProps) => (
-  <KeyLegend KeyContainerProps={{sx: {borderWidth: 0, boxShadow: 'none'}}} {...props}>
+  <KeyLegend KeyContainerProps={{style: {borderWidth: 0, boxShadow: 'none'}}} {...props}>
     {children}
   </KeyLegend>
 )
 
 export default function StaggerAlphaKeyboard() {
-  const theme = useTheme()
-  const base02 = withAlpha(theme.palette.solarized.base02, 0.85)
-  const base03 = withAlpha(theme.palette.solarized.base03, 0.95)
-
-  // const AlphaKeyIcn = useCallback(
-  //   ({...props}: KeyIconProps) => (
-  //     <KeyIcon KeyContainerProps={{sx: {borderWidth: 0}}} {...props} />
-  //   ),
-  //   []
-  // )
-
   return (
-    <Grid container direction="column" spacing={2}>
+    <div className="flex flex-col gap-4">
       <KeyboardGridRow>
         {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="solarized.base1">Q</AlphaKeyLgnd>
@@ -44,7 +29,7 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
       </KeyboardGridRow>
       <KeyboardGridRow>
-        <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55 / 4, opacity: 0}}} />
+        <AlphaKeyLgnd KeyContainerProps={{style: {width: 55 / 4, opacity: 0}}} />
         <AlphaKeyLgnd color={base02}>D</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base02}>R</AlphaKeyLgnd>
         <AlphaKeyLgnd color={base03}>S</AlphaKeyLgnd>
@@ -58,7 +43,7 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd>'</AlphaKeyLgnd>
       </KeyboardGridRow>
       <KeyboardGridRow>
-        <AlphaKeyLgnd KeyContainerProps={{sx: {width: 55, opacity: 0}}} />
+        <AlphaKeyLgnd KeyContainerProps={{style: {width: 55, opacity: 0}}} />
         <AlphaKeyLgnd color="solarized.base0">V</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base1">X</AlphaKeyLgnd>
         <AlphaKeyLgnd color="solarized.base00">W</AlphaKeyLgnd>
@@ -75,6 +60,6 @@ export default function StaggerAlphaKeyboard() {
         <AlphaKeyLgnd>.</AlphaKeyLgnd>
         <AlphaKeyLgnd />
       </KeyboardGridRow>
-    </Grid>
+    </div>
   )
 }
