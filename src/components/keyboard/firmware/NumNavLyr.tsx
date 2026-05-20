@@ -369,9 +369,7 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-angles-up"
             // className="translate-y-[1px] text-[19px] translate-y-[4px]"
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-brands fa-apple text-[14px]" />
-            )}
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-brands fa-apple text-[14px]" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (

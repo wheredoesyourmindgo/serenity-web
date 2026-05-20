@@ -37,10 +37,7 @@ export default function AlphasPage() {
 
         <div className="mt-20 flex flex-col items-center justify-center">
           <div className="flex items-center gap-2">
-            <FaIcon
-              className="fa-regular fa-star-shooting"
-              color="solarized.base1"
-            />
+            <FaIcon className="fa-regular fa-star-shooting" color="solarized.base1" />
             <h6 className="text-solarized-base00 text-[1.25rem] font-medium">Statistics</h6>
           </div>
 
@@ -58,7 +55,7 @@ export default function AlphasPage() {
                   className={cn(
                     'border-border border-r px-4 py-2 text-sm font-medium transition-colors last:border-r-0',
                     show === value
-                      ? 'bg-accent text-solarized-blue dark:text-solarized-cyan'
+                      ? 'bg-solarized-blue/10 text-solarized-blue dark:bg-solarized-cyan/10 dark:text-solarized-cyan'
                       : 'text-solarized-base01 hover:bg-accent/50'
                   )}
                 >
@@ -72,10 +69,7 @@ export default function AlphasPage() {
         <div className={cn('max-w-full pt-8', show !== 'genkey' && 'hidden')}>
           <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
             <p className="text-solarized-base01 mb-2 flex items-center gap-2">
-              <FaIcon
-                className="fa-regular fa-angle-right"
-                color="solarized.green"
-              />
+              <FaIcon className="fa-regular fa-angle-right" color="solarized.green" />
               <em>./genkey -stagger=false analyze serenity</em>
             </p>
             <hr className="border-border mb-2" />
@@ -96,10 +90,7 @@ export default function AlphasPage() {
         <div className={cn('max-w-full pt-8', show !== 'a200' && 'hidden')}>
           <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
             <p className="text-solarized-base01 mb-2 flex items-center gap-4">
-              <FaIcon
-                className="fa-regular fa-angle-right"
-                color="solarized.green"
-              />
+              <FaIcon className="fa-regular fa-angle-right" color="solarized.green" />
               <em>./a200 vw serenity</em>
             </p>
             <hr className="border-border mb-2" />

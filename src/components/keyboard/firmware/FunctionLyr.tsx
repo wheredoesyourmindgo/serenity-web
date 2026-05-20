@@ -24,36 +24,16 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps}>
-            F1
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F2
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F3
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F4
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F5
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F6
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F7
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F8
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F9
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F10
-          </KeyLegend>
+          <KeyLegend {...sharedProps}>F1</KeyLegend>
+          <KeyLegend {...sharedProps}>F2</KeyLegend>
+          <KeyLegend {...sharedProps}>F3</KeyLegend>
+          <KeyLegend {...sharedProps}>F4</KeyLegend>
+          <KeyLegend {...sharedProps}>F5</KeyLegend>
+          <KeyLegend {...sharedProps}>F6</KeyLegend>
+          <KeyLegend {...sharedProps}>F7</KeyLegend>
+          <KeyLegend {...sharedProps}>F8</KeyLegend>
+          <KeyLegend {...sharedProps}>F9</KeyLegend>
+          <KeyLegend {...sharedProps}>F10</KeyLegend>
           <KeyIcon
             customShiftCode
             className="fa-regular fa-delete-left"
@@ -82,36 +62,20 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps}>
-            F11
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F12
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F13
-          </KeyLegend>
+          <KeyLegend {...sharedProps}>F11</KeyLegend>
+          <KeyLegend {...sharedProps}>F12</KeyLegend>
+          <KeyLegend {...sharedProps}>F13</KeyLegend>
           <KeyLegend {...sharedProps} homing>
             F14
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F15
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F16
-          </KeyLegend>
+          <KeyLegend {...sharedProps}>F15</KeyLegend>
+          <KeyLegend {...sharedProps}>F16</KeyLegend>
           <KeyLegend {...sharedProps} homing>
             F17
           </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F18
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F19
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F20
-          </KeyLegend>
+          <KeyLegend {...sharedProps}>F18</KeyLegend>
+          <KeyLegend {...sharedProps}>F19</KeyLegend>
+          <KeyLegend {...sharedProps}>F20</KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
@@ -131,18 +95,10 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps}>
-            F21
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F22
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F23
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>
-            F24
-          </KeyLegend>
+          <KeyLegend {...sharedProps}>F21</KeyLegend>
+          <KeyLegend {...sharedProps}>F22</KeyLegend>
+          <KeyLegend {...sharedProps}>F23</KeyLegend>
+          <KeyLegend {...sharedProps}>F24</KeyLegend>
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />

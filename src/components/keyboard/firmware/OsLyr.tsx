@@ -37,9 +37,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="text-[13px] fa-solid fa-xmark"
-            />
+            <FaIcon className="fa-solid fa-xmark text-[13px]" />
           </KeyIcon>
           <KeyIcon
             className="fa-solid fa-circle text-[22px]"
@@ -52,9 +50,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="text-[13px] fa-solid fa-subtract"
-            />
+            <FaIcon className="fa-solid fa-subtract text-[13px]" />
           </KeyIcon>
           <KeyIcon
             className="fa-solid fa-circle text-[22px]"
@@ -67,10 +63,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              rotation={135}
-              className="text-[13px] fa-solid fa-sort"
-            />
+            <FaIcon rotation={135} className="fa-solid fa-sort text-[13px]" />
           </KeyIcon>
           <KeyLegend {...sharedProps} />
           {/*<KeyIcon
@@ -254,9 +247,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-solid fa-arrow-left-long text-[14px]"
-            />
+            <FaIcon className="fa-solid fa-arrow-left-long text-[14px]" />
           </KeyIcon>
           <KeyIcon
             className="fa-light fa-gallery-thumbnails text-[25px]"
@@ -269,10 +260,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-solid fa-arrow-right-long text-[14px]"
-              color="solarized.base00"
-            />
+            <FaIcon className="fa-solid fa-arrow-right-long text-[14px]" color="solarized.base00" />
           </KeyIcon>
           <KeyIcon
             className="fa-regular fa-diagram-previous"
@@ -318,9 +306,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-image text-[13px]"
-            />
+            <FaIcon className="fa-regular fa-image text-[13px]" />
           </KeyIcon>
 
           <KeyIcon
@@ -337,9 +323,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-image text-[13px]"
-            />
+            <FaIcon className="fa-regular fa-image text-[13px]" />
           </KeyIcon>
 
           <KeyIcon
@@ -356,9 +340,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-image text-[13px]"
-            />
+            <FaIcon className="fa-regular fa-image text-[13px]" />
           </KeyIcon>
 
           <KeyIcon
@@ -421,9 +403,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-solid fa-xmark text-[14px]"
-            />
+            <FaIcon className="fa-solid fa-xmark text-[14px]" />
           </KeyIcon>
           <KeyIcon
             className="fa-light fa-gallery-thumbnails text-[25px]"
@@ -436,9 +416,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-solid fa-window-minimize text-[14px]"
-            />
+            <FaIcon className="fa-solid fa-window-minimize text-[14px]" />
           </KeyIcon>
           <KeyLegend {...sharedProps} />
           {/* <KeyIcon

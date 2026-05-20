@@ -71,23 +71,15 @@ export default function KeyLegend({
     <KeyContainer {...KeyContainerProps} homing={homing}>
       <div>
         {shiftLgnd ? <ShiftSubLgnd color={shiftColor}>{shiftLgnd}</ShiftSubLgnd> : null}
-        {shiftSubIcn ? (
-          <ShiftSubIcn color={shiftColor} {...ShiftSubIcnProps} />
-        ) : null}
+        {shiftSubIcn ? <ShiftSubIcn color={shiftColor} {...ShiftSubIcnProps} /> : null}
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {appShortcut ? <AppSubIcn /> : null}
-        {lyrHoldSubIcn ? (
-          <HoldSubIcn color={lyrColor} {...LyrHoldSubIcnProps} />
-        ) : null}
-        {modHoldSubIcn ? (
-          <HoldSubIcn color={modColor} {...ModHoldSubIcnProps} />
-        ) : null}
+        {lyrHoldSubIcn ? <HoldSubIcn color={lyrColor} {...LyrHoldSubIcnProps} /> : null}
+        {modHoldSubIcn ? <HoldSubIcn color={modColor} {...ModHoldSubIcnProps} /> : null}
         {vimRef ? <VimRefLgnd>{vimRef}</VimRefLgnd> : null}
-        {vimRefIcn ? (
-          <VimRefIcn color={shiftColor} {...VimRefIcnProps} />
-        ) : null}
+        {vimRefIcn ? <VimRefIcn color={shiftColor} {...VimRefIcnProps} /> : null}
         <Typography
           as="span"
           variant={variant}

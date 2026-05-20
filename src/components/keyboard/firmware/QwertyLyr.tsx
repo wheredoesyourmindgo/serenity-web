@@ -233,7 +233,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-layer-group text-[16px] translate-y-[2px]"
+            className="fa-regular fa-layer-group translate-y-[2px] text-[16px]"
             special={!isCorneLayout}
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-table-layout" />}
             KeyContainerProps={{
@@ -255,7 +255,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-angles-down text-[19px] translate-y-[4px]"
+            className="fa-regular fa-angles-down translate-y-[4px] text-[19px]"
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-hashtag" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
@@ -293,7 +293,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-angles-up text-[19px] translate-y-[4px]"
+            className="fa-regular fa-angles-up translate-y-[4px] text-[19px]"
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-at" />}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
@@ -308,7 +308,9 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className={cn(
-              isCorneLayout ? 'fa-regular fa-layer-group text-[16px] translate-y-[2px]' : 'fa-regular fa-arrow-left translate-y-[4px]'
+              isCorneLayout
+                ? 'fa-regular fa-layer-group translate-y-[2px] text-[16px]'
+                : 'fa-regular fa-arrow-left translate-y-[4px]'
             )}
             special={!isCorneLayout}
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-gear" />}
@@ -334,9 +336,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-arrow-down translate-y-[4px]"
             tapForceHold
-            ModHoldSubIcn={() => (
-              <ModSubHoldIcn className="fa-regular fa-command text-[11px]" />
-            )}
+            ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-command text-[11px]" />}
             KeyContainerProps={{
               keyId: 'right-command-key',
               style: {
@@ -357,9 +357,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             className="fa-regular fa-arrow-up translate-y-[4px]"
             tapForceHold
             ModHoldSubIcn={() => (
-              <ModSubHoldIcn
-                className="fa-regular fa-option -translate-x-[3px] text-[11px]"
-              />
+              <ModSubHoldIcn className="fa-regular fa-option -translate-x-[3px] text-[11px]" />
             )}
             KeyContainerProps={{
               keyId: 'right-option-key',

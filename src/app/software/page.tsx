@@ -27,7 +27,7 @@ function SerenityKarabinerButton() {
       href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-semibold text-white bg-[#24292e] border border-black/30 rounded hover:bg-[#2f363d]/90 hover:border-black/50 dark:border-white/30 dark:hover:border-white/50 transition-colors"
+      className="inline-flex items-center gap-2 rounded border border-black/30 bg-[#24292e] px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:border-black/50 hover:bg-[#2f363d]/90 dark:border-white/30 dark:hover:border-white/50"
     >
       <GitHubIcon />
       Serenity Karabiner
@@ -65,18 +65,16 @@ export default function SoftwarePage() {
   const [value, setValue] = useState(0)
 
   return (
-    <div className="container mx-auto px-4 relative">
-      <div className="mr-4 absolute right-0 top-0 hidden md:block">
+    <div className="relative container mx-auto px-4">
+      <div className="absolute top-0 right-0 mr-4 hidden md:block">
         <SerenityKarabinerButton />
       </div>
       <div className="flex flex-col items-center">
-        <h2 className="pt-4 pb-4 md:pt-8 md:pb-8 text-[3.75rem] font-light tracking-[-0.00833em] text-solarized-green">
+        <h2 className="text-solarized-green pt-4 pb-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Software
         </h2>
 
-        <div
-          className="scale-[0.40] sm:scale-[0.60] md:scale-100 origin-center md:origin-[initial] h-[190px] sm:h-[300px] md:h-auto"
-        >
+        <div className="h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100">
           <TabPanel value={value} index={0}>
             <BaseLyr />
           </TabPanel>
@@ -85,11 +83,11 @@ export default function SoftwarePage() {
           </TabPanel>
         </div>
 
-        <div className="mt-12 bg-card max-w-full">
+        <div className="bg-card mt-12 max-w-full">
           <div
             role="tablist"
             aria-label="Keyboard Layer tabs"
-            className="flex overflow-x-auto border-b border-border"
+            className="border-border flex overflow-x-auto border-b"
           >
             {tabs.map((tab, idx) => (
               <button
@@ -97,10 +95,10 @@ export default function SoftwarePage() {
                 role="tab"
                 onClick={() => setValue(idx)}
                 className={cn(
-                  'flex flex-col items-center px-3 py-2 text-xs font-medium min-w-fit gap-1 border-b-2 transition-colors shrink-0',
+                  'flex min-w-fit shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium transition-colors',
                   value === idx
                     ? 'border-solarized-blue text-solarized-blue dark:border-solarized-cyan dark:text-solarized-cyan'
-                    : 'border-transparent text-muted-foreground hover:text-foreground'
+                    : 'text-muted-foreground hover:text-foreground border-transparent'
                 )}
                 {...a11yProps(idx)}
               >

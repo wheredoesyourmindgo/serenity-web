@@ -103,7 +103,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     >
       <body>
         <AppThemeProvider>
-          <div className="h-screen overflow-auto bg-background">
+          <div className="bg-background h-screen overflow-auto">
             <div className="flex h-screen flex-col">
               <Navbar />
               <main className="flex w-full flex-1 justify-center">

@@ -16,9 +16,19 @@ import {getStrictContext} from '@/lib/get-strict-context'
 const [ToggleGroupProvider, useToggleGroup] =
   getStrictContext<VariantProps<typeof toggleVariants>>('ToggleGroupContext')
 
-type ToggleGroupProps = ToggleGroupPrimitiveProps & VariantProps<typeof toggleVariants>
+type ToggleGroupProps = ToggleGroupPrimitiveProps &
+  VariantProps<typeof toggleVariants> & {
+    highlightClassName?: string
+  }
 
-function ToggleGroup({className, variant, size, children, ...props}: ToggleGroupProps) {
+function ToggleGroup({
+  className,
+  variant,
+  size,
+  highlightClassName,
+  children,
+  ...props
+}: ToggleGroupProps) {
   return (
     <ToggleGroupPrimitive
       data-variant={variant}
@@ -31,7 +41,9 @@ function ToggleGroup({className, variant, size, children, ...props}: ToggleGroup
     >
       <ToggleGroupProvider value={{variant, size}}>
         {props.type === 'single' ? (
-          <ToggleGroupHighlightPrimitive className="bg-accent rounded-md">
+          <ToggleGroupHighlightPrimitive
+            className={cn('rounded-md', highlightClassName ?? 'bg-accent')}
+          >
             {children}
           </ToggleGroupHighlightPrimitive>
         ) : (

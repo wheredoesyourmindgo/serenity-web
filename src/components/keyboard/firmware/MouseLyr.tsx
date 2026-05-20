@@ -216,10 +216,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]"
-            />
-            L
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />L
           </KeyLegend>
 
           <KeyLegend
@@ -234,10 +231,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]"
-            />
-            D
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />D
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -251,10 +245,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]"
-            />
-            U
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />U
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -268,10 +259,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]"
-            />
-            R
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />R
           </KeyLegend>
 
           <KeyLegend {...sharedProps} shiftLgnd=":">
@@ -371,11 +359,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              rotation={270}
-              className="fa-regular fa-circle-sort-up mr-1 text-[14px]"
-            />
-            L
+            <FaIcon rotation={270} className="fa-regular fa-circle-sort-up mr-1 text-[14px]" />L
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -389,10 +373,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-circle-sort-down mr-1 text-[14px]"
-            />
-            D
+            <FaIcon className="fa-regular fa-circle-sort-down mr-1 text-[14px]" />D
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -406,10 +387,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-circle-sort-up mr-1 text-[14px]"
-            />
-            U
+            <FaIcon className="fa-regular fa-circle-sort-up mr-1 text-[14px]" />U
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -423,11 +401,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon
-              className="mr-1 text-[14px] fa-regular fa-circle-sort-up"
-              rotation={90}
-            />
-            R
+            <FaIcon className="fa-regular fa-circle-sort-up mr-1 text-[14px]" rotation={90} />R
           </KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"

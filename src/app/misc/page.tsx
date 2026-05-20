@@ -33,23 +33,15 @@ const CopyBtn = ({text, onCopied, className}: CopyBtnProps) => {
       aria-label={copied ? 'Copied!' : 'Copy'}
       title={copied ? 'Copied!' : 'Copy'}
       onClick={handleCopy}
-      className={`absolute top-2 right-2 flex items-center justify-center w-9 h-9 rounded bg-card border border-border shadow-sm hover:bg-accent transition-colors ${className ?? ''}`}
+      className={`bg-card border-border hover:bg-accent absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded border shadow-sm transition-colors ${className ?? ''}`}
     >
       <FaIcon className="fa-regular fa-copy text-[18px]" color="solarized.base0" />
     </button>
   )
 }
 
-const USym = ({
-  children,
-  className
-}: {
-  children: React.ReactNode
-  className?: string
-}) => (
-  <span
-    className={`font-medium text-[1.1rem] text-solarized-cyan ${className ?? ''}`}
-  >
+const USym = ({children, className}: {children: React.ReactNode; className?: string}) => (
+  <span className={`text-solarized-cyan text-[1.1rem] font-medium ${className ?? ''}`}>
     {children}
   </span>
 )
@@ -72,20 +64,74 @@ const vimlessRows: VimlessRow[] = [
     ),
     vim: 'h, j, k, l'
   },
-  {id: 2, action: 'Move to beginning of line (soft)', keys: <><USym>⌘ ←</USym> (or home)</>, vim: '^'},
-  {id: 3, action: 'Move to beginning of line (hard)', keys: <><USym>⌘ ←</USym> <USym>←</USym> (or home twice)</>, vim: '0'},
-  {id: 4, action: 'Move to end of line', keys: <><USym>⌘ →</USym> (or end)</>, vim: '$'},
+  {
+    id: 2,
+    action: 'Move to beginning of line (soft)',
+    keys: (
+      <>
+        <USym>⌘ ←</USym> (or home)
+      </>
+    ),
+    vim: '^'
+  },
+  {
+    id: 3,
+    action: 'Move to beginning of line (hard)',
+    keys: (
+      <>
+        <USym>⌘ ←</USym> <USym>←</USym> (or home twice)
+      </>
+    ),
+    vim: '0'
+  },
+  {
+    id: 4,
+    action: 'Move to end of line',
+    keys: (
+      <>
+        <USym>⌘ →</USym> (or end)
+      </>
+    ),
+    vim: '$'
+  },
   {id: 5, action: 'Jump to beginning of document', keys: <USym>⌘ ↑</USym>, vim: 'gg'},
   {id: 6, action: 'Jump to end of document', keys: <USym>⌘ ↓</USym>, vim: 'G'},
-  {id: 7, action: 'Page up', keys: 'Page Up key (Num/Nav layer)', vim: <><USym>⌃</USym> b</>},
-  {id: 8, action: 'Page down', keys: 'Page Down key (Num/Nav layer)', vim: <><USym>⌃</USym> f</>},
+  {
+    id: 7,
+    action: 'Page up',
+    keys: 'Page Up key (Num/Nav layer)',
+    vim: (
+      <>
+        <USym>⌃</USym> b
+      </>
+    )
+  },
+  {
+    id: 8,
+    action: 'Page down',
+    keys: 'Page Down key (Num/Nav layer)',
+    vim: (
+      <>
+        <USym>⌃</USym> f
+      </>
+    )
+  },
   {id: 9, action: 'Delete previous character', keys: <USym>⌫</USym>, vim: 'X'},
   {id: 10, action: 'Delete character', keys: <USym>⌦</USym>, vim: 'x'},
   {id: 11, action: 'Undo', keys: 'Undo key (Num/Nav layer)', vim: 'u'},
   {id: 12, action: 'Cut', keys: 'Cut key (Num/Nav layer)', vim: 'd'},
   {id: 13, action: 'Copy', keys: 'Copy key (Num/Nav layer)', vim: 'y'},
   {id: 14, action: 'Paste', keys: 'Paste key (Num/Nav layer)', vim: 'p'},
-  {id: 15, action: 'Redo', keys: 'Redo key (Num/Nav layer)', vim: <><USym>⌃</USym> r</>},
+  {
+    id: 15,
+    action: 'Redo',
+    keys: 'Redo key (Num/Nav layer)',
+    vim: (
+      <>
+        <USym>⌃</USym> r
+      </>
+    )
+  },
   {id: 16, action: 'Move to start word', keys: <USym>⌥ ←</USym>, vim: 'b'},
   {id: 17, action: 'Move to end word', keys: <USym>⌥ →</USym>, vim: 'e'},
   {id: 18, action: 'Delete start word', keys: <USym>⌥ ⌫</USym>, vim: 'db'},
@@ -97,16 +143,30 @@ const vimlessRows: VimlessRow[] = [
     action: 'Selection (Visual mode)',
     keys: (
       <>
-        <USym className="text-[1.2rem] font-semibold">⇧</USym> (use other movement shortcuts
-        while holding shift, often in conjunction with arrow keys, to expand or shrink selection)
+        <USym className="text-[1.2rem] font-semibold">⇧</USym> (use other movement shortcuts while
+        holding shift, often in conjunction with arrow keys, to expand or shrink selection)
       </>
     ),
     vim: 'v'
   },
   {id: 23, action: 'Select cursor word', keys: 'Word Select key (Num/Nav layer, tap)', vim: 'viw'},
-  {id: 24, action: 'Select cursor line', keys: 'Line Select key (Num/Nav layer, long press)', vim: 'V'},
+  {
+    id: 24,
+    action: 'Select cursor line',
+    keys: 'Line Select key (Num/Nav layer, long press)',
+    vim: 'V'
+  },
   {id: 25, action: 'Indent', keys: <USym className="text-[1.3rem]">⇥</USym>, vim: '>'},
-  {id: 26, action: 'Un-indent', keys: <><USym className="text-[1.3rem]">⇤</USym></>, vim: '<'}
+  {
+    id: 26,
+    action: 'Un-indent',
+    keys: (
+      <>
+        <USym className="text-[1.3rem]">⇤</USym>
+      </>
+    ),
+    vim: '<'
+  }
 ]
 
 export default function ConfigPage() {
@@ -170,28 +230,25 @@ end run
   const codeStyle = isDarkMode ? patchedSolarizedDarkAtom : solarizedlight
 
   return (
-    <div className="container mx-auto px-4 relative">
+    <div className="relative container mx-auto px-4">
       <div className="flex flex-col items-center">
-        <h2 className="pt-4 md:pt-8 text-[3.75rem] font-light tracking-[-0.00833em] text-solarized-green">
+        <h2 className="text-solarized-green pt-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8">
           Miscellaneous
         </h2>
-        <h6 className="pb-4 md:pb-8 text-[1.25rem] font-medium italic text-solarized-violet">
+        <h6 className="text-solarized-violet pb-4 text-[1.25rem] font-medium italic md:pb-8">
           page in development...
         </h6>
       </div>
 
       <div
         id="config"
-        className="mt-12 p-4 md:p-6 bg-card border border-border rounded-xl max-w-[900px] mx-auto"
+        className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
       >
-        <h4 className="text-[2.125rem] font-normal text-center mb-6">Application Config</h4>
+        <h4 className="mb-6 text-center text-[2.125rem] font-normal">Application Config</h4>
 
         <div className="mt-8 inline-flex items-baseline gap-4">
-          <FaIcon
-            className="fa-regular fa-ghost text-2xl"
-            color="solarized.green"
-          />
-          <h5 className="text-2xl font-normal text-solarized-green mb-2">Ghostty</h5>
+          <FaIcon className="fa-regular fa-ghost text-2xl" color="solarized.green" />
+          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Ghostty</h5>
         </div>
         <p className="mt-6 mb-4">
           Partial config snippet to add to your Ghostty config file{' '}
@@ -200,7 +257,7 @@ end run
           </em>
           .
         </p>
-        <div className="relative bg-background rounded-lg">
+        <div className="bg-background relative rounded-lg">
           <CopyBtn text={ghosttyConfSnippet} />
           <SyntaxHighlighter
             language="shell"
@@ -211,14 +268,11 @@ end run
           </SyntaxHighlighter>
         </div>
 
-        <hr className="my-8 border-border mx-auto w-1/2" />
+        <hr className="border-border mx-auto my-8 w-1/2" />
 
         <div className="mt-8 inline-flex items-baseline gap-4">
-          <FaIcon
-            className="fa-regular fa-terminal text-[22px]"
-            color="solarized.green"
-          />
-          <h5 className="text-2xl font-normal text-solarized-green mb-2">iTerm2</h5>
+          <FaIcon className="fa-regular fa-terminal text-[22px]" color="solarized.green" />
+          <h5 className="text-solarized-green mb-2 text-2xl font-normal">iTerm2</h5>
         </div>
         <p className="mt-6 mb-4">
           These custom key mappings will allow movements using arrow keys in conjunction with
@@ -227,7 +281,7 @@ end run
             Settings {'→'} Keys {'→'} Key Bindings {'→'} Presets... {'→'} Import...
           </em>
         </p>
-        <div className="relative bg-background rounded-lg">
+        <div className="bg-background relative rounded-lg">
           <CopyBtn text={itermConfSnippet} />
           <SyntaxHighlighter
             language="json"
@@ -238,14 +292,11 @@ end run
           </SyntaxHighlighter>
         </div>
 
-        <hr className="my-8 border-border mx-auto w-1/2" />
+        <hr className="border-border mx-auto my-8 w-1/2" />
 
         <div className="mt-8 inline-flex items-baseline gap-4">
-          <FaIcon
-            className="fa-regular fa-hammer text-2xl"
-            color="solarized.green"
-          />
-          <h5 className="text-2xl font-normal text-solarized-green mb-2">Hammerspoon</h5>
+          <FaIcon className="fa-regular fa-hammer text-2xl" color="solarized.green" />
+          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Hammerspoon</h5>
         </div>
         <p className="mt-6 mb-4">
           Partial config snippet to add to your Hammerspoon initialization file{' '}
@@ -254,7 +305,7 @@ end run
           </em>
           . Used in conjunction with Karabiner-Elements to detect lock screen.
         </p>
-        <div className="relative bg-background rounded-lg">
+        <div className="bg-background relative rounded-lg">
           <CopyBtn text={hammerspoonSnippet} />
           <SyntaxHighlighter
             language="lua"
@@ -265,21 +316,18 @@ end run
           </SyntaxHighlighter>
         </div>
 
-        <hr className="my-8 border-border mx-auto w-1/2" />
+        <hr className="border-border mx-auto my-8 w-1/2" />
 
         <div className="mt-8 inline-flex items-baseline gap-4">
-          <FaIcon
-            className="fa-regular fa-robot text-2xl"
-            color="solarized.green"
-          />
-          <h5 className="text-2xl font-normal text-solarized-green mb-2">Automator</h5>
+          <FaIcon className="fa-regular fa-robot text-2xl" color="solarized.green" />
+          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Automator</h5>
         </div>
         <p className="mt-6 mb-4">
           Use the following AppleScript Quick Action to toggle Dark Mode on macOS; created via
           Automator. This service can be assigned a keyboard shortcut (ctrl+opt+cmd+D for Serenity
           QMK Media Layer) in System Settings.
         </p>
-        <div className="relative bg-background rounded-lg">
+        <div className="bg-background relative rounded-lg">
           <CopyBtn text={toggleDarkModeSnippet} />
           <SyntaxHighlighter
             language="applescript"
@@ -293,39 +341,36 @@ end run
 
       <div
         id="reference"
-        className="mt-12 p-4 md:p-6 bg-card border border-border rounded-xl max-w-[900px] mx-auto"
+        className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
       >
-        <h4 className="text-[2.125rem] font-normal text-center mb-6">Reference</h4>
+        <h4 className="mb-6 text-center text-[2.125rem] font-normal">Reference</h4>
 
         <div className="mt-8 inline-flex items-baseline gap-4">
-          <FaIcon
-            className="fa-regular fa-ban-smoking text-[27px]"
-            color="solarized.green"
-          />
-          <h5 className="text-2xl font-normal text-solarized-green mb-2">Vim-less</h5>
+          <FaIcon className="fa-regular fa-ban-smoking text-[27px]" color="solarized.green" />
+          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Vim-less</h5>
         </div>
         <p className="mt-6 mb-4">
           Thinking of quitting Vim? Here is an indicative reference for performing common Vim-like{' '}
-          <span className="whitespace-nowrap">motions/commands</span>{' '}
-          by effortlessly using standard keybindings (primarily made possible with QMK due to Mod
-          and Arrow key availability on the home row). These shortcuts are application-agnostic and
-          eliminate the need for a modal editor for most tasks, or, at a minimum reduce the reliance
-          of using Normal Mode, allowing you to remain in Insert Mode more often than not.
+          <span className="whitespace-nowrap">motions/commands</span> by effortlessly using standard
+          keybindings (primarily made possible with QMK due to Mod and Arrow key availability on the
+          home row). These shortcuts are application-agnostic and eliminate the need for a modal
+          editor for most tasks, or, at a minimum reduce the reliance of using Normal Mode, allowing
+          you to remain in Insert Mode more often than not.
         </p>
-        <div className="relative bg-background rounded-lg overflow-x-auto">
-          <table className="w-full text-sm border-collapse" aria-label="vimless reference table">
+        <div className="bg-background relative overflow-x-auto rounded-lg">
+          <table className="w-full border-collapse text-sm" aria-label="vimless reference table">
             <thead>
-              <tr className="border-b border-border">
-                <th className="text-left px-3 py-2 font-semibold italic">Do the following</th>
-                <th className="text-left px-3 py-2 font-semibold italic">By pressing</th>
-                <th className="text-left px-3 py-2 font-semibold italic">
+              <tr className="border-border border-b">
+                <th className="px-3 py-2 text-left font-semibold italic">Do the following</th>
+                <th className="px-3 py-2 text-left font-semibold italic">By pressing</th>
+                <th className="px-3 py-2 text-left font-semibold italic">
                   Which is similar to this in Vim
                 </th>
               </tr>
             </thead>
             <tbody>
               {vimlessRows.map((row) => (
-                <tr key={row.id} className="border-b border-border last:border-b-0">
+                <tr key={row.id} className="border-border border-b last:border-b-0">
                   <td className="px-3 py-2">{row.action}</td>
                   <td className="px-3 py-2">{row.keys}</td>
                   <td className="px-3 py-2">{row.vim}</td>
@@ -340,13 +385,13 @@ end run
           couple of VSCode Extensions I maintain to fill in some functionality gaps so to speak.
         </p>
         <div className="mb-8 ml-2">
-          <p className="text-sm font-semibold mb-2">VSCode Extensions</p>
+          <p className="mb-2 text-sm font-semibold">VSCode Extensions</p>
           <div className="flex flex-col gap-3">
             <a
               href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty"
               target="_blank"
               rel="noopener noreferrer"
-              className="pl-8 text-base font-medium text-primary hover:underline"
+              className="text-primary pl-8 text-base font-medium hover:underline"
             >
               Beam Me Up, Scotty!{' '}
               <span className="font-normal">:: Jump navigation inspired by clever-f</span>
@@ -355,7 +400,7 @@ end run
               href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-relativity"
               target="_blank"
               rel="noopener noreferrer"
-              className="pl-8 text-base font-medium text-primary hover:underline"
+              className="text-primary pl-8 text-base font-medium hover:underline"
             >
               Relativity_{' '}
               <span className="font-normal">:: Jump lines by number relative to current line</span>
@@ -366,14 +411,14 @@ end run
 
       <div
         id="contact"
-        className="mt-20 mb-12 p-4 md:p-6 bg-card border border-border rounded-xl max-w-[900px] mx-auto"
+        className="bg-card border-border mx-auto mt-20 mb-12 max-w-[900px] rounded-xl border p-4 md:p-6"
       >
-        <h4 className="text-[2.125rem] font-normal text-center mb-6">Get In Touch</h4>
-        <p className="text-center mt-4">
+        <h4 className="mb-6 text-center text-[2.125rem] font-normal">Get In Touch</h4>
+        <p className="mt-4 text-center">
           Have questions, comments, or feedback? Feel free to reach out anytime at{' '}
           <a
             href="mailto:majority-myth-cube@duck.com"
-            className="whitespace-nowrap hover:underline text-primary"
+            className="text-primary whitespace-nowrap hover:underline"
           >
             majority-myth-cube@duck.com
           </a>
