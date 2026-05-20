@@ -1,64 +1,57 @@
 import KeyIcon from '@/components/key/KeyIcon'
 import KeyLegend, {KeyLegendProps} from '@/components/key/KeyLegend'
-import {Box, type SxProps, Grid} from '@mui/material'
 import PopoverDesc from '@/components/key/PopoverDesc'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
 import KeyboardGridRow from '../KeyboardGridRow'
 
 export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
-  const sharedProps: KeyLegendProps = {variant: 'h5'}
-  const fxSx: SxProps = {
-    fontSize: '1.1rem'
-  }
+  const sharedProps: KeyLegendProps = {variant: 'h5', className: 'text-[1.1rem]'}
   const isCorneLayout = layout === 'corne'
 
   return (
-    <Box data-layout={layout}>
-      <Grid container direction="column" spacing={1}>
+    <div data-layout={layout}>
+      <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-right-long-to-line"
-            sx={{
-              fontSize: 19
-            }}
+            className="fa-regular fa-arrow-right-long-to-line text-[19px]"
             KeyContainerProps={{
               keyId: 'tab-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                </Box>
+                </div>
               )
             }}
           />
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F1
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F2
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F3
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F4
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F5
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F6
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F7
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F8
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F9
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F10
           </KeyLegend>
           <KeyIcon
@@ -67,11 +60,11 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
                   <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
+                </div>
               )
             }}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
@@ -79,45 +72,44 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-arrow-up-left-from-circle text-[18px]"
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Escape" />
-                </Box>
+                </div>
               )
             }}
           />
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F11
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F12
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F13
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} homing>
+          <KeyLegend {...sharedProps} homing>
             F14
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F15
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F16
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx} homing>
+          <KeyLegend {...sharedProps} homing>
             F17
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F18
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F19
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F20
           </KeyLegend>
           <KeyLegend {...sharedProps} shiftLgnd=":">
@@ -131,24 +123,24 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
                   <br />
                   <PopoverDesc action="double tap" output="Caps-word" />
-                </Box>
+                </div>
               )
             }}
           />
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F21
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F22
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F23
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={fxSx}>
+          <KeyLegend {...sharedProps}>
             F24
           </KeyLegend>
           <KeyLegend {...sharedProps} />
@@ -162,9 +154,9 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/enter" output="Enter" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -176,21 +168,21 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap" output="Toggle Mute" />
                   <br />
                   <PopoverDesc
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -198,10 +190,9 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -211,7 +202,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -221,28 +212,26 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -251,7 +240,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -259,10 +248,9 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -272,7 +260,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -280,7 +268,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </KeyboardGridRow>
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }

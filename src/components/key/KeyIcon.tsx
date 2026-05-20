@@ -47,7 +47,7 @@ export default function KeyIcon({
   ...props
 }: Props) {
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
-  const {sx, color, className, ...rest} = props
+  const {color, className, ...rest} = props
   const hasHoldSubIcon = Boolean(LyrHoldSubIcn || ModHoldSubIcn)
   const hasShiftSubIcon = Boolean(ShiftSubIcn)
 
@@ -77,7 +77,6 @@ export default function KeyIcon({
             <FaIcon
               className={cn('text-[20px]', className)}
               color={color || 'solarized.base00'}
-              sx={sx}
               {...rest}
             />
             <div className="absolute inset-0">{children}</div>

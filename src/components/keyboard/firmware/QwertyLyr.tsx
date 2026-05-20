@@ -1,3 +1,4 @@
+import {cn} from '@/lib/cn'
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
@@ -6,7 +7,6 @@ import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
 import ModSubHoldIcn from '@/components/key/ModSubHoldIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
-import {Grid, Box} from '@mui/material'
 import KeyboardGridRow from '../KeyboardGridRow'
 
 export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
@@ -14,20 +14,17 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
   const isCorneLayout = layout === 'corne'
 
   return (
-    <Box data-layout={layout}>
-      <Grid container direction="column" spacing={1}>
+    <div data-layout={layout}>
+      <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-right-long-to-line"
-            sx={{
-              fontSize: 19
-            }}
+            className="fa-regular fa-arrow-right-long-to-line text-[19px]"
             KeyContainerProps={{
               keyId: 'tab-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -67,11 +64,11 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
                   <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
+                </div>
               )
             }}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
@@ -81,16 +78,15 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             tapForceHold
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-computer-mouse" />}
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{transform: 'translateY(4px)', fontSize: 18}}
+            className="fa-regular fa-arrow-up-left-from-circle translate-y-[4px] text-[18px]"
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Escape" />
                   <br />
                   <PopoverDesc action="hold" output="Mouse Layer" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -135,11 +131,11 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
                   <br />
                   <PopoverDesc action="double tap" output="Caps-word" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -174,17 +170,16 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             /
           </KeyLegend>
           <KeyIcon
-            className="fa-regular fa-arrow-turn-down-left"
+            className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
-            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Enter" />
                   <br />
                   <PopoverDesc action="hold" output="Right Shift" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -196,21 +191,21 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap" output="Toggle Mute" />
                   <br />
                   <PopoverDesc
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -218,10 +213,9 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -231,7 +225,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -239,184 +233,172 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-layer-group"
-            sx={{fontSize: 16, transform: 'translateY(2px)'}}
+            className="fa-regular fa-layer-group text-[16px] translate-y-[2px]"
             special={!isCorneLayout}
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-table-layout" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: isCorneLayout ? (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="hold" output="Action Layer" />
-                </Box>
+                </div>
               ) : (
-                <Box p={1}>
+                <div className="p-2">
                   {/* <PopoverDesc action="tap" output="Escape" />
                   <br /> */}
                   <PopoverDesc
                     action="hold"
                     output="Action Layer (or Left Shift when held with other Left Mod keys)"
                   />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-angles-down"
-            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            className="fa-regular fa-angles-down text-[19px] translate-y-[4px]"
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-hashtag" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   {/* <PopoverDesc action="tap" output="Escape" />
                   <br /> */}
                   <PopoverDesc action="hold" output="Num/Nav Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-angles-up"
-            sx={{fontSize: 19, transform: 'translateY(4px)'}}
+            className="fa-regular fa-angles-up text-[19px] translate-y-[4px]"
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-at" />}
             KeyContainerProps={{
               keyId: 'higher-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   {/* <PopoverDesc action="tap" output="Tab" />
                   <br /> */}
                   <PopoverDesc action="hold" output="Symbol Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className={isCorneLayout ? 'fa-regular fa-layer-group' : 'fa-regular fa-arrow-left'}
+            className={cn(
+              isCorneLayout ? 'fa-regular fa-layer-group text-[16px] translate-y-[2px]' : 'fa-regular fa-arrow-left translate-y-[4px]'
+            )}
             special={!isCorneLayout}
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-gear" />}
             tapForceHold={!isCorneLayout}
-            sx={
-              isCorneLayout
-                ? {fontSize: 16, transform: 'translateY(2px)'}
-                : {transform: 'translateY(4px)'}
-            }
             KeyContainerProps={{
               keyId: 'media-layer-key',
               popOverContent: isCorneLayout ? (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="hold" output="Media Layer" />
-                </Box>
+                </div>
               ) : (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Left Arrow" />
                   <br />
                   <PopoverDesc
                     action="hold"
                     output="Media Layer (or Right Shift when held with other Right Mod keys)"
                   />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-arrow-down"
+            className="fa-regular fa-arrow-down translate-y-[4px]"
             tapForceHold
-            sx={{transform: 'translateY(4px)'}}
             ModHoldSubIcn={() => (
-              <ModSubHoldIcn className="fa-regular fa-command" sx={{fontSize: 11}} />
+              <ModSubHoldIcn className="fa-regular fa-command text-[11px]" />
             )}
             KeyContainerProps={{
               keyId: 'right-command-key',
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Down Arrow" />
                   <br />
                   <PopoverDesc action="hold" output="Right Command" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-arrow-up"
+            className="fa-regular fa-arrow-up translate-y-[4px]"
             tapForceHold
             ModHoldSubIcn={() => (
               <ModSubHoldIcn
-                className="fa-regular fa-option"
-                sx={{transform: 'translateX(-3px)', fontSize: 11}}
+                className="fa-regular fa-option -translate-x-[3px] text-[11px]"
               />
             )}
-            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-option-key',
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Up Arrow" />
                   <br />
                   <PopoverDesc action="hold" output="Right Alt/Option" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-arrow-right"
+            className="fa-regular fa-arrow-right translate-y-[4px]"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-chevron-up" />}
             tapForceHold
-            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
               keyId: 'right-ctrl-key',
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Right Arrow" />
                   <br />
                   <PopoverDesc action="hold" output="Right Control" />
-                </Box>
+                </div>
               )
             }}
           />
         </KeyboardGridRow>
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }
