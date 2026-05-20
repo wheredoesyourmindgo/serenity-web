@@ -48,7 +48,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
                 left: '50%',
                 top: '63%',
                 transform: 'translate(-50%, -50%)',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
@@ -72,7 +72,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
                 left: '50%',
                 top: '63%',
                 transform: 'translate(-50%, -50%)',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
@@ -96,7 +96,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
                 left: '50%',
                 top: '63%',
                 transform: 'translate(-50%, -50%)',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
@@ -120,7 +120,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
                 left: '50%',
                 top: '63%',
                 transform: 'translate(-50%, -50%)',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
@@ -144,7 +144,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
                 left: '50%',
                 top: '63%',
                 transform: 'translate(-50%, -50%)',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
