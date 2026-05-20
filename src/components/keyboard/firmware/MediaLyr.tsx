@@ -63,7 +63,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend
             {...sharedProps}
-            className="text-center text-[0.75rem]"
+            className="block text-center text-[0.75rem]"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -82,7 +82,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="text-center text-[0.75rem]"
+            className="block text-center text-[0.75rem]"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -101,7 +101,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="text-center text-[11px]"
+            className="block text-center text-[11px]"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -118,7 +118,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="text-center text-[0.75rem]"
+            className="block text-center text-[0.75rem]"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -137,7 +137,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="text-center text-[0.75rem]"
+            className="block text-center text-[0.75rem]"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -156,7 +156,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="text-center text-[0.75rem]"
+            className="block text-center text-[0.75rem]"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">

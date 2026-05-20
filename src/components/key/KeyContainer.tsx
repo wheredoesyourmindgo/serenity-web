@@ -36,7 +36,7 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   const trigger = (
     <div
       className={cn(
-        'relative flex aspect-square w-[55px] items-center justify-center rounded border p-2',
+        'relative flex h-[55px] w-[55px] items-center justify-center rounded border p-2',
         popOverContent && 'cursor-pointer',
         className
       )}
