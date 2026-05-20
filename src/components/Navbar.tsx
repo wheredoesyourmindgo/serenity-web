@@ -16,7 +16,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <header className="bg-solarized-blue dark:bg-solarized-cyan text-solarized-base3 dark:text-solarized-base03">
+    <header className="relative z-10 bg-solarized-blue dark:bg-solarized-cyan text-solarized-base3 dark:text-solarized-base03">
       <div className="flex h-12 items-center px-4">
         {navLinks.map(({href, label}) => (
           <Link
