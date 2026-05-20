@@ -45,8 +45,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             <span
               style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
                 fontSize: '1rem',
                 fontWeight: 600
               }}
@@ -68,8 +69,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             <span
               style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
                 fontSize: '1rem',
                 fontWeight: 600
               }}
@@ -91,8 +93,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             <span
               style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
                 fontSize: '1rem',
                 fontWeight: 600
               }}
@@ -114,8 +117,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             <span
               style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
                 fontSize: '1rem',
                 fontWeight: 600
               }}
@@ -137,8 +141,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             <span
               style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
                 fontSize: '1rem',
                 fontWeight: 600
               }}

@@ -138,17 +138,17 @@ export default function FirmwarePage() {
                 role="tab"
                 onClick={() => setValue(idx)}
                 className={cn(
-                  'flex min-w-fit shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium transition-colors',
+                  'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
                   value === idx
                     ? 'border-solarized-blue text-solarized-blue dark:border-solarized-cyan dark:text-solarized-cyan'
                     : 'text-muted-foreground hover:text-foreground border-transparent'
                 )}
                 {...a11yProps(idx)}
               >
-                <span>
+                <span className="flex h-4 items-center justify-center">
                   <FaIcon className={cn(tab.icon, tab.iconClassName)} />
                 </span>
-                {tab.label}
+                <span>{tab.label}</span>
               </button>
             ))}
           </div>
