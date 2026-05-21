@@ -351,15 +351,12 @@ export default function BaseLyr() {
           </KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
-            ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             KeyContainerProps={{
               style: {width: 102.25, height: 55},
-              keyId: 'right-shift-key',
+              keyId: 'enter-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Enter" />
-                  <br />
-                  <PopoverDesc action="hold" output="Right Shift" />
                 </div>
               )
             }}
