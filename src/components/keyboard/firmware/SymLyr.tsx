@@ -1,7 +1,6 @@
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
-import {Grid, Box} from '@mui/material'
 import PopoverDesc from '@/components/key/PopoverDesc'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
@@ -13,20 +12,17 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
   const isCorneLayout = layout === 'corne'
 
   return (
-    <Box data-layout={layout}>
-      <Grid container direction="column" spacing={1}>
+    <div data-layout={layout}>
+      <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-right-long-to-line"
-            sx={{
-              fontSize: 19
-            }}
+            className="fa-regular fa-arrow-right-long-to-line text-[19px]"
             KeyContainerProps={{
               keyId: 'tab-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -46,11 +42,11 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
                   <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
+                </div>
               )
             }}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
@@ -59,14 +55,13 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
         <KeyboardGridRow>
           <KeyIcon
             special
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-arrow-up-left-from-circle text-[18px]"
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Escape (or turn off Symbol layer lock)" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -82,15 +77,15 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Lock/Unlock Symbol Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-option" color="solarized.cyan" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-option text-[18px]" color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
@@ -103,11 +98,11 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
                   <br />
                   <PopoverDesc action="double tap" output="Caps-word" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -126,9 +121,9 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Enter" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -140,21 +135,21 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap" output="Toggle Mute" />
                   <br />
                   <PopoverDesc
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -162,10 +157,9 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -175,7 +169,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -184,44 +178,38 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            // className="fa-regular fa-arrow-up-left-from-circle"
-            className="fa-regular fa-angles-down"
-            sx={{fontSize: 19, transform: 'translateY(4px)'}}
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-brands fa-apple" sx={{fontSize: 14}} />
-            )}
+            // className="fa-regular fa-arrow-up-left-from-circle fa-regular fa-angles-down text-[19px] translate-y-[4px]"
+            LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-brands fa-apple text-[14px]" />}
             KeyContainerProps={{
               keyId: 'lower-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="hold" output="OS Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -230,7 +218,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -238,27 +226,26 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Right Option" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -266,7 +253,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </KeyboardGridRow>
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }

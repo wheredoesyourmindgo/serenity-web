@@ -11,8 +11,8 @@ import {useTheme as useNextTheme} from 'next-themes'
 
 const AlphaKeyLgnd = ({
   children,
-  sx,
   frequencyColor = false,
+  color,
   ...props
 }: KeyLegendProps & {frequencyColor?: boolean}) => {
   const {resolvedTheme} = useNextTheme()
@@ -30,11 +30,8 @@ const AlphaKeyLgnd = ({
 
   return (
     <KeyLegend
-      sx={{
-        ...(frequencyColor ? {color: getColor(char)} : {}),
-        ...sx
-      }}
-      KeyContainerProps={{sx: {borderWidth: 0, boxShadow: 'none'}}}
+      color={frequencyColor ? getColor(char) : color}
+      KeyContainerProps={{style: {borderWidth: 0, boxShadow: 'none'}}}
       {...props}
     >
       {children}

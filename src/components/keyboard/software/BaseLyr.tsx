@@ -2,7 +2,6 @@
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
-import {Box, Grid} from '@mui/material'
 import PopoverDesc from '@/components/key/PopoverDesc'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
@@ -13,26 +12,22 @@ export default function BaseLyr() {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
 
   return (
-    <Box>
-      <Grid container direction="column" spacing={1}>
+    <div>
+      <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
             // customShiftCode
-            className="fa-regular fa-lock-a"
-            sx={{
-              fontSize: 19
-              // transform: 'translateX(2px)'
-            }}
+            className="fa-regular fa-lock-a translate-x-[2px] text-[19px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 width: 86.5, // 1.5u (equation is: (55+8)*1.5-8)
                 height: 55
               },
               keyId: 'capslock-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Capslock" />
-                </Box>
+                </div>
               )
             }}
             // shiftSubIcn={faRightToBracket}
@@ -42,9 +37,9 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'screen-brightness-down-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Screen Brightness Down" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -53,45 +48,42 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'screen-brightness-up-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Screen Brightness Up" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-rectangles-mixed"
+            className="fa-regular fa-rectangles-mixed text-[19px]"
             KeyContainerProps={{
               keyId: 'mission-control-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Mission Control" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-magnifying-glass"
+            className="fa-regular fa-magnifying-glass text-[19px]"
             KeyContainerProps={{
               keyId: 'spotlight-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Spotlight" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-microphone"
+            className="fa-regular fa-microphone text-[19px]"
             KeyContainerProps={{
               keyId: 'siri-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Siri" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -100,81 +92,75 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'do-not-disturb-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Do Not Disturb" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-backward"
+            className="fa-regular fa-backward text-[19px]"
             KeyContainerProps={{
               keyId: 'rewind-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Rewind" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-play-pause"
+            className="fa-regular fa-play-pause text-[19px]"
             KeyContainerProps={{
               keyId: 'play-pause-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Play Pause" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-forward"
+            className="fa-regular fa-forward text-[19px]"
             KeyContainerProps={{
               keyId: 'fast-forward-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Fast Forward" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-volume-slash"
+            className="fa-regular fa-volume-slash text-[19px]"
             KeyContainerProps={{
               keyId: 'mute-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Mute" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-volume-low"
+            className="fa-regular fa-volume-low text-[19px]"
             KeyContainerProps={{
               keyId: 'volume-down-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Volume Down" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            sx={{fontSize: 19}}
-            className="fa-regular fa-volume-high"
+            className="fa-regular fa-volume-high text-[19px]"
             KeyContainerProps={{
               keyId: 'volume-up-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Volume Up" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -183,11 +169,11 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'fingerprint-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Power/Sleep" />
                   <br />
                   <PopoverDesc action="hold" output="Fingerprint Reader" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -196,57 +182,57 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="~">
             `
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="!">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="!">
             1
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="@">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="@">
             2
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="#">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="#">
             3
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="$">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="$">
             4
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="%">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="%">
             5
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="^">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="^">
             6
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="&">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="&">
             7
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="*">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="*">
             8
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="(">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="(">
             9
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd=")">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd=")">
             0
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="{">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="{">
             [
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="}">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="}">
             ]
           </KeyLegend>
           <KeyIcon
             customShiftCode
             className="fa-regular fa-delete-left"
             KeyContainerProps={{
-              sx: {
+              style: {
                 width: 86.5, // 1.5u
                 height: 55
               },
               keyId: 'backspace-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
                   <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
+                </div>
               )
             }}
             // shiftSubIcn={faRightToBracket}
@@ -257,23 +243,19 @@ export default function BaseLyr() {
         <KeyboardGridRow>
           <KeyIcon
             // customShiftCode
-            className="fa-regular fa-arrow-right-long-to-line"
-            sx={{
-              fontSize: 19
-              // transform: 'translateX(2px)'
-            }}
+            className="fa-regular fa-arrow-right-long-to-line translate-x-[2px] text-[19px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 width: 86.5, // 1.5u
                 height: 55
               },
               keyId: 'tab-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
                   {/* <br />
                   <PopoverDesc action="shifted" output="Delete word right" /> */}
-                </Box>
+                </div>
               )
             }}
             // shiftSubIcn={faRightToBracket}
@@ -311,27 +293,26 @@ export default function BaseLyr() {
           <KeyLegend {...sharedProps} shiftLgnd="+">
             =
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="?">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="?">
             /
           </KeyLegend>
-          <KeyLegend {...sharedProps} sx={{fontSize: '1.3rem'}} shiftLgnd="|">
+          <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="|">
             \
           </KeyLegend>
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-arrow-up-left-from-circle text-[18px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 width: 102.25, // 1.75u
                 height: 55
               },
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Escape" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -369,18 +350,17 @@ export default function BaseLyr() {
             ;
           </KeyLegend>
           <KeyIcon
-            className="fa-regular fa-arrow-turn-down-left"
+            className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
-            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx: {width: 102.25, height: 55},
+              style: {width: 102.25, height: 55},
               keyId: 'right-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Enter" />
                   <br />
                   <PopoverDesc action="hold" output="Right Shift" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -389,12 +369,12 @@ export default function BaseLyr() {
           <KeyIcon
             className="fa-regular fa-up"
             KeyContainerProps={{
-              sx: {width: 133.75, height: 55}, // 2.25u
+              style: {width: 133.75, height: 55}, // 2.25u
               keyId: 'left-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -429,11 +409,11 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'comma-key'
               // popOverContent: (
-              //   <Box p={1}>
+              //   <div className="p-2">
               //     <PopoverDesc action="tap/hold" output="Comma" />
               //     <br />
               //     <PopoverDesc action="shifted" output="Semicolon" />
-              //   </Box>
+              //   </div>
               // )
             }}
           >
@@ -446,11 +426,11 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'period-key'
               // popOverContent: (
-              //   <Box p={1}>
+              //   <div className="p-2">
               //     <PopoverDesc action="tap/hold" output="Period/Dot" />
               //     <br />
               //     <PopoverDesc action="shifted" output="Colon" />
-              //   </Box>
+              //   </div>
               // )
             }}
           >
@@ -462,30 +442,29 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'right-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Right Shift" />
                   <br />
                   <PopoverDesc
                     action="simultaneously tap w/ Left Shift"
                     output="Caps-word"
                   />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
-            className="fa-regular fa-arrow-turn-down-left"
+            className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
-            sx={{transform: 'translateY(4px)'}}
             KeyContainerProps={{
-              sx: {width: 133.75, height: 55}, // 2.25u
+              style: {width: 133.75, height: 55}, // 2.25u
               keyId: 'right-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Enter" />
                   <br />
                   <PopoverDesc action="hold" output="Right Shift" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -497,160 +476,133 @@ export default function BaseLyr() {
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap" output="Toggle Mute" />
                   <br />
                   <PopoverDesc
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
-            className="fa-light fa-globe"
-            sx={{fontSize: 18, transform: 'translateY(2px)'}}
+            className="fa-light fa-globe translate-y-[2px] text-[18px]"
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-regular fa-keyboard"
-                sx={{transform: 'translateX(-4px)'}}
-              />
+              <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-[4px]" />
             )}
             KeyContainerProps={{
               keyId: 'fn-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   {/* <PopoverDesc action="tap" output="Escape" />
                   <br /> */}
                   <PopoverDesc action="hold" output="FN Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon className="fa-regular fa-chevron-up" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
+          <KeyIcon className="fa-regular fa-option text-[18px]" />
           <KeyIcon
-            className="fa-regular fa-command"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-command text-[18px]"
             KeyContainerProps={{
-              sx: {width: 70.75, height: 55} // 1.25u
+              style: {width: 70.75, height: 55} // 1.25u
             }}
           />
 
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[10px]"
             rotation={270}
-            sx={{transform: 'translateY(10px)'}}
             KeyContainerProps={{
-              sx: {width: 307, height: 55}, // 5u
+              style: {width: 307, height: 55}, // 5u
               keyId: 'space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Space" />
                   <br />
                   <PopoverDesc action="hold" output="FN Layer" />
-                </Box>
+                </div>
               )
             }}
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-regular fa-keyboard"
-                sx={{transform: 'translateX(-6px)'}}
-              />
+              <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-[6px]" />
             )}
           />
           <KeyIcon
-            className="fa-regular fa-command"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-command text-[18px]"
             KeyContainerProps={{
-              sx: {width: 70.75, height: 55}, // 1.25u
+              style: {width: 70.75, height: 55}, // 1.25u
               keyId: 'right-command-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Right Command" />
-                </Box>
+                </div>
               )
             }}
           />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} />
-          <Box
-            sx={{
+          <KeyIcon className="fa-regular fa-option text-[18px]" />
+          <div
+            style={{
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'center'
             }}
           >
-            <Box
-              sx={{
+            <div
+              style={{
                 alignSelf: 'flex-end'
               }}
             >
               <KeyIcon
-                className="fa-regular fa-arrow-left"
-                sx={{
-                  transform: 'translateY(-2px)',
-                  fontSize: 14
-                }}
+                className="fa-regular fa-arrow-left -translate-y-[2px] text-[14px]"
                 KeyContainerProps={{
-                  sx: {width: 55, height: 25} // 1u
+                  style: {width: 55, height: 25} // 1u
                 }}
               />
-            </Box>
-            <Box
-              sx={{
+            </div>
+            <div
+              style={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 alignItems: 'stretch',
-                marginLeft: 1
+                marginLeft: 8
               }}
             >
               <KeyIcon
-                className="fa-regular fa-arrow-up"
-                sx={{
-                  transform: 'translateY(-2px)',
-                  fontSize: 14
-                }}
+                className="fa-regular fa-arrow-up -translate-y-[2px] text-[14px]"
                 KeyContainerProps={{
-                  sx: {width: 55, height: 25} // 1u
+                  style: {width: 55, height: 25} // 1u
                 }}
               />
               <KeyIcon
-                className="fa-regular fa-arrow-down"
-                sx={{
-                  transform: 'translateY(-2px)',
-                  fontSize: 14
-                }}
+                className="fa-regular fa-arrow-down -translate-y-[2px] text-[14px]"
                 KeyContainerProps={{
-                  sx: {width: 55, height: 25} // 1u
+                  style: {width: 55, height: 25} // 1u
                 }}
               />
-            </Box>
+            </div>
             {/* <KeyIcon
-            className="fa-regular fa-arrow-up"
-               sx={{transform: 'translateY(-2px)', fontSize: 14}}
+            className="fa-regular fa-arrow-up -translate-y-[2px] text-[14px]"
           /> */}
-            <Box
-              sx={{
+            <div
+              style={{
                 alignSelf: 'flex-end',
-                marginLeft: 1
+                marginLeft: 8
               }}
             >
               <KeyIcon
-                className="fa-regular fa-arrow-right"
-                sx={{
-                  transform: 'translateY(-2px)',
-                  fontSize: 14
-                }}
+                className="fa-regular fa-arrow-right -translate-y-[2px] text-[14px]"
                 KeyContainerProps={{
-                  sx: {width: 55, height: 25} // 1u
+                  style: {width: 55, height: 25} // 1u
                 }}
               />
-            </Box>
-          </Box>
+            </div>
+          </div>
         </KeyboardGridRow>
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }

@@ -1,7 +1,6 @@
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
-import {Box, Grid, Typography} from '@mui/material'
 import PopoverDesc from '@/components/key/PopoverDesc'
 import FaIcon from '@/components/FaIcon'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
@@ -13,20 +12,17 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
   const isCorneLayout = layout === 'corne'
 
   return (
-    <Box data-layout={layout}>
-      <Grid container direction="column" spacing={1}>
+    <div data-layout={layout}>
+      <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-right-long-to-line"
-            sx={{
-              fontSize: 19
-            }}
+            className="fa-regular fa-arrow-right-long-to-line text-[19px]"
             KeyContainerProps={{
               keyId: 'tab-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -36,124 +32,124 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-thin fa-computer-mouse"
-            sx={{fontSize: 32}}
+            className="fa-thin fa-computer-mouse text-[32px]"
             KeyContainerProps={{
               keyId: 'mouse-button-5-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Button 5" />
-                </Box>
+                </div>
               )
             }}
           >
-            <Typography
-              sx={{
+            <span
+              style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
-                fontSize: '1rem',
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
               5
-            </Typography>
+            </span>
           </KeyIcon>
           <KeyIcon
-            className="fa-thin fa-computer-mouse"
-            sx={{fontSize: 32}}
+            className="fa-thin fa-computer-mouse text-[32px]"
             KeyContainerProps={{
               keyId: 'mouse-button-1-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Button 1" />
-                </Box>
+                </div>
               )
             }}
           >
-            <Typography
-              sx={{
+            <span
+              style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
-                fontSize: '1rem',
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
               1
-            </Typography>
+            </span>
           </KeyIcon>
           <KeyIcon
-            className="fa-thin fa-computer-mouse"
-            sx={{fontSize: 32}}
+            className="fa-thin fa-computer-mouse text-[32px]"
             KeyContainerProps={{
               keyId: 'mouse-button-2-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Button 2" />
-                </Box>
+                </div>
               )
             }}
           >
-            <Typography
-              sx={{
+            <span
+              style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
-                fontSize: '1rem',
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
               2
-            </Typography>
+            </span>
           </KeyIcon>
           <KeyIcon
-            className="fa-thin fa-computer-mouse"
-            sx={{fontSize: 32}}
+            className="fa-thin fa-computer-mouse text-[32px]"
             KeyContainerProps={{
               keyId: 'mouse-button-3-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Button 3" />
-                </Box>
+                </div>
               )
             }}
           >
-            <Typography
-              sx={{
+            <span
+              style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
-                fontSize: '1rem',
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
               3
-            </Typography>
+            </span>
           </KeyIcon>
           <KeyIcon
-            className="fa-thin fa-computer-mouse"
-            sx={{fontSize: 32}}
+            className="fa-thin fa-computer-mouse text-[32px]"
             KeyContainerProps={{
               keyId: 'mouse-button-4-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Button 4" />
-                </Box>
+                </div>
               )
             }}
           >
-            <Typography
-              sx={{
+            <span
+              style={{
                 position: 'absolute',
-                right: 11,
-                bottom: 0,
-                fontSize: '1rem',
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
+                fontSize: '0.95rem',
                 fontWeight: 600
               }}
             >
               4
-            </Typography>
+            </span>
           </KeyIcon>
           <KeyIcon
             customShiftCode
@@ -161,11 +157,11 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
                   <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
+                </div>
               )
             }}
             // shiftSubIcn={faRightToBracket}
@@ -176,19 +172,18 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
         <KeyboardGridRow>
           <KeyIcon
             special
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-arrow-up-left-from-circle text-[18px]"
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Escape (or turn off Mouse layer lock)" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-option text-[18px]" color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
           <KeyIcon homing className="fa-regular fa-up" color="solarized.cyan" />
           <KeyIcon
@@ -196,9 +191,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Lock/Unlock Mouse Layer" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -207,85 +202,69 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'lock-key-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Lock Next Key" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend
             homing
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-move-left-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Move Left" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
-            />
-            L
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />L
           </KeyLegend>
 
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-move-down-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Move Down" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
-            />
-            D
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />D
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-move-up-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Move Up" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
-            />
-            U
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />U
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-move-right-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Move Right" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-arrow-pointer"
-              sx={{paddingRight: 0.5, fontSize: '0.75rem'}}
-            />
-            R
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />R
           </KeyLegend>
 
           <KeyLegend {...sharedProps} shiftLgnd=":">
@@ -299,11 +278,11 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
                   <br />
                   <PopoverDesc action="double tap" output="Caps-word" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -312,9 +291,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'undo-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Undo" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -323,9 +302,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'cut-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Cut" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -334,9 +313,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'copy-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Copy" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -345,9 +324,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'paste-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Paste" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -356,9 +335,9 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'redo-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Redo" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -367,94 +346,76 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'shake-mouse-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Shake Mouse Pointer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-wheel-left-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Wheel Left" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              rotation={270}
-              className="fa-regular fa-circle-sort-up"
-              sx={{marginRight: 0.5, fontSize: 14}}
-            />
-            L
+            <FaIcon rotation={270} className="fa-regular fa-circle-sort-up mr-1 text-[14px]" />L
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-wheel-down-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Wheel Down" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-circle-sort-down"
-              sx={{marginRight: 0.5, fontSize: 14}}
-            />
-            D
+            <FaIcon className="fa-regular fa-circle-sort-down mr-1 text-[14px]" />D
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-wheel-up-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Wheel Up" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              className="fa-regular fa-circle-sort-up"
-              sx={{marginRight: 0.5, fontSize: 14}}
-            />
-            U
+            <FaIcon className="fa-regular fa-circle-sort-up mr-1 text-[14px]" />U
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            sx={{fontSize: 16}}
+            className="text-[16px]"
             KeyContainerProps={{
               keyId: 'mouse-wheel-right-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Mouse Wheel Right" />
-                </Box>
+                </div>
               )
             }}
           >
-            <FaIcon
-              sx={{marginRight: 0.5, fontSize: 14}}
-              rotation={90}
-              className="fa-regular fa-circle-sort-up"
-            />
-            R
+            <FaIcon className="fa-regular fa-circle-sort-up mr-1 text-[14px]" rotation={90} />R
           </KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Enter" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -463,7 +424,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend
             {...sharedProps}
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -473,7 +434,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend
             {...sharedProps}
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -483,7 +444,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend
             {...sharedProps}
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -493,40 +454,37 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           {/* <KeyIcon
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{fontSize: 19, transform: 'translateY(1px)'}}
+            className="fa-regular fa-arrow-up-left-from-circle text-[19px] translate-y-[1px]"
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Escape" />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -536,7 +494,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -544,27 +502,26 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Right Option" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -572,7 +529,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </KeyboardGridRow>
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }

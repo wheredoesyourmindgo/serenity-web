@@ -1,10 +1,5 @@
-import AppStyles from '@/components/AppStyles'
 import Navbar from '@/components/Navbar'
 import {ThemeProvider as AppThemeProvider} from '@/components/theme-provider'
-import theme from '@/lib/theme'
-import {ThemeProvider as MuiThemeProvider} from '@mui/material'
-import {AppRouterCacheProvider} from '@mui/material-nextjs/v16-appRouter'
-import ToggleColorMode from '@/components/ToggleColorMode'
 import {Analytics} from '@vercel/analytics/next'
 import localFont from 'next/font/local'
 import './globals.css'
@@ -95,7 +90,7 @@ const bodyFont = localFont({
     }
   ],
   variable: '--font-body',
-  display: 'swap' // Use font swapping for better performance
+  display: 'swap'
 })
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -108,22 +103,15 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     >
       <body>
         <AppThemeProvider>
-          <AppRouterCacheProvider>
-            <MuiThemeProvider theme={theme}>
-              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-              {/* <CssBaseline /> */}
-              <AppStyles />
-              <ToggleColorMode>
-                <div className="flex h-screen flex-col">
-                  <Navbar />
-                  <main className="flex w-full flex-1 justify-center">
-                    <div className="my-12 block w-full flex-1">{children}</div>
-                  </main>
-                </div>
-              </ToggleColorMode>
-              <Analytics />
-            </MuiThemeProvider>
-          </AppRouterCacheProvider>
+          <div className="bg-background h-screen overflow-auto">
+            <div className="flex h-screen flex-col">
+              <Navbar />
+              <main className="flex w-full flex-1 justify-center">
+                <div className="my-12 block w-full flex-1">{children}</div>
+              </main>
+            </div>
+          </div>
+          <Analytics />
         </AppThemeProvider>
       </body>
     </html>

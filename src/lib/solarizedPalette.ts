@@ -69,7 +69,7 @@ const commonPalette = {
   }
 }
 
-const muiSolarizedLightPalette = {
+const solarizedLightPalette = {
   ...commonPalette,
   background: {
     default: solarized.light.base3,
@@ -86,7 +86,7 @@ const muiSolarizedLightPalette = {
   }
 }
 
-const muiSolarizedDarkPalette = {
+const solarizedDarkPalette = {
   ...commonPalette,
   background: {
     default: solarized.dark.base3,
@@ -103,4 +103,4 @@ const muiSolarizedDarkPalette = {
   }
 }
 
-export {solarized, muiSolarizedLightPalette, muiSolarizedDarkPalette}
+export {solarized, solarizedLightPalette, solarizedDarkPalette}
