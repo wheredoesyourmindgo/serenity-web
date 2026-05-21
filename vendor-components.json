@@ -1,6 +1,36 @@
 {
   "components": [
     {
+      "name": "button",
+      "source": "shadcn",
+      "spec": "button",
+      "paths": ["src/components/ui/button.tsx"]
+    },
+    {
+      "name": "separator",
+      "source": "shadcn",
+      "spec": "separator",
+      "paths": ["src/components/ui/separator.tsx"]
+    },
+    {
+      "name": "button-group",
+      "source": "shadcn",
+      "spec": "button-group",
+      "paths": ["src/components/ui/button-group.tsx"]
+    },
+    {
+      "name": "table",
+      "source": "shadcn",
+      "spec": "table",
+      "paths": ["src/components/ui/table.tsx"]
+    },
+    {
+      "name": "tabs",
+      "source": "shadcn",
+      "spec": "tabs",
+      "paths": ["src/components/ui/tabs.tsx"]
+    },
+    {
       "name": "hover-card",
       "source": "animate-ui",
       "spec": "@animate-ui/components-radix-hover-card",
@@ -34,6 +64,21 @@
         "src/components/animate-ui/components/radix/toggle.tsx",
         "src/components/animate-ui/primitives/radix/toggle-group.tsx",
         "src/components/animate-ui/components/radix/toggle-group.tsx"
+      ]
+    },
+    {
+      "name": "tabs",
+      "source": "animate-ui",
+      "spec": "@animate-ui/components-radix-tabs",
+      "paths": [
+        "src/hooks/use-controlled-state.tsx",
+        "src/hooks/use-auto-height.tsx",
+        "src/lib/get-strict-context.tsx",
+        "src/components/animate-ui/primitives/animate/slot.tsx",
+        "src/components/animate-ui/primitives/effects/auto-height.tsx",
+        "src/components/animate-ui/primitives/effects/highlight.tsx",
+        "src/components/animate-ui/primitives/radix/tabs.tsx",
+        "src/components/animate-ui/components/radix/tabs.tsx"
       ]
     }
   ]
