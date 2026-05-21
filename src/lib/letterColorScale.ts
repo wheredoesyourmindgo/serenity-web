@@ -14,7 +14,7 @@ function clamp(value: number, min: number, max: number): number {
 function hexToRgb(hex: string): RGB {
   let cleaned = hex.trim()
 
-  // Allow MUI style values with opacity (e.g. #RRGGBBAA) – just strip alpha
+  // Allow values with opacity (e.g. #RRGGBBAA) – just strip alpha
   if (cleaned.length === 9 && cleaned.startsWith('#')) {
     cleaned = cleaned.slice(0, 7)
   }

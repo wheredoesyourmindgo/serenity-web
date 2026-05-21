@@ -5,34 +5,29 @@ import PopoverDesc from '@/components/key/PopoverDesc'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
-import {Grid, Box, Typography} from '@mui/material'
 import KeyboardGridRow from '../KeyboardGridRow'
 import FaIcon from '@/components/FaIcon'
 
 function RectangleProCaption() {
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         display: 'flex',
         justifyContent: 'flex-end',
         textAlign: 'right'
       }}
     >
-      <Typography
-        sx={{
-          color: 'solarized.blue',
+      <span
+        style={{
+          color: 'var(--solarized-blue)',
           fontSize: 11,
           fontWeight: 'bold'
         }}
       >
-        <FaIcon
-          className="fa-regular fa-browser"
-          color="solarized.blue"
-          sx={{paddingRight: 2.25}}
-        />
+        <FaIcon className="fa-regular fa-browser pr-[18px]" color="solarized.blue" />
         Rectangle Pro
-      </Typography>
-    </Box>
+      </span>
+    </div>
   )
 }
 
@@ -41,24 +36,21 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
   const isCorneLayout = layout === 'corne'
 
   return (
-    <Box data-layout={layout}>
-      <Grid container direction="column" spacing={1}>
+    <div data-layout={layout}>
+      <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            className="fa-regular fa-arrow-right-long-to-line"
-            sx={{
-              fontSize: 19
-            }}
+            className="fa-regular fa-arrow-right-long-to-line text-[19px]"
             KeyContainerProps={{
               keyId: 'tab-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                </Box>
+                </div>
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          {/* <KeyLegend {...sharedProps} className="text-[12px]">
             <>
               Prt
               <br />
@@ -70,13 +62,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'print-screen-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Print Screen" />
-                </Box>
+                </div>
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          {/* <KeyLegend {...sharedProps} className="text-[12px]">
             <>
               Scrl
               <br />
@@ -88,13 +80,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'scroll-lock-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Scroll Lock" />
-                </Box>
+                </div>
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          {/* <KeyLegend {...sharedProps} className="text-[12px]">
             Pause
           </KeyLegend> */}
           <KeyIcon
@@ -102,13 +94,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'pause-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Pause" />
-                </Box>
+                </div>
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          {/* <KeyLegend {...sharedProps} className="text-[12px]">
             Ins
           </KeyLegend> */}
           <KeyIcon
@@ -116,13 +108,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'insert-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Insert" />
-                </Box>
+                </div>
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} sx={{fontSize: 12}}>
+          {/* <KeyLegend {...sharedProps} className="text-[12px]">
             App
           </KeyLegend> */}
           <KeyIcon
@@ -130,9 +122,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'app-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="App (Menu)" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -142,11 +134,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'go-back-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Go Back (browser)" />
                   <br />
                   <PopoverDesc action="shifted" output="Go Forward" />
-                </Box>
+                </div>
               )
             }}
           /> */}
@@ -157,13 +149,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-partial-fullscreen-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Fullscreen Window" />
                   <br />
                   <PopoverDesc action="hold" output="Restore Window" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -172,9 +164,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'nav-left-tab',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Switch Tab Left" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -184,11 +176,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'prev-app-window',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   {/* <PopoverDesc action="tap" output="Next App Window" />
                   <br /> */}
                   <PopoverDesc action="tap" output="Prev App Window" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -199,11 +191,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'next-app-window',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Next App Window" />
                   {/* <br />
                   <PopoverDesc action="shifted" output="Prev App Window" /> */}
-                </Box>
+                </div>
               )
             }}
           />
@@ -212,9 +204,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'nav-right-tab',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Switch Tab Right" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -225,11 +217,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'backspace-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Backspace" />
                   <br />
                   <PopoverDesc action="shifted" output="Forward Delete" />
-                </Box>
+                </div>
               )
             }}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
@@ -238,19 +230,18 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
         <KeyboardGridRow>
           <KeyIcon
             special
-            className="fa-regular fa-arrow-up-left-from-circle"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-arrow-up-left-from-circle text-[18px]"
             KeyContainerProps={{
               keyId: 'escape-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Escape (or turn off Action layer lock)" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-option" sx={{fontSize: 18}} color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-option text-[18px]" color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
           <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
           <KeyIcon
@@ -258,9 +249,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'lock-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Lock/Unlock Action Layer" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -271,9 +262,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-management3-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Window Management 3" />
-                </Box>
+                </div>
               )
             }}
           /> */}
@@ -285,13 +276,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-partial-fullscreen-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Center Window" />
                   <br />
                   <PopoverDesc action="hold" output="Last Window Position" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -303,13 +294,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-center-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Window Left Half" />
                   <br />
                   <PopoverDesc action="hold" output="Window Fill Left" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -322,13 +313,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-management1-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Decrease Window Size" />
                   {/* <br />
                   <PopoverDesc action="hold" output="" />
                   <br /> */}
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -340,13 +331,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-management2-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Increase Window Size" />
                   {/* <br />
                   <PopoverDesc action="hold" output="" />
                   <br /> */}
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -359,13 +350,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-management1-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Window Bottom Half" />
                   <br />
                   <PopoverDesc action="hold" output="Window Fill Bottom" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           /> */}
@@ -377,13 +368,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-management2-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Window Top Half" />
                   <br />
                   <PopoverDesc action="hold" output="Window Fill Top" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           /> */}
@@ -394,9 +385,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-management4-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Window Management 4" />
-                </Box>
+                </div>
               )
             }}
           /> */}
@@ -408,13 +399,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-restore-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Window Right Half" />
                   <br />
                   <PopoverDesc action="hold" output="Window Fill Right" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -429,11 +420,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'left-shift-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
                   <br />
                   <PopoverDesc action="double tap" output="Caps-word" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -442,9 +433,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'caps-sentence-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Caps-sentence" />
-                </Box>
+                </div>
               )
             }}
           /> */}
@@ -461,13 +452,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'window-partial-fullscreen-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Almost Max Window" />
                   <br />
                   <PopoverDesc action="hold" output="Max Window Height" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -477,11 +468,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'throw-space-left-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Throw Window Space Left" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -493,11 +484,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'throw-space-right-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap" output="Throw Window Space Right" />
                   <br />
                   <RectangleProCaption />
-                </Box>
+                </div>
               )
             }}
           />
@@ -506,9 +497,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'enter-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Enter" />
-                </Box>
+                </div>
               )
             }}
           />
@@ -520,21 +511,21 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               keyId: 'oops-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="single tap" output="Toggle Mute" />
                   <br />
                   <PopoverDesc
                     action="double tap"
                     output="Mute & Hide Window"
                   />
-                </Box>
+                </div>
               )
             }}
           /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -542,27 +533,26 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             color="solarized.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Right Option" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -572,54 +562,48 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'left-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-bracket-square"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
-            sx={{transform: 'translateY(6px)'}}
             KeyContainerProps={{
               keyId: 'right-space-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Space" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn
-                className="fa-regular fa-function"
-                sx={{transform: 'translateX(-3px)'}}
-              />
+              <LyrHoldSubIcn className="fa-regular fa-function -translate-x-[3px]" />
             )}
-            className="fa-regular fa-layer-group"
-            sx={{fontSize: 16, transform: 'translateY(2px)'}}
+            className="fa-regular fa-layer-group translate-y-[2px] text-[16px]"
             KeyContainerProps={{
               keyId: 'function-layer-key',
               popOverContent: (
-                <Box p={1}>
+                <div className="p-2">
                   <PopoverDesc action="hold" output="Function Layer" />
-                </Box>
+                </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -627,10 +611,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-option"
-            sx={{fontSize: 18}}
+            className="fa-regular fa-option text-[18px]"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -640,7 +623,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              sx: {
+              style: {
                 opacity: isCorneLayout ? 0 : 1,
                 transition: 'opacity 160ms ease-in-out',
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
@@ -648,7 +631,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
         </KeyboardGridRow>
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }

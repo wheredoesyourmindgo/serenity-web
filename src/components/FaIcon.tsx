@@ -4,37 +4,27 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import type {FontAwesomeIconProps} from '@fortawesome/react-fontawesome'
 import {cn} from '@/lib/cn'
 import {colorTokenToCssValue} from '@/lib/colorToken'
-import {sxToInlineStyle} from '@/lib/sxToInlineStyle'
-import {useTheme, type SxProps, type Theme} from '@mui/material/styles'
-import type {CSSProperties, HTMLAttributes} from 'react'
+import type {HTMLAttributes} from 'react'
 
 type Props = Omit<HTMLAttributes<HTMLElement>, 'color'> & {
   color?: string
   icon?: FontAwesomeIconProps['icon']
   rotation?: number
-  sx?: SxProps<Theme>
 }
 
-type IconStyle = CSSProperties & {
+type IconStyle = React.CSSProperties & {
   '--fa-icon-color'?: string
   '--fa-icon-transform'?: string
 }
 
 export default function FaIcon(props: Props) {
-  const theme = useTheme()
-  const {sx, style, color, rotation, icon, className, ...rest} = props
-  const sxStyle = sxToInlineStyle(theme, sx)
-  const {transform: sxTransform, ...restSxStyle} = sxStyle
-  const incomingTransform = typeof sxTransform === 'string' ? sxTransform : undefined
-  const transformWithSpace = incomingTransform ? `${incomingTransform} ` : ''
+  const {style, color, rotation, icon, className, ...rest} = props
   const resolvedColor = colorTokenToCssValue(color)
-  const computedTransform =
-    typeof rotation === 'number' ? `${transformWithSpace}rotate(${rotation}deg)` : incomingTransform
+  const computedTransform = typeof rotation === 'number' ? `rotate(${rotation}deg)` : undefined
 
   const iconStyle: IconStyle = {
     ...(resolvedColor && {'--fa-icon-color': resolvedColor}),
     ...(computedTransform && {'--fa-icon-transform': computedTransform}),
-    ...restSxStyle,
     ...style
   }
 

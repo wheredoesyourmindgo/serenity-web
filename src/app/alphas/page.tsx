@@ -1,246 +1,133 @@
 'use client'
 
 import {useState} from 'react'
-import {
-  Box,
-  Container,
-  Divider,
-  Link,
-  Paper,
-  ToggleButton,
-  ToggleButtonGroup,
-  Typography as Type
-} from '@mui/material'
-// import Copyright from '@/components/Copyright'
+import {cn} from '@/lib/cn'
 import AlphaKeyboard from '@/components/keyboard/Alphas'
 import FaIcon from '@/components/FaIcon'
 import genkey from '@/components/stats/genkey'
 import a200 from '@/components/stats/a200'
 import colemakmods from '@/components/stats/colemakmods'
-// import ColStaggerAlphaKeyboard from '@/components/keyboard/ColStaggerAlphas'
-// import genkeyColStagger from '@/components/stats/genkeyColStagger'
-// import a200ColStagger from '@/components/stats/a200ColStagger'
-// import colemakmodsColStagger from '@/components/stats/colemakmodsColStagger'
 
 type Show = 'a200' | 'genkey' | 'colemakmods'
+
+const statTabs: {value: Show; label: string}[] = [
+  {value: 'genkey', label: 'Genkey'},
+  {value: 'a200', label: '200 Analyzer'},
+  {value: 'colemakmods', label: 'Keyboard Layout Analyzer [SP]'}
+]
 
 export default function AlphasPage() {
   const [show, setShow] = useState<Show>('genkey')
 
-  const handleShowChange = (_event: React.MouseEvent<HTMLElement>, newShow: Show) => {
+  const handleShowChange = (newShow: string) => {
     if (newShow !== null) {
-      setShow(newShow)
+      setShow(newShow as Show)
     }
   }
 
-  // const handleColStaggerChange = (
-  //   _event: React.ChangeEvent<HTMLInputElement>,
-  //   checked: boolean
-  // ) => {
-  //   if (checked) {
-  //     setStaggerChecked(false)
-  //   }
-  //   setColStaggerChecked(checked)
-  // }
-
-  // const [colStaggerChecked, setColStaggerChecked] = useState(false)
-
   return (
-    <Container>
-      <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        {/* <Type>mode: {mode}</Type>
-          <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-        <Type
-          variant="h2"
-          color="primary"
-          sx={{
-            // sx={{fontStyle: 'italic'}}
-            pt: {xs: 2, md: 4},
-            pb: {xs: 2, md: 4}
-          }}
-        >
+    <div className="container mx-auto px-4">
+      <div className="flex flex-col items-center">
+        <h2 className="text-solarized-green pt-4 pb-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Alphas
-        </Type>
-        <Box
-          sx={{
-            transform: {xs: 'scale(0.52)', sm: 'scale(0.75)', md: 'none'},
-            transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-            height: {xs: 100, sm: 200, md: 'auto'}
-          }}
-        >
+        </h2>
+        <div className="h-[100px] origin-center scale-[0.52] sm:h-[200px] sm:scale-[0.75] md:h-auto md:origin-[initial] md:scale-100">
           <AlphaKeyboard />
-        </Box>
+        </div>
 
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            mt: 10,
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <Box sx={{display: 'flex', alignItems: 'center'}}>
-            <FaIcon
-              className="fa-regular fa-star-shooting"
-              sx={{color: 'solarized.base1', marginRight: 1}}
-            />
-            <Type variant="h6" sx={{color: 'solarized.base00'}}>
-              Statistics
-            </Type>
-          </Box>
+        <div className="mt-20 flex flex-col items-center justify-center">
+          <div className="flex items-center gap-2">
+            <FaIcon className="fa-regular fa-star-shooting" color="solarized.base1" />
+            <h6 className="text-solarized-base00 text-[1.25rem] font-medium">Statistics</h6>
+          </div>
 
-          <Box sx={{display: 'flex', mt: 2}}>
-            <ToggleButtonGroup
-              color="primary"
-              value={show}
-              exclusive
-              onChange={handleShowChange}
+          <div className="mt-4 flex">
+            <div
+              role="group"
               aria-label="Stats Button Toggle"
-              // orientation="vertical"
+              className="border-border flex overflow-hidden rounded-lg border"
             >
-              <ToggleButton
-                sx={{color: 'solarized.base01'}}
-                value="genkey"
-                aria-label="Genkey button"
-              >
-                Genkey
-              </ToggleButton>
-              <ToggleButton
-                sx={{color: 'solarized.base01'}}
-                value="a200"
-                aria-label="200 Analyzer button"
-              >
-                200 Analyzer
-              </ToggleButton>
-              <ToggleButton
-                sx={{color: 'solarized.base01'}}
-                value="colemakmods"
-                aria-label="Keyboard Layout Analyzer [SP] button"
-              >
-                Keyboard Layout Analyzer [SP]
-              </ToggleButton>
-            </ToggleButtonGroup>
-          </Box>
-        </Box>
-        {/* <Copyright /> */}
-        <Box
-          sx={{
-            pt: 4,
-            maxWidth: '100%',
-            ...(show !== 'genkey' && {display: 'none'})
-          }}
-        >
-          <Paper
-            sx={{
-              padding: 4,
-              overflowX: 'scroll',
-              elevation: 0
-            }}
-          >
-            <Type gutterBottom component="pre" sx={{color: 'solarized.base01'}}>
-              <FaIcon
-                className="fa-regular fa-angle-right"
-                sx={{color: 'solarized.green', marginRight: 1}}
-              />
+              {statTabs.map(({value, label}) => (
+                <button
+                  key={value}
+                  onClick={() => handleShowChange(value)}
+                  aria-pressed={show === value}
+                  className={cn(
+                    'border-border border-r px-4 py-2 text-sm font-medium transition-colors last:border-r-0',
+                    show === value
+                      ? 'bg-solarized-blue/10 text-solarized-blue dark:bg-solarized-cyan/10 dark:text-solarized-cyan'
+                      : 'text-solarized-base01 hover:bg-accent/50'
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className={cn('max-w-full pt-8', show !== 'genkey' && 'hidden')}>
+          <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
+            <p className="text-solarized-base01 mb-2 flex items-center gap-2">
+              <FaIcon className="fa-regular fa-angle-right" color="solarized.green" />
               <em>./genkey -stagger=false analyze serenity</em>
-            </Type>
-            <Divider />
-            <Type component="pre" variant="body2" sx={{color: 'solarized.base00'}}>
-              {genkey}
-            </Type>
-          </Paper>
-          <Box sx={{display: 'flex', justifyContent: 'flex-end', mt: 1}}>
-            <Link
+            </p>
+            <hr className="border-border mb-2" />
+            <pre className="text-solarized-base00 text-sm">{genkey}</pre>
+          </div>
+          <div className="mt-2 flex justify-end">
+            <a
               href="https://github.com/semilin/genkey"
               rel="noopener noreferrer"
               target="_blank"
-              variant="caption"
-              sx={{
-                color: 'text.primary'
-              }}
+              className="text-foreground text-xs hover:underline"
             >
               https://github.com/semilin/genkey
-            </Link>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            pt: 4,
-            maxWidth: '100%',
-            ...(show !== 'a200' && {display: 'none'})
-          }}
-        >
-          <Paper
-            sx={{
-              padding: 4,
-              overflowX: 'scroll',
-              elevation: 0
-            }}
-          >
-            <Type gutterBottom component="pre" sx={{color: 'solarized.base01'}}>
-              <FaIcon
-                className="fa-regular fa-angle-right"
-                sx={{color: 'solarized.green', paddingRight: 2}}
-              />
+            </a>
+          </div>
+        </div>
+
+        <div className={cn('max-w-full pt-8', show !== 'a200' && 'hidden')}>
+          <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
+            <p className="text-solarized-base01 mb-2 flex items-center gap-4">
+              <FaIcon className="fa-regular fa-angle-right" color="solarized.green" />
               <em>./a200 vw serenity</em>
-            </Type>
-            <Divider />
-            <Type component="pre" variant="body2" sx={{color: 'solarized.base00'}}>
-              {a200}
-            </Type>
-          </Paper>
-          <Box sx={{display: 'flex', justifyContent: 'flex-end', mt: 1}}>
-            <Link
+            </p>
+            <hr className="border-border mb-2" />
+            <pre className="text-solarized-base00 text-sm">{a200}</pre>
+          </div>
+          <div className="mt-2 flex justify-end">
+            <a
               href="https://github.com/ClemenPine/200-analyzer"
               rel="noopener noreferrer"
               target="_blank"
-              variant="caption"
-              sx={{
-                color: 'text.primary'
-              }}
+              className="text-foreground text-xs hover:underline"
             >
               https://github.com/ClemenPine/200-analyzer
-            </Link>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            pt: 4,
-            maxWidth: '100%',
-            ...(show !== 'colemakmods' && {display: 'none'})
-          }}
-        >
-          <Paper
-            sx={{
-              padding: 4,
-              overflowX: 'scroll',
-              elevation: 0
-            }}
-          >
-            <Type gutterBottom component="pre" sx={{color: 'solarized.base01'}}>
+            </a>
+          </div>
+        </div>
+
+        <div className={cn('max-w-full pt-8', show !== 'colemakmods' && 'hidden')}>
+          <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
+            <p className="text-solarized-base01 mb-2">
               <em>Keyboard Analysis Tool - v1.32</em>
-            </Type>
-            <Divider />
-            <Type component="pre" variant="body2" sx={{color: 'solarized.base00'}}>
-              {colemakmods}
-            </Type>
-          </Paper>
-          <Box sx={{display: 'flex', justifyContent: 'flex-end', mt: 1}}>
-            <Link
+            </p>
+            <hr className="border-border mb-2" />
+            <pre className="text-solarized-base00 text-sm">{colemakmods}</pre>
+          </div>
+          <div className="mt-2 flex justify-end">
+            <a
               href="https://colemakmods.github.io/mod-dh/analyze.html"
               rel="noopener noreferrer"
               target="_blank"
-              variant="caption"
-              sx={{
-                color: 'text.primary'
-              }}
+              className="text-foreground text-xs hover:underline"
             >
               https://colemakmods.github.io/mod-dh/analyze.html
-            </Link>
-          </Box>
-        </Box>
-      </Box>
-    </Container>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

@@ -1,13 +1,10 @@
 'use client'
 
 import {useState} from 'react'
-import withAlpha from 'color-alpha'
-import {Box, Button, Container, Grid, Tab, Tabs, Typography as Type} from '@mui/material'
-// import Copyright from '@/components/Copyright'
+import {cn} from '@/lib/cn'
 import BaseLyr from '@/components/keyboard/software/BaseLyr'
 import FaIcon from '@/components/FaIcon'
 import FnLyr from '@/components/keyboard/software/FnLyr'
-import GitHubIcon from '@mui/icons-material/GitHub'
 import QmkLegend from '@/components/QmkLegend'
 
 interface TabPanelProps {
@@ -16,46 +13,29 @@ interface TabPanelProps {
   value: number
 }
 
-function SerenityKarabinerButton() {
+function GitHubIcon() {
   return (
-    <Button
-      variant="outlined"
-      href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
-      target="_blank"
-      rel="noopener noreferrer"
-      startIcon={<GitHubIcon />}
-      size="small"
-      sx={[
-        {
-          textTransform: 'none',
-          fontWeight: 600,
-          color: 'white',
-          bgcolor: '#24292e',
-          borderWidth: '1px',
-          borderStyle: 'solid',
-          borderColor: 'rgba(0, 0, 0, 0.3)',
-          '&:hover': {
-            bgcolor: withAlpha('#2f363d', 0.9),
-            borderColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        },
-        (theme) =>
-          theme.applyStyles('dark', {
-            borderColor: 'rgba(255, 255, 255, 0.3)',
-            '&:hover': {
-              borderColor: 'rgba(255, 255, 255, 0.5)'
-            }
-          })
-      ]}
-    >
-      Serenity Karabiner
-    </Button>
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" fill="currentColor">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+    </svg>
   )
 }
 
-function TabPanel(props: TabPanelProps) {
-  const {children, value, index, ...other} = props
+function SerenityKarabinerButton() {
+  return (
+    <a
+      href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 rounded border border-black/30 bg-[#24292e] px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:border-black/50 hover:bg-[#2f363d]/90 dark:border-white/30 dark:hover:border-white/50"
+    >
+      <GitHubIcon />
+      Serenity Karabiner
+    </a>
+  )
+}
 
+function TabPanel({children, value, index, ...other}: TabPanelProps) {
   return (
     <div
       role="tabpanel"
@@ -64,7 +44,7 @@ function TabPanel(props: TabPanelProps) {
       aria-labelledby={`keyboard-layer-tab-${index}`}
       {...other}
     >
-      {value === index && <Box>{children}</Box>}
+      {value === index && <div>{children}</div>}
     </div>
   )
 }
@@ -76,109 +56,70 @@ function a11yProps(index: number) {
   }
 }
 
+const tabs = [
+  {label: 'Base', icon: 'fa-regular fa-house-user'},
+  {label: 'FN Layer', icon: 'fa-regular fa-keyboard', iconClassName: 'text-[15px]'}
+]
+
 export default function SoftwarePage() {
   const [value, setValue] = useState(0)
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue)
-  }
   return (
-    <Container sx={{position: 'relative'}}>
-      <Box
-        sx={{
-          marginRight: 2,
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          display: {xs: 'none', md: 'block'}
-        }}
-      >
+    <div className="relative container mx-auto px-4">
+      <div className="absolute top-0 right-0 mr-4 hidden md:block">
         <SerenityKarabinerButton />
-      </Box>
-      <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        {/* <Type>mode: {mode}</Type>
-          <Type>theme.palette.mode: {theme.palette.mode}</Type> */}
-        <Type
-          variant="h2"
-          color="primary"
-          sx={{
-            // sx={{fontStyle: 'italic'}}
-            pt: {xs: 2, md: 4},
-            pb: {xs: 2, md: 4}
-          }}
-        >
+      </div>
+      <div className="flex flex-col items-center">
+        <h2 className="text-solarized-green pt-4 pb-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Software
-        </Type>
+        </h2>
 
-        <Box
-          sx={{
-            transform: {xs: 'scale(0.40)', sm: 'scale(0.60)', md: 'none'},
-            transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-            height: {xs: 190, sm: 300, md: 'auto'}
-          }}
-        >
+        <div className="h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100">
           <TabPanel value={value} index={0}>
             <BaseLyr />
           </TabPanel>
-
           <TabPanel value={value} index={1}>
             <FnLyr />
           </TabPanel>
-        </Box>
+        </div>
 
-        <Box
-          sx={{
-            marginTop: 6,
-            bgcolor: 'background.paper',
-            maxWidth: '100%'
-          }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
+        <div className="bg-card mt-12 max-w-full">
+          <div
+            role="tablist"
             aria-label="Keyboard Layer tabs"
-            variant="scrollable"
-            scrollButtons="auto"
-            allowScrollButtonsMobile
+            className="border-border flex overflow-x-auto border-b"
           >
-            <Tab
-              label="Base"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-house-user" />
-                </Box>
-              }
-              {...a11yProps(0)}
-            />
+            {tabs.map((tab, idx) => (
+              <button
+                key={idx}
+                role="tab"
+                onClick={() => setValue(idx)}
+                className={cn(
+                  'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
+                  value === idx
+                    ? 'border-solarized-blue text-solarized-blue dark:border-solarized-cyan dark:text-solarized-cyan'
+                    : 'text-muted-foreground hover:text-foreground border-transparent'
+                )}
+                {...a11yProps(idx)}
+              >
+                <span className="flex h-4 items-center justify-center">
+                  <FaIcon className={cn(tab.icon, tab.iconClassName)} />
+                </span>
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
 
-            <Tab
-              label="FN Layer"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-keyboard" sx={{fontSize: 15}} />
-                </Box>
-              }
-              {...a11yProps(1)}
-            />
-          </Tabs>
-        </Box>
-        {/* <Copyright /> */}
-      </Box>
-      <Grid container sx={{mt: 10}} justifyContent="center" columnSpacing={12} rowSpacing={6}>
-        <Grid size={{xs: 12, sm: 5}} sx={{display: {xs: 'none', md: 'block'}}} />
-        <Grid size={{xs: 12, sm: 'auto'}}>
+      <div className="mt-20 flex flex-wrap justify-center gap-x-24 gap-y-12">
+        <div>
           <QmkLegend />
-        </Grid>
-        <Grid size={{xs: 12, sm: 'auto'}}>
-          <Box
-            sx={{
-              display: {xs: 'block', md: 'none'}
-            }}
-          >
-            <SerenityKarabinerButton />
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
+        </div>
+        <div className="md:hidden">
+          <SerenityKarabinerButton />
+        </div>
+      </div>
+    </div>
   )
 }

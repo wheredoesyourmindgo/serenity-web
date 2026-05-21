@@ -1,9 +1,7 @@
 'use client'
 
 import {useState} from 'react'
-import withAlpha from 'color-alpha'
-import {Box, Button, Container, Grid, Link, Tab, Tabs, Typography as Type} from '@mui/material'
-import {FormControl, FormLabel, ToggleButton, ToggleButtonGroup} from '@mui/material'
+import {cn} from '@/lib/cn'
 import BaseLyr from '@/components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@/components/keyboard/firmware/NumNavLyr'
 import SymLyr from '@/components/keyboard/firmware/SymLyr'
@@ -14,8 +12,32 @@ import FaIcon from '@/components/FaIcon'
 import QwertyLyr from '@/components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@/components/keyboard/firmware/MouseLyr'
 import OsLyr from '@/components/keyboard/firmware/OsLyr'
-import GitHubIcon from '@mui/icons-material/GitHub'
 import QmkLegend from '@/components/QmkLegend'
+import {ToggleGroup, ToggleGroupItem} from '@/components/animate-ui/components/radix/toggle-group'
+
+export type KeyboardLayout = 'planck' | 'corne'
+
+function GitHubIcon() {
+  return (
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" fill="currentColor">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+    </svg>
+  )
+}
+
+function SerenityQmkButton() {
+  return (
+    <a
+      href="https://github.com/wheredoesyourmindgo/serenity-qmk"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 rounded border border-black/30 bg-[#24292e] px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:border-black/50 hover:bg-[#2f363d]/90 dark:border-white/30 dark:hover:border-white/50"
+    >
+      <GitHubIcon />
+      Serenity QMK
+    </a>
+  )
+}
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -23,48 +45,7 @@ interface TabPanelProps {
   value: number
 }
 
-export type KeyboardLayout = 'planck' | 'corne'
-
-function SerenityQmkButton() {
-  return (
-    <Button
-      variant="outlined"
-      href="https://github.com/wheredoesyourmindgo/serenity-qmk"
-      target="_blank"
-      rel="noopener noreferrer"
-      startIcon={<GitHubIcon />}
-      size="small"
-      sx={[
-        {
-          textTransform: 'none',
-          fontWeight: 600,
-          color: 'white',
-          bgcolor: '#24292e',
-          borderWidth: '1px',
-          borderStyle: 'solid',
-          borderColor: 'rgba(0, 0, 0, 0.3)',
-          '&:hover': {
-            bgcolor: withAlpha('#2f363d', 0.9),
-            borderColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        },
-        (theme) =>
-          theme.applyStyles('dark', {
-            borderColor: 'rgba(255, 255, 255, 0.3)',
-            '&:hover': {
-              borderColor: 'rgba(255, 255, 255, 0.5)'
-            }
-          })
-      ]}
-    >
-      Serenity QMK
-    </Button>
-  )
-}
-
-function TabPanel(props: TabPanelProps) {
-  const {children, value, index, ...other} = props
-
+function TabPanel({children, value, index, ...other}: TabPanelProps) {
   return (
     <div
       role="tabpanel"
@@ -73,7 +54,7 @@ function TabPanel(props: TabPanelProps) {
       aria-labelledby={`keyboard-layer-tab-${index}`}
       {...other}
     >
-      {value === index && <Box>{children}</Box>}
+      {value === index && <div>{children}</div>}
     </div>
   )
 }
@@ -85,55 +66,37 @@ function a11yProps(index: number) {
   }
 }
 
+const tabs = [
+  {label: 'Base', icon: 'fa-regular fa-house-user'},
+  {label: 'Mouse', icon: 'fa-regular fa-mouse'},
+  {label: 'Num/Nav', icon: 'fa-regular fa-hashtag', iconClassName: 'text-[15px]'},
+  {label: 'Action', icon: 'fa-regular fa-table-layout'},
+  {label: 'Media', icon: 'fa-regular fa-cog'},
+  {label: 'Symbol', icon: 'fa-regular fa-at'},
+  {label: 'OS', icon: 'fa-brands fa-apple', iconClassName: 'text-[15px]'},
+  {label: 'Function', icon: 'fa-regular fa-function'},
+  {label: 'Qwerty', icon: 'fa-regular fa-typewriter'}
+]
+
 export default function FirmwarePage() {
   const [value, setValue] = useState(0)
-
   const [layout, setLayout] = useState<KeyboardLayout>('planck')
 
-  const handleLayoutChange = (
-    _event: React.MouseEvent<HTMLElement>,
-    newLayout: KeyboardLayout | null
-  ) => {
-    if (newLayout) setLayout(newLayout)
-  }
-
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue)
+  const handleLayoutChange = (newLayout: string) => {
+    if (newLayout) setLayout(newLayout as KeyboardLayout)
   }
 
   return (
-    <Container sx={{position: 'relative'}}>
-      <Box
-        sx={{
-          marginRight: 2,
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          display: {xs: 'none', md: 'block'}
-        }}
-      >
+    <div className="relative container mx-auto px-4">
+      <div className="absolute top-0 right-0 mr-4 hidden md:block">
         <SerenityQmkButton />
-      </Box>
-      <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <Type
-          variant="h2"
-          color="primary"
-          sx={{
-            // sx={{fontStyle: 'italic'}}
-            pt: {xs: 2, md: 4},
-            pb: {xs: 2, md: 4}
-          }}
-        >
+      </div>
+      <div className="flex flex-col items-center">
+        <h2 className="text-solarized-green pt-4 pb-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Firmware
-        </Type>
+        </h2>
 
-        <Box
-          sx={{
-            transform: {xs: 'scale(0.47)', sm: 'scale(0.65)', md: 'none'},
-            transformOrigin: {xs: 'center center', md: 'initial'}, // Ensures the scaling starts from the top left corner */
-            height: {xs: 160, sm: 200, md: 'auto'}
-          }}
-        >
+        <div className="h-[160px] origin-center scale-[0.47] sm:h-[200px] sm:scale-[0.65] md:h-auto md:origin-[initial] md:scale-100">
           <TabPanel value={value} index={0}>
             <BaseLyr layout={layout} />
           </TabPanel>
@@ -161,358 +124,217 @@ export default function FirmwarePage() {
           <TabPanel value={value} index={8}>
             <QwertyLyr layout={layout} />
           </TabPanel>
-        </Box>
-        <Box
-          sx={{
-            marginTop: 6,
-            bgcolor: 'background.paper',
-            maxWidth: '100%'
-          }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
+        </div>
+
+        <div className="bg-card mt-12 max-w-full">
+          <div
+            role="tablist"
             aria-label="Keyboard Layer tabs"
-            variant="scrollable"
-            scrollButtons="auto"
-            allowScrollButtonsMobile
+            className="border-border flex overflow-x-auto border-b"
           >
-            <Tab
-              label="Base"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-house-user" />
-                </Box>
-              }
-              {...a11yProps(0)}
-            />
-            <Tab
-              label="Mouse"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-mouse" />
-                </Box>
-              }
-              {...a11yProps(1)}
-            />
-            <Tab
-              label="Num/Nav"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-hashtag" sx={{fontSize: 15}} />
-                </Box>
-              }
-              {...a11yProps(2)}
-            />
-            <Tab
-              label="Action"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-table-layout" />
-                </Box>
-              }
-              {...a11yProps(3)}
-            />
-            <Tab
-              label="Media"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-cog" />
-                </Box>
-              }
-              {...a11yProps(4)}
-            />
-            <Tab
-              label="Symbol"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-at" />
-                </Box>
-              }
-              {...a11yProps(5)}
-            />
-            <Tab
-              label="OS"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-brands fa-apple" sx={{fontSize: 15}} />
-                </Box>
-              }
-              {...a11yProps(6)}
-            />
-            <Tab
-              label="Function"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-function" />
-                </Box>
-              }
-              {...a11yProps(7)}
-            />
-            <Tab
-              label="Qwerty"
-              icon={
-                <Box component="span">
-                  <FaIcon className="fa-regular fa-typewriter" />
-                </Box>
-              }
-              {...a11yProps(8)}
-            />
-          </Tabs>
-        </Box>
-      </Box>
-      <Grid container sx={{mt: 10}} justifyContent="center" columnSpacing={12} rowSpacing={6}>
-        <Grid size={{xs: 12, sm: 'auto'}} display="flex" justifyContent="center">
-          <FormControl component="fieldset">
-            <FormLabel component="legend" sx={{textAlign: 'center', mb: 1, width: '100%'}}>
-              Bottom Row Layout
-            </FormLabel>
-            <ToggleButtonGroup
-              value={layout}
-              exclusive
-              onChange={handleLayoutChange}
-              size="small"
-              aria-label="Keyboard Bottom Row layout"
-              color="primary"
-              orientation="vertical"
-              sx={{
-                '& .MuiToggleButton-root': {
-                  color: 'text.primary'
-                }
-              }}
-            >
-              <ToggleButton value="planck" aria-label="11-12 keys" sx={{paddingX: 2}}>
-                11-12 keys{' '}
-                <Type
-                  variant="inherit"
-                  sx={{
-                    display: 'inline',
-                    fontStyle: 'italic',
-                    paddingLeft: 1
-                  }}
-                >
-                  (Planck)
-                </Type>
-              </ToggleButton>
-              <ToggleButton value="corne" aria-label="5-6 keys" sx={{paddingX: 2}}>
-                5-6 keys{' '}
-                <Type
-                  variant="inherit"
-                  sx={{
-                    display: 'inline',
-                    fontStyle: 'italic',
-                    paddingLeft: 1
-                  }}
-                >
-                  (Corne)
-                </Type>
-              </ToggleButton>
-            </ToggleButtonGroup>
-          </FormControl>
-        </Grid>
-        <Grid size={{xs: 12, sm: 'auto'}}>
-          <QmkLegend />
-        </Grid>
-
-        <Grid size={{xs: 12}}>
-          <Box
-            id="highlights"
-            sx={{
-              mt: 6,
-              p: {xs: 2, md: 3},
-              bgcolor: 'background.paper',
-              border: 1,
-              borderColor: 'divider',
-              borderRadius: 2,
-              maxWidth: 900,
-              mx: 'auto'
-            }}
-          >
-            <Type variant="h4" gutterBottom sx={{fontWeight: 400, textAlign: 'center', mb: 3}}>
-              Highlights
-            </Type>
-
-            {/* QMK Customizations */}
-            <Box sx={{mt: 4}}>
-              <Type variant="h5" gutterBottom color="primary">
-                QMK Customizations
-              </Type>
-              {/* <Type paragraph>
-                These notes describe the custom firmware logic and modules that
-                extend standard QMK functionality in the Serenity layout. They
-                highlight how QMK is tailored to match the keyboard’s unique
-                feel and workflow.
-              </Type> */}
-              <Box
-                component="ul"
-                sx={{
-                  pl: 3,
-                  mb: 2,
-                  '& li:not(:last-child)': {
-                    marginBottom: 2
-                  }
-                }}
+            {tabs.map((tab, idx) => (
+              <button
+                key={idx}
+                role="tab"
+                onClick={() => setValue(idx)}
+                className={cn(
+                  'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
+                  value === idx
+                    ? 'border-solarized-blue text-solarized-blue dark:border-solarized-cyan dark:text-solarized-cyan'
+                    : 'text-muted-foreground hover:text-foreground border-transparent'
+                )}
+                {...a11yProps(idx)}
               >
+                <span className="flex h-4 items-center justify-center">
+                  <FaIcon className={cn(tab.icon, tab.iconClassName)} />
+                </span>
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-20 flex flex-wrap justify-center gap-x-24 gap-y-12">
+        <div className="flex justify-center">
+          <fieldset>
+            <legend className="text-muted-foreground mb-2 w-full text-center text-sm font-medium">
+              Bottom Row Layout
+            </legend>
+            <ToggleGroup
+              type="single"
+              value={layout}
+              onValueChange={handleLayoutChange}
+              className="flex-col"
+              highlightClassName="bg-solarized-blue/10 dark:bg-solarized-cyan/10"
+            >
+              <ToggleGroupItem
+                value="planck"
+                aria-label="11-12 keys"
+                className="data-[state=on]:text-solarized-blue dark:data-[state=on]:text-solarized-cyan justify-start px-4"
+              >
+                11-12 keys <span className="inline pl-2 italic">(Planck)</span>
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="corne"
+                aria-label="5-6 keys"
+                className="data-[state=on]:text-solarized-blue dark:data-[state=on]:text-solarized-cyan justify-start px-4"
+              >
+                5-6 keys <span className="inline pl-2 italic">(Corne)</span>
+              </ToggleGroupItem>
+            </ToggleGroup>
+          </fieldset>
+        </div>
+
+        <div>
+          <QmkLegend />
+        </div>
+
+        <div className="w-full">
+          <div
+            id="highlights"
+            className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
+          >
+            <h4 className="mb-6 text-center text-[2.125rem] font-normal">Highlights</h4>
+
+            <div className="mt-8">
+              <h5 className="text-solarized-green mb-4 text-2xl font-normal">QMK Customizations</h5>
+              <ul className="mb-4 space-y-4 pl-6">
                 <li>
-                  <Type>
+                  <p>
                     <strong>Custom One Shot Mods</strong> — a tailored feature enabling dynamic
                     stacking of modifiers across principal layers, allowing any combination to be
                     triggered individually or together, without the need to hold modifier keys
                     during subsequent key press on the Base, Qwerty, or Function layers.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Backspace + Shift</strong> — Backspace performs Forward Delete (del)
                     when held with Shift.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Custom App Switcher</strong> — a firmware‑level feature within the OS
                     Layer that provides app cycling and fast switching that replicates
                     Cmd+Tab/Cmd+Shift+Tab shortcuts.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Symbol Tap Guard</strong> — custom logic on the Symbol layer that
                     suppresses unintended Shift during fast layer activations, ensuring quick taps
                     send unshifted symbols (e.g., '=' instead of '+'); deliberate Shift still
                     produces the shifted variant when intended.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Layer Lock</strong> — custom shortcut toggle on principal layers
                     (located in consistent position): tap once to lock the layer; tap again or press
                     Escape to release, letting you remain in the layer without holding the layer key
                     continuously.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Temporary Home Row Mods w/ Base Layer</strong> — tap the Num/Nav or
-                    Symbol key once, then press it again and hold to temporarily use that side’s
+                    Symbol key once, then press it again and hold to temporarily use that side's
                     home‑row modifiers on the Base layer. Useful for certain edge cases where custom
                     one shot mods (see above) are insufficient.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Long‑press dual keys</strong> — For select shortcuts, perform primary
                     action on tap or an alternate action on hold, giving each key two functions
                     without relying on QMK Tap Dance timing. See{' '}
-                    <Link
+                    <a
                       href="https://getreuer.info/posts/keyboards/triggers/index.html#tap-vs.-long-press"
                       rel="noopener noreferrer"
                       target="_blank"
+                      className="underline hover:opacity-80"
                     >
                       this article
-                    </Link>{' '}
+                    </a>{' '}
                     for more info about the implementation.
-                  </Type>
+                  </p>
                 </li>
-                <Type
-                  variant="subtitle2"
-                  color="text.secondary"
-                  sx={{
-                    mb: 2,
-                    mt: 2,
-                    pt: 2,
-                    fontWeight: 600
-                  }}
-                >
+                <p className="text-muted-foreground mt-4 mb-4 pt-4 text-sm font-semibold">
                   <em>11-12 Key Bottom Row Layouts Only</em>
-                </Type>
+                </p>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Dual‑Role Layer Holds</strong> — the outer layer hold keys (specifically
                     Action and Media) activate their layer normally; when a same‑side modifier is
                     held simultaneously, they instead hold Shift on that side (LShift/RShift). This
                     enables effortless Shift+mod combinations using pinky-ring-middle-index fingers.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Safe Arrow Cluster</strong> — the bottom‑right arrow group is tuned for
                     quick taps without accidental modifier activation; short presses always send
                     arrow keycodes, guarding against nearby mod‑taps for fast, reliable navigation.
-                  </Type>
+                  </p>
                 </li>
-              </Box>
-            </Box>
+              </ul>
+            </div>
 
-            <Box sx={{mt: 4}}>
-              {/* Layout Design & Logic */}
-              <Type variant="h5" gutterBottom color="primary">
-                Layout Design & Logic
-              </Type>
-
-              <Box
-                component="ul"
-                sx={{
-                  pl: 3,
-                  mb: 2,
-                  '& li:not(:last-child)': {
-                    marginBottom: 2
-                  }
-                }}
-              >
+            <div className="mt-8">
+              <h5 className="text-solarized-green mb-4 text-2xl font-normal">
+                Layout Design &amp; Logic
+              </h5>
+              <ul className="mb-4 space-y-4 pl-6">
                 <li>
-                  <Type>
+                  <p>
                     <strong>OS</strong> — optimized primarily for macOS behavior and shortcuts
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Vim-style directional mnemonics</strong> — shortcuts and key placements
                     often follow a left–down–up–right pattern (H‑J‑K‑L), mirroring Vim navigation
                     for fast, intuitive recall across layers.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
-                    <strong>Tri‑layer access</strong> — uses QMK’s tri‑layer logic to reach the OS
+                  <p>
+                    <strong>Tri‑layer access</strong> — uses QMK's tri‑layer logic to reach the OS
                     and Function layers by combining principal layer holds; the appropriate pair
                     momentarily exposes the target layer for quick commands.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Caps Word</strong> — activated by double‑tapping the Left Shift key,
                     this feature enables a quick temporary Caps Lock mode for typing uppercase words
                     without fully toggling Caps Lock.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Mouse layer</strong> — a dedicated layer providing smooth, responsive
                     cursor control and scrolling, ideal for quick pointer adjustments without
                     leaving the home row.
-                  </Type>
+                  </p>
                 </li>
                 <li>
-                  <Type>
+                  <p>
                     <strong>Qwerty layer</strong> — full standard QWERTY layout which can be toggled
                     on; useful for app and game compatibility.
-                  </Type>
+                  </p>
                 </li>
-              </Box>
-            </Box>
-          </Box>
-        </Grid>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-        <Grid size={{xs: 12, sm: 'auto'}}>
-          <Box
-            sx={{
-              display: {xs: 'block', md: 'none'}
-            }}
-          >
-            <SerenityQmkButton />
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
+        <div className="md:hidden">
+          <SerenityQmkButton />
+        </div>
+      </div>
+    </div>
   )
 }

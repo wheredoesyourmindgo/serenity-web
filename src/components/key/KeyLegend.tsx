@@ -1,4 +1,3 @@
-import {Box, Typography as Type, TypographyProps} from '@mui/material'
 import {KeyContainer} from '.'
 import {KeyContainerProps} from './KeyContainer'
 import HoldSubIcn, {HoldSubIcnProps} from './HoldSubIcn'
@@ -7,15 +6,18 @@ import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
 import TapDanceSubIcn from './TapDanceSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
-
 import VimRefIcn, {VimRefIcnProps} from './VimRefIcn'
 import VimRefLgnd from './VimRefLgnd'
 import AppSubIcn from './AppShortcutSubIcn'
+import {Typography, typographyVariants} from '@/components/ui/typography'
+import type {CSSProperties} from 'react'
+import type {VariantProps} from 'class-variance-authority'
 
-type Props = Partial<TypographyProps> & {
-  shiftLgnd?: string | React.ReactNode
-  shiftSubIcn?: React.FC
-  ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
+type Props = {
+  color?: string
+  style?: CSSProperties
+  className?: string
+  variant?: VariantProps<typeof typographyVariants>['variant']
   children?: React.ReactNode
   KeyContainerProps?: KeyContainerProps
   customShiftCode?: boolean
@@ -31,6 +33,9 @@ type Props = Partial<TypographyProps> & {
   ModHoldSubIcnProps?: Omit<HoldSubIcnProps, 'icon'>
   tapForceHold?: boolean
   appShortcut?: boolean
+  shiftLgnd?: string | React.ReactNode
+  shiftSubIcn?: React.FC
+  ShiftSubIcnProps?: Omit<ShiftSubIcnProps, 'icon'>
 }
 
 export default function KeyLegend({
@@ -53,43 +58,39 @@ export default function KeyLegend({
   color = 'solarized.base00',
   tapForceHold,
   appShortcut,
-  sx,
+  style,
+  variant = 'h3',
+  className,
   ...rest
 }: Props) {
   const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
   const lyrColor = 'solarized.green'
   const modColor = 'solarized.yellow'
 
-  const {sx: VimRefIcnSx, ...VimRefIcnRest} = VimRefIcnProps || {}
-  const {sx: ShiftSubIcnSx, ...ShiftSubIcnRest} = ShiftSubIcnProps || {}
-  const {sx: modHoldSubIcnSx, ...ModHoldSubIcnRest} = ModHoldSubIcnProps || {}
-  const {sx: lyrHoldSubIcnSx, ...LyrHoldSubIcnRest} = LyrHoldSubIcnProps || {}
-
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>
-      <Box>
+      <div>
         {shiftLgnd ? <ShiftSubLgnd color={shiftColor}>{shiftLgnd}</ShiftSubLgnd> : null}
-        {shiftSubIcn ? (
-          <ShiftSubIcn sx={{color: shiftColor, ...ShiftSubIcnSx}} {...ShiftSubIcnRest} />
-        ) : null}
+        {shiftSubIcn ? <ShiftSubIcn color={shiftColor} {...ShiftSubIcnProps} /> : null}
         {special ? <SpecialSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {appShortcut ? <AppSubIcn /> : null}
-        {lyrHoldSubIcn ? (
-          <HoldSubIcn sx={{color: lyrColor, ...lyrHoldSubIcnSx}} {...LyrHoldSubIcnRest} />
-        ) : null}
-        {modHoldSubIcn ? (
-          <HoldSubIcn sx={{color: modColor, ...modHoldSubIcnSx}} {...ModHoldSubIcnRest} />
-        ) : null}
+        {lyrHoldSubIcn ? <HoldSubIcn color={lyrColor} {...LyrHoldSubIcnProps} /> : null}
+        {modHoldSubIcn ? <HoldSubIcn color={modColor} {...ModHoldSubIcnProps} /> : null}
         {vimRef ? <VimRefLgnd>{vimRef}</VimRefLgnd> : null}
-        {vimRefIcn ? (
-          <VimRefIcn sx={{color: shiftColor, ...VimRefIcnSx}} {...VimRefIcnRest} />
-        ) : null}
-        <Type variant="h3" sx={{color, ...sx}} {...rest}>
+        {vimRefIcn ? <VimRefIcn color={shiftColor} {...VimRefIcnProps} /> : null}
+        <Typography
+          as="span"
+          variant={variant}
+          color={color}
+          style={style}
+          className={className}
+          {...rest}
+        >
           {children}
-        </Type>
-      </Box>
+        </Typography>
+      </div>
     </KeyContainer>
   )
 }
