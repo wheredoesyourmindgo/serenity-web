@@ -35,7 +35,7 @@ export default function AlphasPage() {
           <AlphaKeyboard />
         </div>
 
-        <div className="mt-20 flex flex-col items-center justify-center">
+        <div className="mt-12 flex flex-col items-center justify-center">
           <div className="flex items-center gap-2">
             <FaIcon className="fa-regular fa-star-shooting" color="solarized.base1" />
             <h6 className="text-solarized-base00 text-[1.25rem] font-medium">Statistics</h6>

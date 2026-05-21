@@ -80,7 +80,7 @@ export default function SoftwarePage() {
         </Tabs>
       </div>
 
-      <div className="mt-20 flex flex-wrap justify-center gap-x-24 gap-y-12">
+      <div className="mt-12 flex flex-wrap justify-center gap-x-24 gap-y-12">
         <div>
           <QmkLegend />
         </div>

@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(git restore *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(sed -i '' 's/fa-arrow-left-long translate-y-\\\\[-4px\\\\]/fa-arrow-left-long translate-y-[-6px]/g' /Users/ahendricks/Development/serenity-web/src/components/keyboard/firmware/OsLyr.tsx)",
+      "Bash(sed -i '' 's/fa-arrow-right-long translate-y-\\\\[-4px\\\\]/fa-arrow-right-long translate-y-[-6px]/g' /Users/ahendricks/Development/serenity-web/src/components/keyboard/firmware/OsLyr.tsx)",
+      "Bash(sed -i '' 's/fa-xmark translate-y-\\\\[-4px\\\\] text-\\\\[14px\\\\]/fa-xmark translate-y-[-6px] text-[14px]/g' /Users/ahendricks/Development/serenity-web/src/components/keyboard/firmware/OsLyr.tsx)",
+      "Bash(sed -i '' 's/fa-window-minimize translate-y-\\\\[-4px\\\\]/fa-window-minimize translate-y-[-6px]/g' /Users/ahendricks/Development/serenity-web/src/components/keyboard/firmware/OsLyr.tsx)",
+      "Bash(sed -i '' 's/fa-image translate-y-\\\\[-2px\\\\]/fa-image translate-y-[-4px]/g' /Users/ahendricks/Development/serenity-web/src/components/keyboard/firmware/OsLyr.tsx)"
     ]
   }
 }

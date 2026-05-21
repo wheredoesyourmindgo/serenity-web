@@ -111,7 +111,7 @@ export default function FirmwarePage() {
         </Tabs>
       </div>
 
-      <div className="mt-20 flex flex-wrap justify-center gap-x-24 gap-y-12">
+      <div className="mt-12 flex flex-wrap justify-center gap-x-24 gap-y-12">
         <div className="flex justify-center">
           <fieldset>
             <legend className="text-muted-foreground mb-2 w-full text-center text-sm font-medium">
@@ -151,7 +151,7 @@ export default function FirmwarePage() {
             id="highlights"
             className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
           >
-            <h4 className="mb-6 text-center text-[2.125rem] font-normal">Highlights</h4>
+            <h4 className="mb-4 text-center text-xl font-normal">Highlights</h4>
 
             <div className="mt-8">
               <h5 className="text-solarized-green mb-4 text-2xl font-normal">QMK Customizations</h5>
