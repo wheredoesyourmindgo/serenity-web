@@ -14,6 +14,12 @@ import MouseLyr from '@/components/keyboard/firmware/MouseLyr'
 import OsLyr from '@/components/keyboard/firmware/OsLyr'
 import QmkLegend from '@/components/QmkLegend'
 import {ToggleGroup, ToggleGroupItem} from '@/components/animate-ui/components/radix/toggle-group'
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent
+} from '@/components/animate-ui/primitives/radix/tabs'
 
 export type KeyboardLayout = 'planck' | 'corne'
 
@@ -39,47 +45,19 @@ function SerenityQmkButton() {
   )
 }
 
-interface TabPanelProps {
-  children?: React.ReactNode
-  index: number
-  value: number
-}
-
-function TabPanel({children, value, index, ...other}: TabPanelProps) {
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`keyboard-layer-tabpanel-${index}`}
-      aria-labelledby={`keyboard-layer-tab-${index}`}
-      {...other}
-    >
-      {value === index && <div>{children}</div>}
-    </div>
-  )
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `keyboard-layer-tab-${index}`,
-    'aria-controls': `keyboard-layer-tabpanel-${index}`
-  }
-}
-
 const tabs = [
-  {label: 'Base', icon: 'fa-regular fa-house-user'},
-  {label: 'Mouse', icon: 'fa-regular fa-mouse'},
-  {label: 'Num/Nav', icon: 'fa-regular fa-hashtag', iconClassName: 'text-[15px]'},
-  {label: 'Action', icon: 'fa-regular fa-table-layout'},
-  {label: 'Media', icon: 'fa-regular fa-cog'},
-  {label: 'Symbol', icon: 'fa-regular fa-at'},
-  {label: 'OS', icon: 'fa-brands fa-apple', iconClassName: 'text-[15px]'},
-  {label: 'Function', icon: 'fa-regular fa-function'},
-  {label: 'Qwerty', icon: 'fa-regular fa-typewriter'}
+  {value: 'base', label: 'Base', icon: 'fa-regular fa-house-user'},
+  {value: 'mouse', label: 'Mouse', icon: 'fa-regular fa-mouse'},
+  {value: 'num-nav', label: 'Num/Nav', icon: 'fa-regular fa-hashtag', iconClassName: 'text-[15px]'},
+  {value: 'action', label: 'Action', icon: 'fa-regular fa-table-layout'},
+  {value: 'media', label: 'Media', icon: 'fa-regular fa-cog'},
+  {value: 'symbol', label: 'Symbol', icon: 'fa-regular fa-at'},
+  {value: 'os', label: 'OS', icon: 'fa-brands fa-apple', iconClassName: 'text-[15px]'},
+  {value: 'function', label: 'Function', icon: 'fa-regular fa-function'},
+  {value: 'qwerty', label: 'Qwerty', icon: 'fa-regular fa-typewriter'}
 ]
 
 export default function FirmwarePage() {
-  const [value, setValue] = useState(0)
   const [layout, setLayout] = useState<KeyboardLayout>('planck')
 
   const handleLayoutChange = (newLayout: string) => {
@@ -96,63 +74,41 @@ export default function FirmwarePage() {
           Firmware
         </h2>
 
-        <div className="h-[160px] origin-center scale-[0.47] sm:h-[200px] sm:scale-[0.65] md:h-auto md:origin-[initial] md:scale-100">
-          <TabPanel value={value} index={0}>
-            <BaseLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            <MouseLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            <NumNavLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={3}>
-            <ActionLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={4}>
-            <MediaLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={5}>
-            <SymLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={6}>
-            <OsLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={7}>
-            <FuncLyr layout={layout} />
-          </TabPanel>
-          <TabPanel value={value} index={8}>
-            <QwertyLyr layout={layout} />
-          </TabPanel>
-        </div>
-
-        <div className="bg-card mt-12 max-w-full">
-          <div
-            role="tablist"
-            aria-label="Keyboard Layer tabs"
-            className="border-border flex overflow-x-auto border-b"
-          >
-            {tabs.map((tab, idx) => (
-              <button
-                key={idx}
-                role="tab"
-                onClick={() => setValue(idx)}
-                className={cn(
-                  'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                  value === idx
-                    ? 'border-solarized-blue text-solarized-blue dark:border-solarized-cyan dark:text-solarized-cyan'
-                    : 'text-muted-foreground hover:text-foreground border-transparent'
-                )}
-                {...a11yProps(idx)}
-              >
-                <span className="flex h-4 items-center justify-center">
-                  <FaIcon className={cn(tab.icon, tab.iconClassName)} />
-                </span>
-                <span>{tab.label}</span>
-              </button>
-            ))}
+        <Tabs defaultValue="base" className="flex w-full flex-col items-center">
+          <div className="h-[160px] origin-center scale-[0.47] sm:h-[200px] sm:scale-[0.65] md:h-auto md:origin-[initial] md:scale-100">
+            <TabsContent value="base" layout={false}><BaseLyr layout={layout} /></TabsContent>
+            <TabsContent value="mouse" layout={false}><MouseLyr layout={layout} /></TabsContent>
+            <TabsContent value="num-nav" layout={false}><NumNavLyr layout={layout} /></TabsContent>
+            <TabsContent value="action" layout={false}><ActionLyr layout={layout} /></TabsContent>
+            <TabsContent value="media" layout={false}><MediaLyr layout={layout} /></TabsContent>
+            <TabsContent value="symbol" layout={false}><SymLyr layout={layout} /></TabsContent>
+            <TabsContent value="os" layout={false}><OsLyr layout={layout} /></TabsContent>
+            <TabsContent value="function" layout={false}><FuncLyr layout={layout} /></TabsContent>
+            <TabsContent value="qwerty" layout={false}><QwertyLyr layout={layout} /></TabsContent>
           </div>
-        </div>
+
+          <div className="bg-card mt-12 max-w-full">
+            <TabsList className="border-border flex overflow-x-auto border-b">
+              {tabs.map((tab) => (
+                <TabsTrigger
+                  key={tab.value}
+                  value={tab.value}
+                  className={cn(
+                    'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
+                    'data-[state=active]:border-solarized-blue data-[state=active]:text-solarized-blue',
+                    'dark:data-[state=active]:border-solarized-cyan dark:data-[state=active]:text-solarized-cyan',
+                    'data-[state=inactive]:border-transparent text-muted-foreground hover:text-foreground'
+                  )}
+                >
+                  <span className="flex h-4 items-center justify-center">
+                    <FaIcon className={cn(tab.icon, tab.iconClassName)} />
+                  </span>
+                  <span>{tab.label}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
+        </Tabs>
       </div>
 
       <div className="mt-20 flex flex-wrap justify-center gap-x-24 gap-y-12">

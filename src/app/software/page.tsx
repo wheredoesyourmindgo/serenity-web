@@ -1,17 +1,16 @@
 'use client'
 
-import {useState} from 'react'
 import {cn} from '@/lib/cn'
 import BaseLyr from '@/components/keyboard/software/BaseLyr'
 import FaIcon from '@/components/FaIcon'
 import FnLyr from '@/components/keyboard/software/FnLyr'
 import QmkLegend from '@/components/QmkLegend'
-
-interface TabPanelProps {
-  children?: React.ReactNode
-  index: number
-  value: number
-}
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent
+} from '@/components/animate-ui/primitives/radix/tabs'
 
 function GitHubIcon() {
   return (
@@ -35,35 +34,12 @@ function SerenityKarabinerButton() {
   )
 }
 
-function TabPanel({children, value, index, ...other}: TabPanelProps) {
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`keyboard-layer-tabpanel-${index}`}
-      aria-labelledby={`keyboard-layer-tab-${index}`}
-      {...other}
-    >
-      {value === index && <div>{children}</div>}
-    </div>
-  )
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `keyboard-layer-tab-${index}`,
-    'aria-controls': `keyboard-layer-tabpanel-${index}`
-  }
-}
-
 const tabs = [
-  {label: 'Base', icon: 'fa-regular fa-house-user'},
-  {label: 'FN Layer', icon: 'fa-regular fa-keyboard', iconClassName: 'text-[15px]'}
+  {value: 'base', label: 'Base', icon: 'fa-regular fa-house-user'},
+  {value: 'fn', label: 'FN Layer', icon: 'fa-regular fa-keyboard', iconClassName: 'text-[15px]'}
 ]
 
 export default function SoftwarePage() {
-  const [value, setValue] = useState(0)
-
   return (
     <div className="relative container mx-auto px-4">
       <div className="absolute top-0 right-0 mr-4 hidden md:block">
@@ -74,42 +50,34 @@ export default function SoftwarePage() {
           Software
         </h2>
 
-        <div className="h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100">
-          <TabPanel value={value} index={0}>
-            <BaseLyr />
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            <FnLyr />
-          </TabPanel>
-        </div>
-
-        <div className="bg-card mt-12 max-w-full">
-          <div
-            role="tablist"
-            aria-label="Keyboard Layer tabs"
-            className="border-border flex overflow-x-auto border-b"
-          >
-            {tabs.map((tab, idx) => (
-              <button
-                key={idx}
-                role="tab"
-                onClick={() => setValue(idx)}
-                className={cn(
-                  'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                  value === idx
-                    ? 'border-solarized-blue text-solarized-blue dark:border-solarized-cyan dark:text-solarized-cyan'
-                    : 'text-muted-foreground hover:text-foreground border-transparent'
-                )}
-                {...a11yProps(idx)}
-              >
-                <span className="flex h-4 items-center justify-center">
-                  <FaIcon className={cn(tab.icon, tab.iconClassName)} />
-                </span>
-                <span>{tab.label}</span>
-              </button>
-            ))}
+        <Tabs defaultValue="base" className="flex w-full flex-col items-center">
+          <div className="h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100">
+            <TabsContent value="base" layout={false}><BaseLyr /></TabsContent>
+            <TabsContent value="fn" layout={false}><FnLyr /></TabsContent>
           </div>
-        </div>
+
+          <div className="bg-card mt-12 max-w-full">
+            <TabsList className="border-border flex overflow-x-auto border-b">
+              {tabs.map((tab) => (
+                <TabsTrigger
+                  key={tab.value}
+                  value={tab.value}
+                  className={cn(
+                    'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
+                    'data-[state=active]:border-solarized-blue data-[state=active]:text-solarized-blue',
+                    'dark:data-[state=active]:border-solarized-cyan dark:data-[state=active]:text-solarized-cyan',
+                    'data-[state=inactive]:border-transparent text-muted-foreground hover:text-foreground'
+                  )}
+                >
+                  <span className="flex h-4 items-center justify-center">
+                    <FaIcon className={cn(tab.icon, tab.iconClassName)} />
+                  </span>
+                  <span>{tab.label}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
+        </Tabs>
       </div>
 
       <div className="mt-20 flex flex-wrap justify-center gap-x-24 gap-y-12">

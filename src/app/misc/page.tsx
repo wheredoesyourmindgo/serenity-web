@@ -232,7 +232,7 @@ end run
   return (
     <div className="relative container mx-auto px-4">
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8">
+        <h2 className="text-solarized-green pt-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:text-[3.75rem]">
           Miscellaneous
         </h2>
         <h6 className="text-solarized-violet pb-4 text-[1.25rem] font-medium italic md:pb-8">
@@ -244,7 +244,7 @@ end run
         id="config"
         className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
       >
-        <h4 className="mb-6 text-center text-[2.125rem] font-normal">Application Config</h4>
+        <h4 className="mb-6 text-center text-xl font-normal">Application Config</h4>
 
         <div className="mt-8 inline-flex items-baseline gap-4">
           <FaIcon className="fa-regular fa-ghost text-2xl" color="solarized.green" />
