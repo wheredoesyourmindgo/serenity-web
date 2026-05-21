@@ -27,7 +27,8 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-solid fa-circle text-[22px]"
+            className="fa-solid fa-circle text-[22px] opacity-60"
+            color="solarized.red"
             KeyContainerProps={{
               keyId: 'os-close-key',
               popOverContent: (
@@ -37,12 +38,18 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-solid fa-xmark text-[13px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon
+                className="fa-solid fa-xmark translate-y-[-2px] text-[13px]"
+                color="solarized.base03"
+              />
+            </div>
           </KeyIcon>
           <KeyIcon
-            className="fa-solid fa-circle text-[22px]"
+            className="fa-solid fa-circle text-[22px] opacity-60"
+            color="solarized.yellow"
             KeyContainerProps={{
-              keyId: 'os-mimimize-key',
+              keyId: 'os-minimize-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Minimize Window" />
@@ -50,10 +57,16 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-solid fa-subtract text-[13px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon
+                className="fa-solid fa-subtract translate-y-[-2px] text-[13px]"
+                color="solarized.base03"
+              />
+            </div>
           </KeyIcon>
           <KeyIcon
-            className="fa-solid fa-circle text-[22px]"
+            className="fa-solid fa-circle text-[22px] opacity-60"
+            color="solarized.green"
             KeyContainerProps={{
               keyId: 'os-fullscreen-key',
               popOverContent: (
@@ -63,7 +76,13 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon rotation={135} className="fa-solid fa-sort text-[13px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon
+                rotation={135}
+                className="fa-solid fa-sort translate-y-[-2px] text-[13px]"
+                color="solarized.base03"
+              />
+            </div>
           </KeyIcon>
           <KeyLegend {...sharedProps} />
           {/*<KeyIcon
@@ -247,7 +266,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-solid fa-arrow-left-long text-[14px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon className="fa-solid fa-arrow-left-long translate-y-[-6px] text-[14px]" />
+            </div>
           </KeyIcon>
           <KeyIcon
             className="fa-light fa-gallery-thumbnails text-[25px]"
@@ -260,7 +281,12 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-solid fa-arrow-right-long text-[14px]" color="solarized.base00" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon
+                className="fa-solid fa-arrow-right-long translate-y-[-6px] text-[14px]"
+                color="solarized.base00"
+              />
+            </div>
           </KeyIcon>
           <KeyIcon
             className="fa-regular fa-diagram-previous"
@@ -306,7 +332,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-regular fa-image text-[13px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon className="fa-regular fa-image translate-y-[-4px] text-[13px]" />
+            </div>
           </KeyIcon>
 
           <KeyIcon
@@ -323,7 +351,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-regular fa-image text-[13px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon className="fa-regular fa-image text-[13px]" />
+            </div>
           </KeyIcon>
 
           <KeyIcon
@@ -340,7 +370,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-regular fa-image text-[13px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon className="fa-regular fa-image text-[13px]" />
+            </div>
           </KeyIcon>
 
           <KeyIcon
@@ -403,7 +435,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-solid fa-xmark text-[14px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon className="fa-solid fa-xmark translate-y-[-6px] text-[14px]" />
+            </div>
           </KeyIcon>
           <KeyIcon
             className="fa-light fa-gallery-thumbnails text-[25px]"
@@ -416,7 +450,9 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-solid fa-window-minimize text-[14px]" />
+            <div className="flex h-full w-full items-center justify-center">
+              <FaIcon className="fa-solid fa-window-minimize translate-y-[-6px] text-[14px]" />
+            </div>
           </KeyIcon>
           <KeyLegend {...sharedProps} />
           {/* <KeyIcon

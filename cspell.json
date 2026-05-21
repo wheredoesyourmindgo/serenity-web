@@ -3,7 +3,10 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["tabler"],
+  "words": [
+    "tabler",
+    "xmark"
+  ],
   "ignoreWords": [],
   "import": []
 }

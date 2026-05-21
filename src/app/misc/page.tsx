@@ -244,13 +244,13 @@ end run
         id="config"
         className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
       >
-        <h4 className="mb-6 text-center text-xl font-normal">Application Config</h4>
+        <h4 className="mb-3 text-center text-xl font-normal">Application Config</h4>
 
-        <div className="mt-8 inline-flex items-baseline gap-4">
+        <div className="mt-5 inline-flex items-baseline gap-4">
           <FaIcon className="fa-regular fa-ghost text-2xl" color="solarized.green" />
           <h5 className="text-solarized-green mb-2 text-2xl font-normal">Ghostty</h5>
         </div>
-        <p className="mt-6 mb-4">
+        <p className="mt-3 mb-3">
           Partial config snippet to add to your Ghostty config file{' '}
           <em>
             (located at <code>~/.config/ghostty/config</code> by default)
@@ -268,13 +268,13 @@ end run
           </SyntaxHighlighter>
         </div>
 
-        <hr className="border-border mx-auto my-8 w-1/2" />
+        <hr className="border-border mx-auto my-5 w-1/2" />
 
-        <div className="mt-8 inline-flex items-baseline gap-4">
+        <div className="mt-5 inline-flex items-baseline gap-4">
           <FaIcon className="fa-regular fa-terminal text-[22px]" color="solarized.green" />
           <h5 className="text-solarized-green mb-2 text-2xl font-normal">iTerm2</h5>
         </div>
-        <p className="mt-6 mb-4">
+        <p className="mt-3 mb-3">
           These custom key mappings will allow movements using arrow keys in conjunction with
           modifier keys. The following JSON can be added to your iTerm2 key bindings under{' '}
           <em>
@@ -292,13 +292,13 @@ end run
           </SyntaxHighlighter>
         </div>
 
-        <hr className="border-border mx-auto my-8 w-1/2" />
+        <hr className="border-border mx-auto my-5 w-1/2" />
 
-        <div className="mt-8 inline-flex items-baseline gap-4">
+        <div className="mt-5 inline-flex items-baseline gap-4">
           <FaIcon className="fa-regular fa-hammer text-2xl" color="solarized.green" />
           <h5 className="text-solarized-green mb-2 text-2xl font-normal">Hammerspoon</h5>
         </div>
-        <p className="mt-6 mb-4">
+        <p className="mt-3 mb-3">
           Partial config snippet to add to your Hammerspoon initialization file{' '}
           <em>
             (located at <code>~/.hammerspoon/init.lua</code> by default)
@@ -316,13 +316,13 @@ end run
           </SyntaxHighlighter>
         </div>
 
-        <hr className="border-border mx-auto my-8 w-1/2" />
+        <hr className="border-border mx-auto my-5 w-1/2" />
 
-        <div className="mt-8 inline-flex items-baseline gap-4">
+        <div className="mt-5 inline-flex items-baseline gap-4">
           <FaIcon className="fa-regular fa-robot text-2xl" color="solarized.green" />
           <h5 className="text-solarized-green mb-2 text-2xl font-normal">Automator</h5>
         </div>
-        <p className="mt-6 mb-4">
+        <p className="mt-3 mb-3">
           Use the following AppleScript Quick Action to toggle Dark Mode on macOS; created via
           Automator. This service can be assigned a keyboard shortcut (ctrl+opt+cmd+D for Serenity
           QMK Media Layer) in System Settings.
@@ -343,13 +343,13 @@ end run
         id="reference"
         className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
       >
-        <h4 className="mb-6 text-center text-[2.125rem] font-normal">Reference</h4>
+        <h4 className="mb-3 text-center text-xl font-normal">Reference</h4>
 
-        <div className="mt-8 inline-flex items-baseline gap-4">
+        <div className="mt-5 inline-flex items-baseline gap-4">
           <FaIcon className="fa-regular fa-ban-smoking text-[27px]" color="solarized.green" />
           <h5 className="text-solarized-green mb-2 text-2xl font-normal">Vim-less</h5>
         </div>
-        <p className="mt-6 mb-4">
+        <p className="mt-3 mb-3">
           Thinking of quitting Vim? Here is an indicative reference for performing common Vim-like{' '}
           <span className="whitespace-nowrap">motions/commands</span> by effortlessly using standard
           keybindings (primarily made possible with QMK due to Mod and Arrow key availability on the
@@ -379,12 +379,12 @@ end run
             </tbody>
           </table>
         </div>
-        <p className="mt-12 mb-4">
+        <p className="mt-6 mb-3">
           Some of the other commands and movements not covered by the basic movements can often be
           implemented in modern text editors via extensions or built-in functionality. Here are a
           couple of VSCode Extensions I maintain to fill in some functionality gaps so to speak.
         </p>
-        <div className="mb-8 ml-2">
+        <div className="mb-4 ml-2">
           <p className="mb-2 text-sm font-semibold">VSCode Extensions</p>
           <div className="flex flex-col gap-3">
             <a
@@ -411,9 +411,9 @@ end run
 
       <div
         id="contact"
-        className="bg-card border-border mx-auto mt-20 mb-12 max-w-[900px] rounded-xl border p-4 md:p-6"
+        className="bg-card border-border mx-auto mt-12 mb-8 max-w-[900px] rounded-xl border p-4 md:p-6"
       >
-        <h4 className="mb-6 text-center text-[2.125rem] font-normal">Get In Touch</h4>
+        <h4 className="mb-3 text-center text-xl font-normal">Get In Touch</h4>
         <p className="mt-4 text-center">
           Have questions, comments, or feedback? Feel free to reach out anytime at{' '}
           <a
