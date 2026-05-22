@@ -1,11 +1,13 @@
 'use client'
 
 import type {CSSProperties, HTMLAttributes, ReactNode} from 'react'
+import {useState} from 'react'
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger
 } from '@/components/animate-ui/components/radix/hover-card'
+import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {useTheme} from 'next-themes'
 import {cn} from '@/lib/cn'
 
@@ -19,6 +21,8 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   const {className, style, ...r} = rest
   const {resolvedTheme} = useTheme()
   const darkMode = resolvedTheme === 'dark'
+  const isTouchDevice = useIsTouchDevice()
+  const [touchOpen, setTouchOpen] = useState(false)
 
   const containerStyle: CSSProperties = {
     borderColor: 'color-mix(in srgb, var(--solarized-base1) 40%, transparent)',
@@ -33,6 +37,9 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
     ...style
   }
   const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
+  const touchOpenProps = isTouchDevice
+    ? {open: touchOpen, onOpenChange: setTouchOpen}
+    : {}
   const trigger = (
     <div
       className={cn(
@@ -42,6 +49,7 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
       )}
       style={containerStyle}
       aria-describedby={popOverContent ? popOverId : undefined}
+      onClick={popOverContent && isTouchDevice ? () => setTouchOpen((o) => !o) : undefined}
       {...r}
     >
       {/* overflow fixes issues on mouse hover where partial icons can disappear, ex. backspace icon */}
@@ -54,7 +62,7 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   }
 
   return (
-    <HoverCard openDelay={0} closeDelay={0}>
+    <HoverCard openDelay={0} closeDelay={0} {...touchOpenProps}>
       <HoverCardTrigger asChild>{trigger}</HoverCardTrigger>
       <HoverCardContent
         id={popOverId}

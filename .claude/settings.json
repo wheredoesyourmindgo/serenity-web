@@ -10,7 +10,12 @@
       "Bash(sed -i '' 's/fa-image translate-y-\\\\[-2px\\\\]/fa-image translate-y-[-4px]/g' /Users/ahendricks/Development/serenity-web/src/components/keyboard/firmware/OsLyr.tsx)",
       "Bash(grep -n \"enter\\\\|return\\\\|shift\\\\|fn\" /var/folders/8n/4gs8_nn53532jnsr6wyv4fl00000gp/T/chezmoi-edit561920587/.config/karabiner/karabiner.json | head -60)",
       "Read(//private/var/folders/8n/4gs8_nn53532jnsr6wyv4fl00000gp/T/chezmoi-edit561920587/.config/karabiner/**)",
-      "Read(//var/folders/8n/4gs8_nn53532jnsr6wyv4fl00000gp/T/chezmoi-edit561920587/.config/karabiner/**)"
+      "Read(//var/folders/8n/4gs8_nn53532jnsr6wyv4fl00000gp/T/chezmoi-edit561920587/.config/karabiner/**)",
+      "Bash(curl -s \"https://usehooks-ts.com/api/hooks\")",
+      "Bash(npm show *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('description',''\\), d.get\\('keywords',[]\\)\\)\")",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:usehooks-ts.com)"
     ]
   }
 }
