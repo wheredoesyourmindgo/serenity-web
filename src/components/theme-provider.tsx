@@ -32,7 +32,7 @@ function isTypingTarget(target: EventTarget | null) {
 }
 
 function ThemeHotkey() {
-  const {resolvedTheme, setTheme} = useTheme()
+  const {resolvedTheme, systemTheme, setTheme} = useTheme()
 
   React.useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -52,7 +52,8 @@ function ThemeHotkey() {
         return
       }
 
-      setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+      const next = resolvedTheme === 'dark' ? 'light' : 'dark'
+      setTheme(next === systemTheme ? 'system' : next)
     }
 
     window.addEventListener('keydown', onKeyDown)

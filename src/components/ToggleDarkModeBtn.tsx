@@ -11,7 +11,7 @@ import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {useTheme as useNextTheme} from 'next-themes'
 
 export default function ToggleDarkModeBtn() {
-  const {resolvedTheme, setTheme} = useNextTheme()
+  const {resolvedTheme, systemTheme, setTheme} = useNextTheme()
   const isTouchDevice = useIsTouchDevice()
   const isDark = resolvedTheme === 'dark'
   const ThemeIcon = isDark ? IconMoon : IconSun
@@ -23,7 +23,8 @@ export default function ToggleDarkModeBtn() {
       <Switch
         checked={isDark}
         onCheckedChange={(checked) => {
-          setTheme(checked ? 'dark' : 'light')
+          const next = checked ? 'dark' : 'light'
+          setTheme(next === systemTheme ? 'system' : next)
         }}
         aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         pressedWidth={18}
