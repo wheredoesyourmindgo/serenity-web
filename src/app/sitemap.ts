@@ -1,7 +1,7 @@
 import {MetadataRoute} from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://serenity-layout.fyi'
+  const baseUrl = 'https://www.serenity-layout.fyi'
 
   return [
     {

@@ -10,8 +10,30 @@ config.autoAddCss = false
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 export const metadata = {
-  title: 'Serenity Keyboard Layout',
-  description: 'Serenity Keyboard Layout Reference'
+  metadataBase: new URL('https://www.serenity-layout.fyi'),
+  title: {
+    default: 'Serenity Keyboard Layout',
+    template: '%s | Serenity Keyboard Layout'
+  },
+  description:
+    'Reference site for the Serenity keyboard layout — an optimized alternative keyboard layout with custom QMK firmware.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Serenity Keyboard Layout',
+    title: 'Serenity Keyboard Layout',
+    description:
+      'Reference site for the Serenity keyboard layout — an optimized alternative keyboard layout with custom QMK firmware.',
+    url: 'https://www.serenity-layout.fyi'
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Serenity Keyboard Layout',
+    description:
+      'Reference site for the Serenity keyboard layout — an optimized alternative keyboard layout with custom QMK firmware.'
+  },
+  alternates: {
+    canonical: 'https://www.serenity-layout.fyi'
+  }
 }
 
 const bodyFont = localFont({
