@@ -8,7 +8,7 @@ type Props = Omit<FaIconProps, 'sx' | 'className' | 'color'> & {
 
 export default function AppShortcutSubIcn({className, iconClassName, ...rest}: Props) {
   return (
-    <span className={cn('absolute -top-[5px] left-2.5', className)}>
+    <span className={cn('absolute top-[-5px] left-2.5', className)}>
       <FaIcon
         className={cn('fa-regular fa-browser -translate-x-1/2 text-[9px]', iconClassName)}
         color="solarized.blue"

@@ -61,7 +61,7 @@ function ThemeHotkey() {
     return () => {
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [resolvedTheme, setTheme])
+  }, [resolvedTheme, systemTheme, setTheme])
 
   return null
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import type {CSSProperties, HTMLAttributes, ReactNode} from 'react'
+import type {CSSProperties, HTMLAttributes, KeyboardEvent, ReactNode} from 'react'
 import {useState} from 'react'
 import {
   HoverCard,
@@ -37,9 +37,24 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
     ...style
   }
   const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
-  const touchOpenProps = isTouchDevice
-    ? {open: touchOpen, onOpenChange: setTouchOpen}
-    : {}
+  const touchOpenProps = isTouchDevice ? {open: touchOpen, onOpenChange: setTouchOpen} : {}
+  // on touch devices there is no hover, so the key itself toggles the popover
+  const toggleOpen = () => setTouchOpen((o) => !o)
+  const touchToggleProps =
+    popOverContent && isTouchDevice
+      ? {
+          role: 'button',
+          tabIndex: 0,
+          'aria-expanded': touchOpen,
+          onClick: toggleOpen,
+          onKeyDown: (e: KeyboardEvent) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              toggleOpen()
+            }
+          }
+        }
+      : {}
   const trigger = (
     <div
       className={cn(
@@ -49,7 +64,7 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
       )}
       style={containerStyle}
       aria-describedby={popOverContent ? popOverId : undefined}
-      onClick={popOverContent && isTouchDevice ? () => setTouchOpen((o) => !o) : undefined}
+      {...touchToggleProps}
       {...r}
     >
       {/* overflow fixes issues on mouse hover where partial icons can disappear, ex. backspace icon */}
@@ -69,7 +84,7 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
         side="top"
         align="start"
         sideOffset={4}
-        className="pointer-events-none w-max max-w-[24rem] p-0.5"
+        className="pointer-events-none w-max max-w-sm p-0.5"
       >
         {popOverContent}
       </HoverCardContent>

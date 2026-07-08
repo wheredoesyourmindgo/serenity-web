@@ -38,7 +38,6 @@
     "type-check": "tsc --noEmit -p .",
     "type-check:watch": "npm run type-check -- --watch",
     "lint": "eslint .",
-    "test": "ava",
     "vendor-components": "node scripts/vendor-components.mjs",
     "vendor-components:list": "node scripts/vendor-components.mjs list",
     "vendor-components:discover": "node scripts/vendor-components.mjs discover",

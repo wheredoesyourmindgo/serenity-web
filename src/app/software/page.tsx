@@ -46,14 +46,18 @@ export default function SoftwarePage() {
         <SerenityKarabinerButton />
       </div>
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 pb-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
+        <h2 className="text-solarized-green pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Software
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
           <div className="h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100">
-            <TabsContent value="base" layout={false}><BaseLyr /></TabsContent>
-            <TabsContent value="fn" layout={false}><FnLyr /></TabsContent>
+            <TabsContent value="base" layout={false}>
+              <BaseLyr />
+            </TabsContent>
+            <TabsContent value="fn" layout={false}>
+              <FnLyr />
+            </TabsContent>
           </div>
 
           <div className="bg-card mt-12 max-w-full">
@@ -66,7 +70,7 @@ export default function SoftwarePage() {
                     'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
                     'data-[state=active]:border-solarized-blue data-[state=active]:text-solarized-blue',
                     'dark:data-[state=active]:border-solarized-cyan dark:data-[state=active]:text-solarized-cyan',
-                    'data-[state=inactive]:border-transparent text-muted-foreground hover:text-foreground'
+                    'text-muted-foreground hover:text-foreground data-[state=inactive]:border-transparent'
                   )}
                 >
                   <span className="flex h-4 items-center justify-center">

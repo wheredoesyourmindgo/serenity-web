@@ -588,7 +588,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyIcon
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-function -translate-x-[3px]" />
+              <LyrHoldSubIcn className="fa-regular fa-function translate-x-[-3px]" />
             )}
             className="fa-regular fa-layer-group translate-y-[2px] text-[16px]"
             KeyContainerProps={{
