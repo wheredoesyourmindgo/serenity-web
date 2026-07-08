@@ -13,13 +13,8 @@ import QwertyLyr from '@/components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@/components/keyboard/firmware/MouseLyr'
 import OsLyr from '@/components/keyboard/firmware/OsLyr'
 import QmkLegend from '@/components/QmkLegend'
-import {ToggleGroup, ToggleGroupItem} from '@/components/animate-ui/components/radix/toggle-group'
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent
-} from '@/components/animate-ui/primitives/radix/tabs'
+import {ToggleGroup, Toggle} from '@/components/animate-ui/components/base/toggle-group'
+import {Tabs, TabsList, TabsTab, TabsPanel} from '@/components/animate-ui/primitives/base/tabs'
 
 export type KeyboardLayout = 'planck' | 'corne'
 
@@ -60,8 +55,9 @@ const tabs = [
 export default function FirmwarePage() {
   const [layout, setLayout] = useState<KeyboardLayout>('planck')
 
-  const handleLayoutChange = (newLayout: string) => {
-    if (newLayout) setLayout(newLayout as KeyboardLayout)
+  const handleLayoutChange = (value: string[]) => {
+    const next = value[0]
+    if (next) setLayout(next as KeyboardLayout)
   }
 
   return (
@@ -75,54 +71,54 @@ export default function FirmwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="h-[160px] origin-center scale-[0.47] sm:h-[200px] sm:scale-[0.65] md:h-auto md:origin-[initial] md:scale-100">
-            <TabsContent value="base" layout={false}>
+          <div className="grid h-[160px] origin-center scale-[0.47] sm:h-[200px] sm:scale-[0.65] md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
+            <TabsPanel value="base" layout={false}>
               <BaseLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="mouse" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="mouse" layout={false}>
               <MouseLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="num-nav" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="num-nav" layout={false}>
               <NumNavLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="action" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="action" layout={false}>
               <ActionLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="media" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="media" layout={false}>
               <MediaLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="symbol" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="symbol" layout={false}>
               <SymLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="os" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="os" layout={false}>
               <OsLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="function" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="function" layout={false}>
               <FuncLyr layout={layout} />
-            </TabsContent>
-            <TabsContent value="qwerty" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="qwerty" layout={false}>
               <QwertyLyr layout={layout} />
-            </TabsContent>
+            </TabsPanel>
           </div>
 
           <div className="bg-card mt-12 max-w-full">
             <TabsList className="border-border flex overflow-x-auto border-b">
               {tabs.map((tab) => (
-                <TabsTrigger
+                <TabsTab
                   key={tab.value}
                   value={tab.value}
                   className={cn(
                     'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                    'data-[state=active]:border-solarized-blue data-[state=active]:text-solarized-blue',
-                    'dark:data-[state=active]:border-solarized-cyan dark:data-[state=active]:text-solarized-cyan',
-                    'text-muted-foreground hover:text-foreground data-[state=inactive]:border-transparent'
+                    'data-[active]:border-solarized-blue data-[active]:text-solarized-blue',
+                    'dark:data-[active]:border-solarized-cyan dark:data-[active]:text-solarized-cyan',
+                    'text-muted-foreground hover:text-foreground border-transparent'
                   )}
                 >
                   <span className="flex h-4 items-center justify-center">
                     <FaIcon className={cn(tab.icon, tab.iconClassName)} />
                   </span>
                   <span>{tab.label}</span>
-                </TabsTrigger>
+                </TabsTab>
               ))}
             </TabsList>
           </div>
@@ -135,27 +131,21 @@ export default function FirmwarePage() {
             <legend className="text-muted-foreground mb-2 w-full text-center text-sm font-medium">
               Bottom Row Layout
             </legend>
-            <ToggleGroup
-              type="single"
-              value={layout}
-              onValueChange={handleLayoutChange}
-              className="flex-col"
-              highlightClassName="bg-solarized-blue/10 dark:bg-solarized-cyan/10"
-            >
-              <ToggleGroupItem
+            <ToggleGroup value={[layout]} onValueChange={handleLayoutChange} className="flex-col">
+              <Toggle
                 value="planck"
                 aria-label="11-12 keys"
-                className="data-[state=on]:text-solarized-blue dark:data-[state=on]:text-solarized-cyan justify-start px-4"
+                className="data-[pressed]:text-solarized-blue dark:data-[pressed]:text-solarized-cyan justify-start px-4"
               >
                 11-12 keys <span className="inline pl-2 italic">(Planck)</span>
-              </ToggleGroupItem>
-              <ToggleGroupItem
+              </Toggle>
+              <Toggle
                 value="corne"
                 aria-label="5-6 keys"
-                className="data-[state=on]:text-solarized-blue dark:data-[state=on]:text-solarized-cyan justify-start px-4"
+                className="data-[pressed]:text-solarized-blue dark:data-[pressed]:text-solarized-cyan justify-start px-4"
               >
                 5-6 keys <span className="inline pl-2 italic">(Corne)</span>
-              </ToggleGroupItem>
+              </Toggle>
             </ToggleGroup>
           </fieldset>
         </div>

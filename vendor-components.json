@@ -31,45 +31,56 @@
       "paths": ["src/components/ui/tabs.tsx"]
     },
     {
-      "name": "hover-card",
+      "name": "preview-card",
       "source": "animate-ui",
-      "spec": "@animate-ui/components-radix-hover-card",
+      "spec": "@animate-ui/components-base-preview-card",
       "paths": [
         "src/hooks/use-controlled-state.tsx",
         "src/lib/get-strict-context.tsx",
-        "src/components/animate-ui/primitives/radix/hover-card.tsx",
-        "src/components/animate-ui/components/radix/hover-card.tsx"
+        "src/components/animate-ui/primitives/base/preview-card.tsx",
+        "src/components/animate-ui/components/base/preview-card.tsx"
       ]
     },
     {
       "name": "switch",
       "source": "animate-ui",
-      "spec": "@animate-ui/components-radix-switch",
+      "spec": "@animate-ui/components-base-switch",
       "paths": [
         "src/hooks/use-controlled-state.tsx",
         "src/lib/get-strict-context.tsx",
-        "src/components/animate-ui/primitives/radix/switch.tsx",
-        "src/components/animate-ui/components/radix/switch.tsx"
+        "src/components/animate-ui/primitives/base/switch.tsx",
+        "src/components/animate-ui/components/base/switch.tsx"
+      ]
+    },
+    {
+      "name": "toggle",
+      "source": "animate-ui",
+      "spec": "@animate-ui/components-base-toggle",
+      "paths": [
+        "src/hooks/use-controlled-state.tsx",
+        "src/lib/get-strict-context.tsx",
+        "src/components/animate-ui/primitives/base/toggle.tsx",
+        "src/components/animate-ui/components/base/toggle.tsx"
       ]
     },
     {
       "name": "toggle-group",
       "source": "animate-ui",
-      "spec": "@animate-ui/components-radix-toggle-group",
+      "spec": "@animate-ui/components-base-toggle-group",
       "paths": [
         "src/hooks/use-controlled-state.tsx",
         "src/lib/get-strict-context.tsx",
         "src/components/animate-ui/primitives/effects/highlight.tsx",
-        "src/components/animate-ui/primitives/radix/toggle.tsx",
-        "src/components/animate-ui/components/radix/toggle.tsx",
-        "src/components/animate-ui/primitives/radix/toggle-group.tsx",
-        "src/components/animate-ui/components/radix/toggle-group.tsx"
+        "src/components/animate-ui/primitives/base/toggle.tsx",
+        "src/components/animate-ui/components/base/toggle.tsx",
+        "src/components/animate-ui/primitives/base/toggle-group.tsx",
+        "src/components/animate-ui/components/base/toggle-group.tsx"
       ]
     },
     {
       "name": "tabs",
       "source": "animate-ui",
-      "spec": "@animate-ui/components-radix-tabs",
+      "spec": "@animate-ui/components-base-tabs",
       "paths": [
         "src/hooks/use-controlled-state.tsx",
         "src/hooks/use-auto-height.tsx",
@@ -77,8 +88,19 @@
         "src/components/animate-ui/primitives/animate/slot.tsx",
         "src/components/animate-ui/primitives/effects/auto-height.tsx",
         "src/components/animate-ui/primitives/effects/highlight.tsx",
-        "src/components/animate-ui/primitives/radix/tabs.tsx",
-        "src/components/animate-ui/components/radix/tabs.tsx"
+        "src/components/animate-ui/primitives/base/tabs.tsx",
+        "src/components/animate-ui/components/base/tabs.tsx"
+      ]
+    },
+    {
+      "name": "copy",
+      "source": "animate-ui",
+      "spec": "@animate-ui/components-buttons-copy",
+      "paths": [
+        "src/hooks/use-controlled-state.tsx",
+        "src/components/animate-ui/primitives/animate/slot.tsx",
+        "src/components/animate-ui/primitives/buttons/button.tsx",
+        "src/components/animate-ui/components/buttons/copy.tsx"
       ]
     }
   ]

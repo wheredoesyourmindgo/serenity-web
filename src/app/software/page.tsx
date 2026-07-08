@@ -5,12 +5,7 @@ import BaseLyr from '@/components/keyboard/software/BaseLyr'
 import FaIcon from '@/components/FaIcon'
 import FnLyr from '@/components/keyboard/software/FnLyr'
 import QmkLegend from '@/components/QmkLegend'
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent
-} from '@/components/animate-ui/primitives/radix/tabs'
+import {Tabs, TabsList, TabsTab, TabsPanel} from '@/components/animate-ui/primitives/base/tabs'
 
 function GitHubIcon() {
   return (
@@ -51,33 +46,33 @@ export default function SoftwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100">
-            <TabsContent value="base" layout={false}>
+          <div className="grid h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
+            <TabsPanel value="base" layout={false}>
               <BaseLyr />
-            </TabsContent>
-            <TabsContent value="fn" layout={false}>
+            </TabsPanel>
+            <TabsPanel value="fn" layout={false}>
               <FnLyr />
-            </TabsContent>
+            </TabsPanel>
           </div>
 
           <div className="bg-card mt-12 max-w-full">
             <TabsList className="border-border flex overflow-x-auto border-b">
               {tabs.map((tab) => (
-                <TabsTrigger
+                <TabsTab
                   key={tab.value}
                   value={tab.value}
                   className={cn(
                     'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                    'data-[state=active]:border-solarized-blue data-[state=active]:text-solarized-blue',
-                    'dark:data-[state=active]:border-solarized-cyan dark:data-[state=active]:text-solarized-cyan',
-                    'text-muted-foreground hover:text-foreground data-[state=inactive]:border-transparent'
+                    'data-[active]:border-solarized-blue data-[active]:text-solarized-blue',
+                    'dark:data-[active]:border-solarized-cyan dark:data-[active]:text-solarized-cyan',
+                    'text-muted-foreground hover:text-foreground border-transparent'
                   )}
                 >
                   <span className="flex h-4 items-center justify-center">
                     <FaIcon className={cn(tab.icon, tab.iconClassName)} />
                   </span>
                   <span>{tab.label}</span>
-                </TabsTrigger>
+                </TabsTab>
               ))}
             </TabsList>
           </div>

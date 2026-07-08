@@ -1,11 +1,11 @@
 'use client'
 
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger
-} from '@/components/animate-ui/components/radix/hover-card'
-import {Switch} from '@/components/animate-ui/components/radix/switch'
+  PreviewCard,
+  PreviewCardPanel,
+  PreviewCardTrigger
+} from '@/components/animate-ui/components/base/preview-card'
+import {Switch} from '@/components/animate-ui/components/base/switch'
 import {IconMoon, IconSun} from '@tabler/icons-react'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {useTheme as useNextTheme} from 'next-themes'
@@ -28,7 +28,7 @@ export default function ToggleDarkModeBtn() {
         }}
         aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         pressedWidth={18}
-        className="h-7 w-12 rounded-full border border-white/20 bg-white/12 px-0.5 shadow-none backdrop-blur-sm data-[state=checked]:bg-black/30 data-[state=unchecked]:bg-white/12 dark:border-black/15 dark:data-[state=checked]:bg-black/35 dark:data-[state=unchecked]:bg-white/10"
+        className="h-7 w-12 rounded-full border border-white/20 bg-white/12 px-0.5 shadow-none backdrop-blur-sm data-[checked]:bg-black/30 data-[unchecked]:bg-white/12 dark:border-black/15 dark:data-[checked]:bg-black/35 dark:data-[unchecked]:bg-white/10"
       />
     </div>
   )
@@ -38,10 +38,10 @@ export default function ToggleDarkModeBtn() {
   }
 
   return (
-    <HoverCard openDelay={250} closeDelay={100}>
-      <HoverCardTrigger asChild>{control}</HoverCardTrigger>
+    <PreviewCard>
+      <PreviewCardTrigger delay={250} closeDelay={100} render={control} />
 
-      <HoverCardContent side="bottom" align="end" className="w-auto min-w-34 p-3">
+      <PreviewCardPanel side="bottom" align="end" className="w-auto min-w-34 p-3">
         <div className="flex items-center gap-2 text-sm">
           {isDark ? (
             <IconMoon className="size-3.5" stroke={1.8} />
@@ -50,7 +50,7 @@ export default function ToggleDarkModeBtn() {
           )}
           <span>{isDark ? "Light's out!" : "Light's on!"}</span>
         </div>
-      </HoverCardContent>
-    </HoverCard>
+      </PreviewCardPanel>
+    </PreviewCard>
   )
 }

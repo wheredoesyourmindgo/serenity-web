@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {readFileSync, existsSync} from 'node:fs'
+import {readFileSync, writeFileSync, existsSync} from 'node:fs'
 import path from 'node:path'
 import {spawnSync} from 'node:child_process'
 
@@ -32,6 +32,78 @@ Sources:
   shadcn
   animate-ui
   motion-primitives`)
+}
+
+// This project uses `@tabler/icons-react` (components.json `iconLibrary: tabler`),
+// but third-party registries such as animate-ui hardcode `lucide-react`. Map the
+// icons we actually vendor; extend this table as new components arrive. Unmapped
+// icons are left on lucide and warned about loudly rather than guessed wrong.
+const LUCIDE_TO_TABLER = {
+  CopyIcon: 'IconCopy',
+  CheckIcon: 'IconCheck'
+}
+
+function rewriteLucideToTabler(source, relPath) {
+  const importRe = /import\s*\{([^}]*)\}\s*from\s*['"]lucide-react['"];?\n?/
+  const match = source.match(importRe)
+  if (!match) {
+    return source
+  }
+
+  const names = match[1]
+    .split(',')
+    .map((name) => name.trim())
+    .filter(Boolean)
+  const mapped = names.filter((name) => LUCIDE_TO_TABLER[name])
+  const unmapped = names.filter((name) => !LUCIDE_TO_TABLER[name])
+
+  let out = source
+  for (const name of mapped) {
+    out = out.replace(new RegExp(`\\b${name}\\b`, 'g'), LUCIDE_TO_TABLER[name])
+  }
+
+  const importLines = []
+  if (mapped.length > 0) {
+    importLines.push(`import { ${mapped.map((name) => LUCIDE_TO_TABLER[name]).join(', ')} } from '@tabler/icons-react';`)
+  }
+  if (unmapped.length > 0) {
+    importLines.push(`import { ${unmapped.join(', ')} } from 'lucide-react';`)
+    console.warn(`  ! ${relPath}: no @tabler mapping for lucide icon(s): ${unmapped.join(', ')} — left on lucide-react (add them to LUCIDE_TO_TABLER)`)
+  }
+
+  return out.replace(importRe, `${importLines.join('\n')}\n`)
+}
+
+// Registries such as animate-ui still emit the pre-rename Base UI package
+// (`@base-ui-components/react`). This project depends on the renamed package
+// (`@base-ui/react`), and its tsconfig runs with `noUnusedLocals`, which trips
+// on the bare `import * as React` some registry files ship. Normalize these here
+// so a re-sync reproduces exactly what we hand-verified instead of regressing.
+function normalizeVendoredFile(relPath) {
+  const absPath = path.join(cwd, relPath)
+  if (!existsSync(absPath)) {
+    return
+  }
+
+  const original = readFileSync(absPath, 'utf8')
+  let next = original.replaceAll('@base-ui-components/react', '@base-ui/react')
+
+  next = rewriteLucideToTabler(next, relPath)
+
+  // Drop a sole `import * as React from 'react'` when React is never referenced
+  // (safe: kept whenever any other `React` token, e.g. `React.ComponentProps`, exists).
+  const reactImport = /^import \* as React from ['"]react['"];?\n/m
+  if (reactImport.test(next)) {
+    const withoutImport = next.replace(reactImport, '')
+    if (!/\bReact\b/.test(withoutImport)) {
+      next = withoutImport
+    }
+  }
+
+  if (next !== original) {
+    writeFileSync(absPath, next)
+    console.log(`Normalized ${relPath}`)
+  }
 }
 
 function componentStatus(component) {
@@ -163,6 +235,10 @@ function syncComponents(selectors, source, options) {
 
     if (!options.dryRun) {
       const filesToFormat = component.paths.filter((file) => existsSync(path.join(cwd, file)))
+
+      for (const file of filesToFormat) {
+        normalizeVendoredFile(file)
+      }
 
       if (filesToFormat.length > 0) {
         console.log(`Formatting ${component.source}:${component.name}`)
