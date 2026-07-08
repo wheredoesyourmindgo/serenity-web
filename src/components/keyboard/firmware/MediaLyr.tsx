@@ -63,7 +63,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend
             {...sharedProps}
-            className="block text-center text-[0.75rem]"
+            className="block text-center text-xs"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -82,7 +82,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="block text-center text-[0.75rem]"
+            className="block text-center text-xs"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -118,7 +118,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="block text-center text-[0.75rem]"
+            className="block text-center text-xs"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -137,7 +137,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="block text-center text-[0.75rem]"
+            className="block text-center text-xs"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -156,7 +156,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
-            className="block text-center text-[0.75rem]"
+            className="block text-center text-xs"
             KeyContainerProps={{
               popOverContent: (
                 <div className="p-2">
@@ -316,7 +316,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-typewriter translate-y-[2px]"
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-layer-group -translate-x-[2px]" />
+              <LyrHoldSubIcn className="fa-regular fa-layer-group translate-x-[-2px]" />
             )}
             KeyContainerProps={{
               keyId: 'qwerty-key',
@@ -329,10 +329,10 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} className="text-[0.75rem]">
+          <KeyLegend {...sharedProps} className="text-xs">
             Debug
           </KeyLegend>
-          <KeyLegend {...sharedProps} className="text-[0.75rem]">
+          <KeyLegend {...sharedProps} className="text-xs">
             Reset
           </KeyLegend>
           <KeyIcon
@@ -404,7 +404,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-function -translate-x-[3px]" />
+              <LyrHoldSubIcn className="fa-regular fa-function translate-x-[-3px]" />
             )}
             className="fa-regular fa-layer-group translate-y-[2px] text-[16px]"
             KeyContainerProps={{

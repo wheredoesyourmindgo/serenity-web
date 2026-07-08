@@ -232,10 +232,10 @@ end run
   return (
     <div className="relative container mx-auto px-4">
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:text-[3.75rem]">
+        <h2 className="text-solarized-green pt-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:text-6xl">
           Miscellaneous
         </h2>
-        <h6 className="text-solarized-violet pb-4 text-[1.25rem] font-medium italic md:pb-8">
+        <h6 className="text-solarized-violet pb-4 text-xl font-medium italic md:pb-8">
           page in development...
         </h6>
       </div>

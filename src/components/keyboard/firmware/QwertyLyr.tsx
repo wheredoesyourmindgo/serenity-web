@@ -357,7 +357,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
             className="fa-regular fa-arrow-up translate-y-[4px]"
             tapForceHold
             ModHoldSubIcn={() => (
-              <ModSubHoldIcn className="fa-regular fa-option -translate-x-[3px] text-[11px]" />
+              <ModSubHoldIcn className="fa-regular fa-option translate-x-[-3px] text-[11px]" />
             )}
             KeyContainerProps={{
               keyId: 'right-option-key',

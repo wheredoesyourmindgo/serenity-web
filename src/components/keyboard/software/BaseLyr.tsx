@@ -487,7 +487,7 @@ export default function BaseLyr() {
           <KeyIcon
             className="fa-light fa-globe translate-y-[2px] text-[18px]"
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-[4px]" />
+              <LyrHoldSubIcn className="fa-regular fa-keyboard translate-x-[-4px]" />
             )}
             KeyContainerProps={{
               keyId: 'fn-layer-key',
@@ -524,7 +524,7 @@ export default function BaseLyr() {
               )
             }}
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-[6px]" />
+              <LyrHoldSubIcn className="fa-regular fa-keyboard translate-x-[-6px]" />
             )}
           />
           <KeyIcon
@@ -553,7 +553,7 @@ export default function BaseLyr() {
               }}
             >
               <KeyIcon
-                className="fa-regular fa-arrow-left -translate-y-[2px] text-[14px]"
+                className="fa-regular fa-arrow-left translate-y-[-2px] text-[14px]"
                 KeyContainerProps={{
                   style: {width: 55, height: 25} // 1u
                 }}
@@ -569,13 +569,13 @@ export default function BaseLyr() {
               }}
             >
               <KeyIcon
-                className="fa-regular fa-arrow-up -translate-y-[2px] text-[14px]"
+                className="fa-regular fa-arrow-up translate-y-[-2px] text-[14px]"
                 KeyContainerProps={{
                   style: {width: 55, height: 25} // 1u
                 }}
               />
               <KeyIcon
-                className="fa-regular fa-arrow-down -translate-y-[2px] text-[14px]"
+                className="fa-regular fa-arrow-down translate-y-[-2px] text-[14px]"
                 KeyContainerProps={{
                   style: {width: 55, height: 25} // 1u
                 }}
@@ -591,7 +591,7 @@ export default function BaseLyr() {
               }}
             >
               <KeyIcon
-                className="fa-regular fa-arrow-right -translate-y-[2px] text-[14px]"
+                className="fa-regular fa-arrow-right translate-y-[-2px] text-[14px]"
                 KeyContainerProps={{
                   style: {width: 55, height: 25} // 1u
                 }}

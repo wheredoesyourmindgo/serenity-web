@@ -28,7 +28,7 @@ export default function AlphasPage() {
   return (
     <div className="container mx-auto px-4">
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 pb-4 text-[3.75rem] font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
+        <h2 className="text-solarized-green pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Alphas
         </h2>
         <div className="h-[100px] origin-center scale-[0.52] sm:h-[200px] sm:scale-[0.75] md:h-auto md:origin-[initial] md:scale-100">
@@ -38,7 +38,7 @@ export default function AlphasPage() {
         <div className="mt-12 flex flex-col items-center justify-center">
           <div className="flex items-center gap-2">
             <FaIcon className="fa-regular fa-star-shooting" color="solarized.base1" />
-            <h6 className="text-solarized-base00 text-[1.25rem] font-medium">Statistics</h6>
+            <h6 className="text-solarized-base00 text-xl font-medium">Statistics</h6>
           </div>
 
           <div className="mt-4 flex">

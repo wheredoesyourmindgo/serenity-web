@@ -1,17 +1,21 @@
 'use client'
 
-import {useEffect, useState} from 'react'
+import {useSyncExternalStore} from 'react'
+
+function subscribe(callback: () => void) {
+  const mq = window.matchMedia('(pointer: coarse)')
+  mq.addEventListener('change', callback)
+  return () => mq.removeEventListener('change', callback)
+}
+
+function getSnapshot() {
+  return window.matchMedia('(pointer: coarse)').matches
+}
+
+function getServerSnapshot() {
+  return false
+}
 
 export function useIsTouchDevice() {
-  const [isTouchDevice, setIsTouchDevice] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(pointer: coarse)')
-    setIsTouchDevice(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setIsTouchDevice(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-
-  return isTouchDevice
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 }

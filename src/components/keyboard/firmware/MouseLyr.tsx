@@ -221,7 +221,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />L
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-xs" />L
           </KeyLegend>
 
           <KeyLegend
@@ -236,7 +236,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />D
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-xs" />D
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -250,7 +250,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />U
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-xs" />U
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -264,7 +264,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           >
-            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-[0.75rem]" />R
+            <FaIcon className="fa-regular fa-arrow-pointer pr-1 text-xs" />R
           </KeyLegend>
 
           <KeyLegend {...sharedProps} shiftLgnd=":">
