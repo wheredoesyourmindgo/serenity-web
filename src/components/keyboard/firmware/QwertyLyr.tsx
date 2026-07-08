@@ -1,4 +1,4 @@
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'

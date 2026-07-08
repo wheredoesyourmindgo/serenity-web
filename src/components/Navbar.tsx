@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import ToggleDarkModeBtn from './ToggleDarkModeBtn'
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 import {usePathname} from 'next/navigation'
 import {useState} from 'react'
 import {IconMenu2, IconX} from '@tabler/icons-react'

@@ -1,6 +1,6 @@
 'use client'
 
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 import BaseLyr from '@/components/keyboard/software/BaseLyr'
 import FaIcon from '@/components/FaIcon'
 import FnLyr from '@/components/keyboard/software/FnLyr'

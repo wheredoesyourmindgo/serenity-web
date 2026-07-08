@@ -1,7 +1,7 @@
 'use client'
 
 import {useState} from 'react'
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 import BaseLyr from '@/components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@/components/keyboard/firmware/NumNavLyr'
 import SymLyr from '@/components/keyboard/firmware/SymLyr'

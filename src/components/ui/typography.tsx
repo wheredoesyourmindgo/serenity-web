@@ -1,7 +1,7 @@
 'use client'
 
 import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 import {colorTokenToCssValue} from '@/lib/colorToken'
 import type {CSSProperties, ElementType, HTMLAttributes} from 'react'
 

@@ -10,7 +10,7 @@ import {
   type ToggleGroupItemProps as ToggleGroupItemPrimitiveProps
 } from '@/components/animate-ui/primitives/radix/toggle-group'
 import {toggleVariants} from '@/components/animate-ui/components/radix/toggle'
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 import {getStrictContext} from '@/lib/get-strict-context'
 
 const [ToggleGroupProvider, useToggleGroup] =
