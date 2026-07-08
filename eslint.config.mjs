@@ -25,7 +25,8 @@ const eslintConfig = defineConfig([
     'src/components/animate-ui/**',
     'src/lib/utils.ts',
     'src/lib/get-strict-context.tsx',
-    'src/hooks/use-controlled-state.tsx'
+    'src/hooks/use-controlled-state.tsx',
+    'src/hooks/use-auto-height.tsx'
   ]),
   ...nextTs,
   ...nextVitals,

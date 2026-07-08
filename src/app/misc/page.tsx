@@ -2,7 +2,7 @@
 
 import FaIcon from '@/components/FaIcon'
 import {solarized} from '@/lib/solarizedPalette'
-import {useState} from 'react'
+import {CopyButton} from '@/components/animate-ui/components/buttons/copy'
 import {useTheme} from 'next-themes'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {solarizedlight, solarizedDarkAtom} from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -15,28 +15,18 @@ type CopyBtnProps = {
 }
 
 const CopyBtn = ({text, onCopied, className}: CopyBtnProps) => {
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(true)
-      onCopied?.()
-      setTimeout(() => setCopied(false), 1500)
-    } catch {
-      // no-op
-    }
-  }
-
   return (
-    <button
-      aria-label={copied ? 'Copied!' : 'Copy'}
-      title={copied ? 'Copied!' : 'Copy'}
-      onClick={handleCopy}
-      className={`bg-card border-border hover:bg-accent absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded border shadow-sm transition-colors ${className ?? ''}`}
-    >
-      <FaIcon className="fa-regular fa-copy text-[18px]" color="solarized.base0" />
-    </button>
+    <CopyButton
+      content={text}
+      variant="ghost"
+      size="xs"
+      delay={1500}
+      onCopiedChange={(copied) => {
+        if (copied) onCopied?.()
+      }}
+      aria-label="Copy"
+      className={`bg-card border-border text-solarized-base0 hover:bg-accent absolute top-2 right-2 rounded border shadow-sm ${className ?? ''}`}
+    />
   )
 }
 

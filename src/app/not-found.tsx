@@ -16,10 +16,12 @@ export default function NotFound() {
           layout reference and start from there.
         </p>
         <div className="mt-8 flex justify-center">
-          <Button asChild size="lg" className="rounded-full px-6">
-            <Link href="/" className="!text-solarized-base2">
-              Return home
-            </Link>
+          <Button
+            size="lg"
+            className="rounded-full px-6"
+            render={<Link href="/" className="!text-solarized-base2" />}
+          >
+            Return home
           </Button>
         </div>
       </div>

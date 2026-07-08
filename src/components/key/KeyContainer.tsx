@@ -3,10 +3,10 @@
 import type {CSSProperties, HTMLAttributes, KeyboardEvent, ReactNode} from 'react'
 import {useState} from 'react'
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger
-} from '@/components/animate-ui/components/radix/hover-card'
+  PreviewCard,
+  PreviewCardPanel,
+  PreviewCardTrigger
+} from '@/components/animate-ui/components/base/preview-card'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {useTheme} from 'next-themes'
 import {cn} from '@/lib/utils'
@@ -77,9 +77,9 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   }
 
   return (
-    <HoverCard openDelay={0} closeDelay={0} {...touchOpenProps}>
-      <HoverCardTrigger asChild>{trigger}</HoverCardTrigger>
-      <HoverCardContent
+    <PreviewCard {...touchOpenProps}>
+      <PreviewCardTrigger delay={0} closeDelay={0} render={trigger} />
+      <PreviewCardPanel
         id={popOverId}
         side="top"
         align="start"
@@ -87,8 +87,8 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
         className="pointer-events-none w-max max-w-sm p-0.5"
       >
         {popOverContent}
-      </HoverCardContent>
-    </HoverCard>
+      </PreviewCardPanel>
+    </PreviewCard>
   )
 }
 
