@@ -9,7 +9,7 @@ import {
 } from '@/components/animate-ui/components/radix/hover-card'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {useTheme} from 'next-themes'
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 
 type Props = HTMLAttributes<HTMLDivElement> & {
   keyId?: string

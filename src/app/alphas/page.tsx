@@ -1,7 +1,7 @@
 'use client'
 
 import {useState} from 'react'
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 import AlphaKeyboard from '@/components/keyboard/Alphas'
 import FaIcon from '@/components/FaIcon'
 import genkey from '@/components/stats/genkey'

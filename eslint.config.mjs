@@ -3,6 +3,7 @@ import nextVitals from 'eslint-config-next/core-web-vitals'
 import nextTs from 'eslint-config-next/typescript'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
 import tailwind from 'eslint-plugin-tailwindcss'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 
@@ -16,20 +17,56 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
-    'src/public/static/fonts/fontawesome/**'
+    'src/public/static/fonts/fontawesome/**',
+    '.claude/**', // Claude Code worktrees/settings — not project source
+    'scripts/**',
+    // Vendored code (shadcn/ui, animate-ui, upstream libs) — don't lint or format
+    'src/components/ui/**',
+    'src/components/animate-ui/**',
+    'src/lib/utils.ts',
+    'src/lib/get-strict-context.tsx',
+    'src/hooks/use-controlled-state.tsx'
   ]),
   ...nextTs,
   ...nextVitals,
   prettierRecommended,
-  ...tailwind.configs['flat/recommended'],
+  // eslint-plugin-tailwindcss v4 exposes a single flat-config object at
+  // `configs.recommended` (the v3 `configs['flat/recommended']` array is gone)
+  tailwind.configs.recommended,
   {
+    // Match the file globs eslint-config-next registers its plugins (eg.
+    // jsx-a11y) for, so the rule overrides below never apply to a file where
+    // the plugin itself is missing
+    files: ['**/*.{js,jsx,mjs,ts,tsx,mts,cts}'],
+    // `tailwind.configs.recommended` only registers the tailwindcss plugin for
+    // its own file globs; re-register it here (same instance) so the rule
+    // overrides below are valid for every file this object applies to.
+    // jsx-a11y is already registered by eslint-config-next, so we reuse that
+    // registration and only pull in its recommended rules below.
+    plugins: {
+      tailwindcss: tailwind
+    },
+    languageOptions: {
+      parserOptions: {
+        ...jsxA11y.flatConfigs.recommended.languageOptions?.parserOptions
+      }
+    },
     settings: {
-      // Suppress "Cannot resolve default tailwindcss config path. Please manually set the config option." during lint
+      // Tailwind v4 is CSS-first: point the plugin at the CSS entry that defines the theme (@theme in
+      // globals.css) so it can resolve custom utilities. Default is 'src/style.css', which doesn't exist here.
       tailwindcss: {
-        config: path.join(__dirname, './tailwind.config.mjs')
+        cssConfigPath: path.join(__dirname, './src/app/globals.css')
       }
     },
     rules: {
+      // jsx-a11y recommended rules, downgraded to warnings (non-blocking) while
+      // preserving each rule's options — accessibility issues to fix over time
+      ...Object.fromEntries(
+        Object.entries(jsxA11y.flatConfigs.recommended.rules).map(([name, val]) => [
+          name,
+          Array.isArray(val) ? ['warn', ...val.slice(1)] : 'warn'
+        ])
+      ),
       'linebreak-style': ['error', 'unix'],
       'no-console': 'off',
       'react/no-unescaped-entities': 0,
@@ -44,86 +81,21 @@ const eslintConfig = defineConfig([
         'warn',
         {
           argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_'
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_'
         }
       ],
-      'tailwindcss/classnames-order': 'warn',
+      // prettier-plugin-tailwindcss owns class ordering; the eslint rule
+      // disagrees with it, so keep it off to avoid churn
+      'tailwindcss/classnames-order': 'off',
       'tailwindcss/enforces-shorthand': 'off',
       'tailwindcss/no-custom-classname': [
         'warn',
         {
-          // Via ChatGPT for use with Tailwind CSS + shadcn/ui design system
-          whitelist: [
-            'bg-background',
-            'bg-background/70',
-            'text-foreground',
-            'text-foreground/90',
-            'text-foreground/80',
-            'text-foreground/70',
-            'text-foreground/60',
-            'bg-card',
-            'text-card-foreground',
-            'bg-popover',
-            'text-popover-foreground',
-            'bg-primary',
-            'text-primary',
-            'text-primary-foreground',
-            'bg-primary-light',
-            'text-primary-light',
-            'bg-primary-dark',
-            'bg-primary-dark/70',
-            'text-primary-dark',
-            'bg-secondary',
-            'text-secondary',
-            'text-secondary/90',
-            'text-secondary-foreground',
-            'bg-secondary-light',
-            'text-secondary-light',
-            'bg-secondary-dark',
-            'text-secondary-dark',
-            'text-accent',
-            'text-accent-foreground',
-            'bg-muted',
-            'bg-muted/40',
-            'text-muted-foreground',
-            'bg-accent',
-            'bg-accent/25',
-            'bg-destructive',
-            'text-destructive-foreground',
-            'border-border',
-            'border-accent',
-            'border-accent/60',
-            'border-muted',
-            'bg-input',
-            'ring-ring',
-            'bg-sidebar',
-            'text-sidebar-foreground',
-            'bg-sidebar-primary',
-            'text-sidebar-primary-foreground',
-            'bg-sidebar-accent',
-            'text-sidebar-accent-foreground',
-            'border-sidebar-border',
-            'ring-sidebar-ring',
-            'border-primary',
-            'border-accent/50',
-            'border-accent/90',
-            'border-accent/15',
-            'bg-primary/10',
-            'bg-surface-soft',
-            'ring-accent/10',
-            'bg-surface-soft/90',
-            // Added to tailwind config
-            'font-heading',
-            '!font-heading',
-            'font-display',
-            '!font-display',
-            // animate
-            'animate-in',
-            'fade-in',
-            'fill-mode-both',
-            'font-body',
-            'text-solarized-green'
-          ]
+          // shadcn/theme tokens are auto-recognized from the CSS @theme (see
+          // cssConfigPath above), so the whitelist only needs genuinely-custom
+          // classes — chiefly Font Awesome icon utilities.
+          whitelist: ['fa-[a-z0-9-]+']
         }
       ]
     }

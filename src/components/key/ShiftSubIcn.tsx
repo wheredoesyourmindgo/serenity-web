@@ -1,5 +1,5 @@
 import FaIcon, {FaIconProps} from '@/components/FaIcon'
-import {cn} from '@/lib/cn'
+import {cn} from '@/lib/utils'
 
 type Props = Omit<FaIconProps, 'icon'>
 
