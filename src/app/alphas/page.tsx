@@ -31,7 +31,7 @@ export default function AlphasPage() {
         <h2 className="text-solarized-green pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Alphas
         </h2>
-        <div className="h-[100px] origin-center scale-[0.52] sm:h-[200px] sm:scale-[0.75] md:h-auto md:origin-[initial] md:scale-100">
+        <div className="h-25 origin-center scale-52 sm:h-50 sm:scale-75 md:h-auto md:origin-[initial] md:scale-100">
           <AlphaKeyboard />
         </div>
 

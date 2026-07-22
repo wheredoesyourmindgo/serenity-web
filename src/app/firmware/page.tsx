@@ -71,7 +71,7 @@ export default function FirmwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="grid h-[160px] origin-center scale-[0.47] sm:h-[200px] sm:scale-[0.65] md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
+          <div className="grid h-40 origin-center scale-47 sm:h-50 sm:scale-65 md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
             <TabsPanel value="base" layout={false}>
               <BaseLyr layout={layout} />
             </TabsPanel>
@@ -157,7 +157,7 @@ export default function FirmwarePage() {
         <div className="w-full">
           <div
             id="highlights"
-            className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
+            className="bg-card border-border mx-auto mt-12 max-w-225 rounded-xl border p-4 md:p-6"
           >
             <h4 className="mb-4 text-center text-xl font-normal">Highlights</h4>
 

@@ -333,7 +333,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           >
             <div className="flex h-full w-full items-center justify-center">
-              <FaIcon className="fa-regular fa-image translate-y-[-4px] text-[13px]" />
+              <FaIcon className="fa-regular fa-image -translate-y-1 text-[13px]" />
             </div>
           </KeyIcon>
 

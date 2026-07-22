@@ -232,7 +232,7 @@ end run
 
       <div
         id="config"
-        className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
+        className="bg-card border-border mx-auto mt-12 max-w-225 rounded-xl border p-4 md:p-6"
       >
         <h4 className="mb-3 text-center text-xl font-normal">Application Config</h4>
 
@@ -331,7 +331,7 @@ end run
 
       <div
         id="reference"
-        className="bg-card border-border mx-auto mt-12 max-w-[900px] rounded-xl border p-4 md:p-6"
+        className="bg-card border-border mx-auto mt-12 max-w-225 rounded-xl border p-4 md:p-6"
       >
         <h4 className="mb-3 text-center text-xl font-normal">Reference</h4>
 
@@ -401,7 +401,7 @@ end run
 
       <div
         id="contact"
-        className="bg-card border-border mx-auto mt-12 mb-8 max-w-[900px] rounded-xl border p-4 md:p-6"
+        className="bg-card border-border mx-auto mt-12 mb-8 max-w-225 rounded-xl border p-4 md:p-6"
       >
         <h4 className="mb-3 text-center text-xl font-normal">Get In Touch</h4>
         <p className="mt-4 text-center">
