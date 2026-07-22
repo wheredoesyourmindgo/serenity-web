@@ -46,7 +46,7 @@ export default function SoftwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="grid h-[190px] origin-center scale-[0.40] sm:h-[300px] sm:scale-[0.60] md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
+          <div className="grid h-[190px] origin-center scale-40 sm:h-75 sm:scale-60 md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
             <TabsPanel value="base" layout={false}>
               <BaseLyr />
             </TabsPanel>

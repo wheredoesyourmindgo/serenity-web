@@ -19,7 +19,7 @@ export default function NotFound() {
           <Button
             size="lg"
             className="rounded-full px-6"
-            render={<Link href="/" className="!text-solarized-base2" />}
+            render={<Link href="/" className="text-solarized-base2!" />}
           >
             Return home
           </Button>

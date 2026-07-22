@@ -1,9 +1,9 @@
 import {defineConfig, globalIgnores} from 'eslint/config'
 import nextVitals from 'eslint-config-next/core-web-vitals'
 import nextTs from 'eslint-config-next/typescript'
-import prettierRecommended from 'eslint-plugin-prettier/recommended'
 import tailwind from 'eslint-plugin-tailwindcss'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
+import prettierConfig from 'eslint-config-prettier'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 
@@ -30,7 +30,6 @@ const eslintConfig = defineConfig([
   ]),
   ...nextTs,
   ...nextVitals,
-  prettierRecommended,
   // eslint-plugin-tailwindcss v4 exposes a single flat-config object at
   // `configs.recommended` (the v3 `configs['flat/recommended']` array is gone)
   tailwind.configs.recommended,
@@ -68,7 +67,6 @@ const eslintConfig = defineConfig([
           Array.isArray(val) ? ['warn', ...val.slice(1)] : 'warn'
         ])
       ),
-      'linebreak-style': ['error', 'unix'],
       'no-console': 'off',
       'react/no-unescaped-entities': 0,
       'react/self-closing-comp': 1,
@@ -100,7 +98,9 @@ const eslintConfig = defineConfig([
         }
       ]
     }
-  }
+  },
+  // Must stay last: turns off ESLint stylistic rules that conflict with Prettier.
+  prettierConfig
 ])
 
 export default eslintConfig

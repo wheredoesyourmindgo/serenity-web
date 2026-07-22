@@ -350,7 +350,7 @@ export default function BaseLyr() {
             ;
           </KeyLegend>
           <KeyIcon
-            className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
+            className="fa-regular fa-arrow-turn-down-left translate-y-1"
             KeyContainerProps={{
               style: {width: 102.25, height: 55},
               keyId: 'enter-key',
@@ -451,7 +451,7 @@ export default function BaseLyr() {
             }}
           /> */}
           <KeyIcon
-            className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
+            className="fa-regular fa-arrow-turn-down-left translate-y-1"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             KeyContainerProps={{
               style: {width: 133.75, height: 55}, // 2.25u
@@ -487,7 +487,7 @@ export default function BaseLyr() {
           <KeyIcon
             className="fa-light fa-globe translate-y-[2px] text-[18px]"
             LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-keyboard translate-x-[-4px]" />
+              <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-1" />
             )}
             KeyContainerProps={{
               keyId: 'fn-layer-key',

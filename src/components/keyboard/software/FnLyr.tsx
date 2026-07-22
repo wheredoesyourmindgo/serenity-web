@@ -355,7 +355,7 @@ export default function FnLyr() {
             ;
           </KeyLegend>
           <KeyIcon
-            className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
+            className="fa-regular fa-arrow-turn-down-left translate-y-1"
             KeyContainerProps={{
               style: {width: 102.25, height: 55},
               keyId: 'enter-key',
@@ -508,7 +508,7 @@ export default function FnLyr() {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-arrow-turn-down-left translate-y-[4px]"
+            className="fa-regular fa-arrow-turn-down-left translate-y-1"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
             KeyContainerProps={{
               style: {width: 133.75, height: 55}, // 2.25u
