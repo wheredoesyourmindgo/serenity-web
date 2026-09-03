@@ -168,27 +168,36 @@ keybind = alt+delete=esc:d
   const itermConfSnippet = `  {"Key Mappings":{"0xf702-0x320000-0x7b":{"Version":0,"Action":47,"Text":"2","Label":""},"0xf703-0x280000-0x0":{"Version":0,"Action":10,"Text":"f","Label":""},"0x7a-0x100000-0x6":{"Version":0,"Action":11,"Text":"0x1f","Label":""},"0xf703-0x2a0000-0x7c":{"Version":0,"Action":46,"Text":"1","Label":""},"0x5a-0x120000-0x6":{"Version":0,"Action":11,"Text":"0x18 0x1f","Label":""},"0xf700-0x300000-0x0":{"Version":0,"Action":7,"Text":"","Label":""},"0xf702-0x2a0000-0x7b":{"Version":0,"Action":47,"Text":"1","Label":""},"0x9-0x40000-0x0":{"Version":0,"Action":25,"Text":"Select Next Tab\nSelect Next Tab","Label":""},"0x7f-0x100000-0x33":{"Version":0,"Action":11,"Text":"0x15","Label":""},"0xf72d-0x100000-0x0":{"Version":0,"Action":8,"Text":"","Label":""},"0xf702-0x280000-0x0":{"Version":0,"Action":10,"Text":"b","Label":""},"0xf72b-0x100000-0x0":{"Version":0,"Action":4,"Text":"","Label":""},"0x74-0x100000-0x0":{"Version":0,"Action":25,"Text":"New Tab with Current Profile","Label":""},"0x54-0x120000-0x0":{"Version":0,"Action":25,"Text":"Split Vertically with Current Profile\nSplit Vertically with Current Profile","Label":""},"0xf703-0x300000-0x0":{"Version":0,"Action":11,"Text":"0x05","Label":""},"0x19-0x60000-0x0":{"Version":0,"Action":25,"Text":"Select Previous Tab\nSelect Previous Tab","Label":""},"0xf703-0x320000-0x0":{"Version":0,"Action":46,"Text":"2","Label":""},"0xf72c-0x20000-0x0":{"Version":0,"Action":9,"Text":"","Label":""},"0xf72d-0x20000-0x0":{"Version":0,"Action":8,"Text":"","Label":""},"0xf703-0x220000-0x7c":{"Version":0,"Action":46,"Text":"0","Label":""},"0x7f-0x80000-0x33":{"Version":0,"Action":11,"Text":"0x17","Label":""},"0xf729-0x100000-0x0":{"Version":0,"Action":5,"Text":"","Label":""},"0xf72c-0x100000-0x0":{"Version":0,"Action":9,"Text":"","Label":""},"0xf702-0x300000-0x7b":{"Version":0,"Action":11,"Text":"0x01","Label":""},"0xf701-0x300000-0x0":{"Version":0,"Action":6,"Text":"","Label":""},"0xf728-0x80000-0x75":{"Version":0,"Action":11,"Text":"0x1b 0x64","Label":""},"0xf702-0x220000-0x7b":{"Version":0,"Action":47,"Text":"0","Label":""}},"Touch Bar Items":{}}`
 
   const hammerspoonSnippet = `
--- Function to set Karabiner-Elements variable
-function setKarabinerVariable(variableName, variableValue)
-\tlocal karabiner_cli = "/Library/Application\\ Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
-\tlocal command = string.format(
-\t\t'%s --set-variables \\'{"\\"%s\\": %d}\\'',
-\t\tkarabiner_cli, variableName, variableValue
-\t  )
-\ths.execute(command)
+local karabinerLog = hs.logger.new("karabinerSync", "info")
+
+local KARABINER_CLI = "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
+
+-- Push a variable into Karabiner-Elements so complex modification rules
+-- can react to it via variable_if / variable_unless conditions.
+local function setKarabinerVariable(name, value)
+  local json = string.format('{"%s": %d}', name, value)
+
+  local task = hs.task.new(KARABINER_CLI, function(exitCode, _, stdErr)
+    if exitCode ~= 0 then
+      karabinerLog.ef("karabiner_cli failed (%d): %s", exitCode, stdErr)
+    end
+  end, { "--set-variables-from-stdin" })
+
+  task:setInput(json)
+  task:start()
+end
+
+-- Keep Karabiner's \`is_lock_screen\` variable in sync with the real lock state,
+-- since Karabiner has no native way to detect this itself.
+local screenWatcher = hs.caffeinate.watcher.new(function(eventType)
+  if eventType == hs.caffeinate.watcher.screensDidLock then
+    setKarabinerVariable("is_lock_screen", 1)
+  elseif eventType == hs.caffeinate.watcher.screensDidUnlock then
+    setKarabinerVariable("is_lock_screen", 0)
   end
+end)
 
-  -- Watch for screen lock and unlock events
-  local screenWatcher = hs.caffeinate.watcher.new(function(eventType)
-\tif eventType == hs.caffeinate.watcher.screensDidLock then
-\t  setKarabinerVariable("is_lock_screen", 1)
-\telseif eventType == hs.caffeinate.watcher.screensDidUnlock then
-\t  setKarabinerVariable("is_lock_screen", 0)
-\tend
-  end)
-
-  -- Start the screen watcher
-  screenWatcher:start()
+screenWatcher:start()
 `
 
   const toggleDarkModeSnippet = `
