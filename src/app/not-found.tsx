@@ -8,7 +8,7 @@ export default function NotFound() {
         <p className="font-body text-solarized-cyan mb-4 text-sm font-semibold tracking-[0.3em] uppercase">
           Error 404
         </p>
-        <h1 className="font-body text-solarized-green pb-4 [font-feature-settings:'ss02'_on] text-4xl italic sm:text-5xl md:text-6xl">
+        <h1 className="font-body text-solarized-green pb-4 font-features-['ss02'_on] text-4xl italic sm:text-5xl md:text-6xl">
           Page not found
         </h1>
         <p className="text-solarized-base01 mx-auto max-w-2xl text-sm leading-7 sm:text-base">

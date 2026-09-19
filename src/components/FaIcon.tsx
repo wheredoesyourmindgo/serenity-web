@@ -30,8 +30,8 @@ export default function FaIcon(props: Props) {
 
   const iconClassName = cn(
     'overflow-visible text-inherit',
-    resolvedColor && 'text-[var(--fa-icon-color)]',
-    computedTransform && '[transform:var(--fa-icon-transform)]',
+    resolvedColor && 'text-(--fa-icon-color)',
+    computedTransform && 'transform-(--fa-icon-transform)',
     typeof rotation === 'number' && 'origin-center',
     className
   )
