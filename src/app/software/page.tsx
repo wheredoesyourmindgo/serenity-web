@@ -46,7 +46,7 @@ export default function SoftwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="grid h-[190px] origin-center scale-40 sm:h-75 sm:scale-60 md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
+          <div className="grid h-[190px] origin-center scale-40 sm:h-75 sm:scale-60 md:h-auto md:origin-[initial] md:scale-100 *:col-start-1 *:row-start-1">
             <TabsPanel value="base" layout={false}>
               <BaseLyr />
             </TabsPanel>
@@ -63,8 +63,8 @@ export default function SoftwarePage() {
                   value={tab.value}
                   className={cn(
                     'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                    'data-[active]:border-solarized-blue data-[active]:text-solarized-blue',
-                    'dark:data-[active]:border-solarized-cyan dark:data-[active]:text-solarized-cyan',
+                    'data-active:border-solarized-blue data-active:text-solarized-blue',
+                    'dark:data-active:border-solarized-cyan dark:data-active:text-solarized-cyan',
                     'text-muted-foreground hover:text-foreground border-transparent'
                   )}
                 >

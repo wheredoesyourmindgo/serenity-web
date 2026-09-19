@@ -71,7 +71,7 @@ export default function FirmwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="grid h-40 origin-center scale-47 sm:h-50 sm:scale-65 md:h-auto md:origin-[initial] md:scale-100 [&>*]:col-start-1 [&>*]:row-start-1">
+          <div className="grid h-40 origin-center scale-47 sm:h-50 sm:scale-65 md:h-auto md:origin-[initial] md:scale-100 *:col-start-1 *:row-start-1">
             <TabsPanel value="base" layout={false}>
               <BaseLyr layout={layout} />
             </TabsPanel>
@@ -109,8 +109,8 @@ export default function FirmwarePage() {
                   value={tab.value}
                   className={cn(
                     'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                    'data-[active]:border-solarized-blue data-[active]:text-solarized-blue',
-                    'dark:data-[active]:border-solarized-cyan dark:data-[active]:text-solarized-cyan',
+                    'data-active:border-solarized-blue data-active:text-solarized-blue',
+                    'dark:data-active:border-solarized-cyan dark:data-active:text-solarized-cyan',
                     'text-muted-foreground hover:text-foreground border-transparent'
                   )}
                 >
@@ -135,14 +135,14 @@ export default function FirmwarePage() {
               <Toggle
                 value="planck"
                 aria-label="11-12 keys"
-                className="data-[pressed]:text-solarized-blue dark:data-[pressed]:text-solarized-cyan justify-start px-4"
+                className="data-pressed:text-solarized-blue dark:data-pressed:text-solarized-cyan justify-start px-4"
               >
                 11-12 keys <span className="inline pl-2 italic">(Planck)</span>
               </Toggle>
               <Toggle
                 value="corne"
                 aria-label="5-6 keys"
-                className="data-[pressed]:text-solarized-blue dark:data-[pressed]:text-solarized-cyan justify-start px-4"
+                className="data-pressed:text-solarized-blue dark:data-pressed:text-solarized-cyan justify-start px-4"
               >
                 5-6 keys <span className="inline pl-2 italic">(Corne)</span>
               </Toggle>

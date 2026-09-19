@@ -28,7 +28,7 @@ export default function ToggleDarkModeBtn() {
         }}
         aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         pressedWidth={18}
-        className="h-7 w-12 rounded-full border border-white/20 bg-white/12 px-0.5 shadow-none backdrop-blur-sm data-[checked]:bg-black/30 data-[unchecked]:bg-white/12 dark:border-black/15 dark:data-[checked]:bg-black/35 dark:data-[unchecked]:bg-white/10"
+        className="h-7 w-12 rounded-full border border-white/20 bg-white/12 px-0.5 shadow-none backdrop-blur-sm data-checked:bg-black/30 data-unchecked:bg-white/12 dark:border-black/15 dark:data-checked:bg-black/35 dark:data-unchecked:bg-white/10"
       />
     </div>
   )
