@@ -17,8 +17,8 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:usehooks-ts.com)",
       "Bash(git grep *)",
-      "Bash(yarn type-check)",
-      "Bash(yarn tsc --noEmit)"
+      "Bash(npm run type-check)",
+      "Bash(npx tsc --noEmit)"
     ]
   }
 }

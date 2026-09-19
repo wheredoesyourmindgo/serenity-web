@@ -18,11 +18,11 @@ const MOTION_PRIMITIVES_FILES = new Set(['disclosure.tsx', 'in-view.tsx'])
 
 function printHelp() {
   console.log(`Usage:
-  yarn vendor-components list
-  yarn vendor-components sync
-  yarn vendor-components sync <name> [more names...]
-  yarn vendor-components sync --source=<source>
-  yarn vendor-components discover
+  npm run vendor-components list
+  npm run vendor-components sync
+  npm run vendor-components sync -- <name> [more names...]
+  npm run vendor-components sync -- --source=<source>
+  npm run vendor-components discover
 
 Options:
   --dry-run   Passes --dry-run through to shadcn add.
@@ -212,6 +212,7 @@ function syncComponents(selectors, source, options) {
   }
 
   for (const component of components) {
+    // npx resolves the shadcn dependency already in package.json.
     const args = ['shadcn', 'add', '-y', '-o']
     if (options.dryRun) {
       args.push('--dry-run')
@@ -222,7 +223,7 @@ function syncComponents(selectors, source, options) {
     args.push(component.spec)
 
     console.log(`Syncing ${component.source}:${component.name}`)
-    const result = spawnSync('yarn', args, {
+    const result = spawnSync('npx', args, {
       cwd,
       stdio: 'inherit',
       encoding: 'utf8'
@@ -242,7 +243,7 @@ function syncComponents(selectors, source, options) {
 
       if (filesToFormat.length > 0) {
         console.log(`Formatting ${component.source}:${component.name}`)
-        const prettierResult = spawnSync('yarn', ['prettier', '--write', ...filesToFormat], {
+        const prettierResult = spawnSync('npx', ['prettier', '--write', ...filesToFormat], {
           cwd,
           stdio: 'inherit',
           encoding: 'utf8'
