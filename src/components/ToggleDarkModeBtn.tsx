@@ -1,10 +1,6 @@
 'use client'
 
-import {
-  PreviewCard,
-  PreviewCardPanel,
-  PreviewCardTrigger
-} from '@/components/animate-ui/components/base/preview-card'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 import {Switch} from '@/components/ui/switch'
 import {IconMoon, IconSun} from '@tabler/icons-react'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
@@ -19,14 +15,13 @@ export default function ToggleDarkModeBtn() {
   const control = (
     <div className="flex items-center gap-2 text-white/85 dark:text-white/65">
       <ThemeIcon className="size-4 shrink-0" stroke={1.9} />
-      <span className="sr-only">Toggle color mode</span>
       <Switch
         checked={isDark}
         onCheckedChange={(checked) => {
           const next = checked ? 'dark' : 'light'
           setTheme(next === systemTheme ? 'system' : next)
         }}
-        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+        aria-label="Dark mode"
         className="border-white/20 backdrop-blur-sm data-checked:bg-black/30 data-unchecked:bg-white/12 dark:border-black/15 dark:data-checked:bg-black/35 dark:data-unchecked:bg-white/10"
       />
     </div>
@@ -37,19 +32,12 @@ export default function ToggleDarkModeBtn() {
   }
 
   return (
-    <PreviewCard>
-      <PreviewCardTrigger delay={250} closeDelay={100} render={control} />
-
-      <PreviewCardPanel side="bottom" align="end" className="w-auto min-w-34 p-3">
-        <div className="flex items-center gap-2 text-sm">
-          {isDark ? (
-            <IconMoon className="size-3.5" stroke={1.8} />
-          ) : (
-            <IconSun className="size-3.5" stroke={1.8} />
-          )}
-          <span>{isDark ? "Light's out!" : "Light's on!"}</span>
-        </div>
-      </PreviewCardPanel>
-    </PreviewCard>
+    <Tooltip>
+      <TooltipTrigger delay={250} closeDelay={100} render={control} />
+      <TooltipContent side="bottom" align="end">
+        <ThemeIcon className="size-3.5" stroke={1.8} aria-hidden="true" />
+        <span>{isDark ? "Light's out!" : "Light's on!"}</span>
+      </TooltipContent>
+    </Tooltip>
   )
 }
