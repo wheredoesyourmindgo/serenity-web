@@ -14,7 +14,8 @@ import MouseLyr from '@/components/keyboard/firmware/MouseLyr'
 import OsLyr from '@/components/keyboard/firmware/OsLyr'
 import QmkLegend from '@/components/QmkLegend'
 import {ToggleGroup, ToggleGroupItem} from '@/components/ui/toggle-group'
-import {Tabs, TabsList, TabsTab, TabsPanel} from '@/components/animate-ui/primitives/base/tabs'
+import {Tabs} from '@/components/ui/tabs'
+import {LayerTabsContent, LayerTabsList, LayerTabsTrigger} from '@/components/LayerTabs'
 
 export type KeyboardLayout = 'planck' | 'corne'
 
@@ -70,57 +71,48 @@ export default function FirmwarePage() {
           Firmware
         </h2>
 
-        <Tabs defaultValue="base" className="flex w-full flex-col items-center">
+        <Tabs defaultValue="base" className="w-full items-center gap-0">
           <div className="grid h-40 origin-center scale-47 *:col-start-1 *:row-start-1 sm:h-50 sm:scale-65 md:h-auto md:origin-[initial] md:scale-100">
-            <TabsPanel value="base" layout={false}>
+            <LayerTabsContent value="base">
               <BaseLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="mouse" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="mouse">
               <MouseLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="num-nav" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="num-nav">
               <NumNavLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="action" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="action">
               <ActionLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="media" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="media">
               <MediaLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="symbol" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="symbol">
               <SymLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="os" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="os">
               <OsLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="function" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="function">
               <FuncLyr layout={layout} />
-            </TabsPanel>
-            <TabsPanel value="qwerty" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="qwerty">
               <QwertyLyr layout={layout} />
-            </TabsPanel>
+            </LayerTabsContent>
           </div>
 
           <div className="bg-card mt-12 max-w-full">
-            <TabsList className="border-border flex overflow-x-auto border-b">
+            <LayerTabsList>
               {tabs.map((tab) => (
-                <TabsTab
-                  key={tab.value}
-                  value={tab.value}
-                  className={cn(
-                    'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                    'data-active:border-solarized-blue data-active:text-solarized-blue',
-                    'dark:data-active:border-solarized-cyan dark:data-active:text-solarized-cyan',
-                    'text-muted-foreground hover:text-foreground border-transparent'
-                  )}
-                >
+                <LayerTabsTrigger key={tab.value} value={tab.value}>
                   <span className="flex h-4 items-center justify-center">
                     <FaIcon className={cn(tab.icon, tab.iconClassName)} />
                   </span>
                   <span>{tab.label}</span>
-                </TabsTab>
+                </LayerTabsTrigger>
               ))}
-            </TabsList>
+            </LayerTabsList>
           </div>
         </Tabs>
       </div>

@@ -5,7 +5,8 @@ import BaseLyr from '@/components/keyboard/software/BaseLyr'
 import FaIcon from '@/components/FaIcon'
 import FnLyr from '@/components/keyboard/software/FnLyr'
 import QmkLegend from '@/components/QmkLegend'
-import {Tabs, TabsList, TabsTab, TabsPanel} from '@/components/animate-ui/primitives/base/tabs'
+import {Tabs} from '@/components/ui/tabs'
+import {LayerTabsContent, LayerTabsList, LayerTabsTrigger} from '@/components/LayerTabs'
 
 function GitHubIcon() {
   return (
@@ -45,36 +46,27 @@ export default function SoftwarePage() {
           Software
         </h2>
 
-        <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="grid h-[190px] origin-center scale-40 sm:h-75 sm:scale-60 md:h-auto md:origin-[initial] md:scale-100 *:col-start-1 *:row-start-1">
-            <TabsPanel value="base" layout={false}>
+        <Tabs defaultValue="base" className="w-full items-center gap-0">
+          <div className="grid h-[190px] origin-center scale-40 *:col-start-1 *:row-start-1 sm:h-75 sm:scale-60 md:h-auto md:origin-[initial] md:scale-100">
+            <LayerTabsContent value="base">
               <BaseLyr />
-            </TabsPanel>
-            <TabsPanel value="fn" layout={false}>
+            </LayerTabsContent>
+            <LayerTabsContent value="fn">
               <FnLyr />
-            </TabsPanel>
+            </LayerTabsContent>
           </div>
 
           <div className="bg-card mt-12 max-w-full">
-            <TabsList className="border-border flex overflow-x-auto border-b">
+            <LayerTabsList>
               {tabs.map((tab) => (
-                <TabsTab
-                  key={tab.value}
-                  value={tab.value}
-                  className={cn(
-                    'flex shrink-0 flex-col items-center gap-1 border-b-2 px-3 py-2 text-xs font-medium whitespace-nowrap transition-colors',
-                    'data-active:border-solarized-blue data-active:text-solarized-blue',
-                    'dark:data-active:border-solarized-cyan dark:data-active:text-solarized-cyan',
-                    'text-muted-foreground hover:text-foreground border-transparent'
-                  )}
-                >
+                <LayerTabsTrigger key={tab.value} value={tab.value}>
                   <span className="flex h-4 items-center justify-center">
                     <FaIcon className={cn(tab.icon, tab.iconClassName)} />
                   </span>
                   <span>{tab.label}</span>
-                </TabsTab>
+                </LayerTabsTrigger>
               ))}
-            </TabsList>
+            </LayerTabsList>
           </div>
         </Tabs>
       </div>
