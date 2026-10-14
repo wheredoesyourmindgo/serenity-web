@@ -301,7 +301,7 @@ end run
         <p className="mt-3 mb-3">
           Use the following AppleScript Quick Action to toggle Dark Mode on macOS; created via
           Automator. This service can be assigned a keyboard shortcut (ctrl+opt+cmd+D for Serenity
-          QMK Media Layer) in System Settings.
+          QMK Hardware Layer) in System Settings.
         </p>
         <div className="bg-background relative rounded-lg">
           <CopyButton className="absolute top-2 right-2" text={toggleDarkModeSnippet} />

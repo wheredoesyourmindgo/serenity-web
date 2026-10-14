@@ -7,7 +7,7 @@ import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
 import KeyboardGridRow from '../KeyboardGridRow'
 
-export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
+export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
   const isCorneLayout = layout === 'corne'
 
@@ -198,7 +198,10 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape (or turn off Media layer lock)" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (or turn off Hardware layer lock)"
+                  />
                 </div>
               )
             }}
@@ -245,7 +248,7 @@ export default function MediaLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'lock-layer-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Lock/Unlock Media Layer" />
+                  <PopoverDesc action="tap" output="Lock/Unlock Hardware Layer" />
                 </div>
               )
             }}

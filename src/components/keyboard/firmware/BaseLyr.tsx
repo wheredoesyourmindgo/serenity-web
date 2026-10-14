@@ -383,10 +383,10 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             LyrHoldSubIcn={() => <LyrHoldSubIcn className="fa-regular fa-gear" />}
             tapForceHold={!isCorneLayout}
             KeyContainerProps={{
-              keyId: 'media-layer-key',
+              keyId: 'hardware-layer-key',
               popOverContent: isCorneLayout ? (
                 <div className="p-2">
-                  <PopoverDesc action="hold" output="Media Layer" />
+                  <PopoverDesc action="hold" output="Hardware Layer" />
                 </div>
               ) : (
                 <div className="p-2">
@@ -394,7 +394,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
                   <br />
                   <PopoverDesc
                     action="hold"
-                    output="Media Layer (or Right Shift when held with other Right Mod keys)"
+                    output="Hardware Layer (or Right Shift when held with other Right Mod keys)"
                   />
                 </div>
               )
