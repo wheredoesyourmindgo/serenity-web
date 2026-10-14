@@ -2,33 +2,10 @@
 
 import FaIcon from '@/components/FaIcon'
 import {solarized} from '@/lib/solarizedPalette'
-import {CopyButton} from '@/components/animate-ui/components/buttons/copy'
+import CopyButton from '@/components/CopyButton'
 import {useTheme} from 'next-themes'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {solarizedlight, solarizedDarkAtom} from 'react-syntax-highlighter/dist/esm/styles/prism'
-
-type CopyBtnProps = {
-  text: string
-  tooltip?: string
-  onCopied?: () => void
-  className?: string
-}
-
-const CopyBtn = ({text, onCopied, className}: CopyBtnProps) => {
-  return (
-    <CopyButton
-      content={text}
-      variant="ghost"
-      size="xs"
-      delay={1500}
-      onCopiedChange={(copied) => {
-        if (copied) onCopied?.()
-      }}
-      aria-label="Copy"
-      className={`bg-card border-border text-solarized-base0 hover:bg-accent absolute top-2 right-2 rounded border shadow-sm ${className ?? ''}`}
-    />
-  )
-}
 
 const USym = ({children, className}: {children: React.ReactNode; className?: string}) => (
   <span className={`text-solarized-cyan text-[1.1rem] font-medium ${className ?? ''}`}>
@@ -257,7 +234,7 @@ end run
           .
         </p>
         <div className="bg-background relative rounded-lg">
-          <CopyBtn text={ghosttyConfSnippet} />
+          <CopyButton className="absolute top-2 right-2" text={ghosttyConfSnippet} />
           <SyntaxHighlighter
             language="shell"
             style={codeStyle}
@@ -281,7 +258,7 @@ end run
           </em>
         </p>
         <div className="bg-background relative rounded-lg">
-          <CopyBtn text={itermConfSnippet} />
+          <CopyButton className="absolute top-2 right-2" text={itermConfSnippet} />
           <SyntaxHighlighter
             language="json"
             style={codeStyle}
@@ -305,7 +282,7 @@ end run
           . Used in conjunction with Karabiner-Elements to detect lock screen.
         </p>
         <div className="bg-background relative rounded-lg">
-          <CopyBtn text={hammerspoonSnippet} />
+          <CopyButton className="absolute top-2 right-2" text={hammerspoonSnippet} />
           <SyntaxHighlighter
             language="lua"
             style={codeStyle}
@@ -327,7 +304,7 @@ end run
           QMK Media Layer) in System Settings.
         </p>
         <div className="bg-background relative rounded-lg">
-          <CopyBtn text={toggleDarkModeSnippet} />
+          <CopyButton className="absolute top-2 right-2" text={toggleDarkModeSnippet} />
           <SyntaxHighlighter
             language="applescript"
             style={codeStyle}

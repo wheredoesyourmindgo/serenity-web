@@ -31,6 +31,12 @@
       "paths": ["src/components/ui/tabs.tsx"]
     },
     {
+      "name": "tooltip",
+      "source": "shadcn",
+      "spec": "tooltip",
+      "paths": ["src/components/ui/tooltip.tsx"]
+    },
+    {
       "name": "preview-card",
       "source": "animate-ui",
       "spec": "@animate-ui/components-base-preview-card",
@@ -93,15 +99,10 @@
       ]
     },
     {
-      "name": "copy",
-      "source": "animate-ui",
-      "spec": "@animate-ui/components-buttons-copy",
-      "paths": [
-        "src/hooks/use-controlled-state.tsx",
-        "src/components/animate-ui/primitives/animate/slot.tsx",
-        "src/components/animate-ui/primitives/buttons/button.tsx",
-        "src/components/animate-ui/components/buttons/copy.tsx"
-      ]
+      "name": "use-copy-to-clipboard",
+      "source": "reui",
+      "spec": "@reui/use-copy-to-clipboard",
+      "paths": ["src/hooks/use-copy-to-clipboard.ts"]
     }
   ]
 }

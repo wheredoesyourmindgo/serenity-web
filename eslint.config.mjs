@@ -20,13 +20,15 @@ const eslintConfig = defineConfig([
     'src/public/static/fonts/fontawesome/**',
     '.claude/**', // Claude Code worktrees/settings — not project source
     'scripts/**',
-    // Vendored code (shadcn/ui, animate-ui, upstream libs) — don't lint or format
+    // Vendored code (shadcn/ui, reui, animate-ui, upstream libs) — don't lint or format
     'src/components/ui/**',
     'src/components/animate-ui/**',
+    'src/components/reui/**',
     'src/lib/utils.ts',
     'src/lib/get-strict-context.tsx',
     'src/hooks/use-controlled-state.tsx',
-    'src/hooks/use-auto-height.tsx'
+    'src/hooks/use-auto-height.tsx',
+    'src/hooks/use-copy-to-clipboard.ts'
   ]),
   ...nextTs,
   ...nextVitals,
