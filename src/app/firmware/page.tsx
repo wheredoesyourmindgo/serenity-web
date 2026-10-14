@@ -13,7 +13,7 @@ import QwertyLyr from '@/components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@/components/keyboard/firmware/MouseLyr'
 import OsLyr from '@/components/keyboard/firmware/OsLyr'
 import QmkLegend from '@/components/QmkLegend'
-import {ToggleGroup, Toggle} from '@/components/animate-ui/components/base/toggle-group'
+import {ToggleGroup, ToggleGroupItem} from '@/components/ui/toggle-group'
 import {Tabs, TabsList, TabsTab, TabsPanel} from '@/components/animate-ui/primitives/base/tabs'
 
 export type KeyboardLayout = 'planck' | 'corne'
@@ -71,7 +71,7 @@ export default function FirmwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="flex w-full flex-col items-center">
-          <div className="grid h-40 origin-center scale-47 sm:h-50 sm:scale-65 md:h-auto md:origin-[initial] md:scale-100 *:col-start-1 *:row-start-1">
+          <div className="grid h-40 origin-center scale-47 *:col-start-1 *:row-start-1 sm:h-50 sm:scale-65 md:h-auto md:origin-[initial] md:scale-100">
             <TabsPanel value="base" layout={false}>
               <BaseLyr layout={layout} />
             </TabsPanel>
@@ -131,21 +131,21 @@ export default function FirmwarePage() {
             <legend className="text-muted-foreground mb-2 w-full text-center text-sm font-medium">
               Bottom Row Layout
             </legend>
-            <ToggleGroup value={[layout]} onValueChange={handleLayoutChange} className="flex-col">
-              <Toggle
+            <ToggleGroup value={[layout]} onValueChange={handleLayoutChange} orientation="vertical">
+              <ToggleGroupItem
                 value="planck"
                 aria-label="11-12 keys"
                 className="data-pressed:text-solarized-blue dark:data-pressed:text-solarized-cyan justify-start px-4"
               >
                 11-12 keys <span className="inline pl-2 italic">(Planck)</span>
-              </Toggle>
-              <Toggle
+              </ToggleGroupItem>
+              <ToggleGroupItem
                 value="corne"
                 aria-label="5-6 keys"
                 className="data-pressed:text-solarized-blue dark:data-pressed:text-solarized-cyan justify-start px-4"
               >
                 5-6 keys <span className="inline pl-2 italic">(Corne)</span>
-              </Toggle>
+              </ToggleGroupItem>
             </ToggleGroup>
           </fieldset>
         </div>
