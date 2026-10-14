@@ -5,7 +5,7 @@ import {
   PreviewCardPanel,
   PreviewCardTrigger
 } from '@/components/animate-ui/components/base/preview-card'
-import {Switch} from '@/components/animate-ui/components/base/switch'
+import {Switch} from '@/components/ui/switch'
 import {IconMoon, IconSun} from '@tabler/icons-react'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {useTheme as useNextTheme} from 'next-themes'
@@ -27,8 +27,7 @@ export default function ToggleDarkModeBtn() {
           setTheme(next === systemTheme ? 'system' : next)
         }}
         aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-        pressedWidth={18}
-        className="h-7 w-12 rounded-full border border-white/20 bg-white/12 px-0.5 shadow-none backdrop-blur-sm data-checked:bg-black/30 data-unchecked:bg-white/12 dark:border-black/15 dark:data-checked:bg-black/35 dark:data-unchecked:bg-white/10"
+        className="border-white/20 backdrop-blur-sm data-checked:bg-black/30 data-unchecked:bg-white/12 dark:border-black/15 dark:data-checked:bg-black/35 dark:data-unchecked:bg-white/10"
       />
     </div>
   )
