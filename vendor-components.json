@@ -25,6 +25,12 @@
       "paths": ["src/components/ui/button-group.tsx"]
     },
     {
+      "name": "hover-card",
+      "source": "shadcn",
+      "spec": "hover-card",
+      "paths": ["src/components/ui/hover-card.tsx"]
+    },
+    {
       "name": "table",
       "source": "shadcn",
       "spec": "table",
@@ -55,17 +61,6 @@
       "paths": [
         "src/components/ui/toggle.tsx",
         "src/components/ui/toggle-group.tsx"
-      ]
-    },
-    {
-      "name": "preview-card",
-      "source": "animate-ui",
-      "spec": "@animate-ui/components-base-preview-card",
-      "paths": [
-        "src/hooks/use-controlled-state.tsx",
-        "src/lib/get-strict-context.tsx",
-        "src/components/animate-ui/primitives/base/preview-card.tsx",
-        "src/components/animate-ui/components/base/preview-card.tsx"
       ]
     },
     {
