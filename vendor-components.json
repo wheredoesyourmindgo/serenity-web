@@ -64,21 +64,6 @@
       ]
     },
     {
-      "name": "tabs",
-      "source": "animate-ui",
-      "spec": "@animate-ui/components-base-tabs",
-      "paths": [
-        "src/hooks/use-controlled-state.tsx",
-        "src/hooks/use-auto-height.tsx",
-        "src/lib/get-strict-context.tsx",
-        "src/components/animate-ui/primitives/animate/slot.tsx",
-        "src/components/animate-ui/primitives/effects/auto-height.tsx",
-        "src/components/animate-ui/primitives/effects/highlight.tsx",
-        "src/components/animate-ui/primitives/base/tabs.tsx",
-        "src/components/animate-ui/components/base/tabs.tsx"
-      ]
-    },
-    {
       "name": "use-copy-to-clipboard",
       "source": "reui",
       "spec": "@reui/use-copy-to-clipboard",

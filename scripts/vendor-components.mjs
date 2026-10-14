@@ -10,7 +10,6 @@ const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'))
 
 const SOURCE_DIRS = {
   shadcn: path.join('src', 'components', 'ui'),
-  'animate-ui': path.join('src', 'components', 'animate-ui'),
   reui: path.join('src', 'components', 'reui'),
   'motion-primitives': path.join('src', 'components', 'ui')
 }
@@ -31,13 +30,12 @@ Options:
 
 Sources:
   shadcn
-  animate-ui
   reui
   motion-primitives`)
 }
 
 // This project uses `@tabler/icons-react` (components.json `iconLibrary: tabler`),
-// but third-party registries such as animate-ui hardcode `lucide-react`. Map the
+// but some third-party registries hardcode `lucide-react`. Map the
 // icons we actually vendor; extend this table as new components arrive. Unmapped
 // icons are left on lucide and warned about loudly rather than guessed wrong.
 const LUCIDE_TO_TABLER = {
@@ -76,7 +74,7 @@ function rewriteLucideToTabler(source, relPath) {
   return out.replace(importRe, `${importLines.join('\n')}\n`)
 }
 
-// Registries such as animate-ui still emit the pre-rename Base UI package
+// Some third-party registries still emit the pre-rename Base UI package
 // (`@base-ui-components/react`). This project depends on the renamed package
 // (`@base-ui/react`), and its tsconfig runs with `noUnusedLocals`, which trips
 // on the bare `import * as React` some registry files ship. Normalize these here
