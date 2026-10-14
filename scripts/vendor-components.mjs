@@ -11,6 +11,7 @@ const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'))
 const SOURCE_DIRS = {
   shadcn: path.join('src', 'components', 'ui'),
   'animate-ui': path.join('src', 'components', 'animate-ui'),
+  reui: path.join('src', 'components', 'reui'),
   'motion-primitives': path.join('src', 'components', 'ui')
 }
 
@@ -31,6 +32,7 @@ Options:
 Sources:
   shadcn
   animate-ui
+  reui
   motion-primitives`)
 }
 
