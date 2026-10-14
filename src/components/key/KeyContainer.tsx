@@ -81,7 +81,7 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
         align="start"
         alignOffset={0}
         sideOffset={4}
-        className="pointer-events-none w-max max-w-sm p-0.5"
+        className="ring-foreground/15 pointer-events-none w-max max-w-sm p-0.5"
       >
         {popOverContent}
       </HoverCardContent>
