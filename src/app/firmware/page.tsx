@@ -7,7 +7,7 @@ import NumNavLyr from '@/components/keyboard/firmware/NumNavLyr'
 import SymLyr from '@/components/keyboard/firmware/SymLyr'
 import FuncLyr from '@/components/keyboard/firmware/FunctionLyr'
 import ActionLyr from '@/components/keyboard/firmware/ActionLyr'
-import MediaLyr from '@/components/keyboard/firmware/MediaLyr'
+import HardwareLyr from '@/components/keyboard/firmware/HardwareLyr'
 import FaIcon from '@/components/FaIcon'
 import QwertyLyr from '@/components/keyboard/firmware/QwertyLyr'
 import MouseLyr from '@/components/keyboard/firmware/MouseLyr'
@@ -46,7 +46,7 @@ const tabs = [
   {value: 'mouse', label: 'Mouse', icon: 'fa-regular fa-mouse'},
   {value: 'num-nav', label: 'Num/Nav', icon: 'fa-regular fa-hashtag', iconClassName: 'text-[15px]'},
   {value: 'action', label: 'Action', icon: 'fa-regular fa-table-layout'},
-  {value: 'media', label: 'Media', icon: 'fa-regular fa-cog'},
+  {value: 'hardware', label: 'Hardware', icon: 'fa-regular fa-cog'},
   {value: 'symbol', label: 'Symbol', icon: 'fa-regular fa-at'},
   {value: 'os', label: 'OS', icon: 'fa-brands fa-apple', iconClassName: 'text-[15px]'},
   {value: 'function', label: 'Function', icon: 'fa-regular fa-function'},
@@ -85,8 +85,8 @@ export default function FirmwarePage() {
             <LayerTabsContent value="action">
               <ActionLyr layout={layout} />
             </LayerTabsContent>
-            <LayerTabsContent value="media">
-              <MediaLyr layout={layout} />
+            <LayerTabsContent value="hardware">
+              <HardwareLyr layout={layout} />
             </LayerTabsContent>
             <LayerTabsContent value="symbol">
               <SymLyr layout={layout} />
@@ -167,7 +167,16 @@ export default function FirmwarePage() {
                 <li>
                   <p>
                     <strong>Backspace + Shift</strong> — Backspace performs Forward Delete (del)
-                    when held with Shift.
+                    when held with Shift, and deletes to the end of the line with Shift+Cmd. Uses{' '}
+                    <a
+                      href="https://github.com/getreuer/qmk-modules/tree/main/custom_shift_keys"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className="underline hover:opacity-80"
+                    >
+                      Custom Shift Keys
+                    </a>{' '}
+                    by Pascal Getreuer.
                   </p>
                 </li>
                 <li>
@@ -183,14 +192,6 @@ export default function FirmwarePage() {
                     suppresses unintended Shift during fast layer activations, ensuring quick taps
                     send unshifted symbols (e.g., '=' instead of '+'); deliberate Shift still
                     produces the shifted variant when intended.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <strong>Layer Lock</strong> — custom shortcut toggle on principal layers
-                    (located in consistent position): tap once to lock the layer; tap again or press
-                    Escape to release, letting you remain in the layer without holding the layer key
-                    continuously.
                   </p>
                 </li>
                 <li>
@@ -223,7 +224,7 @@ export default function FirmwarePage() {
                 <li>
                   <p>
                     <strong>Dual‑Role Layer Holds</strong> — the outer layer hold keys (specifically
-                    Action and Media) activate their layer normally; when a same‑side modifier is
+                    Action and Hardware) activate their layer normally; when a same‑side modifier is
                     held simultaneously, they instead hold Shift on that side (LShift/RShift). This
                     enables effortless Shift+mod combinations using pinky-ring-middle-index fingers.
                   </p>
@@ -260,6 +261,13 @@ export default function FirmwarePage() {
                     <strong>Tri‑layer access</strong> — uses QMK's tri‑layer logic to reach the OS
                     and Function layers by combining principal layer holds; the appropriate pair
                     momentarily exposes the target layer for quick commands.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Layer Lock</strong> — QMK's Layer Lock key sits in a consistent position
+                    on the principal layers: tap it to stay in the current layer without holding the
+                    layer key; tap again or press Escape to release.
                   </p>
                 </li>
                 <li>
