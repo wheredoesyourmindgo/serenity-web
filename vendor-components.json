@@ -13,6 +13,12 @@
       "paths": ["src/components/ui/separator.tsx"]
     },
     {
+      "name": "switch",
+      "source": "shadcn",
+      "spec": "switch",
+      "paths": ["src/components/ui/switch.tsx"]
+    },
+    {
       "name": "button-group",
       "source": "shadcn",
       "spec": "button-group",
@@ -60,17 +66,6 @@
         "src/lib/get-strict-context.tsx",
         "src/components/animate-ui/primitives/base/preview-card.tsx",
         "src/components/animate-ui/components/base/preview-card.tsx"
-      ]
-    },
-    {
-      "name": "switch",
-      "source": "animate-ui",
-      "spec": "@animate-ui/components-base-switch",
-      "paths": [
-        "src/hooks/use-controlled-state.tsx",
-        "src/lib/get-strict-context.tsx",
-        "src/components/animate-ui/primitives/base/switch.tsx",
-        "src/components/animate-ui/components/base/switch.tsx"
       ]
     },
     {
