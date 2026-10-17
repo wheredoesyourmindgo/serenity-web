@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useMemo, useRef} from 'react'
+import {useEffect, useImperativeHandle, useMemo, useRef, type Ref} from 'react'
 import AlphaKeyboard from './Alphas'
 import {letterFrequency} from '@/lib/letterFrequency'
 
@@ -13,6 +13,10 @@ import {letterFrequency} from '@/lib/letterFrequency'
  * The heat is drawn by one WebGL fragment shader on a single canvas (a 2D canvas if WebGL is
  * unavailable), and all animation state lives in refs (the caption is written straight to the
  * DOM), so nothing re-renders in React while it runs. Colors are the --heat-* tokens in globals.css.
+ *
+ * Every letter of "serenity" sits on the home row, and typing it alternates hands on every key.
+ * spell() plays that word with a trail arcing from key to key, and pin() holds one key warm, so the
+ * wordmark and the homepage easter egg can show it off (see SerenityHero.tsx).
  */
 
 const SNIPPETS = [
@@ -94,6 +98,17 @@ const TOP_DAMPING = 0.6
 const GLOW_SIGMA = 29
 const MARGIN = 60
 const MAX_KEYS = 40
+// spelling the name: heat per letter, ms between letters, and ms the finished word and trail stay
+const WORD = 'serenity'
+const SPELL_HEAT = 0.55
+const SPELL_INTERVAL = 190
+const SPELL_HOLD = 1600
+// with reduced motion the word and trail show still for this long instead
+const SPELL_STILL_TIME = 3000
+// heat held on a key while its letter in the wordmark is hovered
+const PIN_HEAT = 0.8
+const NOTE = 'never leaving home, hand in hand'
+const SVG_NS = 'http://www.w3.org/2000/svg'
 
 const VERTEX_SHADER = `
 attribute vec2 aPos;
@@ -264,9 +279,21 @@ function frequencyHeat(key: string) {
 
 type KeyState = {key: string; x: number; y: number; target: number; heat: number}
 
-export default function HeatmapAlphas() {
+export type HeatmapControls = {
+  // types "serenity" across the home row with a trail between keys. note adds a line under it,
+  // pace stretches the typing (2 takes twice as long), and hold is ms the finished word stays up
+  spell: (options?: {note?: boolean; pace?: number; hold?: number}) => void
+  // holds one key warm, e.g. while its letter in the wordmark is hovered; null lets it cool
+  pin: (key: string | null) => void
+}
+
+export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
   const boardRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const trailRef = useRef<SVGSVGElement>(null)
+  const noteRef = useRef<HTMLParagraphElement>(null)
+  const spellRef = useRef<HeatmapControls['spell']>(() => {})
+  const pinRef = useRef<HeatmapControls['pin']>(() => {})
   const captionRef = useRef<HTMLSpanElement>(null)
   const captionLineRef = useRef<HTMLParagraphElement>(null)
   const captionTrackRef = useRef<HTMLSpanElement>(null)
@@ -275,10 +302,17 @@ export default function HeatmapAlphas() {
   // the keyboard never needs to re-render for the heatmap
   const keyboard = useMemo(() => <AlphaKeyboard />, [])
 
+  useImperativeHandle(
+    ref,
+    () => ({spell: (options) => spellRef.current(options), pin: (key) => pinRef.current(key)}),
+    []
+  )
+
   useEffect(() => {
     const board = boardRef.current
     const canvas = canvasRef.current
-    if (!board || !canvas) return
+    const trail = trailRef.current
+    if (!board || !canvas || !trail) return
     const renderer = createRenderer(canvas)
     if (!renderer) return
 
@@ -293,6 +327,10 @@ export default function HeatmapAlphas() {
     let active = false
     let frame = 0
     let typingTimer: ReturnType<typeof setTimeout> | undefined
+    let spellTimer: ReturnType<typeof setTimeout> | undefined
+    let noteTimer: ReturnType<typeof setTimeout> | undefined
+    let spelling = false
+    let pinned: KeyState | undefined
 
     // key centers in canvas pixels, from layout offsets so the page's CSS scale doesn't matter.
     // The glows are soft, so the canvas renders at 1x even on high-density screens.
@@ -329,18 +367,19 @@ export default function HeatmapAlphas() {
     // cool every key; slowly while hovered so the map builds up, quickly once the pointer leaves
     const tick = (now: number, last: number) => {
       const dt = Math.min(0.1, (now - last) / 1000)
-      const cooling = Math.exp(-dt / (active ? COOL_TIME : LEAVE_COOL_TIME))
+      const cooling = Math.exp(-dt / (active || spelling ? COOL_TIME : LEAVE_COOL_TIME))
       let remaining = 0
       for (const k of keys) {
         k.heat *= cooling
         remaining = Math.max(remaining, k.heat)
       }
+      if (pinned) pinned.heat = Math.max(pinned.heat, PIN_HEAT)
       draw()
       captionOffset *= Math.exp(-dt / CAPTION_GLIDE_TIME)
       if (captionTrackRef.current) {
         captionTrackRef.current.style.transform = `translateX(${captionOffset}ch)`
       }
-      if (active || remaining > 0.005) {
+      if (active || spelling || pinned || remaining > 0.005) {
         frame = requestAnimationFrame((t) => tick(t, now))
       } else {
         for (const k of keys) k.heat = 0
@@ -387,6 +426,128 @@ export default function HeatmapAlphas() {
       typingTimer = setTimeout(type, delay)
     }
 
+    const run = () => {
+      if (frame || reducedMotion) return
+      const now = performance.now()
+      frame = requestAnimationFrame((t) => tick(t, now))
+    }
+
+    // with reduced motion nothing animates, so heat is set directly: the frequency map while
+    // hovered, the spelled word, or a pinned key
+    const stillHeat = () => {
+      for (const k of keys) {
+        if (spelling) k.heat = WORD.includes(k.key) ? SPELL_HEAT * 1.5 : 0
+        else k.heat = active ? k.target : 0
+        if (k === pinned) k.heat = Math.max(k.heat, PIN_HEAT)
+      }
+      draw()
+    }
+
+    // one arc per step of the word: over the keys going right, under them going left, so the
+    // back-and-forth between hands draws as loops. Each arc draws itself in when its key is typed.
+    const buildTrail = (interval: number) => {
+      trail.setAttribute('viewBox', `0 0 ${width} ${height}`)
+      trail.style.width = `${width}px`
+      trail.style.height = `${height}px`
+      const points = [...WORD].map((ch) => byKey.get(ch)).filter((k) => k !== undefined)
+      const segments = points.slice(1).map((to, i) => {
+        const from = points[i]
+        const lift = Math.min(Math.abs(to.x - from.x) * 0.35, 70) * (to.x > from.x ? -1 : 1)
+        const path = document.createElementNS(SVG_NS, 'path')
+        path.setAttribute(
+          'd',
+          `M${from.x} ${from.y} Q${(from.x + to.x) / 2} ${(from.y + to.y) / 2 + lift} ${to.x} ${to.y}`
+        )
+        path.setAttribute('pathLength', '1')
+        path.style.strokeDasharray = '1'
+        path.style.strokeDashoffset = reducedMotion ? '0' : '1'
+        path.style.transition = `stroke-dashoffset ${interval}ms ease-out`
+        return path
+      })
+      trail.replaceChildren(...segments)
+      trail.style.transition = 'none'
+      trail.style.opacity = '1'
+      return segments
+    }
+
+    // the note is a live region, so its text is cleared once it fades out; setting it again on the
+    // next spell is what gets it announced again
+    const setNote = (on: boolean) => {
+      const note = noteRef.current
+      if (!note) return
+      clearTimeout(noteTimer)
+      if (on) note.textContent = NOTE
+      else noteTimer = setTimeout(() => (note.textContent = ''), 500)
+      note.style.opacity = on ? '1' : '0'
+    }
+
+    // the caption normally fades in from the left as a long line; the word alone shows whole
+    const setCaptionMask = (on: boolean) => {
+      const line = captionLineRef.current
+      if (!line) return
+      for (const prop of ['mask-image', '-webkit-mask-image']) {
+        if (on) line.style.removeProperty(prop)
+        else line.style.setProperty(prop, 'none')
+      }
+    }
+
+    spellRef.current = ({note = false, pace = 1, hold = SPELL_HOLD * pace} = {}) => {
+      clearTimeout(spellTimer)
+      clearTimeout(typingTimer)
+      spelling = true
+      const interval = SPELL_INTERVAL * pace
+      const segments = buildTrail(interval)
+      setNote(note)
+
+      const finish = () => {
+        spelling = false
+        trail.style.transition = reducedMotion ? 'none' : 'opacity 700ms'
+        trail.style.opacity = '0'
+        setNote(false)
+        if (reducedMotion) {
+          stillHeat()
+          return
+        }
+        setCaptionMask(true)
+        if (active) {
+          // pick the hover typing back up after a pause
+          gap = SNIPPET_GAP
+          typingTimer = setTimeout(type, 300)
+        } else if (captionLineRef.current) {
+          captionLineRef.current.style.opacity = '0'
+        }
+      }
+
+      if (reducedMotion) {
+        stillHeat()
+        spellTimer = setTimeout(finish, Math.max(SPELL_STILL_TIME, hold))
+        return
+      }
+
+      typed = ''
+      captionOffset = 0
+      if (captionRef.current) captionRef.current.textContent = ''
+      setCaptionMask(false)
+      if (captionLineRef.current) captionLineRef.current.style.opacity = '1'
+      let i = 0
+      const step = () => {
+        const k = byKey.get(WORD[i])
+        if (k) k.heat = Math.min(k.heat + SPELL_HEAT, MAX_HEAT)
+        append(WORD[i])
+        if (i > 0) segments[i - 1].style.strokeDashoffset = '0'
+        i += 1
+        spellTimer = i < WORD.length ? setTimeout(step, interval) : setTimeout(finish, hold)
+      }
+      step()
+      run()
+    }
+
+    pinRef.current = (key) => {
+      pinned = key ? byKey.get(key) : undefined
+      if (reducedMotion) stillHeat()
+      else run()
+    }
+
     const applyRamp = () => {
       renderer.setRamp(readRamp())
       draw()
@@ -395,10 +556,11 @@ export default function HeatmapAlphas() {
     startRef.current = (on) => {
       if (on === active) return
       active = on
+      // the word finishes first; hover typing picks up after it if the pointer is still here
+      if (spelling) return
       if (reducedMotion) {
         // a still frequency map, no animation
-        for (const k of keys) k.heat = on ? k.target : 0
-        draw()
+        stillHeat()
         return
       }
       if (captionLineRef.current) captionLineRef.current.style.opacity = on ? '1' : '0'
@@ -413,10 +575,7 @@ export default function HeatmapAlphas() {
         gap = 0
         typingTimer = setTimeout(type, 400)
       }
-      if (!frame) {
-        const now = performance.now()
-        frame = requestAnimationFrame((t) => tick(t, now))
-      }
+      run()
     }
 
     measure()
@@ -435,7 +594,11 @@ export default function HeatmapAlphas() {
       themeObserver.disconnect()
       cancelAnimationFrame(frame)
       clearTimeout(typingTimer)
+      clearTimeout(spellTimer)
+      clearTimeout(noteTimer)
       startRef.current = () => {}
+      spellRef.current = () => {}
+      pinRef.current = () => {}
     }
   }, [])
 
@@ -458,6 +621,17 @@ export default function HeatmapAlphas() {
           className="pointer-events-none absolute mix-blend-multiply dark:mix-blend-screen"
           style={{left: -MARGIN, top: -MARGIN}}
         />
+        <svg
+          ref={trailRef}
+          aria-hidden="true"
+          className="pointer-events-none absolute opacity-0"
+          style={{left: -MARGIN, top: -MARGIN}}
+          fill="none"
+          stroke="var(--heat-2)"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeOpacity={0.55}
+        />
         <div ref={boardRef} className="relative">
           {keyboard}
         </div>
@@ -472,6 +646,11 @@ export default function HeatmapAlphas() {
           <span className="bg-nushu-ink-muted ml-px inline-block h-[1.1em] w-[2px] translate-y-[3px] animate-pulse" />
         </span>
       </p>
+      <p
+        ref={noteRef}
+        aria-live="polite"
+        className="text-nushu-ink-faint font-body mt-1 h-5 text-sm italic opacity-0 transition-opacity duration-500"
+      />
     </div>
   )
 }
