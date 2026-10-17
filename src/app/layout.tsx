@@ -34,6 +34,9 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://www.serenity-layout.fyi'
+  },
+  verification: {
+    google: 'MZ3xP0ikPGmSZb9ABSxpeDYKdp2eGYKLnK16ApjLA8U'
   }
 }
 
