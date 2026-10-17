@@ -5,6 +5,7 @@ import {ThemeProvider as AppThemeProvider} from '@/components/theme-provider'
 import {TooltipProvider} from '@/components/ui/tooltip'
 import {Analytics} from '@vercel/analytics/next'
 import localFont from 'next/font/local'
+import type {Viewport} from 'next'
 import './globals.css'
 // Font Awesome config
 import {config} from '@fortawesome/fontawesome-svg-core'
@@ -40,6 +41,15 @@ export const metadata = {
   verification: {
     google: 'MZ3xP0ikPGmSZb9ABSxpeDYKdp2eGYKLnK16ApjLA8U'
   }
+}
+
+// tints the browser toolbars (iOS Safari 15–18) to the page color before any script runs;
+// ThemeColor in theme-provider.tsx keeps it in step when the theme is toggled by hand
+export const viewport: Viewport = {
+  themeColor: [
+    {media: '(prefers-color-scheme: light)', color: '#f8f6f1'},
+    {media: '(prefers-color-scheme: dark)', color: '#25211d'}
+  ]
 }
 
 const bodyFont = localFont({

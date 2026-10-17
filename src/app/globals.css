@@ -260,6 +260,8 @@
 
   html {
     @apply scroll-smooth;
+    /* the page color behind everything, which iOS Safari shows around its toolbars */
+    background-color: var(--background);
   }
 
   @media (prefers-reduced-motion: reduce) {
