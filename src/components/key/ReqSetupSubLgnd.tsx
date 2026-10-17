@@ -9,7 +9,7 @@ export default function ReqSetupSubLgnd(props: Props) {
     <span className="absolute -top-1 left-1.5">
       <FaIcon
         className={cn('fa-regular fa-wrench-simple text-[10px]', className)}
-        color="solarized.magenta"
+        color="nushu.magenta"
         {...rest}
       />
     </span>

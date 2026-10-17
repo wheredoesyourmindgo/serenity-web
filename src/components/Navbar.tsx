@@ -20,28 +20,12 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="bg-solarized-blue dark:bg-solarized-cyan text-solarized-base3 dark:text-solarized-base03 relative z-10">
+    <header className="bg-card text-nushu-ink-strong border-border relative z-10 border-b">
       <div className="flex h-12 items-center px-4">
-        {/* Desktop nav links */}
-        <div className="hidden items-center md:flex">
-          {navLinks.map(({href, label}) => (
-            <Link
-              key={href}
-              href={href}
-              className={cn(
-                'rounded px-3 py-1.5 text-sm font-medium transition-colors hover:bg-white/15',
-                pathname === href && 'bg-white/10'
-              )}
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="rounded p-1.5 transition-colors hover:bg-white/15 md:hidden"
+          className="hover:bg-accent hover:text-nushu-ink-deep mr-1 rounded p-1.5 transition-colors md:hidden"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen ? 'true' : 'false'}
@@ -60,6 +44,31 @@ export default function Navbar() {
           </AnimatePresence>
         </button>
 
+        {/* Wordmark, links home */}
+        <Link
+          href="/"
+          aria-current={pathname === '/' ? 'page' : undefined}
+          className="font-body text-nushu-yellow mr-3 rounded px-2 py-1 font-features-['ss02'_on] text-lg font-medium italic transition-opacity hover:opacity-80 md:mr-4"
+        >
+          Serenity
+        </Link>
+
+        {/* Desktop nav links */}
+        <div className="hidden items-center md:flex">
+          {navLinks.map(({href, label}) => (
+            <Link
+              key={href}
+              href={href}
+              className={cn(
+                'hover:bg-accent hover:text-nushu-ink-deep rounded px-3 py-1.5 text-sm font-medium transition-colors',
+                pathname === href && 'bg-accent/60 text-nushu-blue'
+              )}
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+
         <div className="flex-1" />
         <div className="shrink-0">
           <ToggleDarkModeBtn />
@@ -74,7 +83,7 @@ export default function Navbar() {
             animate={{opacity: 1, y: 0}}
             exit={{opacity: 0, y: -6}}
             transition={{duration: 0.18, ease: 'easeOut'}}
-            className="bg-solarized-blue dark:bg-solarized-cyan absolute top-full right-0 left-0 shadow-lg md:hidden"
+            className="bg-card border-border absolute top-full right-0 left-0 border-b shadow-lg md:hidden"
           >
             {navLinks.map(({href, label}) => (
               <Link
@@ -82,8 +91,8 @@ export default function Navbar() {
                 href={href}
                 onClick={() => setMenuOpen(false)}
                 className={cn(
-                  'block border-t border-white/10 px-4 py-3 text-sm font-medium transition-colors hover:bg-white/15',
-                  pathname === href && 'bg-white/10'
+                  'border-border hover:bg-accent hover:text-nushu-ink-deep block border-t px-4 py-3 text-sm font-medium transition-colors',
+                  pathname === href && 'bg-accent/60 text-nushu-blue'
                 )}
               >
                 {label}

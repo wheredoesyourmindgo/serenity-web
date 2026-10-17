@@ -46,7 +46,7 @@ export default function KeyIcon({
   optEncoder,
   ...props
 }: Props) {
-  const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
+  const shiftColor = customShiftCode ? 'nushu.violet' : 'nushu.ink-muted'
   const {color, className, ...rest} = props
   const hasHoldSubIcon = Boolean(LyrHoldSubIcn || ModHoldSubIcn)
   const hasShiftSubIcon = Boolean(ShiftSubIcn)
@@ -76,7 +76,7 @@ export default function KeyIcon({
           <div className="relative overflow-visible">
             <FaIcon
               className={cn('text-[20px]', className)}
-              color={color || 'solarized.base00'}
+              color={color || 'nushu.ink'}
               {...rest}
             />
             <div className="absolute inset-0">{children}</div>

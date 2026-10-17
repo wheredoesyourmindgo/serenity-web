@@ -67,7 +67,7 @@ export default function FirmwarePage() {
         <SerenityQmkButton />
       </div>
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
+        <h2 className="text-nushu-yellow pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Firmware
         </h2>
 
@@ -127,14 +127,14 @@ export default function FirmwarePage() {
               <ToggleGroupItem
                 value="planck"
                 aria-label="11-12 keys"
-                className="data-pressed:text-solarized-blue dark:data-pressed:text-solarized-cyan justify-start px-4"
+                className="data-pressed:text-nushu-blue justify-start px-4"
               >
                 11-12 keys <span className="inline pl-2 italic">(Planck)</span>
               </ToggleGroupItem>
               <ToggleGroupItem
                 value="corne"
                 aria-label="5-6 keys"
-                className="data-pressed:text-solarized-blue dark:data-pressed:text-solarized-cyan justify-start px-4"
+                className="data-pressed:text-nushu-blue justify-start px-4"
               >
                 5-6 keys <span className="inline pl-2 italic">(Corne)</span>
               </ToggleGroupItem>
@@ -154,7 +154,7 @@ export default function FirmwarePage() {
             <h4 className="mb-4 text-center text-xl font-normal">Highlights</h4>
 
             <div className="mt-8">
-              <h5 className="text-solarized-green mb-4 text-2xl font-normal">QMK Customizations</h5>
+              <h5 className="text-nushu-blue mb-4 text-2xl font-normal">QMK Customizations</h5>
               <ul className="mb-4 space-y-4 pl-6">
                 <li>
                   <p>
@@ -240,7 +240,7 @@ export default function FirmwarePage() {
             </div>
 
             <div className="mt-8">
-              <h5 className="text-solarized-green mb-4 text-2xl font-normal">
+              <h5 className="text-nushu-blue mb-4 text-2xl font-normal">
                 Layout Design &amp; Logic
               </h5>
               <ul className="mb-4 space-y-4 pl-6">
