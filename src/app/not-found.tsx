@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import {Button} from '@/components/ui/button'
+import {buttonVariants} from '@/components/ui/button'
+import {cn} from '@/lib/utils'
 
 export default function NotFound() {
   return (
@@ -16,13 +17,16 @@ export default function NotFound() {
           layout reference and start from there.
         </p>
         <div className="mt-8 flex justify-center">
-          <Button
-            size="lg"
-            className="rounded-full px-6"
-            render={<Link href="/" className="text-primary-foreground!" />}
+          {/* a real link styled as a button, so it keeps link semantics */}
+          <Link
+            href="/"
+            className={cn(
+              buttonVariants({size: 'lg'}),
+              'text-primary-foreground! rounded-full px-6'
+            )}
           >
             Return home
-          </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -527,7 +527,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}
@@ -539,7 +539,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'right-option-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               popOverContent: (
@@ -554,7 +554,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}
@@ -605,7 +605,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}
@@ -615,7 +615,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}
@@ -625,7 +625,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}

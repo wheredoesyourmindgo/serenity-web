@@ -143,12 +143,24 @@
     inset 0 -2px 0 var(--key-lip), 0 2px 2px rgb(43 40 34 / 0.07), 0 6px 12px rgb(43 40 34 / 0.08);
   --key-homing: var(--nushu-ink-faint);
 
-  /* Homepage heatmap, coolest to hottest: Nushu keyword magenta into function violet.
-     Multiplied into the paper in light mode */
-  --heat-0: color-mix(in oklab, var(--nushu-magenta) 22%, var(--nushu-paper));
-  --heat-1: color-mix(in oklab, var(--nushu-magenta) 55%, var(--nushu-paper));
-  --heat-2: var(--nushu-magenta);
-  --heat-3: var(--nushu-violet);
+  /*
+   * Homepage heatmap, coolest to hottest: Nushu keyword magenta into function violet. Plain hex
+   * because the WebGL shader reads them: magenta 22% and 55% over paper, magenta, violet.
+   * Multiplied into the paper in light mode.
+   */
+  --heat-0: #e7c9d3;
+  --heat-1: #c987a7;
+  --heat-2: #99286e;
+  --heat-3: #6639ba;
+
+  /* Corne/Planck layout switch on the firmware and software keyboards */
+  --layout-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --layout-duration: 420ms;
+  --key-layout-transition:
+    left var(--layout-duration) var(--layout-ease),
+    opacity var(--layout-duration) var(--layout-ease),
+    scale var(--layout-duration) var(--layout-ease), translate 150ms ease, box-shadow 150ms ease,
+    border-color 150ms ease;
 }
 
 .dark {
@@ -193,18 +205,19 @@
   --key-border: color-mix(in srgb, var(--nushu-ink-faint) 30%, var(--nushu-paper));
   --key-border-hover: color-mix(in srgb, var(--nushu-ink-faint) 60%, var(--nushu-paper));
   --key-lip: #181512;
-
-  /* Screened over the earth background in dark mode, so the hottest keys glow lavender */
-  --heat-0: color-mix(in oklab, var(--nushu-magenta) 35%, var(--nushu-paper));
-  --heat-1: var(--nushu-magenta);
-  --heat-2: var(--nushu-violet);
-  --heat-3: color-mix(in oklab, var(--nushu-violet) 60%, #ffffff);
   --key-shadow:
     inset 0 1px 0 rgb(255 248 240 / 0.05), inset 0 -2px 0 var(--key-lip),
     0 1px 2px rgb(0 0 0 / 0.3), 0 3px 8px rgb(0 0 0 / 0.2);
   --key-shadow-hover:
     inset 0 1px 0 rgb(255 248 240 / 0.07), inset 0 -2px 0 var(--key-lip),
     0 2px 3px rgb(0 0 0 / 0.3), 0 8px 16px rgb(0 0 0 / 0.25);
+
+  /* Screened over the earth background in dark mode, so the hottest keys glow lavender:
+     magenta 35% over earth, magenta, violet, violet 60% over white */
+  --heat-0: #603848;
+  --heat-1: #db61a2;
+  --heat-2: #bc8cff;
+  --heat-3: #d6bbff;
 }
 
 @layer base {
@@ -243,17 +256,27 @@
     background-color: var(--syntax-selection);
   }
 
-  [data-row='true'] > :nth-child(7) {
-    transition: margin-left 160ms ease-in-out;
+  /*
+   * Corne splits the keyboard: each half shifts 1rem outward with a relative offset, so both
+   * halves glide apart evenly. (A margin on the 7th key made the row re-center instantly, which
+   * snapped the left half and pulled the right half backwards before it slid out.) Keys start
+   * at an explicit 0 because the offset can't animate from auto.
+   */
+  [data-row='true'] > * {
+    left: 0;
   }
 
-  [data-layout='corne'] [data-row='true'] > :nth-child(7) {
-    @apply ml-8;
+  [data-layout='corne'] [data-row='true'] > :nth-child(-n + 6) {
+    left: -1rem;
+  }
+
+  [data-layout='corne'] [data-row='true'] > :nth-child(n + 7) {
+    left: 1rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    [data-row='true'] > :nth-child(7) {
-      transition: none;
+    :root {
+      --layout-duration: 0ms;
     }
   }
 
