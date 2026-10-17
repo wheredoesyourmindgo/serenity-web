@@ -3,11 +3,12 @@
 // cspell:ignore Lgnd
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
-import {nushu} from '@/lib/nushuPalette'
+import type {KeyContainerProps} from '@/components/key/KeyContainer'
 import KeyboardGridRow from './KeyboardGridRow'
-import {useMemo} from 'react'
 import {createLetterColorScale} from '@/lib/letterColorScale'
-import {useTheme as useNextTheme} from 'next-themes'
+
+// low frequency letters are faint, high frequency letters deepest
+const getColor = createLetterColorScale('var(--nushu-ink-faint)', 'var(--nushu-ink-deepest)')
 
 const AlphaKeyLgnd = ({
   children,
@@ -15,23 +16,18 @@ const AlphaKeyLgnd = ({
   color,
   ...props
 }: KeyLegendProps & {frequencyColor?: boolean}) => {
-  const {resolvedTheme} = useNextTheme()
   const char = typeof children === 'string' ? children[0].toLowerCase() : ''
-  const palette = resolvedTheme === 'dark' ? nushu.dark : nushu.light
-
-  const getColor = useMemo(
-    () =>
-      createLetterColorScale(
-        palette.inkFaint, // low frequency color
-        palette.inkDeepest // high frequency color
-      ),
-    [palette.inkFaint, palette.inkDeepest]
-  )
 
   return (
     <KeyLegend
       color={frequencyColor ? getColor(char) : color}
-      KeyContainerProps={{style: {borderWidth: 0, boxShadow: 'none', background: 'transparent'}}}
+      KeyContainerProps={
+        {
+          style: {borderWidth: 0, boxShadow: 'none', background: 'transparent'},
+          // lets the homepage heatmap find each key
+          'data-key': char || undefined
+        } as KeyContainerProps
+      }
       {...props}
     >
       {children}
