@@ -3,16 +3,15 @@
 import {cn} from 'cn'
 import {TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 
-// Keyboard layer tabs shared by the firmware and software pages: shadcn's line
-// variant, restyled as a scrollable strip of icon + label tabs with a Nushu
-// underline, and panels that fade/unblur in when their layer is selected.
+// Keyboard layer tabs shared by the firmware and software pages: a rounded, scrollable strip of
+// icon + label tabs matching the other segmented controls, the selected one raised on the page
+// color, and panels that fade/unblur in when their layer is selected.
 
 function LayerTabsList({className, ...props}: React.ComponentProps<typeof TabsList>) {
   return (
     <TabsList
-      variant="line"
       className={cn(
-        'border-border w-full justify-start gap-0 overflow-x-auto border-b p-0 group-data-horizontal/tabs:h-auto',
+        'border-border bg-card max-w-full justify-start gap-1 overflow-x-auto rounded-lg border p-1 group-data-horizontal/tabs:h-auto',
         className
       )}
       {...props}
@@ -24,10 +23,10 @@ function LayerTabsTrigger({className, ...props}: React.ComponentProps<typeof Tab
   return (
     <TabsTrigger
       className={cn(
-        'h-auto flex-none flex-col gap-1 rounded-none px-3 py-2 text-xs',
-        'text-muted-foreground',
-        'data-active:text-nushu-blue dark:data-active:text-nushu-cyan',
-        'after:bg-nushu-blue dark:after:bg-nushu-cyan group-data-horizontal/tabs:after:bottom-0',
+        'h-auto flex-none flex-col gap-1 rounded-md px-3 py-1.5 text-xs',
+        'text-muted-foreground hover:text-nushu-ink-deep',
+        'data-active:bg-background data-active:text-nushu-blue data-active:shadow-sm',
+        'dark:data-active:bg-background dark:data-active:text-nushu-cyan dark:data-active:border-transparent',
         className
       )}
       {...props}

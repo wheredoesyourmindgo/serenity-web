@@ -8,28 +8,7 @@ import FnLyr from '@/components/keyboard/software/FnLyr'
 import QmkLegend from '@/components/QmkLegend'
 import {Tabs} from '@/components/ui/tabs'
 import {LayerTabsContent, LayerTabsList, LayerTabsTrigger} from '@/components/LayerTabs'
-
-function GitHubIcon() {
-  return (
-    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" fill="currentColor">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-    </svg>
-  )
-}
-
-function SerenityKarabinerButton() {
-  return (
-    <a
-      href="https://github.com/wheredoesyourmindgo/serenity-karabiner"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded border border-black/30 bg-[#24292e] px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:border-black/50 hover:bg-[#2f363d]/90 dark:border-white/30 dark:hover:border-white/50"
-    >
-      <GitHubIcon />
-      Serenity Karabiner
-    </a>
-  )
-}
+import {GitHubButton, PageBody, PageHeader} from '@/components/Page'
 
 const tabs = [
   {value: 'base', label: 'Base', icon: 'fa-regular fa-house-user'},
@@ -38,15 +17,17 @@ const tabs = [
 
 export default function SoftwarePage() {
   return (
-    <div className="relative container mx-auto px-4">
-      <div className="absolute top-0 right-0 mr-4 hidden md:block">
-        <SerenityKarabinerButton />
-      </div>
-      <div className="flex flex-col items-center">
-        <h2 className="text-nushu-yellow pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
-          Software
-        </h2>
+    <>
+      <PageHeader
+        title="Software"
+        lede="Serenity on any Mac keyboard, laptop included, with Karabiner-Elements. No new hardware needed."
+      >
+        <GitHubButton href="https://github.com/wheredoesyourmindgo/serenity-karabiner">
+          serenity-karabiner
+        </GitHubButton>
+      </PageHeader>
 
+      <div className="flex flex-col items-center px-4">
         <Tabs defaultValue="base" className="w-full items-center gap-0">
           <FitWidth>
             <div className="grid *:col-start-1 *:row-start-1">
@@ -59,7 +40,7 @@ export default function SoftwarePage() {
             </div>
           </FitWidth>
 
-          <div className="bg-card mt-12 max-w-full">
+          <div className="mt-10 max-w-full">
             <LayerTabsList>
               {tabs.map((tab) => (
                 <LayerTabsTrigger key={tab.value} value={tab.value}>
@@ -74,14 +55,9 @@ export default function SoftwarePage() {
         </Tabs>
       </div>
 
-      <div className="mt-12 flex flex-wrap justify-center gap-x-24 gap-y-12">
-        <div>
-          <QmkLegend />
-        </div>
-        <div className="md:hidden">
-          <SerenityKarabinerButton />
-        </div>
-      </div>
-    </div>
+      <PageBody className="mt-12">
+        <QmkLegend />
+      </PageBody>
+    </>
   )
 }

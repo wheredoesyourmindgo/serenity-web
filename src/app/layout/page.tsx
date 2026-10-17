@@ -5,130 +5,93 @@ import {useState} from 'react'
 import {cn} from '@/lib/utils'
 import AlphaKeyboard from '@/components/keyboard/Alphas'
 import FaIcon from '@/components/FaIcon'
+import {PageBody, PageHeader, Section, TextLink} from '@/components/Page'
 import genkey from '@/components/stats/genkey'
 import a200 from '@/components/stats/a200'
 import colemakmods from '@/components/stats/colemakmods'
 
-type Show = 'a200' | 'genkey' | 'colemakmods'
+type Show = 'genkey' | 'a200' | 'colemakmods'
 
-const statTabs: {value: Show; label: string}[] = [
-  {value: 'genkey', label: 'Genkey'},
-  {value: 'a200', label: '200 Analyzer'},
-  {value: 'colemakmods', label: 'Keyboard Layout Analyzer [SP]'}
+// each analyzer's output, under the command or tool that produced it
+const analyzers: {value: Show; label: string; command: string; output: string; href: string}[] = [
+  {
+    value: 'genkey',
+    label: 'Genkey',
+    command: './genkey -stagger=false analyze serenity',
+    output: genkey,
+    href: 'https://github.com/semilin/genkey'
+  },
+  {
+    value: 'a200',
+    label: '200 Analyzer',
+    command: './a200 vw serenity',
+    output: a200,
+    href: 'https://github.com/ClemenPine/200-analyzer'
+  },
+  {
+    value: 'colemakmods',
+    label: 'Layout Analyzer',
+    command: 'Keyboard Analysis Tool v1.32 [SP]',
+    output: colemakmods,
+    href: 'https://colemakmods.github.io/mod-dh/analyze.html'
+  }
 ]
 
 export default function LayoutPage() {
   const [show, setShow] = useState<Show>('genkey')
-
-  const handleShowChange = (newShow: string) => {
-    if (newShow !== null) {
-      setShow(newShow as Show)
-    }
-  }
+  const current = analyzers.find((a) => a.value === show)!
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="flex flex-col items-center">
-        <h2 className="text-nushu-yellow pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
-          Layout
-        </h2>
+    <>
+      <PageHeader
+        title="Layout"
+        lede="The letters, shaded by how often you type them, and how Serenity scores in three layout analyzers."
+      />
+
+      <div className="px-4">
         <FitWidth>
           <AlphaKeyboard />
         </FitWidth>
-
-        <div className="mt-12 flex flex-col items-center justify-center">
-          <div className="flex items-center gap-2">
-            <FaIcon className="fa-regular fa-star-shooting" color="nushu.ink-faint" />
-            <h6 className="text-nushu-ink text-xl font-medium">Statistics</h6>
-          </div>
-
-          <div className="mt-4 flex">
-            <div
-              role="group"
-              aria-label="Stats Button Toggle"
-              className="border-border flex overflow-hidden rounded-lg border"
-            >
-              {statTabs.map(({value, label}) => (
-                <button
-                  key={value}
-                  onClick={() => handleShowChange(value)}
-                  aria-pressed={show === value}
-                  className={cn(
-                    'border-border border-r px-4 py-2 text-sm font-medium transition-colors last:border-r-0',
-                    show === value
-                      ? 'bg-nushu-blue/10 text-nushu-blue'
-                      : 'text-nushu-ink-strong hover:bg-accent/50'
-                  )}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className={cn('max-w-full pt-8', show !== 'genkey' && 'hidden')}>
-          <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
-            <p className="text-nushu-ink-strong mb-2 flex items-center gap-2">
-              <FaIcon className="fa-regular fa-angle-right" color="nushu.green" />
-              <em>./genkey -stagger=false analyze serenity</em>
-            </p>
-            <hr className="border-border mb-2" />
-            <pre className="text-nushu-ink text-sm">{genkey}</pre>
-          </div>
-          <div className="mt-2 flex justify-end">
-            <a
-              href="https://github.com/semilin/genkey"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="text-foreground text-xs hover:underline"
-            >
-              https://github.com/semilin/genkey
-            </a>
-          </div>
-        </div>
-
-        <div className={cn('max-w-full pt-8', show !== 'a200' && 'hidden')}>
-          <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
-            <p className="text-nushu-ink-strong mb-2 flex items-center gap-4">
-              <FaIcon className="fa-regular fa-angle-right" color="nushu.green" />
-              <em>./a200 vw serenity</em>
-            </p>
-            <hr className="border-border mb-2" />
-            <pre className="text-nushu-ink text-sm">{a200}</pre>
-          </div>
-          <div className="mt-2 flex justify-end">
-            <a
-              href="https://github.com/ClemenPine/200-analyzer"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="text-foreground text-xs hover:underline"
-            >
-              https://github.com/ClemenPine/200-analyzer
-            </a>
-          </div>
-        </div>
-
-        <div className={cn('max-w-full pt-8', show !== 'colemakmods' && 'hidden')}>
-          <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
-            <p className="text-nushu-ink-strong mb-2">
-              <em>Keyboard Analysis Tool - v1.32</em>
-            </p>
-            <hr className="border-border mb-2" />
-            <pre className="text-nushu-ink text-sm">{colemakmods}</pre>
-          </div>
-          <div className="mt-2 flex justify-end">
-            <a
-              href="https://colemakmods.github.io/mod-dh/analyze.html"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="text-foreground text-xs hover:underline"
-            >
-              https://colemakmods.github.io/mod-dh/analyze.html
-            </a>
-          </div>
-        </div>
       </div>
-    </div>
+
+      <PageBody className="mt-16">
+        <Section icon="fa-regular fa-star-shooting" title="Statistics">
+          <div
+            role="group"
+            aria-label="Analyzer"
+            className="border-border bg-card flex w-full overflow-x-auto rounded-lg border p-1 sm:w-fit"
+          >
+            {analyzers.map(({value, label}) => (
+              <button
+                key={value}
+                onClick={() => setShow(value)}
+                aria-pressed={show === value}
+                className={cn(
+                  'flex-1 rounded-md px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:flex-none',
+                  show === value
+                    ? 'bg-background text-nushu-blue shadow-sm'
+                    : 'text-nushu-ink-muted hover:text-nushu-ink-deep'
+                )}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <figure className="overflow-hidden rounded-lg border border-(--code-border) bg-(--code-background)">
+            <figcaption className="flex items-center gap-2 border-b border-(--code-border) bg-(--code-bar) px-4 py-2.5 text-xs text-(--code-muted) md:text-[13px]">
+              <FaIcon className="fa-regular fa-angle-right text-(--code-syntax-comment)" />
+              <em className="truncate">{current.command}</em>
+            </figcaption>
+            <pre className="overflow-x-auto px-4 py-4 text-xs leading-relaxed text-(--code-foreground) md:text-[13px]">
+              {current.output.trim()}
+            </pre>
+          </figure>
+          <p className="text-right text-xs">
+            <TextLink href={current.href}>{current.href.replace('https://', '')}</TextLink>
+          </p>
+        </Section>
+      </PageBody>
+    </>
   )
 }
