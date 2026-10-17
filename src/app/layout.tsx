@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar'
+import {IntroProvider} from '@/components/IntroProvider'
 import {ThemeProvider as AppThemeProvider} from '@/components/theme-provider'
 import {TooltipProvider} from '@/components/ui/tooltip'
 import {Analytics} from '@vercel/analytics/next'
@@ -130,14 +131,16 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body>
         <AppThemeProvider>
           <TooltipProvider>
-            <div className="bg-background h-screen overflow-auto">
-              <div className="flex h-screen flex-col">
-                <Navbar />
-                <main className="flex w-full flex-1 justify-center">
-                  <div className="my-12 block w-full flex-1">{children}</div>
-                </main>
+            <IntroProvider>
+              <div className="bg-background h-screen overflow-auto">
+                <div className="flex h-screen flex-col">
+                  <Navbar />
+                  <main className="flex w-full flex-1 justify-center">
+                    <div className="my-12 block w-full flex-1">{children}</div>
+                  </main>
+                </div>
               </div>
-            </div>
+            </IntroProvider>
           </TooltipProvider>
           <Analytics />
         </AppThemeProvider>
