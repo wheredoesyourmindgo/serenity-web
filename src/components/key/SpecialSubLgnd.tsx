@@ -9,7 +9,7 @@ export default function SpecialSubLgnd(props: Props) {
     <span className="absolute top-[-6px] left-1.5">
       <FaIcon
         className={cn('fa-regular fa-asterisk text-[9px]', className)}
-        color="solarized.red"
+        color="nushu.red"
         {...rest}
       />
     </span>

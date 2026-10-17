@@ -19,12 +19,12 @@ function RectangleProCaption() {
     >
       <span
         style={{
-          color: 'var(--solarized-blue)',
+          color: 'var(--nushu-blue)',
           fontSize: 11,
           fontWeight: 'bold'
         }}
       >
-        <FaIcon className="fa-regular fa-browser pr-[18px]" color="solarized.blue" />
+        <FaIcon className="fa-regular fa-browser pr-[18px]" color="nushu.blue" />
         Rectangle Pro
       </span>
     </div>
@@ -240,10 +240,10 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-option text-[18px]" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-up" color="solarized.cyan" homing />
+          <KeyIcon className="fa-regular fa-chevron-up" color="nushu.cyan" />
+          <KeyIcon className="fa-regular fa-option text-[18px]" color="nushu.cyan" />
+          <KeyIcon className="fa-regular fa-command" color="nushu.cyan" />
+          <KeyIcon className="fa-regular fa-up" color="nushu.cyan" homing />
           <KeyIcon
             className="fa-regular fa-lock"
             KeyContainerProps={{
@@ -534,7 +534,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
-            color="solarized.cyan"
+            color="nushu.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
               style: {

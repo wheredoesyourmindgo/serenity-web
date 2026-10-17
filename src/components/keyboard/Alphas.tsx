@@ -3,7 +3,7 @@
 // cspell:ignore Lgnd
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
-import {solarized} from '@/lib/solarizedPalette'
+import {nushu} from '@/lib/nushuPalette'
 import KeyboardGridRow from './KeyboardGridRow'
 import {useMemo} from 'react'
 import {createLetterColorScale} from '@/lib/letterColorScale'
@@ -17,21 +17,21 @@ const AlphaKeyLgnd = ({
 }: KeyLegendProps & {frequencyColor?: boolean}) => {
   const {resolvedTheme} = useNextTheme()
   const char = typeof children === 'string' ? children[0].toLowerCase() : ''
-  const palette = resolvedTheme === 'dark' ? solarized.dark : solarized.light
+  const palette = resolvedTheme === 'dark' ? nushu.dark : nushu.light
 
   const getColor = useMemo(
     () =>
       createLetterColorScale(
-        palette.base1, // low frequency color
-        palette.base03 // high frequency color
+        palette.inkFaint, // low frequency color
+        palette.inkDeepest // high frequency color
       ),
-    [palette.base1, palette.base03]
+    [palette.inkFaint, palette.inkDeepest]
   )
 
   return (
     <KeyLegend
       color={frequencyColor ? getColor(char) : color}
-      KeyContainerProps={{style: {borderWidth: 0, boxShadow: 'none'}}}
+      KeyContainerProps={{style: {borderWidth: 0, boxShadow: 'none', background: 'transparent'}}}
       {...props}
     >
       {children}

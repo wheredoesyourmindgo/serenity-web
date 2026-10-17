@@ -182,10 +182,10 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyIcon className="fa-regular fa-chevron-up" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-option text-[18px]" color="solarized.cyan" />
-          <KeyIcon className="fa-regular fa-command" color="solarized.cyan" />
-          <KeyIcon homing className="fa-regular fa-up" color="solarized.cyan" />
+          <KeyIcon className="fa-regular fa-chevron-up" color="nushu.cyan" />
+          <KeyIcon className="fa-regular fa-option text-[18px]" color="nushu.cyan" />
+          <KeyIcon className="fa-regular fa-command" color="nushu.cyan" />
+          <KeyIcon homing className="fa-regular fa-up" color="nushu.cyan" />
           <KeyIcon
             className="fa-regular fa-lock"
             KeyContainerProps={{
@@ -503,7 +503,7 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
-            color="solarized.cyan"
+            color="nushu.cyan"
             KeyContainerProps={{
               keyId: 'right-option-key',
               style: {

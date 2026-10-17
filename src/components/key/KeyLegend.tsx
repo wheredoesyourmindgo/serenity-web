@@ -55,7 +55,7 @@ export default function KeyLegend({
   LyrHoldSubIcnProps,
   modHoldSubIcn,
   ModHoldSubIcnProps,
-  color = 'solarized.base00',
+  color = 'nushu.ink',
   tapForceHold,
   appShortcut,
   style,
@@ -63,9 +63,9 @@ export default function KeyLegend({
   className,
   ...rest
 }: Props) {
-  const shiftColor = customShiftCode ? 'solarized.violet' : 'solarized.base0'
-  const lyrColor = 'solarized.green'
-  const modColor = 'solarized.yellow'
+  const shiftColor = customShiftCode ? 'nushu.violet' : 'nushu.ink-muted'
+  const lyrColor = 'nushu.green'
+  const modColor = 'nushu.yellow'
 
   return (
     <KeyContainer {...KeyContainerProps} homing={homing}>

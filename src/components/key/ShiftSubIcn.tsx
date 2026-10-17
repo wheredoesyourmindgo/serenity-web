@@ -6,11 +6,7 @@ type Props = Omit<FaIconProps, 'icon'>
 export default function ShiftSubIcn({className, color, ...rest}: Props) {
   return (
     <span className="absolute top-[-2px] right-[5px]">
-      <FaIcon
-        className={cn('text-[14px]', className)}
-        color={color ?? 'solarized.violet'}
-        {...rest}
-      />
+      <FaIcon className={cn('text-[14px]', className)} color={color ?? 'nushu.violet'} {...rest} />
     </span>
   )
 }
