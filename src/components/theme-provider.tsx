@@ -13,6 +13,7 @@ function ThemeProvider({children, ...props}: React.ComponentProps<typeof NextThe
       {...props}
     >
       <ThemeHotkey />
+      <ThemeColor />
       {children}
     </NextThemesProvider>
   )
@@ -62,6 +63,23 @@ function ThemeHotkey() {
       window.removeEventListener('keydown', onKeyDown)
     }
   }, [resolvedTheme, systemTheme, setTheme])
+
+  return null
+}
+
+// The theme-color tags in layout.tsx follow the system setting, but the site's theme can be toggled
+// by hand. Once the theme is known, point every theme-color tag at the page color it resolved to.
+function ThemeColor() {
+  const {resolvedTheme} = useTheme()
+
+  React.useEffect(() => {
+    if (!resolvedTheme) return
+    const color = getComputedStyle(document.documentElement).getPropertyValue('--background').trim()
+    if (!color) return
+    document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+      meta.setAttribute('content', color)
+    })
+  }, [resolvedTheme])
 
   return null
 }
