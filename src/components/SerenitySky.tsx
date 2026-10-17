@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useRef, useState} from 'react'
+import {useEffect, useState} from 'react'
 
 /*
  * A plain sky over rolling hills, laid behind the homepage: it opens the page and comes back for
@@ -11,7 +11,7 @@ import {useEffect, useRef, useState} from 'react'
  * fixed layer at the screen's edge, older Safari from the theme-color tag. So while the sky is up,
  * it carries the front hill's green as a solid background (hidden under the gradient) and points
  * theme-color at it, and once it has faded it leaves the page, so the toolbars go back to the page
- * color. Both blend between the two colors over the fade, in case the browser follows along.
+ * color.
  */
 
 // ms the sky takes to fade, matching duration-1500 below
@@ -33,30 +33,10 @@ const HILLS = [
   }
 ]
 
-// how many colors theme-color steps through on its way between the page and the hill
-const TINT_STEPS = 15
-
 function setThemeColor(color: string) {
   document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
     meta.setAttribute('content', color)
   })
-}
-
-// t of the way from one #rrggbb color to another
-function mixHex(from: string, to: string, t: number) {
-  const channels = (hex: string) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16))
-  const a = channels(from)
-  const b = channels(to)
-  return (
-    '#' +
-    a
-      .map((v, i) =>
-        Math.round(v + (b[i] - v) * t)
-          .toString(16)
-          .padStart(2, '0')
-      )
-      .join('')
-  )
 }
 
 export default function SerenitySky({show}: {show: boolean}) {
@@ -83,49 +63,19 @@ export default function SerenitySky({show}: {show: boolean}) {
     return () => clearTimeout(timer)
   }, [show])
 
-  // theme-color steps toward the hill as the sky fades in and back to the page as it fades out
-  // (straight there on the first paint, or with reduced motion)
-  const tinted = useRef(false)
   useEffect(() => {
     if (!mounted) return
     const style = getComputedStyle(document.documentElement)
-    const ground = style.getPropertyValue('--sky-ground').trim()
-    const page = style.getPropertyValue('--background').trim()
-    const [from, to] = visible ? [page, ground] : [ground, page]
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (!tinted.current || reducedMotion) {
-      tinted.current = true
-      setThemeColor(to)
-      return
-    }
-    let step = 0
-    const timer = setInterval(() => {
-      step += 1
-      setThemeColor(mixHex(from, to, step / TINT_STEPS))
-      if (step === TINT_STEPS) clearInterval(timer)
-    }, FADE_TIME / TINT_STEPS)
-    // if the fade is cut short, land where it was headed
-    return () => {
-      clearInterval(timer)
-      setThemeColor(to)
-    }
-  }, [mounted, visible])
-
-  // leaving the homepage with the sky up hands the toolbars back to the page color
-  useEffect(
-    () => () =>
-      setThemeColor(
-        getComputedStyle(document.documentElement).getPropertyValue('--background').trim()
-      ),
-    []
-  )
+    setThemeColor(style.getPropertyValue('--sky-ground').trim())
+    return () => setThemeColor(style.getPropertyValue('--background').trim())
+  }, [mounted])
 
   if (!mounted) return null
 
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none fixed inset-0 bg-linear-to-b from-[#7dbdf4] to-[#e4f2fe] transition-[opacity,background-color] duration-1500 motion-reduce:transition-none dark:from-[#0c1a33] dark:to-[#2b4670] ${visible ? 'bg-(--sky-ground) opacity-100' : 'bg-background opacity-0'}`}
+      className={`pointer-events-none fixed inset-0 bg-(--sky-ground) bg-linear-to-b from-[#7dbdf4] to-[#e4f2fe] transition-opacity duration-1500 motion-reduce:transition-none dark:from-[#0c1a33] dark:to-[#2b4670] ${visible ? 'opacity-100' : 'opacity-0'}`}
     >
       <svg
         viewBox="0 0 1440 320"
