@@ -27,7 +27,7 @@ Finger Use
 
 Row Use
 =======
-       Top - 22.30%         Home - 63.93%       Bottom - 13.77%
+       Top - 17.16%         Home - 63.93%       Bottom - 18.92%
 `
 
 export default a200
