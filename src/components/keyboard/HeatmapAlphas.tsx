@@ -277,7 +277,8 @@ function frequencyHeat(key: string) {
   return (freq / letterFrequency.e) * 1.2
 }
 
-type KeyState = {key: string; x: number; y: number; target: number; heat: number}
+// fade is heat left over from whatever the spelled word or a tap cut short; it cools away quickly
+type KeyState = {key: string; x: number; y: number; target: number; heat: number; fade: number}
 
 export type HeatmapControls = {
   // types "serenity" across the home row with a trail between keys. note adds a line under it,
@@ -297,7 +298,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
   const captionRef = useRef<HTMLSpanElement>(null)
   const captionLineRef = useRef<HTMLParagraphElement>(null)
   const captionTrackRef = useRef<HTMLSpanElement>(null)
-  const startRef = useRef<(on: boolean) => void>(() => {})
+  const startRef = useRef<(on: boolean, tap?: boolean) => void>(() => {})
   const touchOnRef = useRef(false)
   // the keyboard never needs to re-render for the heatmap
   const keyboard = useMemo(() => <AlphaKeyboard />, [])
@@ -318,7 +319,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const keys: KeyState[] = Array.from(board.querySelectorAll<HTMLElement>('[data-key]')).map(
-      (el) => ({key: el.dataset.key ?? '', x: 0, y: 0, target: 0, heat: 0})
+      (el) => ({key: el.dataset.key ?? '', x: 0, y: 0, target: 0, heat: 0, fade: 0})
     )
     const uniforms = new Float32Array(MAX_KEYS * 3)
     const byKey = new Map(keys.map((k) => [k.key, k]))
@@ -352,7 +353,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       keys.forEach((k, i) => {
         uniforms[i * 3] = k.x
         uniforms[i * 3 + 1] = k.y
-        uniforms[i * 3 + 2] = k.heat
+        uniforms[i * 3 + 2] = k.heat + k.fade
       })
       renderer.draw(uniforms, Math.min(keys.length, MAX_KEYS), width, height, GLOW_SIGMA)
     }
@@ -368,10 +369,12 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
     const tick = (now: number, last: number) => {
       const dt = Math.min(0.1, (now - last) / 1000)
       const cooling = Math.exp(-dt / (active || spelling ? COOL_TIME : LEAVE_COOL_TIME))
+      const fading = Math.exp(-dt / LEAVE_COOL_TIME)
       let remaining = 0
       for (const k of keys) {
         k.heat *= cooling
-        remaining = Math.max(remaining, k.heat)
+        k.fade *= fading
+        remaining = Math.max(remaining, k.heat + k.fade)
       }
       if (pinned) pinned.heat = Math.max(pinned.heat, PIN_HEAT)
       draw()
@@ -382,7 +385,10 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       if (active || spelling || pinned || remaining > 0.005) {
         frame = requestAnimationFrame((t) => tick(t, now))
       } else {
-        for (const k of keys) k.heat = 0
+        for (const k of keys) {
+          k.heat = 0
+          k.fade = 0
+        }
         draw()
         frame = 0
       }
@@ -491,24 +497,43 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       }
     }
 
+    // moves all the heat on the board into fade, so it clears out of the way of what comes next
+    const fadeHeat = () => {
+      for (const k of keys) {
+        k.fade = Math.min(k.fade + k.heat, MAX_HEAT)
+        k.heat = 0
+      }
+    }
+
+    const stopSpell = () => {
+      clearTimeout(spellTimer)
+      spelling = false
+      trail.style.transition = reducedMotion ? 'none' : 'opacity 700ms'
+      trail.style.opacity = '0'
+      setNote(false)
+      if (!reducedMotion) setCaptionMask(true)
+    }
+
     spellRef.current = ({note = false, pace = 1, hold = SPELL_HOLD * pace} = {}) => {
       clearTimeout(spellTimer)
       clearTimeout(typingTimer)
       spelling = true
+      // the word takes over from a tap's typing, which stays off afterward; hover is unaffected,
+      // since the pointer can't be on the keyboard while it clicks the name
+      if (touchOnRef.current) {
+        touchOnRef.current = false
+        active = false
+      }
       const interval = SPELL_INTERVAL * pace
       const segments = buildTrail(interval)
       setNote(note)
 
       const finish = () => {
-        spelling = false
-        trail.style.transition = reducedMotion ? 'none' : 'opacity 700ms'
-        trail.style.opacity = '0'
-        setNote(false)
+        stopSpell()
         if (reducedMotion) {
           stillHeat()
           return
         }
-        setCaptionMask(true)
         if (active) {
           // pick the hover typing back up after a pause
           gap = SNIPPET_GAP
@@ -524,6 +549,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
         return
       }
 
+      fadeHeat()
       typed = ''
       captionOffset = 0
       if (captionRef.current) captionRef.current.textContent = ''
@@ -553,11 +579,16 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       draw()
     }
 
-    startRef.current = (on) => {
+    startRef.current = (on, tap = false) => {
       if (on === active) return
       active = on
-      // the word finishes first; hover typing picks up after it if the pointer is still here
-      if (spelling) return
+      if (spelling) {
+        // hover lets the word finish and picks up after it if the pointer is still here; a tap is
+        // deliberate, so it cuts the word short
+        if (!tap) return
+        stopSpell()
+        if (!reducedMotion) fadeHeat()
+      }
       if (reducedMotion) {
         // a still frequency map, no animation
         stillHeat()
@@ -612,7 +643,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
         onPointerDown={(e) => {
           if (e.pointerType !== 'touch') return
           touchOnRef.current = !touchOnRef.current
-          startRef.current(touchOnRef.current)
+          startRef.current(touchOnRef.current, true)
         }}
       >
         <canvas
