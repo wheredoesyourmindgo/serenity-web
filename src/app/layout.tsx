@@ -143,11 +143,15 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <AppThemeProvider>
           <TooltipProvider>
             <IntroProvider>
-              <div className="bg-background h-dvh overflow-x-hidden overflow-y-auto">
-                <div className="flex min-h-full flex-col">
+              {/* the document scrolls, not a box inside it, so mobile browsers can shrink their
+                  toolbars and tint them from the page; sideways spill like the heatmap glow is
+                  clipped here without making this a scroll container */}
+              <div className="bg-background overflow-x-clip">
+                <div className="flex min-h-dvh flex-col">
                   <Navbar />
                   <main className="flex w-full flex-1 justify-center">
-                    <div className="my-8 block w-full flex-1 md:my-12">{children}</div>
+                    {/* a flex column, so a page can fill the height with flex-1 */}
+                    <div className="my-8 flex w-full flex-1 flex-col md:my-12">{children}</div>
                   </main>
                   <Footer />
                 </div>

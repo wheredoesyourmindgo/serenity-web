@@ -165,6 +165,9 @@
   --heat-2: #99286e;
   --heat-3: #6639ba;
 
+  /* the homepage sky's front hill, which also tints the mobile toolbars while the sky is up */
+  --sky-ground: #5fae58;
+
   /* Corne/Planck layout switch on the firmware and software keyboards */
   --layout-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --layout-duration: 420ms;
@@ -212,6 +215,8 @@
   --nushu-cyan: #39c5cf;
   --nushu-green: #3fb950;
 
+  --sky-ground: #2a5a35;
+
   /* Nushu Dark's token colors; the code sits a full step lighter than the page */
   --code-background: var(--muted);
   --code-foreground: #d7cfc7;
@@ -255,7 +260,7 @@
 @layer base {
   html,
   body {
-    @apply m-0 h-full p-0;
+    @apply m-0 p-0;
   }
 
   html {

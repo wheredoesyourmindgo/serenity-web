@@ -4,11 +4,8 @@ import {cn} from '@/lib/utils'
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-full items-center justify-center px-6 py-12">
-      <div className="w-full max-w-3xl rounded-4xl px-8 py-12 text-center">
-        <p className="font-body text-nushu-cyan mb-4 text-sm font-semibold tracking-[0.3em] uppercase">
-          Error 404
-        </p>
+    <div className="flex flex-1 items-center justify-center px-6 py-12">
+      <div className="w-full max-w-3xl px-2 text-center">
         <h1 className="font-body text-nushu-yellow pb-4 font-features-['ss02'_on] text-4xl italic sm:text-5xl md:text-6xl">
           Page not found
         </h1>
