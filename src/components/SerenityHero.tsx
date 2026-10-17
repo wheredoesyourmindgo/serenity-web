@@ -4,6 +4,7 @@ import {useEffect, useRef, useState} from 'react'
 import HeatmapAlphas, {type HeatmapControls} from '@/components/keyboard/HeatmapAlphas'
 import SerenityDove, {type DoveControls} from '@/components/SerenityDove'
 import SerenitySky from '@/components/SerenitySky'
+import {useIntro} from '@/components/IntroProvider'
 
 /*
  * The homepage wordmark and keyboard. Every letter of "serenity" is on the home row, so the name
@@ -13,6 +14,8 @@ import SerenitySky from '@/components/SerenitySky'
  *
  * The page opens on that sky with the name typing itself out in white, then a tagline; after a
  * moment the sky fades, the name turns yellow and rises, and the keyboard opens up beneath it.
+ * It plays once per page load (see IntroProvider.tsx): coming back to the homepage skips it, and a
+ * refresh plays it again.
  */
 
 const NAME = 'Serenity'
@@ -35,13 +38,15 @@ export default function SerenityHero() {
   const heatmap = useRef<HeatmapControls>(null)
   const dove = useRef<DoveControls>(null)
   const [sky, setSky] = useState(false)
-  const [intro, setIntro] = useState(true)
+  const {played, markPlayed} = useIntro()
+  const [intro, setIntro] = useState(!played)
   // letters of the name typed so far in the opening; the rest hold their place, unseen
-  const [typed, setTyped] = useState(0)
+  const [typed, setTyped] = useState(played ? NAME.length : 0)
   // the keyboard is clipped while it opens, then let out so its glow can spill past its edges
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(played)
 
   useEffect(() => {
+    if (played) return
     // with reduced motion the name is just there
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const typeTime = reducedMotion ? 0 : TYPE_DELAY + NAME.length * TYPE_INTERVAL
@@ -49,9 +54,18 @@ export default function SerenityHero() {
       ? [setTimeout(() => setTyped(NAME.length), 0)]
       : [...NAME].map((_, i) => setTimeout(() => setTyped(i + 1), TYPE_DELAY + i * TYPE_INTERVAL))
     timers.push(setTimeout(() => setIntro(false), typeTime + INTRO_HOLD))
-    timers.push(setTimeout(() => setOpened(true), typeTime + INTRO_HOLD + OPEN_TIME))
+    timers.push(
+      setTimeout(
+        () => {
+          setOpened(true)
+          // marked played only once it's all done, so leaving partway through plays it again
+          markPlayed()
+        },
+        typeTime + INTRO_HOLD + OPEN_TIME
+      )
+    )
     return () => timers.forEach(clearTimeout)
-  }, [])
+  }, [played, markPlayed])
 
   useEffect(() => {
     // watches for the name typed on a real keyboard. No letter repeats the word's start, so a wrong
