@@ -1,5 +1,6 @@
 'use client'
 
+import FitWidth from '@/components/FitWidth'
 import {useState} from 'react'
 import {cn} from '@/lib/utils'
 import AlphaKeyboard from '@/components/keyboard/Alphas'
@@ -31,9 +32,9 @@ export default function LayoutPage() {
         <h2 className="text-nushu-yellow pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Layout
         </h2>
-        <div className="h-25 origin-center scale-52 sm:h-50 sm:scale-75 md:h-auto md:origin-[initial] md:scale-100">
+        <FitWidth>
           <AlphaKeyboard />
-        </div>
+        </FitWidth>
 
         <div className="mt-12 flex flex-col items-center justify-center">
           <div className="flex items-center gap-2">

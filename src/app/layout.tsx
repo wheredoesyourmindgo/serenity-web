@@ -132,8 +132,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <AppThemeProvider>
           <TooltipProvider>
             <IntroProvider>
-              <div className="bg-background h-screen overflow-auto">
-                <div className="flex h-screen flex-col">
+              <div className="bg-background h-dvh overflow-x-hidden overflow-y-auto">
+                <div className="flex min-h-full flex-col">
                   <Navbar />
                   <main className="flex w-full flex-1 justify-center">
                     <div className="my-12 block w-full flex-1">{children}</div>

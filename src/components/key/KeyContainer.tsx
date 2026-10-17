@@ -15,18 +15,19 @@ type Props = HTMLAttributes<HTMLDivElement> & {
 export default function KeyContainer({children, keyId, popOverContent, homing, ...rest}: Props) {
   const {className, style, ...r} = rest
   const isTouchDevice = useIsTouchDevice()
-  const [touchOpen, setTouchOpen] = useState(false)
 
   const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
-  const touchOpenProps = isTouchDevice ? {open: touchOpen, onOpenChange: setTouchOpen} : {}
+  // always controlled: touch support is only known after mount, and switching a popover from
+  // uncontrolled to controlled then is an error. Hover drives it through onOpenChange.
+  const [open, setOpen] = useState(false)
   // on touch devices there is no hover, so the key itself toggles the popover
-  const toggleOpen = () => setTouchOpen((o) => !o)
+  const toggleOpen = () => setOpen((o) => !o)
   const touchToggleProps =
     popOverContent && isTouchDevice
       ? {
           role: 'button',
           tabIndex: 0,
-          'aria-expanded': touchOpen,
+          'aria-expanded': open,
           onClick: toggleOpen,
           onKeyDown: (e: KeyboardEvent) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -66,7 +67,7 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   }
 
   return (
-    <HoverCard {...touchOpenProps}>
+    <HoverCard open={open} onOpenChange={setOpen}>
       <HoverCardTrigger delay={0} closeDelay={0} render={trigger} />
       <HoverCardContent
         id={popOverId}

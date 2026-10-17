@@ -1,5 +1,6 @@
 'use client'
 
+import FitWidth from '@/components/FitWidth'
 import {cn} from '@/lib/utils'
 import BaseLyr from '@/components/keyboard/software/BaseLyr'
 import FaIcon from '@/components/FaIcon'
@@ -47,14 +48,16 @@ export default function SoftwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="w-full items-center gap-0">
-          <div className="grid h-[190px] origin-center scale-40 *:col-start-1 *:row-start-1 sm:h-75 sm:scale-60 md:h-auto md:origin-[initial] md:scale-100">
-            <LayerTabsContent value="base">
-              <BaseLyr />
-            </LayerTabsContent>
-            <LayerTabsContent value="fn">
-              <FnLyr />
-            </LayerTabsContent>
-          </div>
+          <FitWidth>
+            <div className="grid *:col-start-1 *:row-start-1">
+              <LayerTabsContent value="base">
+                <BaseLyr />
+              </LayerTabsContent>
+              <LayerTabsContent value="fn">
+                <FnLyr />
+              </LayerTabsContent>
+            </div>
+          </FitWidth>
 
           <div className="bg-card mt-12 max-w-full">
             <LayerTabsList>

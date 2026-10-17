@@ -1,5 +1,6 @@
 'use client'
 
+import FitWidth from '@/components/FitWidth'
 import {useState} from 'react'
 import {cn} from '@/lib/utils'
 import BaseLyr from '@/components/keyboard/firmware/BaseLyr'
@@ -72,35 +73,37 @@ export default function FirmwarePage() {
         </h2>
 
         <Tabs defaultValue="base" className="w-full items-center gap-0">
-          <div className="grid h-40 origin-center scale-47 *:col-start-1 *:row-start-1 sm:h-50 sm:scale-65 md:h-auto md:origin-[initial] md:scale-100">
-            <LayerTabsContent value="base">
-              <BaseLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="mouse">
-              <MouseLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="num-nav">
-              <NumNavLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="action">
-              <ActionLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="hardware">
-              <HardwareLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="symbol">
-              <SymLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="os">
-              <OsLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="function">
-              <FuncLyr layout={layout} />
-            </LayerTabsContent>
-            <LayerTabsContent value="qwerty">
-              <QwertyLyr layout={layout} />
-            </LayerTabsContent>
-          </div>
+          <FitWidth>
+            <div className="grid *:col-start-1 *:row-start-1">
+              <LayerTabsContent value="base">
+                <BaseLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="mouse">
+                <MouseLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="num-nav">
+                <NumNavLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="action">
+                <ActionLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="hardware">
+                <HardwareLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="symbol">
+                <SymLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="os">
+                <OsLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="function">
+                <FuncLyr layout={layout} />
+              </LayerTabsContent>
+              <LayerTabsContent value="qwerty">
+                <QwertyLyr layout={layout} />
+              </LayerTabsContent>
+            </div>
+          </FitWidth>
 
           <div className="bg-card mt-12 max-w-full">
             <LayerTabsList>

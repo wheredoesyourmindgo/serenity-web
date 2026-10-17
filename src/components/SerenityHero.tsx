@@ -2,6 +2,7 @@
 
 import {useEffect, useRef, useState} from 'react'
 import HeatmapAlphas, {type HeatmapControls} from '@/components/keyboard/HeatmapAlphas'
+import FitWidth from '@/components/FitWidth'
 import SerenityDove, {type DoveControls} from '@/components/SerenityDove'
 import SerenitySky from '@/components/SerenitySky'
 import {useIntro} from '@/components/IntroProvider'
@@ -141,13 +142,13 @@ export default function SerenityHero() {
       </h1>
       {/* collapsed during the intro so the name sits centered, then opens and fades in */}
       <div
-        className={`grid transition-[grid-template-rows,opacity] ease-in-out motion-reduce:transition-none ${intro ? 'grid-rows-[0fr] opacity-0' : 'grid-rows-[1fr] opacity-100'}`}
+        className={`grid w-full px-4 transition-[grid-template-rows,opacity] ease-in-out motion-reduce:transition-none ${intro ? 'grid-rows-[0fr] opacity-0' : 'grid-rows-[1fr] opacity-100'}`}
         style={{transitionDuration: `${OPEN_TIME}ms`}}
       >
-        <div className={`min-h-0 ${opened ? '' : 'overflow-hidden'}`}>
-          <div className="mt-12 origin-center scale-53 sm:scale-75 md:scale-100">
+        <div className={`min-h-0 min-w-0 ${opened ? '' : 'overflow-hidden'}`}>
+          <FitWidth className="mt-12">
             <HeatmapAlphas ref={heatmap} />
-          </div>
+          </FitWidth>
         </div>
       </div>
     </>
