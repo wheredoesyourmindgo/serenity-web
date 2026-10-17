@@ -264,7 +264,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}
@@ -274,7 +274,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}
@@ -284,7 +284,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               }
             }}
@@ -407,7 +407,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               keyId: 'right-command-key',
@@ -429,7 +429,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               keyId: 'right-option-key',
@@ -449,7 +449,7 @@ export default function BaseLyr({layout}: BaseLyrProps) {
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
-                transition: 'opacity 160ms ease-in-out',
+                scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
               },
               keyId: 'right-ctrl-key',
