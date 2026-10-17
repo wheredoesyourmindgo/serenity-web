@@ -45,11 +45,15 @@ export default function Navbar() {
           </AnimatePresence>
         </button>
 
-        {/* Wordmark, links home */}
+        {/* Wordmark, links home; on mobile the homepage hero already names the site */}
         <Link
           href="/"
           aria-current={pathname === '/' ? 'page' : undefined}
-          className="font-body text-nushu-yellow mr-3 rounded px-2 py-1 font-features-['ss02'_on] text-lg font-medium italic transition-opacity hover:opacity-80 md:mr-4"
+          onClick={() => setMenuOpen(false)}
+          className={cn(
+            "font-body text-nushu-yellow mr-3 rounded px-2 py-1 font-features-['ss02'_on] text-lg font-medium italic transition-opacity hover:opacity-80 md:mr-4",
+            pathname === '/' && 'hidden md:inline'
+          )}
         >
           Serenity
         </Link>
