@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import FaIcon from '@/components/FaIcon'
 import FingerLoad from '@/components/FingerLoad'
+import {Kbd, PageBody, PageHeader, Section, TextLink} from '@/components/Page'
 
 /*
  * The case for Serenity. Numbers marked "letters" come from English letter frequency (see
@@ -48,14 +48,14 @@ const principles = [
         </p>
         <p>
           So Serenity keeps the ring and pinky fingers working on the home row. Each pinky column
-          holds one common letter (<Key>r</Key> and <Key>i</Key>), and the keys above and below are
-          rarely used: <Key>q</Key>, <Key>x</Key>, <Key>-</Key>, <Key>.</Key>.
+          holds one common letter (<Kbd>r</Kbd> and <Kbd>i</Kbd>), and the keys above and below are
+          rarely used: <Kbd>q</Kbd>, <Kbd>x</Kbd>, <Kbd>-</Kbd>, <Kbd>.</Kbd>.
         </p>
         <p>
-          The ring fingers&apos; top-row keys are <Key>z</Key> and <Key>u</Key>. A top-row reach is
+          The ring fingers&apos; top-row keys are <Kbd>z</Kbd> and <Kbd>u</Kbd>. A top-row reach is
           fine when the word ends there or the next letter is on the other hand, because nothing is
-          pulling against the ring finger. That&apos;s usually what happens after <Key>u</Key>. On
-          QWERTY those keys are <Key>w</Key> and <Key>o</Key>, which come up more than three times
+          pulling against the ring finger. That&apos;s usually what happens after <Kbd>u</Kbd>. On
+          QWERTY those keys are <Kbd>w</Kbd> and <Kbd>o</Kbd>, which come up more than three times
           as often.
         </p>
       </>
@@ -67,8 +67,8 @@ const principles = [
     body: (
       <>
         <p>
-          Every vowel is on the right hand (<Key>e</Key> <Key>a</Key> <Key>i</Key> on the home row,{' '}
-          <Key>o</Key> <Key>u</Key> just above), and the most common consonants are on the left.
+          Every vowel is on the right hand (<Kbd>e</Kbd> <Kbd>a</Kbd> <Kbd>i</Kbd> on the home row,{' '}
+          <Kbd>o</Kbd> <Kbd>u</Kbd> just above), and the most common consonants are on the left.
           English mostly alternates between consonants and vowels, so your hands mostly alternate
           too. While one hand types, the other is already moving to its next key.
         </p>
@@ -88,7 +88,7 @@ const principles = [
         </p>
         <p>
           Flow includes the space bar. With your index finger curled down to the bottom row,
-          especially the inner <Key>b</Key> and <Key>k</Key> keys, your thumb has an awkward press
+          especially the inner <Kbd>b</Kbd> and <Kbd>k</Kbd> keys, your thumb has an awkward press
           on space. So Serenity tries to keep common word endings off those keys, and most words
           finish with your hand ready for the space bar.
         </p>
@@ -102,12 +102,9 @@ const tradeoffs = [
     title: 'Shortcuts move',
     body: (
       <>
-        <Key>z</Key> <Key>x</Key> <Key>c</Key> <Key>v</Key> are no longer in a row. The{' '}
-        <Link href="/firmware" className="text-nushu-blue hover:underline">
-          firmware
-        </Link>{' '}
-        has dedicated Undo, Cut, Copy and Paste keys on its navigation layer, so you rarely need the
-        letter shortcuts.
+        <Kbd>z</Kbd> <Kbd>x</Kbd> <Kbd>c</Kbd> <Kbd>v</Kbd> are no longer in a row. The{' '}
+        <TextLink href="/firmware">firmware</TextLink> has dedicated Undo, Cut, Copy and Paste keys
+        on its navigation layer, so you rarely need the letter shortcuts.
       </>
     )
   },
@@ -115,7 +112,7 @@ const tradeoffs = [
     title: 'Your right middle finger is busy',
     body: (
       <>
-        It handles <Key>e</Key> and <Key>o</Key>, about a fifth of all letters. That&apos;s on
+        It handles <Kbd>e</Kbd> and <Kbd>o</Kbd>, about a fifth of all letters. That&apos;s on
         purpose: the middle finger is the strongest you have, and it&apos;s much better at this than
         a pinky.
       </>
@@ -125,7 +122,7 @@ const tradeoffs = [
     title: 'A few bigrams are still awkward',
     body: (
       <>
-        <Key>sc</Key> and <Key>au</Key>/<Key>ua</Key> are the most common same-finger pairs left.
+        <Kbd>sc</Kbd> and <Kbd>au</Kbd>/<Kbd>ua</Kbd> are the most common same-finger pairs left.
         Each is around a tenth of a percent. Every layout has some; these are Serenity&apos;s.
       </>
     )
@@ -135,85 +132,57 @@ const tradeoffs = [
     body: (
       <>
         It&apos;s not ideal, but it isn&apos;t an accident. After a pinky press, curling the ring
-        and middle fingers down is easier than lifting them up. In <em>world</em>, <Key>r</Key>{' '}
-        <Key>l</Key> <Key>d</Key> rolls in smoothly. On the top row, the same roll would fight the
+        and middle fingers down is easier than lifting them up. In <em>world</em>, <Kbd>r</Kbd>{' '}
+        <Kbd>l</Kbd> <Kbd>d</Kbd> rolls in smoothly. On the top row, the same roll would fight the
         tendons.
       </>
     )
   }
 ]
 
-function Key({children}: {children: React.ReactNode}) {
-  return (
-    <kbd className="bg-nushu-paper-dim text-nushu-ink-deep border-border rounded border px-1.5 py-0.5 text-[0.9em] not-italic">
-      {children}
-    </kbd>
-  )
-}
-
-function Section({children, className}: {children: React.ReactNode; className?: string}) {
-  return (
-    <section
-      className={`bg-card border-border mx-auto mt-12 max-w-225 rounded-xl border p-4 md:p-8 ${className ?? ''}`}
-    >
-      {children}
-    </section>
-  )
-}
-
 export default function WhyPage() {
   return (
-    <div className="container mx-auto px-4 pb-16">
-      <div className="flex flex-col items-center text-center">
-        <h2 className="text-nushu-yellow pt-4 pb-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:pb-6 md:text-6xl">
-          Why Serenity
-        </h2>
-        <p className="text-nushu-ink-strong max-w-175 text-lg md:text-xl">
-          A keyboard layout built around how your hands work.
-        </p>
-        <p className="text-nushu-ink mt-4 max-w-175">
+    <>
+      <PageHeader title="Why Serenity" lede="A keyboard layout built around how your hands work." />
+      <PageBody>
+        <p className="text-nushu-ink text-center leading-relaxed text-balance">
           QWERTY&apos;s arrangement dates back to 1870s typewriters, and nobody designed it around
           your hands. Most alternatives tune for scores on a spreadsheet. Serenity starts with your
           hands: which fingers are strong and which aren&apos;t.
         </p>
-      </div>
 
-      <div className="mx-auto mt-12 grid max-w-225 grid-cols-2 gap-4 md:grid-cols-4">
-        {stats.map((s) => (
-          <div key={s.label} className="bg-card border-border rounded-xl border p-4 text-center">
-            <div className="text-nushu-blue text-3xl font-light md:text-4xl">{s.value}</div>
-            <div className="text-nushu-ink-strong mt-2 text-sm">{s.label}</div>
-            <div className="text-nushu-ink-faint mt-1 text-xs">{s.vs}</div>
-          </div>
-        ))}
-      </div>
-
-      {principles.map((p, i) => (
-        <Section key={p.title}>
-          <h3 className="text-nushu-blue mb-4 flex items-center gap-3 text-2xl font-normal">
-            <FaIcon className={p.icon} color="nushu.ink-faint" />
-            {p.title}
-          </h3>
-          <div className="text-nushu-ink space-y-4 leading-relaxed">{p.body}</div>
-          {i === 1 && (
-            <div className="mt-8">
-              <FingerLoad />
-              <p className="text-nushu-ink-faint mt-2 text-center text-xs">
-                Serenity actually gives the ring and pinky fingers slightly <em>more</em> work than
-                QWERTY does, by moving load off overworked index fingers. The difference is where
-                that work happens.
-              </p>
+        <div className="mt-10 mb-16 grid grid-cols-2 gap-3 md:grid-cols-4">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="bg-card border-border rounded-xl border px-3 py-4 text-center"
+            >
+              <div className="text-nushu-blue text-3xl font-light">{s.value}</div>
+              <div className="text-nushu-ink-strong mt-2 text-xs leading-snug md:text-[13px]">
+                {s.label}
+              </div>
+              <div className="text-nushu-ink-faint mt-1.5 text-[11px]">{s.vs}</div>
             </div>
-          )}
-        </Section>
-      ))}
+          ))}
+        </div>
 
-      <Section>
-        <h3 className="text-nushu-blue mb-4 flex items-center gap-3 text-2xl font-normal">
-          <FaIcon className="fa-regular fa-keyboard" color="nushu.ink-faint" />
-          Any keyboard, best on columns
-        </h3>
-        <div className="text-nushu-ink space-y-4 leading-relaxed">
+        {principles.map((p, i) => (
+          <Section key={p.title} icon={p.icon} title={p.title}>
+            {p.body}
+            {i === 1 && (
+              <figure className="pt-4">
+                <FingerLoad />
+                <figcaption className="text-nushu-ink-faint mx-auto mt-3 max-w-md text-center text-xs leading-relaxed">
+                  Serenity actually gives the ring and pinky fingers slightly <em>more</em> work
+                  than QWERTY does, by moving load off overworked index fingers. The difference is
+                  where that work happens.
+                </figcaption>
+              </figure>
+            )}
+          </Section>
+        ))}
+
+        <Section icon="fa-regular fa-keyboard" title="Any keyboard, best on columns">
           <p>
             Serenity isn&apos;t tied to one board. It&apos;s tuned for ortholinear and
             column-staggered keyboards, where keys sit in straight columns and every finger moves
@@ -221,54 +190,45 @@ export default function WhyPage() {
           </p>
           <p>
             It also works on an ordinary row-staggered keyboard. On a Mac laptop, the{' '}
-            <Link href="/software" className="text-nushu-blue hover:underline">
-              Karabiner config
-            </Link>{' '}
-            gives you Serenity and its layers without new hardware. On a split or ortho board, the{' '}
-            <Link href="/firmware" className="text-nushu-blue hover:underline">
-              QMK firmware
-            </Link>{' '}
-            builds it into the keyboard.
+            <TextLink href="/software">Karabiner config</TextLink> gives you Serenity and its layers
+            without new hardware. On a split or ortho board, the{' '}
+            <TextLink href="/firmware">QMK firmware</TextLink> builds it into the keyboard.
           </p>
-        </div>
-      </Section>
+        </Section>
 
-      <Section>
-        <h3 className="text-nushu-blue mb-6 flex items-center gap-3 text-2xl font-normal">
-          <FaIcon className="fa-regular fa-scale-balanced" color="nushu.ink-faint" />
-          The honest part
-        </h3>
-        <div className="grid gap-6 md:grid-cols-2">
-          {tradeoffs.map((t) => (
-            <div key={t.title}>
-              <h4 className="text-nushu-ink-strong mb-2 font-medium">{t.title}</h4>
-              <p className="text-nushu-ink text-sm leading-relaxed">{t.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+        <Section icon="fa-regular fa-scale-balanced" title="The honest part">
+          <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+            {tradeoffs.map((t) => (
+              <div key={t.title}>
+                <h3 className="text-nushu-ink-deep mb-1.5 font-medium">{t.title}</h3>
+                <p className="text-sm leading-relaxed">{t.body}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
 
-      <div className="mx-auto mt-16 max-w-175 text-center">
-        <p className="text-nushu-ink-strong text-lg">
-          If your hands ache at the end of the day, or you just want a layout that makes sense, give
-          it a try.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          {[
-            {href: '/layout', label: 'See the full stats'},
-            {href: '/firmware', label: 'Get the firmware'},
-            {href: '/software', label: 'Try it on a Mac'}
-          ].map(({href, label}) => (
-            <Link
-              key={href}
-              href={href}
-              className="border-border hover:bg-accent text-nushu-blue rounded-lg border px-4 py-2 text-sm font-medium transition-colors"
-            >
-              {label}
-            </Link>
-          ))}
+        <div className="bg-card border-border mt-16 rounded-xl border px-6 py-8 text-center">
+          <p className="text-nushu-ink-strong text-balance md:text-lg">
+            If your hands ache at the end of the day, or you just want a layout that makes sense,
+            give it a try.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {[
+              {href: '/layout', label: 'See the full stats'},
+              {href: '/firmware', label: 'Get the firmware'},
+              {href: '/software', label: 'Try it on a Mac'}
+            ].map(({href, label}) => (
+              <Link
+                key={href}
+                href={href}
+                className="border-border bg-background hover:bg-accent text-nushu-blue rounded-lg border px-4 py-2 text-sm font-medium transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
+      </PageBody>
+    </>
   )
 }

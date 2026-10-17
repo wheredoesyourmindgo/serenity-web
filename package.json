@@ -21,8 +21,8 @@
     "next-themes": "^0.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "react-syntax-highlighter": "^16.1.2",
-    "shadcn": "^4.21.5"
+    "shadcn": "^4.21.5",
+    "shiki": "^4.5.0"
   },
   "scripts": {
     "preinstall": "npx --yes --loglevel=error only-allow npm",
@@ -55,7 +55,6 @@
     "@types/node": "22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@types/react-syntax-highlighter": "^15.5.13",
     "@vercel/node": "^12.0.3",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.4.1",

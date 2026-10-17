@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import {IntroProvider} from '@/components/IntroProvider'
 import {ThemeProvider as AppThemeProvider} from '@/components/theme-provider'
@@ -136,8 +137,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 <div className="flex min-h-full flex-col">
                   <Navbar />
                   <main className="flex w-full flex-1 justify-center">
-                    <div className="my-12 block w-full flex-1">{children}</div>
+                    <div className="my-8 block w-full flex-1 md:my-12">{children}</div>
                   </main>
+                  <Footer />
                 </div>
               </div>
             </IntroProvider>

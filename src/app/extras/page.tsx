@@ -1,12 +1,9 @@
-'use client'
-
 import FaIcon from '@/components/FaIcon'
-import CopyButton from '@/components/CopyButton'
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {nushuPrism} from '@/lib/nushuPrism'
+import CodeBlock from '@/components/CodeBlock'
+import {PageBody, PageHeader, Section, SubSection} from '@/components/Page'
 
 const USym = ({children, className}: {children: React.ReactNode; className?: string}) => (
-  <span className={`text-nushu-cyan text-[1.1rem] font-medium ${className ?? ''}`}>{children}</span>
+  <span className={`text-nushu-cyan text-[1.1em] font-medium ${className ?? ''}`}>{children}</span>
 )
 
 type VimlessRow = {
@@ -106,7 +103,7 @@ const vimlessRows: VimlessRow[] = [
     action: 'Selection (Visual mode)',
     keys: (
       <>
-        <USym className="text-[1.2rem] font-semibold">⇧</USym> (use other movement shortcuts while
+        <USym className="text-[1.2em] font-semibold">⇧</USym> (use other movement shortcuts while
         holding shift, often in conjunction with arrow keys, to expand or shrink selection)
       </>
     ),
@@ -119,13 +116,13 @@ const vimlessRows: VimlessRow[] = [
     keys: 'Line Select key (Num/Nav layer, long press)',
     vim: 'V'
   },
-  {id: 25, action: 'Indent', keys: <USym className="text-[1.3rem]">⇥</USym>, vim: '>'},
+  {id: 25, action: 'Indent', keys: <USym className="text-[1.3em]">⇥</USym>, vim: '>'},
   {
     id: 26,
     action: 'Un-indent',
     keys: (
       <>
-        <USym className="text-[1.3rem]">⇤</USym>
+        <USym className="text-[1.3em]">⇤</USym>
       </>
     ),
     vim: '<'
@@ -186,197 +183,136 @@ end run
 `
 
   return (
-    <div className="relative container mx-auto px-4">
-      <div className="flex flex-col items-center">
-        <h2 className="text-nushu-yellow pt-4 pb-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8 md:text-6xl">
-          Extras
-        </h2>
-      </div>
+    <>
+      <PageHeader
+        title="Extras"
+        lede="Config for the apps around Serenity, and a guide to Vim-style editing without Vim."
+      />
+      <PageBody>
+        <Section id="config" icon="fa-regular fa-sliders" title="Application config">
+          <SubSection icon="fa-regular fa-ghost" title="Ghostty">
+            <p>
+              Add this to your Ghostty config, at <code>~/.config/ghostty/config</code> by default.
+            </p>
+            <CodeBlock
+              code={ghosttyConfSnippet}
+              language="shellscript"
+              label="~/.config/ghostty/config"
+            />
+          </SubSection>
 
-      <div
-        id="config"
-        className="bg-card border-border mx-auto mt-12 max-w-225 rounded-xl border p-4 md:p-6"
-      >
-        <h4 className="mb-3 text-center text-xl font-normal">Application Config</h4>
+          <SubSection icon="fa-regular fa-terminal" title="iTerm2">
+            <p>
+              Key mappings for moving with the arrow keys and modifiers. Import the preset under{' '}
+              <em>
+                Settings {'→'} Keys {'→'} Key Bindings {'→'} Presets… {'→'} Import…
+              </em>
+            </p>
+            <CodeBlock
+              code={itermConfSnippet}
+              language="json"
+              label="iTerm2 key bindings preset"
+              wrap
+            />
+          </SubSection>
 
-        <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-ghost text-2xl" color="nushu.blue" />
-          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Ghostty</h5>
-        </div>
-        <p className="mt-3 mb-3">
-          Partial config snippet to add to your Ghostty config file{' '}
-          <em>
-            (located at <code>~/.config/ghostty/config</code> by default)
-          </em>
-          .
-        </p>
-        <div className="bg-background relative rounded-lg">
-          <CopyButton className="absolute top-2 right-2" text={ghosttyConfSnippet} />
-          <SyntaxHighlighter
-            language="shell"
-            style={nushuPrism}
-            customStyle={{borderRadius: 8, padding: '1rem'}}
-          >
-            {ghosttyConfSnippet}
-          </SyntaxHighlighter>
-        </div>
+          <SubSection icon="fa-regular fa-hammer" title="Hammerspoon">
+            <p>
+              Lets Karabiner-Elements know when the screen is locked. Add it to your Hammerspoon
+              config, at <code>~/.hammerspoon/init.lua</code> by default.
+            </p>
+            <CodeBlock code={hammerspoonSnippet} language="lua" label="~/.hammerspoon/init.lua" />
+          </SubSection>
 
-        <hr className="border-border mx-auto my-5 w-1/2" />
+          <SubSection icon="fa-regular fa-robot" title="Automator">
+            <p>
+              An AppleScript Quick Action that toggles Dark Mode. Create it in Automator, then give
+              it a shortcut in System Settings: ctrl+opt+cmd+D matches the Serenity QMK Hardware
+              layer.
+            </p>
+            <CodeBlock code={toggleDarkModeSnippet} language="applescript" label="Quick Action" />
+            <p>
+              Or make it an Apple Shortcut, without any AppleScript: in the Shortcuts app, create a
+              shortcut with the <em>Set Appearance</em> action set to toggle, then give it the same
+              keyboard shortcut in the shortcut&apos;s details.
+            </p>
+          </SubSection>
+        </Section>
 
-        <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-terminal text-[22px]" color="nushu.blue" />
-          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">iTerm2</h5>
-        </div>
-        <p className="mt-3 mb-3">
-          These custom key mappings will allow movements using arrow keys in conjunction with
-          modifier keys. The following JSON can be added to your iTerm2 key bindings under{' '}
-          <em>
-            Settings {'→'} Keys {'→'} Key Bindings {'→'} Presets... {'→'} Import...
-          </em>
-        </p>
-        <div className="bg-background relative rounded-lg">
-          <CopyButton className="absolute top-2 right-2" text={itermConfSnippet} />
-          <SyntaxHighlighter
-            language="json"
-            style={nushuPrism}
-            customStyle={{borderRadius: 8, padding: '1rem'}}
-          >
-            {itermConfSnippet}
-          </SyntaxHighlighter>
-        </div>
-
-        <hr className="border-border mx-auto my-5 w-1/2" />
-
-        <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-hammer text-2xl" color="nushu.blue" />
-          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Hammerspoon</h5>
-        </div>
-        <p className="mt-3 mb-3">
-          Partial config snippet to add to your Hammerspoon initialization file{' '}
-          <em>
-            (located at <code>~/.hammerspoon/init.lua</code> by default)
-          </em>
-          . Used in conjunction with Karabiner-Elements to detect lock screen.
-        </p>
-        <div className="bg-background relative rounded-lg">
-          <CopyButton className="absolute top-2 right-2" text={hammerspoonSnippet} />
-          <SyntaxHighlighter
-            language="lua"
-            style={nushuPrism}
-            customStyle={{borderRadius: 8, padding: '1rem'}}
-          >
-            {hammerspoonSnippet}
-          </SyntaxHighlighter>
-        </div>
-
-        <hr className="border-border mx-auto my-5 w-1/2" />
-
-        <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-robot text-2xl" color="nushu.blue" />
-          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Automator</h5>
-        </div>
-        <p className="mt-3 mb-3">
-          Use the following AppleScript Quick Action to toggle Dark Mode on macOS; created via
-          Automator. This service can be assigned a keyboard shortcut (ctrl+opt+cmd+D for Serenity
-          QMK Hardware Layer) in System Settings.
-        </p>
-        <div className="bg-background relative rounded-lg">
-          <CopyButton className="absolute top-2 right-2" text={toggleDarkModeSnippet} />
-          <SyntaxHighlighter
-            language="applescript"
-            style={nushuPrism}
-            customStyle={{borderRadius: 8, padding: '1rem'}}
-          >
-            {toggleDarkModeSnippet}
-          </SyntaxHighlighter>
-        </div>
-      </div>
-
-      <div
-        id="reference"
-        className="bg-card border-border mx-auto mt-12 max-w-225 rounded-xl border p-4 md:p-6"
-      >
-        <h4 className="mb-3 text-center text-xl font-normal">Reference</h4>
-
-        <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-ban-smoking text-[27px]" color="nushu.blue" />
-          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Vim-less</h5>
-        </div>
-        <p className="mt-3 mb-3">
-          Thinking of quitting Vim? Here is an indicative reference for performing common Vim-like{' '}
-          <span className="whitespace-nowrap">motions/commands</span> by effortlessly using standard
-          keybindings (primarily made possible with QMK due to Mod and Arrow key availability on the
-          home row). These shortcuts are application-agnostic and eliminate the need for a modal
-          editor for most tasks, or, at a minimum reduce the reliance of using Normal Mode, allowing
-          you to remain in Insert Mode more often than not.
-        </p>
-        <div className="bg-background relative overflow-x-auto rounded-lg">
-          <table className="w-full border-collapse text-sm" aria-label="vimless reference table">
-            <thead>
-              <tr className="border-border border-b">
-                <th className="px-3 py-2 text-left font-semibold italic">Do the following</th>
-                <th className="px-3 py-2 text-left font-semibold italic">By pressing</th>
-                <th className="px-3 py-2 text-left font-semibold italic">
-                  Which is similar to this in Vim
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+        <Section id="reference" icon="fa-regular fa-ban-smoking" title="Vim-less">
+          <p>
+            Thinking of quitting Vim? These are the common Vim motions and commands done with
+            standard shortcuts, which work in any app. They&apos;re comfortable on Serenity because
+            the firmware puts modifiers and arrows on the home row. They won&apos;t replace a modal
+            editor for everything, but they keep you in Insert mode far more often.
+          </p>
+          {/* rows rather than a table: on a phone the keys drop under the action, beside the Vim
+              equivalent, instead of squeezing three columns into the width */}
+          <div className="border-border bg-background overflow-hidden rounded-lg border text-[13px] md:text-sm">
+            <div
+              aria-hidden="true"
+              className="border-border bg-card text-nushu-ink-muted hidden grid-cols-[12rem_1fr_6.5rem] gap-x-4 border-b px-4 py-2 text-xs md:grid"
+            >
+              <span>To do this</span>
+              <span>Press</span>
+              <span>Vim</span>
+            </div>
+            <dl>
               {vimlessRows.map((row) => (
-                <tr key={row.id} className="border-border border-b last:border-b-0">
-                  <td className="px-3 py-2">{row.action}</td>
-                  <td className="px-3 py-2">{row.keys}</td>
-                  <td className="px-3 py-2">{row.vim}</td>
-                </tr>
+                <div
+                  key={row.id}
+                  className="border-border grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b px-4 py-2.5 last:border-b-0 md:grid-cols-[12rem_1fr_6.5rem]"
+                >
+                  <dt className="text-nushu-ink-deep">{row.action}</dt>
+                  <dd className="text-nushu-ink-strong col-start-1 md:col-start-auto">
+                    {row.keys}
+                  </dd>
+                  <dd className="text-nushu-magenta col-start-2 row-start-1 text-right whitespace-nowrap md:col-start-auto md:row-start-auto md:text-left">
+                    <span className="sr-only">Vim: </span>
+                    {row.vim}
+                  </dd>
+                </div>
               ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-6 mb-3">
-          Some of the other commands and movements not covered by the basic movements can often be
-          implemented in modern text editors via extensions or built-in functionality. Here are a
-          couple of VSCode Extensions I maintain to fill in some functionality gaps so to speak.
-        </p>
-        <div className="mb-4 ml-2">
-          <p className="mb-2 text-sm font-semibold">VSCode Extensions</p>
-          <div className="flex flex-col gap-3">
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary pl-8 text-base font-medium hover:underline"
-            >
-              Beam Me Up, Scotty!{' '}
-              <span className="font-normal">:: Jump navigation inspired by clever-f</span>
-            </a>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-relativity"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary pl-8 text-base font-medium hover:underline"
-            >
-              Relativity_{' '}
-              <span className="font-normal">:: Jump lines by number relative to current line</span>
-            </a>
+            </dl>
           </div>
-        </div>
-      </div>
-
-      <div
-        id="contact"
-        className="bg-card border-border mx-auto mt-12 mb-8 max-w-225 rounded-xl border p-4 md:p-6"
-      >
-        <h4 className="mb-3 text-center text-xl font-normal">Get In Touch</h4>
-        <p className="mt-4 text-center">
-          Have questions, comments, or feedback? Feel free to reach out anytime at{' '}
-          <a
-            href="mailto:majority-myth-cube@duck.com"
-            className="text-primary whitespace-nowrap hover:underline"
-          >
-            majority-myth-cube@duck.com
-          </a>
-        </p>
-      </div>
-    </div>
+          <p>
+            Most of what&apos;s left can be done in a modern editor with extensions or built-in
+            commands. These are two VS Code extensions I maintain to fill the gaps.
+          </p>
+          <ul className="space-y-3">
+            {[
+              {
+                href: 'https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-scotty',
+                name: 'Beam Me Up, Scotty!',
+                desc: 'Jump navigation inspired by clever-f'
+              },
+              {
+                href: 'https://marketplace.visualstudio.com/items?itemName=wheredoesyourmindgo.vscode-relativity',
+                name: 'Relativity_',
+                desc: 'Jump lines by number relative to the current line'
+              }
+            ].map(({href, name, desc}) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-border hover:bg-accent/60 group flex items-center justify-between gap-4 rounded-lg border px-4 py-3 transition-colors"
+                >
+                  <span>
+                    <span className="text-nushu-blue block font-medium">{name}</span>
+                    <span className="text-nushu-ink-muted block text-sm">{desc}</span>
+                  </span>
+                  <FaIcon
+                    className="fa-regular fa-arrow-up-right text-nushu-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    color="nushu.ink-faint"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      </PageBody>
+    </>
   )
 }

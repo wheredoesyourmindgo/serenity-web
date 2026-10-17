@@ -8,6 +8,8 @@
   --font-sans: var(--font-body);
   --font-heading: var(--font-body);
   --font-body: var(--font-body);
+  /* the whole site is Maple Mono, code included */
+  --font-mono: var(--font-body);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -85,16 +87,26 @@
   --nushu-cyan: #1b7c83;
   --nushu-green: #1a7f37;
 
-  /* Token colors from the theme, used by code blocks */
-  --syntax-foreground: #2b2822;
-  --syntax-comment: #1a7f37;
-  --syntax-keyword: #99286e;
-  --syntax-function: #6639ba;
-  --syntax-constant: #0550ae;
-  --syntax-string: #0a3069;
-  --syntax-tag: #633c01;
-  --syntax-variable: #635f54;
-  --syntax-deleted: #82071e;
+  /*
+   * Code panels (CodeBlock.tsx, the analyzer output on /layout): a card-colored header bar over
+   * the code, which sits half a step below the page. Dark mode takes a full step (see .dark),
+   * since a step reads stronger on a light page. Token colors are Nushu Light's; Shiki reads them
+   * through the --shiki-* variables below.
+   */
+  --code-background: color-mix(in srgb, var(--background) 50%, var(--card));
+  --code-bar: var(--card);
+  --code-border: var(--border);
+  --code-hover: var(--accent);
+  --code-foreground: #2b2822;
+  --code-muted: var(--nushu-ink-muted);
+  --code-syntax-comment: #1a7f37;
+  --code-syntax-keyword: #99286e;
+  --code-syntax-function: #6639ba;
+  --code-syntax-constant: #0550ae;
+  --code-syntax-string: #0a3069;
+  --code-syntax-tag: #633c01;
+  --code-syntax-variable: #635f54;
+  --code-syntax-deleted: #82071e;
   --syntax-selection: #add6ff;
 
   --background: var(--nushu-paper);
@@ -163,6 +175,24 @@
     border-color 150ms ease;
 }
 
+:root {
+  /* Shiki's css-variables theme, pointed at the code panel colors */
+  --shiki-foreground: var(--code-foreground);
+  --shiki-background: transparent;
+  --shiki-token-comment: var(--code-syntax-comment);
+  --shiki-token-keyword: var(--code-syntax-keyword);
+  --shiki-token-function: var(--code-syntax-function);
+  --shiki-token-constant: var(--code-syntax-constant);
+  --shiki-token-string: var(--code-syntax-string);
+  --shiki-token-string-expression: var(--code-syntax-string);
+  --shiki-token-parameter: var(--code-syntax-variable);
+  --shiki-token-punctuation: var(--code-foreground);
+  --shiki-token-link: var(--code-syntax-constant);
+  --shiki-token-inserted: var(--code-syntax-comment);
+  --shiki-token-deleted: var(--code-syntax-deleted);
+  --shiki-token-changed: var(--code-syntax-tag);
+}
+
 .dark {
   /* Nushu Dark */
   --nushu-paper: #25211d;
@@ -182,15 +212,17 @@
   --nushu-cyan: #39c5cf;
   --nushu-green: #3fb950;
 
-  --syntax-foreground: #d7cfc7;
-  --syntax-comment: #2ea043;
-  --syntax-keyword: #db61a2;
-  --syntax-function: #bc8cff;
-  --syntax-constant: #79c0ff;
-  --syntax-string: #a5d6ff;
-  --syntax-tag: #e3b341;
-  --syntax-variable: #c1b7ae;
-  --syntax-deleted: #ffa198;
+  /* Nushu Dark's token colors; the code sits a full step lighter than the page */
+  --code-background: var(--muted);
+  --code-foreground: #d7cfc7;
+  --code-syntax-comment: #2ea043;
+  --code-syntax-keyword: #db61a2;
+  --code-syntax-function: #bc8cff;
+  --code-syntax-constant: #79c0ff;
+  --code-syntax-string: #a5d6ff;
+  --code-syntax-tag: #e3b341;
+  --code-syntax-variable: #c1b7ae;
+  --code-syntax-deleted: #ffa198;
   --syntax-selection: #264f78;
 
   --primary: #58a6ff;
@@ -242,6 +274,13 @@
 
   body {
     @apply bg-background text-foreground max-w-screen overflow-x-hidden font-sans antialiased;
+    /* monospace runs wide, so phones get a size down to keep lines a readable length */
+    @apply text-[0.9375rem] md:text-base;
+  }
+
+  /* inline code in running text; code blocks style their own */
+  :not(pre) > code {
+    @apply bg-nushu-paper-dim text-nushu-ink-deep border-border rounded border px-1 py-px text-[0.875em] break-words;
   }
 
   h1 {
