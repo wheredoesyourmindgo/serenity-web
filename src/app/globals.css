@@ -142,6 +142,13 @@
   --key-shadow-hover:
     inset 0 -2px 0 var(--key-lip), 0 2px 2px rgb(43 40 34 / 0.07), 0 6px 12px rgb(43 40 34 / 0.08);
   --key-homing: var(--nushu-ink-faint);
+
+  /* Homepage heatmap, coolest to hottest: Nushu keyword magenta into function violet.
+     Multiplied into the paper in light mode */
+  --heat-0: color-mix(in oklab, var(--nushu-magenta) 22%, var(--nushu-paper));
+  --heat-1: color-mix(in oklab, var(--nushu-magenta) 55%, var(--nushu-paper));
+  --heat-2: var(--nushu-magenta);
+  --heat-3: var(--nushu-violet);
 }
 
 .dark {
@@ -186,6 +193,12 @@
   --key-border: color-mix(in srgb, var(--nushu-ink-faint) 30%, var(--nushu-paper));
   --key-border-hover: color-mix(in srgb, var(--nushu-ink-faint) 60%, var(--nushu-paper));
   --key-lip: #181512;
+
+  /* Screened over the earth background in dark mode, so the hottest keys glow lavender */
+  --heat-0: color-mix(in oklab, var(--nushu-magenta) 35%, var(--nushu-paper));
+  --heat-1: var(--nushu-magenta);
+  --heat-2: var(--nushu-violet);
+  --heat-3: color-mix(in oklab, var(--nushu-violet) 60%, #ffffff);
   --key-shadow:
     inset 0 1px 0 rgb(255 248 240 / 0.05), inset 0 -2px 0 var(--key-lip),
     0 1px 2px rgb(0 0 0 / 0.3), 0 3px 8px rgb(0 0 0 / 0.2);

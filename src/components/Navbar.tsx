@@ -22,26 +22,10 @@ export default function Navbar() {
   return (
     <header className="bg-card text-nushu-ink-strong border-border relative z-10 border-b">
       <div className="flex h-12 items-center px-4">
-        {/* Desktop nav links */}
-        <div className="hidden items-center md:flex">
-          {navLinks.map(({href, label}) => (
-            <Link
-              key={href}
-              href={href}
-              className={cn(
-                'hover:bg-accent hover:text-nushu-ink-deep rounded px-3 py-1.5 text-sm font-medium transition-colors',
-                pathname === href && 'bg-accent/60 text-nushu-blue'
-              )}
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="hover:bg-accent hover:text-nushu-ink-deep rounded p-1.5 transition-colors md:hidden"
+          className="hover:bg-accent hover:text-nushu-ink-deep mr-1 rounded p-1.5 transition-colors md:hidden"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen ? 'true' : 'false'}
@@ -59,6 +43,31 @@ export default function Navbar() {
             </motion.span>
           </AnimatePresence>
         </button>
+
+        {/* Wordmark, links home */}
+        <Link
+          href="/"
+          aria-current={pathname === '/' ? 'page' : undefined}
+          className="font-body text-nushu-yellow mr-3 rounded px-2 py-1 font-features-['ss02'_on] text-lg font-medium italic transition-opacity hover:opacity-80 md:mr-4"
+        >
+          Serenity
+        </Link>
+
+        {/* Desktop nav links */}
+        <div className="hidden items-center md:flex">
+          {navLinks.map(({href, label}) => (
+            <Link
+              key={href}
+              href={href}
+              className={cn(
+                'hover:bg-accent hover:text-nushu-ink-deep rounded px-3 py-1.5 text-sm font-medium transition-colors',
+                pathname === href && 'bg-accent/60 text-nushu-blue'
+              )}
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
 
         <div className="flex-1" />
         <div className="shrink-0">

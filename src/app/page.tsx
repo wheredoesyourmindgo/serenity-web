@@ -1,4 +1,4 @@
-import AlphaKeyboard from '@/components/keyboard/Alphas'
+import HeatmapAlphas from '@/components/keyboard/HeatmapAlphas'
 
 export default function IndexPage() {
   return (
@@ -7,7 +7,7 @@ export default function IndexPage() {
         Serenity
       </h1>
       <div className="mt-12 origin-center scale-53 sm:scale-75 md:scale-100">
-        <AlphaKeyboard />
+        <HeatmapAlphas />
       </div>
     </div>
   )
