@@ -42,8 +42,10 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
         // keycap face, edge, lip and shadow come from the --key-* tokens in globals.css
         'relative flex h-[55px] w-[55px] items-center justify-center rounded-md border p-2',
         'border-(--key-border) bg-(--key-face) shadow-(--key-shadow)',
+        // layout moves (Corne split, fades) and hover lift share one transition list
+        '[transition:var(--key-layout-transition)]',
         popOverContent &&
-          'cursor-pointer transition-[translate,box-shadow,border-color] duration-150 hover:border-(--key-border-hover) hover:shadow-(--key-shadow-hover) motion-safe:hover:-translate-y-px',
+          'cursor-pointer hover:border-(--key-border-hover) hover:shadow-(--key-shadow-hover) motion-safe:hover:-translate-y-px',
         // homing keys get a small bump along the bottom, like the nubs on F and J
         homing &&
           'after:absolute after:bottom-[7px] after:left-1/2 after:h-[2px] after:w-3 after:-translate-x-1/2 after:rounded-full after:bg-(--key-homing)',
