@@ -9,6 +9,7 @@ import {IconMenu2, IconX} from '@tabler/icons-react'
 import {AnimatePresence, motion} from 'motion/react'
 
 const navLinks = [
+  {href: '/why', label: 'Why'},
   {href: '/alphas', label: 'Alphas'},
   {href: '/firmware', label: 'Firmware'},
   {href: '/software', label: 'Software'},
