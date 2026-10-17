@@ -42,7 +42,7 @@ export default function SoftwarePage() {
         <SerenityKarabinerButton />
       </div>
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
+        <h2 className="text-nushu-yellow pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Software
         </h2>
 

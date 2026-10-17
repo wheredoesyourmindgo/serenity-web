@@ -28,7 +28,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className="fa-solid fa-circle text-[22px] opacity-60"
-            color="solarized.red"
+            color="nushu.red"
             KeyContainerProps={{
               keyId: 'os-close-key',
               popOverContent: (
@@ -41,13 +41,13 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             <div className="flex h-full w-full items-center justify-center">
               <FaIcon
                 className="fa-solid fa-xmark translate-y-[-2px] text-[13px]"
-                color="solarized.base03"
+                color="nushu.ink-deepest"
               />
             </div>
           </KeyIcon>
           <KeyIcon
             className="fa-solid fa-circle text-[22px] opacity-60"
-            color="solarized.yellow"
+            color="nushu.yellow"
             KeyContainerProps={{
               keyId: 'os-minimize-key',
               popOverContent: (
@@ -60,13 +60,13 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             <div className="flex h-full w-full items-center justify-center">
               <FaIcon
                 className="fa-solid fa-subtract translate-y-[-2px] text-[13px]"
-                color="solarized.base03"
+                color="nushu.ink-deepest"
               />
             </div>
           </KeyIcon>
           <KeyIcon
             className="fa-solid fa-circle text-[22px] opacity-60"
-            color="solarized.green"
+            color="nushu.green"
             KeyContainerProps={{
               keyId: 'os-fullscreen-key',
               popOverContent: (
@@ -80,7 +80,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               <FaIcon
                 rotation={135}
                 className="fa-solid fa-sort translate-y-[-2px] text-[13px]"
-                color="solarized.base03"
+                color="nushu.ink-deepest"
               />
             </div>
           </KeyIcon>
@@ -284,7 +284,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             <div className="flex h-full w-full items-center justify-center">
               <FaIcon
                 className="fa-solid fa-arrow-right-long translate-y-[-6px] text-[14px]"
-                color="solarized.base00"
+                color="nushu.ink"
               />
             </div>
           </KeyIcon>

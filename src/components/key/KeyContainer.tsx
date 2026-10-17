@@ -1,10 +1,9 @@
 'use client'
 
-import type {CSSProperties, HTMLAttributes, KeyboardEvent, ReactNode} from 'react'
+import type {HTMLAttributes, KeyboardEvent, ReactNode} from 'react'
 import {useState} from 'react'
 import {HoverCard, HoverCardContent, HoverCardTrigger} from '@/components/ui/hover-card'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
-import {useTheme} from 'next-themes'
 import {cn} from '@/lib/utils'
 
 type Props = HTMLAttributes<HTMLDivElement> & {
@@ -15,23 +14,9 @@ type Props = HTMLAttributes<HTMLDivElement> & {
 
 export default function KeyContainer({children, keyId, popOverContent, homing, ...rest}: Props) {
   const {className, style, ...r} = rest
-  const {resolvedTheme} = useTheme()
-  const darkMode = resolvedTheme === 'dark'
   const isTouchDevice = useIsTouchDevice()
   const [touchOpen, setTouchOpen] = useState(false)
 
-  const containerStyle: CSSProperties = {
-    borderColor: 'color-mix(in srgb, var(--solarized-base1) 40%, transparent)',
-    // https://getcssscan.com/css-box-shadow-examples #14 edit
-    boxShadow: darkMode
-      ? 'rgba(205, 205, 51, 0.05) 0px 50px 100px -20px, rgba(255, 255, 255, 0.1) 0px 30px 60px -30px, rgba(245, 218, 162, 0.1) 0px -2px 6px 0px inset'
-      : 'rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.1) 0px -2px 6px 0px inset',
-    ...(homing && {
-      background: `radial-gradient(circle farthest-side, color-mix(in srgb, var(--solarized-base0) 20%, transparent), var(--background))`,
-      backgroundRepeat: 'no-repeat'
-    }),
-    ...style
-  }
   const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
   const touchOpenProps = isTouchDevice ? {open: touchOpen, onOpenChange: setTouchOpen} : {}
   // on touch devices there is no hover, so the key itself toggles the popover
@@ -54,11 +39,17 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   const trigger = (
     <div
       className={cn(
-        'relative flex h-[55px] w-[55px] items-center justify-center rounded border p-2',
-        popOverContent && 'cursor-pointer',
+        // keycap face, edge, lip and shadow come from the --key-* tokens in globals.css
+        'relative flex h-[55px] w-[55px] items-center justify-center rounded-md border p-2',
+        'border-(--key-border) bg-(--key-face) shadow-(--key-shadow)',
+        popOverContent &&
+          'cursor-pointer transition-[translate,box-shadow,border-color] duration-150 hover:border-(--key-border-hover) hover:shadow-(--key-shadow-hover) motion-safe:hover:-translate-y-px',
+        // homing keys get a small bump along the bottom, like the nubs on F and J
+        homing &&
+          'after:absolute after:bottom-[7px] after:left-1/2 after:h-[2px] after:w-3 after:-translate-x-1/2 after:rounded-full after:bg-(--key-homing)',
         className
       )}
-      style={containerStyle}
+      style={style}
       aria-describedby={popOverContent ? popOverId : undefined}
       {...touchToggleProps}
       {...r}

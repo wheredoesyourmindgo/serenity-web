@@ -13,7 +13,7 @@ export default function ToggleDarkModeBtn() {
   const ThemeIcon = isDark ? IconMoon : IconSun
 
   const control = (
-    <div className="flex items-center gap-2 text-white/85 dark:text-white/65">
+    <div className="text-nushu-ink-muted flex items-center gap-2">
       <ThemeIcon className="size-4 shrink-0" stroke={1.9} />
       <Switch
         checked={isDark}
@@ -22,7 +22,7 @@ export default function ToggleDarkModeBtn() {
           setTheme(next === systemTheme ? 'system' : next)
         }}
         aria-label="Dark mode"
-        className="border-white/20 backdrop-blur-sm data-checked:bg-black/30 data-unchecked:bg-white/12 dark:border-black/15 dark:data-checked:bg-black/35 dark:data-unchecked:bg-white/10"
+        className="data-checked:bg-nushu-ink-muted data-unchecked:bg-nushu-ink-muted dark:data-unchecked:bg-nushu-ink-muted"
       />
     </div>
   )
