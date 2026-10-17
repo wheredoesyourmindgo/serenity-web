@@ -107,7 +107,7 @@ const SPELL_HOLD = 1600
 const SPELL_STILL_TIME = 3000
 // heat held on a key while its letter in the wordmark is hovered
 const PIN_HEAT = 0.8
-const NOTE = 'never leaving home, hand in hand'
+const NOTE = "let's stay home, hand in hand"
 const SVG_NS = 'http://www.w3.org/2000/svg'
 
 const VERTEX_SHADER = `
