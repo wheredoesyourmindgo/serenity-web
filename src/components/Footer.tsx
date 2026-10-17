@@ -20,9 +20,10 @@ export default function Footer() {
           Questions or feedback?{' '}
           <a
             href="mailto:majority-myth-cube@duck.com"
+            title="majority-myth-cube@duck.com"
             className="text-nushu-blue whitespace-nowrap hover:underline"
           >
-            majority-myth-cube@duck.com
+            Send an email
           </a>
         </p>
         <nav aria-label="Source code" className="flex gap-4">
