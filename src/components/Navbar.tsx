@@ -10,10 +10,10 @@ import {AnimatePresence, motion} from 'motion/react'
 
 const navLinks = [
   {href: '/why', label: 'Why'},
-  {href: '/alphas', label: 'Alphas'},
+  {href: '/layout', label: 'Layout'},
   {href: '/firmware', label: 'Firmware'},
   {href: '/software', label: 'Software'},
-  {href: '/misc', label: 'Misc'}
+  {href: '/extras', label: 'Extras'}
 ]
 
 export default function Navbar() {

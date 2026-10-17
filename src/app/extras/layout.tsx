@@ -1,20 +1,20 @@
 import {Metadata} from 'next'
 
 export const metadata: Metadata = {
-  title: 'Miscellaneous',
+  title: 'Extras',
   description:
     'Application configs for Ghostty, iTerm2, Hammerspoon, and Automator, plus a Vim-less keyboard shortcut reference guide for the Serenity keyboard layout.',
   openGraph: {
-    title: 'Miscellaneous | Serenity Keyboard Layout',
+    title: 'Extras | Serenity Keyboard Layout',
     description:
       'Application configs for Ghostty, iTerm2, Hammerspoon, and Automator, plus a Vim-less keyboard shortcut reference guide for the Serenity keyboard layout.',
-    url: 'https://www.serenity-layout.fyi/misc'
+    url: 'https://www.serenity-layout.fyi/extras'
   },
   alternates: {
-    canonical: 'https://www.serenity-layout.fyi/misc'
+    canonical: 'https://www.serenity-layout.fyi/extras'
   }
 }
 
-export default function MiscLayout({children}: {children: React.ReactNode}) {
+export default function ExtrasLayout({children}: {children: React.ReactNode}) {
   return children
 }
