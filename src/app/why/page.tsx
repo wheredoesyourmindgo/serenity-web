@@ -4,7 +4,7 @@ import FingerLoad from '@/components/FingerLoad'
 
 /*
  * The case for Serenity. Numbers marked "letters" come from English letter frequency (see
- * FingerLoad.tsx); bigram and trigram numbers come from the analyzer runs on /alphas.
+ * FingerLoad.tsx); bigram and trigram numbers come from the analyzer runs on /layout.
  */
 
 const stats = [
@@ -255,7 +255,7 @@ export default function WhyPage() {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           {[
-            {href: '/alphas', label: 'See the full stats'},
+            {href: '/layout', label: 'See the full stats'},
             {href: '/firmware', label: 'Get the firmware'},
             {href: '/software', label: 'Try it on a Mac'}
           ].map(({href, label}) => (

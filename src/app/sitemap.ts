@@ -17,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5
     },
     {
-      url: `${baseUrl}/alphas`,
+      url: `${baseUrl}/layout`,
       lastModified: new Date().toJSON(),
       changeFrequency: 'weekly',
       priority: 0.5
@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5
     },
     {
-      url: `${baseUrl}/misc`,
+      url: `${baseUrl}/extras`,
       lastModified: new Date().toJSON(),
       changeFrequency: 'weekly',
       priority: 0.5

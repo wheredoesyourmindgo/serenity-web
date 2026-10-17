@@ -132,7 +132,7 @@ const vimlessRows: VimlessRow[] = [
   }
 ]
 
-export default function ConfigPage() {
+export default function ExtrasPage() {
   const ghosttyConfSnippet = `
 # sends ESC d, which Zsh/Bash typically interpret as kill-word (delete next word).
 keybind = alt+delete=esc:d
@@ -189,7 +189,7 @@ end run
     <div className="relative container mx-auto px-4">
       <div className="flex flex-col items-center">
         <h2 className="text-nushu-yellow pt-4 pb-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8 md:text-6xl">
-          Miscellaneous
+          Extras
         </h2>
       </div>
 

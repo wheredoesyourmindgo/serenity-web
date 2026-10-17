@@ -16,7 +16,7 @@ const statTabs: {value: Show; label: string}[] = [
   {value: 'colemakmods', label: 'Keyboard Layout Analyzer [SP]'}
 ]
 
-export default function AlphasPage() {
+export default function LayoutPage() {
   const [show, setShow] = useState<Show>('genkey')
 
   const handleShowChange = (newShow: string) => {
@@ -29,7 +29,7 @@ export default function AlphasPage() {
     <div className="container mx-auto px-4">
       <div className="flex flex-col items-center">
         <h2 className="text-nushu-yellow pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
-          Alphas
+          Layout
         </h2>
         <div className="h-25 origin-center scale-52 sm:h-50 sm:scale-75 md:h-auto md:origin-[initial] md:scale-100">
           <AlphaKeyboard />
