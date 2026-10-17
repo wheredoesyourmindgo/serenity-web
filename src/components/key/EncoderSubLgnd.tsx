@@ -11,7 +11,7 @@ export default function EncoderSubLgnd({className, iconClassName, ...rest}: Prop
     <span className={cn('absolute top-[6px] left-[7px] z-0', className)}>
       <FaIcon
         className={cn('fa-regular fa-circle-dashed text-[40px] opacity-50', iconClassName)}
-        color="solarized.base1"
+        color="nushu.ink-faint"
         {...rest}
       />
     </span>

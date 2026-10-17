@@ -9,31 +9,31 @@ export default function QmkLegend() {
           {[
             {
               icon: 'fa-duotone fa-swatchbook',
-              color: 'solarized.violet',
+              color: 'nushu.violet',
               label: 'Custom Shift Key'
             },
             {
               icon: 'fa-duotone fa-swatchbook',
-              color: 'solarized.cyan',
+              color: 'nushu.cyan',
               label: 'Stackable One-shot Mod'
             },
             {
               icon: 'fa-regular fa-asterisk',
-              color: 'solarized.red',
+              color: 'nushu.red',
               label: 'Special (see tooltip)'
             },
-            {icon: 'fa-regular fa-layer-group', color: 'solarized.green', label: 'Layer Tap'},
-            {icon: 'fa-regular fa-command', color: 'solarized.yellow', label: 'Mod Tap'},
-            {icon: 'fa-regular fa-ellipsis', color: 'solarized.orange', label: 'Tap vs. Hold'},
+            {icon: 'fa-regular fa-layer-group', color: 'nushu.green', label: 'Layer Tap'},
+            {icon: 'fa-regular fa-command', color: 'nushu.yellow', label: 'Mod Tap'},
+            {icon: 'fa-regular fa-ellipsis', color: 'nushu.orange', label: 'Tap vs. Hold'},
             {
               icon: 'fa-regular fa-angles-down',
-              color: 'solarized.orange',
+              color: 'nushu.orange',
               label: 'Auto-repeat Enabled'
             },
-            {icon: 'fa-regular fa-browser', color: 'solarized.blue', label: 'Application Shortcut'},
+            {icon: 'fa-regular fa-browser', color: 'nushu.blue', label: 'Application Shortcut'},
             {
               icon: 'fa-regular fa-wrench-simple',
-              color: 'solarized.magenta',
+              color: 'nushu.magenta',
               label: 'Requires OS Configuration'
             }
           ].map(({icon, color, label}) => (

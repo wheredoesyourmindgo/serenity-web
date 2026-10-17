@@ -8,7 +8,7 @@ export default function TapForceHoldSubIcn({className, ...rest}: Props) {
     <span className="absolute top-[-6px] left-1/2 -translate-x-1/2">
       <FaIcon
         className={cn('fa-regular fa-angles-down text-[10px]', className)}
-        color="solarized.orange"
+        color="nushu.orange"
         {...rest}
       />
     </span>

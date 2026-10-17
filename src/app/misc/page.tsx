@@ -1,16 +1,12 @@
 'use client'
 
 import FaIcon from '@/components/FaIcon'
-import {solarized} from '@/lib/solarizedPalette'
 import CopyButton from '@/components/CopyButton'
-import {useTheme} from 'next-themes'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {solarizedlight, solarizedDarkAtom} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import {nushuPrism} from '@/lib/nushuPrism'
 
 const USym = ({children, className}: {children: React.ReactNode; className?: string}) => (
-  <span className={`text-solarized-cyan text-[1.1rem] font-medium ${className ?? ''}`}>
-    {children}
-  </span>
+  <span className={`text-nushu-cyan text-[1.1rem] font-medium ${className ?? ''}`}>{children}</span>
 )
 
 type VimlessRow = {
@@ -189,31 +185,12 @@ on run {input, parameters}
 end run
 `
 
-  const patchedSolarizedDarkAtom = {
-    ...solarizedDarkAtom,
-    'pre[class*="language-"]': {
-      ...solarizedDarkAtom['pre[class*="language-"]'],
-      background: solarized.dark.base3
-    },
-    'code[class*="language-"]': {
-      ...solarizedDarkAtom['code[class*="language-"]'],
-      background: solarized.dark.base3
-    }
-  }
-
-  const {resolvedTheme} = useTheme()
-  const isDarkMode = resolvedTheme === 'dark'
-  const codeStyle = isDarkMode ? patchedSolarizedDarkAtom : solarizedlight
-
   return (
     <div className="relative container mx-auto px-4">
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:text-6xl">
+        <h2 className="text-nushu-yellow pt-4 pb-4 text-4xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8 md:text-6xl">
           Miscellaneous
         </h2>
-        <h6 className="text-solarized-violet pb-4 text-xl font-medium italic md:pb-8">
-          page in development...
-        </h6>
       </div>
 
       <div
@@ -223,8 +200,8 @@ end run
         <h4 className="mb-3 text-center text-xl font-normal">Application Config</h4>
 
         <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-ghost text-2xl" color="solarized.green" />
-          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Ghostty</h5>
+          <FaIcon className="fa-regular fa-ghost text-2xl" color="nushu.blue" />
+          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Ghostty</h5>
         </div>
         <p className="mt-3 mb-3">
           Partial config snippet to add to your Ghostty config file{' '}
@@ -237,7 +214,7 @@ end run
           <CopyButton className="absolute top-2 right-2" text={ghosttyConfSnippet} />
           <SyntaxHighlighter
             language="shell"
-            style={codeStyle}
+            style={nushuPrism}
             customStyle={{borderRadius: 8, padding: '1rem'}}
           >
             {ghosttyConfSnippet}
@@ -247,8 +224,8 @@ end run
         <hr className="border-border mx-auto my-5 w-1/2" />
 
         <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-terminal text-[22px]" color="solarized.green" />
-          <h5 className="text-solarized-green mb-2 text-2xl font-normal">iTerm2</h5>
+          <FaIcon className="fa-regular fa-terminal text-[22px]" color="nushu.blue" />
+          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">iTerm2</h5>
         </div>
         <p className="mt-3 mb-3">
           These custom key mappings will allow movements using arrow keys in conjunction with
@@ -261,7 +238,7 @@ end run
           <CopyButton className="absolute top-2 right-2" text={itermConfSnippet} />
           <SyntaxHighlighter
             language="json"
-            style={codeStyle}
+            style={nushuPrism}
             customStyle={{borderRadius: 8, padding: '1rem'}}
           >
             {itermConfSnippet}
@@ -271,8 +248,8 @@ end run
         <hr className="border-border mx-auto my-5 w-1/2" />
 
         <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-hammer text-2xl" color="solarized.green" />
-          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Hammerspoon</h5>
+          <FaIcon className="fa-regular fa-hammer text-2xl" color="nushu.blue" />
+          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Hammerspoon</h5>
         </div>
         <p className="mt-3 mb-3">
           Partial config snippet to add to your Hammerspoon initialization file{' '}
@@ -285,7 +262,7 @@ end run
           <CopyButton className="absolute top-2 right-2" text={hammerspoonSnippet} />
           <SyntaxHighlighter
             language="lua"
-            style={codeStyle}
+            style={nushuPrism}
             customStyle={{borderRadius: 8, padding: '1rem'}}
           >
             {hammerspoonSnippet}
@@ -295,8 +272,8 @@ end run
         <hr className="border-border mx-auto my-5 w-1/2" />
 
         <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-robot text-2xl" color="solarized.green" />
-          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Automator</h5>
+          <FaIcon className="fa-regular fa-robot text-2xl" color="nushu.blue" />
+          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Automator</h5>
         </div>
         <p className="mt-3 mb-3">
           Use the following AppleScript Quick Action to toggle Dark Mode on macOS; created via
@@ -307,7 +284,7 @@ end run
           <CopyButton className="absolute top-2 right-2" text={toggleDarkModeSnippet} />
           <SyntaxHighlighter
             language="applescript"
-            style={codeStyle}
+            style={nushuPrism}
             customStyle={{borderRadius: 8, padding: '1rem'}}
           >
             {toggleDarkModeSnippet}
@@ -322,8 +299,8 @@ end run
         <h4 className="mb-3 text-center text-xl font-normal">Reference</h4>
 
         <div className="mt-5 inline-flex items-baseline gap-4">
-          <FaIcon className="fa-regular fa-ban-smoking text-[27px]" color="solarized.green" />
-          <h5 className="text-solarized-green mb-2 text-2xl font-normal">Vim-less</h5>
+          <FaIcon className="fa-regular fa-ban-smoking text-[27px]" color="nushu.blue" />
+          <h5 className="text-nushu-blue mb-2 text-2xl font-normal">Vim-less</h5>
         </div>
         <p className="mt-3 mb-3">
           Thinking of quitting Vim? Here is an indicative reference for performing common Vim-like{' '}

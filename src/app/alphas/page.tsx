@@ -28,7 +28,7 @@ export default function AlphasPage() {
   return (
     <div className="container mx-auto px-4">
       <div className="flex flex-col items-center">
-        <h2 className="text-solarized-green pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
+        <h2 className="text-nushu-yellow pt-4 pb-4 text-6xl font-light tracking-[-0.00833em] md:pt-8 md:pb-8">
           Alphas
         </h2>
         <div className="h-25 origin-center scale-52 sm:h-50 sm:scale-75 md:h-auto md:origin-[initial] md:scale-100">
@@ -37,8 +37,8 @@ export default function AlphasPage() {
 
         <div className="mt-12 flex flex-col items-center justify-center">
           <div className="flex items-center gap-2">
-            <FaIcon className="fa-regular fa-star-shooting" color="solarized.base1" />
-            <h6 className="text-solarized-base00 text-xl font-medium">Statistics</h6>
+            <FaIcon className="fa-regular fa-star-shooting" color="nushu.ink-faint" />
+            <h6 className="text-nushu-ink text-xl font-medium">Statistics</h6>
           </div>
 
           <div className="mt-4 flex">
@@ -55,8 +55,8 @@ export default function AlphasPage() {
                   className={cn(
                     'border-border border-r px-4 py-2 text-sm font-medium transition-colors last:border-r-0',
                     show === value
-                      ? 'bg-solarized-blue/10 text-solarized-blue dark:bg-solarized-cyan/10 dark:text-solarized-cyan'
-                      : 'text-solarized-base01 hover:bg-accent/50'
+                      ? 'bg-nushu-blue/10 text-nushu-blue'
+                      : 'text-nushu-ink-strong hover:bg-accent/50'
                   )}
                 >
                   {label}
@@ -68,12 +68,12 @@ export default function AlphasPage() {
 
         <div className={cn('max-w-full pt-8', show !== 'genkey' && 'hidden')}>
           <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
-            <p className="text-solarized-base01 mb-2 flex items-center gap-2">
-              <FaIcon className="fa-regular fa-angle-right" color="solarized.green" />
+            <p className="text-nushu-ink-strong mb-2 flex items-center gap-2">
+              <FaIcon className="fa-regular fa-angle-right" color="nushu.green" />
               <em>./genkey -stagger=false analyze serenity</em>
             </p>
             <hr className="border-border mb-2" />
-            <pre className="text-solarized-base00 text-sm">{genkey}</pre>
+            <pre className="text-nushu-ink text-sm">{genkey}</pre>
           </div>
           <div className="mt-2 flex justify-end">
             <a
@@ -89,12 +89,12 @@ export default function AlphasPage() {
 
         <div className={cn('max-w-full pt-8', show !== 'a200' && 'hidden')}>
           <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
-            <p className="text-solarized-base01 mb-2 flex items-center gap-4">
-              <FaIcon className="fa-regular fa-angle-right" color="solarized.green" />
+            <p className="text-nushu-ink-strong mb-2 flex items-center gap-4">
+              <FaIcon className="fa-regular fa-angle-right" color="nushu.green" />
               <em>./a200 vw serenity</em>
             </p>
             <hr className="border-border mb-2" />
-            <pre className="text-solarized-base00 text-sm">{a200}</pre>
+            <pre className="text-nushu-ink text-sm">{a200}</pre>
           </div>
           <div className="mt-2 flex justify-end">
             <a
@@ -110,11 +110,11 @@ export default function AlphasPage() {
 
         <div className={cn('max-w-full pt-8', show !== 'colemakmods' && 'hidden')}>
           <div className="border-border bg-card overflow-x-scroll rounded border p-8 shadow-sm">
-            <p className="text-solarized-base01 mb-2">
+            <p className="text-nushu-ink-strong mb-2">
               <em>Keyboard Analysis Tool - v1.32</em>
             </p>
             <hr className="border-border mb-2" />
-            <pre className="text-solarized-base00 text-sm">{colemakmods}</pre>
+            <pre className="text-nushu-ink text-sm">{colemakmods}</pre>
           </div>
           <div className="mt-2 flex justify-end">
             <a

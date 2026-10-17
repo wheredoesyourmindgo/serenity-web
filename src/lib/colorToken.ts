@@ -1,17 +1,17 @@
-const SOLARIZED_PREFIX = 'solarized.'
+const NUSHU_PREFIX = 'nushu.'
 
 /**
- * Maps a Serenity Solarized token like `solarized.base1` to its CSS custom
- * property name.
+ * Maps a Serenity Nushu token like `nushu.ink-faint` to its CSS custom property
+ * name.
  *
- * Tokens outside the `solarized.` namespace are ignored so callers can safely
- * pass through raw CSS colors unchanged.
+ * Tokens outside the `nushu.` namespace are ignored so callers can safely pass
+ * through raw CSS colors unchanged.
  *
  * @param color A token or raw CSS color string.
  * @returns The matching CSS custom property name, or `undefined` for non-token values.
  */
-function getSolarizedVariableName(color: string) {
-  if (!color.startsWith(SOLARIZED_PREFIX)) {
+function getNushuVariableName(color: string) {
+  if (!color.startsWith(NUSHU_PREFIX)) {
     return undefined
   }
 
@@ -19,14 +19,14 @@ function getSolarizedVariableName(color: string) {
 }
 
 /**
- * Resolves a Serenity Solarized token to a live CSS variable reference.
+ * Resolves a Serenity Nushu token to a live CSS variable reference.
  *
  * This keeps the final color value reactive to theme changes because the
- * browser continues resolving `var(--solarized-...)` after light/dark mode
+ * browser continues resolving `var(--nushu-...)` after light/dark mode
  * switches. Non-token values are returned unchanged so callers may also pass
  * raw CSS colors such as hex, rgb, or named colors.
  *
- * @param color A Serenity Solarized token or raw CSS color.
+ * @param color A Serenity Nushu token or raw CSS color.
  * @returns A CSS variable reference for supported tokens, the original color for
  * non-token values, or `undefined` when no color is provided.
  */
@@ -35,7 +35,7 @@ export function colorTokenToCssValue(color?: string) {
     return color
   }
 
-  const variableName = getSolarizedVariableName(color)
+  const variableName = getNushuVariableName(color)
 
   return variableName ? `var(${variableName})` : color
 }

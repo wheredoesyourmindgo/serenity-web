@@ -8,7 +8,7 @@ export default function TapDanceSubIcn({className, ...rest}: Props) {
     <span className="absolute bottom-[-5px] left-1">
       <FaIcon
         className={cn('fa-regular fa-ellipsis text-[14px]', className)}
-        color="solarized.orange"
+        color="nushu.orange"
         {...rest}
       />
     </span>
