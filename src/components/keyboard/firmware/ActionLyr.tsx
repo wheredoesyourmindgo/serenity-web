@@ -220,10 +220,63 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyIcon className="fa-regular fa-chevron-up" color="nushu.cyan" />
-          <KeyIcon className="fa-regular fa-option text-[18px]" color="nushu.cyan" />
-          <KeyIcon className="fa-regular fa-command" color="nushu.cyan" />
-          <KeyIcon className="fa-regular fa-up" color="nushu.cyan" homing />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-control-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Control for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Control" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option text-[18px]"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-option-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Option for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Option" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-command-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Command for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Command" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-up"
+            color="nushu.cyan"
+            homing
+            KeyContainerProps={{
+              keyId: 'one-shot-shift-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Shift for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Shift" />
+                </div>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-lock"
             KeyContainerProps={{
@@ -622,7 +675,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               },
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Right Option" />
+                  <PopoverDesc action="tap" output="Right Option for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Option" />
                 </div>
               )
             }}
