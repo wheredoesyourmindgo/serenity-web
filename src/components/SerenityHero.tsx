@@ -115,7 +115,7 @@ export default function SerenityHero() {
         <button
           type="button"
           className={`cursor-pointer rounded-md ${opened ? '' : 'pointer-events-none'}`}
-          onClick={() => heatmap.current?.spell({note: true})}
+          onClick={() => heatmap.current?.spell()}
           onPointerLeave={() => heatmap.current?.pin(null)}
         >
           {[...NAME].map((ch, i) => (
