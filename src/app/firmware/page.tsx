@@ -55,15 +55,26 @@ const tabs = [
 
 const customizations: Feature[] = [
   {
-    term: 'Custom One Shot Mods',
-    body: 'A tailored feature enabling dynamic stacking of modifiers across principal layers, allowing any combination to be triggered individually or together, without the need to hold modifier keys during subsequent key press on the Base, Qwerty, or Function layers.'
+    term: 'Instant One‑Shot Mods',
+    body: (
+      <>
+        Tap any combination of modifiers, all at once or one after another, and every one applies to
+        the next key or mouse click. Hold one instead and it acts as a normal modifier. Unused
+        one‑shots clear after 3 seconds, when you press Escape, or when you move to a layer other
+        than Base, Qwerty, Action or Hardware. Uses{' '}
+        <TextLink href="https://github.com/wheredoesyourmindgo/qmk-modules/tree/main/instant_oneshot">
+          Instant One‑Shot
+        </TextLink>
+        , Serenity's own QMK community module.
+      </>
+    )
   },
   {
     term: 'Backspace + Shift',
     body: (
       <>
         Backspace performs Forward Delete (del) when held with Shift, and deletes to the end of the
-        line with Shift+Cmd. Uses{' '}
+        line with Shift+Cmd (except on the Qwerty layer, where Shift+Backspace stays standard). Uses{' '}
         <TextLink href="https://github.com/getreuer/qmk-modules/tree/main/custom_shift_keys">
           Custom Shift Keys
         </TextLink>{' '}
@@ -86,22 +97,24 @@ const customizations: Feature[] = [
   },
   {
     term: 'Custom App Switcher',
-    body: 'A firmware‑level feature within the OS Layer that provides app cycling and fast switching that replicates Cmd+Tab/Cmd+Shift+Tab shortcuts.'
+    body: "App switching from the OS layer that works like Cmd+Tab: keep tapping to move through apps, show the selected app's windows, or press Escape to close without switching. It closes on its own when you change layers or stop moving through it."
   },
   {
-    term: 'Symbol Tap Guard',
-    body: "Custom logic on the Symbol layer that suppresses unintended Shift during fast layer activations, ensuring quick taps send unshifted symbols (e.g., '=' instead of '+'); deliberate Shift still produces the shifted variant when intended."
+    term: 'Symbol Roll Guard',
+    body: "On the Symbol layer, shifted symbols (e.g., '~', '{', '?') are sent the moment the key goes down instead of being held until release. Rolling quickly into the next symbol can't carry Shift over to it, so a '/' rolled in right after '~' correctly types '/', not '?'. Modifiers you're deliberately holding stay held."
   },
   {
     term: 'Temporary Home Row Mods w/ Base Layer',
-    body: "Tap the Num/Nav or Symbol key once, then press it again and hold to temporarily use that side's home‑row modifiers on the Base layer. Useful for certain edge cases where custom one shot mods (see above) are insufficient."
+    body: "Tap the Num/Nav or Symbol key once, then press it again and hold to temporarily use that side's home‑row modifiers on the Base layer. Useful for certain edge cases where Instant One‑Shot mods (see above) are insufficient."
   },
   {
     term: 'Long‑press dual keys',
     body: (
       <>
         For select shortcuts, perform primary action on tap or an alternate action on hold, giving
-        each key two functions without relying on QMK Tap Dance timing. See{' '}
+        each key two functions without relying on QMK Tap Dance timing. For example, window keys
+        snap to half the screen on tap and fill that side on hold, and screenshot keys save to a
+        file on tap and copy to the clipboard on hold. See{' '}
         <TextLink href="https://getreuer.info/posts/keyboards/triggers/index.html#tap-vs.-long-press">
           this article
         </TextLink>{' '}
@@ -134,6 +147,10 @@ const designNotes: Feature[] = [
   {
     term: 'Layer Lock',
     body: "QMK's Layer Lock key sits in a consistent position on the principal layers: tap it to stay in the current layer without holding the layer key; tap again or press Escape to release."
+  },
+  {
+    term: 'Escape cancels first',
+    body: "Escape clears any pending one‑shot mods, then a locked layer, and only sends Escape when there's nothing left to cancel. It also closes the app switcher without switching."
   },
   {
     term: 'Caps Word',
