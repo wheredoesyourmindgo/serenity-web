@@ -129,7 +129,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'launchpad-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Launchpad" />
+                  <PopoverDesc action="tap" output="Launchpad (⌃⌥⇧⌘L)" />
                 </div>
               )
             }}
@@ -141,7 +141,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'siri-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Siri" />
+                  <PopoverDesc action="tap" output="Siri (⌃⌥⇧⌘S)" />
                 </div>
               )
             }}
@@ -153,7 +153,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'sidebar-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Show/hide Sidebar" />
+                  <PopoverDesc action="tap" output="Show/hide Sidebar (⌃⌥⇧⌘N)" />
                 </div>
               )
             }}
@@ -181,7 +181,10 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (or close the app switcher without switching)"
+                  />
                 </div>
               )
             }}
@@ -250,7 +253,12 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'app-expose-control-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="App Expose" />
+                  <PopoverDesc action="tap" output="App Exposé" />
+                  <br />
+                  <PopoverDesc
+                    action="while switching apps"
+                    output="Show the selected app's windows"
+                  />
                 </div>
               )
             }}
@@ -430,13 +438,16 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'app-switch-quit-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="App Switcher Quit App" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Quit App (the selected one while switching apps)"
+                  />
                 </div>
               )
             }}
           >
             <div className="flex h-full w-full items-center justify-center">
-              <FaIcon className="fa-solid fa-xmark translate-y-[-6px] text-[14px]" />
+              <FaIcon className="fa-solid fa-xmark translate-y-[-5px] text-[14px]" />
             </div>
           </KeyIcon>
           <KeyIcon
@@ -445,13 +456,16 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'app-switch-hide-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="App Switcher Toggle Hide App" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Hide App (toggles the selected one while switching apps)"
+                  />
                 </div>
               )
             }}
           >
             <div className="flex h-full w-full items-center justify-center">
-              <FaIcon className="fa-solid fa-window-minimize translate-y-[-6px] text-[14px]" />
+              <FaIcon className="fa-solid fa-window-minimize translate-y-[-7px] text-[14px]" />
             </div>
           </KeyIcon>
           <KeyLegend {...sharedProps} />

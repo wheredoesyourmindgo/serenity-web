@@ -60,7 +60,10 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape (or turn off Symbol layer lock)" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (or clear one-shot mods, then turn off Symbol layer lock)"
+                  />
                 </div>
               )
             }}

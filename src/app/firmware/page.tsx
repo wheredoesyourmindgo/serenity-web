@@ -130,7 +130,7 @@ const customizations: Feature[] = [
   {
     term: 'Safe Arrow Cluster',
     tag: '11–12 key bottom row',
-    body: 'The bottom‑right arrow group is tuned for quick taps without accidental modifier activation; short presses always send arrow keycodes, guarding against nearby mod‑taps for fast, reliable navigation.'
+    body: 'The bottom‑right arrows also hold Right Cmd, Opt, Ctrl and the Hardware layer, but are tuned to stay arrows: overlapping or rolled arrow presses always type arrows, and tapping an arrow while another is held as a modifier types both, so fast, sloppy navigation never triggers a shortcut.'
   }
 ]
 

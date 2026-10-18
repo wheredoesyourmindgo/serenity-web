@@ -83,7 +83,7 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Escape" />
+                  <PopoverDesc action="tap" output="Escape (or clear one-shot mods)" />
                   <br />
                   <PopoverDesc action="hold" output="Mouse Layer" />
                 </div>
