@@ -1,7 +1,7 @@
 'use client'
 
-import type {HTMLAttributes, KeyboardEvent, ReactNode} from 'react'
-import {useState} from 'react'
+import type {HTMLAttributes, KeyboardEvent, PointerEvent, ReactNode} from 'react'
+import {useRef, useState} from 'react'
 import {HoverCard, HoverCardContent, HoverCardTrigger} from '@/components/ui/hover-card'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {cn} from '@/lib/utils'
@@ -20,6 +20,12 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   // always controlled: touch support is only known after mount, and switching a popover from
   // uncontrolled to controlled then is an error. Hover drives it through onOpenChange.
   const [open, setOpen] = useState(false)
+  // pressing a key with a mouse or pen dismisses its popover until the pointer leaves the key, so
+  // the hover that's still over it can't bring the popover straight back
+  const dismissed = useRef(false)
+  // what last pressed the key, since a coarse-pointer device (an iPad, say) can also have a
+  // trackpad or mouse, whose clicks the press above already handles
+  const pressedBy = useRef('')
   // on touch devices there is no hover, so the key itself toggles the popover
   const toggleOpen = () => setOpen((o) => !o)
   const touchToggleProps =
@@ -28,7 +34,9 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
           role: 'button',
           tabIndex: 0,
           'aria-expanded': open,
-          onClick: toggleOpen,
+          onClick: () => {
+            if (pressedBy.current !== 'mouse' && pressedBy.current !== 'pen') toggleOpen()
+          },
           onKeyDown: (e: KeyboardEvent) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault()
@@ -56,6 +64,18 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
       aria-describedby={popOverContent ? popOverId : undefined}
       {...touchToggleProps}
       {...r}
+      onPointerDown={(e: PointerEvent<HTMLDivElement>) => {
+        r.onPointerDown?.(e)
+        pressedBy.current = e.pointerType
+        // touch keeps its tap toggle
+        if (!popOverContent || e.pointerType === 'touch') return
+        dismissed.current = true
+        setOpen(false)
+      }}
+      onPointerLeave={(e: PointerEvent<HTMLDivElement>) => {
+        r.onPointerLeave?.(e)
+        dismissed.current = false
+      }}
     >
       {/* overflow fixes issues on mouse hover where partial icons can disappear, ex. backspace icon */}
       <div className="overflow-visible">{children}</div>
@@ -67,7 +87,13 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   }
 
   return (
-    <HoverCard open={open} onOpenChange={setOpen}>
+    <HoverCard
+      open={open}
+      onOpenChange={(next, {reason}) => {
+        if (next && reason === 'trigger-hover' && dismissed.current) return
+        setOpen(next)
+      }}
+    >
       <HoverCardTrigger delay={0} closeDelay={0} render={trigger} />
       <HoverCardContent
         id={popOverId}
