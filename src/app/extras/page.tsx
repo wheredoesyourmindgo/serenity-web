@@ -113,7 +113,7 @@ const vimlessRows: VimlessRow[] = [
   {
     id: 24,
     action: 'Select cursor line',
-    keys: 'Line Select key (Num/Nav layer, long press)',
+    keys: 'Word Select key (Num/Nav layer, with Shift)',
     vim: 'V'
   },
   {id: 25, action: 'Indent', keys: <USym className="text-[1.3em]">⇥</USym>, vim: '>'},
