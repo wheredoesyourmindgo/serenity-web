@@ -27,13 +27,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} className="text-[12px]">
-            <>
-              Prt
-              <br />
-              Scr
-            </>
-          </KeyLegend> */}
           <KeyIcon
             className="fa-regular fa-print-magnifying-glass"
             KeyContainerProps={{
@@ -45,13 +38,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} className="text-[12px]">
-            <>
-              Scrl
-              <br />
-              Lck
-            </>
-          </KeyLegend> */}
           <KeyIcon
             className="fa-regular fa-scroll"
             KeyContainerProps={{
@@ -63,9 +49,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} className="text-[12px]">
-            Pause
-          </KeyLegend> */}
           <KeyIcon
             className="fa-regular fa-circle-pause"
             KeyContainerProps={{
@@ -77,9 +60,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} className="text-[12px]">
-            Ins
-          </KeyLegend> */}
           <KeyIcon
             className="fa-regular fa-i-cursor"
             KeyContainerProps={{
@@ -91,9 +71,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} className="text-[12px]">
-            App
-          </KeyLegend> */}
           <KeyIcon
             className="fa-regular fa-list-dropdown"
             KeyContainerProps={{
@@ -105,22 +82,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyIcon
-            icon={faHandPointLeft}
-            shiftSubIcn={faHandPointRight}
-            KeyContainerProps={{
-              keyId: 'go-back-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Go Back (browser)" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Go Forward" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
-            tapDance
+            longPress
             appShortcut
             className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
@@ -154,8 +117,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'prev-app-window',
               popOverContent: (
                 <div className="p-2">
-                  {/* <PopoverDesc action="tap" output="Next App Window" />
-                  <br /> */}
                   <PopoverDesc action="tap" output="Prev App Window" />
                 </div>
               )
@@ -163,15 +124,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className="fa-regular fa-rectangle-vertical-history"
-            // shiftSubIcn={faRectangleVerticalHistory}
-            // ShiftSubIcnProps={{flip: 'horizontal', fontSize: 12}}
             KeyContainerProps={{
               keyId: 'next-app-window',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Next App Window" />
-                  {/* <br />
-                  <PopoverDesc action="shifted" output="Prev App Window" /> */}
                 </div>
               )
             }}
@@ -288,21 +245,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyLegend {...sharedProps} /> */}
-          {/* <KeyIcon
-            special
-            className="fa-regular fa-table-layout"
-            KeyContainerProps={{
-              keyId: 'window-management3-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Window Management 3" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
-            tapDance
+            longPress
             appShortcut
             rotation={90}
             className="fa-regular fa-down-left-and-up-right-to-center"
@@ -321,7 +265,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             homing
-            tapDance
+            longPress
             appShortcut
             className="fa-regular fa-sidebar"
             KeyContainerProps={{
@@ -338,8 +282,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            // special
-            // tapDance
             appShortcut
             rotation={180}
             className="fa-regular fa-octagon-minus"
@@ -348,17 +290,12 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Decrease Window Size (⌃⌥-)" />
-                  {/* <br />
-                  <PopoverDesc action="hold" output="" />
-                  <br /> */}
                   <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
           />
           <KeyIcon
-            // special
-            // tapDance
             appShortcut
             className="fa-regular fa-octagon-plus"
             KeyContainerProps={{
@@ -366,67 +303,14 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Increase Window Size (⌃⌥=)" />
-                  {/* <br />
-                  <PopoverDesc action="hold" output="" />
-                  <br /> */}
                   <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
           />
-          {/* <KeyIcon
-            // special
-            tapDance
-            appShortcut
-            rotation={180}
-            className="fa-regular fa-window-maximize"
-            KeyContainerProps={{
-              keyId: 'window-management1-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Window Bottom Half" />
-                  <br />
-                  <PopoverDesc action="hold" output="Window Fill Bottom" />
-                  <br />
-                  <AppCaption app="Rectangle Pro" />
-                </div>
-              )
-            }}
-          /> */}
-          {/* <KeyIcon
-            // special
-            tapDance
-            appShortcut
-            className="fa-regular fa-window-maximize"
-            KeyContainerProps={{
-              keyId: 'window-management2-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Window Top Half" />
-                  <br />
-                  <PopoverDesc action="hold" output="Window Fill Top" />
-                  <br />
-                  <AppCaption app="Rectangle Pro" />
-                </div>
-              )
-            }}
-          /> */}
-          {/* <KeyIcon
-            homing
-            special
-            className="fa-regular fa-table-layout"
-            KeyContainerProps={{
-              keyId: 'window-management4-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Window Management 4" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             homing
-            tapDance
+            longPress
             appShortcut
             className="fa-regular fa-sidebar-flip"
             KeyContainerProps={{
@@ -461,24 +345,13 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyIcon
-            icon={faSignatureLock}
-            KeyContainerProps={{
-              keyId: 'caps-sentence-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Caps-sentence" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            tapDance
+            longPress
             appShortcut
             rotation={-45}
             className="fa-regular fa-up-right-and-down-left-from-center"
@@ -538,23 +411,6 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          {/* <KeyIcon
-            icon={faVolumeXmark}
-            special
-            KeyContainerProps={{
-              keyId: 'oops-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="Toggle Mute" />
-                  <br />
-                  <PopoverDesc
-                    action="double tap"
-                    output="Mute & Hide Window"
-                  />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{

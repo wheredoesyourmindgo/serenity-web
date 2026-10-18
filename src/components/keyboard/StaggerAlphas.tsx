@@ -19,7 +19,6 @@ export default function StaggerAlphaKeyboard() {
   return (
     <div className="flex flex-col gap-4">
       <KeyboardGridRow>
-        {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="nushu.ink-faint">Q</AlphaKeyLgnd>
         <AlphaKeyLgnd color="nushu.ink-faint">Z</AlphaKeyLgnd>
         <AlphaKeyLgnd color="nushu.ink-strong">C</AlphaKeyLgnd>

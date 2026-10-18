@@ -4,7 +4,7 @@ import {cn} from '@/lib/utils'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
-import TapDanceSubIcn from './TapDanceSubIcn'
+import LongPressSubIcn from './LongPressSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 import ReqSetupSubLgnd from './ReqSetupSubLgnd'
 import EncoderSubLgnd from './EncoderSubLgnd'
@@ -19,7 +19,7 @@ type Props = FaIconProps & {
   customShiftCode?: boolean
   special?: boolean
   requiresOsConf?: boolean
-  tapDance?: boolean
+  longPress?: boolean
   homing?: boolean
   LyrHoldSubIcn?: ComponentType
   ModHoldSubIcn?: ComponentType
@@ -36,7 +36,7 @@ export default function KeyIcon({
   customShiftCode = false,
   special = false,
   requiresOsConf = false,
-  tapDance = false,
+  longPress = false,
   homing = false,
   LyrHoldSubIcn,
   ModHoldSubIcn,
@@ -67,7 +67,7 @@ export default function KeyIcon({
         {special ? <SpecialSubLgnd /> : null}
         {optEncoder ? <EncoderSubLgnd /> : null}
         {requiresOsConf ? <ReqSetupSubLgnd /> : null}
-        {tapDance ? <TapDanceSubIcn /> : null}
+        {longPress ? <LongPressSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {appShortcut ? <AppSubIcn /> : null}
         {LyrHoldSubIcn ? <LyrHoldSubIcn /> : null}

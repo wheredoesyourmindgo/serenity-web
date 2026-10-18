@@ -39,7 +39,6 @@ export default function AlphaKeyboard() {
   return (
     <div className="flex max-w-full flex-col gap-4">
       <KeyboardGridRow>
-        {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd frequencyColor>Q</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>Z</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>M</AlphaKeyLgnd>
@@ -50,7 +49,6 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd frequencyColor>O</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>U</AlphaKeyLgnd>
         <AlphaKeyLgnd>-</AlphaKeyLgnd>
-        {/* <AlphaKeyIcn className="fa-regular fa-delete-left" /> */}
         <AlphaKeyLgnd />
       </KeyboardGridRow>
       <KeyboardGridRow>
@@ -65,7 +63,6 @@ export default function AlphaKeyboard() {
         <AlphaKeyLgnd frequencyColor>A</AlphaKeyLgnd>
         <AlphaKeyLgnd frequencyColor>I</AlphaKeyLgnd>
         <AlphaKeyLgnd>;</AlphaKeyLgnd>
-        {/* <AlphaKeyLgnd>=</AlphaKeyLgnd> */}
       </KeyboardGridRow>
       <KeyboardGridRow>
         <AlphaKeyLgnd frequencyColor>X</AlphaKeyLgnd>

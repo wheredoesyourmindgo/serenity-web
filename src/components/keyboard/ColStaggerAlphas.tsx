@@ -30,7 +30,6 @@ export default function ColStaggerAlphaKeyboard() {
   return (
     <div className="flex flex-col gap-4">
       <KeyboardGridRow>
-        {/* <AlphaKeyIcn icon={faDeleteRight} /> */}
         <AlphaKeyLgnd color="nushu.ink-strong" style={{paddingTop: p.r}}>
           L
         </AlphaKeyLgnd>
@@ -59,7 +58,6 @@ export default function ColStaggerAlphaKeyboard() {
         <AlphaKeyLgnd style={{paddingTop: p.p}}>;</AlphaKeyLgnd>
       </KeyboardGridRow>
       <KeyboardGridRow>
-        {/* <AlphaKeyLgnd KeyContainerProps={{style: {width: 55 / 4, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="nushu.ink-strong" style={{paddingTop: p.m}}>
           M
         </AlphaKeyLgnd>
@@ -96,7 +94,6 @@ export default function ColStaggerAlphaKeyboard() {
         </AlphaKeyLgnd>
       </KeyboardGridRow>
       <KeyboardGridRow>
-        {/* <AlphaKeyLgnd KeyContainerProps={{style: {width: 55, opacity: 0}}} /> */}
         <AlphaKeyLgnd color="nushu.ink-muted" style={{paddingTop: p.p}}>
           <em>V</em>
         </AlphaKeyLgnd>

@@ -4,7 +4,7 @@ import HoldSubIcn, {HoldSubIcnProps} from './HoldSubIcn'
 import ShiftSubIcn, {ShiftSubIcnProps} from './ShiftSubIcn'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'
-import TapDanceSubIcn from './TapDanceSubIcn'
+import LongPressSubIcn from './LongPressSubIcn'
 import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 import VimRefIcn, {VimRefIcnProps} from './VimRefIcn'
 import VimRefLgnd from './VimRefLgnd'
@@ -22,7 +22,7 @@ type Props = {
   KeyContainerProps?: KeyContainerProps
   customShiftCode?: boolean
   special?: boolean
-  tapDance?: boolean
+  longPress?: boolean
   homing?: boolean
   vimRef?: string | React.ReactNode
   vimRefIcn?: React.FC
@@ -46,7 +46,7 @@ export default function KeyLegend({
   ShiftSubIcnProps,
   customShiftCode = false,
   special = false,
-  tapDance = false,
+  longPress = false,
   homing = false,
   vimRef,
   vimRefIcn,
@@ -73,7 +73,7 @@ export default function KeyLegend({
         {shiftLgnd ? <ShiftSubLgnd color={shiftColor}>{shiftLgnd}</ShiftSubLgnd> : null}
         {shiftSubIcn ? <ShiftSubIcn color={shiftColor} {...ShiftSubIcnProps} /> : null}
         {special ? <SpecialSubLgnd /> : null}
-        {tapDance ? <TapDanceSubIcn /> : null}
+        {longPress ? <LongPressSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
         {appShortcut ? <AppSubIcn /> : null}
         {lyrHoldSubIcn ? <HoldSubIcn color={lyrColor} {...LyrHoldSubIcnProps} /> : null}

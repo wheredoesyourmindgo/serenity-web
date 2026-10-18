@@ -185,23 +185,6 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          {/* <KeyIcon
-            icon={faVolumeXmark}
-            special
-            KeyContainerProps={{
-              keyId: 'oops-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="Toggle Mute" />
-                  <br />
-                  <PopoverDesc
-                    action="double tap"
-                    output="Mute & Hide Window"
-                  />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
@@ -244,8 +227,6 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
                 </div>
               ) : (
                 <div className="p-2">
-                  {/* <PopoverDesc action="tap" output="Escape" />
-                  <br /> */}
                   <PopoverDesc
                     action="hold"
                     output="Action Layer (or Left Shift when held with other Left Mod keys)"
@@ -261,8 +242,6 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'lower-layer-key',
               popOverContent: (
                 <div className="p-2">
-                  {/* <PopoverDesc action="tap" output="Escape" />
-                  <br /> */}
                   <PopoverDesc action="hold" output="Num/Nav Layer" />
                 </div>
               )
@@ -299,8 +278,6 @@ export default function QwertyLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'higher-layer-key',
               popOverContent: (
                 <div className="p-2">
-                  {/* <PopoverDesc action="tap" output="Tab" />
-                  <br /> */}
                   <PopoverDesc action="hold" output="Symbol Layer" />
                 </div>
               )

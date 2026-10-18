@@ -450,23 +450,6 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          {/* <KeyIcon
-            icon={faVolumeXmark}
-            special
-            KeyContainerProps={{
-              keyId: 'oops-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="Toggle Mute" />
-                  <br />
-                  <PopoverDesc
-                    action="double tap"
-                    output="Mute & Hide Window"
-                  />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             color="nushu.cyan"
@@ -565,18 +548,6 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          {/* <KeyIcon
-            className="fa-regular fa-bracket-square translate-y-[6px]"
-            rotation={270}
-            KeyContainerProps={{
-              keyId: 'space-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Space" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{

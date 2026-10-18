@@ -1,4 +1,3 @@
-// cspell:ignore xmark
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
@@ -16,7 +15,6 @@ export default function BaseLyr() {
       <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            // customShiftCode
             className="fa-regular fa-lock-a translate-x-[2px] text-[19px]"
             KeyContainerProps={{
               style: {
@@ -30,7 +28,6 @@ export default function BaseLyr() {
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
           />
           <KeyIcon
             className="fa-regular fa-brightness-low"
@@ -235,14 +232,11 @@ export default function BaseLyr() {
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
-            // ShiftSubIcnProps={{flip: 'horizontal'}}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
-            // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line translate-x-[2px] text-[19px]"
             KeyContainerProps={{
               style: {
@@ -253,12 +247,9 @@ export default function BaseLyr() {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                  {/* <br />
-                  <PopoverDesc action="shifted" output="Delete word right" /> */}
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
           />
           <KeyLegend {...sharedProps} shiftLgnd="Q">
             q
@@ -402,16 +393,8 @@ export default function BaseLyr() {
           <KeyLegend
             {...sharedProps}
             shiftLgnd="<"
-            // customShiftCode
             KeyContainerProps={{
               keyId: 'comma-key'
-              // popOverContent: (
-              //   <div className="p-2">
-              //     <PopoverDesc action="tap/hold" output="Comma" />
-              //     <br />
-              //     <PopoverDesc action="shifted" output="Semicolon" />
-              //   </div>
-              // )
             }}
           >
             ,
@@ -419,37 +402,12 @@ export default function BaseLyr() {
           <KeyLegend
             {...sharedProps}
             shiftLgnd=">"
-            // customShiftCode
             KeyContainerProps={{
               keyId: 'period-key'
-              // popOverContent: (
-              //   <div className="p-2">
-              //     <PopoverDesc action="tap/hold" output="Period/Dot" />
-              //     <br />
-              //     <PopoverDesc action="shifted" output="Colon" />
-              //   </div>
-              // )
             }}
           >
             .
           </KeyLegend>
-          {/* <KeyIcon
-            special
-            className="fa-regular fa-up"
-            KeyContainerProps={{
-              keyId: 'right-shift-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Right Shift" />
-                  <br />
-                  <PopoverDesc
-                    action="simultaneously tap w/ Left Shift"
-                    output="Caps-word"
-                  />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left translate-y-1"
             ModHoldSubIcn={() => <ModSubHoldIcn className="fa-regular fa-up" />}
@@ -467,23 +425,6 @@ export default function BaseLyr() {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          {/* <KeyIcon
-            icon={faVolumeXmark}
-            special
-            KeyContainerProps={{
-              keyId: 'oops-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="Toggle Mute" />
-                  <br />
-                  <PopoverDesc
-                    action="double tap"
-                    output="Mute & Hide Window"
-                  />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-light fa-globe translate-y-[2px] text-[18px]"
             LyrHoldSubIcn={() => (
@@ -493,8 +434,6 @@ export default function BaseLyr() {
               keyId: 'fn-layer-key',
               popOverContent: (
                 <div className="p-2">
-                  {/* <PopoverDesc action="tap" output="Escape" />
-                  <br /> */}
                   <PopoverDesc action="hold" output="FN Layer" />
                 </div>
               )
@@ -581,9 +520,6 @@ export default function BaseLyr() {
                 }}
               />
             </div>
-            {/* <KeyIcon
-            className="fa-regular fa-arrow-up -translate-y-[2px] text-[14px]"
-          /> */}
             <div
               style={{
                 alignSelf: 'flex-end',

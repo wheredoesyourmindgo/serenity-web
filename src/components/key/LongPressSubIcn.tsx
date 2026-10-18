@@ -3,11 +3,11 @@ import {cn} from '@/lib/utils'
 
 type Props = Omit<FaIconProps, 'color' | 'icon'>
 
-export default function TapDanceSubIcn({className, ...rest}: Props) {
+export default function LongPressSubIcn({className, ...rest}: Props) {
   return (
-    <span className="absolute bottom-[-5px] left-1">
+    <span className="absolute bottom-0 left-1">
       <FaIcon
-        className={cn('fa-regular fa-ellipsis text-[14px]', className)}
+        className={cn('fa-regular fa-timer text-[10px]', className)}
         color="nushu.orange"
         {...rest}
       />
@@ -15,4 +15,4 @@ export default function TapDanceSubIcn({className, ...rest}: Props) {
   )
 }
 
-export type {Props as TapDanceSubIcnProps}
+export type {Props as LongPressSubIcnProps}

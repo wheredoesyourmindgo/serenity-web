@@ -1,4 +1,3 @@
-// cspell:ignore xmark
 import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
@@ -15,7 +14,6 @@ export default function FnLyr() {
       <div className="flex flex-col gap-2">
         <KeyboardGridRow>
           <KeyIcon
-            // customShiftCode
             className="fa-regular fa-lock-a translate-x-[2px] text-[19px]"
             KeyContainerProps={{
               style: {
@@ -29,7 +27,6 @@ export default function FnLyr() {
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
           />
           <KeyLegend {...sharedProps} className="text-[18px]">
             F1
@@ -234,14 +231,11 @@ export default function FnLyr() {
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
-            // ShiftSubIcnProps={{flip: 'horizontal'}}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
-            // customShiftCode
             className="fa-regular fa-arrow-right-long-to-line translate-x-[2px] text-[19px]"
             KeyContainerProps={{
               style: {
@@ -252,12 +246,9 @@ export default function FnLyr() {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Tab" />
-                  {/* <br />
-                  <PopoverDesc action="shifted" output="Delete word right" /> */}
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
           />
           <KeyLegend {...sharedProps} className="text-[1.3rem]" shiftLgnd="!">
             1
@@ -334,7 +325,7 @@ export default function FnLyr() {
           />
           <KeyIcon
             className="fa-regular fa-magic-wand-sparkles"
-            tapDance
+            longPress
             KeyContainerProps={{
               keyId: 'text-select-key',
               popOverContent: (
@@ -435,22 +426,6 @@ export default function FnLyr() {
               )
             }}
           />
-          {/* <KeyIcon
-            tapDance
-            icon={faCalculatorSimple}
-            KeyContainerProps={{
-              keyId: 'pemdas-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="*" />
-                  <br />
-                  <PopoverDesc action="double tap" output="/" />
-                  <br />
-                  <PopoverDesc action="triple tap" output="+" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-lock-a"
             KeyContainerProps={{
@@ -524,30 +499,7 @@ export default function FnLyr() {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          {/* <KeyIcon
-            icon={faVolumeXmark}
-            special
-            KeyContainerProps={{
-              keyId: 'oops-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="Toggle Mute" />
-                  <br />
-                  <PopoverDesc
-                    action="double tap"
-                    output="Mute & Hide Window"
-                  />
-                </div>
-              )
-            }}
-          /> */}
-
-          <KeyLegend
-            {...sharedProps}
-            // KeyContainerProps={{
-            //   style: {width: 70.75, height: 55} // 1.25u
-            // }}
-          />
+          <KeyLegend {...sharedProps} />
           <KeyIcon className="fa-regular fa-chevron-up" />
           <KeyIcon className="fa-regular fa-option text-[18px]" />
           <KeyIcon
@@ -625,9 +577,6 @@ export default function FnLyr() {
                 }}
               />
             </div>
-            {/* <KeyIcon
-                className="fa-regular fa-arrow-up -translate-y-[2px] text-[14px]"
-              /> */}
             <div
               style={{
                 alignSelf: 'flex-end',
