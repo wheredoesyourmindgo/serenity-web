@@ -89,6 +89,8 @@ const LEAVE_COOL_TIME = 0.7
 // each keystroke glides the text over instead of jumping
 const CAPTION_LENGTH = 48
 const CAPTION_GLIDE_TIME = 0.09
+// px kept clear on each side of the screen when the spelled line wraps
+const CAPTION_GUTTER = 16
 // spaces typed one at a time between snippets, then a pause
 const SNIPPET_GAP = 3
 // 0 = full opacity at peak heat; 0.6 caps the hottest keys at ~62%
@@ -301,6 +303,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
   const captionRef = useRef<HTMLSpanElement>(null)
   const captionLineRef = useRef<HTMLParagraphElement>(null)
   const captionTrackRef = useRef<HTMLSpanElement>(null)
+  const captionRestRef = useRef<HTMLSpanElement>(null)
   const startRef = useRef<(on: boolean, tap?: boolean) => void>(() => {})
   const touchOnRef = useRef(false)
   // the keyboard never needs to re-render for the heatmap
@@ -332,6 +335,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
     let typingTimer: ReturnType<typeof setTimeout> | undefined
     let spellTimer: ReturnType<typeof setTimeout> | undefined
     let announceTimer: ReturnType<typeof setTimeout> | undefined
+    let clearTimer: ReturnType<typeof setTimeout> | undefined
     let spelling = false
     let pinned: KeyState | undefined
 
@@ -396,10 +400,9 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       }
     }
 
-    // the line typed by spell() is longer than hover's snippets and shows whole
-    const append = (ch: string, length = CAPTION_LENGTH) => {
+    const append = (ch: string) => {
       const before = typed.length
-      typed = (typed + ch).slice(-length)
+      typed = (typed + ch).slice(-CAPTION_LENGTH)
       if (captionRef.current) captionRef.current.textContent = typed
       // a growing centered line shifts the text half a character; a full one shifts a whole one
       captionOffset = Math.min(captionOffset + (typed.length > before ? 0.5 : 1), 3)
@@ -472,6 +475,38 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       }
     }
 
+    // the spelled line wraps rather than running off the screen, which on a phone would make the
+    // browser zoom out to fit it. The keyboard is scaled down on small screens, so the room for it
+    // is the screen's width (less a gutter) at that scale. The whole line is laid out from the
+    // start, the untyped rest unseen, so it never rewraps or shifts as it's typed.
+    const fitCaption = () => {
+      const line = captionLineRef.current
+      if (!line || !board.offsetWidth) return
+      const scale = board.getBoundingClientRect().width / board.offsetWidth
+      line.style.maxWidth = `${(document.documentElement.clientWidth - CAPTION_GUTTER * 2) / scale}px`
+    }
+
+    const setCaptionWrap = (on: boolean) => {
+      if (captionLineRef.current) captionLineRef.current.style.whiteSpace = on ? 'pre-wrap' : ''
+      if (captionTrackRef.current) captionTrackRef.current.style.textAlign = on ? 'center' : ''
+    }
+
+    const resetCaption = () => {
+      clearTimeout(clearTimer)
+      typed = ''
+      captionOffset = 0
+      if (captionRef.current) captionRef.current.textContent = ''
+      if (captionRestRef.current) captionRestRef.current.textContent = ''
+      setCaptionWrap(false)
+    }
+
+    // fades the caption out, then empties it, so no unseen text is left behind
+    const hideCaption = () => {
+      if (captionLineRef.current) captionLineRef.current.style.opacity = '0'
+      clearTimeout(clearTimer)
+      clearTimer = setTimeout(resetCaption, 500)
+    }
+
     // moves all the heat on the board into fade, so it clears out of the way of what comes next
     const fadeHeat = () => {
       for (const k of keys) {
@@ -496,38 +531,39 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
         touchOnRef.current = false
         active = false
       }
+      const text = LINE + PUNCHLINE
       const finish = () => {
         stopSpell()
         if (reducedMotion) {
           stillHeat()
+          hideCaption()
           return
         }
         if (active) {
           // pick the hover typing back up after a pause
-          gap = SNIPPET_GAP
+          resetCaption()
           typingTimer = setTimeout(type, 300)
-        } else if (captionLineRef.current) {
-          captionLineRef.current.style.opacity = '0'
+        } else {
+          hideCaption()
         }
       }
 
-      typed = ''
-      captionOffset = 0
-      if (captionRef.current) captionRef.current.textContent = ''
+      resetCaption()
+      fitCaption()
+      setCaptionWrap(true)
       setCaptionMask(false)
       if (captionLineRef.current) captionLineRef.current.style.opacity = '1'
 
       if (reducedMotion) {
         // the whole line at once
-        append(LINE + PUNCHLINE, Infinity)
-        announce(LINE + PUNCHLINE)
+        if (captionRef.current) captionRef.current.textContent = text
+        announce(text)
         stillHeat()
         spellTimer = setTimeout(finish, SPELL_STILL_TIME)
         return
       }
 
       fadeHeat()
-      const text = LINE + PUNCHLINE
       let i = 0
       const step = () => {
         const ch = text[i]
@@ -539,8 +575,9 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
         const heat = inHomeWord || ch === ';' ? SPELL_HEAT : KEYSTROKE_HEAT
         const k = byKey.get(SYMBOL_KEYS[ch] ?? ch.toLowerCase())
         if (k) k.heat = Math.min(k.heat + heat, MAX_HEAT)
-        append(ch, Infinity)
         i += 1
+        if (captionRef.current) captionRef.current.textContent = text.slice(0, i)
+        if (captionRestRef.current) captionRestRef.current.textContent = text.slice(i)
         if (i === text.length) {
           announce(text)
           spellTimer = setTimeout(finish, SPELL_HOLD)
@@ -583,9 +620,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       if (captionLineRef.current) captionLineRef.current.style.opacity = on ? '1' : '0'
       clearTimeout(typingTimer)
       if (on) {
-        typed = ''
-        captionOffset = 0
-        if (captionRef.current) captionRef.current.textContent = ''
+        resetCaption()
         // start somewhere new each hover
         snippet = Math.floor(Math.random() * SNIPPETS.length)
         index = 0
@@ -602,17 +637,21 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       draw()
     })
     resizeObserver.observe(board)
+    // the keyboard's scale steps at breakpoints without changing its size, so watch the window too
+    window.addEventListener('resize', fitCaption)
     // next-themes flips the class on <html>; re-read the colors for the new mode
     const themeObserver = new MutationObserver(applyRamp)
     themeObserver.observe(document.documentElement, {attributes: true, attributeFilter: ['class']})
 
     return () => {
       resizeObserver.disconnect()
+      window.removeEventListener('resize', fitCaption)
       themeObserver.disconnect()
       cancelAnimationFrame(frame)
       clearTimeout(typingTimer)
       clearTimeout(spellTimer)
       clearTimeout(announceTimer)
+      clearTimeout(clearTimer)
       startRef.current = () => {}
       spellRef.current = () => {}
       pinRef.current = () => {}
@@ -649,7 +688,11 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       >
         <span ref={captionTrackRef} className="inline-block">
           <span ref={captionRef} />
-          <span className="bg-nushu-ink-muted ml-px inline-block h-[1.1em] w-[2px] translate-y-[3px] animate-pulse" />
+          {/* the cursor takes no room in the line, so a wrapping line never breaks at it */}
+          <span className="relative">
+            <span className="bg-nushu-ink-muted absolute top-0 left-px h-[1.1em] w-[2px] animate-pulse" />
+          </span>
+          <span ref={captionRestRef} className="invisible" />
         </span>
       </p>
       <p ref={announceRef} aria-live="polite" className="sr-only" />
