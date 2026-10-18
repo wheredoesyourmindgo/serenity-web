@@ -8,7 +8,18 @@ import FnLyr from '@/components/keyboard/software/FnLyr'
 import QmkLegend from '@/components/QmkLegend'
 import {Tabs} from '@/components/ui/tabs'
 import {LayerTabsContent, LayerTabsList, LayerTabsTrigger} from '@/components/LayerTabs'
-import {GitHubButton, PageBody, PageHeader} from '@/components/Page'
+import {
+  ActionButton,
+  GitHubButton,
+  PageBody,
+  PageHeader,
+  Section,
+  TextLink
+} from '@/components/Page'
+
+const KARABINER_RULES_URL =
+  'https://raw.githubusercontent.com/wheredoesyourmindgo/serenity-karabiner/main/serenity.json'
+const KARABINER_IMPORT_URL = `karabiner://karabiner/assets/complex_modifications/import?url=${encodeURIComponent(KARABINER_RULES_URL)}`
 
 const tabs = [
   {value: 'base', label: 'Base', icon: 'fa-regular fa-house-user'},
@@ -22,6 +33,9 @@ export default function SoftwarePage() {
         title="Software"
         lede="Serenity on any Mac keyboard, laptop included, with Karabiner-Elements. No new hardware needed."
       >
+        <ActionButton href={KARABINER_IMPORT_URL} icon="fa-regular fa-arrow-down-to-line">
+          Install in Karabiner
+        </ActionButton>
         <GitHubButton href="https://github.com/wheredoesyourmindgo/serenity-karabiner">
           serenity-karabiner
         </GitHubButton>
@@ -57,6 +71,25 @@ export default function SoftwarePage() {
 
       <PageBody className="mt-12">
         <QmkLegend />
+
+        <Section id="install" icon="fa-regular fa-arrow-down-to-line" title="Install">
+          <p>
+            Install{' '}
+            <TextLink href="https://karabiner-elements.pqrs.org">Karabiner-Elements</TextLink>, then
+            click Install in Karabiner at the top of this page. Karabiner asks to import the
+            Serenity rules. Click Import, then Enable All. Your other Karabiner settings and rules
+            stay as they are.
+          </p>
+          <p>
+            The order of the rules matters. Enable All keeps it right. If you turn rules on one at a
+            time, keep Map Serenity layout at the bottom of the list.
+          </p>
+          <p>
+            The rules apply only to Apple keyboards and turn off at the lock screen, so you can type
+            your password in QWERTY. Karabiner can't tell when the screen is locked by itself. The{' '}
+            <TextLink href="/extras#config">Hammerspoon snippet</TextLink> tells it.
+          </p>
+        </Section>
       </PageBody>
     </>
   )
