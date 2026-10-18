@@ -15,8 +15,8 @@ import {letterFrequency} from '@/lib/letterFrequency'
  * DOM), so nothing re-renders in React while it runs. Colors are the --heat-* tokens in globals.css.
  *
  * Every letter of "serenity" sits on the home row, and typing it alternates hands on every key.
- * spell() types a line about it with a trail arcing between the keys of its home row words, and
- * pin() holds one key warm, so the wordmark can show it off (see SerenityHero.tsx).
+ * spell() types a line about it that lights up its home row words, and pin() holds one key warm,
+ * so the wordmark can show it off (see SerenityHero.tsx).
  */
 
 const SNIPPETS = [
@@ -99,23 +99,21 @@ const GLOW_SIGMA = 29
 const MARGIN = 60
 const MAX_KEYS = 40
 // clicking the name types this line, then the punchline after a pause: every letter of "heart",
-// "serenity", and the ; sit on the home row, so those draw a trail between their keys as they're
-// typed and glow hotter than the rest
+// "serenity", and the ; sit on the home row, so those glow hotter than the rest as they're typed
 const LINE = 'Home is where the heart is, and where serenity resides'
 const PUNCHLINE = '; Literally ;)'
 const HOME_WORDS = ['heart', 'serenity']
 const HOME_KEYS = new Set([...HOME_WORDS.join(''), ';'])
 // heat per home row keystroke, and ms between keystrokes, before the punchline, and the finished
-// line and trail stay up
+// line stays up
 const SPELL_HEAT = 0.55
 const SPELL_INTERVAL = 75
 const SPELL_PAUSE = 1300
 const SPELL_HOLD = 2200
-// with reduced motion the line and trail show still for this long instead
+// with reduced motion the line and its keys show still for this long instead
 const SPELL_STILL_TIME = 4000
 // heat held on a key while its letter in the wordmark is hovered
 const PIN_HEAT = 0.8
-const SVG_NS = 'http://www.w3.org/2000/svg'
 
 const VERTEX_SHADER = `
 attribute vec2 aPos;
@@ -288,7 +286,7 @@ function frequencyHeat(key: string) {
 type KeyState = {key: string; x: number; y: number; target: number; heat: number; fade: number}
 
 export type HeatmapControls = {
-  // types the home row line under the keyboard with a trail between the keys of its home row words
+  // types the home row line under the keyboard, lighting up its home row words
   spell: () => void
   // holds one key warm, e.g. while its letter in the wordmark is hovered; null lets it cool
   pin: (key: string | null) => void
@@ -297,7 +295,6 @@ export type HeatmapControls = {
 export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
   const boardRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const trailRef = useRef<SVGSVGElement>(null)
   const announceRef = useRef<HTMLParagraphElement>(null)
   const spellRef = useRef<HeatmapControls['spell']>(() => {})
   const pinRef = useRef<HeatmapControls['pin']>(() => {})
@@ -318,8 +315,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
   useEffect(() => {
     const board = boardRef.current
     const canvas = canvasRef.current
-    const trail = trailRef.current
-    if (!board || !canvas || !trail) return
+    if (!board || !canvas) return
     const renderer = createRenderer(canvas)
     if (!renderer) return
 
@@ -456,38 +452,6 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       draw()
     }
 
-    // one arc per step of each word: over the keys going right, under them going left, so the
-    // back-and-forth between hands draws as loops. Each arc draws itself in when its key is typed;
-    // a word's arcs are returned in order, so the arc into its letter i is at i - 1.
-    const buildTrail = (interval: number) => {
-      trail.setAttribute('viewBox', `0 0 ${width} ${height}`)
-      trail.style.width = `${width}px`
-      trail.style.height = `${height}px`
-      const words = HOME_WORDS.map((word) => buildArcs(word, interval))
-      trail.replaceChildren(...words.flat())
-      trail.style.transition = 'none'
-      trail.style.opacity = '1'
-      return words
-    }
-
-    const buildArcs = (word: string, interval: number) => {
-      const points = [...word].map((ch) => byKey.get(ch)).filter((k) => k !== undefined)
-      return points.slice(1).map((to, i) => {
-        const from = points[i]
-        const lift = Math.min(Math.abs(to.x - from.x) * 0.35, 70) * (to.x > from.x ? -1 : 1)
-        const path = document.createElementNS(SVG_NS, 'path')
-        path.setAttribute(
-          'd',
-          `M${from.x} ${from.y} Q${(from.x + to.x) / 2} ${(from.y + to.y) / 2 + lift} ${to.x} ${to.y}`
-        )
-        path.setAttribute('pathLength', '1')
-        path.style.strokeDasharray = '1'
-        path.style.strokeDashoffset = reducedMotion ? '0' : '1'
-        path.style.transition = `stroke-dashoffset ${interval * 2}ms ease-out`
-        return path
-      })
-    }
-
     // the caption is hidden from screen readers, so the finished line is read out from a live
     // region instead; it's cleared afterward, so setting it on the next spell reads it again
     const announce = (text: string) => {
@@ -519,8 +483,6 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
     const stopSpell = () => {
       clearTimeout(spellTimer)
       spelling = false
-      trail.style.transition = reducedMotion ? 'none' : 'opacity 700ms'
-      trail.style.opacity = '0'
       if (!reducedMotion) setCaptionMask(true)
     }
 
@@ -534,8 +496,6 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
         touchOnRef.current = false
         active = false
       }
-      const arcs = buildTrail(SPELL_INTERVAL)
-
       const finish = () => {
         stopSpell()
         if (reducedMotion) {
@@ -558,7 +518,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       if (captionLineRef.current) captionLineRef.current.style.opacity = '1'
 
       if (reducedMotion) {
-        // the whole line at once, with the trail already drawn
+        // the whole line at once
         append(LINE + PUNCHLINE, Infinity)
         announce(LINE + PUNCHLINE)
         stillHeat()
@@ -571,15 +531,12 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       let i = 0
       const step = () => {
         const ch = text[i]
-        // inside a home row word, its letter glows hotter and the arc into it draws
-        let heat = KEYSTROKE_HEAT
-        HOME_WORDS.forEach((word, w) => {
+        // the letters of the home row words, and the ;, glow hotter
+        const inHomeWord = HOME_WORDS.some((word) => {
           const at = i - LINE.indexOf(word)
-          if (at < 0 || at >= word.length) return
-          heat = SPELL_HEAT
-          if (at > 0) arcs[w][at - 1].style.strokeDashoffset = '0'
+          return at >= 0 && at < word.length
         })
-        if (ch === ';') heat = SPELL_HEAT
+        const heat = inHomeWord || ch === ';' ? SPELL_HEAT : KEYSTROKE_HEAT
         const k = byKey.get(SYMBOL_KEYS[ch] ?? ch.toLowerCase())
         if (k) k.heat = Math.min(k.heat + heat, MAX_HEAT)
         append(ch, Infinity)
@@ -680,17 +637,6 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
           aria-hidden="true"
           className="pointer-events-none absolute mix-blend-multiply dark:mix-blend-screen"
           style={{left: -MARGIN, top: -MARGIN}}
-        />
-        <svg
-          ref={trailRef}
-          aria-hidden="true"
-          className="pointer-events-none absolute opacity-0"
-          style={{left: -MARGIN, top: -MARGIN}}
-          fill="none"
-          stroke="var(--heat-2)"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeOpacity={0.3}
         />
         <div ref={boardRef} className="relative">
           {keyboard}
