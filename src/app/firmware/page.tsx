@@ -72,6 +72,19 @@ const customizations: Feature[] = [
     )
   },
   {
+    term: 'Select Word',
+    body: (
+      <>
+        The Num/Nav layer's select key selects the current word, or the current line with Shift;
+        press it again to extend the selection to the next word or line. Uses{' '}
+        <TextLink href="https://github.com/getreuer/qmk-modules/tree/main/select_word">
+          Select Word
+        </TextLink>{' '}
+        by Pascal Getreuer.
+      </>
+    )
+  },
+  {
     term: 'Custom App Switcher',
     body: 'A firmware‑level feature within the OS Layer that provides app cycling and fast switching that replicates Cmd+Tab/Cmd+Shift+Tab shortcuts.'
   },
