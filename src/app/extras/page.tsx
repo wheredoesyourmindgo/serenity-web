@@ -277,7 +277,7 @@ end run
           </div>
           <p>
             Most of what&apos;s left can be done in a modern editor with extensions or built-in
-            commands. These are two VS Code extensions I maintain to fill the gaps.
+            commands. These are two VS Code extensions I maintain to fill such gaps.
           </p>
           <ul className="space-y-3">
             {[
@@ -297,7 +297,8 @@ end run
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-border hover:bg-accent/60 group flex items-center justify-between gap-4 rounded-lg border px-4 py-3 transition-colors"
+                  // a keycap, like the keys: face, edge and lip from the --key-* tokens in globals.css
+                  className="group flex items-center justify-between gap-4 rounded-lg border border-(--key-border) bg-(--key-face) px-4 py-3 shadow-(--key-shadow) transition hover:border-(--key-border-hover) hover:shadow-(--key-shadow-hover) motion-safe:hover:-translate-y-px"
                 >
                   <span>
                     <span className="text-nushu-blue block font-medium">{name}</span>
