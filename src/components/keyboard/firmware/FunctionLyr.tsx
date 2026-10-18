@@ -111,7 +111,7 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'enter-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/enter" output="Enter" />
+                  <PopoverDesc action="tap/hold" output="Enter" />
                 </div>
               )
             }}

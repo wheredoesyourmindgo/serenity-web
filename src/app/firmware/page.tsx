@@ -74,7 +74,7 @@ const customizations: Feature[] = [
     body: (
       <>
         Backspace performs Forward Delete (del) when held with Shift, and deletes to the end of the
-        line with Shift+Cmd (except on the Qwerty layer, where Shift+Backspace stays standard). Uses{' '}
+        line with Shift+Cmd. Uses{' '}
         <TextLink href="https://github.com/getreuer/qmk-modules/tree/main/custom_shift_keys">
           Custom Shift Keys
         </TextLink>{' '}

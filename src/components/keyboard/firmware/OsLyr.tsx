@@ -294,7 +294,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'previous-window-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Previous Window" />
+                  <PopoverDesc action="tap" output="Previous App" />
                 </div>
               )
             }}
