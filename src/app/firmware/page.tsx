@@ -110,10 +110,6 @@ const customizations: Feature[] = [
     body: "On the Symbol layer, shifted symbols (e.g., '~', '{', '?') are sent the moment the key goes down instead of being held until release. Rolling quickly into the next symbol can't carry Shift over to it, so a '/' rolled in right after '~' correctly types '/', not '?'. Modifiers you're deliberately holding stay held."
   },
   {
-    term: 'Temporary Home Row Mods w/ Base Layer',
-    body: "Tap the Num/Nav or Symbol key once, then press it again and hold to temporarily use that side's home‑row modifiers on the Base layer. Useful for certain edge cases where Instant One‑Shot mods (see above) are insufficient."
-  },
-  {
     term: 'Long‑press dual keys',
     body: (
       <>

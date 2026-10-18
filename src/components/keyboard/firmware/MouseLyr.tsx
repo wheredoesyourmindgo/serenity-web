@@ -259,7 +259,10 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'lock-key-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Lock Next Key" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Lock Next Key (released when you leave the Mouse layer)"
+                  />
                 </div>
               )
             }}
