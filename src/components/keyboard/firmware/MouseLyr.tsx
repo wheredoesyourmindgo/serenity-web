@@ -122,8 +122,6 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
-            // ShiftSubIcnProps={{flip: 'horizontal'}}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
@@ -470,17 +468,6 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
-          {/* <KeyIcon
-            className="fa-regular fa-arrow-up-left-from-circle text-[19px] translate-y-[1px]"
-            KeyContainerProps={{
-              keyId: 'escape-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Escape" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
@@ -553,7 +540,6 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               2
             </span>
           </KeyIcon>
-          {/* <KeyIcon className="fa-regular fa-arrow-right-long-to-line" /> */}
           <KeyIcon
             className="fa-regular fa-command"
             color="nushu.cyan"

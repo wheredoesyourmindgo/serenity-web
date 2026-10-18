@@ -49,8 +49,6 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
                 </div>
               )
             }}
-            // shiftSubIcn={faRightToBracket}
-            // ShiftSubIcnProps={{flip: 'horizontal'}}
             ShiftSubIcn={() => <ShiftSubIcn className="fa-regular fa-delete-right" />}
           />
         </KeyboardGridRow>
@@ -151,47 +149,13 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyLegend
-            {...sharedProps}
-            tapDance
-            // shiftLgnd=">"
-            KeyContainerProps={{
-              keyId: 'alt-period-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="period" />
-                  <br />
-
-                  <PopoverDesc action="hold" output="comma" />
-                </div>
-              )
-            }}
-          >
-            .
-          </KeyLegend> */}
-          {/* <KeyIcon
-            tapDance
-            icon={faCalculator}
-            KeyContainerProps={{
-              keyId: 'pemdas-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="." />
-                  <br />
-                  <PopoverDesc action="double tap" output="=" />
-                  <br />
-                  <PopoverDesc action="triple tap" output="%" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon className="fa-regular fa-arrow-left" homing />
           <KeyIcon className="fa-regular fa-arrow-down" />
           <KeyIcon className="fa-regular fa-arrow-up" />
           <KeyIcon className="fa-regular fa-arrow-right" />
           <KeyLegend
             {...sharedProps}
-            tapDance
+            longPress
             KeyContainerProps={{
               keyId: 'dot-comma-key',
               popOverContent: (
@@ -278,22 +242,6 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          {/* <KeyIcon
-            tapDance
-            icon={faCalculatorSimple}
-            KeyContainerProps={{
-              keyId: 'pemdas-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="*" />
-                  <br />
-                  <PopoverDesc action="double tap" output="/" />
-                  <br />
-                  <PopoverDesc action="triple tap" output="+" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-lock-a"
             KeyContainerProps={{
@@ -363,23 +311,6 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          {/* <KeyIcon
-            icon={faVolumeXmark}
-            special
-            KeyContainerProps={{
-              keyId: 'oops-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="Toggle Mute" />
-                  <br />
-                  <PopoverDesc
-                    action="double tap"
-                    output="Mute & Hide Window"
-                  />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{

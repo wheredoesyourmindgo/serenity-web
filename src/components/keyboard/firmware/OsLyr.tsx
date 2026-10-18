@@ -85,17 +85,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             </div>
           </KeyIcon>
           <KeyLegend {...sharedProps} />
-          {/*<KeyIcon
-            className="fa-regular fa-rocket-launch"
-            KeyContainerProps={{
-              keyId: 'launcher-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="App Launcher" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyLegend {...sharedProps} />
           <KeyIcon
             className="fa-light fa-folder-magnifying-glass text-[25px]"
@@ -109,15 +98,12 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            // tapDance
             className="fa-regular fa-magnifying-glass"
             KeyContainerProps={{
               keyId: 'spotlight-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Spotlight" />
-                  {/* <br />
-                  <PopoverDesc action="hold" output="Spotlight in Finder" /> */}
                 </div>
               )
             }}
@@ -327,7 +313,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            tapDance
+            longPress
             className="fa-light fa-display text-[25px]"
             KeyContainerProps={{
               keyId: 'screenshot-dsktp-file-key',
@@ -346,7 +332,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
           </KeyIcon>
 
           <KeyIcon
-            tapDance
+            longPress
             className="fa-light fa-window text-[29px]"
             KeyContainerProps={{
               keyId: 'screenshot-sel-file-key',
@@ -365,7 +351,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
           </KeyIcon>
 
           <KeyIcon
-            tapDance
+            longPress
             className="fa-light fa-square-dashed text-[27px]"
             KeyContainerProps={{
               keyId: 'screenshot-sel-file-key',
@@ -398,39 +384,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
 
-          {/* <KeyIcon
-            className="fa-light fa-square-dashed text-[27px]"
-            KeyContainerProps={{
-              keyId: 'screenshot-sel-clip-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc
-                    action="tap"
-                    output="Screenshot Selection to Clipboard"
-                  />
-                </div>
-              )
-            }}
-          >
-            <FaIcon
-              className="fa-regular fa-clipboard text-[14px]"
-            />
-          </KeyIcon> */}
-          {/* <KeyIcon
-            className="fa-light fa-display text-[27px]"
-            KeyContainerProps={{
-              keyId: 'screenshot-dsktp-clip-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Screenshot to Clipboard" />
-                </div>
-              )
-            }}
-          >
-            <FaIcon
-              className="fa-regular fa-clipboard text-[14px]"
-            />
-          </KeyIcon> */}
           <KeyLegend {...sharedProps} />
           <KeyIcon
             className="fa-light fa-gallery-thumbnails text-[25px]"
@@ -469,17 +422,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             </div>
           </KeyIcon>
           <KeyLegend {...sharedProps} />
-          {/* <KeyIcon
-            className="fa-regular fa-terminal"
-            KeyContainerProps={{
-              keyId: 'terminal-visor-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Terminal Visor" />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
@@ -493,23 +435,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          {/* <KeyIcon
-            icon={faVolumeXmark}
-            special
-            KeyContainerProps={{
-              keyId: 'oops-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="single tap" output="Toggle Mute" />
-                  <br />
-                  <PopoverDesc
-                    action="double tap"
-                    output="Mute & Hide Window"
-                  />
-                </div>
-              )
-            }}
-          /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
