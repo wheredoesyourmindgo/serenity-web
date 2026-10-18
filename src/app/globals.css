@@ -64,6 +64,19 @@
   --color-nushu-blue: var(--nushu-blue);
   --color-nushu-cyan: var(--nushu-cyan);
   --color-nushu-green: var(--nushu-green);
+
+  /* the homepage caption's cursor, a shadow just right of the last typed letter so it never takes
+     room in the line (see HeatmapAlphas.tsx); it pulses like animate-pulse */
+  --animate-caret: caret 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  @keyframes caret {
+    0%,
+    100% {
+      box-shadow: 2px 0 0 0 var(--color-nushu-ink-muted);
+    }
+    50% {
+      box-shadow: 2px 0 0 0 color-mix(in srgb, var(--color-nushu-ink-muted) 50%, transparent);
+    }
+  }
 }
 
 :root {
