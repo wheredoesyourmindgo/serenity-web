@@ -271,6 +271,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             tapDance
             appShortcut
+            requiresOsConf
             rotation={90}
             className="fa-regular fa-down-left-and-up-right-to-center"
             KeyContainerProps={{
@@ -290,6 +291,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             homing
             tapDance
             appShortcut
+            requiresOsConf
             className="fa-regular fa-sidebar"
             KeyContainerProps={{
               keyId: 'window-center-key',
@@ -395,6 +397,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             homing
             tapDance
             appShortcut
+            requiresOsConf
             className="fa-regular fa-sidebar-flip"
             KeyContainerProps={{
               keyId: 'window-restore-key',
@@ -447,6 +450,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             tapDance
             appShortcut
+            requiresOsConf
             rotation={-45}
             className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
@@ -464,6 +468,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             appShortcut
+            requiresOsConf
             className="fa-regular fa-square-left"
             KeyContainerProps={{
               keyId: 'throw-space-left-key',
@@ -480,6 +485,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyIcon
             appShortcut
+            requiresOsConf
             className="fa-regular fa-square-right"
             KeyContainerProps={{
               keyId: 'throw-space-right-key',
