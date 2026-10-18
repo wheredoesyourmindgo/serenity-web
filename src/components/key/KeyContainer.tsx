@@ -1,7 +1,7 @@
 'use client'
 
 import type {HTMLAttributes, KeyboardEvent, PointerEvent, ReactNode} from 'react'
-import {useRef, useState} from 'react'
+import {useId, useRef, useState} from 'react'
 import {HoverCard, HoverCardContent, HoverCardTrigger} from '@/components/ui/hover-card'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
 import {cn} from '@/lib/utils'
@@ -16,7 +16,8 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
   const {className, style, ...r} = rest
   const isTouchDevice = useIsTouchDevice()
 
-  const popOverId = keyId ? `${keyId}-popover` : 'mouse-over-popover'
+  // useId keeps the id unique when two keys on a layer share a keyId (or have none)
+  const popOverId = `${keyId ?? 'key'}-popover-${useId()}`
   // always controlled: touch support is only known after mount, and switching a popover from
   // uncontrolled to controlled then is an error. Hover drives it through onOpenChange.
   const [open, setOpen] = useState(false)
