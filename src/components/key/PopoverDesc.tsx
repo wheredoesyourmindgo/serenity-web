@@ -1,8 +1,8 @@
 import {Typography} from '@/components/ui/typography'
 
-type Props = {action: string; output: string}
+type Props = {action: string; output: string; code?: string}
 
-export default function PopoverDesc({action, output}: Props) {
+export default function PopoverDesc({action, output, code}: Props) {
   return (
     <>
       <Typography
@@ -21,6 +21,11 @@ export default function PopoverDesc({action, output}: Props) {
       >
         {output}
       </Typography>
+      {code ? (
+        <code className="bg-muted text-muted-foreground ml-2 rounded px-1 py-0.5 font-mono text-xs">
+          {code}
+        </code>
+      ) : null}
     </>
   )
 }
