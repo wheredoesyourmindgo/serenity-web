@@ -82,7 +82,7 @@ export default function SoftwarePage() {
           </p>
           <p>
             The order of the rules matters. Enable All keeps it right. If you turn rules on one at a
-            time, keep Map Serenity layout at the bottom of the list.
+            time, keep Serenity: Layout at the bottom of the list.
           </p>
           <p>
             The rules apply only to Apple keyboards and turn off at the lock screen, so you can type
