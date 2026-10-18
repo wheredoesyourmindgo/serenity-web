@@ -204,32 +204,59 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           /> */}
           <KeyIcon
             className="fa-regular fa-chevron-up"
+            color="nushu.cyan"
             KeyContainerProps={{
+              keyId: 'one-shot-left-control-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Control for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Control" />
+                </div>
+              )
             }}
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
+            color="nushu.cyan"
             KeyContainerProps={{
+              keyId: 'one-shot-left-option-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Option for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Option" />
+                </div>
+              )
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
+            color="nushu.cyan"
             KeyContainerProps={{
+              keyId: 'one-shot-left-command-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Command for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Command" />
+                </div>
+              )
             }}
           />
           <KeyLegend {...sharedProps} />
@@ -285,19 +312,12 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
-            color="nushu.cyan"
             KeyContainerProps={{
-              keyId: 'right-option-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              },
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Right Option" />
-                </div>
-              )
+              }
             }}
           />
           <KeyIcon
