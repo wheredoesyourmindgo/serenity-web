@@ -69,8 +69,7 @@ export default function KeyIcon({
         {requiresOsConf ? <ReqSetupSubLgnd /> : null}
         {tapDance ? <TapDanceSubIcn /> : null}
         {tapForceHold ? <TapForceHoldSubIcn /> : null}
-        {/* beside the wrench when both share the top-left corner */}
-        {appShortcut ? <AppSubIcn className={requiresOsConf ? 'left-[22px]' : undefined} /> : null}
+        {appShortcut ? <AppSubIcn /> : null}
         {LyrHoldSubIcn ? <LyrHoldSubIcn /> : null}
         {ModHoldSubIcn ? <ModHoldSubIcn /> : null}
         <div className={iconOffsetClass}>

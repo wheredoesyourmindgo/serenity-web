@@ -2,6 +2,7 @@ import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
 import PopoverDesc from '@/components/key/PopoverDesc'
+import AppCaption from '@/components/key/AppCaption'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
@@ -51,12 +52,14 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className="fa-regular fa-circle-half-stroke"
-            requiresOsConf
+            appShortcut
             KeyContainerProps={{
               keyId: 'toggle-dark-mode-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Toggle Light/Dark Mode" />
+                  <PopoverDesc action="tap" output="Toggle Light/Dark Mode (⌃⌥⇧⌘D)" />
+                  <br />
+                  <AppCaption app="AppleScript" />
                 </div>
               )
             }}
@@ -200,7 +203,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
                 <div className="p-2">
                   <PopoverDesc
                     action="tap/hold"
-                    output="Escape (or turn off Hardware layer lock)"
+                    output="Escape (or clear one-shot mods, then turn off Hardware layer lock)"
                   />
                 </div>
               )
@@ -379,8 +382,8 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           /> */}
-          <KeyIcon
-            className="fa-regular fa-chevron-up"
+          <KeyLegend
+            {...sharedProps}
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
@@ -406,8 +409,8 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyIcon
-            className="fa-regular fa-command"
+          <KeyLegend
+            {...sharedProps}
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
@@ -472,31 +475,58 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
+              keyId: 'right-command-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Right Command (adds Right Shift while the Hardware key is held)"
+                  />
+                </div>
+              )
             }}
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
             KeyContainerProps={{
+              keyId: 'right-option-mod-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Right Option (adds Right Shift while the Hardware key is held)"
+                  />
+                </div>
+              )
             }}
           />
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
+              keyId: 'right-control-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Right Control (adds Right Shift while the Hardware key is held)"
+                  />
+                </div>
+              )
             }}
           />
         </KeyboardGridRow>

@@ -177,7 +177,10 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape (or turn off Mouse layer lock)" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (or clear one-shot mods, then turn off Mouse layer lock)"
+                  />
                 </div>
               )
             }}

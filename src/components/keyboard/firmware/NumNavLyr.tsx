@@ -62,7 +62,10 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape (or turn off Num-Nav layer lock)" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (or clear one-shot mods, then turn off Num-Nav layer lock)"
+                  />
                 </div>
               )
             }}

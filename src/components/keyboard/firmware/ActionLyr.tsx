@@ -6,30 +6,7 @@ import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
 import KeyboardGridRow from '../KeyboardGridRow'
-import FaIcon from '@/components/FaIcon'
-
-function RectangleProCaption() {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        textAlign: 'right'
-      }}
-    >
-      <span
-        style={{
-          color: 'var(--nushu-blue)',
-          fontSize: 11,
-          fontWeight: 'bold'
-        }}
-      >
-        <FaIcon className="fa-regular fa-browser pr-[18px]" color="nushu.blue" />
-        Rectangle Pro
-      </span>
-    </div>
-  )
-}
+import AppCaption from '@/components/key/AppCaption'
 
 export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
   const sharedProps: KeyLegendProps = {variant: 'h5'}
@@ -150,11 +127,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-partial-fullscreen-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Maximize Window" />
+                  <PopoverDesc action="tap" output="Maximize Window (⌃⌥↩)" />
                   <br />
-                  <PopoverDesc action="hold" output="Restore Window" />
+                  <PopoverDesc action="hold" output="Restore Window (⌃⌥⌫)" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -235,7 +212,10 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape (or turn off Action layer lock)" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (or clear one-shot mods, then turn off Action layer lock)"
+                  />
                 </div>
               )
             }}
@@ -271,18 +251,17 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             tapDance
             appShortcut
-            requiresOsConf
             rotation={90}
             className="fa-regular fa-down-left-and-up-right-to-center"
             KeyContainerProps={{
               keyId: 'window-partial-fullscreen-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Center Window" />
+                  <PopoverDesc action="tap" output="Center Window (⌃⌥C)" />
                   <br />
-                  <PopoverDesc action="hold" output="Last Window Position" />
+                  <PopoverDesc action="hold" output="Last Window Position (⌃⌥⇧⌘V)" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -291,17 +270,16 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             homing
             tapDance
             appShortcut
-            requiresOsConf
             className="fa-regular fa-sidebar"
             KeyContainerProps={{
               keyId: 'window-center-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Window Left Half" />
+                  <PopoverDesc action="tap" output="Window Left Half (⌃⌥⌘←)" />
                   <br />
-                  <PopoverDesc action="hold" output="Window Fill Left" />
+                  <PopoverDesc action="hold" output="Window Fill Left (⌃⌥⌘L)" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -316,11 +294,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-management1-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Decrease Window Size" />
+                  <PopoverDesc action="tap/hold" output="Decrease Window Size (⌃⌥-)" />
                   {/* <br />
                   <PopoverDesc action="hold" output="" />
                   <br /> */}
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -334,11 +312,11 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-management2-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Increase Window Size" />
+                  <PopoverDesc action="tap/hold" output="Increase Window Size (⌃⌥=)" />
                   {/* <br />
                   <PopoverDesc action="hold" output="" />
                   <br /> */}
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -357,7 +335,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                   <br />
                   <PopoverDesc action="hold" output="Window Fill Bottom" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -375,7 +353,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                   <br />
                   <PopoverDesc action="hold" output="Window Fill Top" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -397,17 +375,16 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             homing
             tapDance
             appShortcut
-            requiresOsConf
             className="fa-regular fa-sidebar-flip"
             KeyContainerProps={{
               keyId: 'window-restore-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Window Right Half" />
+                  <PopoverDesc action="tap" output="Window Right Half (⌃⌥⌘→)" />
                   <br />
-                  <PopoverDesc action="hold" output="Window Fill Right" />
+                  <PopoverDesc action="hold" output="Window Fill Right (⌃⌥⌘R)" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -450,33 +427,31 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             tapDance
             appShortcut
-            requiresOsConf
             rotation={-45}
             className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
               keyId: 'window-partial-fullscreen-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Almost Max Window" />
+                  <PopoverDesc action="tap" output="Almost Max Window (⌃⌥⇧⌘M)" />
                   <br />
-                  <PopoverDesc action="hold" output="Max Window Height" />
+                  <PopoverDesc action="hold" output="Max Window Height (⌃⌥⇧↑)" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
           />
           <KeyIcon
             appShortcut
-            requiresOsConf
             className="fa-regular fa-square-left"
             KeyContainerProps={{
               keyId: 'throw-space-left-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Throw Window Space Left" />
+                  <PopoverDesc action="tap" output="Throw Window Space Left (⌃⌥⇧⌘←)" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -485,15 +460,14 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyIcon
             appShortcut
-            requiresOsConf
             className="fa-regular fa-square-right"
             KeyContainerProps={{
               keyId: 'throw-space-right-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Throw Window Space Right" />
+                  <PopoverDesc action="tap" output="Throw Window Space Right (⌃⌥⇧⌘→)" />
                   <br />
-                  <RectangleProCaption />
+                  <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
@@ -531,18 +505,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-chevron-up"
             KeyContainerProps={{
-              style: {
-                opacity: isCorneLayout ? 0 : 1,
-                scale: isCorneLayout ? 0.92 : 1,
-                pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
-            }}
-          />
-          <KeyIcon
-            className="fa-regular fa-option text-[18px]"
-            color="nushu.cyan"
-            KeyContainerProps={{
-              keyId: 'right-option-key',
+              keyId: 'left-control-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
@@ -550,7 +513,29 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               },
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Right Option" />
+                  <PopoverDesc
+                    action="hold"
+                    output="Left Control (adds Left Shift while the Action key is held)"
+                  />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option text-[18px]"
+            KeyContainerProps={{
+              keyId: 'left-option-key',
+              style: {
+                opacity: isCorneLayout ? 0 : 1,
+                scale: isCorneLayout ? 0.92 : 1,
+                pointerEvents: isCorneLayout ? 'none' : 'auto'
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Left Option (adds Left Shift while the Action key is held)"
+                  />
                 </div>
               )
             }}
@@ -558,11 +543,20 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             className="fa-regular fa-command"
             KeyContainerProps={{
+              keyId: 'left-command-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Left Command (adds Left Shift while the Action key is held)"
+                  />
+                </div>
+              )
             }}
           />
           <KeyLegend {...sharedProps} />
@@ -606,8 +600,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyIcon
-            className="fa-regular fa-command"
+          <KeyLegend
+            {...sharedProps}
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
@@ -618,16 +612,23 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
+            color="nushu.cyan"
             KeyContainerProps={{
+              keyId: 'right-option-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap/hold" output="Right Option" />
+                </div>
+              )
             }}
           />
-          <KeyIcon
-            className="fa-regular fa-chevron-up"
+          <KeyLegend
+            {...sharedProps}
             KeyContainerProps={{
               style: {
                 opacity: isCorneLayout ? 0 : 1,
