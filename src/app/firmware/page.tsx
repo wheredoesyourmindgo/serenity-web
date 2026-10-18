@@ -161,11 +161,11 @@ const designNotes: Feature[] = [
   },
   {
     term: 'Caps Word',
-    body: 'Activated by double‑tapping the Left Shift key, this feature enables a quick temporary Caps Lock mode for typing uppercase words without fully toggling Caps Lock.'
+    body: "Activated by double‑tapping the Left Shift key, this feature enables a quick temporary Caps Lock mode for typing uppercase words without fully toggling Caps Lock. It stays on through '-' and '_', so CONSTANT_NAMES stay capitalized."
   },
   {
     term: 'Mouse layer',
-    body: 'A dedicated layer providing smooth, responsive cursor control and scrolling, ideal for quick pointer adjustments without leaving the home row.'
+    body: 'A dedicated layer providing smooth, responsive cursor control and scrolling, ideal for quick pointer adjustments without leaving the home row. Left and right click sit on the right thumb, so you can drag while steering; hold a slow, medium or fast speed key with the left hand for finer or quicker movement. Back and Forward send ⌘[ and ⌘], which Safari honors unlike mouse buttons 4 and 5.'
   },
   {
     term: 'Qwerty layer',

@@ -387,9 +387,37 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} className="text-xs">
+          <KeyLegend
+            {...sharedProps}
+            className="text-xs"
+            KeyContainerProps={{
+              keyId: 'debug-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Toggle Debug Mode" code="DB_TOGG" />
+                </div>
+              )
+            }}
+          >
             Debug
+          </KeyLegend>
+          <KeyLegend
+            {...sharedProps}
+            className="text-xs"
+            KeyContainerProps={{
+              keyId: 'reset-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="tap"
+                    output="Reset saved settings (underglow, debug)"
+                    code="EE_CLR"
+                  />
+                </div>
+              )
+            }}
+          >
+            Reset
           </KeyLegend>
           <KeyLegend
             {...sharedProps}
@@ -398,7 +426,11 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'bootloader-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Bootloader (for flashing firmware)" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Bootloader (for flashing firmware)"
+                    code="QK_BOOT"
+                  />
                 </div>
               )
             }}

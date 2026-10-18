@@ -167,11 +167,11 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps}>+</KeyLegend>
           <KeyLegend {...sharedProps}>?</KeyLegend>
           <KeyLegend {...sharedProps}>|</KeyLegend>
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>:</KeyLegend>
           <KeyLegend {...sharedProps}>~</KeyLegend>
           <KeyLegend {...sharedProps}>`</KeyLegend>
-          <KeyLegend {...sharedProps}>-</KeyLegend>
-          <KeyLegend {...sharedProps}>_</KeyLegend>
+          <KeyLegend {...sharedProps}>&lt;</KeyLegend>
+          <KeyLegend {...sharedProps}>&gt;</KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{

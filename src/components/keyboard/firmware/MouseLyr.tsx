@@ -27,89 +27,59 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-thin fa-computer-mouse text-[32px]"
+            className="fa-regular fa-gauge-low"
             KeyContainerProps={{
-              keyId: 'mouse-button-5-key',
+              keyId: 'mouse-speed-0-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Mouse Button 5" />
+                  <PopoverDesc action="hold" output="Slow pointer and scroll speed" />
                 </div>
               )
             }}
-          >
-            <span
-              style={{
-                position: 'absolute',
-                left: '50%',
-                top: '63%',
-                transform: 'translate(-50%, -50%)',
-                fontSize: '0.95rem',
-                fontWeight: 600
-              }}
-            >
-              5
-            </span>
-          </KeyIcon>
+          />
           <KeyIcon
-            className="fa-thin fa-computer-mouse text-[32px]"
+            className="fa-regular fa-gauge"
             KeyContainerProps={{
-              keyId: 'mouse-button-1-key',
+              keyId: 'mouse-speed-1-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Mouse Button 1" />
+                  <PopoverDesc action="hold" output="Medium pointer and scroll speed" />
                 </div>
               )
             }}
-          >
-            <span
-              style={{
-                position: 'absolute',
-                left: '50%',
-                top: '63%',
-                transform: 'translate(-50%, -50%)',
-                fontSize: '0.95rem',
-                fontWeight: 600
-              }}
-            >
-              1
-            </span>
-          </KeyIcon>
+          />
           <KeyIcon
-            className="fa-thin fa-computer-mouse text-[32px]"
+            className="fa-regular fa-gauge-high"
             KeyContainerProps={{
-              keyId: 'mouse-button-2-key',
+              keyId: 'mouse-speed-2-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Mouse Button 2" />
+                  <PopoverDesc action="hold" output="Fast pointer and scroll speed" />
                 </div>
               )
             }}
-          >
-            <span
-              style={{
-                position: 'absolute',
-                left: '50%',
-                top: '63%',
-                transform: 'translate(-50%, -50%)',
-                fontSize: '0.95rem',
-                fontWeight: 600
-              }}
-            >
-              2
-            </span>
-          </KeyIcon>
+          />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            className="fa-regular fa-circle-chevron-left"
+            KeyContainerProps={{
+              keyId: 'back-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Back (⌘[)" />
+                </div>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-thin fa-computer-mouse text-[32px]"
             KeyContainerProps={{
               keyId: 'mouse-button-3-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Mouse Button 3" />
+                  <PopoverDesc action="tap/hold" output="Mouse Button 3 (Middle Click)" />
                 </div>
               )
             }}
@@ -127,30 +97,18 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               3
             </span>
           </KeyIcon>
+          <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-thin fa-computer-mouse text-[32px]"
+            className="fa-regular fa-circle-chevron-right"
             KeyContainerProps={{
-              keyId: 'mouse-button-4-key',
+              keyId: 'forward-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Mouse Button 4" />
+                  <PopoverDesc action="tap" output="Forward (⌘])" />
                 </div>
               )
             }}
-          >
-            <span
-              style={{
-                position: 'absolute',
-                left: '50%',
-                top: '63%',
-                transform: 'translate(-50%, -50%)',
-                fontSize: '0.95rem',
-                fontWeight: 600
-              }}
-            >
-              4
-            </span>
-          </KeyIcon>
+          />
           <KeyIcon
             customShiftCode
             className="fa-regular fa-delete-left"
@@ -547,8 +505,54 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            className="fa-thin fa-computer-mouse text-[32px]"
+            KeyContainerProps={{
+              keyId: 'thumb-mouse-button-1-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap/hold" output="Mouse Button 1" />
+                </div>
+              )
+            }}
+          >
+            <span
+              style={{
+                position: 'absolute',
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
+                fontSize: '0.95rem',
+                fontWeight: 600
+              }}
+            >
+              1
+            </span>
+          </KeyIcon>
+          <KeyIcon
+            className="fa-thin fa-computer-mouse text-[32px]"
+            KeyContainerProps={{
+              keyId: 'thumb-mouse-button-2-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap/hold" output="Mouse Button 2" />
+                </div>
+              )
+            }}
+          >
+            <span
+              style={{
+                position: 'absolute',
+                left: '50%',
+                top: '63%',
+                transform: 'translate(-50%, -50%)',
+                fontSize: '0.95rem',
+                fontWeight: 600
+              }}
+            >
+              2
+            </span>
+          </KeyIcon>
           {/* <KeyIcon className="fa-regular fa-arrow-right-long-to-line" /> */}
           <KeyIcon
             className="fa-regular fa-command"
