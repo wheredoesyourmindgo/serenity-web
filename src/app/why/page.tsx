@@ -137,6 +137,25 @@ const tradeoffs = [
         tendons.
       </>
     )
+  },
+  {
+    title: 'QWERTY is good at mouse work',
+    body: (
+      <>
+        With your right hand on the mouse, QWERTY keeps the most-used shortcuts under your left. If
+        you spend your day clicking and dragging in design, CAD or spreadsheet tools, or you play
+        games on <Kbd>w</Kbd> <Kbd>a</Kbd> <Kbd>s</Kbd> <Kbd>d</Kbd>, that&apos;s hard to beat.
+      </>
+    )
+  },
+  {
+    title: "AI doesn't need a good layout",
+    body: (
+      <>
+        If you mostly type short prompts and let a model write the rest, any layout will do. The
+        gains here come from typing long stretches of your own words.
+      </>
+    )
   }
 ]
 
