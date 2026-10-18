@@ -303,6 +303,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
   const captionRef = useRef<HTMLSpanElement>(null)
   const captionLineRef = useRef<HTMLParagraphElement>(null)
   const captionTrackRef = useRef<HTMLSpanElement>(null)
+  const captionLastRef = useRef<HTMLSpanElement>(null)
   const captionRestRef = useRef<HTMLSpanElement>(null)
   const startRef = useRef<(on: boolean, tap?: boolean) => void>(() => {})
   const touchOnRef = useRef(false)
@@ -400,10 +401,23 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       }
     }
 
+    // writes the caption: shown is typed so far, rest is laid out after it unseen. The cursor is a
+    // shadow on the last typed letter, so it takes no room in the line. A just-typed line break
+    // waits with the rest until the next letter, so the cursor stays where it can be seen; and with
+    // nothing typed yet a space stands in for its letter, unless the rest is laid out, which it
+    // would push along.
+    const showCaption = (shown: string, rest = '') => {
+      if (rest && shown.endsWith('\n')) return showCaption(shown.slice(0, -1), '\n' + rest)
+      const last = shown.slice(-1) || (rest ? '' : '\u00a0')
+      if (captionRef.current) captionRef.current.textContent = shown.slice(0, -1)
+      if (captionLastRef.current) captionLastRef.current.textContent = last
+      if (captionRestRef.current) captionRestRef.current.textContent = rest
+    }
+
     const append = (ch: string) => {
       const before = typed.length
       typed = (typed + ch).slice(-CAPTION_LENGTH)
-      if (captionRef.current) captionRef.current.textContent = typed
+      showCaption(typed)
       // a growing centered line shifts the text half a character; a full one shifts a whole one
       captionOffset = Math.min(captionOffset + (typed.length > before ? 0.5 : 1), 3)
       // applied right away so the text never jumps before the next frame picks up the glide
@@ -467,7 +481,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
 
     // the caption normally fades in from the left as a long line; the spelled line shows whole
     const setCaptionMask = (on: boolean) => {
-      const line = captionLineRef.current
+      const line = captionTrackRef.current
       if (!line) return
       for (const prop of ['mask-image', '-webkit-mask-image']) {
         if (on) line.style.removeProperty(prop)
@@ -487,16 +501,57 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
     }
 
     const setCaptionWrap = (on: boolean) => {
-      if (captionLineRef.current) captionLineRef.current.style.whiteSpace = on ? 'pre-wrap' : ''
+      if (captionLineRef.current && !on) captionLineRef.current.style.whiteSpace = ''
       if (captionTrackRef.current) captionTrackRef.current.style.textAlign = on ? 'center' : ''
+    }
+
+    // where the spelled line breaks, decided once before it's typed: on one line if it fits, else
+    // after the ; so the punchline gets a line of its own, and beyond that wherever the browser
+    // wraps it. The breaks become real line breaks and wrapping is turned off while it's typed, so
+    // nothing done along the way can move a word (Safari rewraps a line that's a near fit as the
+    // cursor's letter moves through it).
+    const layoutLine = (text: string) => {
+      const line = captionLineRef.current
+      const rest = captionRestRef.current
+      if (!line || !rest) return text
+      // indexes where a new line starts when the browser wraps candidate
+      const wraps = (candidate: string) => {
+        rest.textContent = candidate
+        const node = rest.firstChild
+        const starts: number[] = []
+        let top = -Infinity
+        if (!node) return starts
+        const range = document.createRange()
+        for (let i = 0; i < candidate.length; i++) {
+          if (/\s/.test(candidate[i])) continue
+          range.setStart(node, i)
+          range.setEnd(node, i + 1)
+          const charTop = range.getBoundingClientRect().top
+          if (charTop > top + 1 && top !== -Infinity) starts.push(i)
+          top = Math.max(top, charTop)
+        }
+        return starts
+      }
+      line.style.whiteSpace = 'pre-wrap'
+      let display = text
+      if (wraps(text).length) {
+        // the space before "Literally" becomes the first break
+        const punch = LINE.length + PUNCHLINE.indexOf(' ')
+        display = `${text.slice(0, punch)}\n${text.slice(punch + 1)}`
+        for (const i of wraps(display)) {
+          if (display[i - 1] === ' ') display = `${display.slice(0, i - 1)}\n${display.slice(i)}`
+        }
+      }
+      rest.textContent = ''
+      line.style.whiteSpace = 'pre'
+      return display
     }
 
     const resetCaption = () => {
       clearTimeout(clearTimer)
       typed = ''
       captionOffset = 0
-      if (captionRef.current) captionRef.current.textContent = ''
-      if (captionRestRef.current) captionRestRef.current.textContent = ''
+      showCaption('')
       setCaptionWrap(false)
     }
 
@@ -552,11 +607,12 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       fitCaption()
       setCaptionWrap(true)
       setCaptionMask(false)
+      const display = layoutLine(text)
       if (captionLineRef.current) captionLineRef.current.style.opacity = '1'
 
       if (reducedMotion) {
         // the whole line at once
-        if (captionRef.current) captionRef.current.textContent = text
+        showCaption(display)
         announce(text)
         stillHeat()
         spellTimer = setTimeout(finish, SPELL_STILL_TIME)
@@ -576,8 +632,7 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
         const k = byKey.get(SYMBOL_KEYS[ch] ?? ch.toLowerCase())
         if (k) k.heat = Math.min(k.heat + heat, MAX_HEAT)
         i += 1
-        if (captionRef.current) captionRef.current.textContent = text.slice(0, i)
-        if (captionRestRef.current) captionRestRef.current.textContent = text.slice(i)
+        showCaption(display.slice(0, i), display.slice(i))
         if (i === text.length) {
           announce(text)
           spellTimer = setTimeout(finish, SPELL_HOLD)
@@ -684,14 +739,17 @@ export default function HeatmapAlphas({ref}: {ref?: Ref<HeatmapControls>}) {
       <p
         ref={captionLineRef}
         aria-hidden="true"
-        className="text-nushu-ink-faint font-body mt-10 h-7 mask-[linear-gradient(to_right,transparent,black_35%)] text-xl whitespace-pre opacity-0 transition-opacity duration-500 md:text-lg"
+        className="text-nushu-ink-faint font-body mt-10 h-7 text-xl whitespace-pre opacity-0 transition-opacity duration-500 md:text-lg"
       >
-        <span ref={captionTrackRef} className="inline-block">
+        {/* the fade mask rides on the gliding text, so the glide never pushes its end (and the
+            cursor) outside what the mask shows; the padding is room for the cursor, which is
+            drawn just past the last letter */}
+        <span
+          ref={captionTrackRef}
+          className="inline-block mask-[linear-gradient(to_right,transparent,black_35%)] pr-[3px]"
+        >
           <span ref={captionRef} />
-          {/* the cursor takes no room in the line, so a wrapping line never breaks at it */}
-          <span className="relative">
-            <span className="bg-nushu-ink-muted absolute top-0 left-px h-[1.1em] w-[2px] animate-pulse" />
-          </span>
+          <span ref={captionLastRef} className="animate-caret" />
           <span ref={captionRestRef} className="invisible" />
         </span>
       </p>
