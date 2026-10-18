@@ -150,7 +150,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'window-partial-fullscreen-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Fullscreen Window" />
+                  <PopoverDesc action="tap" output="Maximize Window" />
                   <br />
                   <PopoverDesc action="hold" output="Restore Window" />
                   <br />

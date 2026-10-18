@@ -335,8 +335,19 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} className="text-xs">
             Debug
           </KeyLegend>
-          <KeyLegend {...sharedProps} className="text-xs">
-            Reset
+          <KeyLegend
+            {...sharedProps}
+            className="text-xs"
+            KeyContainerProps={{
+              keyId: 'bootloader-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Bootloader (for flashing firmware)" />
+                </div>
+              )
+            }}
+          >
+            Boot
           </KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"
