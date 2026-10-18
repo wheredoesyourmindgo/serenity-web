@@ -147,6 +147,11 @@ const designNotes: Feature[] = [
     body: "Uses QMK's tri‑layer logic to reach the OS and Function layers by combining principal layer holds; the appropriate pair momentarily exposes the target layer for quick commands."
   },
   {
+    term: 'Bottom-row mods',
+    tag: '11–12 key bottom row',
+    body: "Ctrl, Option and Cmd sit in the same corners on every layer. On the side whose thumb is holding the layer they're normal held mods; on the other side they're one‑shots, so every modifier is reachable from any layer."
+  },
+  {
     term: 'Layer Lock',
     body: "QMK's Layer Lock key sits in a consistent position on the principal layers: tap it to stay in the current layer without holding the layer key; tap again or press Escape to release."
   },
@@ -164,7 +169,7 @@ const designNotes: Feature[] = [
   },
   {
     term: 'Qwerty layer',
-    body: 'Full standard QWERTY layout which can be toggled on; useful for app and game compatibility.'
+    body: 'Full standard QWERTY layout which can be toggled on from the Hardware layer; useful for app and game compatibility. The keyboard goes back to Serenity when unplugged.'
   }
 ]
 

@@ -653,21 +653,30 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend
-            {...sharedProps}
+          <KeyIcon
+            className="fa-regular fa-command"
+            color="nushu.cyan"
             KeyContainerProps={{
+              keyId: 'one-shot-right-command-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Right Command for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Command" />
+                </div>
+              )
             }}
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
             color="nushu.cyan"
             KeyContainerProps={{
-              keyId: 'right-option-key',
+              keyId: 'one-shot-right-option-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
@@ -682,14 +691,23 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend
-            {...sharedProps}
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="nushu.cyan"
             KeyContainerProps={{
+              keyId: 'one-shot-right-control-key',
               style: {
                 opacity: isCorneLayout ? 0 : 1,
                 scale: isCorneLayout ? 0.92 : 1,
                 pointerEvents: isCorneLayout ? 'none' : 'auto'
-              }
+              },
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Right Control for the next key or click" />
+                  <br />
+                  <PopoverDesc action="hold" output="Right Control" />
+                </div>
+              )
             }}
           />
         </KeyboardGridRow>
