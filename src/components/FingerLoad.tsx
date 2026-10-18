@@ -10,7 +10,16 @@ import {cn} from '@/lib/utils'
  * standard touch-typing finger assignments; the index fingers' inner columns count as reaches.
  */
 
-const FINGERS = ['L pinky', 'L ring', 'L middle', 'L index', 'R index', 'R middle', 'R ring', 'R pinky']
+const FINGERS = [
+  'L pinky',
+  'L ring',
+  'L middle',
+  'L index',
+  'R index',
+  'R middle',
+  'R ring',
+  'R pinky'
+]
 const SHORT = ['P', 'R', 'M', 'I', 'I', 'M', 'R', 'P']
 
 const LAYOUTS = [
@@ -78,7 +87,10 @@ export default function FingerLoad() {
                     )}
                     {home > 0 && (
                       <span
-                        className={cn('bg-nushu-blue block w-full', reach === 0 && 'rounded-t-[4px]')}
+                        className={cn(
+                          'bg-nushu-blue block w-full',
+                          reach === 0 && 'rounded-t-[4px]'
+                        )}
                         style={{height: (home / MAX) * HEIGHT}}
                       />
                     )}

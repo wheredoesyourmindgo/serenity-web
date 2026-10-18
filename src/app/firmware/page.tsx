@@ -1,7 +1,7 @@
 'use client'
 
 import FitWidth from '@/components/FitWidth'
-import {useState} from 'react'
+import {Fragment, useState} from 'react'
 import {cn} from '@/lib/utils'
 import BaseLyr from '@/components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@/components/keyboard/firmware/NumNavLyr'
@@ -16,6 +16,7 @@ import OsLyr from '@/components/keyboard/firmware/OsLyr'
 import QmkLegend from '@/components/QmkLegend'
 import {ToggleGroup, ToggleGroupItem} from '@/components/ui/toggle-group'
 import {Tabs} from '@/components/ui/tabs'
+import {Separator} from '@/components/ui/separator'
 import {LayerTabsContent, LayerTabsList, LayerTabsTrigger} from '@/components/LayerTabs'
 import {
   FeatureList,
@@ -29,19 +30,10 @@ import {
 
 export type KeyboardLayout = 'planck' | 'corne'
 
+// Mirrored around Base like the keys that reach each layer: Num/Nav and Symbol (inner thumbs),
+// Action and Hardware (outer thumbs), OS and Function (their tri-layers), then Mouse and Qwerty
 const tabs = [
-  {value: 'base', Layer: BaseLyr, label: 'Base', icon: 'fa-regular fa-house-user'},
   {value: 'mouse', Layer: MouseLyr, label: 'Mouse', icon: 'fa-regular fa-mouse'},
-  {
-    value: 'num-nav',
-    Layer: NumNavLyr,
-    label: 'Num/Nav',
-    icon: 'fa-regular fa-hashtag',
-    iconClassName: 'text-[15px]'
-  },
-  {value: 'action', Layer: ActionLyr, label: 'Action', icon: 'fa-regular fa-table-layout'},
-  {value: 'hardware', Layer: HardwareLyr, label: 'Hardware', icon: 'fa-regular fa-cog'},
-  {value: 'symbol', Layer: SymLyr, label: 'Symbol', icon: 'fa-regular fa-at'},
   {
     value: 'os',
     Layer: OsLyr,
@@ -49,9 +41,23 @@ const tabs = [
     icon: 'fa-brands fa-apple',
     iconClassName: 'text-[15px]'
   },
+  {value: 'action', Layer: ActionLyr, label: 'Action', icon: 'fa-regular fa-table-layout'},
+  {
+    value: 'num-nav',
+    Layer: NumNavLyr,
+    label: 'Num/Nav',
+    icon: 'fa-regular fa-hashtag',
+    iconClassName: 'text-[15px]'
+  },
+  {value: 'base', Layer: BaseLyr, label: 'Base', icon: 'fa-regular fa-house-user'},
+  {value: 'symbol', Layer: SymLyr, label: 'Symbol', icon: 'fa-regular fa-at'},
+  {value: 'hardware', Layer: HardwareLyr, label: 'Hardware', icon: 'fa-regular fa-cog'},
   {value: 'function', Layer: FuncLyr, label: 'Function', icon: 'fa-regular fa-function'},
   {value: 'qwerty', Layer: QwertyLyr, label: 'Qwerty', icon: 'fa-regular fa-typewriter'}
 ]
+
+// Separators set the thumb layers around Base apart from the extras on either side
+const groupStarts = new Set(['action', 'function'])
 
 const customizations: Feature[] = [
   {
@@ -200,12 +206,17 @@ export default function FirmwarePage() {
           <div className="mt-10 max-w-full">
             <LayerTabsList>
               {tabs.map((tab) => (
-                <LayerTabsTrigger key={tab.value} value={tab.value}>
-                  <span className="flex h-4 items-center justify-center">
-                    <FaIcon className={cn(tab.icon, tab.iconClassName)} />
-                  </span>
-                  <span>{tab.label}</span>
-                </LayerTabsTrigger>
+                <Fragment key={tab.value}>
+                  {groupStarts.has(tab.value) && (
+                    <Separator orientation="vertical" className="mx-0.5 my-2" aria-hidden />
+                  )}
+                  <LayerTabsTrigger value={tab.value}>
+                    <span className="flex h-4 items-center justify-center">
+                      <FaIcon className={cn(tab.icon, tab.iconClassName)} />
+                    </span>
+                    <span>{tab.label}</span>
+                  </LayerTabsTrigger>
+                </Fragment>
               ))}
             </LayerTabsList>
           </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import {useEffect, useRef} from 'react'
 import {cn} from 'cn'
 import {TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 
@@ -8,8 +9,21 @@ import {TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 // color, and panels that fade/unblur in when their layer is selected.
 
 function LayerTabsList({className, ...props}: React.ComponentProps<typeof TabsList>) {
+  const listRef = useRef<HTMLDivElement>(null)
+
+  // when the strip scrolls on narrow screens, start with the selected tab centered in view
+  useEffect(() => {
+    const list = listRef.current
+    const active = list?.querySelector<HTMLElement>('[data-active]')
+    if (!list || !active || list.scrollWidth <= list.clientWidth) return
+    const listBox = list.getBoundingClientRect()
+    const activeBox = active.getBoundingClientRect()
+    list.scrollLeft += activeBox.left - listBox.left - (listBox.width - activeBox.width) / 2
+  }, [])
+
   return (
     <TabsList
+      ref={listRef}
       className={cn(
         'border-border bg-card max-w-full justify-start gap-1 overflow-x-auto rounded-lg border p-1 group-data-horizontal/tabs:h-auto',
         className
