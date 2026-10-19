@@ -2,7 +2,7 @@
 
 import FitWidth from '@/components/FitWidth'
 import {Fragment, useState} from 'react'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 import BaseLyr from '@/components/keyboard/firmware/BaseLyr'
 import NumNavLyr from '@/components/keyboard/firmware/NumNavLyr'
 import SymLyr from '@/components/keyboard/firmware/SymLyr'

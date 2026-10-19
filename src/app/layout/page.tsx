@@ -2,7 +2,7 @@
 
 import FitWidth from '@/components/FitWidth'
 import {useState} from 'react'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 import AlphaKeyboard from '@/components/keyboard/Alphas'
 import FaIcon from '@/components/FaIcon'
 import {PageBody, PageHeader, Section, TextLink} from '@/components/Page'

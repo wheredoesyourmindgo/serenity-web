@@ -1,7 +1,7 @@
 'use client'
 
 import {useState} from 'react'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 
 /*
  * Per-finger share of letters typed, split into keys under the resting finger ("home") and keys
