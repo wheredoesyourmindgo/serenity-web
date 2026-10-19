@@ -1,5 +1,5 @@
 import FaIcon, {FaIconProps} from '@/components/FaIcon'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 
 type Props = Omit<Partial<FaIconProps>, 'sx' | 'className' | 'color'> & {
   className?: string

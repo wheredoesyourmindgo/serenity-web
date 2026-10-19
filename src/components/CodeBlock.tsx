@@ -1,6 +1,6 @@
 import CopyButton from '@/components/CopyButton'
 import {highlight, type CodeLanguage} from '@/lib/highlight'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 
 /*
  * A snippet to copy: a header bar naming the file it goes in, with the copy button, over the code.

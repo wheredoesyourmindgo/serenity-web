@@ -1,7 +1,7 @@
 'use client'
 
 import {useLayoutEffect, useRef, useState, type ReactNode} from 'react'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 
 /*
  * Shrinks its content to fit the width it's given, never growing it past its natural size. The

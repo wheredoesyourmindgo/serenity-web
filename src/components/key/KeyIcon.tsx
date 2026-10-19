@@ -1,6 +1,6 @@
 import type {ComponentType, ReactNode} from 'react'
 import FaIcon, {FaIconProps} from '@/components/FaIcon'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 import KeyContainer, {KeyContainerProps} from './KeyContainer'
 import ShiftSubLgnd from './ShiftSubLgnd'
 import SpecialSubLgnd from './SpecialSubLgnd'

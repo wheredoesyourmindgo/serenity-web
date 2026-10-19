@@ -4,7 +4,7 @@ import type {HTMLAttributes, KeyboardEvent, PointerEvent, ReactNode} from 'react
 import {useId, useRef, useState} from 'react'
 import {HoverCard, HoverCardContent, HoverCardTrigger} from '@/components/ui/hover-card'
 import {useIsTouchDevice} from '@/hooks/use-is-touch-device'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 
 type Props = HTMLAttributes<HTMLDivElement> & {
   keyId?: string

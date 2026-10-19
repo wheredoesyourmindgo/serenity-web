@@ -2,7 +2,7 @@
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import type {FontAwesomeIconProps} from '@fortawesome/react-fontawesome'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 import {colorTokenToCssValue} from '@/lib/colorToken'
 import type {HTMLAttributes} from 'react'
 
