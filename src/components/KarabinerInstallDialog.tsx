@@ -23,7 +23,7 @@ const IMPORT_URL = `karabiner://karabiner/assets/complex_modifications/import?ur
 function Step({n, children}: {n: number; children: ReactNode}) {
   return (
     <li className="flex gap-3">
-      <span className="text-nushu-blue border-nushu-blue/40 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs">
+      <span className="text-nushu-blue border-nushu-blue/40 flex size-6 shrink-0 items-center justify-center rounded-full border-[1.5px] text-xs font-medium">
         {n}
       </span>
       <div className="flex flex-col gap-1 pt-0.5">{children}</div>
