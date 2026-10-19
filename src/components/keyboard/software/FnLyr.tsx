@@ -312,10 +312,63 @@ export default function FnLyr() {
               )
             }}
           />
-          <KeyIcon className="fa-regular fa-chevron-up" />
-          <KeyIcon className="fa-regular fa-option text-[18px]" />
-          <KeyIcon className="fa-regular fa-command" />
-          <KeyIcon className="fa-regular fa-up" homing />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            KeyContainerProps={{
+              keyId: 'fn-control-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Left Control (held, not one-shot as in the firmware)"
+                  />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option text-[18px]"
+            KeyContainerProps={{
+              keyId: 'fn-option-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Left Option (held, not one-shot as in the firmware)"
+                  />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            KeyContainerProps={{
+              keyId: 'fn-command-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Left Command (held, not one-shot as in the firmware)"
+                  />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-up"
+            homing
+            KeyContainerProps={{
+              keyId: 'fn-shift-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc
+                    action="hold"
+                    output="Left Shift (held, not one-shot as in the firmware)"
+                  />
+                </div>
+              )
+            }}
+          />
 
           <KeyIcon
             className="fa-regular fa-lock"
