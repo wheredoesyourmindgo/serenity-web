@@ -1,7 +1,7 @@
 import type {ReactNode} from 'react'
 import Link from 'next/link'
 import FaIcon from '@/components/FaIcon'
-import {cn} from '@/lib/utils'
+import {cn} from 'cn'
 
 /*
  * The pieces every inner page is built from, so they share one type scale and one rhythm:
@@ -152,27 +152,10 @@ function GitHubIcon() {
   )
 }
 
-// the page's main action, beside the GitHub button but in blue so it reads as the way in. It
-// opens in place rather than a new tab since it's usually an app's URL scheme (karabiner://)
-export function ActionButton({
-  href,
-  icon,
-  children
-}: {
-  href: string
-  icon: string
-  children: ReactNode
-}) {
-  return (
-    <a
-      href={href}
-      className="border-nushu-blue/40 text-nushu-blue hover:bg-nushu-blue/10 hover:border-nushu-blue inline-flex items-center gap-2 rounded-lg border bg-(--key-face) px-3 py-1.5 text-sm transition-colors"
-    >
-      <FaIcon className={icon} />
-      {children}
-    </a>
-  )
-}
+// the page's main action, beside the GitHub button but in blue so it reads as the way in. A class
+// rather than a component, so it can style whatever element the action needs (a dialog trigger)
+export const actionButtonClassName =
+  'border-nushu-blue/40 text-nushu-blue hover:bg-nushu-blue/10 hover:border-nushu-blue inline-flex items-center gap-2 rounded-lg border bg-(--key-face) px-3 py-1.5 text-sm transition-colors'
 
 // a quiet link to the source: there for anyone who wants it, without pushing it
 export function GitHubButton({href, children}: {href: string; children: ReactNode}) {
