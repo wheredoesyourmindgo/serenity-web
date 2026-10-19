@@ -59,13 +59,15 @@ export default function KarabinerInstallDialog() {
           </Step>
           <Step n={2}>
             <p>
-              Click <strong>Open in Karabiner</strong>, then <strong>Import</strong> when Karabiner
-              asks.
+              Click <strong>Open in Karabiner</strong>. Karabiner lists the rules it&apos;s about to
+              add. Click <strong>Import</strong>.
             </p>
           </Step>
           <Step n={3}>
             <p>
-              Click <strong>Enable All</strong> next to Serenity. Nothing changes until you do.
+              In the list that opens, find <strong>Serenity</strong> below Karabiner&apos;s own
+              Examples and click <strong>Enable All</strong> at the bottom of it. Nothing changes
+              until you do.
             </p>
           </Step>
         </ol>
