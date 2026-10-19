@@ -79,7 +79,9 @@ export default function BaseLyr() {
               keyId: 'siri-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Siri" />
+                  <PopoverDesc action="tap" output="Dictation" />
+                  <br />
+                  <PopoverDesc action="hold" output="Siri" />
                 </div>
               )
             }}

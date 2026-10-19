@@ -132,7 +132,9 @@ export default function FnLyr() {
               keyId: 'siri-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Siri" />
+                  <PopoverDesc action="tap" output="Dictation" />
+                  <br />
+                  <PopoverDesc action="hold" output="Siri" />
                 </div>
               )
             }}
@@ -302,7 +304,10 @@ export default function FnLyr() {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape (or turn off Fn layer lock)" />
+                  <PopoverDesc
+                    action="tap/hold"
+                    output="Escape (turns off the Fn layer lock instead, if it's on)"
+                  />
                 </div>
               )
             }}
