@@ -25,6 +25,12 @@
       "paths": ["src/components/ui/button-group.tsx"]
     },
     {
+      "name": "dialog",
+      "source": "shadcn",
+      "spec": "dialog",
+      "paths": ["src/components/ui/dialog.tsx", "src/components/ui/button.tsx"]
+    },
+    {
       "name": "hover-card",
       "source": "shadcn",
       "spec": "hover-card",
