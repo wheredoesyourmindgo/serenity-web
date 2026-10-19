@@ -102,7 +102,13 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
         align="start"
         alignOffset={0}
         sideOffset={4}
-        className="ring-foreground/15 pointer-events-none w-max max-w-sm p-0.5"
+        // a mouse can't catch the card, so leaving the key closes it; on touch a tap on the card
+        // closes it, rather than falling through to the key beneath and opening that one's
+        className={cn(
+          'ring-foreground/15 w-max max-w-sm p-0.5',
+          !isTouchDevice && 'pointer-events-none'
+        )}
+        onClick={isTouchDevice ? () => setOpen(false) : undefined}
       >
         {popOverContent}
       </HoverCardContent>
