@@ -61,15 +61,15 @@ const groupStarts = new Set(['action', 'function'])
 
 const customizations: Feature[] = [
   {
-    term: 'Instant One‑Shot Mods',
+    term: 'Stackable One‑Shot Mods',
     body: (
       <>
         Tap any combination of modifiers, all at once or one after another, and every one applies to
         the next key or mouse click. Hold one instead and it acts as a normal modifier. Unused
         one‑shots clear after 3 seconds, when you press Escape, or when you move to a layer other
         than Base, Qwerty, Action or Hardware. Uses{' '}
-        <TextLink href="https://github.com/wheredoesyourmindgo/qmk-modules/tree/main/instant_oneshot">
-          Instant One‑Shot
+        <TextLink href="https://github.com/wheredoesyourmindgo/qmk-modules/tree/main/stackable_oneshot">
+          Stackable One‑Shot
         </TextLink>
         , Serenity's own QMK community module.
       </>

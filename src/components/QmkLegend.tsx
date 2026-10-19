@@ -7,7 +7,7 @@ const items: LegendItem[] = [
   {
     icon: 'fa-duotone fa-swatchbook text-[13px]',
     color: 'nushu.cyan',
-    label: 'Stackable One-shot Mod'
+    label: 'Stackable One‑Shot Mod'
   },
   {icon: 'fa-regular fa-asterisk', color: 'nushu.red', label: 'Special (see tooltip)'},
   {icon: 'fa-regular fa-layer-group', color: 'nushu.green', label: 'Layer Tap'},

@@ -314,57 +314,57 @@ export default function FnLyr() {
           />
           <KeyIcon
             className="fa-regular fa-chevron-up"
+            color="nushu.cyan"
             KeyContainerProps={{
               keyId: 'fn-control-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc
-                    action="hold"
-                    output="Left Control (held, not one-shot as in the firmware)"
-                  />
+                  <PopoverDesc action="tap" output="Control for the next key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Control" />
                 </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-option text-[18px]"
+            color="nushu.cyan"
             KeyContainerProps={{
               keyId: 'fn-option-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc
-                    action="hold"
-                    output="Left Option (held, not one-shot as in the firmware)"
-                  />
+                  <PopoverDesc action="tap" output="Option for the next key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Option" />
                 </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-command"
+            color="nushu.cyan"
             KeyContainerProps={{
               keyId: 'fn-command-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc
-                    action="hold"
-                    output="Left Command (held, not one-shot as in the firmware)"
-                  />
+                  <PopoverDesc action="tap" output="Command for the next key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Command" />
                 </div>
               )
             }}
           />
           <KeyIcon
             className="fa-regular fa-up"
+            color="nushu.cyan"
             homing
             KeyContainerProps={{
               keyId: 'fn-shift-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc
-                    action="hold"
-                    output="Left Shift (held, not one-shot as in the firmware)"
-                  />
+                  <PopoverDesc action="tap" output="Shift for the next key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Shift" />
                 </div>
               )
             }}
