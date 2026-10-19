@@ -71,6 +71,16 @@ export default function SoftwarePage() {
             time, keep Serenity: Layout at the bottom of the list.
           </p>
           <p>
+            To update, delete the rules that start with Serenity: in Karabiner, and delete the copy
+            your last import saved in <code>~/.config/karabiner/assets/complex_modifications</code>,
+            then install again. Karabiner keeps a copy of every import, so skipping that lists
+            Serenity twice. The{' '}
+            <TextLink href="https://github.com/wheredoesyourmindgo/serenity-karabiner#update">
+              README
+            </TextLink>{' '}
+            has a command that does it.
+          </p>
+          <p>
             The rules apply only to Apple keyboards and turn off at the lock screen, so you can type
             your password in QWERTY. Karabiner can't tell when the screen is locked by itself. The{' '}
             <TextLink href="/extras#config">Hammerspoon snippet</TextLink> tells it.
