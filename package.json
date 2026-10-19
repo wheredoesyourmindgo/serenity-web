@@ -35,7 +35,7 @@
     "build": "next build",
     "export": "next export",
     "format": "prettier --config .prettierrc --write './src/**/*.{ts,tsx,css}'",
-    "type-check": "tsc --noEmit -p .",
+    "type-check": "tsc --noEmit -p tsconfig.typecheck.json",
     "type-check:watch": "npm run type-check -- --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

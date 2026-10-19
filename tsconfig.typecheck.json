@@ -1,0 +1,8 @@
+// Used by `npm run type-check`. Same as tsconfig.json, minus .next/dev/types: the dev server
+// regenerates .next/dev/types/validator.ts with unused imports (Next 16.4.2), which trips
+// noUnusedLocals. Next re-adds that folder to tsconfig.json itself, so the exclusion lives here.
+// Delete this file (and point type-check back at tsconfig.json) once Next fixes it.
+{
+  "extends": "./tsconfig.json",
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"]
+}
