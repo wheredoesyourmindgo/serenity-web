@@ -87,7 +87,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             appShortcut
             className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
-              keyId: 'window-partial-fullscreen-key',
+              keyId: 'window-maximize-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Maximize Window (⌃⌥↩)" />
@@ -248,10 +248,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon
             longPress
             appShortcut
-            rotation={90}
-            className="fa-regular fa-down-left-and-up-right-to-center"
+            className="fa-regular fa-arrows-to-dot"
             KeyContainerProps={{
-              keyId: 'window-partial-fullscreen-key',
+              keyId: 'window-center-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Center Window (⌃⌥C)" />
@@ -269,7 +268,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             appShortcut
             className="fa-regular fa-sidebar"
             KeyContainerProps={{
-              keyId: 'window-center-key',
+              keyId: 'window-left-half-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Window Left Half (⌃⌥⌘←)" />
@@ -283,10 +282,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             appShortcut
-            rotation={180}
-            className="fa-regular fa-octagon-minus"
+            className="fa-regular fa-square-minus"
             KeyContainerProps={{
-              keyId: 'window-management1-key',
+              keyId: 'window-shrink-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Decrease Window Size (⌃⌥-)" />
@@ -297,9 +295,9 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             appShortcut
-            className="fa-regular fa-octagon-plus"
+            className="fa-regular fa-square-plus"
             KeyContainerProps={{
-              keyId: 'window-management2-key',
+              keyId: 'window-grow-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap/hold" output="Increase Window Size (⌃⌥=)" />
@@ -314,7 +312,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             appShortcut
             className="fa-regular fa-sidebar-flip"
             KeyContainerProps={{
-              keyId: 'window-restore-key',
+              keyId: 'window-right-half-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Window Right Half (⌃⌥⌘→)" />
@@ -356,7 +354,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             rotation={-45}
             className="fa-regular fa-up-right-and-down-left-from-center"
             KeyContainerProps={{
-              keyId: 'window-partial-fullscreen-key',
+              keyId: 'window-almost-max-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Almost Max Window (⌃⌥⇧⌘M)" />

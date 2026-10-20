@@ -27,8 +27,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-solid fa-circle text-[22px] opacity-60"
-            color="nushu.red"
+            className="fa-regular fa-circle text-[22px]"
             KeyContainerProps={{
               keyId: 'os-close-key',
               popOverContent: (
@@ -41,13 +40,12 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             <div className="flex h-full w-full items-center justify-center">
               <FaIcon
                 className="fa-solid fa-xmark translate-y-[-2px] text-[13px]"
-                color="nushu.ink-deepest"
+                color="nushu.ink"
               />
             </div>
           </KeyIcon>
           <KeyIcon
-            className="fa-solid fa-circle text-[22px] opacity-60"
-            color="nushu.yellow"
+            className="fa-regular fa-circle text-[22px]"
             KeyContainerProps={{
               keyId: 'os-minimize-key',
               popOverContent: (
@@ -60,13 +58,12 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             <div className="flex h-full w-full items-center justify-center">
               <FaIcon
                 className="fa-solid fa-subtract translate-y-[-2px] text-[13px]"
-                color="nushu.ink-deepest"
+                color="nushu.ink"
               />
             </div>
           </KeyIcon>
           <KeyIcon
-            className="fa-solid fa-circle text-[22px] opacity-60"
-            color="nushu.green"
+            className="fa-regular fa-circle text-[22px]"
             KeyContainerProps={{
               keyId: 'os-fullscreen-key',
               popOverContent: (
@@ -80,7 +77,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               <FaIcon
                 rotation={135}
                 className="fa-solid fa-sort translate-y-[-2px] text-[13px]"
-                color="nushu.ink-deepest"
+                color="nushu.ink"
               />
             </div>
           </KeyIcon>
@@ -283,7 +280,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             </div>
           </KeyIcon>
           <KeyIcon
-            className="fa-regular fa-diagram-previous"
+            className="fa-regular fa-arrow-right-arrow-left"
             KeyContainerProps={{
               keyId: 'previous-window-key',
               popOverContent: (
@@ -335,7 +332,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             longPress
             className="fa-light fa-window text-[29px]"
             KeyContainerProps={{
-              keyId: 'screenshot-sel-file-key',
+              keyId: 'screenshot-win-file-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Screenshot Selected Window to file" />
@@ -418,7 +415,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           >
             <div className="flex h-full w-full items-center justify-center">
-              <FaIcon className="fa-solid fa-window-minimize translate-y-[-7px] text-[14px]" />
+              <FaIcon className="fa-solid fa-eye-slash translate-y-[-5px] text-[11px]" />
             </div>
           </KeyIcon>
           <KeyLegend {...sharedProps} />
