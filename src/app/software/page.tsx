@@ -58,7 +58,7 @@ export default function SoftwarePage() {
       </div>
 
       <PageBody className="mt-12">
-        <QmkLegend />
+        <QmkLegend only={['custom-shift', 'one-shot-mod', 'special', 'layer-tap', 'mod-tap']} />
 
         <Section id="install" icon="fa-regular fa-arrow-down-to-line" title="Install">
           <p>

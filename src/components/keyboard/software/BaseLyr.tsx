@@ -24,7 +24,7 @@ export default function BaseLyr() {
               keyId: 'capslock-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Capslock" />
+                  <PopoverDesc action="tap/hold" output="Caps Lock" />
                 </div>
               )
             }}

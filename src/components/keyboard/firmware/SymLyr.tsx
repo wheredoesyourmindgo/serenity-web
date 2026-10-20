@@ -157,7 +157,7 @@ export default function SymLyr({layout}: {layout: KeyboardLayout}) {
                 <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
                   <br />
-                  <PopoverDesc action="double tap" output="Caps-word" />
+                  <PopoverDesc action="double tap" output="Caps Word" />
                 </div>
               )
             }}
