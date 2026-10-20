@@ -417,7 +417,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'debug-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="hold 1 second" output="Toggle Debug Mode" code="DB_TOGG" />
+                  <PopoverDesc action="long hold" output="Toggle Debug Mode" code="DB_TOGG" />
                 </div>
               )
             }}
@@ -433,7 +433,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc
-                    action="hold 1 second"
+                    action="long hold"
                     output="Reset saved settings (underglow, debug)"
                     code="EE_CLR"
                   />
@@ -452,7 +452,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc
-                    action="hold 1 second"
+                    action="long hold"
                     output="Bootloader (for flashing firmware)"
                     code="QK_BOOT"
                   />
