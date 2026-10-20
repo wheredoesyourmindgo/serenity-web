@@ -62,6 +62,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
+          <KeyLegend {...sharedProps} />
           <KeyLegend
             {...sharedProps}
             className="block text-center text-xs"
@@ -98,23 +99,6 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               Mode
               <br />
               +/-
-            </>
-          </KeyLegend>
-          <KeyLegend
-            {...sharedProps}
-            className="block text-center text-[11px]"
-            KeyContainerProps={{
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="RGB Toggle" />
-                </div>
-              )
-            }}
-          >
-            <>
-              RGB
-              <br />
-              toggle
             </>
           </KeyLegend>
           <KeyLegend
@@ -408,7 +392,25 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend
+            longPress
+            {...sharedProps}
+            className="block translate-y-[-3px] text-center text-[11px]"
+            KeyContainerProps={{
+              keyId: 'rgb-toggle-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="long hold" output="RGB Toggle" code="UG_TOGG" />
+                </div>
+              )
+            }}
+          >
+            <>
+              RGB
+              <br />
+              toggle
+            </>
+          </KeyLegend>
           <KeyLegend
             longPress
             {...sharedProps}
