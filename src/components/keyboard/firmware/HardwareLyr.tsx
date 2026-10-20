@@ -209,7 +209,18 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend />
+          <KeyIcon
+            requiresOsConf
+            className="fa-regular fa-microphone-slash"
+            KeyContainerProps={{
+              keyId: 'mic-mute-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Toggle Mic Mute (⌃⌥⇧⌘I)" />
+                </div>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-volume-down"
             KeyContainerProps={{
@@ -244,7 +255,18 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend />
+          <KeyIcon
+            requiresOsConf
+            className="fa-regular fa-moon"
+            KeyContainerProps={{
+              keyId: 'do-not-disturb-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Toggle Do Not Disturb (⌃⌥⇧⌘F)" />
+                </div>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-lock"
             KeyContainerProps={{
@@ -388,13 +410,14 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend {...sharedProps} />
           <KeyLegend
+            longPress
             {...sharedProps}
             className="text-xs"
             KeyContainerProps={{
               keyId: 'debug-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Toggle Debug Mode" code="DB_TOGG" />
+                  <PopoverDesc action="hold 1 second" output="Toggle Debug Mode" code="DB_TOGG" />
                 </div>
               )
             }}
@@ -402,6 +425,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
             Debug
           </KeyLegend>
           <KeyLegend
+            longPress
             {...sharedProps}
             className="text-xs"
             KeyContainerProps={{
@@ -409,7 +433,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc
-                    action="tap"
+                    action="hold 1 second"
                     output="Reset saved settings (underglow, debug)"
                     code="EE_CLR"
                   />
@@ -420,6 +444,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
             Reset
           </KeyLegend>
           <KeyLegend
+            longPress
             {...sharedProps}
             className="text-xs"
             KeyContainerProps={{
@@ -427,7 +452,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc
-                    action="tap"
+                    action="hold 1 second"
                     output="Bootloader (for flashing firmware)"
                     code="QK_BOOT"
                   />
