@@ -38,7 +38,7 @@ const items: LegendItem[] = [
     id: 'long-press',
     icon: 'fa-regular fa-timer',
     color: 'nushu.orange',
-    label: 'Long Press: alternate action'
+    label: 'Long Press'
   },
   {
     id: 'tap-force-hold',
