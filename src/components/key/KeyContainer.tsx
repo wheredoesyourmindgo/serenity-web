@@ -116,7 +116,7 @@ export default function KeyContainer({
         // touch a tap on the card closes it, rather than falling through to the key beneath and
         // opening that one's
         className={cn(
-          'ring-foreground/15 w-max max-w-sm p-0.5',
+          'ring-foreground/15 w-max max-w-xs p-0.5',
           !isTouchDevice && !interactivePopover && 'pointer-events-none'
         )}
         onClick={isTouchDevice ? () => setOpen(false) : undefined}
