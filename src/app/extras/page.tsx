@@ -1,6 +1,8 @@
 import FaIcon from '@/components/FaIcon'
 import CodeBlock from '@/components/CodeBlock'
-import {PageBody, PageHeader, Section, SubSection} from '@/components/Page'
+import {PageBody, PageHeader, Section, SubSection, TextLink} from '@/components/Page'
+import MacosSetupChecklist from '@/components/MacosSetupChecklist'
+import PageNav from '@/components/PageNav'
 
 const USym = ({children, className}: {children: React.ReactNode; className?: string}) => (
   <span className={`text-nushu-cyan text-[1.1em] font-medium ${className ?? ''}`}>{children}</span>
@@ -182,14 +184,52 @@ on run {input, parameters}
 end run
 `
 
+  // input volume 0 mutes the mic; unmuting restores a fixed level, since macOS has no input mute
+  const micMuteSnippet = `
+set inputVolume to input volume of (get volume settings)
+if inputVolume > 0 then
+\tset volume input volume 0
+else
+\tset volume input volume 75
+end if
+`
+
   return (
     <>
       <PageHeader
         title="Extras"
-        lede="Config for the apps around Serenity, and a guide to Vim-style editing without Vim."
+        lede="The macOS shortcuts Serenity's firmware expects, config for the apps around it, and a guide to Vim-style editing without Vim."
+      />
+      <PageNav
+        items={[
+          {id: 'macos-setup', label: 'macOS setup', icon: 'fa-regular fa-wrench-simple'},
+          {id: 'config', label: 'App config', icon: 'fa-regular fa-sliders'},
+          {id: 'reference', label: 'Vim-less', icon: 'fa-regular fa-ban-smoking'}
+        ]}
       />
       <PageBody>
-        <Section id="config" icon="fa-regular fa-sliders" title="Application config">
+        <Section
+          ruled={false}
+          id="macos-setup"
+          icon="fa-regular fa-wrench-simple"
+          title="macOS setup"
+        >
+          <p>
+            Most keys on the <TextLink href="/firmware">Serenity QMK</TextLink> OS, Hardware and
+            Action layers send shortcuts macOS already knows. The ones below have no default, so
+            they do nothing until you set them. Tick them off as you go; the ticks stay in this
+            browser.
+          </p>
+          <MacosSetupChecklist
+            extras={{
+              'mic-mute': (
+                <CodeBlock code={micMuteSnippet} language="applescript" label="Run AppleScript" />
+              )
+            }}
+          />
+        </Section>
+
+        <Section ruled={false} id="config" icon="fa-regular fa-sliders" title="Application config">
           <SubSection icon="fa-regular fa-ghost" title="Ghostty">
             <p>
               Add this to your Ghostty config, at <code>~/.config/ghostty/config</code> by default.
@@ -226,20 +266,16 @@ end run
 
           <SubSection icon="fa-regular fa-robot" title="Automator">
             <p>
-              An AppleScript Quick Action that toggles Dark Mode. Create it in Automator, then give
-              it a shortcut in System Settings: ctrl+opt+cmd+D matches the Serenity QMK Hardware
-              layer.
+              An AppleScript Quick Action that toggles Dark Mode, if you&apos;d rather not use the
+              Shortcuts app version in macOS setup above. Create it in Automator, then give it a
+              shortcut in System Settings {'→'} Keyboard {'→'} Keyboard Shortcuts… {'→'}
+              Services: ⌃⌥⇧⌘D matches the Serenity QMK Hardware layer.
             </p>
             <CodeBlock code={toggleDarkModeSnippet} language="applescript" label="Quick Action" />
-            <p>
-              Or make it an Apple Shortcut, without any AppleScript: in the Shortcuts app, create a
-              shortcut with the <em>Set Appearance</em> action set to toggle, then give it the same
-              keyboard shortcut in the shortcut&apos;s details.
-            </p>
           </SubSection>
         </Section>
 
-        <Section id="reference" icon="fa-regular fa-ban-smoking" title="Vim-less">
+        <Section ruled={false} id="reference" icon="fa-regular fa-ban-smoking" title="Vim-less">
           <p>
             Thinking of quitting Vim? These are the common Vim motions and commands done with
             standard shortcuts, which work in any app. They&apos;re comfortable on Serenity because

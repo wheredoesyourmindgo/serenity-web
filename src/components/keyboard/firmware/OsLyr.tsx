@@ -94,6 +94,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
           </KeyIcon>
           <KeyLegend {...sharedProps} />
           <KeyIcon
+            setupId="show-all"
             requiresOsConf
             className="fa-regular fa-eyes"
             KeyContainerProps={{
@@ -232,6 +233,7 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="stage-manager"
             requiresOsConf
             rotation={90}
             className="fa-regular fa-gallery-thumbnails"
@@ -427,18 +429,20 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="show-apps"
             requiresOsConf
             className="fa-regular fa-grid"
             KeyContainerProps={{
-              keyId: 'launchpad-key',
+              keyId: 'apps-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Launchpad (⌃⌥⇧⌘L)" />
+                  <PopoverDesc action="tap" output="Apps (⌃⌥⇧⌘L)" />
                 </div>
               )
             }}
           />
           <KeyIcon
+            setupId="siri"
             requiresOsConf
             className="fa-regular fa-microphone"
             KeyContainerProps={{
@@ -451,13 +455,14 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="notification-center"
             className="fa-regular fa-sidebar-flip"
             requiresOsConf
             KeyContainerProps={{
-              keyId: 'sidebar-key',
+              keyId: 'notification-center-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Show/hide Sidebar (⌃⌥⇧⌘N)" />
+                  <PopoverDesc action="tap" output="Show/hide Notification Center (⌃⌥⇧⌘N)" />
                 </div>
               )
             }}

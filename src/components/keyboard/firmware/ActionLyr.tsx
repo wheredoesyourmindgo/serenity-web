@@ -246,6 +246,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="window-last-position"
             longPress
             appShortcut
             className="fa-regular fa-arrows-to-dot"
@@ -263,6 +264,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="window-sides"
             homing
             longPress
             appShortcut
@@ -307,6 +309,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="window-sides"
             homing
             longPress
             appShortcut
@@ -349,6 +352,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
+            setupId="window-almost-max"
             longPress
             appShortcut
             rotation={-45}
@@ -367,6 +371,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="window-throw-space"
             appShortcut
             className="fa-regular fa-square-left"
             KeyContainerProps={{
@@ -383,6 +388,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
+            setupId="window-throw-space"
             appShortcut
             className="fa-regular fa-square-right"
             KeyContainerProps={{

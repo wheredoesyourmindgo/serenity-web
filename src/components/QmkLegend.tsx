@@ -1,4 +1,5 @@
 import FaIcon from '@/components/FaIcon'
+import {TextLink} from '@/components/Page'
 
 type LegendItemId =
   | 'custom-shift'
@@ -11,7 +12,8 @@ type LegendItemId =
   | 'app-shortcut'
   | 'req-setup'
 
-type LegendItem = {id: LegendItemId; icon: string; color: string; label: string}
+// href links the label to where the marker is explained further
+type LegendItem = {id: LegendItemId; icon: string; color: string; label: string; href?: string}
 
 const items: LegendItem[] = [
   {
@@ -56,7 +58,8 @@ const items: LegendItem[] = [
     id: 'req-setup',
     icon: 'fa-regular fa-wrench-simple',
     color: 'nushu.magenta',
-    label: 'Requires OS Configuration'
+    label: 'Requires OS Configuration',
+    href: '/extras#macos-setup'
   }
 ]
 
@@ -77,7 +80,9 @@ export default function QmkLegend({only}: {only?: LegendItemId[]}) {
             <span className="flex w-5 shrink-0 items-center justify-center">
               <FaIcon className={item.icon} color={item.color} />
             </span>
-            <span className="text-[13px]">{item.label}</span>
+            <span className="text-[13px]">
+              {item.href ? <TextLink href={item.href}>{item.label}</TextLink> : item.label}
+            </span>
           </li>
         ))}
       </ul>
