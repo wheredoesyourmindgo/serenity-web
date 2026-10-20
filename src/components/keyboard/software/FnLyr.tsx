@@ -23,7 +23,7 @@ export default function FnLyr() {
               keyId: 'capslock-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Capslock" />
+                  <PopoverDesc action="tap/hold" output="Caps Lock" />
                 </div>
               )
             }}
@@ -489,7 +489,7 @@ export default function FnLyr() {
               keyId: 'caps-lock-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Caps-lock" />
+                  <PopoverDesc action="tap" output="Caps Lock" />
                 </div>
               )
             }}
