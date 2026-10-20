@@ -383,14 +383,13 @@ export default function FnLyr() {
           />
           <KeyIcon
             className="fa-regular fa-magic-wand-sparkles"
-            longPress
             KeyContainerProps={{
               keyId: 'text-select-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="select word" />
+                  <PopoverDesc action="tap" output="select word (repeat to extend)" />
                   <br />
-                  <PopoverDesc action="hold" output="select line" />
+                  <PopoverDesc action="shifted" output="select line (repeat to extend)" />
                 </div>
               )
             }}
