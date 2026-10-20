@@ -64,7 +64,7 @@ export function Section({
       id={id}
       className={cn(
         'scroll-mt-20 first:mt-0',
-        ruled ? 'border-border mt-12 border-t pt-12 first:border-t-0 first:pt-0' : 'mt-20 md:mt-24',
+        ruled ? 'border-border mt-12 border-t pt-12 first:border-t-0 first:pt-0' : 'mt-16 md:mt-20',
         className
       )}
     >
