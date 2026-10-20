@@ -27,12 +27,12 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-octagon-xmark"
+            className="fa-regular fa-user-lock"
             KeyContainerProps={{
-              keyId: 'force-quit-key',
+              keyId: 'lock-screen-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Force Quit (⌥⌘⎋)" />
+                  <PopoverDesc action="tap" output="Lock Screen (⌃⌘Q)" />
                 </div>
               )
             }}
@@ -92,64 +92,54 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               />
             </div>
           </KeyIcon>
-          <KeyIcon
-            className="fa-regular fa-user-lock"
-            KeyContainerProps={{
-              keyId: 'lock-screen-key',
-              popOverContent: (
-                <div className="p-2">
-                  <PopoverDesc action="tap" output="Lock Screen (⌃⌘Q)" />
-                </div>
-              )
-            }}
-          />
+          <KeyLegend {...sharedProps} />
           <KeyLegend {...sharedProps} />
           <KeyIcon
-            longPress
-            className="fa-regular fa-magnifying-glass"
+            className="fa-regular fa-arrows-to-eye"
             KeyContainerProps={{
-              keyId: 'spotlight-key',
+              keyId: 'hide-others-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Spotlight" />
-                  <br />
-                  <PopoverDesc action="hold" output="Spotlight in a new Finder window" />
+                  <PopoverDesc action="tap" output="Hide Others (⌥⌘H)" />
                 </div>
               )
             }}
           />
           <KeyIcon
-            requiresOsConf
-            className="fa-regular fa-grid"
+            className="fa-regular fa-eye-slash"
             KeyContainerProps={{
-              keyId: 'launchpad-key',
+              keyId: 'hide-app-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Launchpad (⌃⌥⇧⌘L)" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Hide App (⌘H; toggles the selected one while switching apps)"
+                  />
                 </div>
               )
             }}
           />
           <KeyIcon
-            requiresOsConf
-            className="fa-regular fa-microphone"
+            className="fa-regular fa-rectangle-xmark"
             KeyContainerProps={{
-              keyId: 'siri-key',
+              keyId: 'quit-app-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Siri (⌃⌥⇧⌘S)" />
+                  <PopoverDesc
+                    action="tap"
+                    output="Quit App (⌘Q; the selected one while switching apps)"
+                  />
                 </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-sidebar-flip"
-            requiresOsConf
+            className="fa-regular fa-octagon-xmark"
             KeyContainerProps={{
-              keyId: 'sidebar-key',
+              keyId: 'force-quit-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Show/hide Sidebar (⌃⌥⇧⌘N)" />
+                  <PopoverDesc action="tap" output="Force Quit (⌥⌘⎋)" />
                 </div>
               )
             }}
@@ -352,7 +342,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               <FaIcon className="fa-regular fa-image -translate-y-1 text-[13px]" />
             </div>
           </KeyIcon>
-
           <KeyIcon
             longPress
             className="fa-light fa-window text-[29px]"
@@ -371,7 +360,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               <FaIcon className="fa-regular fa-image text-[13px]" />
             </div>
           </KeyIcon>
-
           <KeyIcon
             longPress
             className="fa-light fa-square-dashed text-[27px]"
@@ -390,7 +378,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               <FaIcon className="fa-regular fa-image text-[13px]" />
             </div>
           </KeyIcon>
-
           <KeyIcon
             className="fa-regular fa-camera-viewfinder"
             KeyContainerProps={{
@@ -402,7 +389,6 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-
           <KeyIcon
             className="fa-regular fa-circle-stop"
             KeyContainerProps={{
@@ -415,43 +401,52 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyLegend {...sharedProps} />
-
-          <KeyLegend {...sharedProps} />
           <KeyIcon
-            className="fa-regular fa-rectangle-xmark"
+            longPress
+            className="fa-regular fa-magnifying-glass"
             KeyContainerProps={{
-              keyId: 'quit-app-key',
+              keyId: 'spotlight-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc
-                    action="tap"
-                    output="Quit App (⌘Q; the selected one while switching apps)"
-                  />
+                  <PopoverDesc action="tap" output="Spotlight" />
+                  <br />
+                  <PopoverDesc action="hold" output="Spotlight in a new Finder window" />
                 </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-eye-slash"
+            requiresOsConf
+            className="fa-regular fa-grid"
             KeyContainerProps={{
-              keyId: 'hide-app-key',
+              keyId: 'launchpad-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc
-                    action="tap"
-                    output="Hide App (⌘H; toggles the selected one while switching apps)"
-                  />
+                  <PopoverDesc action="tap" output="Launchpad (⌃⌥⇧⌘L)" />
                 </div>
               )
             }}
           />
           <KeyIcon
-            className="fa-regular fa-arrows-to-eye"
+            requiresOsConf
+            className="fa-regular fa-microphone"
             KeyContainerProps={{
-              keyId: 'hide-others-key',
+              keyId: 'siri-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Hide Others (⌥⌘H)" />
+                  <PopoverDesc action="tap" output="Siri (⌃⌥⇧⌘S)" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-sidebar-flip"
+            requiresOsConf
+            KeyContainerProps={{
+              keyId: 'sidebar-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Show/hide Sidebar (⌃⌥⇧⌘N)" />
                 </div>
               )
             }}
