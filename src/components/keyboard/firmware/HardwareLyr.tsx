@@ -335,7 +335,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           <KeyLegend {...sharedProps} />
 
           <KeyIcon
-            className="fa-regular fa-backward"
+            className="fa-regular fa-backward-step"
             KeyContainerProps={{
               keyId: 'previous-track-key',
               popOverContent: (
@@ -348,7 +348,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
-            className="fa-regular fa-forward"
+            className="fa-regular fa-forward-step"
             KeyContainerProps={{
               keyId: 'next-track-key',
               popOverContent: (
