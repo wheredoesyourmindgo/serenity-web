@@ -9,6 +9,8 @@ import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 import ReqSetupSubLgnd from './ReqSetupSubLgnd'
 import EncoderSubLgnd from './EncoderSubLgnd'
 import AppSubIcn from './AppShortcutSubIcn'
+import SetupCaption from './SetupCaption'
+import type {SetupItemId} from '@/lib/macosSetup'
 
 type KeyContainerSlotProps = Omit<KeyContainerProps, 'children' | 'homing'>
 
@@ -27,6 +29,8 @@ type Props = FaIconProps & {
   children?: ReactNode
   tapForceHold?: boolean
   appShortcut?: boolean
+  // the macOS setup checklist item this key's shortcut needs, linked from its popover
+  setupId?: SetupItemId
 }
 
 export default function KeyIcon({
@@ -44,6 +48,7 @@ export default function KeyIcon({
   tapForceHold,
   appShortcut,
   optEncoder,
+  setupId,
   ...props
 }: Props) {
   const shiftColor = customShiftCode ? 'nushu.violet' : 'nushu.ink-muted'
@@ -59,8 +64,23 @@ export default function KeyIcon({
     iconOffsetClass = 'translate-y-[4px]'
   }
 
+  const popOverContent = KeyContainerProps?.popOverContent
+  const containerProps =
+    setupId && popOverContent
+      ? {
+          ...KeyContainerProps,
+          interactivePopover: true,
+          popOverContent: (
+            <>
+              {popOverContent}
+              <SetupCaption id={setupId} />
+            </>
+          )
+        }
+      : KeyContainerProps
+
   return (
-    <KeyContainer {...KeyContainerProps} homing={homing}>
+    <KeyContainer {...containerProps} homing={homing}>
       <div>
         {shiftLgnd ? <ShiftSubLgnd color={shiftColor}>{shiftLgnd}</ShiftSubLgnd> : null}
         {ShiftSubIcn ? <ShiftSubIcn /> : null}

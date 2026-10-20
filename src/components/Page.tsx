@@ -9,8 +9,9 @@ import {cn} from 'cn'
  * - PageHeader: the gold title, a one-line lede, and any actions (the GitHub buttons) below it.
  * - PageBody: the reading column. Prose is held to about 70 characters a line; keyboards and
  *   other wide things sit outside it, in the page's full width.
- * - Section: a titled block of the column. Sections are separated by a rule rather than boxed,
- *   so cards are left for things that really are objects: code, tables, stats, the legend.
+ * - Section: a titled block of the column. Sections are separated by a rule (or, unruled, by a
+ *   wider gap) rather than boxed, so cards are left for things that really are objects: code,
+ *   tables, stats, the legend.
  * - SubSection, FeatureList and Kbd fill a section.
  */
 
@@ -47,19 +48,23 @@ export function Section({
   icon,
   title,
   children,
-  className
+  className,
+  ruled = true
 }: {
   id?: string
   icon?: string
   title: ReactNode
   children: ReactNode
   className?: string
+  // false sets sections apart by space alone, a wider gap where the rule would be
+  ruled?: boolean
 }) {
   return (
     <section
       id={id}
       className={cn(
-        'border-border mt-12 scroll-mt-6 border-t pt-12 first:mt-0 first:border-t-0 first:pt-0',
+        'scroll-mt-20 first:mt-0',
+        ruled ? 'border-border mt-12 border-t pt-12 first:border-t-0 first:pt-0' : 'mt-20 md:mt-24',
         className
       )}
     >
@@ -86,7 +91,7 @@ export function SubSection({
   return (
     <div className="pt-6 first:pt-0">
       <h3 className="text-nushu-ink-deep flex items-baseline gap-2.5 text-base font-medium md:text-lg">
-        {icon && <FaIcon className={cn(icon, 'w-[1.1em] shrink-0')} color="nushu.blue" />}
+        {icon && <FaIcon className={cn(icon, 'w-[1.1em] shrink-0')} color="nushu.ink-faint" />}
         {title}
       </h3>
       <div className="mt-3 space-y-4">{children}</div>

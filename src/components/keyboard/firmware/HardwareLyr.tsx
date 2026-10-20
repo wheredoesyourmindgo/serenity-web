@@ -2,7 +2,6 @@ import KeyIcon from '@/components/key/KeyIcon'
 import {KeyLegend} from '@/components/key'
 import {KeyLegendProps} from '@/components/key/KeyLegend'
 import PopoverDesc from '@/components/key/PopoverDesc'
-import AppCaption from '@/components/key/AppCaption'
 import ShiftSubIcn from '@/components/key/ShiftSubIcn'
 import LyrHoldSubIcn from '@/components/key/LyrHoldSubIcn'
 import {type KeyboardLayout} from '@/app/firmware/page'
@@ -51,15 +50,14 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="dark-mode"
             className="fa-regular fa-circle-half-stroke"
-            appShortcut
+            requiresOsConf
             KeyContainerProps={{
               keyId: 'toggle-dark-mode-key',
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Toggle Light/Dark Mode (⌃⌥⇧⌘D)" />
-                  <br />
-                  <AppCaption app="AppleScript" />
                 </div>
               )
             }}
@@ -210,6 +208,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="mic-mute"
             requiresOsConf
             className="fa-regular fa-microphone-slash"
             KeyContainerProps={{
@@ -256,6 +255,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyIcon
+            setupId="do-not-disturb"
             requiresOsConf
             className="fa-regular fa-moon"
             KeyContainerProps={{

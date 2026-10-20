@@ -10,9 +10,18 @@ type Props = HTMLAttributes<HTMLDivElement> & {
   keyId?: string
   popOverContent?: ReactNode | string
   homing?: boolean
+  // the popover holds a link, so a mouse has to be able to move onto it and click
+  interactivePopover?: boolean
 }
 
-export default function KeyContainer({children, keyId, popOverContent, homing, ...rest}: Props) {
+export default function KeyContainer({
+  children,
+  keyId,
+  popOverContent,
+  homing,
+  interactivePopover = false,
+  ...rest
+}: Props) {
   const {className, style, ...r} = rest
   const isTouchDevice = useIsTouchDevice()
 
@@ -95,18 +104,20 @@ export default function KeyContainer({children, keyId, popOverContent, homing, .
         setOpen(next)
       }}
     >
-      <HoverCardTrigger delay={0} closeDelay={0} render={trigger} />
+      {/* an interactive popover waits a moment before closing, so the pointer can cross the gap */}
+      <HoverCardTrigger delay={0} closeDelay={interactivePopover ? 150 : 0} render={trigger} />
       <HoverCardContent
         id={popOverId}
         side="top"
         align="start"
         alignOffset={0}
         sideOffset={4}
-        // a mouse can't catch the card, so leaving the key closes it; on touch a tap on the card
-        // closes it, rather than falling through to the key beneath and opening that one's
+        // a mouse can't catch the card (unless it's interactive), so leaving the key closes it; on
+        // touch a tap on the card closes it, rather than falling through to the key beneath and
+        // opening that one's
         className={cn(
           'ring-foreground/15 w-max max-w-sm p-0.5',
-          !isTouchDevice && 'pointer-events-none'
+          !isTouchDevice && !interactivePopover && 'pointer-events-none'
         )}
         onClick={isTouchDevice ? () => setOpen(false) : undefined}
       >
