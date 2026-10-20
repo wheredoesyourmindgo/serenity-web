@@ -93,7 +93,18 @@ export default function OsLyr({layout}: {layout: KeyboardLayout}) {
             </div>
           </KeyIcon>
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            requiresOsConf
+            className="fa-regular fa-eyes"
+            KeyContainerProps={{
+              keyId: 'show-all-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Show All (⌃⌥⇧⌘A)" />
+                </div>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-arrows-to-eye"
             KeyContainerProps={{
