@@ -57,25 +57,127 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape" />
+                  <PopoverDesc action="tap/hold" output="Escape (or clear one-shot mods)" />
                 </div>
               )
             }}
           />
-          <KeyLegend {...sharedProps}>F11</KeyLegend>
-          <KeyLegend {...sharedProps}>F12</KeyLegend>
-          <KeyLegend {...sharedProps}>F13</KeyLegend>
-          <KeyLegend {...sharedProps} homing>
-            F14
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>F15</KeyLegend>
-          <KeyLegend {...sharedProps}>F16</KeyLegend>
-          <KeyLegend {...sharedProps} homing>
-            F17
-          </KeyLegend>
-          <KeyLegend {...sharedProps}>F18</KeyLegend>
-          <KeyLegend {...sharedProps}>F19</KeyLegend>
-          <KeyLegend {...sharedProps}>F20</KeyLegend>
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-control-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Control for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Control" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option text-[18px]"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-option-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Option for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Option" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-command-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Command for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Command" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-up"
+            color="nushu.cyan"
+            homing
+            KeyContainerProps={{
+              keyId: 'one-shot-shift-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Shift for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Shift" />
+                </div>
+              )
+            }}
+          />
+          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            className="fa-regular fa-up"
+            color="nushu.cyan"
+            homing
+            KeyContainerProps={{
+              keyId: 'one-shot-shift-right-hand-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Shift for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Shift" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-command-right-hand-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Command for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Command" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option text-[18px]"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-option-right-hand-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Option for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Option" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-chevron-up"
+            color="nushu.cyan"
+            KeyContainerProps={{
+              keyId: 'one-shot-control-right-hand-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Left Control for the next F-key" />
+                  <br />
+                  <PopoverDesc action="hold" output="Left Control" />
+                </div>
+              )
+            }}
+          />
           <KeyLegend {...sharedProps} shiftLgnd=":">
             ;
           </KeyLegend>
@@ -95,16 +197,16 @@ export default function FuncLyr({layout}: {layout: KeyboardLayout}) {
               )
             }}
           />
-          <KeyLegend {...sharedProps}>F21</KeyLegend>
-          <KeyLegend {...sharedProps}>F22</KeyLegend>
-          <KeyLegend {...sharedProps}>F23</KeyLegend>
-          <KeyLegend {...sharedProps}>F24</KeyLegend>
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyLegend {...sharedProps}>F11</KeyLegend>
+          <KeyLegend {...sharedProps}>F12</KeyLegend>
+          <KeyLegend {...sharedProps}>F13</KeyLegend>
+          <KeyLegend {...sharedProps}>F14</KeyLegend>
+          <KeyLegend {...sharedProps}>F15</KeyLegend>
+          <KeyLegend {...sharedProps}>F16</KeyLegend>
+          <KeyLegend {...sharedProps}>F17</KeyLegend>
+          <KeyLegend {...sharedProps}>F18</KeyLegend>
+          <KeyLegend {...sharedProps}>F19</KeyLegend>
+          <KeyLegend {...sharedProps}>F20</KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left"
             KeyContainerProps={{
