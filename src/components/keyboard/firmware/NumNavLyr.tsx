@@ -155,16 +155,15 @@ export default function NumNavLyr({layout}: {layout: KeyboardLayout}) {
           <KeyIcon className="fa-regular fa-arrow-right" />
           <KeyLegend
             {...sharedProps}
-            longPress
+            customShiftCode
+            shiftLgnd=","
             KeyContainerProps={{
               keyId: 'dot-comma-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Period/Dot" />
+                  <PopoverDesc action="tap/hold" output="Period/Dot" />
                   <br />
-                  <PopoverDesc action="hold" output="Comma" />
-                  <br />
-                  <PopoverDesc action="shifted" output="Same (ignores Shift)" />
+                  <PopoverDesc action="shifted" output="Comma" />
                 </div>
               )
             }}
