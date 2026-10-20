@@ -379,6 +379,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyLegend {...sharedProps} />
           <KeyIcon
+            longPress
             className="fa-regular fa-typewriter translate-y-[2px]"
             LyrHoldSubIcn={() => (
               <LyrHoldSubIcn className="fa-regular fa-layer-group translate-x-[-2px]" />
@@ -387,7 +388,7 @@ export default function HardwareLyr({layout}: {layout: KeyboardLayout}) {
               keyId: 'qwerty-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Toggle Qwerty Layout" />
+                  <PopoverDesc action="long hold" output="Toggle Qwerty Layout" />
                 </div>
               )
             }}
