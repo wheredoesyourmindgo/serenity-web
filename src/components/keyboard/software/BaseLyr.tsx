@@ -471,6 +471,8 @@ export default function BaseLyr() {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="hold" output="FN Layer" />
+                  <br />
+                  <PopoverDesc action="tap" output="Nothing (set Press 🌐 key to Do Nothing)" />
                 </div>
               )
             }}

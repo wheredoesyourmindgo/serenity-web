@@ -70,6 +70,13 @@ export default function KarabinerInstallDialog() {
               until you do.
             </p>
           </Step>
+          <Step n={4}>
+            <p>
+              In System Settings › Keyboard, set <strong>Press 🌐 key to</strong> to{' '}
+              <strong>Do Nothing</strong>. Left Command is now the Fn key, so otherwise letting go
+              of it on its own opens the emoji picker or switches input source.
+            </p>
+          </Step>
         </ol>
 
         <p className="text-muted-foreground">
