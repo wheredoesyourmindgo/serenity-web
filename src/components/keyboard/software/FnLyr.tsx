@@ -556,11 +556,11 @@ export default function FnLyr() {
           />
         </KeyboardGridRow>
         <KeyboardGridRow>
-          <KeyLegend {...sharedProps} />
           <KeyIcon className="fa-regular fa-chevron-up" />
           <KeyIcon className="fa-regular fa-option text-[18px]" />
-          <KeyIcon
-            className="fa-regular fa-command text-[18px]"
+          <KeyIcon className="fa-regular fa-command" />
+          <KeyLegend
+            {...sharedProps}
             KeyContainerProps={{
               style: {width: 70.75, height: 55} // 1.25u
             }}

@@ -428,11 +428,45 @@ export default function BaseLyr() {
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
+            className="fa-regular fa-chevron-up"
+            KeyContainerProps={{
+              keyId: 'left-control-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap/hold" output="Left Control" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-option text-[18px]"
+            KeyContainerProps={{
+              keyId: 'left-option-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap/hold" output="Left Option" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            className="fa-regular fa-command"
+            KeyContainerProps={{
+              keyId: 'left-command-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap/hold" output="Left Command" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
             className="fa-light fa-globe translate-y-[2px] text-[18px]"
             LyrHoldSubIcn={() => (
               <LyrHoldSubIcn className="fa-regular fa-keyboard -translate-x-1" />
             )}
             KeyContainerProps={{
+              style: {width: 70.75, height: 55}, // 1.25u
               keyId: 'fn-layer-key',
               popOverContent: (
                 <div className="p-2">
@@ -441,32 +475,19 @@ export default function BaseLyr() {
               )
             }}
           />
-          <KeyIcon className="fa-regular fa-chevron-up" />
-          <KeyIcon className="fa-regular fa-option text-[18px]" />
-          <KeyIcon
-            className="fa-regular fa-command text-[18px]"
-            KeyContainerProps={{
-              style: {width: 70.75, height: 55} // 1.25u
-            }}
-          />
 
           <KeyIcon
-            className="fa-regular fa-bracket-square translate-y-[10px]"
+            className="fa-regular fa-bracket-square translate-y-[6px]"
             rotation={270}
             KeyContainerProps={{
               style: {width: 307, height: 55}, // 5u
               keyId: 'space-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap" output="Space" />
-                  <br />
-                  <PopoverDesc action="hold" output="FN Layer" />
+                  <PopoverDesc action="tap/hold" output="Space" />
                 </div>
               )
             }}
-            LyrHoldSubIcn={() => (
-              <LyrHoldSubIcn className="fa-regular fa-keyboard translate-x-[-6px]" />
-            )}
           />
           <KeyIcon
             className="fa-regular fa-command text-[18px]"
