@@ -306,7 +306,7 @@ export default function FnLyr() {
                 <div className="p-2">
                   <PopoverDesc
                     action="tap/hold"
-                    output="Escape (turns off the Fn layer lock instead, if it's on)"
+                    output="Escape, clearing one-shot mods first (turns off the Fn layer lock instead, if it's on)"
                   />
                 </div>
               )
@@ -424,6 +424,8 @@ export default function FnLyr() {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Caps Word" />
                 </div>
               )
             }}

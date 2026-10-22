@@ -304,7 +304,7 @@ export default function BaseLyr() {
               keyId: 'escape-key',
               popOverContent: (
                 <div className="p-2">
-                  <PopoverDesc action="tap/hold" output="Escape" />
+                  <PopoverDesc action="tap/hold" output="Escape, clearing one-shot mods first" />
                 </div>
               )
             }}
@@ -364,6 +364,8 @@ export default function BaseLyr() {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="single tap/hold" output="Left Shift" />
+                  <br />
+                  <PopoverDesc action="double tap" output="Caps Word" />
                 </div>
               )
             }}
