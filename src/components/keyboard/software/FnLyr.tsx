@@ -417,6 +417,7 @@ export default function FnLyr() {
         </KeyboardGridRow>
         <KeyboardGridRow>
           <KeyIcon
+            special
             className="fa-regular fa-up"
             KeyContainerProps={{
               style: {width: 133.75, height: 55}, // 2.25u
