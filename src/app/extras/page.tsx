@@ -453,9 +453,10 @@ end if
             Thinking of quitting Vim? These are the common Vim motions and commands done with
             standard Mac shortcuts. Most work in any app; the ones tagged <em>code editors</em> are
             VS Code&apos;s defaults, and other editors have close equivalents. They&apos;re
-            comfortable on Serenity because the firmware puts modifiers and arrows on the home row.
-            They won&apos;t replace a modal editor for everything, but they&apos;ll keep you in
-            Insert mode far more often if you can&apos;t quit cold turkey.
+            comfortable on Serenity because the firmware puts modifiers and arrows on the home row,
+            with paging and clipboard keys right below them. They won&apos;t replace a modal editor
+            for everything, but they&apos;ll keep you in Insert mode far more often if you
+            can&apos;t quit cold turkey.
           </p>
           {/* rows rather than a table: on a phone the keys drop under the action, beside the Vim
               command, instead of squeezing three columns into the width */}
