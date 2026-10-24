@@ -377,7 +377,7 @@ end if
         items={[
           {id: 'macos-setup', label: 'macOS setup', icon: 'fa-regular fa-wrench-simple'},
           {id: 'config', label: 'App config', icon: 'fa-regular fa-sliders'},
-          {id: 'reference', label: 'Vim-less', icon: 'fa-regular fa-smoking fa-flip-horizontal'}
+          {id: 'reference', label: 'Vim-less', icon: 'fa-regular fa-smoking'}
         ]}
       />
       <PageBody>
@@ -448,12 +448,7 @@ end if
           </SubSection>
         </Section>
 
-        <Section
-          ruled={false}
-          id="reference"
-          icon="fa-regular fa-smoking fa-flip-horizontal"
-          title="Vim-less"
-        >
+        <Section ruled={false} id="reference" icon="fa-regular fa-smoking" title="Vim-less">
           <p>
             Thinking of quitting Vim? These are the common Vim motions and commands done with
             standard Mac shortcuts. Most work in any app; the ones tagged <em>code editors</em> are
