@@ -1,6 +1,6 @@
 import FaIcon from '@/components/FaIcon'
 import CodeBlock from '@/components/CodeBlock'
-import {PageBody, PageHeader, Section, SubSection, TextLink} from '@/components/Page'
+import {Kbd, PageBody, PageHeader, Section, SubSection, TextLink} from '@/components/Page'
 import MacosSetupChecklist from '@/components/MacosSetupChecklist'
 import PageNav from '@/components/PageNav'
 
@@ -8,126 +8,299 @@ const USym = ({children, className}: {children: React.ReactNode; className?: str
   <span className={`text-nushu-cyan text-[1.1em] font-medium ${className ?? ''}`}>{children}</span>
 )
 
+// an aside in a row, like "(Num/Nav layer)": smaller and quieter than the keys it qualifies
+const Note = ({children}: {children: React.ReactNode}) => (
+  <span className="text-nushu-ink-muted text-xs">{children}</span>
+)
+
 type VimlessRow = {
-  id: number
-  action: string | React.ReactNode
-  keys: string | React.ReactNode
-  vim: string | React.ReactNode
+  vim: React.ReactNode
+  action: string
+  keys: React.ReactNode
+  // true for VS Code defaults; native Mac text fields don't have these
+  editors?: boolean
 }
 
-const vimlessRows: VimlessRow[] = [
+type VimlessGroup = {title: string; rows: VimlessRow[]}
+
+const vimlessGroups: VimlessGroup[] = [
   {
-    id: 1,
-    action: 'Move',
-    keys: (
-      <>
-        <USym>←</USym>, <USym>↓</USym>, <USym>↑</USym>, <USym>→</USym>
-      </>
-    ),
-    vim: 'h, j, k, l'
+    title: 'Move',
+    rows: [
+      {
+        vim: 'h, j, k, l',
+        action: 'Move',
+        keys: (
+          <>
+            <Kbd>←</Kbd> <Kbd>↓</Kbd> <Kbd>↑</Kbd> <Kbd>→</Kbd>
+          </>
+        )
+      },
+      {vim: 'b', action: 'Move to start of word', keys: <Kbd>⌥ ←</Kbd>},
+      {vim: 'e', action: 'Move to end of word', keys: <Kbd>⌥ →</Kbd>},
+      {
+        vim: '^',
+        action: 'Move to first character of line',
+        keys: (
+          <>
+            <Kbd>⌘ ←</Kbd> or <Kbd>Home</Kbd>
+          </>
+        ),
+        editors: true
+      },
+      {
+        vim: '0',
+        action: 'Move to start of line',
+        keys: (
+          <>
+            <Kbd>⌘ ←</Kbd>{' '}
+            <Note>
+              (twice in code editors, or <Kbd>Home</Kbd> twice)
+            </Note>
+          </>
+        )
+      },
+      {
+        vim: '$',
+        action: 'Move to end of line',
+        keys: (
+          <>
+            <Kbd>⌘ →</Kbd>{' '}
+            <Note>
+              (or <Kbd>End</Kbd> in code editors)
+            </Note>
+          </>
+        )
+      },
+      {vim: 'gg', action: 'Jump to beginning of document', keys: <Kbd>⌘ ↑</Kbd>},
+      {vim: 'G', action: 'Jump to end of document', keys: <Kbd>⌘ ↓</Kbd>},
+      {
+        vim: (
+          <>
+            <USym>⌃</USym> b
+          </>
+        ),
+        action: 'Page up',
+        keys: (
+          <>
+            Page Up key <Note>(Num/Nav layer)</Note>
+          </>
+        )
+      },
+      {
+        vim: (
+          <>
+            <USym>⌃</USym> f
+          </>
+        ),
+        action: 'Page down',
+        keys: (
+          <>
+            Page Down key <Note>(Num/Nav layer)</Note>
+          </>
+        )
+      },
+      {vim: ':42', action: 'Go to line', keys: <Kbd>⌃ G</Kbd>, editors: true},
+      {
+        vim: '%',
+        action: 'Jump to matching bracket',
+        keys: <Kbd>⇧ ⌘ \</Kbd>,
+        editors: true
+      }
+    ]
   },
   {
-    id: 2,
-    action: 'Move to beginning of line (soft)',
-    keys: (
-      <>
-        <USym>⌘ ←</USym> (or home)
-      </>
-    ),
-    vim: '^'
+    title: 'Delete',
+    rows: [
+      {vim: 'X', action: 'Delete previous character', keys: <Kbd>⌫</Kbd>},
+      {vim: 'x', action: 'Delete character', keys: <Kbd>⌦</Kbd>},
+      {vim: 'db', action: 'Delete to start of word', keys: <Kbd>⌥ ⌫</Kbd>},
+      {vim: 'de', action: 'Delete to end of word', keys: <Kbd>⌥ ⌦</Kbd>},
+      {vim: 'd0', action: 'Delete to start of line', keys: <Kbd>⌘ ⌫</Kbd>},
+      {
+        vim: 'D',
+        action: 'Delete to end of line',
+        keys: (
+          <>
+            <Kbd>⌘ ⌦</Kbd> or <Kbd>⌃ K</Kbd>
+          </>
+        )
+      },
+      {vim: 'xp', action: 'Swap two characters', keys: <Kbd>⌃ T</Kbd>}
+    ]
   },
   {
-    id: 3,
-    action: 'Move to beginning of line (hard)',
-    keys: (
-      <>
-        <USym>⌘ ←</USym> <USym>←</USym> (or home twice)
-      </>
-    ),
-    vim: '0'
+    title: 'Clipboard and undo',
+    rows: [
+      {
+        vim: 'u',
+        action: 'Undo',
+        keys: (
+          <>
+            Undo key <Note>(Num/Nav layer)</Note>
+          </>
+        )
+      },
+      {
+        vim: (
+          <>
+            <USym>⌃</USym> r
+          </>
+        ),
+        action: 'Redo',
+        keys: (
+          <>
+            Redo key <Note>(Num/Nav layer)</Note>
+          </>
+        )
+      },
+      {
+        vim: 'd',
+        action: 'Cut',
+        keys: (
+          <>
+            Cut key <Note>(Num/Nav layer)</Note>
+          </>
+        )
+      },
+      {
+        vim: 'y',
+        action: 'Copy',
+        keys: (
+          <>
+            Copy key <Note>(Num/Nav layer)</Note>
+          </>
+        )
+      },
+      {
+        vim: 'p',
+        action: 'Paste',
+        keys: (
+          <>
+            Paste key <Note>(Num/Nav layer)</Note>
+          </>
+        )
+      },
+      {
+        vim: 'dd, yy',
+        action: 'Cut or copy line',
+        keys: 'Cut or Copy key with nothing selected',
+        editors: true
+      }
+    ]
   },
   {
-    id: 4,
-    action: 'Move to end of line',
-    keys: (
-      <>
-        <USym>⌘ →</USym> (or end)
-      </>
-    ),
-    vim: '$'
+    title: 'Select',
+    rows: [
+      {
+        vim: 'v',
+        action: 'Selection (Visual mode)',
+        keys: (
+          <>
+            <Kbd>⇧</Kbd> with any movement above, to grow or shrink the selection
+          </>
+        )
+      },
+      {
+        vim: 'viw',
+        action: 'Select cursor word',
+        keys: (
+          <>
+            Word Select key <Note>(Num/Nav layer)</Note>; tap again to add the next word
+          </>
+        )
+      },
+      {
+        vim: 'V',
+        action: 'Select cursor line',
+        keys: 'Word Select key with Shift; tap again to add the next line'
+      },
+      {
+        vim: 'gn',
+        action: 'Add the next match to the selection',
+        keys: <Kbd>⌘ D</Kbd>,
+        editors: true
+      }
+    ]
   },
-  {id: 5, action: 'Jump to beginning of document', keys: <USym>⌘ ↑</USym>, vim: 'gg'},
-  {id: 6, action: 'Jump to end of document', keys: <USym>⌘ ↓</USym>, vim: 'G'},
   {
-    id: 7,
-    action: 'Page up',
-    keys: 'Page Up key (Num/Nav layer)',
-    vim: (
-      <>
-        <USym>⌃</USym> b
-      </>
-    )
+    title: 'Lines',
+    rows: [
+      {
+        vim: '>>',
+        action: 'Indent',
+        keys: (
+          <>
+            <Kbd>⌘ ]</Kbd>, or <Kbd>⇥</Kbd> <Note>(with lines selected)</Note>
+          </>
+        ),
+        editors: true
+      },
+      {
+        vim: '<<',
+        action: 'Un-indent',
+        keys: (
+          <>
+            <Kbd>⌘ [</Kbd> or <Kbd>⇤</Kbd>
+          </>
+        ),
+        editors: true
+      },
+      {vim: 'o', action: 'Open line below', keys: <Kbd>⌘ ↵</Kbd>, editors: true},
+      {
+        vim: 'O',
+        action: 'Open line above',
+        keys: <Kbd>⇧ ⌘ ↵</Kbd>,
+        editors: true
+      },
+      {vim: 'ddp', action: 'Move line down', keys: <Kbd>⌥ ↓</Kbd>, editors: true},
+      {vim: 'ddkP', action: 'Move line up', keys: <Kbd>⌥ ↑</Kbd>, editors: true},
+      {
+        vim: 'yyp',
+        action: 'Duplicate line',
+        keys: <Kbd>⇧ ⌥ ↓</Kbd>,
+        editors: true
+      },
+      {vim: 'J', action: 'Join lines', keys: <Kbd>⌃ J</Kbd>, editors: true}
+    ]
   },
   {
-    id: 8,
-    action: 'Page down',
-    keys: 'Page Down key (Num/Nav layer)',
-    vim: (
-      <>
-        <USym>⌃</USym> f
-      </>
-    )
+    title: 'Search',
+    rows: [
+      {vim: '/', action: 'Find', keys: <Kbd>⌘ F</Kbd>},
+      {vim: 'n', action: 'Next match', keys: <Kbd>⌘ G</Kbd>},
+      {vim: 'N', action: 'Previous match', keys: <Kbd>⇧ ⌘ G</Kbd>},
+      {
+        vim: '*',
+        action: 'Find word under cursor',
+        keys: (
+          <>
+            Word Select key, then <Kbd>⌘ E</Kbd>, then <Kbd>⌘ G</Kbd>
+          </>
+        )
+      },
+      {
+        vim: ':%s',
+        action: 'Find and replace',
+        keys: <Kbd>⌥ ⌘ F</Kbd>,
+        editors: true
+      }
+    ]
   },
-  {id: 9, action: 'Delete previous character', keys: <USym>⌫</USym>, vim: 'X'},
-  {id: 10, action: 'Delete character', keys: <USym>⌦</USym>, vim: 'x'},
-  {id: 11, action: 'Undo', keys: 'Undo key (Num/Nav layer)', vim: 'u'},
-  {id: 12, action: 'Cut', keys: 'Cut key (Num/Nav layer)', vim: 'd'},
-  {id: 13, action: 'Copy', keys: 'Copy key (Num/Nav layer)', vim: 'y'},
-  {id: 14, action: 'Paste', keys: 'Paste key (Num/Nav layer)', vim: 'p'},
   {
-    id: 15,
-    action: 'Redo',
-    keys: 'Redo key (Num/Nav layer)',
-    vim: (
-      <>
-        <USym>⌃</USym> r
-      </>
-    )
-  },
-  {id: 16, action: 'Move to start word', keys: <USym>⌥ ←</USym>, vim: 'b'},
-  {id: 17, action: 'Move to end word', keys: <USym>⌥ →</USym>, vim: 'e'},
-  {id: 18, action: 'Delete start word', keys: <USym>⌥ ⌫</USym>, vim: 'db'},
-  {id: 19, action: 'Delete end word', keys: <USym>⌥ ⌦</USym>, vim: 'de'},
-  {id: 20, action: 'Delete start line', keys: <USym>⌘ ⌫</USym>, vim: 'd0'},
-  {id: 21, action: 'Delete end line', keys: <USym>⌘ ⌦</USym>, vim: 'D'},
-  {
-    id: 22,
-    action: 'Selection (Visual mode)',
-    keys: (
-      <>
-        <USym className="text-[1.2em] font-semibold">⇧</USym> (use other movement shortcuts while
-        holding shift, often in conjunction with arrow keys, to expand or shrink selection)
-      </>
-    ),
-    vim: 'v'
-  },
-  {id: 23, action: 'Select cursor word', keys: 'Word Select key (Num/Nav layer, tap)', vim: 'viw'},
-  {
-    id: 24,
-    action: 'Select cursor line',
-    keys: 'Word Select key (Num/Nav layer, with Shift)',
-    vim: 'V'
-  },
-  {id: 25, action: 'Indent', keys: <USym className="text-[1.3em]">⇥</USym>, vim: '>'},
-  {
-    id: 26,
-    action: 'Un-indent',
-    keys: (
-      <>
-        <USym className="text-[1.3em]">⇤</USym>
-      </>
-    ),
-    vim: '<'
+    title: 'Files',
+    rows: [
+      {vim: ':w', action: 'Save', keys: <Kbd>⌘ S</Kbd>},
+      {
+        vim: ':q',
+        action: 'Close, or quit the app',
+        keys: (
+          <>
+            <Kbd>⌘ W</Kbd>, <Kbd>⌘ Q</Kbd>
+          </>
+        )
+      }
+    ]
   }
 ]
 
@@ -204,7 +377,7 @@ end if
         items={[
           {id: 'macos-setup', label: 'macOS setup', icon: 'fa-regular fa-wrench-simple'},
           {id: 'config', label: 'App config', icon: 'fa-regular fa-sliders'},
-          {id: 'reference', label: 'Vim-less', icon: 'fa-regular fa-ban-smoking'}
+          {id: 'reference', label: 'Vim-less', icon: 'fa-regular fa-smoking fa-flip-horizontal'}
         ]}
       />
       <PageBody>
@@ -275,45 +448,73 @@ end if
           </SubSection>
         </Section>
 
-        <Section ruled={false} id="reference" icon="fa-regular fa-ban-smoking" title="Vim-less">
+        <Section
+          ruled={false}
+          id="reference"
+          icon="fa-regular fa-smoking fa-flip-horizontal"
+          title="Vim-less"
+        >
           <p>
             Thinking of quitting Vim? These are the common Vim motions and commands done with
-            standard shortcuts, which work in any app. They&apos;re comfortable on Serenity because
-            the firmware puts modifiers and arrows on the home row. They won&apos;t replace a modal
-            editor for everything, but they keep you in Insert mode far more often.
+            standard Mac shortcuts. Most work in any app; the ones tagged <em>code editors</em> are
+            VS Code&apos;s defaults, and other editors have close equivalents. They&apos;re
+            comfortable on Serenity because the firmware puts modifiers and arrows on the home row.
+            They won&apos;t replace a modal editor for everything, but they&apos;ll keep you in
+            Insert mode far more often if you can&apos;t quit cold turkey.
           </p>
           {/* rows rather than a table: on a phone the keys drop under the action, beside the Vim
-              equivalent, instead of squeezing three columns into the width */}
-          <div className="border-border bg-background overflow-hidden rounded-lg border text-[13px] md:text-sm">
+              command, instead of squeezing three columns into the width */}
+          <div className="border-border bg-background overflow-hidden rounded-lg border text-[13px] md:text-sm [&>div:last-child>dl>div:last-child]:border-b-0">
             <div
               aria-hidden="true"
-              className="border-border bg-card text-nushu-ink-muted hidden grid-cols-[12rem_1fr_6.5rem] gap-x-4 border-b px-4 py-2 text-xs md:grid"
+              className="border-border bg-card text-nushu-ink-muted hidden grid-cols-[5rem_14rem_1fr] gap-x-4 border-b px-4 py-2 text-xs md:grid"
             >
+              <span>Vim</span>
               <span>To do this</span>
               <span>Press</span>
-              <span>Vim</span>
             </div>
-            <dl>
-              {vimlessRows.map((row) => (
-                <div
-                  key={row.id}
-                  className="border-border grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b px-4 py-2.5 last:border-b-0 md:grid-cols-[12rem_1fr_6.5rem]"
-                >
-                  <dt className="text-nushu-ink-deep">{row.action}</dt>
-                  <dd className="text-nushu-ink-strong col-start-1 md:col-start-auto">
-                    {row.keys}
-                  </dd>
-                  <dd className="text-nushu-magenta col-start-2 row-start-1 text-right whitespace-nowrap md:col-start-auto md:row-start-auto md:text-left">
-                    <span className="sr-only">Vim: </span>
-                    {row.vim}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            {vimlessGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="border-border text-nushu-ink-muted border-b px-4 pt-4 pb-1.5 text-xs font-medium tracking-wide uppercase">
+                  {group.title}
+                </h3>
+                <dl>
+                  {group.rows.map((row) => (
+                    <div
+                      key={row.action}
+                      className="border-border grid grid-cols-[4.5rem_1fr] gap-x-4 gap-y-1 border-b px-4 py-2.5 md:grid-cols-[5rem_14rem_1fr]"
+                    >
+                      <dt className="text-nushu-magenta row-span-2 whitespace-nowrap md:row-span-1">
+                        {row.vim}
+                      </dt>
+                      <dd className="text-nushu-ink-deep flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                        {row.action}
+                        {row.editors && (
+                          <span className="text-nushu-ink-muted border-border rounded-full border px-2 text-[11px] leading-normal">
+                            code editors
+                          </span>
+                        )}
+                      </dd>
+                      <dd className="text-nushu-ink-strong col-start-2 md:col-start-auto">
+                        <span className="sr-only">Press: </span>
+                        {row.keys}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
           </div>
           <p>
-            Most of what&apos;s left can be done in a modern editor with extensions or built-in
-            commands. These are two VS Code extensions I maintain to fill such gaps.
+            Native Mac text fields also take Emacs-style keys: <Kbd>⌃ A</Kbd> and <Kbd>⌃ E</Kbd> for
+            the start and end of the line, <Kbd>⌃ K</Kbd> to cut to the end of the line, and{' '}
+            <Kbd>⌃ Y</Kbd> to paste it back.
+          </p>
+          <p>
+            What&apos;s left, like text objects (<code>ciw</code>), the dot repeat and macros, is
+            where a modal editor still earns its keep, though a modern editor covers a lot of it
+            with extensions or built-in commands. These are two VS Code extensions I maintain to
+            fill such gaps.
           </p>
           <ul className="space-y-3">
             {[
