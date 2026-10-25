@@ -61,7 +61,17 @@ export default function MouseLyr({layout}: {layout: KeyboardLayout}) {
             }}
           />
           <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            className="fa-regular fa-magnifying-glass-arrows-rotate"
+            KeyContainerProps={{
+              keyId: 'zoom-reset-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Reset Zoom (⌘0)" />
+                </div>
+              )
+            }}
+          />
           <KeyIcon
             className="fa-regular fa-circle-chevron-left"
             KeyContainerProps={{
