@@ -104,6 +104,19 @@ export const setupItems = [
     ]
   },
   {
+    id: 'stage-manager',
+    group: 'settings',
+    chord: '⌃⌥⇧⌘T',
+    action: 'Turn Stage Manager On/Off',
+    path: [
+      'System Settings',
+      'Keyboard',
+      'Keyboard Shortcuts…',
+      'Mission Control',
+      'Turn Stage Manager On/Off'
+    ]
+  },
+  {
     id: 'siri',
     group: 'settings',
     chord: '⌃⌥⇧⌘S',
@@ -135,20 +148,12 @@ export const setupItems = [
     detail: 'Paste the script below into the action.'
   },
   {
-    id: 'stage-manager',
-    group: 'shortcuts',
-    chord: '⌃⌥⇧⌘T',
-    action: 'Toggle Stage Manager',
-    path: ['Shortcuts', 'New Shortcut', 'Set Stage Manager'],
-    detail: 'Set the action to toggle.'
-  },
-  {
     id: 'window-sides',
     group: 'rectangle',
     chord: '⌃⌥⌘← / ⌃⌥⌘→, ⌃⌥⌘L / ⌃⌥⌘R',
     action: 'Left / Right Half, Fill Left / Right',
     path: ['Rectangle Pro', 'Settings', 'Shortcuts'],
-    detail: 'Clear Previous and Next Display first, which use ⌃⌥⌘← and ⌃⌥⌘→ by default.'
+    detail: 'Move Previous and Next Display (below) first, which use ⌃⌥⌘← and ⌃⌥⌘→ by default.'
   },
   {
     id: 'window-almost-max',
@@ -167,8 +172,16 @@ export const setupItems = [
   {
     id: 'window-throw-space',
     group: 'rectangle',
-    chord: '⌃⌥⇧⌘← / ⌃⌥⇧⌘→',
-    action: 'Throw Window to Space Left / Right',
+    chord: '⌃⌥⇧⌘← / ⌃⌥⇧⌘→, ⌃⌥⇧⌘[ / ⌃⌥⇧⌘]',
+    action: 'Throw Window to Space Left / Right, Previous / Next Display',
+    path: ['Rectangle Pro', 'Settings', 'Shortcuts'],
+    detail: 'The displays are on the hold and only matter with more than one display.'
+  },
+  {
+    id: 'window-stash',
+    group: 'rectangle',
+    chord: '⌃⌥⇧⌘G / ⌃⌥⇧⌘H, ⌃⌥⇧⌘R / ⌃⌥⇧⌘U',
+    action: 'Toggle Stashed / Stash, Cycle Stashed / Unstash',
     path: ['Rectangle Pro', 'Settings', 'Shortcuts']
   }
 ] as const satisfies readonly SetupItem[]
