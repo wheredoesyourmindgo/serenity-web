@@ -399,8 +399,22 @@ export default function FnLyr() {
           <KeyIcon className="fa-regular fa-arrow-down" />
           <KeyIcon className="fa-regular fa-arrow-up" />
           <KeyIcon className="fa-regular fa-arrow-right" />
-          <KeyLegend {...sharedProps} shiftLgnd=":">
-            ;
+          <KeyLegend
+            {...sharedProps}
+            customShiftCode
+            shiftLgnd=","
+            KeyContainerProps={{
+              keyId: 'dot-comma-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap/hold" output="Period/Dot" />
+                  <br />
+                  <PopoverDesc action="shifted" output="Comma" />
+                </div>
+              )
+            }}
+          >
+            .
           </KeyLegend>
           <KeyIcon
             className="fa-regular fa-arrow-turn-down-left translate-y-1"
