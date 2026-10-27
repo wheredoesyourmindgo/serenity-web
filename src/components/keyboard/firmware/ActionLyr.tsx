@@ -372,6 +372,7 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
           />
           <KeyIcon
             setupId="window-throw-space"
+            longPress
             appShortcut
             className="fa-regular fa-square-left"
             KeyContainerProps={{
@@ -380,15 +381,52 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Throw Window Space Left (⌃⌥⇧⌘←)" />
                   <br />
+                  <PopoverDesc action="hold" output="Throw Window to Previous Display (⌃⌥⇧⌘[)" />
+                  <br />
                   <AppCaption app="Rectangle Pro" />
                 </div>
               )
             }}
           />
-          <KeyLegend {...sharedProps} />
-          <KeyLegend {...sharedProps} />
+          <KeyIcon
+            setupId="window-stash"
+            longPress
+            appShortcut
+            className="fa-regular fa-inbox-in"
+            KeyContainerProps={{
+              keyId: 'window-toggle-stash-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Toggle Stashed (⌃⌥⇧⌘G)" />
+                  <br />
+                  <PopoverDesc action="hold" output="Stash Window (⌃⌥⇧⌘H)" />
+                  <br />
+                  <AppCaption app="Rectangle Pro" />
+                </div>
+              )
+            }}
+          />
+          <KeyIcon
+            setupId="window-stash"
+            longPress
+            appShortcut
+            className="fa-regular fa-arrows-repeat"
+            KeyContainerProps={{
+              keyId: 'window-cycle-stash-key',
+              popOverContent: (
+                <div className="p-2">
+                  <PopoverDesc action="tap" output="Cycle Stashed (⌃⌥⇧⌘R)" />
+                  <br />
+                  <PopoverDesc action="hold" output="Unstash (⌃⌥⇧⌘U)" />
+                  <br />
+                  <AppCaption app="Rectangle Pro" />
+                </div>
+              )
+            }}
+          />
           <KeyIcon
             setupId="window-throw-space"
+            longPress
             appShortcut
             className="fa-regular fa-square-right"
             KeyContainerProps={{
@@ -396,6 +434,8 @@ export default function ActionLyr({layout}: {layout: KeyboardLayout}) {
               popOverContent: (
                 <div className="p-2">
                   <PopoverDesc action="tap" output="Throw Window Space Right (⌃⌥⇧⌘→)" />
+                  <br />
+                  <PopoverDesc action="hold" output="Throw Window to Next Display (⌃⌥⇧⌘])" />
                   <br />
                   <AppCaption app="Rectangle Pro" />
                 </div>
