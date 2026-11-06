@@ -1,6 +1,25 @@
 #!/usr/bin/env node
 
-import {readFileSync, writeFileSync, existsSync} from 'node:fs'
+/**
+ * Re-fetches the files this app vendors rather than authors, from the manifest
+ * in vendor-components.json.
+ *
+ * shadcn components are copied into the repo by design, which makes them
+ * indistinguishable from hand-written code once committed. The manifest records
+ * which files came from where so they can be refreshed in place, and so
+ * `discover` can flag a vendored file nobody wrote down.
+ *
+ *   npm run vendor-components list
+ *   npm run vendor-components sync
+ *   npm run vendor-components sync -- button dialog
+ *   npm run vendor-components discover
+ *
+ * Vendored files stay in the CLI's own formatting -- .prettierignore and the
+ * ESLint ignores both skip them -- so that `shadcn diff` compares against
+ * upstream without style noise.
+ */
+
+import {readFileSync, existsSync, readdirSync, statSync} from 'node:fs'
 import path from 'node:path'
 import {spawnSync} from 'node:child_process'
 
@@ -10,8 +29,9 @@ const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'))
 
 const SOURCE_DIRS = {
   shadcn: path.join('src', 'components', 'ui'),
-  reui: path.join('src', 'components', 'reui'),
-  'motion-primitives': path.join('src', 'components', 'ui')
+  'animate-ui': path.join('src', 'components', 'animate-ui'),
+  'motion-primitives': path.join('src', 'components', 'ui'),
+  reui: path.join('src', 'components', 'reui')
 }
 
 const MOTION_PRIMITIVES_FILES = new Set(['disclosure.tsx', 'in-view.tsx'])
@@ -30,80 +50,9 @@ Options:
 
 Sources:
   shadcn
-  reui
-  motion-primitives`)
-}
-
-// This project uses `@tabler/icons-react` (components.json `iconLibrary: tabler`),
-// but some third-party registries hardcode `lucide-react`. Map the
-// icons we actually vendor; extend this table as new components arrive. Unmapped
-// icons are left on lucide and warned about loudly rather than guessed wrong.
-const LUCIDE_TO_TABLER = {
-  CopyIcon: 'IconCopy',
-  CheckIcon: 'IconCheck'
-}
-
-function rewriteLucideToTabler(source, relPath) {
-  const importRe = /import\s*\{([^}]*)\}\s*from\s*['"]lucide-react['"];?\n?/
-  const match = source.match(importRe)
-  if (!match) {
-    return source
-  }
-
-  const names = match[1]
-    .split(',')
-    .map((name) => name.trim())
-    .filter(Boolean)
-  const mapped = names.filter((name) => LUCIDE_TO_TABLER[name])
-  const unmapped = names.filter((name) => !LUCIDE_TO_TABLER[name])
-
-  let out = source
-  for (const name of mapped) {
-    out = out.replace(new RegExp(`\\b${name}\\b`, 'g'), LUCIDE_TO_TABLER[name])
-  }
-
-  const importLines = []
-  if (mapped.length > 0) {
-    importLines.push(`import { ${mapped.map((name) => LUCIDE_TO_TABLER[name]).join(', ')} } from '@tabler/icons-react';`)
-  }
-  if (unmapped.length > 0) {
-    importLines.push(`import { ${unmapped.join(', ')} } from 'lucide-react';`)
-    console.warn(`  ! ${relPath}: no @tabler mapping for lucide icon(s): ${unmapped.join(', ')} — left on lucide-react (add them to LUCIDE_TO_TABLER)`)
-  }
-
-  return out.replace(importRe, `${importLines.join('\n')}\n`)
-}
-
-// Some third-party registries still emit the pre-rename Base UI package
-// (`@base-ui-components/react`). This project depends on the renamed package
-// (`@base-ui/react`), and its tsconfig runs with `noUnusedLocals`, which trips
-// on the bare `import * as React` some registry files ship. Normalize these here
-// so a re-sync reproduces exactly what we hand-verified instead of regressing.
-function normalizeVendoredFile(relPath) {
-  const absPath = path.join(cwd, relPath)
-  if (!existsSync(absPath)) {
-    return
-  }
-
-  const original = readFileSync(absPath, 'utf8')
-  let next = original.replaceAll('@base-ui-components/react', '@base-ui/react')
-
-  next = rewriteLucideToTabler(next, relPath)
-
-  // Drop a sole `import * as React from 'react'` when React is never referenced
-  // (safe: kept whenever any other `React` token, e.g. `React.ComponentProps`, exists).
-  const reactImport = /^import \* as React from ['"]react['"];?\n/m
-  if (reactImport.test(next)) {
-    const withoutImport = next.replace(reactImport, '')
-    if (!/\bReact\b/.test(withoutImport)) {
-      next = withoutImport
-    }
-  }
-
-  if (next !== original) {
-    writeFileSync(absPath, next)
-    console.log(`Normalized ${relPath}`)
-  }
+  animate-ui
+  motion-primitives
+  reui`)
 }
 
 function componentStatus(component) {
@@ -153,6 +102,28 @@ function listComponents() {
   }
 }
 
+/**
+ * Every file under a directory. Walked here rather than shelled out to `rg`,
+ * which is not installed everywhere -- and a missing binary would otherwise
+ * read as "found nothing untracked", the same output as a clean tree.
+ */
+function collectFiles(dir) {
+  const files = []
+
+  const walk = (current) => {
+    if (!existsSync(current)) return
+    for (const entry of readdirSync(current)) {
+      if (entry === 'node_modules' || entry.startsWith('.')) continue
+      const full = path.join(current, entry)
+      if (statSync(full).isDirectory()) walk(full)
+      else files.push(full)
+    }
+  }
+
+  walk(dir)
+  return files
+}
+
 function discoverComponents() {
   const trackedPaths = new Map()
   for (const component of manifest.components) {
@@ -166,17 +137,7 @@ function discoverComponents() {
   const findings = []
 
   for (const [source, relativeDir] of Object.entries(SOURCE_DIRS)) {
-    const dir = path.join(cwd, relativeDir)
-    const result = spawnSync('rg', ['--files', dir], {
-      cwd,
-      encoding: 'utf8'
-    })
-
-    if (result.status !== 0) {
-      continue
-    }
-
-    for (const absPath of result.stdout.split('\n').filter(Boolean)) {
+    for (const absPath of collectFiles(path.join(cwd, relativeDir))) {
       const relPath = path.relative(cwd, absPath)
 
       if (source === 'motion-primitives' && !MOTION_PRIMITIVES_FILES.has(path.basename(relPath))) {
@@ -193,6 +154,11 @@ function discoverComponents() {
         trackedBy: trackedPaths.get(relPath) ?? []
       })
     }
+  }
+
+  if (findings.length === 0) {
+    console.log('No vendored files found under any source directory.')
+    return
   }
 
   for (const finding of findings.sort((a, b) => a.path.localeCompare(b.path))) {
@@ -232,14 +198,6 @@ function syncComponents(selectors, source, options) {
     if (result.status !== 0) {
       process.exitCode = result.status ?? 1
       return
-    }
-
-    if (!options.dryRun) {
-      const vendoredFiles = component.paths.filter((file) => existsSync(path.join(cwd, file)))
-
-      for (const file of vendoredFiles) {
-        normalizeVendoredFile(file)
-      }
     }
   }
 }
