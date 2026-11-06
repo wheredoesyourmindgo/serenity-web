@@ -9,7 +9,7 @@ import TapForceHoldSubIcn from './TapForceHoldSubIcn'
 import VimRefIcn, {VimRefIcnProps} from './VimRefIcn'
 import VimRefLgnd from './VimRefLgnd'
 import AppSubIcn from './AppShortcutSubIcn'
-import {Typography, typographyVariants} from '@/components/ui/typography'
+import {Typography, typographyVariants} from '@/components/Typography'
 import type {CSSProperties} from 'react'
 import type {VariantProps} from 'class-variance-authority'
 

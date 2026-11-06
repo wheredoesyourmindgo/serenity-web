@@ -1,4 +1,4 @@
-import {Typography, type TypographyProps} from '@/components/ui/typography'
+import {Typography, type TypographyProps} from '@/components/Typography'
 import {cn} from 'cn'
 
 type Props = Omit<TypographyProps, 'variant' | 'as'>

@@ -64,16 +64,25 @@
       "name": "toggle-group",
       "source": "shadcn",
       "spec": "toggle-group",
-      "paths": [
-        "src/components/ui/toggle.tsx",
-        "src/components/ui/toggle-group.tsx"
-      ]
+      "paths": ["src/components/ui/toggle.tsx", "src/components/ui/toggle-group.tsx"]
     },
     {
       "name": "use-copy-to-clipboard",
       "source": "reui",
       "spec": "@reui/use-copy-to-clipboard",
       "paths": ["src/hooks/use-copy-to-clipboard.ts"]
+    },
+    {
+      "name": "checkbox",
+      "source": "shadcn",
+      "spec": "checkbox",
+      "paths": ["src/components/ui/checkbox.tsx"]
+    },
+    {
+      "name": "collapsible",
+      "source": "shadcn",
+      "spec": "collapsible",
+      "paths": ["src/components/ui/collapsible.tsx"]
     }
   ]
 }

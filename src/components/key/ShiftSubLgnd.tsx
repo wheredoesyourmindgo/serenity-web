@@ -1,6 +1,6 @@
 'use client'
 
-import {Typography, type TypographyProps} from '@/components/ui/typography'
+import {Typography, type TypographyProps} from '@/components/Typography'
 
 type Props = Omit<TypographyProps, 'variant' | 'as'> & {
   color?: string

@@ -16,7 +16,7 @@ const typographyVariants = cva('', {
       h6: 'text-[1.25rem]/[1.6] font-medium tracking-[0.0075em]',
       subtitle1: 'text-base/[1.75] font-normal tracking-[0.00938em]',
       subtitle2: 'text-sm/[1.57] font-medium tracking-[0.00714em]',
-      body1: 'text-base/[1.5] font-normal tracking-[0.00938em]',
+      body1: 'text-base/normal font-normal tracking-[0.00938em]',
       body2: 'text-sm/[1.43] font-normal tracking-[0.01071em]',
       button: 'text-sm/[1.75] font-medium tracking-[0.02857em] uppercase',
       caption: 'text-xs/[1.66] font-normal tracking-[0.03333em]',
