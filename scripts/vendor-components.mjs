@@ -235,24 +235,10 @@ function syncComponents(selectors, source, options) {
     }
 
     if (!options.dryRun) {
-      const filesToFormat = component.paths.filter((file) => existsSync(path.join(cwd, file)))
+      const vendoredFiles = component.paths.filter((file) => existsSync(path.join(cwd, file)))
 
-      for (const file of filesToFormat) {
+      for (const file of vendoredFiles) {
         normalizeVendoredFile(file)
-      }
-
-      if (filesToFormat.length > 0) {
-        console.log(`Formatting ${component.source}:${component.name}`)
-        const prettierResult = spawnSync('npx', ['prettier', '--write', ...filesToFormat], {
-          cwd,
-          stdio: 'inherit',
-          encoding: 'utf8'
-        })
-
-        if (prettierResult.status !== 0) {
-          process.exitCode = prettierResult.status ?? 1
-          return
-        }
       }
     }
   }
