@@ -24,7 +24,9 @@ const eslintConfig = defineConfig([
     'src/components/ui/**',
     'src/components/reui/**',
     'src/lib/utils.ts',
-    'src/hooks/use-copy-to-clipboard.ts'
+    'src/hooks/use-copy-to-clipboard.ts',
+    'src/hooks/use-highlighted-code.ts',
+    'src/lib/highlighter.tsx'
   ]),
   ...nextTs,
   ...nextVitals,

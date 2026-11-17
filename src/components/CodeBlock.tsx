@@ -1,13 +1,20 @@
-import CopyButton from '@/components/CopyButton'
+import {
+  CodeBlock as Block,
+  CodeBlockActions,
+  CodeBlockContent,
+  CodeBlockCopyButton,
+  CodeBlockHeader,
+  CodeBlockLine,
+  CodeBlockTitle
+} from '@/components/ui/code-block'
 import {highlight, type CodeLanguage} from '@/lib/highlight'
 import {cn} from 'cn'
 
 /*
- * A snippet to copy: a header bar naming the file it goes in, with the copy button, over the code.
- * Its colors are the --code-* tokens in globals.css. The code is set a size below
- * the body text, since monospace runs wide and snippets are scanned more than read. `wrap` is for
- * one-line blobs like an exported JSON preset, which nobody reads across: they wrap anywhere and
- * scroll in a short box instead of a mile-long line.
+ * A snippet to copy: the shadcn code block, titled with the file it goes in, with a copy button.
+ * Highlighting runs here on the server and hands the block finished lines, so Shiki never reaches
+ * the client. `wrap` is for one-line blobs like an exported JSON preset, which nobody reads
+ * across: they wrap and scroll in a short box instead of running a mile wide.
  */
 export default async function CodeBlock({
   code,
@@ -21,26 +28,37 @@ export default async function CodeBlock({
   wrap?: boolean
 }) {
   const text = code.trim()
-  const html = await highlight(text, language)
+  const lines = await highlight(text, language)
 
   return (
-    <figure className="overflow-hidden rounded-lg border border-(--code-border) bg-(--code-background)">
-      <figcaption className="flex items-center justify-between gap-3 border-b border-(--code-border) bg-(--code-bar) py-1 pr-1 pl-3 text-xs text-(--code-muted)">
-        <span className="truncate">{label}</span>
-        <CopyButton
-          text={text}
-          variant="ghost"
-          className="text-(--code-muted) hover:bg-(--code-hover) hover:text-(--code-foreground) dark:hover:bg-(--code-hover)"
-        />
-      </figcaption>
-      <div
-        className={cn(
-          'text-xs md:text-[13px]',
-          '[&_pre]:overflow-x-auto [&_pre]:px-4 [&_pre]:py-3.5 [&_pre]:leading-relaxed [&_pre]:outline-none',
-          wrap && 'max-h-44 overflow-y-auto [&_pre]:break-all [&_pre]:whitespace-pre-wrap'
-        )}
-        dangerouslySetInnerHTML={{__html: html}}
-      />
-    </figure>
+    // --code-background in globals.css; dark: too, to beat the block's own dark:bg-input/30
+    <Block className="bg-(--code-background) dark:bg-(--code-background)">
+      <CodeBlockHeader>
+        <CodeBlockTitle>{label}</CodeBlockTitle>
+        <CodeBlockActions>
+          <CodeBlockCopyButton value={text} />
+        </CodeBlockActions>
+      </CodeBlockHeader>
+      {/* a size below the body text, since monospace runs wide and snippets are scanned more
+          than read */}
+      <CodeBlockContent wrap={wrap} className={cn('text-xs md:text-[13px]', wrap && 'max-h-44')}>
+        {lines.map((tokens, index) => (
+          <CodeBlockLine key={index}>
+            {tokens.map(({content, color, italic, bold}, i) => (
+              <span
+                key={i}
+                style={{
+                  color,
+                  fontStyle: italic ? 'italic' : undefined,
+                  fontWeight: bold ? 'bold' : undefined
+                }}
+              >
+                {content}
+              </span>
+            ))}
+          </CodeBlockLine>
+        ))}
+      </CodeBlockContent>
+    </Block>
   )
 }

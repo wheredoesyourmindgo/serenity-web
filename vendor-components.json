@@ -83,6 +83,16 @@
       "source": "shadcn",
       "spec": "collapsible",
       "paths": ["src/components/ui/collapsible.tsx"]
+    },
+    {
+      "name": "code-block",
+      "source": "shadcn",
+      "spec": "code-block",
+      "paths": [
+        "src/components/ui/code-block.tsx",
+        "src/hooks/use-highlighted-code.ts",
+        "src/lib/highlighter.tsx"
+      ]
     }
   ]
 }

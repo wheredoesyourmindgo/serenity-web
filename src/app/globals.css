@@ -109,7 +109,6 @@
   --code-background: color-mix(in srgb, var(--background) 50%, var(--card));
   --code-bar: var(--card);
   --code-border: var(--border);
-  --code-hover: var(--accent);
   --code-foreground: #2b2822;
   --code-muted: var(--nushu-ink-muted);
   --code-syntax-comment: #1a7f37;
