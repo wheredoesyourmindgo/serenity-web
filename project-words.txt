@@ -66,6 +66,7 @@ Swatchbook
 tabler
 TOGG
 trackpad
+turbopack
 unblur
 underglow
 unmuting

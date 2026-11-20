@@ -49,7 +49,7 @@
     "deps:upgrade:major": "npx --yes npm-check-updates --interactive --format group --target latest"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/turbopack": "^4.3.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "22.20.5",
     "@types/react": "^19.3.0",
